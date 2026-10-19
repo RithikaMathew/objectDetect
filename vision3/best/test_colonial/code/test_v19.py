@@ -1,9 +1,10 @@
 import sys, types, importlib.util, math
+from pathlib import Path
 import numpy as np, cv2
 for m in ("torch","supervision","transformers"):
     sys.modules[m]=types.ModuleType(m)
 sys.modules["transformers"].XCLIPModel=object; sys.modules["transformers"].XCLIPProcessor=object
-spec=importlib.util.spec_from_file_location("v19","xclip_overlay_v19_colonial.py"); v=importlib.util.module_from_spec(spec); spec.loader.exec_module(v)
+spec=importlib.util.spec_from_file_location("v19",Path(__file__).with_name("xclip_overlay_v19_colonial.py")); v=importlib.util.module_from_spec(spec); spec.loader.exec_module(v)
 
 # 1. slice origins cover the frame and respect overlap
 o=v.slice_origins(0,0,1920,1080,640,0.2)

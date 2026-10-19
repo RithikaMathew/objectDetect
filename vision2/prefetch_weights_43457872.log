@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/orange/xiangyan/rithika/vision/vision3/prefetch_weights.py", line 17, in <module>
-    from huggingface_hub import hf_hub_download
-ModuleNotFoundError: No module named 'huggingface_hub'

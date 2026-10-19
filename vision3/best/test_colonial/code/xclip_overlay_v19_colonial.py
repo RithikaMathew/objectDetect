@@ -732,6 +732,8 @@ def main():
     ap.add_argument("--sahi-ios", type=float, default=0.6, help="duplicate threshold (overlap / smaller box)")
     ap.add_argument("--sahi-roi", default=None, help="x1,y1,x2,y2 in frame pixels: only slice this region (default whole frame)")
     ap.add_argument("--sahi-all-classes", action="store_true", help="also use slice detections for vehicles (default: people only)")
+    ap.add_argument("--tta", action="store_true", help="research: add full-frame scale/flip person detections before tracking")
+    ap.add_argument("--tta-sizes", type=int, nargs="+", default=[960, 1280])
     ap.add_argument("--enhance", choices=["none", "gamma", "clahe", "zerodce"], default="none", help="E2: enhance the frame before the detector")
     ap.add_argument("--enhance-when", choices=["night", "always"], default="night")
     ap.add_argument("--gamma", type=float, default=2.2)
@@ -757,6 +759,8 @@ def main():
     ap.add_argument("--static-min-sec", type=float, default=3.0)
     ap.add_argument("--motion-diag", action="store_true", help="E3: write unexplained-motion candidates (does not change counts)")
     args = ap.parse_args()
+    if args.tta and any(v <= 0 or v % 32 for v in args.tta_sizes):
+        ap.error("--tta-sizes must be positive multiples of 32")
     if args.ped_min_sec is None:
         args.ped_min_sec = args.person_min_sec
     if args.bic_min_sec is None:
@@ -775,6 +779,8 @@ def main():
     _tb = []
     if args.sahi:
         _tb.append(f"sahi{args.sahi_slice}")
+    if args.tta:
+        _tb.append("tta-scale-flip")
     if args.enhance != "none":
         _tb.append(f"enh-{args.enhance}")
     if args.speed_rule:
@@ -1104,7 +1110,7 @@ def main():
         d_ = ai[b]
         g_ = gt_bins.get(b)
         gt_txt = f" | GT: Bic {g_['bic_bl'] + g_['bic_sw']} Ped {g_['ped']}" if g_ else ""
-        binline = (f"Bin {s0:%I:%M}-{s1:%I:%M %p} AI{' (prov.)' if provisional else ''}: "
+        binline = (f"Bin {s0:%I:%M}-{s1:%I:%M %p} AI {'snapshot' if provisional else 'total'}: "
                    f"Bic {d_['bic']} Ped {d_['ped']} Veh {d_['veh']}{gt_txt}")
         while r2["fi"] < sp[1]:
             ok, frame = cap2.read()
@@ -1165,6 +1171,13 @@ def main():
 
     def detect_all(img, conf_):
         xy0, cf0, cl0 = predict_arrays(det, img, conf_, args.imgsz, device)
+        if args.tta:
+            from research_detection import tta_people
+            tx, tc, tl = tta_people(det, img, conf_, args.imgsz, args.tta_sizes,
+                                    device, people_ids, predict_arrays)
+            xy0, cf0, cl0 = np.concatenate([xy0, tx]), np.concatenate([cf0, tc]), np.concatenate([cl0, tl])
+            keep = merge_ios(xy0, cf0, cl0, args.sahi_ios)
+            xy0, cf0, cl0 = xy0[keep], cf0[keep], cl0[keep]
         if not args.sahi:
             return xy0, cf0, cl0
         sx_, sc_, scl_ = sliced_detect(det, img, conf_, device, args.sahi_slice, args.sahi_overlap, sahi_imgsz, sahi_roi)

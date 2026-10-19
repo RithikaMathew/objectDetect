@@ -1,2 +1,0 @@
-ERROR: /orange/xiangyan/rithika/vision/vision3/weights/yolov8x.pt missing -- prefetch_weights.slurm did not complete successfully.
-Check its log (prefetch_weights_<jobid>.log) before resubmitting.

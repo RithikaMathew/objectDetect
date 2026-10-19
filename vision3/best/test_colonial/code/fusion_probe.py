@@ -73,6 +73,25 @@ def main():
             out.append(f"| {r['run']} | {r['clip']} | {r['tid']} {r['truth']} | {r['when']} | #{r['track']} | {r['secs']} | {r['xl']} | {r['wbic']:.2f} | {r['det']:.0f} | {r['spd']:.2f} | {r['net']:.0f} | {r['dir']} | {r['counted']} |")
         want = lambda r: "cyclist" if r["truth"] == "cyclist" else "pedestrian"
         xl = lambda r: "cyclist" if r["xl"].startswith("bic") else "pedestrian"
+        out += ["", "## Detector / X-CLIP error patterns", "",
+                "Classification of matched, scored tracks only; duration/counting failures and misses are separate.",
+                "Each row below is one run. Repeated people across runs are not independent examples.", "",
+                "| run | both right | both wrong | detector right / X-CLIP wrong | detector wrong / X-CLIP right |",
+                "|---|---|---|---|---|"]
+        for run in a.runs.split(","):
+            rr = [r for r in rows if r["run"] == run]
+            groups = [[], [], [], []]
+            for r in rr:
+                if not 0 <= r["det"] <= 100:
+                    continue
+                dr = ("cyclist" if r["det"] >= 50 else "pedestrian") == want(r)
+                xr = xl(r) == want(r)
+                groups[0 if dr and xr else 1 if not dr and not xr else 2 if dr else 3].append(
+                    f"{r['clip']}/{r['tid']} ({r['dir']}, {r['secs']}s)")
+            out.append(f"| {run} | " + " | ".join(f"{len(g)}: {', '.join(g) or '-'}" for g in groups) + " |")
+        out += ["", "Use these named cases to inspect the source video. Direction is measured image motion; "
+                "it cannot prove a missed person was walking away, since missed people have no track. "
+                "Missing detector shares are excluded. This comparison does not measure detector recall."]
 
         def score(fn):
             ok = sum(1 for r in rows if fn(r) == want(r))

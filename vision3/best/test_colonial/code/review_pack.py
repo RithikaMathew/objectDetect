@@ -20,6 +20,7 @@ column with the seek position inside the video (seconds or mm:ss) pass --seek-co
 Decide from the video only; do not look at the model labels while labelling.
 """
 import argparse, csv, html, json, os, subprocess, sys
+from pathlib import Path
 from datetime import datetime as D
 
 def read(path):
@@ -44,21 +45,34 @@ def cmd_inspect(a):
     print("MISSING columns (use the flags):" if miss else "all needed columns found", miss or "")
 
 def cmd_build(a):
+    if os.path.exists(os.path.join(a.out, "index.json")):
+        sys.exit("pack already exists; choose a NEW --out folder to preserve labels")
     rows = read(a.table); items = []
     for i, r in enumerate(rows, 1):
         try:
             seek = seek_of(r, a); secs = float(r.get(a.secs_col) or 0)
+            video = r[a.video_col]
+            if a.source_dir:
+                # Raw hourly Colonial video avoids showing the model's labels
+                # to the human who supplies the independent reference label.
+                chunk = int(r["chunk"])
+                matches = list(Path(a.source_dir).glob(f"*.{chunk:03d}.mp4"))
+                if len(matches) != 1:
+                    sys.exit(f"row {i}: expected one raw .{chunk:03d}.mp4 in --source-dir, found {len(matches)}")
+                video = str(matches[0])
+                stamp = D.strptime(r[a.time_col].strip()[:19], "%Y-%m-%d %H:%M:%S")
+                seek = stamp.minute * 60 + stamp.second
         except (KeyError, ValueError) as e:
             sys.exit(f"row {i}: cannot read time columns ({e}); run `inspect`")
         if seek < 0: print(f"row {i}: starts in the previous hour file; skipped"); continue
         score = float(r[a.rank_col]) if a.rank_col and r.get(a.rank_col) not in (None, "") else 0.0
-        items.append(dict(row_id=i, video=r[a.video_col], seek=max(0.0, seek - a.pad), secs=secs,
+        items.append(dict(row_id=i, video=video, seek=max(0.0, seek - a.pad), secs=secs,
                           dur=min(secs + 2 * a.pad, a.max_clip), score=score))
     if a.rank_col: items.sort(key=lambda x: -x["score"])
     if a.budget_min:
         keep, tot = [], 0.0
         for it in items:
-            if tot + it["dur"] > a.budget_min * 60: break
+            if tot + it["dur"] > a.budget_min * 60: continue
             keep.append(it); tot += it["dur"]
         print(f"budget {a.budget_min} min: keeping {len(keep)} of {len(items)} candidates ({tot / 60:.1f} min of clips)")
         items = keep
@@ -71,9 +85,12 @@ def cmd_build(a):
         p = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{it['seek']:.2f}", "-i", it["video"],
                             "-t", f"{it['dur']:.2f}", "-an", "-vf", "scale=720:-2", "-c:v", "libx264", "-crf", "26", out],
                            capture_output=True, text=True)
-        if p.returncode: print(f"row {it['row_id']}: ffmpeg failed: {p.stderr[:150]}")
-    json.dump(items, open(os.path.join(a.out, "index.json"), "w"), indent=1)
-    open(os.path.join(a.out, "review.html"), "w").write(HTML.replace("__ITEMS__", json.dumps(items)))
+        if p.returncode:
+            if os.path.exists(out): os.remove(out)
+            sys.exit(f"row {it['row_id']}: ffmpeg failed: {p.stderr[:300]}; pack is incomplete")
+    if not items: sys.exit("no review clips selected; check the table, times and budget")
+    Path(a.out, "index.json").write_text(json.dumps(items, indent=1))
+    Path(a.out, "review.html").write_text(HTML.replace("__ITEMS__", json.dumps(items)))
     print(f"wrote {len(items)} snippets + review.html + index.json in {a.out}")
 
 def read_labels(path):
@@ -134,6 +151,7 @@ def main():
         p.add_argument("--secs-col", default="secs"); p.add_argument("--seek-col")
     p = sub.add_parser("inspect"); cols(p)
     p = sub.add_parser("build"); cols(p); p.add_argument("--out", required=True); p.add_argument("--rank-col")
+    p.add_argument("--source-dir", help="raw Colonial hourly videos (.NNN.mp4); hide model overlays for independent labelling")
     p.add_argument("--budget-min", type=float, default=0, help="total minutes of clips to keep (0 = all)")
     p.add_argument("--pad", type=float, default=3.0); p.add_argument("--max-clip", type=float, default=20.0)
     p.add_argument("--no-ffmpeg", action="store_true")

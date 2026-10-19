@@ -57,3 +57,13 @@ wandb/
 .env.*
 *.pem
 *.key
+
+# Local metadata and generated scheduler output (structured run JSON is kept)
+.DS_Store
+~$*
+*.log
+logs/.*.lock
+logs/.batch*.lock
+logs/.scale_*.lock
+.research_env/
+.research_models/

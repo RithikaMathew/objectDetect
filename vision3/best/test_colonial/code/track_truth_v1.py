@@ -77,12 +77,18 @@ def prf(conf, cls):
 
 def evaluate(a):
     rows = [r for r in csv.DictReader(open(a.file)) if r["true_label"].strip().upper() in ("BICYCLIST", "PEDESTRIAN", "NOT_PERSON")]
+    if not rows:
+        print("No human-labelled rows: accuracy and recall cannot be calculated. Label the review clips first.")
+        return
     for r in rows:
         r["true_label"] = r["true_label"].strip().upper()
     tracked = [r for r in rows if r["track_id"].strip()]
     missed = [r for r in rows if not r["track_id"].strip()]
     print(f"labelled rows: {len(rows)} ({len(tracked)} tracks, {len(missed)} missed people added by hand)\n")
     real = [r for r in tracked if r["true_label"] != "NOT_PERSON"]
+    if len(real) < 40:
+        print(f"PRELIMINARY: only {len(real)} labelled real tracks; target is at least 40.")
+    print("Detection recall below covers labelled rows only; add independently observed misses before treating it as clip-wide recall.")
     print("TRACKING / DETECTION")
     print(f"  tracks that are real people: {len(real)}/{len(tracked)} ({len(real) / max(len(tracked), 1):.0%});  NOT_PERSON tracks: {len(tracked) - len(real)}")
     cnt = [r for r in tracked if r["counted"] == "1"]
@@ -101,7 +107,7 @@ def evaluate(a):
         return dp >= a.F or (pb >= 0.5 and (dp >= a.D or pb >= a.O))
     rules = {"X-CLIP": lambda r: float(r["p_bic"]) >= 0.5,
              "RT-DETR (>=50% cyclist)": lambda r: float(r["det_cyclist_pct"] or 0) >= 50,
-             f"fused D={a.D:.0f} O={a.O} F={a.F:.0f}": fused}
+             f"legacy fusion D={a.D:.0f} O={a.O} F={a.F:.0f} (not b4_combo_static5)": fused}
     if a.speed:
         rules[f"speed >= {a.speed:.0f} px/s"] = lambda r: r["speed_px_s"] != "" and float(r["speed_px_s"]) >= a.speed
     for name, rule in rules.items():

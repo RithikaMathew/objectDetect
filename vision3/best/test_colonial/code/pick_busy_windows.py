@@ -47,11 +47,15 @@ def best_window(counts, step, win=900, hop=300):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--list", required=True, help="text file, one video path per line"); ap.add_argument("--out", default="busy/inventory.csv")
-    ap.add_argument("--weights", default="/orange/xiangyan/rithika/vision/vision3/runs/detect/finetune_runs/rtdetr_v3/best.pt")
+    ap.add_argument("--weights", default=os.environ.get("WEIGHTS", "/orange/xiangyan/rithika/vision/vision3/runs/detect/finetune_runs/rtdetr_v3/weights/best.pt"))
     ap.add_argument("--step", type=float, default=3.0, help="seconds between sampled frames"); ap.add_argument("--conf", type=float, default=0.3)
     ap.add_argument("--classes", default="person,cyclist"); ap.add_argument("--no-model", action="store_true", help="only record resolution/length")
+    ap.add_argument("--higher-res-only", action="store_true", help="scan only encoded frames with more pixels than 720x480; year is irrelevant")
     a = ap.parse_args()
-    paths = [l.strip() for l in open(a.list) if l.strip() and not l.startswith("#")]
+    if a.step <= 0: ap.error("--step must be positive")
+    if not a.no_model and not os.path.isfile(a.weights):
+        ap.error(f"weights not found: {a.weights}; pass --weights /path/to/rtdetr_v3/weights/best.pt")
+    paths = [l.strip() for l in open(a.list) if l.strip() and not l.lstrip().startswith("#")]
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     model = None
     if not a.no_model:
@@ -60,18 +64,26 @@ def main():
     for p in paths:
         info = probe(p)
         if info is None: print("cannot open:", p); continue
-        row = dict(path=p, **info, best_start_s="", best_start_mmss="", arrivals="", frames_with_people="", score="")
-        if model is not None:
+        pixels = info["width"] * info["height"]
+        higher = pixels > 720 * 480
+        row = dict(path=p, **info, pixels_vs_2019=round(pixels / (720 * 480), 3),
+                   higher_resolution=higher, scan_status="inventory_only", best_start_s="", best_start_mmss="", arrivals="", frames_with_people="", score="")
+        if model is not None and (not a.higher_res_only or higher):
+            row["scan_status"] = "scanned"
             counts = scan(p, model, a.step, a.conf, classes); b = best_window(counts, a.step)
             if b:
                 s = int(b[1]); row.update(best_start_s=s, best_start_mmss=f"{s // 60}:{s % 60:02d}", arrivals=b[2], frames_with_people=b[3], score=round(b[0], 1))
                 tag = os.path.splitext(os.path.basename(p))[0][-28:].replace(" ", "_")
                 cuts.append(f'ffmpeg -nostdin -y -ss {s} -t 900 -i "{p}" -c:v libx264 -crf 20 -an newvideo/{tag}_{s // 60}m.mp4   # {info["width"]}x{info["height"]}, score {row["score"]}')
+        elif model is not None:
+            row["scan_status"] = "skipped_not_higher_resolution"
         rows.append(row); print(row)
     with open(a.out, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()) if rows else ["path"]); w.writeheader(); w.writerows(rows)
-    if cuts:
-        open(os.path.join(os.path.dirname(a.out) or ".", "windows.txt"), "w").write("mkdir -p newvideo\n" + "\n".join(cuts) + "\n")
-    print(f"wrote {a.out} ({len(rows)} videos)" + (" and windows.txt" if cuts else ""))
+    # Never leave cut commands from an earlier, differently filtered scan.
+    with open(os.path.join(os.path.dirname(a.out) or ".", "windows.txt"), "w") as f:
+        f.write("mkdir -p newvideo\n" + "\n".join(cuts) + "\n" if cuts else
+                "# No qualifying full 15-minute window selected (or inventory-only scan).\n")
+    print(f"wrote {a.out} ({len(rows)} videos) and windows.txt")
 
 if __name__ == "__main__": main()

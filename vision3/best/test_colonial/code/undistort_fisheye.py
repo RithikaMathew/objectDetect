@@ -39,11 +39,23 @@ def _rot(yaw, pitch, roll):
     return Ry @ Rx @ Rz
 
 def build_maps(in_w, in_h, out_w, out_h, fov, out_fov, model="equidistant",
-               yaw=0.0, pitch=0.0, roll=0.0, cx=None, cy=None, radius=None):
+               yaw=0.0, pitch=0.0, roll=0.0, cx=None, cy=None, radius=None, coverage="circular"):
     """Return (map_x, map_y) for cv2.remap: for every output pixel, where to read in the fisheye image."""
     cx = in_w / 2 if cx is None else cx
     cy = in_h / 2 if cy is None else cy
-    radius = min(in_w, in_h) / 2 if radius is None else radius
+    if coverage not in ("circular", "full-frame"):
+        raise ValueError("coverage must be circular or full-frame")
+    if not 0 < fov < 360 or not 0 < out_fov < 180:
+        raise ValueError("require 0 < fov < 360 and 0 < out_fov < 180")
+    if model == "orthographic" and fov > 180:
+        raise ValueError("orthographic projection requires fov <= 180")
+    # For a rectangular crop, interpret fov at its farthest corner, rather
+    # than masking the image to a short-side circle. This is a guess, not calibration.
+    if radius is None:
+        radius = (math.hypot(max(cx, in_w - 1 - cx), max(cy, in_h - 1 - cy))
+                  if coverage == "full-frame" else min(in_w, in_h) / 2)
+    if radius <= 0:
+        raise ValueError("radius must be positive")
     # focal length f of the fisheye so that theta=fov/2 lands at `radius`
     f = radius / float(_theta_max_r(fov, 1.0, model))
     f_out = (out_w / 2) / math.tan(math.radians(out_fov) / 2)
@@ -72,7 +84,7 @@ def cmd_preview(a):
     tiles = []
     for fov in [float(x) for x in a.fovs.split(",")]:
         t = undistort(img, fov, a.out_fov, model=a.model, yaw=a.yaw, pitch=a.pitch, roll=a.roll,
-                      cx=a.cx, cy=a.cy, radius=a.radius)
+                      cx=a.cx, cy=a.cy, radius=a.radius, coverage=a.coverage)
         t = cv2.resize(t, (640, int(640 * t.shape[0] / t.shape[1])))
         cv2.putText(t, f"fov={fov:g} out_fov={a.out_fov:g} pitch={a.pitch:g}", (8, 24),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
@@ -86,7 +98,7 @@ def cmd_video(a):
     if not cap.isOpened(): sys.exit(f"cannot open {a.video}")
     w, h = int(cap.get(3)), int(cap.get(4)); fps = cap.get(5) or 30.0
     ow, oh = (a.size or (w, h))
-    mx, my = build_maps(w, h, ow, oh, a.fov, a.out_fov, a.model, a.yaw, a.pitch, a.roll, a.cx, a.cy, a.radius)
+    mx, my = build_maps(w, h, ow, oh, a.fov, a.out_fov, a.model, a.yaw, a.pitch, a.roll, a.cx, a.cy, a.radius, a.coverage)
     # raw frames piped to ffmpeg so the output is a normal h264 mp4
     p = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "bgr24",
                           "-s", f"{ow}x{oh}", "-r", f"{fps}", "-i", "-", "-an", "-c:v", "libx264",
@@ -96,7 +108,8 @@ def cmd_video(a):
         ok, fr = cap.read()
         if not ok or (a.max_frames and n >= a.max_frames): break
         p.stdin.write(cv2.remap(fr, mx, my, cv2.INTER_LINEAR).tobytes()); n += 1
-    p.stdin.close(); p.wait()
+    p.stdin.close(); status = p.wait(); cap.release()
+    if status: sys.exit(f"ffmpeg failed (exit {status}); output is incomplete")
     print(f"wrote {a.out}: {n} frames, {ow}x{oh}, {fps:.2f} fps")
 
 def selftest():
@@ -136,6 +149,8 @@ def main():
                        choices=["equidistant", "equisolid", "stereographic", "orthographic"])
         for n in ("yaw", "pitch", "roll"): p.add_argument(f"--{n}", type=float, default=0.0)
         for n in ("cx", "cy", "radius"): p.add_argument(f"--{n}", type=float, default=None)
+        p.add_argument("--coverage", choices=["circular", "full-frame"], default="circular",
+                       help="full-frame: rectangular image, fov interpreted diagonally; uncalibrated guess")
     p = sub.add_parser("preview"); p.add_argument("--image", required=True); p.add_argument("--out", required=True)
     p.add_argument("--fovs", default="150,180,200"); common(p)
     p = sub.add_parser("video"); p.add_argument("--video", required=True); p.add_argument("--out", required=True)

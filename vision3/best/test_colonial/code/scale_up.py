@@ -16,6 +16,7 @@ Assumption to verify: `--from-batch` takes the first line that starts with ENVV=
 pass the settings yourself: --envv "SAHI=1,STATIC_FILTER=1,..." (comma separated, no spaces).
 """
 import argparse, glob, os, re, shlex, subprocess, sys, time
+from run_batch5 import parse_envv, with_overrides
 
 def parse_chunks(s):
     out = []
@@ -34,17 +35,13 @@ def compress(ch):
     return ",".join(parts)
 
 def envv_from_batch(path):
-    for line in open(path):
-        m = re.match(r"\s*ENVV=(.*)$", line)
-        if m:
-            v = m.group(1).strip().strip("'\"")
-            return re.sub(r"\s+", ",", v) if "," not in v else v.replace(" ", "")
-    sys.exit(f"no line starting with ENVV= in {path}: pass --envv instead")
+    return with_overrides(parse_envv(path, os.environ.get("NETPX", "5")), {})
 
 def done_chunks(root, run, chunks):
     d = os.path.join(root, "counts", run)
     files = os.listdir(d) if os.path.isdir(d) else []
-    return [c for c in chunks if any(f"{c:03d}" in f for f in files)]
+    return [c for c in chunks if any(f.endswith(f".{c:03d}_tracks.csv") for f in files)
+            and any(f.endswith(f".{c:03d}_bin_counts.csv") for f in files)]
 
 def cmd_plan(a):
     if os.path.basename(os.getcwd()) == "code": sys.exit("run from test_colonial, not from inside code/")

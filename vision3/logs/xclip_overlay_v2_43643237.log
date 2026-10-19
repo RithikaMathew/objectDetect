@@ -1,15 +1,0 @@
-Loading detector yolo11x.pt ...
-Loading microsoft/xclip-base-patch32 on cuda ...
-Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 41945.88it/s]
-frame 4300/5694
-frame 4400/5694
-frame 4500/5694
-frame 4600/5694
-
-=== person tracks ===
-track | frames | scores | mean BICYCLIST | mean PEDESTRIAN
-    1 |    274 |     92 | 0.12 | 0.88
-
-Final counts: bicyclists=0 pedestrians=1 vehicles=3
-Video: pilot_output/compare_v4/xclip_overlay_v2/overlay.mp4
-Scores: pilot_output/compare_v4/xclip_overlay_v2/overlay_scores.csv

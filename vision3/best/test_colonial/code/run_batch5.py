@@ -6,6 +6,7 @@ Prints the sbatch lines (dry run). Add --go to submit ONCE. Run from test_coloni
   python code/run_batch5.py ablation --go            # submit once
   python code/run_batch5.py bright                   # dry run: up to 6 jobs (gamma/clahe/zerodce on the 2 night clips)
   python code/run_batch5.py bright --go
+  python code/run_batch5.py review                   # dry run: four low-threshold candidate jobs for human review
   # after the jobs finish (squeue -u $USER shows nothing):
   python code/eval_truth.py --root . --runs exp0_base,b4_combo_static5,b5_nospeed,b5_noveto --baseline exp0_base      # ablation
   python code/eval_truth.py --root . --runs b4_combo_static5,b5_bright_gamma,b5_bright_clahe,b5_bright_zerodce --baseline exp0_base   # brightening
@@ -22,6 +23,7 @@ Assumptions to verify (the script checks the first two and stops with a message)
   - run_batch4.sh has the ENVV= line (NETPX defaults to 5 as in that script; --netpx to change).
 """
 import argparse, os, re, shlex, subprocess, sys, time
+from pathlib import Path
 
 CLIPS = {  # name: (hour-file number = array id, START_FRAME, MAX_FRAMES (0 = to end))  README section 38
     "night2115": (22, 26978, 53946), "day1400": (15, 1, 26973),
@@ -29,7 +31,7 @@ CLIPS = {  # name: (hour-file number = array id, START_FRAME, MAX_FRAMES (0 = to
 NIGHT = ["night2115", "night2200"]
 
 def parse_envv(path, netpx):
-    for line in open(path):
+    for line in Path(path).read_text().splitlines():
         m = re.match(r"\s*ENVV=(.*)$", line)
         if m:
             v = m.group(1).strip().strip("'\"").replace("$NETPX", str(netpx)).replace("${NETPX}", str(netpx))
@@ -49,14 +51,14 @@ def with_overrides(pairs, over):
     return ",".join(f"{k}={v}" for k, v in d)
 
 def find_enhance_vars(slurm, py):
-    st = open(slurm).read() if os.path.exists(slurm) else ""
+    st = Path(slurm).read_text() if os.path.exists(slurm) else ""
     toks = sorted(set(re.findall(r"\bENHANCE[A-Z_]*\b", st)))
     if not toks:
         sys.exit(f"{slurm} has no ENHANCE* variable. Run:  grep -n -i enhance {slurm} code/run_exp*.sh code/submit_exp*.sh | head\n"
                  "and paste the output; I will set the right name.")
     crops = "ENHANCE_CROPS" if "ENHANCE_CROPS" in toks else None
     mode = "ENHANCE" if "ENHANCE" in toks else next((t for t in toks if t != crops), None)
-    pytxt = open(py).read() if os.path.exists(py) else ""
+    pytxt = Path(py).read_text() if os.path.exists(py) else ""
     modes = [m for m in ("gamma", "clahe", "zerodce") if m in pytxt] or ["clahe", "zerodce"]
     return mode, crops, modes
 
@@ -65,22 +67,40 @@ def jobs_for(group, a):
     if group == "ablation":
         for run, over in (("b5_nospeed", {"SPEED_RULE": "0"}), ("b5_noveto", {"DET_VETO_PCT": "0"})):
             for c in CLIPS: jobs.append((run, c, with_overrides(pairs, over)))
+    elif group == "review":
+        # Experimental candidates for human review, not accepted automatic counts.
+        # Same four windows (one hour total) permit comparison with existing truth.
+        over = {"DET_CONF": "0.15", "TRACK_THR": "0.15", "BIC_MIN_SEC": "0.4",
+                "PED_MIN_SEC": "0.4", "STATIC_FILTER": "0"}
+        for c in CLIPS:
+            jobs.append(("b6_review_candidates", c, with_overrides(pairs, over)))
     else:
         mode_var, crops_var, modes = find_enhance_vars(a.slurm, a.script)
         print(f"brightening variable: {mode_var}, crops variable: {crops_var}, modes found in script: {modes}")
         for m in modes:
+            if a.modes and m not in a.modes.split(","):
+                continue
             over = {mode_var: m}
+            if m == "zerodce":
+                if not a.zerodce_weights or not os.path.isfile(a.zerodce_weights):
+                    sys.exit("Zero-DCE requires an existing --zerodce-weights /path/Epoch99.pth. "
+                             "Use --modes gamma,clahe to omit it, or --modes zerodce to retry only the failed jobs.")
+                over["ZERODCE_WEIGHTS"] = os.path.abspath(a.zerodce_weights)
             if crops_var: over[crops_var] = "1"
             for c in NIGHT: jobs.append((f"b5_bright_{m}", c, with_overrides(pairs, over)))
     return jobs
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("group", choices=["ablation", "bright"]); ap.add_argument("--go", action="store_true")
+    ap.add_argument("group", choices=["ablation", "bright", "review"]); ap.add_argument("--go", action="store_true")
     ap.add_argument("--from-batch", default="code/run_batch4.sh"); ap.add_argument("--netpx", default="5")
     ap.add_argument("--slurm", default="code/run_xclip_colonial_v19.slurm"); ap.add_argument("--script", default="code/xclip_overlay_v19_colonial.py")
     ap.add_argument("--time", default="02:00:00"); ap.add_argument("--force", action="store_true")
+    ap.add_argument("--modes", help="brightening modes to submit, comma-separated (e.g. zerodce for a retry)")
+    ap.add_argument("--zerodce-weights", default=os.environ.get("ZERODCE_WEIGHTS"))
     a = ap.parse_args()
+    if a.modes and (a.group != "bright" or not set(a.modes.split(",")) <= {"gamma", "clahe", "zerodce"}):
+        ap.error("--modes requires group bright and gamma,clahe,zerodce values")
     if os.path.basename(os.getcwd()) == "code": sys.exit("run from test_colonial, not from inside code/")
     jobs = jobs_for(a.group, a); cmds = []
     for run, c, envv in jobs:
@@ -92,8 +112,14 @@ def main():
     if not a.go: print("\nDRY RUN: nothing submitted. Check the settings above, then add --go."); return
     if os.path.exists(lock) and not a.force: sys.exit(f"REFUSED: {lock} exists, so this group was already submitted (squeue -u $USER). --force to override.")
     os.makedirs("logs", exist_ok=True); out = []
+    # Reserve before submission; preserve the lock if only some submissions succeed.
+    with open(lock, "w" if a.force else "x") as f:
+        f.write(time.ctime() + "\n")
     for c in cmds:
         r = subprocess.run(c, capture_output=True, text=True); print(r.stdout.strip(), r.stderr.strip()); out.append(r.stdout.strip())
-    open(lock, "w").write(time.ctime() + "\n" + "\n".join(out) + "\n")
+        with open(lock, "a") as f:
+            f.write(shlex.join(c) + "\n" + r.stdout + r.stderr + "\n")
+        if r.returncode:
+            sys.exit("sbatch failed; stopped. Check the lock log and queue before retrying; earlier jobs may be running.")
 
 if __name__ == "__main__": main()

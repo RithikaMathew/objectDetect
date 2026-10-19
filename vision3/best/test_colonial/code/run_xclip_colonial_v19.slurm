@@ -73,6 +73,7 @@ TRAIL_SEC="${TRAIL_SEC:-5.0}"; SPLIT_GAP_SEC="${SPLIT_GAP_SEC:-8.0}"; SPLIT_PX="
 STREAM_CLIPS="${STREAM_CLIPS:-1}"           # 1 = write each 15-min clip as soon as its bin is over (+10 s); 0 = all clips at the end
 GT_XLS="${GT_XLS:-$ROOT/ground_truth/Colonial_North_676806_07-10-2019.xls}"   # ground truth shown in the clip headers
 EXTRA=()
+[ "${TTA:-0}" = "1" ] && EXTRA+=(--tta --tta-sizes 960 1280)
 NIGHT_START="${NIGHT_START:-}"; NIGHT_END="${NIGHT_END:-}"
 if [ -n "$NIGHT_START" ]; then
   EXTRA+=(--night-start "$NIGHT_START" --night-end "${NIGHT_END:?set NIGHT_END with NIGHT_START}")
