@@ -1,0 +1,21 @@
+track_id,label,counted,first_time,last_time,bin_index,facility,secs,mean_conf,weighted_bicyclist,weighted_pedestrian,disp_px,det_label,det_cyclist_pct,xclip_label,labels_agree
+1,PEDESTRIAN,0,2019-07-10 16:05:51,2019-07-10 16:05:52,64,unassigned,0.6,0.454,0.131,0.869,2.4,person,0.0,PEDESTRIAN,1
+2,BICYCLIST,1,2019-07-10 16:07:57,2019-07-10 16:08:04,64,unassigned,3.7,0.818,0.985,0.015,505.4,cyclist,94.6,BICYCLIST,1
+5,unscored,0,2019-07-10 16:08:05,2019-07-10 16:08:05,64,unassigned,0.1,0.625,nan,nan,22.9,cyclist,100.0,unscored,
+6,BICYCLIST,1,2019-07-10 16:11:19,2019-07-10 16:11:27,64,unassigned,5.61,0.648,0.874,0.126,698.3,cyclist,60.1,BICYCLIST,1
+9,BICYCLIST,1,2019-07-10 16:12:28,2019-07-10 16:12:36,64,unassigned,6.24,0.642,0.91,0.09,719.0,cyclist,88.8,BICYCLIST,1
+11,unscored,0,2019-07-10 16:13:36,2019-07-10 16:13:36,64,unassigned,0.03,0.337,nan,nan,0.0,person,0.0,unscored,
+12,PEDESTRIAN,0,2019-07-10 16:14:16,2019-07-10 16:14:20,64,unassigned,0.73,0.404,0.358,0.642,125.4,person,0.0,PEDESTRIAN,1
+14,unscored,0,2019-07-10 16:14:20,2019-07-10 16:14:20,64,unassigned,0.13,0.359,nan,nan,6.4,person,0.0,unscored,
+15,BICYCLIST,0,2019-07-10 16:14:22,2019-07-10 16:14:22,64,unassigned,0.37,0.626,0.989,0.011,191.0,cyclist,100.0,BICYCLIST,1
+16,unscored,0,2019-07-10 16:17:26,2019-07-10 16:17:26,65,unassigned,0.23,0.501,nan,nan,2.7,person,0.0,unscored,
+17,unscored,0,2019-07-10 16:19:15,2019-07-10 16:19:15,65,unassigned,0.1,0.547,nan,nan,3.0,person,0.0,unscored,
+18,PEDESTRIAN,1,2019-07-10 16:19:31,2019-07-10 16:19:40,65,unassigned,4.44,0.387,0.215,0.785,29.3,person,0.0,PEDESTRIAN,1
+20,BICYCLIST,0,2019-07-10 16:19:46,2019-07-10 16:19:46,65,unassigned,0.47,0.831,0.942,0.058,160.0,cyclist,100.0,BICYCLIST,1
+21,unscored,0,2019-07-10 16:24:57,2019-07-10 16:24:57,65,unassigned,0.17,0.46,nan,nan,0.2,person,0.0,unscored,
+22,PEDESTRIAN,1,2019-07-10 16:25:02,2019-07-10 16:25:08,65,unassigned,4.6,0.464,0.41,0.59,21.5,person,0.0,PEDESTRIAN,1
+23,BICYCLIST,0,2019-07-10 16:27:14,2019-07-10 16:27:16,65,unassigned,2.37,0.499,0.875,0.125,474.3,person,35.2,BICYCLIST,0
+24,unscored,0,2019-07-10 16:33:28,2019-07-10 16:33:28,66,unassigned,0.17,0.85,nan,nan,102.2,cyclist,100.0,unscored,
+25,PEDESTRIAN,1,2019-07-10 16:37:24,2019-07-10 16:37:40,66,unassigned,7.11,0.666,0.156,0.844,156.5,person,0.0,PEDESTRIAN,1
+28,PEDESTRIAN,1,2019-07-10 16:41:58,2019-07-10 16:42:05,66,unassigned,4.8,0.455,0.187,0.813,25.9,person,2.1,PEDESTRIAN,1
+29,PEDESTRIAN,0,2019-07-10 16:42:22,2019-07-10 16:42:23,66,unassigned,0.5,0.516,0.033,0.967,108.4,person,6.7,PEDESTRIAN,1

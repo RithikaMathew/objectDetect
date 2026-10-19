@@ -1,0 +1,8 @@
+# DAY HOLD-OUT 12:45-13:00 (video position mm:ss). Rithika's truth (2026-10-09): 2 cyclists + 3 pedestrians.
+# Verified by her: 8:07 bicyclist, 8:46 bicyclist, 11:17 walking; 0:40 pedestrian (her screenshot of id 1). 9:54 (h4) was not re-checked.
+id,start_mmss,end_mmss,class,source,notes
+h1,0:40,0:56,pedestrian,Rithika screenshot,walking person that the model called BICYCLIST,
+h2,8:07,8:13,cyclist,Rithika,bicyclist,
+h3,8:46,8:53,cyclist,Rithika,bicyclist,
+h4,9:54,10:04,pedestrian,model track,not re-checked,
+h5,11:17,11:38,pedestrian,Rithika,walking,

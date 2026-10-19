@@ -1,0 +1,46 @@
+=== method B ===
+video:   ./test.mp4
+weights: /orange/xiangyan/rithika/vision/vision3/weights
+outdir:  /orange/xiangyan/rithika/vision/vision3/pilot_output/compare_v4
+[method B] device=cuda
+[B: YOLO11x+fusion] supervision version: 0.30.5
+/orange/xiangyan/rithika/vision/vision3/compare_detectors_v7_fixed.py:249: FutureWarning: The `ByteTrack` was deprecated since v0.28.0. It will be removed in v0.31.0.
+  tracker = sv.ByteTrack(
+[fuse call 1] raw model returned 0 detections of any class this frame
+[B: YOLO11x+fusion] frame 500/5694 | CUMULATIVE since start -> post_fuse=0 post_conf=0 post_tracker=0 | unique_cyclists_so_far=0 | active_track_hit_counts={}
+[fuse call 501] raw model returned 0 detections of any class this frame
+[B: YOLO11x+fusion] frame 1000/5694 | CUMULATIVE since start -> post_fuse=6 post_conf=6 post_tracker=5 | unique_cyclists_so_far=1 | active_track_hit_counts={1: 5}
+[fuse call 1001] raw model returned 0 detections of any class this frame
+[B: YOLO11x+fusion] frame 1500/5694 | CUMULATIVE since start -> post_fuse=6 post_conf=6 post_tracker=5 | unique_cyclists_so_far=1 | active_track_hit_counts={1: 5}
+[fuse call 1501] raw model returned 0 detections of any class this frame
+[B: YOLO11x+fusion] frame 2000/5694 | CUMULATIVE since start -> post_fuse=6 post_conf=6 post_tracker=5 | unique_cyclists_so_far=1 | active_track_hit_counts={1: 5}
+[fuse call 2001] raw model returned 0 detections of any class this frame
+[B: YOLO11x+fusion] frame 2500/5694 | CUMULATIVE since start -> post_fuse=6 post_conf=6 post_tracker=5 | unique_cyclists_so_far=1 | active_track_hit_counts={1: 5}
+[fuse call 2501] raw model returned 0 detections of any class this frame
+[B: YOLO11x+fusion] frame 3000/5694 | CUMULATIVE since start -> post_fuse=6 post_conf=6 post_tracker=5 | unique_cyclists_so_far=1 | active_track_hit_counts={1: 5}
+[fuse call 3001] raw_dets=2 person_any_conf=2 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[B: YOLO11x+fusion] frame 3500/5694 | CUMULATIVE since start -> post_fuse=6 post_conf=6 post_tracker=5 | unique_cyclists_so_far=1 | active_track_hit_counts={1: 5}
+[fuse call 3501] raw model returned 0 detections of any class this frame
+[B: YOLO11x+fusion] frame 4000/5694 | CUMULATIVE since start -> post_fuse=6 post_conf=6 post_tracker=5 | unique_cyclists_so_far=1 | active_track_hit_counts={1: 5}
+[fuse call 4001] raw_dets=2 person_any_conf=2 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[B: YOLO11x+fusion] frame 4500/5694 | CUMULATIVE since start -> post_fuse=6 post_conf=6 post_tracker=5 | unique_cyclists_so_far=1 | active_track_hit_counts={1: 5}
+[fuse call 4501] raw_dets=1 person_any_conf=1 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[B: YOLO11x+fusion] frame 5000/5694 | CUMULATIVE since start -> post_fuse=6 post_conf=6 post_tracker=5 | unique_cyclists_so_far=1 | active_track_hit_counts={1: 5}
+[fuse call 5001] raw model returned 0 detections of any class this frame
+[B: YOLO11x+fusion] frame 5500/5694 | CUMULATIVE since start -> post_fuse=6 post_conf=6 post_tracker=5 | unique_cyclists_so_far=1 | active_track_hit_counts={1: 5}
+[fuse call 5501] raw model returned 0 detections of any class this frame
+[B: YOLO11x+fusion] FINAL STAGE TOTALS -> {'post_fuse': 6, 'post_conf': 6, 'post_tracker': 5} | max hit-count reached by any track: 5 (needs >= 2 to count)
+{
+  "method": "B: YOLO11x+fusion",
+  "output_path": "/orange/xiangyan/rithika/vision/vision3/pilot_output/compare_v4/output_B.mp4",
+  "unique_cyclists": 1,
+  "frames": 5694,
+  "seconds": 187.1,
+  "fps": 30.43,
+  "stage_totals": {
+    "post_fuse": 6,
+    "post_conf": 6,
+    "post_tracker": 5
+  },
+  "max_hit_count": 5
+}

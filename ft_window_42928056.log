@@ -1,0 +1,39 @@
+=== FT short window (new FT gates) ===
+chunk: pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4
+window: 377s - 567s  (~190s)
+weights: runs/detect/sixclass_v1_yolov8l/weights/best.pt
+outdir: pilot_output/ft_window_gated
+draw_all: 0
+
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  finetuned=True  ft_gates=True  detect_classes=[0, 1, 2, 3, 4, 5]  fuse_cyclist=False  chunk_hour=22  night_gate=True
+  FT cyclist gates: max_conf>=0.65  mean_conf>=0.32  min_s>=1.5  night_mean+=0.08
+
+Rendered 5694 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.018_window_377_567 ===
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  conf=0.05  stride=1  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (24 samples)
+5694 sampled frames, inference 900.0s (0.16s/frame)
+fps=29.97  dt between samples=0.033s
+min hits per class: {'cyclist': 45, 'bicycle': 45, 'person': 15, 'other_vehicle': 15, '_default': 30}
+
+Raw tracks: 596  ->  after merge: 316  (280 absorbed)
+COUNTED TRACKS BY CLASS: {'cyclist': 2, 'car': 96}
+Rejected tracks: {'low_mean_conf': 36, 'low_max_conf': 34, 'too_few_hits': 148}
+
+Funnel CSV : pilot_output/ft_window_gated/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_funnel.csv
+Tracks CSV : pilot_output/ft_window_gated/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_tracks.csv
+Video      : pilot_output/ft_window_gated/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_annotated_h264.mp4   <-- download this one
+
+2 cyclist track(s):
+  #333  t=470.5-490.7s  hits=635  max_conf=0.91  mean_conf=0.41  travelled=3.7 diagonals
+  #455  t=522.3-544.1s  hits=580  max_conf=0.99  mean_conf=0.55  travelled=8.5 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #466 cyclist   t=517.7-543.5s  rejected: mean_conf 0.14<0.18
+  #398 cyclist   t=495.5-517.5s  rejected: 
+  #446 cyclist   t=512.3-528.0s  rejected: 
+  #363 cyclist   t=488.7-505.5s  rejected: 
+  #427 cyclist   t=506.9-517.6s  rejected: 
+  #31 person    t=381.4-395.9s  rejected: 
+  #63 cyclist   t=396.2-411.0s  rejected: max_conf 0.36<0.5, mean_conf 0.12<0.18
+  #128 cyclist   t=418.0-426.5s  rejected: mean_conf 0.12<0.18

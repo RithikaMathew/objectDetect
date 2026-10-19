@@ -1,0 +1,13 @@
+=== method D ===
+video:   ./test.mp4
+weights: /orange/xiangyan/rithika/vision/vision3/weights
+outdir:  /orange/xiangyan/rithika/vision/vision3/pilot_output/compare
+[method D] device=cuda
+{
+  "method": "D: YOLO11x-VisDrone (direct)",
+  "output_path": "/orange/xiangyan/rithika/vision/vision3/pilot_output/compare/output_D.mp4",
+  "unique_cyclists": 0,
+  "frames": 5694,
+  "seconds": 96.7,
+  "fps": 58.87
+}

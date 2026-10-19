@@ -1,0 +1,13 @@
+=== method C ===
+video:   ./test.mp4
+weights: /orange/xiangyan/rithika/vision/vision3/weights
+outdir:  /orange/xiangyan/rithika/vision/vision3/pilot_output/compare_v2
+[method C] device=cuda
+{
+  "method": "C: RT-DETR-l+fusion",
+  "output_path": "/orange/xiangyan/rithika/vision/vision3/pilot_output/compare_v2/output_C.mp4",
+  "unique_cyclists": 1,
+  "frames": 5694,
+  "seconds": 102.6,
+  "fps": 55.48
+}

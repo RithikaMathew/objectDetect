@@ -1,0 +1,8 @@
+=== FT pilot task 0 ===
+suffix: .018
+chunk:  pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4
+weights: runs/detect/sixclass_v1_yolov8l/weights/best.pt
+outdir: pilot_output/sessions/BL_Colonial_2019-07-10_ft_pilot
+(using automatic FT confirmation + night gate from pilot_detect_v2.py)
+
+[2026-09-21T23:14:21.616] error: *** JOB 42927274 ON c0610a-s13 CANCELLED AT 2026-09-21T23:14:21 DUE to SIGNAL Terminated ***

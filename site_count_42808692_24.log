@@ -1,0 +1,52 @@
+=== task 24 / 48 ===
+chunk: pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.025.mp4
+weights: runs/detect/sixclass_v1_yolov8l/weights/best.pt
+outdir: pilot_output/sessions/BL_Colonial_2019-07-10_ft
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  finetuned=True  detect_classes=[0, 1, 2, 3, 4, 5]  fuse_cyclist=False
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.025 ===
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+21574 sampled frames, inference 3338.5s (0.15s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, 'other_vehicle': 3, '_default': 6}
+
+Raw tracks: 5248  ->  after merge: 4142  (1106 absorbed)
+COUNTED TRACKS BY CLASS: {'car': 102, 'cyclist': 22}
+Rejected tracks: {'static_object': 18, 'low_mean_conf': 76, 'low_max_conf': 1179, 'too_few_hits': 2745}
+
+Funnel CSV : pilot_output/sessions/BL_Colonial_2019-07-10_ft/Standard_SCU8OG_2019-07-10_0000.025_funnel.csv
+Tracks CSV : pilot_output/sessions/BL_Colonial_2019-07-10_ft/Standard_SCU8OG_2019-07-10_0000.025_tracks.csv
+
+22 cyclist track(s):
+  #118  t=81.2-81.7s  hits=6  max_conf=0.51  mean_conf=0.24  travelled=1.0 diagonals
+  #310  t=206.4-207.4s  hits=9  max_conf=0.67  mean_conf=0.20  travelled=1.4 diagonals
+  #431  t=274.4-274.9s  hits=6  max_conf=0.74  mean_conf=0.31  travelled=1.4 diagonals
+  #512  t=332.8-334.7s  hits=7  max_conf=0.51  mean_conf=0.23  travelled=5.2 diagonals
+  #1087  t=698.4-698.7s  hits=3  max_conf=0.78  mean_conf=0.43  travelled=0.9 diagonals
+  #1093  t=701.5-704.7s  hits=12  max_conf=0.85  mean_conf=0.30  travelled=4.3 diagonals
+  #1301  t=824.2-826.8s  hits=11  max_conf=0.60  mean_conf=0.21  travelled=1.0 diagonals
+  #1446  t=918.1-922.1s  hits=29  max_conf=0.66  mean_conf=0.20  travelled=4.2 diagonals
+  #1585  t=1010.8-1012.0s  hits=8  max_conf=0.51  mean_conf=0.24  travelled=3.8 diagonals
+  #1612  t=1022.5-1024.7s  hits=13  max_conf=0.69  mean_conf=0.22  travelled=5.3 diagonals
+  #2447  t=1546.5-1547.9s  hits=4  max_conf=0.51  mean_conf=0.35  travelled=2.8 diagonals
+  #2946  t=1871.5-1872.5s  hits=7  max_conf=0.62  mean_conf=0.23  travelled=3.1 diagonals
+  #3177  t=2047.7-2049.9s  hits=8  max_conf=0.71  mean_conf=0.20  travelled=6.7 diagonals
+  #3244  t=2094.4-2100.6s  hits=18  max_conf=0.78  mean_conf=0.20  travelled=4.4 diagonals
+  #3247  t=2096.6-2097.1s  hits=4  max_conf=0.71  mean_conf=0.23  travelled=3.6 diagonals
+  #3548  t=2308.0-2308.3s  hits=3  max_conf=0.66  mean_conf=0.42  travelled=0.9 diagonals
+  #3644  t=2371.5-2373.0s  hits=7  max_conf=0.75  mean_conf=0.36  travelled=2.7 diagonals
+  #3937  t=2588.8-2589.1s  hits=3  max_conf=0.66  mean_conf=0.33  travelled=1.2 diagonals
+  #4199  t=2781.1-2782.6s  hits=5  max_conf=0.60  mean_conf=0.30  travelled=1.9 diagonals
+  #4252  t=2809.3-2810.5s  hits=6  max_conf=0.64  mean_conf=0.27  travelled=2.4 diagonals
+  #4704  t=3164.8-3165.8s  hits=8  max_conf=0.67  mean_conf=0.25  travelled=2.9 diagonals
+  #5001  t=3403.2-3403.9s  hits=5  max_conf=0.50  mean_conf=0.28  travelled=4.6 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #525 cyclist   t=327.3-357.4s  rejected: max_conf 0.38<0.5, mean_conf 0.12<0.18, excursion 0.06<0.75
+  #1608 cyclist   t=1021.0-1032.0s  rejected: max_conf 0.19<0.5, mean_conf 0.09<0.18, excursion 0.03<0.75
+  #496 cyclist   t=319.2-326.2s  rejected: max_conf 0.19<0.5, mean_conf 0.10<0.18, excursion 0.06<0.75
+  #55 cyclist   t=30.0-37.4s  rejected: max_conf 0.29<0.5, mean_conf 0.09<0.18, excursion 0.04<0.75
+  #4195 cyclist   t=2780.1-2787.5s  rejected: max_conf 0.23<0.5, mean_conf 0.11<0.18, excursion 0.05<0.75
+  #1858 cyclist   t=1174.8-1182.7s  rejected: max_conf 0.32<0.5, mean_conf 0.13<0.18, excursion 0.07<0.75
+  #3534 cyclist   t=2303.3-2309.0s  rejected: max_conf 0.22<0.5, mean_conf 0.09<0.18, excursion 0.05<0.75
+  #417 cyclist   t=269.6-276.4s  rejected: max_conf 0.14<0.5, mean_conf 0.08<0.18

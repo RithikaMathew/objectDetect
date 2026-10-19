@@ -1,0 +1,20 @@
+/orange/xiangyan/rithika/vision/vision3/xclip_overlay_v9.py:309: FutureWarning: The `ByteTrack` was deprecated since v0.28.0. It will be removed in v0.31.0.
+  return sv.ByteTrack(track_activation_threshold=args.track_thr,
+detector classes: {0: 'bus', 1: 'car', 2: 'cyclist', 3: 'other_vehicle', 4: 'person', 5: 'truck'}
+ people=[2, 4] vehicles=[0, 1, 3, 5]
+vehicle detector classes used: ['car', 'bus', 'truck']
+zones loaded from zones/camera_A.json
+zone coords scaled from 716x477 to 720x480 (x1.006, y1.006)
+road zone active: vehicles outside it are dropped
+sidewalk zone active: vehicles inside it are dropped
+Loading microsoft/xclip-base-patch32 on cuda ...
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights:   0%|          | 2/591 [00:00<01:26,  6.77it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 1932.79it/s]
+frame 100/5694
+frame 200/5694
+frame 300/5694
+Traceback (most recent call last):
+  File "/orange/xiangyan/rithika/vision/vision3/xclip_overlay_v9.py", line 627, in <module>
+    main()
+  File "/orange/xiangyan/rithika/vision/vision3/xclip_overlay_v9.py", line 504, in main
+    probs = np.stack([allp[:, :nb].sum(1), allp[:, nb:].sum(1)], axis=1)
+TypeError: only integer scalar arrays can be converted to a scalar index

@@ -1,0 +1,59 @@
+Per-class quotas active for the mining pass (train only, fairness keyed by site):
+  person         global<= 150    per-site share<= 38  (across 4 sites: AndersonSt, BikeLaneStudy-NBLUniversity, ChurchAve, CurryFord-North)
+  car            global<= 400    per-site share<= 100  (across 4 sites: AndersonSt, BikeLaneStudy-NBLUniversity, ChurchAve, CurryFord-North)
+  bus            global<= 100    per-site share<= 25  (across 4 sites: AndersonSt, BikeLaneStudy-NBLUniversity, ChurchAve, CurryFord-North)
+  truck          global<= 120    per-site share<= 30  (across 4 sites: AndersonSt, BikeLaneStudy-NBLUniversity, ChurchAve, CurryFord-North)
+  other_vehicle  global<= 100    per-site share<= 25  (across 4 sites: AndersonSt, BikeLaneStudy-NBLUniversity, ChurchAve, CurryFord-North)
+  [val] CorrineDr (2025) pilot_clips/MioVision Data/2025 Data/Corrine Dr/MIOP000706_2025_03_12-0000/MIOP000706_2025_03_12-0000.00008.mp4: uniform pass saved 100 frames
+  [train] AndersonSt (2021) pilot_clips/MioVision Data/2021 Data/Anderson St/Standard_SCU8PM_2021-04-13_0000/Standard_SCU8PM_2021-04-13_0000.013.mp4: uniform pass saved 120 frames
+  [train] AndersonSt (2021) pilot_clips/MioVision Data/2021 Data/Anderson St/Standard_SCU8PM_2021-04-13_0000/Standard_SCU8PM_2021-04-13_0000.013.mp4: mined pass saved 94 frames
+  [train] ChurchAve (2021) pilot_clips/MioVision Data/2021 Data/Church Ave/Standard_SCU8PM_2021-03-23_0000/Standard_SCU8PM_2021-03-23_0000.008.mp4: mined pass saved 86 frames
+
+=== Dataset build summary (keep this for your methods section) ===
+split  site                 year   bucket              frames
+val    CorrineDr            2025   val_uniform            100
+train  AndersonSt           2021   uniform                120
+train  AndersonSt           2021   detection_guided        94
+train  ChurchAve            2021   detection_guided        86
+
+Total train frames: 300  (7 source videos)
+Total val frames:   100  (2 source videos)
+Manifest: dataset_frames/split/pool_manifest.csv  (400 rows)
+
+=== Per-class instance quotas (mining pass, train only) ===
+  person          53 / 150    (per-site share: 38)
+  car            235 / 400    (per-site share: 100)
+  bus              8 / 100    (per-site share: 25)
+  truck           83 / 120    (per-site share: 30)
+  other_vehicle     4 / 100    (per-site share: 25)
+  frames skipped by quota (mining pass): 785
+
+=== Corrine / val per-class instance counts (pre-labels) ===
+  person         14
+  car            490
+  bus            1
+  truck          52
+  cyclist        0
+  other_vehicle  0
+
+WARNING: val has thin coverage for: bus, other_vehicle
+  Report per-class mAP only for classes with adequate val support,
+  or re-run with denser --uniform-interval / higher --max-val-frames
+  on Corrine ONLY (never move Corrine frames into train).
+
+Output:
+  dataset_frames/split/train/  (images/, labels/, previews/, classes.txt)
+  dataset_frames/split/val/    (images/, labels/, previews/, classes.txt)
+  dataset_frames/split/pool_manifest.csv
+
+Do NOT let Roboflow / CVAT re-shuffle splits — site membership defines train/val.
+Next: merge with Colonial track mine via assemble_annotation_pool.py
+
+Check val rare-class coverage in the log above.
+If bus/truck/other_vehicle are thin on Corrine: densify val sampling
+(lower --uniform-interval / raise --max-val-frames) — never train on Corrine.
+
+Next: python assemble_annotation_pool.py \
+  --colonial-dir dataset_frames/colonial_track \
+  --build-dir dataset_frames/split \
+  --out dataset_frames/annotation_pool

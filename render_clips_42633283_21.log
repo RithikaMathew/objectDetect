@@ -1,0 +1,34 @@
+=== clip 21 / 30 ===
+video : pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.017.mp4
+window: 683.35s - 689.85s
+track : RANK22 #5984 susp=3.05 STATIC(exc=2.85) NIGHT
+
+
+Rendered 39 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.017_window_683_689 ===
+weights=yolov8l.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+39 sampled frames, inference 12.5s (0.32s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, '_default': 6}
+
+Raw tracks: 86  ->  after merge: 42  (44 absorbed)
+COUNTED TRACKS BY CLASS: {'car': 2, 'truck': 1, 'cyclist': 1}
+Rejected tracks: {'low_mean_conf': 3, 'low_max_conf': 9, 'too_few_hits': 26}
+
+Funnel CSV : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.017_window_683_689_funnel.csv
+Tracks CSV : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.017_window_683_689_tracks.csv
+Video      : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.017_window_683_689_annotated_h264.mp4   <-- download this one
+
+1 cyclist track(s):
+  #1  t=683.3-689.0s  hits=27  max_conf=0.76  mean_conf=0.32  travelled=16.5 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #20 person    t=683.8-685.5s  rejected: max_conf 0.25<0.5, mean_conf 0.10<0.2
+  #49 person    t=686.0-688.5s  rejected: max_conf 0.31<0.5, mean_conf 0.17<0.2
+  #62 person    t=688.0-689.3s  rejected: max_conf 0.15<0.5, mean_conf 0.09<0.2
+  #13 person    t=683.5-684.3s  rejected: max_conf 0.21<0.5, mean_conf 0.16<0.2
+  #36 person    t=685.0-686.3s  rejected: max_conf 0.30<0.5, mean_conf 0.15<0.2
+  #16 person    t=683.7-684.0s  rejected: hits 2<3, max_conf 0.11<0.5, mean_conf 0.09<0.2, excursion 0.09<0.75
+  #53 person    t=687.3-687.5s  rejected: hits 2<3, max_conf 0.20<0.5, mean_conf 0.17<0.2, excursion 0.25<0.75
+  #70 person    t=689.0-689.2s  rejected: hits 2<3, max_conf 0.10<0.5, mean_conf 0.08<0.2, excursion 0.00<0.75

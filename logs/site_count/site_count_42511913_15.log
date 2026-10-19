@@ -1,0 +1,25 @@
+=== task 15 / 48 ===
+chunk: pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.016.mp4
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.016 ===
+weights=yolov8l.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+21572 sampled frames, inference 3455.0s (0.16s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, '_default': 6}
+
+Raw tracks: 32600  ->  after merge: 21410  (11190 absorbed)
+COUNTED TRACKS BY CLASS: {'car': 1007, 'truck': 56, 'person': 24, 'motorcycle': 1}
+Rejected tracks: {'low_mean_conf': 367, 'low_max_conf': 4884, 'static_object': 23, 'too_few_hits': 15048}
+
+Funnel CSV : pilot_output/sessions/BL_Colonial_2019-07-10/Standard_SCU8OG_2019-07-10_0000.016_funnel.csv
+Tracks CSV : pilot_output/sessions/BL_Colonial_2019-07-10/Standard_SCU8OG_2019-07-10_0000.016_tracks.csv
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #2870 person    t=334.0-352.4s  rejected: max_conf 0.27<0.5, mean_conf 0.09<0.2
+  #4068 person    t=503.5-520.5s  rejected: mean_conf 0.14<0.2
+  #9578 person    t=1064.4-1078.4s  rejected: max_conf 0.38<0.5, mean_conf 0.10<0.2
+  #15128 person    t=1720.4-1732.2s  rejected: mean_conf 0.13<0.2
+  #2424 person    t=295.3-312.1s  rejected: max_conf 0.39<0.5, mean_conf 0.15<0.2
+  #2267 person    t=268.3-277.3s  rejected: max_conf 0.31<0.5, mean_conf 0.13<0.2
+  #17563 person    t=1973.8-1990.0s  rejected: max_conf 0.44<0.5, mean_conf 0.12<0.2, excursion 0.09<0.75
+  #17821 person    t=2008.0-2019.2s  rejected: max_conf 0.34<0.5, mean_conf 0.10<0.2

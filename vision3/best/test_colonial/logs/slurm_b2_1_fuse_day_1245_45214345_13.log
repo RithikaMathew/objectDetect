@@ -1,0 +1,310 @@
+chunk=013 run=b2_1_fuse video=/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4
+/orange/xiangyan/rithika/vision/vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py:892: FutureWarning: The `ByteTrack` was deprecated since v0.28.0. It will be removed in v0.31.0.
+  return sv.ByteTrack(track_activation_threshold=args.track_thr,
+ground truth loaded for the clip headers: 192 bins
+chunk 13: clip starts 2019-07-10 12:00:00  bins 48..51  fps=29.970  720x480
+detector classes: {0: 'bus', 1: 'car', 2: 'cyclist', 3: 'other_vehicle', 4: 'person', 5: 'truck'}
+ people=[2, 4] vehicles=[0, 1, 3, 5]
+zones loaded from /orange/xiangyan/rithika/vision/vision3/best/test_colonial/zones/colonial_north_v1.json
+zone coords scaled from 720x480 to 720x480 (x1.000, y1.000)
+road zone active: vehicles outside it are dropped
+sidewalk zone active: vehicles inside it are dropped
+Loading microsoft/xclip-base-patch32 on cuda ...
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 47646.97it/s]
+frame 81000/107862
+frame 81100/107862
+frame 81200/107862
+frame 81300/107862
+frame 81400/107862
+frame 81500/107862
+frame 81600/107862
+frame 81700/107862
+frame 81800/107862
+frame 81900/107862
+frame 82000/107862
+frame 82100/107862
+frame 82200/107862
+frame 82300/107862
+frame 82400/107862
+frame 82500/107862
+frame 82600/107862
+frame 82700/107862
+frame 82800/107862
+frame 82900/107862
+frame 83000/107862
+frame 83100/107862
+frame 83200/107862
+frame 83300/107862
+frame 83400/107862
+frame 83500/107862
+frame 83600/107862
+frame 83700/107862
+frame 83800/107862
+frame 83900/107862
+frame 84000/107862
+frame 84100/107862
+frame 84200/107862
+frame 84300/107862
+frame 84400/107862
+frame 84500/107862
+frame 84600/107862
+frame 84700/107862
+frame 84800/107862
+frame 84900/107862
+frame 85000/107862
+frame 85100/107862
+frame 85200/107862
+frame 85300/107862
+frame 85400/107862
+frame 85500/107862
+frame 85600/107862
+frame 85700/107862
+frame 85800/107862
+frame 85900/107862
+frame 86000/107862
+frame 86100/107862
+frame 86200/107862
+frame 86300/107862
+frame 86400/107862
+frame 86500/107862
+frame 86600/107862
+frame 86700/107862
+frame 86800/107862
+frame 86900/107862
+frame 87000/107862
+frame 87100/107862
+frame 87200/107862
+frame 87300/107862
+frame 87400/107862
+frame 87500/107862
+frame 87600/107862
+frame 87700/107862
+frame 87800/107862
+frame 87900/107862
+frame 88000/107862
+frame 88100/107862
+frame 88200/107862
+frame 88300/107862
+frame 88400/107862
+frame 88500/107862
+frame 88600/107862
+frame 88700/107862
+frame 88800/107862
+frame 88900/107862
+frame 89000/107862
+frame 89100/107862
+frame 89200/107862
+frame 89300/107862
+frame 89400/107862
+frame 89500/107862
+frame 89600/107862
+frame 89700/107862
+frame 89800/107862
+frame 89900/107862
+frame 90000/107862
+frame 90100/107862
+frame 90200/107862
+frame 90300/107862
+frame 90400/107862
+frame 90500/107862
+frame 90600/107862
+frame 90700/107862
+frame 90800/107862
+frame 90900/107862
+frame 91000/107862
+frame 91100/107862
+frame 91200/107862
+frame 91300/107862
+frame 91400/107862
+frame 91500/107862
+frame 91600/107862
+frame 91700/107862
+frame 91800/107862
+frame 91900/107862
+frame 92000/107862
+frame 92100/107862
+frame 92200/107862
+frame 92300/107862
+frame 92400/107862
+frame 92500/107862
+frame 92600/107862
+frame 92700/107862
+frame 92800/107862
+frame 92900/107862
+frame 93000/107862
+frame 93100/107862
+frame 93200/107862
+frame 93300/107862
+frame 93400/107862
+frame 93500/107862
+frame 93600/107862
+frame 93700/107862
+frame 93800/107862
+frame 93900/107862
+frame 94000/107862
+frame 94100/107862
+frame 94200/107862
+frame 94300/107862
+frame 94400/107862
+frame 94500/107862
+frame 94600/107862
+frame 94700/107862
+frame 94800/107862
+frame 94900/107862
+frame 95000/107862
+frame 95100/107862
+frame 95200/107862
+frame 95300/107862
+frame 95400/107862
+frame 95500/107862
+frame 95600/107862
+frame 95700/107862
+frame 95800/107862
+frame 95900/107862
+frame 96000/107862
+frame 96100/107862
+frame 96200/107862
+frame 96300/107862
+frame 96400/107862
+frame 96500/107862
+frame 96600/107862
+frame 96700/107862
+frame 96800/107862
+frame 96900/107862
+frame 97000/107862
+frame 97100/107862
+frame 97200/107862
+frame 97300/107862
+frame 97400/107862
+frame 97500/107862
+frame 97600/107862
+frame 97700/107862
+frame 97800/107862
+frame 97900/107862
+frame 98000/107862
+frame 98100/107862
+frame 98200/107862
+frame 98300/107862
+frame 98400/107862
+frame 98500/107862
+frame 98600/107862
+frame 98700/107862
+frame 98800/107862
+frame 98900/107862
+frame 99000/107862
+frame 99100/107862
+frame 99200/107862
+frame 99300/107862
+frame 99400/107862
+frame 99500/107862
+frame 99600/107862
+frame 99700/107862
+frame 99800/107862
+frame 99900/107862
+frame 100000/107862
+frame 100100/107862
+frame 100200/107862
+frame 100300/107862
+frame 100400/107862
+frame 100500/107862
+frame 100600/107862
+frame 100700/107862
+frame 100800/107862
+frame 100900/107862
+frame 101000/107862
+frame 101100/107862
+frame 101200/107862
+frame 101300/107862
+frame 101400/107862
+frame 101500/107862
+frame 101600/107862
+frame 101700/107862
+frame 101800/107862
+frame 101900/107862
+frame 102000/107862
+frame 102100/107862
+frame 102200/107862
+frame 102300/107862
+frame 102400/107862
+frame 102500/107862
+frame 102600/107862
+frame 102700/107862
+frame 102800/107862
+frame 102900/107862
+frame 103000/107862
+frame 103100/107862
+frame 103200/107862
+frame 103300/107862
+frame 103400/107862
+frame 103500/107862
+frame 103600/107862
+frame 103700/107862
+frame 103800/107862
+frame 103900/107862
+frame 104000/107862
+frame 104100/107862
+frame 104200/107862
+frame 104300/107862
+frame 104400/107862
+frame 104500/107862
+frame 104600/107862
+frame 104700/107862
+frame 104800/107862
+frame 104900/107862
+frame 105000/107862
+frame 105100/107862
+frame 105200/107862
+frame 105300/107862
+frame 105400/107862
+frame 105500/107862
+frame 105600/107862
+frame 105700/107862
+frame 105800/107862
+frame 105900/107862
+frame 106000/107862
+frame 106100/107862
+frame 106200/107862
+frame 106300/107862
+frame 106400/107862
+frame 106500/107862
+frame 106600/107862
+frame 106700/107862
+frame 106800/107862
+frame 106900/107862
+frame 107000/107862
+frame 107100/107862
+frame 107200/107862
+frame 107300/107862
+frame 107400/107862
+frame 107500/107862
+frame 107600/107862
+frame 107700/107862
+frame 107800/107862
+rendering remaining annotated clips ...
+clip written: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/annotated/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013/b2_1_fuse__day_1245-1300__detfuse__20190710.mp4
+streamed bins: []; bins whose streamed header differs from the final counts: none
+
+=== person tracks (after id stitching) ===
+track | frames | secs | scores | first-last frame | mean conf | mean box h | plain BIC | plain PED | wtd BIC | wtd PED | %scores bic>=.9 | %det=cyclist | FINAL LABEL
+    1 |    273 |  9.1 |     99 |   82134-82610 | 0.55 |     60 | 0.58 | 0.42 | 0.65 | 0.35 | 6% | 45% | BICYCLIST
+    4 |    110 |  3.7 |     40 |   95529-95722 | 0.57 |     51 | 0.63 | 0.37 | 0.79 | 0.21 | 35% | 46% | BICYCLIST
+    6 |    209 |  7.0 |     69 |   96684-96891 | 0.68 |     47 | 0.66 | 0.34 | 0.79 | 0.21 | 30% | 45% | BICYCLIST
+    7 |    145 |  4.8 |     50 |   98713-99019 | 0.53 |     24 | 0.19 | 0.81 | 0.18 | 0.82 | 0% | 0% | PEDESTRIAN
+    9 |    557 | 18.6 |    188 | 101216-101844 | 0.72 |     61 | 0.60 | 0.40 | 0.65 | 0.35 | 3% | 7% | PEDESTRIAN
+   13 |      1 |  0.0 |      0 | never scored | 0.81 |     47 | | | 100% | (unscored, not counted)
+Per-track quality stats (persons + vehicles): /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013_track_stats.csv
+
+Raw detector detections by class (conf>=0.25): {'car': 89166, 'truck': 365, 'person': 1496, 'cyclist': 667, 'bus': 2}
+Stitched raw->canonical merges: 7
+Final counts: bicyclists=3 pedestrians=2 vehicles=589
+Annotated clips (1): /orange/xiangyan/rithika/vision/vision3/best/test_colonial/annotated/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013
+Scores: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013_scores.csv
+Trajectories: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013_trajectories.csv
+Track motion: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013_track_motion.csv
+Split candidates: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013_split_candidates.csv (0 pairs; 0 would pass the 3 s minimum only if joined)
+Counted tracks by (X-CLIP label, direction): {('BICYCLIST', 'moving_left'): 1, ('BICYCLIST', 'moving_right'): 2, ('PEDESTRIAN', 'static'): 1, ('PEDESTRIAN', 'away_from_camera'): 1}
+Rules audit: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013_rules_audit.csv
+Bin counts: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013_bin_counts.csv
+Tracks: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013_tracks.csv
+Run log: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/logs/b2_1_fuse/Standard_SCU8OG_2019-07-10_0000.013_run_log.json
+Runtime: 1722.2 s

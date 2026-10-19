@@ -1,0 +1,8 @@
+# DAY clip 14:00-14:15 (video position mm:ss). Rithika's truth (2026-10-08): 1 cyclist + 4 pedestrians = 5 people.
+# Model tracks that belong to each person are in the notes (times from the sw_day log, +-1 s).
+id,start_mmss,end_mmss,class,source,notes
+d1,9:10,9:19,cyclist,Rithika,model track 4.0 s at 9:11-9:17 (counted BICYCLIST: correct),
+d2,3:00,3:25,pedestrian,Rithika,walking away and VERY far from the camera; model tracks: 0.4 s + 1.1 s at 3:04-3:08 (called BICYCLIST, filtered) and 3.2 s at 3:15-3:18 (counted PEDESTRIAN),
+d3,11:45,12:14,pedestrian,Rithika,one pedestrian; model track 16.9 s at 11:45-12:17 (counted PEDESTRIAN),
+d4,12:10,12:37,pedestrian,Rithika,first of the 2 pedestrians who arrive together; model tracks 2.1 s at 12:29-12:33 and 1.2 s at 12:32-12:35 (filtered PEDESTRIAN) probably belong to these two,
+d5,12:10,12:37,pedestrian,Rithika,second of the 2 pedestrians (mostly not detected),

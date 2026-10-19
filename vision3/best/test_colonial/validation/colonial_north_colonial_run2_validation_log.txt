@@ -1,0 +1,63 @@
+VALIDATION LOG  Colonial North  run=colonial_run2  written 2026-10-02 22:16:07
+====================================================================================================
+
+[RUN SUMMARY]
+  Run name: colonial_run2
+  Site / location: Colonial North - Colonial - BL Colonial camera (SCU8OG)
+  Video session start (camera clock): 2019-07-10 00:00:00 (chunk .001); verified from on-screen clock on .001 = 2019-07-10 12:00:00 AM, .008 = 7:00:01 AM, .025 = 2019-07-11 12:00:01 AM
+  Chunks processed: 1: [8]
+  Chunks expected: 1 (8); missing: none
+  Videos merged: 0 - each hourly mp4 is processed on its own and the results are joined by clock time; a rider crossing an hour boundary is split across two chunks (rare)
+  Total video duration processed: 1.00 h
+  15-min bins in workbook: 4 (4 evaluated, 0 partial/excluded)
+  Ground truth file: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/ground_truth/Colonial_North_676806_07-10-2019.xls
+  Weights: /orange/xiangyan/rithika/vision/vision3/runs/detect/finetune_runs/rtdetr_v3/weights/best.pt
+  Total runtime (sum over chunks): 111.9 min
+
+[CHECKS]
+  check 1: Bicycles channels used: ['North Bike Lane', 'North Sidewalk', 'North Bike Lane', 'North Sidewalk'] -> bike-lane cols [1, 3], sidewalk cols [2, 4]
+  check 2: Bin labels are consecutive 15-min steps starting 12:00 AM: YES
+  check 3: GT bicyclists, all 192 bins of the .xls (48 h): 89
+  check 4: GT CSV total for Colonial North: 89 -> MATCHES .xls
+  check 5: video_site_mapping: folder=BL Colonial, gt_cyclist_count=89, n_mp4_chunks=48 -> GT is a 89-count over 48 h of bins; chunk count consistent with the 192 GT bins
+  check 6: mp4 files found in video folder: 48
+
+[WARNINGS]
+  none
+
+[BICYCLISTS (bike lane + sidewalk) per 15-min bin]  (bins with full coverage only)
+  bins: 4
+  AI total: 3
+  GT total: 4
+  bias (AI-GT per bin): -0.250
+  MAE: 0.750
+  RMSE: 1.118
+  WAPE (sum|err|/sum GT): 0.750
+  within +-1: 0.750
+  within +-2: 1.000
+  pearson r: 0.000
+  count-matched precision (approx): 0.667
+  count-matched recall (approx): 0.500
+
+[PEDESTRIANS per 15-min bin]  (bins with full coverage only)
+  bins: 4
+  AI total: 15
+  GT total: 4
+  bias (AI-GT per bin): 2.750
+  MAE: 2.750
+  RMSE: 3.640
+  WAPE (sum|err|/sum GT): 2.750
+  within +-1: 0.500
+  within +-2: 0.500
+  pearson r: 0.812
+  count-matched precision (approx): 0.267
+  count-matched recall (approx): 1.000
+
+[PER-HOUR]
+  chunk  hour start            AI bic  GT bic   AI ped  GT ped
+      8  2019-07-10 07:00 AM        3       4       15       4
+
+[BINS FLAGGED |AI-GT| > 2 bicyclists]
+  none
+
+Workbook: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/validation/colonial_north_colonial_run2_validation.xlsx  (cached values stored via LibreOffice: False; Excel recalculates on open either way)

@@ -1,0 +1,33 @@
+=== clip 1 / 25 ===
+video : pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.008.mp4
+window: 1601.10s - 1611.11s
+track : COUNTED #11640 cyclist hits=29 maxc=0.586 meanc=0.203 exc=35.30
+
+
+Rendered 60 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.008_window_1601_1611 ===
+weights=yolov8l.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+60 sampled frames, inference 107.7s (1.80s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, '_default': 6}
+
+Raw tracks: 69  ->  after merge: 51  (18 absorbed)
+COUNTED TRACKS BY CLASS: {'cyclist': 1, 'truck': 1, 'person': 1}
+Rejected tracks: {'low_max_conf': 11, 'too_few_hits': 37}
+
+Funnel CSV : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.008_window_1601_1611_funnel.csv
+Tracks CSV : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.008_window_1601_1611_tracks.csv
+Video      : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.008_window_1601_1611_annotated_h264.mp4   <-- download this one
+
+1 cyclist track(s):
+  #18  t=1601.9-1609.2s  hits=39  max_conf=0.78  mean_conf=0.23  travelled=52.9 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #52 person    t=1608.1-1610.9s  rejected: max_conf 0.14<0.5, mean_conf 0.07<0.2
+  #17 person    t=1602.7-1603.9s  rejected: max_conf 0.07<0.5, mean_conf 0.06<0.2
+  #31 person    t=1605.9-1607.6s  rejected: max_conf 0.16<0.5, mean_conf 0.09<0.2, excursion 0.12<0.75
+  #13 person    t=1601.7-1602.6s  rejected: hits 2<3, max_conf 0.28<0.5, mean_conf 0.18<0.2, excursion 0.03<0.75
+  #16 person    t=1602.4-1603.1s  rejected: hits 2<3, max_conf 0.08<0.5, mean_conf 0.07<0.2
+  #22 person    t=1604.1-1604.4s  rejected: hits 2<3, max_conf 0.18<0.5, mean_conf 0.14<0.2, excursion 0.01<0.75
+  #38 person    t=1607.4-1607.4s  rejected: hits 2<3, max_conf 0.14<0.5, mean_conf 0.12<0.2, excursion 0.00<0.75

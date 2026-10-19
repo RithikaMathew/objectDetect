@@ -1,0 +1,9 @@
+# NIGHT HOLD-OUT 22:00-22:15 (video position mm:ss). Rithika's truth (2026-10-09), from watching the SAHI clip.
+# 5 pedestrians. NOT people (not rows here, they show up as EXTRA if counted): a barricade at about 7:50-8:27, 8:32-9:00 and 9:05-10:15.
+# The pedestrian at 10:00-10:14 overlaps in time with the barricade track (9:05-10:15): a time-only match cannot tell them apart.
+id,start_mmss,end_mmss,class,source,notes
+p1,6:00,6:13,pedestrian,Rithika,one pedestrian,
+p2,10:00,10:14,pedestrian,Rithika,one pedestrian,
+p3,10:59,11:18,pedestrian,Rithika,one of 3 pedestrians walking together,
+p4,10:59,11:18,pedestrian,Rithika,second of 3 pedestrians walking together,
+p5,10:59,11:18,pedestrian,Rithika,third of 3 pedestrians walking together,

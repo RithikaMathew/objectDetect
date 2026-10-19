@@ -1,0 +1,20 @@
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.008_window_400_420 ===
+weights=yolov8l.pt  conf=0.05  stride=1  imgsz=1280  center_dist=1.0
+599 sampled frames in 119.6s (0.20s/frame)
+fps=29.97  dt between samples=0.033s
+min hits per class: {'bicycle': 15, 'person': 15, 'motorcycle': 15, '_default': 30}
+
+COUNTED TRACKS BY CLASS: {'person': 3, 'motorcycle': 2, 'bicycle': 5}
+Rejected tracks: {'too_few_hits': 438, 'static_object': 5, 'low_confidence': 7}
+
+Funnel CSV : pilot_output/v2/Standard_SCU8OG_2019-07-10_0000.008_window_400_420_funnel.csv
+Tracks CSV : pilot_output/v2/Standard_SCU8OG_2019-07-10_0000.008_window_400_420_tracks.csv
+Video      : pilot_output/v2/Standard_SCU8OG_2019-07-10_0000.008_window_400_420_annotated.mp4
+
+5 cyclist track(s):
+  #160  t=407.1-408.1s  hits=24  max_conf=0.82  travelled=14.7 diagonals
+  #161  t=407.2-407.9s  hits=17  max_conf=0.77  travelled=2.0 diagonals
+  #169  t=407.4-408.6s  hits=28  max_conf=0.61  travelled=1.9 diagonals
+  #174  t=407.7-410.2s  hits=59  max_conf=0.89  travelled=13.4 diagonals
+  #179  t=407.9-408.7s  hits=15  max_conf=0.74  travelled=3.4 diagonals

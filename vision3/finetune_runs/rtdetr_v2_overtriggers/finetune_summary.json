@@ -1,0 +1,9 @@
+{
+  "base_weights": "/orange/xiangyan/rithika/vision/vision3/weights/rtdetr-l.pt",
+  "data_yaml": "/orange/xiangyan/rithika/vision/dataset_frames/roboflow_split_v1/data.yaml",
+  "epochs_requested": 100,
+  "outdir": "/orange/xiangyan/rithika/vision/vision3/finetune_runs/rtdetr_v1",
+  "best_weights": "/orange/xiangyan/rithika/vision/vision3/finetune_runs/rtdetr_v1/weights/best.pt",
+  "test_map50": 0.6239034644548255,
+  "test_map50_95": 0.42405747128126486
+}

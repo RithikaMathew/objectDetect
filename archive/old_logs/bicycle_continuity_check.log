@@ -1,0 +1,82 @@
+/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/cuda/__init__.py:1112: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+t=403.00s  bicycle conf=0.404  xyxy=[40.0, 161.0, 71.5, 216.1]
+t=403.03s  NO bicycle box
+t=403.07s  bicycle conf=0.111  xyxy=[40.1, 161.2, 71.1, 216.2]
+t=403.10s  NO bicycle box
+t=403.13s  bicycle conf=0.058  xyxy=[40.0, 165.1, 72.1, 216.2]
+t=403.17s  NO bicycle box
+t=403.20s  bicycle conf=0.236  xyxy=[40.2, 165.7, 71.7, 216.0]
+t=403.23s  NO bicycle box
+t=403.27s  bicycle conf=0.389  xyxy=[40.2, 164.3, 72.0, 216.0]
+t=403.30s  NO bicycle box
+t=403.33s  bicycle conf=0.105  xyxy=[40.1, 165.6, 71.9, 216.2]
+t=403.37s  NO bicycle box
+t=403.40s  NO bicycle box
+t=403.43s  NO bicycle box
+t=403.47s  NO bicycle box
+t=403.50s  NO bicycle box
+t=403.53s  NO bicycle box
+t=403.57s  NO bicycle box
+t=403.60s  NO bicycle box
+Traceback (most recent call last):
+  File "<stdin>", line 23, in <module>
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/engine/model.py", line 560, in predict
+    return self.predictor.predict_cli(source=source) if is_cli else self.predictor(source=source, stream=stream)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/engine/predictor.py", line 244, in __call__
+    return list(self.stream_inference(source, model, *args, **kwargs))  # merge list of Results into one
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 40, in generator_context
+    response = gen.send(None)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/engine/predictor.py", line 355, in stream_inference
+    preds = self.inference(im, *args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/engine/predictor.py", line 201, in inference
+    return self.model(im, *args, augment=self.args.augment, embed=self.args.embed, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/autobackend.py", line 321, in forward
+    y = self.backend.forward(im, **forward_kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/backends/pytorch.py", line 96, in forward
+    return self.model(im, augment=augment, embed=embed, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/tasks.py", line 159, in forward
+    return self.predict(x, *args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/tasks.py", line 175, in predict
+    return self._predict_once(x, profile, embed)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/tasks.py", line 196, in _predict_once
+    x = m(x)  # run
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/modules/head.py", line 183, in forward
+    preds = self.forward_head(x, **self.one2many)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/modules/head.py", line 176, in forward_head
+    scores = torch.cat([cls_head[i](x[i]).view(bs, self.nc, -1) for i in range(self.nl)], dim=-1)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/modules/head.py", line 176, in <listcomp>
+    scores = torch.cat([cls_head[i](x[i]).view(bs, self.nc, -1) for i in range(self.nl)], dim=-1)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/modules/conv.py", line 89, in forward_fuse
+    return self.act(self.conv(x))
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 565, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 560, in _conv_forward
+    return F.conv2d(
+KeyboardInterrupt

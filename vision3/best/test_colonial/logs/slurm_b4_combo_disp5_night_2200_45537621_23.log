@@ -1,0 +1,342 @@
+chunk=023 run=b4_combo_disp5 video=/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.023.mp4
+ground truth loaded for the clip headers: 192 bins
+night mode ON 21:00-06:00: det conf 0.25->0.25, bicyclist min 3.0->3.0 s, pedestrian min 3.0->3.0 s
+/orange/xiangyan/rithika/vision/vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py:898: FutureWarning: The `ByteTrack` was deprecated since v0.28.0. It will be removed in v0.31.0.
+  return sv.ByteTrack(track_activation_threshold=args.track_thr,
+chunk 23: clip starts 2019-07-10 22:00:00  bins 88..91  fps=29.970  720x480
+detector classes: {0: 'bus', 1: 'car', 2: 'cyclist', 3: 'other_vehicle', 4: 'person', 5: 'truck'}
+ people=[2, 4] vehicles=[0, 1, 3, 5]
+zones loaded from /orange/xiangyan/rithika/vision/vision3/best/test_colonial/zones/colonial_north_v1.json
+zone coords scaled from 720x480 to 720x480 (x1.000, y1.000)
+road zone active: vehicles outside it are dropped
+sidewalk zone active: vehicles inside it are dropped
+Loading microsoft/xclip-base-patch32 on cuda ...
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights:   0%|          | 1/591 [00:00<02:45,  3.56it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 2004.20it/s]
+E1 SAHI on: slice 640px overlap 0.2 imgsz 640 roi whole frame people-only=True
+E3 on: speed_rule=True (walk<0.8, ride>2.0 h/s, >= 1.5s) short_rule=True (>= 0.3s, det>=90.0%, wBIC>=0.9) motion_diag=False
+frame 100/107874
+frame 200/107874
+frame 300/107874
+frame 400/107874
+frame 500/107874
+frame 600/107874
+frame 700/107874
+frame 800/107874
+frame 900/107874
+frame 1000/107874
+frame 1100/107874
+frame 1200/107874
+frame 1300/107874
+frame 1400/107874
+frame 1500/107874
+frame 1600/107874
+frame 1700/107874
+frame 1800/107874
+frame 1900/107874
+frame 2000/107874
+frame 2100/107874
+frame 2200/107874
+frame 2300/107874
+frame 2400/107874
+frame 2500/107874
+frame 2600/107874
+frame 2700/107874
+frame 2800/107874
+frame 2900/107874
+frame 3000/107874
+frame 3100/107874
+frame 3200/107874
+frame 3300/107874
+frame 3400/107874
+frame 3500/107874
+frame 3600/107874
+frame 3700/107874
+frame 3800/107874
+frame 3900/107874
+frame 4000/107874
+frame 4100/107874
+frame 4200/107874
+frame 4300/107874
+frame 4400/107874
+frame 4500/107874
+frame 4600/107874
+frame 4700/107874
+frame 4800/107874
+frame 4900/107874
+frame 5000/107874
+frame 5100/107874
+frame 5200/107874
+frame 5300/107874
+frame 5400/107874
+frame 5500/107874
+frame 5600/107874
+frame 5700/107874
+frame 5800/107874
+frame 5900/107874
+frame 6000/107874
+frame 6100/107874
+frame 6200/107874
+frame 6300/107874
+frame 6400/107874
+frame 6500/107874
+frame 6600/107874
+frame 6700/107874
+frame 6800/107874
+frame 6900/107874
+frame 7000/107874
+frame 7100/107874
+frame 7200/107874
+frame 7300/107874
+frame 7400/107874
+frame 7500/107874
+frame 7600/107874
+frame 7700/107874
+frame 7800/107874
+frame 7900/107874
+frame 8000/107874
+frame 8100/107874
+frame 8200/107874
+frame 8300/107874
+frame 8400/107874
+frame 8500/107874
+frame 8600/107874
+frame 8700/107874
+frame 8800/107874
+frame 8900/107874
+frame 9000/107874
+frame 9100/107874
+frame 9200/107874
+frame 9300/107874
+frame 9400/107874
+frame 9500/107874
+frame 9600/107874
+frame 9700/107874
+frame 9800/107874
+frame 9900/107874
+frame 10000/107874
+frame 10100/107874
+frame 10200/107874
+frame 10300/107874
+frame 10400/107874
+frame 10500/107874
+frame 10600/107874
+frame 10700/107874
+frame 10800/107874
+frame 10900/107874
+frame 11000/107874
+frame 11100/107874
+frame 11200/107874
+frame 11300/107874
+frame 11400/107874
+frame 11500/107874
+frame 11600/107874
+frame 11700/107874
+frame 11800/107874
+frame 11900/107874
+frame 12000/107874
+frame 12100/107874
+frame 12200/107874
+frame 12300/107874
+frame 12400/107874
+frame 12500/107874
+frame 12600/107874
+frame 12700/107874
+frame 12800/107874
+frame 12900/107874
+frame 13000/107874
+frame 13100/107874
+frame 13200/107874
+frame 13300/107874
+frame 13400/107874
+frame 13500/107874
+frame 13600/107874
+frame 13700/107874
+frame 13800/107874
+frame 13900/107874
+frame 14000/107874
+frame 14100/107874
+frame 14200/107874
+frame 14300/107874
+frame 14400/107874
+frame 14500/107874
+frame 14600/107874
+frame 14700/107874
+frame 14800/107874
+frame 14900/107874
+frame 15000/107874
+frame 15100/107874
+frame 15200/107874
+frame 15300/107874
+frame 15400/107874
+frame 15500/107874
+frame 15600/107874
+frame 15700/107874
+frame 15800/107874
+frame 15900/107874
+frame 16000/107874
+frame 16100/107874
+frame 16200/107874
+frame 16300/107874
+frame 16400/107874
+frame 16500/107874
+frame 16600/107874
+frame 16700/107874
+frame 16800/107874
+frame 16900/107874
+frame 17000/107874
+frame 17100/107874
+frame 17200/107874
+frame 17300/107874
+frame 17400/107874
+frame 17500/107874
+frame 17600/107874
+frame 17700/107874
+frame 17800/107874
+frame 17900/107874
+frame 18000/107874
+frame 18100/107874
+frame 18200/107874
+frame 18300/107874
+frame 18400/107874
+frame 18500/107874
+frame 18600/107874
+frame 18700/107874
+frame 18800/107874
+frame 18900/107874
+frame 19000/107874
+frame 19100/107874
+frame 19200/107874
+frame 19300/107874
+frame 19400/107874
+frame 19500/107874
+frame 19600/107874
+frame 19700/107874
+frame 19800/107874
+frame 19900/107874
+frame 20000/107874
+frame 20100/107874
+frame 20200/107874
+frame 20300/107874
+frame 20400/107874
+frame 20500/107874
+frame 20600/107874
+frame 20700/107874
+frame 20800/107874
+frame 20900/107874
+frame 21000/107874
+frame 21100/107874
+frame 21200/107874
+frame 21300/107874
+frame 21400/107874
+frame 21500/107874
+frame 21600/107874
+frame 21700/107874
+frame 21800/107874
+frame 21900/107874
+frame 22000/107874
+frame 22100/107874
+frame 22200/107874
+frame 22300/107874
+frame 22400/107874
+frame 22500/107874
+frame 22600/107874
+frame 22700/107874
+frame 22800/107874
+frame 22900/107874
+frame 23000/107874
+frame 23100/107874
+frame 23200/107874
+frame 23300/107874
+frame 23400/107874
+frame 23500/107874
+frame 23600/107874
+frame 23700/107874
+frame 23800/107874
+frame 23900/107874
+frame 24000/107874
+frame 24100/107874
+frame 24200/107874
+frame 24300/107874
+frame 24400/107874
+frame 24500/107874
+frame 24600/107874
+frame 24700/107874
+frame 24800/107874
+frame 24900/107874
+frame 25000/107874
+frame 25100/107874
+frame 25200/107874
+frame 25300/107874
+frame 25400/107874
+frame 25500/107874
+frame 25600/107874
+frame 25700/107874
+frame 25800/107874
+frame 25900/107874
+frame 26000/107874
+frame 26100/107874
+frame 26200/107874
+frame 26300/107874
+frame 26400/107874
+frame 26500/107874
+frame 26600/107874
+frame 26700/107874
+frame 26800/107874
+frame 26900/107874
+rendering remaining annotated clips ...
+clip written: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/annotated/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023/b4_combo_disp5__night_2200-2215__sahi640+speedrule-lateral+shortrule-night+detfuse__20190710.mp4
+streamed bins: []; bins whose streamed header differs from the final counts: none
+
+=== person tracks (after id stitching) ===
+track | frames | secs | scores | first-last frame | mean conf | mean box h | plain BIC | plain PED | wtd BIC | wtd PED | %scores bic>=.9 | %det=cyclist | FINAL LABEL
+    1 |     10 |  0.3 |      2 |     1416-1434 | 0.34 |     34 | 0.17 | 0.83 | 0.17 | 0.83 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+    2 |      5 |  0.2 |      0 | never scored | 0.44 |     35 | | | 0% | (unscored, not counted)
+    3 |      1 |  0.0 |      0 | never scored | 0.95 |     65 | | | 100% | (unscored, not counted)
+    4 |     10 |  0.3 |      2 |     3639-3643 | 0.44 |     33 | 0.10 | 0.90 | 0.10 | 0.90 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+    5 |     36 |  1.2 |     20 |     4205-4717 | 0.37 |     36 | 0.30 | 0.70 | 0.30 | 0.70 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+    6 |      3 |  0.1 |      0 | never scored | 0.61 |     47 | | | 100% | (unscored, not counted)
+    8 |     11 |  0.4 |      3 |     6019-6088 | 0.38 |     34 | 0.25 | 0.75 | 0.25 | 0.75 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+    9 |      8 |  0.3 |      1 |     6459-6459 | 0.44 |     34 | 0.15 | 0.85 | 0.15 | 0.85 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   10 |     25 |  0.8 |     12 |     6699-6871 | 0.38 |     37 | 0.22 | 0.78 | 0.22 | 0.78 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   11 |     12 |  0.4 |      4 |     7115-7201 | 0.46 |     38 | 0.36 | 0.64 | 0.36 | 0.64 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   13 |     25 |  0.8 |     13 |     7833-8088 | 0.38 |     37 | 0.17 | 0.83 | 0.17 | 0.83 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   14 |     17 |  0.6 |      7 |     8454-8518 | 0.42 |     34 | 0.19 | 0.81 | 0.19 | 0.81 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   15 |      1 |  0.0 |      0 | never scored | 0.35 |     35 | | | 0% | (unscored, not counted)
+   16 |     10 |  0.3 |      3 |     9746-9814 | 0.33 |     33 | 0.18 | 0.82 | 0.18 | 0.82 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   17 |      8 |  0.3 |      1 |   10383-10383 | 0.42 |     33 | 0.30 | 0.70 | 0.30 | 0.70 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   18 |    314 | 10.5 |    106 |   10818-11167 | 0.74 |     75 | 0.31 | 0.69 | 0.29 | 0.71 | 0% | 25% | PEDESTRIAN
+   20 |     28 |  0.9 |     12 |   11195-11400 | 0.41 |     40 | 0.29 | 0.71 | 0.28 | 0.72 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   21 |      7 |  0.2 |      0 | never scored | 0.37 |     41 | | | 0% | (unscored, not counted)
+   22 |     38 |  1.3 |     18 |   12789-12963 | 0.51 |     35 | 0.19 | 0.81 | 0.19 | 0.81 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   23 |      6 |  0.2 |      0 | never scored | 0.30 |     33 | | | 0% | (unscored, not counted)
+   24 |    149 |  5.0 |     85 |   14163-15177 | 0.43 |     33 | 0.31 | 0.69 | 0.31 | 0.69 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   26 |    114 |  3.8 |     66 |   15382-16177 | 0.44 |     34 | 0.26 | 0.74 | 0.26 | 0.74 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   27 |    561 | 18.7 |    239 |   16423-18414 | 0.60 |     59 | 0.26 | 0.74 | 0.23 | 0.77 | 0% | 32% | PEDESTRIAN
+   31 |     31 |  1.0 |     12 |   18395-18638 | 0.38 |     35 | 0.28 | 0.72 | 0.28 | 0.72 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   33 |    449 | 15.0 |    182 |   19305-20297 | 0.54 |     61 | 0.33 | 0.67 | 0.35 | 0.65 | 0% | 43% | PEDESTRIAN
+   35 |      3 |  0.1 |      0 | never scored | 0.35 |     23 | | | 0% | (unscored, not counted)
+   36 |    175 |  5.8 |     63 |   20005-20235 | 0.61 |     87 | 0.05 | 0.95 | 0.05 | 0.95 | 0% | 28% | PEDESTRIAN
+   40 |    115 |  3.8 |     39 |   20174-20305 | 0.64 |     81 | 0.17 | 0.83 | 0.15 | 0.85 | 0% | 77% | PEDESTRIAN
+   43 |      7 |  0.2 |      0 | never scored | 0.39 |     34 | | | 0% | (unscored, not counted)
+   45 |     20 |  0.7 |      9 |   20791-21022 | 0.42 |     36 | 0.26 | 0.74 | 0.26 | 0.74 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   46 |     38 |  1.3 |     16 |   21257-21433 | 0.45 |     34 | 0.28 | 0.72 | 0.27 | 0.73 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   47 |     14 |  0.5 |      5 |   22079-22161 | 0.37 |     36 | 0.30 | 0.70 | 0.29 | 0.71 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   49 |     62 |  2.1 |     38 |   22660-23085 | 0.42 |     35 | 0.29 | 0.71 | 0.29 | 0.71 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   50 |     79 |  2.6 |     46 |   23493-24269 | 0.42 |     34 | 0.25 | 0.75 | 0.25 | 0.75 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+   52 |      6 |  0.2 |      0 | never scored | 0.32 |     35 | | | 0% | (unscored, not counted)
+Per-track quality stats (persons + vehicles): /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023_track_stats.csv
+
+Raw detector detections by class (conf>=0.25): {'car': 70758, 'person': 3101, 'cyclist': 1255, 'truck': 1623, 'bus': 8, 'other_vehicle': 15}
+Stitched raw->canonical merges: 17
+Final counts: bicyclists=0 pedestrians=5 vehicles=345
+Annotated clips (1): /orange/xiangyan/rithika/vision/vision3/best/test_colonial/annotated/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023
+Scores: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023_scores.csv
+Trajectories: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023_trajectories.csv
+Track motion: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023_track_motion.csv
+Split candidates: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023_split_candidates.csv (3 pairs; 0 would pass the 3 s minimum only if joined)
+Counted tracks by (X-CLIP label, direction): {('PEDESTRIAN', 'moving_right'): 4, ('PEDESTRIAN', 'toward_camera'): 1}
+Rules audit: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023_rules_audit.csv
+Bin counts: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023_bin_counts.csv
+Tracks: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023_tracks.csv
+Run log: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/logs/b4_combo_disp5/Standard_SCU8OG_2019-07-10_0000.023_run_log.json
+Runtime: 2511.1 s

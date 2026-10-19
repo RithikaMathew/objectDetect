@@ -1,0 +1,2 @@
+video_folder,date,site,pipeline,ground_truth,error,pct_error,chunks_done,chunks_total
+BL Colonial,2019-07-10,Colonial North,1445,89,1356,1523.5955056179776,48,48

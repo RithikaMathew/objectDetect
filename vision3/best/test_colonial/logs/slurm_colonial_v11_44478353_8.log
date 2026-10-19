@@ -1,0 +1,60 @@
+NOTE: no zones file (/orange/xiangyan/rithika/vision/vision3/best/test_colonial/zones/colonial_north.json) -> bike-lane/sidewalk split will be 'unassigned'
+chunk=008 run=smoke1 video=/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.008.mp4
+/orange/xiangyan/rithika/vision/vision3/best/test_colonial/code/xclip_overlay_v11_colonial.py:413: FutureWarning: The `ByteTrack` was deprecated since v0.28.0. It will be removed in v0.31.0.
+  return sv.ByteTrack(track_activation_threshold=args.track_thr,
+chunk 8: clip starts 2019-07-10 07:00:00  bins 28..31  fps=29.970  720x480
+detector classes: {0: 'bus', 1: 'car', 2: 'cyclist', 3: 'other_vehicle', 4: 'person', 5: 'truck'}
+ people=[2, 4] vehicles=[0, 1, 3, 5]
+Loading microsoft/xclip-base-patch32 on cuda ...
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights:   0%|          | 1/591 [00:00<03:57,  2.49it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 1378.94it/s]
+frame 100/107878
+frame 200/107878
+frame 300/107878
+frame 400/107878
+frame 500/107878
+frame 600/107878
+frame 700/107878
+frame 800/107878
+frame 900/107878
+frame 1000/107878
+frame 1100/107878
+frame 1200/107878
+frame 1300/107878
+frame 1400/107878
+frame 1500/107878
+frame 1600/107878
+frame 1700/107878
+frame 1800/107878
+frame 1900/107878
+frame 2000/107878
+frame 2100/107878
+frame 2200/107878
+frame 2300/107878
+frame 2400/107878
+frame 2500/107878
+frame 2600/107878
+frame 2700/107878
+frame 2800/107878
+frame 2900/107878
+frame 3000/107878
+frame 3100/107878
+frame 3200/107878
+frame 3300/107878
+frame 3400/107878
+frame 3500/107878
+frame 3600/107878
+rendering annotated clips, one per bin (pass 2) ...
+
+=== person tracks (after id stitching) ===
+track | frames | secs | scores | first-last frame | mean conf | mean box h | plain BIC | plain PED | wtd BIC | wtd PED | %scores bic>=.9 | %det=cyclist | FINAL LABEL
+Per-track quality stats (persons + vehicles): /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/smoke1/Standard_SCU8OG_2019-07-10_0000.008_track_stats.csv
+
+Raw detector detections by class (conf>=0.25): {'car': 2706, 'person': 15, 'truck': 34, 'other_vehicle': 4, 'bus': 2}
+Stitched raw->canonical merges: 0
+Final counts: bicyclists=0 pedestrians=0 vehicles=26
+Annotated clips (1): /orange/xiangyan/rithika/vision/vision3/best/test_colonial/annotated/smoke1/Standard_SCU8OG_2019-07-10_0000.008
+Scores: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/smoke1/Standard_SCU8OG_2019-07-10_0000.008_scores.csv
+Bin counts: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/smoke1/Standard_SCU8OG_2019-07-10_0000.008_bin_counts.csv
+Tracks: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/smoke1/Standard_SCU8OG_2019-07-10_0000.008_tracks.csv
+Run log: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/logs/smoke1/Standard_SCU8OG_2019-07-10_0000.008_run_log.json
+Runtime: 271.5 s

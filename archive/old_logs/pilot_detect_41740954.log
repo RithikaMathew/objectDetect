@@ -1,0 +1,7 @@
+Processed 16184 sampled frames x 4 tiles each (80919 raw frames, capped at 2700s) in 2119.6s
+That's ~0.13s per sampled frame (all tiles combined)
+Min hits to count as real (~1.0s of persistence): 6
+Tracked objects by class: {'truck': 48, 'bus': 2, 'car': 13, 'person': 7}
+Dropped 2705 short-lived tracks (likely false positives or lost tracks)
+Dropped 645 individual detections for showing no real motion (static texture)
+Annotated video saved to pilot_output/pilot_run/annotated.mp4

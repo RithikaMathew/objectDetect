@@ -1,0 +1,7 @@
+WARNING ⚠️ NMS time limit 2.050s exceeded
+Processed 10790 sampled frames x 4 tiles each (53946 raw frames, capped at 1800s) in 1574.5s
+That's ~0.15s per sampled frame (all tiles combined)
+Min hits to count as real (~1.0s of persistence): 6
+Tracked objects by class: {'person': 181, 'car': 40, 'truck': 53, 'bus': 16}
+Dropped 3244 short-lived tracks (likely false positives or lost tracks)
+Annotated video saved to pilot_output/pilot_run/annotated.mp4

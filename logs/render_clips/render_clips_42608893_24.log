@@ -1,0 +1,34 @@
+=== clip 24 / 34 ===
+video : pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.044.mp4
+window: 1063.23s - 1074.07s
+track : COUNTED #7487 cyclist hits=22 maxc=0.750 meanc=0.280 exc=9.13
+
+
+Rendered 65 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.044_window_1063_1074 ===
+weights=yolov8l.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+65 sampled frames, inference 13.8s (0.21s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, '_default': 6}
+
+Raw tracks: 76  ->  after merge: 59  (17 absorbed)
+COUNTED TRACKS BY CLASS: {'cyclist': 1, 'person': 1}
+Rejected tracks: {'low_max_conf': 21, 'too_few_hits': 36}
+
+Funnel CSV : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.044_window_1063_1074_funnel.csv
+Tracks CSV : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.044_window_1063_1074_tracks.csv
+Video      : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.044_window_1063_1074_annotated_h264.mp4   <-- download this one
+
+1 cyclist track(s):
+  #27  t=1065.7-1071.6s  hits=22  max_conf=0.75  mean_conf=0.28  travelled=9.1 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #46 person    t=1069.9-1073.9s  rejected: max_conf 0.47<0.5, mean_conf 0.13<0.2
+  #50 person    t=1070.6-1072.9s  rejected: max_conf 0.34<0.5, mean_conf 0.13<0.2
+  #24 person    t=1065.2-1069.1s  rejected: max_conf 0.21<0.5, mean_conf 0.11<0.2
+  #12 person    t=1064.2-1067.4s  rejected: max_conf 0.09<0.5, mean_conf 0.07<0.2
+  #2 person    t=1063.2-1063.9s  rejected: max_conf 0.24<0.5, mean_conf 0.13<0.2
+  #58 person    t=1071.1-1073.7s  rejected: max_conf 0.18<0.5, mean_conf 0.10<0.2, excursion 0.72<0.75
+  #1 person    t=1063.2-1064.9s  rejected: max_conf 0.40<0.5, mean_conf 0.18<0.2, excursion 0.52<0.75
+  #14 person    t=1064.2-1065.6s  rejected: max_conf 0.13<0.5, mean_conf 0.07<0.2

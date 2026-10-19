@@ -1,0 +1,59 @@
+# Huge data and environment directories
+yolo_env/
+pilot_clips/
+dataset_frames/
+site_samples/
+pilot_output/
+runs/
+
+# Model weights
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.engine
+
+# Videos and images
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.webp
+
+# Large archives
+*.zip
+*.tar
+*.gz
+*.tgz
+*.7z
+*.rar
+
+# Binary arrays and data
+*.npy
+*.npz
+*.parquet
+*.h5
+*.hdf5
+*.db
+*.sqlite
+
+# Python caches
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+wandb/
+.cache/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key

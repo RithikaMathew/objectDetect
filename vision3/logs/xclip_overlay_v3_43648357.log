@@ -1,0 +1,77 @@
+/orange/xiangyan/rithika/vision/vision3/xclip_overlay_v3.py:194: FutureWarning: The `ByteTrack` was deprecated since v0.28.0. It will be removed in v0.31.0.
+  return sv.ByteTrack(track_activation_threshold=args.track_thr,
+detector classes: {0: 'bus', 1: 'car', 2: 'cyclist', 3: 'other_vehicle', 4: 'person', 5: 'truck'}
+ people=[2, 4] vehicles=[0, 1, 3, 5]
+Loading microsoft/xclip-base-patch32 on cuda ...
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights:   0%|          | 1/591 [00:00<02:51,  3.45it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 1917.81it/s]
+frame 100/5694
+frame 200/5694
+frame 300/5694
+frame 400/5694
+frame 500/5694
+frame 600/5694
+frame 700/5694
+frame 800/5694
+frame 900/5694
+frame 1000/5694
+frame 1100/5694
+frame 1200/5694
+frame 1300/5694
+frame 1400/5694
+frame 1500/5694
+frame 1600/5694
+frame 1700/5694
+frame 1800/5694
+frame 1900/5694
+frame 2000/5694
+frame 2100/5694
+frame 2200/5694
+frame 2300/5694
+frame 2400/5694
+frame 2500/5694
+frame 2600/5694
+frame 2700/5694
+frame 2800/5694
+frame 2900/5694
+frame 3000/5694
+frame 3100/5694
+frame 3200/5694
+frame 3300/5694
+frame 3400/5694
+frame 3500/5694
+frame 3600/5694
+frame 3700/5694
+frame 3800/5694
+frame 3900/5694
+frame 4000/5694
+frame 4100/5694
+frame 4200/5694
+frame 4300/5694
+frame 4400/5694
+frame 4500/5694
+frame 4600/5694
+frame 4700/5694
+frame 4800/5694
+frame 4900/5694
+frame 5000/5694
+frame 5100/5694
+frame 5200/5694
+frame 5300/5694
+frame 5400/5694
+frame 5500/5694
+frame 5600/5694
+
+=== person tracks (after id stitching) ===
+track | frames | scores | mean BICYCLIST | mean PEDESTRIAN | %frames det=cyclist
+    1 |    149 |     57 | 0.64 | 0.36 | 43%
+    4 |      8 |      1 | 0.09 | 0.91 | 0%
+    5 |    432 |    151 | 0.12 | 0.88 | 7%
+    6 |     15 |      5 | 0.03 | 0.97 | 47%
+    8 |     31 |      8 | 0.45 | 0.55 | 23%
+    9 |    172 |     63 | 0.20 | 0.80 | 0%
+
+Raw detector detections by class (conf>=0.25): {'car': 25147, 'truck': 155, 'other_vehicle': 150, 'person': 904, 'cyclist': 223, 'bus': 18}
+Stitched raw->canonical merges: 4
+Final counts: bicyclists=1 pedestrians=5 vehicles=236
+Video: pilot_output/compare_v4/xclip_overlay_rtdetr_v2_overtriggers/overlay.mp4
+Scores: pilot_output/compare_v4/xclip_overlay_rtdetr_v2_overtriggers/overlay_scores.csv

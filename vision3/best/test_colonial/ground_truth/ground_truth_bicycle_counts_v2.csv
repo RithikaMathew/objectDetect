@@ -1,0 +1,203 @@
+site,date,source_file,channel_label,direction,facility_type,movement,count
+Alafaya East,2019-04-24,Alafaya_East_673521_04-24-2019.xls,Alafaya East Bike Lane,Southbound,bike_lane,Facing,5
+Alafaya East,2019-04-24,Alafaya_East_673521_04-24-2019.xls,Alafaya East Sidewalk,Southbound,sidewalk,Facing,99
+Alafaya East,2019-04-24,Alafaya_East_673521_04-24-2019.xls,Alafaya East Bike Lane,Northbound,bike_lane,Facing,42
+Alafaya East,2019-04-24,Alafaya_East_673521_04-24-2019.xls,Alafaya East Sidewalk,Northbound,sidewalk,Facing,99
+Alafaya West,2019-04-17,Alafaya_West_673519_04-17-2019.xls,Alafaya West Bike Lane,Southbound,bike_lane,Facing,59
+Alafaya West,2019-04-17,Alafaya_West_673519_04-17-2019.xls,Alafaya West Sidewalk,Southbound,sidewalk,Facing,83
+Alafaya West,2019-04-17,Alafaya_West_673519_04-17-2019.xls,Alafaya West Bike Lane,Northbound,bike_lane,Facing,12
+Alafaya West,2019-04-17,Alafaya_West_673519_04-17-2019.xls,Alafaya West Sidewalk,Northbound,sidewalk,Facing,97
+Aloma Path,2019-10-30,Aloma_Path_716686_10-30-2019.xls,Path,Southbound,path,undetermined,105
+Aloma Path,2019-10-30,Aloma_Path_716686_10-30-2019.xls,Path,Northbound,path,undetermined,86
+Aloma Sidewalk,2019-10-30,Aloma_Sidewalk_716692_10-30-2019.xls,Sidewalk,Southbound,sidewalk,undetermined,6
+Aloma Sidewalk,2019-10-30,Aloma_Sidewalk_716692_10-30-2019.xls,Sidewalk,Northbound,sidewalk,undetermined,13
+Baxter,2019-09-18,Baxter_697165_09-18-2019.xls,EB Travel Lane,Westbound,travel_lane,Facing,0
+Baxter,2019-09-18,Baxter_697165_09-18-2019.xls,WB Travel Lane,Westbound,travel_lane,With,29
+Baxter,2019-09-18,Baxter_697165_09-18-2019.xls,EB Travel Lane,Eastbound,travel_lane,With,6
+Baxter,2019-09-18,Baxter_697165_09-18-2019.xls,WB Travel Lane,Eastbound,travel_lane,Facing,0
+Carroll NBL,2019-09-10,Carroll_NBL_693689_09-10-2019.xls,EB Travel Lane,Westbound,travel_lane,Facing,4
+Carroll NBL,2019-09-10,Carroll_NBL_693689_09-10-2019.xls,WB Travel Lane,Westbound,travel_lane,With,9
+Carroll NBL,2019-09-10,Carroll_NBL_693689_09-10-2019.xls,EB Travel Lane,Eastbound,travel_lane,With,18
+Carroll NBL,2019-09-10,Carroll_NBL_693689_09-10-2019.xls,WB Travel Lane,Eastbound,travel_lane,Facing,0
+Clay Ave,2019-07-31,Clay_Ave._682520_07-31-2019.xls,NB Sidewalk,Southbound,sidewalk,Facing,6
+Clay Ave,2019-07-31,Clay_Ave._682520_07-31-2019.xls,NB Travel Lane,Southbound,travel_lane,Facing,0
+Clay Ave,2019-07-31,Clay_Ave._682520_07-31-2019.xls,SB Sidewalk,Southbound,sidewalk,With,6
+Clay Ave,2019-07-31,Clay_Ave._682520_07-31-2019.xls,SB Travel Lane,Southbound,travel_lane,With,4
+Clay Ave,2019-07-31,Clay_Ave._682520_07-31-2019.xls,NB Sidewalk,Northbound,sidewalk,With,6
+Clay Ave,2019-07-31,Clay_Ave._682520_07-31-2019.xls,NB Travel Lane,Northbound,travel_lane,With,3
+Clay Ave,2019-07-31,Clay_Ave._682520_07-31-2019.xls,SB Sidewalk,Northbound,sidewalk,Facing,1
+Clay Ave,2019-07-31,Clay_Ave._682520_07-31-2019.xls,SB Travel Lane,Northbound,travel_lane,Facing,0
+Colonial North,2019-07-10,Colonial_North_676806_07-10-2019.xls,North Bike Lane,Westbound,bike_lane,Facing,32
+Colonial North,2019-07-10,Colonial_North_676806_07-10-2019.xls,North Sidewalk,Westbound,sidewalk,Facing,26
+Colonial North,2019-07-10,Colonial_North_676806_07-10-2019.xls,North Bike Lane,Eastbound,bike_lane,Facing,15
+Colonial North,2019-07-10,Colonial_North_676806_07-10-2019.xls,North Sidewalk,Eastbound,sidewalk,Facing,16
+Colonial South,2019-07-16,Colonial_South_679216_07-16-2019.xls,Bike Lane South,Westbound,bike_lane,Facing,8
+Colonial South,2019-07-16,Colonial_South_679216_07-16-2019.xls,Sidewalk South,Westbound,sidewalk,Facing,33
+Colonial South,2019-07-16,Colonial_South_679216_07-16-2019.xls,Bike Lane South,Eastbound,bike_lane,Facing,40
+Colonial South,2019-07-16,Colonial_South_679216_07-16-2019.xls,Sidewalk South,Eastbound,sidewalk,Facing,46
+Columbia Ave,2019-09-10,Columbia_Ave_693688_09-10-2019.xls,EB Bike Lane,Westbound,bike_lane,Facing,6
+Columbia Ave,2019-09-10,Columbia_Ave_693688_09-10-2019.xls,EB Sidewalk,Westbound,sidewalk,Facing,54
+Columbia Ave,2019-09-10,Columbia_Ave_693688_09-10-2019.xls,WB Bike Lane,Westbound,bike_lane,With,11
+Columbia Ave,2019-09-10,Columbia_Ave_693688_09-10-2019.xls,WB Sidewalk,Westbound,sidewalk,With,59
+Columbia Ave,2019-09-10,Columbia_Ave_693688_09-10-2019.xls,EB Bike Lane,Eastbound,bike_lane,With,19
+Columbia Ave,2019-09-10,Columbia_Ave_693688_09-10-2019.xls,EB Sidewalk,Eastbound,sidewalk,With,62
+Columbia Ave,2019-09-10,Columbia_Ave_693688_09-10-2019.xls,WB Bike Lane,Eastbound,bike_lane,Facing,2
+Columbia Ave,2019-09-10,Columbia_Ave_693688_09-10-2019.xls,WB Sidewalk,Eastbound,sidewalk,Facing,30
+Curry Ford North,2019-05-15,Curry_Ford_North_674521_05-15-2019.xls,Sidewalk WB,Westbound,sidewalk,With,42
+Curry Ford North,2019-05-15,Curry_Ford_North_674521_05-15-2019.xls,Travel Lane WB,Westbound,travel_lane,With,2
+Curry Ford North,2019-05-15,Curry_Ford_North_674521_05-15-2019.xls,Sidewalk WB,Eastbound,sidewalk,Facing,21
+Curry Ford North,2019-05-15,Curry_Ford_North_674521_05-15-2019.xls,Travel Lane WB,Eastbound,travel_lane,Facing,0
+Curry Ford North,2019-05-15,Curry_Ford_North_674521_05-15-2019.xls,Sidewalk EB,Westbound,sidewalk,Facing,26
+Curry Ford North,2019-05-15,Curry_Ford_North_674521_05-15-2019.xls,Travel Lane EB,Westbound,travel_lane,Facing,0
+Curry Ford North,2019-05-15,Curry_Ford_North_674521_05-15-2019.xls,Sidewalk EB,Eastbound,sidewalk,With,31
+Curry Ford North,2019-05-15,Curry_Ford_North_674521_05-15-2019.xls,Travel Lane EB,Eastbound,travel_lane,With,2
+Curry Ford South,2019-05-08,Curry_Ford_South_674520_05-08-2019.xls,Sidewalk EB,Westbound,sidewalk,Facing,26
+Curry Ford South,2019-05-08,Curry_Ford_South_674520_05-08-2019.xls,Travel Lane EB,Westbound,travel_lane,Facing,3
+Curry Ford South,2019-05-08,Curry_Ford_South_674520_05-08-2019.xls,Sidewalk EB,Eastbound,sidewalk,With,31
+Curry Ford South,2019-05-08,Curry_Ford_South_674520_05-08-2019.xls,Travel Lane EB,Eastbound,travel_lane,With,2
+Daniels Path,2019-10-23,Daniels_Path_713788_10-23-2019.xls,Path,Southbound,path,undetermined,7
+Daniels Path,2019-10-23,Daniels_Path_713788_10-23-2019.xls,Path,Northbound,path,undetermined,4
+Daniels Sidewalk,2019-10-23,Daniels_Sidewalk_713790_10-23-2019.xls,Sidewalk,Southbound,sidewalk,undetermined,7
+Daniels Sidewalk,2019-10-23,Daniels_Sidewalk_713790_10-23-2019.xls,Sidewalk,Northbound,sidewalk,undetermined,5
+Edgewater,2019-08-07,Edgewater_683772_08-07-2019.xls,NB Bike Lane,Southbound,bike_lane,Facing,10
+Edgewater,2019-08-07,Edgewater_683772_08-07-2019.xls,NB Sidewalk,Southbound,sidewalk,Facing,14
+Edgewater,2019-08-07,Edgewater_683772_08-07-2019.xls,SB Bike Lane,Southbound,bike_lane,With,70
+Edgewater,2019-08-07,Edgewater_683772_08-07-2019.xls,SB Sidewalk,Southbound,sidewalk,With,8
+Edgewater,2019-08-07,Edgewater_683772_08-07-2019.xls,NB Bike Lane,Northbound,bike_lane,With,76
+Edgewater,2019-08-07,Edgewater_683772_08-07-2019.xls,NB Sidewalk,Northbound,sidewalk,With,26
+Edgewater,2019-08-07,Edgewater_683772_08-07-2019.xls,SB Bike Lane,Northbound,bike_lane,Facing,12
+Edgewater,2019-08-07,Edgewater_683772_08-07-2019.xls,SB Sidewalk,Northbound,sidewalk,Facing,12
+Edgewater N,2019-09-18,Edgewater_N_697168_09-18-2019.xls,NB Bike Lane,Southbound,bike_lane,Facing,8
+Edgewater N,2019-09-18,Edgewater_N_697168_09-18-2019.xls,SB Bike Lane,Southbound,bike_lane,With,98
+Edgewater N,2019-09-18,Edgewater_N_697168_09-18-2019.xls,NB Bike Lane,Northbound,bike_lane,With,79
+Edgewater N,2019-09-18,Edgewater_N_697168_09-18-2019.xls,SB Bike Lane,Northbound,bike_lane,Facing,15
+Glenridge,2019-06-26,Glenridge_674477_06-26-2019.xls,Bike Lane EB,Westbound,bike_lane,Facing,0
+Glenridge,2019-06-26,Glenridge_674477_06-26-2019.xls,Bike Lane WB,Westbound,bike_lane,With,27
+Glenridge,2019-06-26,Glenridge_674477_06-26-2019.xls,Sidewalk EB,Westbound,sidewalk,Facing,2
+Glenridge,2019-06-26,Glenridge_674477_06-26-2019.xls,Sidewalk WB,Westbound,sidewalk,With,35
+Glenridge,2019-06-26,Glenridge_674477_06-26-2019.xls,Bike Lane EB,Eastbound,bike_lane,With,51
+Glenridge,2019-06-26,Glenridge_674477_06-26-2019.xls,Bike Lane WB,Eastbound,bike_lane,Facing,1
+Glenridge,2019-06-26,Glenridge_674477_06-26-2019.xls,Sidewalk EB,Eastbound,sidewalk,With,4
+Glenridge,2019-06-26,Glenridge_674477_06-26-2019.xls,Sidewalk WB,Eastbound,sidewalk,Facing,31
+Kaley,2019-06-26,Kaley_674479_06-26-2019.xls,Sidewalk EB,Westbound,sidewalk,Facing,6
+Kaley,2019-06-26,Kaley_674479_06-26-2019.xls,Sidewalk WB,Westbound,sidewalk,With,7
+Kaley,2019-06-26,Kaley_674479_06-26-2019.xls,Travel Lane EB,Westbound,travel_lane,Facing,1
+Kaley,2019-06-26,Kaley_674479_06-26-2019.xls,Travel Lane WB,Westbound,travel_lane,With,7
+Kaley,2019-06-26,Kaley_674479_06-26-2019.xls,Sidewalk EB,Eastbound,sidewalk,With,8
+Kaley,2019-06-26,Kaley_674479_06-26-2019.xls,Sidewalk WB,Eastbound,sidewalk,Facing,4
+Kaley,2019-06-26,Kaley_674479_06-26-2019.xls,Travel Lane EB,Eastbound,travel_lane,With,2
+Kaley,2019-06-26,Kaley_674479_06-26-2019.xls,Travel Lane WB,Eastbound,travel_lane,Facing,1
+Lakemont Pathway,2019-05-01,Lakemont_Pathway_655478_05-01-2019.xls,Lakemont BL NB,Southbound,bike_lane,Facing,5
+Lakemont Pathway,2019-05-01,Lakemont_Pathway_655478_05-01-2019.xls,Lakemont BL SB,Southbound,bike_lane,With,51
+Lakemont Pathway,2019-05-01,Lakemont_Pathway_655478_05-01-2019.xls,Lakemont SW NB,Southbound,sidewalk,Facing,18
+Lakemont Pathway,2019-05-01,Lakemont_Pathway_655478_05-01-2019.xls,Lakemont SW SB,Southbound,sidewalk,With,63
+Lakemont Pathway,2019-05-01,Lakemont_Pathway_655478_05-01-2019.xls,Lakemont BL NB,Northbound,bike_lane,With,57
+Lakemont Pathway,2019-05-01,Lakemont_Pathway_655478_05-01-2019.xls,Lakemont BL SB,Northbound,bike_lane,Facing,0
+Lakemont Pathway,2019-05-01,Lakemont_Pathway_655478_05-01-2019.xls,Lakemont SW NB,Northbound,sidewalk,With,12
+Lakemont Pathway,2019-05-01,Lakemont_Pathway_655478_05-01-2019.xls,Lakemont SW SB,Northbound,sidewalk,Facing,32
+Lee Road N,2019-07-10,Lee_Road_N_676809_07-10-2019.xls,North Sidewalk,Westbound,sidewalk,Facing,41
+Lee Road N,2019-07-10,Lee_Road_N_676809_07-10-2019.xls,North Travel Lane,Westbound,travel_lane,Facing,5
+Lee Road N,2019-07-10,Lee_Road_N_676809_07-10-2019.xls,North Sidewalk,Eastbound,sidewalk,Facing,27
+Lee Road N,2019-07-10,Lee_Road_N_676809_07-10-2019.xls,North Travel Lane,Eastbound,travel_lane,Facing,1
+Lee Road N,2019-07-10,Lee_Road_N_676809_07-10-2019.xls,South Sidewalk,Westbound,sidewalk,Facing,63
+Lee Road N,2019-07-10,Lee_Road_N_676809_07-10-2019.xls,South Travel Lane,Westbound,travel_lane,Facing,0
+Lee Road N,2019-07-10,Lee_Road_N_676809_07-10-2019.xls,South Sidewalk,Eastbound,sidewalk,Facing,72
+Lee Road N,2019-07-10,Lee_Road_N_676809_07-10-2019.xls,South Travel Lane,Eastbound,travel_lane,Facing,0
+Lee Road South,2019-07-16,Lee_Road_South_679215_07-16-2019.xls,South Sidewalk,Westbound,sidewalk,Facing,63
+Lee Road South,2019-07-16,Lee_Road_South_679215_07-16-2019.xls,South Travel Lane,Westbound,travel_lane,Facing,0
+Lee Road South,2019-07-16,Lee_Road_South_679215_07-16-2019.xls,South Sidewalk,Eastbound,sidewalk,Facing,72
+Lee Road South,2019-07-16,Lee_Road_South_679215_07-16-2019.xls,South Travel Lane,Eastbound,travel_lane,Facing,0
+Livingston,2019-05-22,Livingston_673961_05-22-2019.xls,EB Bike Lane,Westbound,bike_lane,Facing,0
+Livingston,2019-05-22,Livingston_673961_05-22-2019.xls,EB Sidewalk,Westbound,sidewalk,Facing,6
+Livingston,2019-05-22,Livingston_673961_05-22-2019.xls,WB Bike Lane,Westbound,bike_lane,With,68
+Livingston,2019-05-22,Livingston_673961_05-22-2019.xls,WB Sidewalk,Westbound,sidewalk,With,6
+Livingston,2019-05-22,Livingston_673961_05-22-2019.xls,EB Bike Lane,Eastbound,bike_lane,With,71
+Livingston,2019-05-22,Livingston_673961_05-22-2019.xls,EB Sidewalk,Eastbound,sidewalk,With,8
+Livingston,2019-05-22,Livingston_673961_05-22-2019.xls,WB Bike Lane,Eastbound,bike_lane,Facing,4
+Livingston,2019-05-22,Livingston_673961_05-22-2019.xls,WB Sidewalk,Eastbound,sidewalk,Facing,7
+N Orange,2019-08-07,N_Orange_683775_08-07-2019.xls,NB Sidewalk,Southbound,sidewalk,Facing,9
+N Orange,2019-08-07,N_Orange_683775_08-07-2019.xls,NB Travel Lane,Southbound,travel_lane,Facing,2
+N Orange,2019-08-07,N_Orange_683775_08-07-2019.xls,SB Sidewalk,Southbound,sidewalk,With,24
+N Orange,2019-08-07,N_Orange_683775_08-07-2019.xls,SB Travel Lane,Southbound,travel_lane,With,39
+N Orange,2019-08-07,N_Orange_683775_08-07-2019.xls,NB Sidewalk,Northbound,sidewalk,With,12
+N Orange,2019-08-07,N_Orange_683775_08-07-2019.xls,NB Travel Lane,Northbound,travel_lane,With,4
+N Orange,2019-08-07,N_Orange_683775_08-07-2019.xls,SB Sidewalk,Northbound,sidewalk,Facing,38
+N Orange,2019-08-07,N_Orange_683775_08-07-2019.xls,SB Travel Lane,Northbound,travel_lane,Facing,2
+Par Street,2019-07-24,Par_Street_680840_07-24-2019.xls,North Bike Lane,Westbound,bike_lane,Facing,17
+Par Street,2019-07-24,Par_Street_680840_07-24-2019.xls,North Sidewalk,Westbound,sidewalk,Facing,10
+Par Street,2019-07-24,Par_Street_680840_07-24-2019.xls,South Bike Lane,Westbound,bike_lane,Facing,0
+Par Street,2019-07-24,Par_Street_680840_07-24-2019.xls,North Bike Lane,Eastbound,bike_lane,Facing,1
+Par Street,2019-07-24,Par_Street_680840_07-24-2019.xls,North Sidewalk,Eastbound,sidewalk,Facing,9
+Par Street,2019-07-24,Par_Street_680840_07-24-2019.xls,South Bike Lane,Eastbound,bike_lane,Facing,8
+Pine Hills BL,2019-08-21,Pine_Hills_BL_687194_08-21-2019.xls,SB Bike Lane,Southbound,bike_lane,With,31
+Pine Hills BL,2019-08-21,Pine_Hills_BL_687194_08-21-2019.xls,SB Sidewalk,Southbound,sidewalk,With,12
+Pine Hills BL,2019-08-21,Pine_Hills_BL_687194_08-21-2019.xls,SB Bike Lane,Northbound,bike_lane,Facing,9
+Pine Hills BL,2019-08-21,Pine_Hills_BL_687194_08-21-2019.xls,SB Sidewalk,Northbound,sidewalk,Facing,18
+Pine Hills BL E,2019-08-28,Pine_Hills_BL_E_690212_08-28-2019.xls,NB Bike Lane,Southbound,bike_lane,Facing,18
+Pine Hills BL E,2019-08-28,Pine_Hills_BL_E_690212_08-28-2019.xls,NB Sidewalk,Southbound,sidewalk,Facing,15
+Pine Hills BL E,2019-08-28,Pine_Hills_BL_E_690212_08-28-2019.xls,NB Bike Lane,Northbound,bike_lane,With,14
+Pine Hills BL E,2019-08-28,Pine_Hills_BL_E_690212_08-28-2019.xls,NB Sidewalk,Northbound,sidewalk,With,20
+Pine Hills BL E,2019-08-28,Pine_Hills_BL_E_690212_08-28-2019.xls,SB Bike Lane,Southbound,bike_lane,With,31
+Pine Hills BL E,2019-08-28,Pine_Hills_BL_E_690212_08-28-2019.xls,SB Sidewalk,Southbound,sidewalk,With,12
+Pine Hills BL E,2019-08-28,Pine_Hills_BL_E_690212_08-28-2019.xls,SB Bike Lane,Northbound,bike_lane,Facing,9
+Pine Hills BL E,2019-08-28,Pine_Hills_BL_E_690212_08-28-2019.xls,SB Sidewalk,Northbound,sidewalk,Facing,18
+Pine Hills NBL,2019-08-21,Pine_Hills_NBL_687195_08-21-2019.xls,SB Sidewalk,Southbound,sidewalk,With,43
+Pine Hills NBL,2019-08-21,Pine_Hills_NBL_687195_08-21-2019.xls,SB Travel Lane,Southbound,travel_lane,With,7
+Pine Hills NBL,2019-08-21,Pine_Hills_NBL_687195_08-21-2019.xls,SB Sidewalk,Northbound,sidewalk,Facing,35
+Pine Hills NBL,2019-08-21,Pine_Hills_NBL_687195_08-21-2019.xls,SB Travel Lane,Northbound,travel_lane,Facing,3
+Pine Hils NBL E,2019-08-28,Pine_Hils_NBL_E_690206_08-28-2019.xls,NB Sidewalk,Southbound,sidewalk,Facing,37
+Pine Hils NBL E,2019-08-28,Pine_Hils_NBL_E_690206_08-28-2019.xls,NB Travel Lane,Southbound,travel_lane,Facing,0
+Pine Hils NBL E,2019-08-28,Pine_Hils_NBL_E_690206_08-28-2019.xls,NB Sidewalk,Northbound,sidewalk,With,45
+Pine Hils NBL E,2019-08-28,Pine_Hils_NBL_E_690206_08-28-2019.xls,NB Travel Lane,Northbound,travel_lane,With,1
+Pine Hils NBL E,2019-08-28,Pine_Hils_NBL_E_690206_08-28-2019.xls,SB Sidewalk,Southbound,sidewalk,With,123
+Pine Hils NBL E,2019-08-28,Pine_Hils_NBL_E_690206_08-28-2019.xls,SB Travel Lane,Southbound,travel_lane,With,5
+Pine Hils NBL E,2019-08-28,Pine_Hils_NBL_E_690206_08-28-2019.xls,SB Sidewalk,Northbound,sidewalk,Facing,106
+Pine Hils NBL E,2019-08-28,Pine_Hils_NBL_E_690206_08-28-2019.xls,SB Travel Lane,Northbound,travel_lane,Facing,0
+Pleasant Hill Path,2019-11-12,Pleasant_Hill_Path_723248_11-12-2019.xls,Path,Southbound,path,undetermined,31
+Pleasant Hill Path,2019-11-12,Pleasant_Hill_Path_723248_11-12-2019.xls,Path,Northbound,path,undetermined,25
+Rinehart Path,2019-10-02,Rinehart_Path_704275_10-02-2019.xls,Path,Southbound,path,undetermined,76
+Rinehart Path,2019-10-02,Rinehart_Path_704275_10-02-2019.xls,Path,Northbound,path,undetermined,88
+Rinehart Sidewalk,2019-10-02,Rinehart_Sidewalk_704401_10-02-2019.xls,Sidewalk,Southbound,sidewalk,undetermined,24
+Rinehart Sidewalk,2019-10-02,Rinehart_Sidewalk_704401_10-02-2019.xls,Sidewalk,Northbound,sidewalk,undetermined,18
+S Orange NB,2019-05-15,S_Orange_NB_673994_05-15-2019.xls,S Orange NB Bike Lane,Southbound,bike_lane,Facing,0
+S Orange NB,2019-05-15,S_Orange_NB_673994_05-15-2019.xls,S Orange NB Sidewalk,Southbound,sidewalk,Facing,4
+S Orange NB,2019-05-15,S_Orange_NB_673994_05-15-2019.xls,S Orange NB Bike Lane,Northbound,bike_lane,With,16
+S Orange NB,2019-05-15,S_Orange_NB_673994_05-15-2019.xls,S Orange NB Sidewalk,Northbound,sidewalk,With,5
+S Orange SB,2019-05-08,S_Orange_SB_673992_05-08-2019.xls,S Orange SB Bike Lane,Southbound,bike_lane,With,17
+S Orange SB,2019-05-08,S_Orange_SB_673992_05-08-2019.xls,S Orange SB Sidewalk,Southbound,sidewalk,With,19
+S Orange SB,2019-05-08,S_Orange_SB_673992_05-08-2019.xls,S Orange SB Bike Lane,Northbound,bike_lane,Facing,0
+S Orange SB,2019-05-08,S_Orange_SB_673992_05-08-2019.xls,S Orange SB Sidewalk,Northbound,sidewalk,Facing,18
+Summerlin,2019-05-22,Summerlin_673963_05-22-2019.xls,NB Sidewalk,Southbound,sidewalk,Facing,25
+Summerlin,2019-05-22,Summerlin_673963_05-22-2019.xls,NB Travel Lane,Southbound,travel_lane,Facing,0
+Summerlin,2019-05-22,Summerlin_673963_05-22-2019.xls,SB Sidewalk,Southbound,sidewalk,With,49
+Summerlin,2019-05-22,Summerlin_673963_05-22-2019.xls,SB Travel Lane,Southbound,travel_lane,With,15
+Summerlin,2019-05-22,Summerlin_673963_05-22-2019.xls,NB Sidewalk,Northbound,sidewalk,With,40
+Summerlin,2019-05-22,Summerlin_673963_05-22-2019.xls,NB Travel Lane,Northbound,travel_lane,With,10
+Summerlin,2019-05-22,Summerlin_673963_05-22-2019.xls,SB Sidewalk,Northbound,sidewalk,Facing,27
+Summerlin,2019-05-22,Summerlin_673963_05-22-2019.xls,SB Travel Lane,Northbound,travel_lane,Facing,3
+University North,2019-04-24,University_North_673736_04-24-2019.xls,University N Sidewalk,Westbound,sidewalk,undetermined,46
+University North,2019-04-24,University_North_673736_04-24-2019.xls,University N Travel Lane,Westbound,travel_lane,undetermined,1
+University North,2019-04-24,University_North_673736_04-24-2019.xls,University N Sidewalk,Eastbound,sidewalk,undetermined,48
+University North,2019-04-24,University_North_673736_04-24-2019.xls,University N Travel Lane,Eastbound,travel_lane,undetermined,0
+University SW Speed,2019-09-25,University_SW_Speed_701118_09-25-2019.xls,North Sidewalk,Westbound,sidewalk,Facing,139
+University SW Speed,2019-09-25,University_SW_Speed_701118_09-25-2019.xls,North Sidewalk,Eastbound,sidewalk,Facing,119
+University South,2019-04-17,University_South_673740_04-17-2019.xls,University S Sidewalk,Westbound,sidewalk,undetermined,116
+University South,2019-04-17,University_South_673740_04-17-2019.xls,University S Travel Lane,Westbound,travel_lane,undetermined,6
+University South,2019-04-17,University_South_673740_04-17-2019.xls,University S Sidewalk,Eastbound,sidewalk,undetermined,122
+University South,2019-04-17,University_South_673740_04-17-2019.xls,University S Travel Lane,Eastbound,travel_lane,undetermined,4
+West Orange Path,2019-10-15,West_Orange_Path_710336_10-15-2019.xls,Path,Southbound,path,undetermined,50
+West Orange Path,2019-10-15,West_Orange_Path_710336_10-15-2019.xls,Path,Northbound,path,undetermined,59
+West Orange Sidewalk,2019-10-15,West_Orange_Sidewalk_710337_10-15-2019.xls,Sidewalk,Southbound,sidewalk,undetermined,31
+West Orange Sidewalk,2019-10-15,West_Orange_Sidewalk_710337_10-15-2019.xls,Sidewalk,Northbound,sidewalk,undetermined,16
+Winter Park Rd Speed,2019-09-25,Winter_Park_Rd._Speed_701117_09-25-2019.xls,Travel Lane NB,Southbound,travel_lane,Facing,0
+Winter Park Rd Speed,2019-09-25,Winter_Park_Rd._Speed_701117_09-25-2019.xls,Travel Lane SB,Southbound,travel_lane,With,4
+Winter Park Rd Speed,2019-09-25,Winter_Park_Rd._Speed_701117_09-25-2019.xls,Travel Lane NB,Northbound,travel_lane,With,7
+Winter Park Rd Speed,2019-09-25,Winter_Park_Rd._Speed_701117_09-25-2019.xls,Travel Lane SB,Northbound,travel_lane,Facing,0
+Winter Park Road,2019-05-01,Winter_Park_Road_668087_05-01-2019.xls,NB Sidewalk,Southbound,sidewalk,Facing,14
+Winter Park Road,2019-05-01,Winter_Park_Road_668087_05-01-2019.xls,NB Travel Lane,Southbound,travel_lane,Facing,1
+Winter Park Road,2019-05-01,Winter_Park_Road_668087_05-01-2019.xls,SB Sidewalk,Southbound,sidewalk,With,52
+Winter Park Road,2019-05-01,Winter_Park_Road_668087_05-01-2019.xls,SB Travel Lane,Southbound,travel_lane,With,13
+Winter Park Road,2019-05-01,Winter_Park_Road_668087_05-01-2019.xls,NB Sidewalk,Northbound,sidewalk,With,25
+Winter Park Road,2019-05-01,Winter_Park_Road_668087_05-01-2019.xls,NB Travel Lane,Northbound,travel_lane,With,8
+Winter Park Road,2019-05-01,Winter_Park_Road_668087_05-01-2019.xls,SB Sidewalk,Northbound,sidewalk,Facing,39
+Winter Park Road,2019-05-01,Winter_Park_Road_668087_05-01-2019.xls,SB Travel Lane,Northbound,travel_lane,Facing,3

@@ -1,0 +1,18 @@
+{
+  "note": "Fractional image polygons for BL Colonial. Nudge after one screenshot of chunk .018. Bottom-center of the cyclist box is tested against these.",
+  "majority": 0.85,
+  "zones": [
+    {
+      "name": "sidewalk",
+      "polygon": [[0.00, 0.42], [0.20, 0.40], [0.16, 0.98], [0.00, 0.98]]
+    },
+    {
+      "name": "bike_lane",
+      "polygon": [[0.20, 0.40], [0.36, 0.38], [0.32, 0.98], [0.16, 0.98]]
+    },
+    {
+      "name": "travel_lane",
+      "polygon": [[0.36, 0.38], [1.00, 0.30], [1.00, 0.98], [0.32, 0.98]]
+    }
+  ]
+}

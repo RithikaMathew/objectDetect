@@ -1,0 +1,8 @@
+=== FT review clip 3 / 24 ===
+video : pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.010.mp4
+window: 2890.73s - 3080.73s
+label : FT_REVIEW .010 dense_window n_counted=34 in_window=8
+weights: runs/detect/sixclass_v1_yolov8l/weights/best.pt
+gates: --force-coco-gates
+
+[2026-09-21T23:08:02.520] error: *** JOB 42924654 ON c0602a-s12 CANCELLED AT 2026-09-21T23:08:02 DUE to SIGNAL Terminated ***

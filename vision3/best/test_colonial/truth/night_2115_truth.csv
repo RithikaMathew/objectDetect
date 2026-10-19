@@ -1,0 +1,9 @@
+# NIGHT clip 21:15-21:30 (video position mm:ss). Rithika's truth (2026-10-08): 1 motorcycle + 4 cyclists + 1 pedestrian = 6.
+# Motorcycle is scored as cyclist for now. Three cyclists ride together at 14:21-14:26, so three rows share that time.
+id,start_mmss,end_mmss,class,source,notes
+n1,4:02,4:04,motorcycle,Rithika,motorcycle,
+n2,7:02,7:09,cyclist,Rithika,one bicyclist,
+n3,14:21,14:26,cyclist,Rithika,first of 3 bicyclists together,
+n4,14:21,14:26,cyclist,Rithika,second of 3 bicyclists together,
+n5,14:21,14:26,cyclist,Rithika,third of 3 bicyclists together,
+n6,14:47,14:58,pedestrian,Rithika,pedestrian,

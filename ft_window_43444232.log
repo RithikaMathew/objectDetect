@@ -1,0 +1,611 @@
+=== FT short window QA (3 min only) ===
+chunk: pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4
+window: 377s - 567s  (~190s)
+weights: runs/detect/sixclass_v1_yolov8l/weights/best.pt
+-rw-r--r-- 1 rmathew1 xiangyan 87715898 Sep 20 18:39 runs/detect/sixclass_v1_yolov8l/weights/best.pt
+chunk_hour (camera/override): 17
+outdir: pilot_output/ft_window_v2
+zones: data/zones/colonial.json
+coco union: --also-coco --coco-weights yolov8l.pt
+
+also-coco: yolov8l.pt
+model.names (6): ['person', 'car', 'bus', 'truck', 'cyclist', 'other_vehicle']
+WARNING: all_videos.txt lists hour=22:00 for this chunk, but using chunk_hour=17 (camera OSD / --chunk-hour). Night gate follows chunk_hour.
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  finetuned=True  ft_gates=True  detect_classes=[0, 1, 2, 3, 4, 5]  fuse_cyclist=False  chunk_hour=17  night_gate=True
+  FT cyclist gates: max_conf>=0.6  mean_conf>=0.28  min_s>=1.0  night_mean+=0.07
+WARNING ⚠️ NMS time limit 2.200s exceeded
+Detections CSV : pilot_output/ft_window_v2/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_dets.csv
+
+=== --debug-confirm (cyclist/bicycle/person) ===
+  #1 cyclist      t=377.0-386.2s hits=253/30 max=0.83/0.60 mean=0.12/0.28 exc=5.2 day    REJECT:low_mean_conf
+  #4 person       t=377.0-377.3s hits=9/15 max=0.10/0.55 mean=0.07/0.28 exc=0.1 day    REJECT:too_few_hits
+  #2 person       t=377.0-377.2s hits=5/15 max=0.13/0.55 mean=0.08/0.28 exc=2.4 day    REJECT:too_few_hits
+  #9 person       t=377.1-380.3s hits=10/15 max=0.23/0.55 mean=0.10/0.28 exc=3.4 day    REJECT:too_few_hits
+  #7 person       t=377.1-377.3s hits=4/15 max=0.17/0.55 mean=0.11/0.28 exc=0.1 day    REJECT:too_few_hits
+  #12 person       t=377.3-377.3s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #15 person       t=377.5-378.2s hits=8/15 max=0.07/0.55 mean=0.06/0.28 exc=0.1 day    REJECT:too_few_hits
+  #17 person       t=377.5-378.3s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #20 person       t=377.8-377.8s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #26 person       t=378.3-379.1s hits=10/15 max=0.09/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #24 person       t=378.3-378.3s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #25 person       t=378.4-381.2s hits=38/15 max=0.21/0.55 mean=0.09/0.28 exc=3.7 day    REJECT:low_max_conf
+  #28 person       t=378.6-379.3s hits=5/15 max=0.09/0.55 mean=0.07/0.28 exc=2.6 day    REJECT:too_few_hits
+  #31 person       t=379.0-379.0s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #38 person       t=379.1-380.4s hits=5/15 max=0.13/0.55 mean=0.10/0.28 exc=1.2 day    REJECT:too_few_hits
+  #33 person       t=379.2-380.4s hits=3/15 max=0.06/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #41 person       t=380.4-380.4s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #43 person       t=380.4-380.4s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #44 person       t=380.4-380.4s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #47 person       t=381.0-381.0s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #70 cyclist      t=381.4-384.3s hits=47/30 max=0.89/0.60 mean=0.21/0.28 exc=0.0 day    REJECT:low_mean_conf
+  #51 person       t=381.4-381.4s hits=2/15 max=0.13/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #79 person       t=381.6-392.5s hits=55/15 max=0.17/0.55 mean=0.08/0.28 exc=0.2 day    REJECT:low_max_conf
+  #55 person       t=381.9-381.9s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #56 person       t=382.2-382.2s hits=1/15 max=0.11/0.55 mean=0.11/0.28 exc=0.0 day    REJECT:too_few_hits
+  #122 cyclist      t=382.4-393.1s hits=157/30 max=0.82/0.60 mean=0.19/0.28 exc=6.0 day    REJECT:low_mean_conf
+  #57 cyclist      t=382.4-382.5s hits=3/30 max=0.06/0.60 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #61 person       t=382.5-383.4s hits=4/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #67 person       t=383.1-383.1s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #72 person       t=383.9-384.1s hits=4/15 max=0.11/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #74 person       t=384.2-384.2s hits=1/15 max=0.17/0.55 mean=0.17/0.28 exc=0.0 day    REJECT:too_few_hits
+  #75 cyclist      t=384.2-401.6s hits=316/30 max=0.66/0.60 mean=0.23/0.28 exc=2.1 day    REJECT:low_mean_conf
+  #78 person       t=384.5-386.6s hits=7/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #77 person       t=384.5-384.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #83 cyclist      t=384.8-389.5s hits=47/30 max=0.21/0.60 mean=0.08/0.28 exc=1.8 day    REJECT:low_max_conf
+  #85 person       t=385.1-385.2s hits=2/15 max=0.27/0.55 mean=0.16/0.28 exc=0.0 day    REJECT:too_few_hits
+  #86 person       t=385.1-385.2s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.8 day    REJECT:too_few_hits
+  #92 person       t=385.9-386.4s hits=14/15 max=0.07/0.55 mean=0.06/0.28 exc=0.1 day    REJECT:too_few_hits
+  #102 person       t=386.0-387.4s hits=8/15 max=0.29/0.55 mean=0.12/0.28 exc=0.1 day    REJECT:too_few_hits
+  #95 person       t=386.3-386.3s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #141 cyclist      t=386.7-398.7s hits=185/30 max=0.40/0.60 mean=0.10/0.28 exc=5.6 day    REJECT:low_max_conf
+  #100 person       t=386.9-386.9s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #113 person       t=387.6-389.0s hits=7/15 max=0.08/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #107 person       t=387.8-388.1s hits=3/15 max=0.09/0.55 mean=0.07/0.28 exc=1.8 day    REJECT:too_few_hits
+  #109 person       t=388.0-388.1s hits=2/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #110 person       t=388.1-388.1s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #111 person       t=388.2-388.2s hits=1/15 max=0.14/0.55 mean=0.14/0.28 exc=0.0 day    REJECT:too_few_hits
+  #112 person       t=388.3-389.2s hits=5/15 max=0.09/0.55 mean=0.07/0.28 exc=0.7 day    REJECT:too_few_hits
+  #114 person       t=388.6-388.6s hits=1/15 max=0.16/0.55 mean=0.16/0.28 exc=0.0 day    REJECT:too_few_hits
+  #116 person       t=389.0-389.2s hits=4/15 max=0.07/0.55 mean=0.06/0.28 exc=0.1 day    REJECT:too_few_hits
+  #121 cyclist      t=389.1-392.6s hits=28/30 max=0.15/0.60 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #119 person       t=389.2-389.4s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #125 person       t=390.2-391.0s hits=3/15 max=0.07/0.55 mean=0.06/0.28 exc=2.3 day    REJECT:too_few_hits
+  #127 person       t=390.4-390.6s hits=6/15 max=0.18/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #145 cyclist      t=390.7-405.2s hits=346/30 max=0.94/0.60 mean=0.15/0.28 exc=4.7 day    REJECT:low_mean_conf
+  #130 person       t=390.8-390.8s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #135 person       t=391.1-391.1s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #136 person       t=391.1-391.1s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #138 person       t=391.3-393.4s hits=38/15 max=0.29/0.55 mean=0.14/0.28 exc=6.7 day    REJECT:low_max_conf
+  #144 person       t=391.7-391.7s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #147 person       t=391.9-391.9s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #150 cyclist      t=392.4-396.4s hits=59/30 max=0.15/0.60 mean=0.07/0.28 exc=4.0 day    REJECT:low_max_conf
+  #149 person       t=392.4-392.6s hits=2/15 max=0.10/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #151 person       t=392.5-392.8s hits=4/15 max=0.11/0.55 mean=0.08/0.28 exc=0.9 day    REJECT:too_few_hits
+  #154 person       t=392.6-392.9s hits=4/15 max=0.19/0.55 mean=0.12/0.28 exc=0.3 day    REJECT:too_few_hits
+  #155 person       t=392.7-393.4s hits=2/15 max=0.09/0.55 mean=0.08/0.28 exc=3.1 day    REJECT:too_few_hits
+  #159 person       t=393.0-393.0s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #162 person       t=393.6-394.2s hits=3/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #164 person       t=393.9-394.1s hits=4/15 max=0.17/0.55 mean=0.11/0.28 exc=0.0 day    REJECT:too_few_hits
+  #168 person       t=394.4-394.5s hits=2/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #171 person       t=394.8-394.9s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #172 person       t=394.9-395.0s hits=2/15 max=0.09/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #174 person       t=395.2-395.2s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #175 person       t=395.3-395.3s hits=2/15 max=0.10/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #176 person       t=395.6-395.7s hits=2/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #177 person       t=395.7-395.7s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #179 person       t=395.7-395.9s hits=3/15 max=0.08/0.55 mean=0.07/0.28 exc=0.1 day    REJECT:too_few_hits
+  #182 person       t=396.4-396.4s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #186 person       t=396.7-396.7s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #187 person       t=396.8-396.8s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #192 person       t=397.0-400.7s hits=40/15 max=0.26/0.55 mean=0.12/0.28 exc=4.0 day    REJECT:low_max_conf
+  #244 cyclist      t=398.2-437.6s hits=992/30 max=0.84/0.60 mean=0.11/0.28 exc=4.3 day    REJECT:low_mean_conf
+  #197 person       t=398.8-400.1s hits=5/15 max=0.19/0.55 mean=0.12/0.28 exc=0.1 day    REJECT:too_few_hits
+  #200 person       t=399.0-399.4s hits=8/15 max=0.20/0.55 mean=0.12/0.28 exc=0.1 day    REJECT:too_few_hits
+  #201 person       t=399.1-399.1s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #266 cyclist      t=399.2-418.3s hits=432/30 max=0.99/0.60 mean=0.12/0.28 exc=6.8 day    REJECT:low_mean_conf
+  #204 person       t=399.5-399.5s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #221 person       t=399.5-403.1s hits=33/15 max=0.20/0.55 mean=0.11/0.28 exc=2.8 day    REJECT:low_max_conf
+  #208 person       t=399.6-400.4s hits=6/15 max=0.14/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #210 person       t=399.7-399.7s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #213 person       t=400.4-401.4s hits=12/15 max=0.14/0.55 mean=0.08/0.28 exc=0.1 day    REJECT:too_few_hits
+  #216 person       t=400.4-400.5s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=2.0 day    REJECT:too_few_hits
+  #223 person       t=401.1-401.8s hits=2/15 max=0.10/0.55 mean=0.08/0.28 exc=0.8 day    REJECT:too_few_hits
+  #224 person       t=401.3-401.4s hits=2/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #227 person       t=401.9-401.9s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #236 cyclist      t=402.0-406.4s hits=112/30 max=0.82/0.60 mean=0.19/0.28 exc=0.1 day    REJECT:low_mean_conf
+  #229 person       t=402.1-402.1s hits=1/15 max=0.12/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #232 person       t=402.5-402.5s hits=2/15 max=0.06/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #234 person       t=402.6-403.1s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.1 day    REJECT:too_few_hits
+  #235 cyclist      t=402.8-405.1s hits=89/30 max=0.99/0.60 mean=0.29/0.28 exc=3.1 day    COUNTED
+  #252 person       t=403.5-405.8s hits=31/15 max=0.14/0.55 mean=0.08/0.28 exc=3.4 day    REJECT:low_max_conf
+  #248 person       t=404.4-404.6s hits=2/15 max=0.10/0.55 mean=0.08/0.28 exc=0.5 day    REJECT:too_few_hits
+  #250 person       t=404.5-404.9s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #254 person       t=405.0-405.0s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #258 person       t=406.4-406.4s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #259 person       t=406.5-407.0s hits=4/15 max=0.06/0.55 mean=0.05/0.28 exc=0.8 day    REJECT:too_few_hits
+  #261 person       t=406.7-406.7s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #262 person       t=407.5-407.5s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #269 person       t=408.4-408.4s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #271 person       t=409.0-409.2s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.5 day    REJECT:too_few_hits
+  #272 person       t=409.1-409.2s hits=2/15 max=0.10/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #273 person       t=409.1-409.2s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #275 person       t=409.4-409.4s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #277 person       t=409.5-409.5s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #290 cyclist      t=409.5-412.5s hits=10/30 max=0.09/0.60 mean=0.07/0.28 exc=3.5 day    REJECT:too_few_hits
+  #279 person       t=409.6-409.7s hits=2/15 max=0.06/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #280 person       t=409.6-410.2s hits=2/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #282 cyclist      t=409.9-415.5s hits=33/30 max=0.58/0.60 mean=0.14/0.28 exc=4.1 day    REJECT:low_max_conf
+  #291 person       t=410.2-411.6s hits=3/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #287 person       t=410.5-410.5s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #300 person       t=411.2-412.6s hits=3/15 max=0.09/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #293 person       t=412.0-412.0s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #294 person       t=412.1-413.1s hits=9/15 max=0.12/0.55 mean=0.07/0.28 exc=0.3 day    REJECT:too_few_hits
+  #295 person       t=412.3-413.3s hits=2/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #301 person       t=412.6-412.6s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #302 person       t=412.6-412.6s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #311 person       t=413.3-413.3s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #315 person       t=413.5-413.5s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #317 person       t=413.6-413.6s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #318 person       t=413.8-413.9s hits=2/15 max=0.06/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #320 person       t=414.1-414.1s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #321 person       t=414.2-414.3s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #322 person       t=414.4-419.4s hits=84/15 max=0.09/0.55 mean=0.07/0.28 exc=0.1 day    REJECT:low_max_conf
+  #323 person       t=414.4-415.4s hits=4/15 max=0.10/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #328 person       t=415.4-415.4s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #333 person       t=415.9-415.9s hits=1/15 max=0.12/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #335 person       t=416.1-416.2s hits=2/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #337 person       t=416.4-417.8s hits=4/15 max=0.12/0.55 mean=0.09/0.28 exc=0.9 day    REJECT:too_few_hits
+  #341 person       t=417.6-417.6s hits=1/15 max=0.11/0.55 mean=0.11/0.28 exc=0.0 day    REJECT:too_few_hits
+  #348 person       t=418.5-419.6s hits=5/15 max=0.11/0.55 mean=0.08/0.28 exc=2.7 day    REJECT:too_few_hits
+  #349 person       t=418.5-418.5s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #350 person       t=418.5-418.5s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #357 person       t=419.5-419.5s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #359 person       t=420.0-420.0s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #361 person       t=420.5-420.5s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #362 person       t=420.5-420.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #365 person       t=421.1-421.4s hits=3/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #366 person       t=421.5-422.5s hits=2/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #379 person       t=421.6-425.2s hits=22/15 max=0.18/0.55 mean=0.08/0.28 exc=2.4 day    REJECT:low_max_conf
+  #370 person       t=422.5-423.2s hits=6/15 max=0.13/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #371 person       t=422.6-422.6s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #381 person       t=422.7-424.3s hits=3/15 max=0.11/0.55 mean=0.09/0.28 exc=0.1 day    REJECT:too_few_hits
+  #374 person       t=422.9-422.9s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #377 person       t=423.2-423.2s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #380 person       t=423.7-423.8s hits=2/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #386 person       t=424.9-425.4s hits=2/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #387 person       t=425.1-425.1s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #390 person       t=425.5-425.5s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.8 day    REJECT:too_few_hits
+  #391 person       t=425.5-425.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #404 cyclist      t=425.7-438.4s hits=254/30 max=0.97/0.60 mean=0.13/0.28 exc=5.9 day    REJECT:low_mean_conf
+  #396 person       t=426.5-426.5s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #397 person       t=426.5-426.5s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #399 person       t=426.7-426.8s hits=2/15 max=0.16/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #401 person       t=426.9-426.9s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #402 cyclist      t=426.9-429.0s hits=20/30 max=0.62/0.60 mean=0.09/0.28 exc=6.0 day    REJECT:too_few_hits
+  #405 cyclist      t=427.0-428.4s hits=40/30 max=0.70/0.60 mean=0.16/0.28 exc=0.2 day    REJECT:low_mean_conf
+  #407 person       t=427.4-427.4s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #408 person       t=427.5-427.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #409 person       t=427.7-428.7s hits=7/15 max=0.18/0.55 mean=0.09/0.28 exc=1.9 day    REJECT:too_few_hits
+  #410 person       t=427.7-427.7s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #415 person       t=428.6-428.6s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #416 person       t=428.7-429.1s hits=3/15 max=0.08/0.55 mean=0.07/0.28 exc=0.1 day    REJECT:too_few_hits
+  #417 person       t=428.8-428.8s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #422 person       t=429.6-429.6s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #423 person       t=429.8-429.8s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #425 person       t=430.0-430.5s hits=10/15 max=0.11/0.55 mean=0.07/0.28 exc=0.9 day    REJECT:too_few_hits
+  #429 person       t=430.5-430.5s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #433 person       t=431.0-431.0s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #435 person       t=431.4-433.4s hits=34/15 max=0.10/0.55 mean=0.09/0.28 exc=0.1 day    REJECT:low_max_conf
+  #550 cyclist      t=431.7-480.9s hits=1169/30 max=0.89/0.60 mean=0.17/0.28 exc=7.4 day    REJECT:low_mean_conf
+  #443 person       t=432.6-432.6s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #444 person       t=432.6-432.6s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #446 person       t=433.0-433.0s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #447 cyclist      t=433.0-433.5s hits=13/30 max=0.41/0.60 mean=0.15/0.28 exc=4.6 day    REJECT:too_few_hits
+  #452 person       t=433.2-433.2s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #453 person       t=433.3-433.3s hits=3/15 max=0.08/0.55 mean=0.07/0.28 exc=0.3 day    REJECT:too_few_hits
+  #455 person       t=433.3-433.3s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #459 person       t=433.9-434.4s hits=2/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #466 person       t=434.5-434.5s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #468 person       t=434.5-435.3s hits=5/15 max=0.20/0.55 mean=0.10/0.28 exc=0.3 day    REJECT:too_few_hits
+  #469 person       t=434.6-434.6s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #473 cyclist      t=436.2-440.3s hits=83/30 max=0.71/0.60 mean=0.14/0.28 exc=4.8 day    REJECT:low_mean_conf
+  #481 cyclist      t=436.5-444.5s hits=202/30 max=0.55/0.60 mean=0.11/0.28 exc=17.2 day    REJECT:low_max_conf
+  #488 person       t=437.5-437.5s hits=1/15 max=0.11/0.55 mean=0.11/0.28 exc=0.0 day    REJECT:too_few_hits
+  #496 person       t=438.9-438.9s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #497 person       t=439.2-439.2s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #518 person       t=439.4-448.4s hits=148/15 max=0.12/0.55 mean=0.10/0.28 exc=0.1 day    REJECT:low_max_conf
+  #503 person       t=440.1-440.1s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #506 person       t=441.0-441.0s hits=2/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #508 person       t=441.7-444.8s hits=23/15 max=0.22/0.55 mean=0.09/0.28 exc=6.2 day    REJECT:low_max_conf
+  #512 person       t=441.9-441.9s hits=1/15 max=0.12/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #516 person       t=442.4-442.4s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #521 person       t=442.9-442.9s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #526 person       t=443.5-443.5s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #527 person       t=443.7-444.6s hits=9/15 max=0.15/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #532 person       t=444.7-444.7s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #535 person       t=445.5-445.5s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #540 person       t=446.1-446.1s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #547 person       t=447.3-457.0s hits=106/15 max=0.23/0.55 mean=0.09/0.28 exc=1.4 day    REJECT:low_max_conf
+  #549 person       t=447.4-447.4s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #552 person       t=447.5-447.5s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #553 person       t=447.5-447.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #556 person       t=447.9-447.9s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #558 person       t=448.1-448.2s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #559 person       t=448.2-448.2s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #562 person       t=448.5-448.5s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #577 person       t=448.6-453.0s hits=25/15 max=0.21/0.55 mean=0.09/0.28 exc=1.8 day    REJECT:low_max_conf
+  #565 person       t=448.7-448.7s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #572 person       t=449.5-449.5s hits=1/15 max=0.13/0.55 mean=0.13/0.28 exc=0.0 day    REJECT:too_few_hits
+  #573 person       t=449.5-449.5s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #579 person       t=450.5-454.4s hits=70/15 max=0.11/0.55 mean=0.07/0.28 exc=0.1 day    REJECT:low_max_conf
+  #576 person       t=450.5-450.7s hits=4/15 max=0.14/0.55 mean=0.08/0.28 exc=1.2 day    REJECT:too_few_hits
+  #578 person       t=451.2-451.2s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #595 cyclist      t=451.5-460.0s hits=116/30 max=0.68/0.60 mean=0.11/0.28 exc=5.4 day    REJECT:low_mean_conf
+  #580 person       t=451.5-453.4s hits=12/15 max=0.25/0.55 mean=0.11/0.28 exc=0.1 day    REJECT:too_few_hits
+  #587 person       t=452.3-452.3s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #588 person       t=452.6-452.6s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #589 person       t=452.8-452.8s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #590 person       t=452.8-452.8s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #592 person       t=453.2-453.4s hits=3/15 max=0.06/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #594 person       t=453.2-453.2s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #597 person       t=454.0-454.0s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #605 person       t=454.9-454.9s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #606 cyclist      t=455.2-463.2s hits=168/30 max=0.52/0.60 mean=0.10/0.28 exc=6.5 day    REJECT:low_max_conf
+  #607 person       t=455.2-457.9s hits=5/15 max=0.09/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #608 person       t=455.3-455.3s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #609 person       t=455.5-456.3s hits=4/15 max=0.09/0.55 mean=0.09/0.28 exc=0.1 day    REJECT:too_few_hits
+  #610 person       t=455.6-457.6s hits=8/15 max=0.12/0.55 mean=0.07/0.28 exc=1.4 day    REJECT:too_few_hits
+  #611 person       t=455.8-455.9s hits=3/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #613 person       t=456.0-456.0s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #614 person       t=456.4-456.4s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #616 person       t=456.5-459.4s hits=46/15 max=0.08/0.55 mean=0.06/0.28 exc=0.1 day    REJECT:low_max_conf
+  #621 person       t=456.7-456.7s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #622 person       t=456.9-456.9s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #623 person       t=457.5-457.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #624 person       t=457.5-458.9s hits=13/15 max=0.12/0.55 mean=0.07/0.28 exc=0.2 day    REJECT:too_few_hits
+  #629 person       t=458.2-458.3s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #635 person       t=459.0-461.3s hits=19/15 max=0.20/0.55 mean=0.10/0.28 exc=3.6 day    REJECT:low_max_conf
+  #665 cyclist      t=459.5-474.8s hits=364/30 max=0.91/0.60 mean=0.20/0.28 exc=6.6 day    REJECT:low_mean_conf
+  #640 person       t=459.9-459.9s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #650 person       t=460.2-461.8s hits=7/15 max=0.22/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #649 person       t=461.4-461.5s hits=2/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #668 person       t=461.7-463.7s hits=8/15 max=0.21/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #652 person       t=461.8-462.2s hits=6/15 max=0.10/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #654 cyclist      t=461.9-463.1s hits=16/30 max=0.10/0.60 mean=0.07/0.28 exc=4.7 day    REJECT:too_few_hits
+  #655 person       t=462.1-463.7s hits=3/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #663 person       t=462.9-462.9s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #666 person       t=463.3-463.3s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #679 person       t=463.4-469.0s hits=126/15 max=0.86/0.55 mean=0.17/0.28 exc=8.0 day    REJECT:low_mean_conf
+  #680 person       t=464.9-464.9s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #681 person       t=465.3-465.3s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #682 person       t=465.3-465.3s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #683 person       t=465.5-466.9s hits=3/15 max=0.30/0.55 mean=0.17/0.28 exc=0.0 day    REJECT:too_few_hits
+  #685 person       t=465.5-465.5s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #723 cyclist      t=466.8-506.0s hits=1327/30 max=0.91/0.60 mean=0.25/0.28 exc=7.6 day    REJECT:low_mean_conf
+  #696 person       t=467.2-467.2s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #698 person       t=467.5-467.7s hits=4/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #704 person       t=469.1-469.1s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #705 person       t=469.5-469.5s hits=1/15 max=0.21/0.55 mean=0.21/0.28 exc=0.0 day    REJECT:too_few_hits
+  #706 person       t=469.5-470.4s hits=4/15 max=0.16/0.55 mean=0.11/0.28 exc=0.1 day    REJECT:too_few_hits
+  #707 person       t=469.8-470.0s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=2.4 day    REJECT:too_few_hits
+  #709 person       t=470.0-471.2s hits=9/15 max=0.25/0.55 mean=0.09/0.28 exc=0.1 day    REJECT:too_few_hits
+  #711 person       t=470.4-470.4s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #712 person       t=470.4-470.4s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #715 person       t=470.7-470.7s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #716 person       t=470.8-470.8s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #717 person       t=471.0-471.0s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #721 person       t=472.3-472.3s hits=2/15 max=0.10/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #722 person       t=472.3-472.3s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #726 person       t=473.2-477.4s hits=36/15 max=0.26/0.55 mean=0.10/0.28 exc=7.0 day    REJECT:low_max_conf
+  #731 person       t=473.8-474.2s hits=3/15 max=0.17/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #732 person       t=474.0-474.0s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #742 cyclist      t=474.5-488.5s hits=264/30 max=0.98/0.60 mean=0.42/0.28 exc=3.0 day    COUNTED
+  #738 person       t=474.5-474.5s hits=1/15 max=0.11/0.55 mean=0.11/0.28 exc=0.0 day    REJECT:too_few_hits
+  #744 person       t=475.6-477.1s hits=3/15 max=0.12/0.55 mean=0.08/0.28 exc=0.1 day    REJECT:too_few_hits
+  #745 person       t=475.7-475.7s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.3 day    REJECT:too_few_hits
+  #746 person       t=475.7-476.1s hits=4/15 max=0.11/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #766 cyclist      t=476.6-492.5s hits=361/30 max=0.75/0.60 mean=0.12/0.28 exc=5.6 day    REJECT:low_mean_conf
+  #752 person       t=476.7-476.7s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #753 person       t=477.0-477.0s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #755 person       t=477.5-477.9s hits=5/15 max=0.09/0.55 mean=0.07/0.28 exc=0.1 day    REJECT:too_few_hits
+  #757 person       t=477.5-477.5s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #758 person       t=478.1-478.1s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #762 person       t=478.5-478.7s hits=3/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #760 person       t=478.5-478.6s hits=3/15 max=0.10/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #763 person       t=478.8-478.8s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #764 person       t=478.9-478.9s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #765 person       t=479.0-479.0s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #777 cyclist      t=479.0-480.4s hits=39/30 max=0.41/0.60 mean=0.12/0.28 exc=0.0 day    REJECT:low_max_conf
+  #778 person       t=479.5-480.4s hits=9/15 max=0.23/0.55 mean=0.13/0.28 exc=0.1 day    REJECT:too_few_hits
+  #775 person       t=479.6-480.1s hits=8/15 max=0.13/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #774 person       t=479.6-479.6s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #776 person       t=479.6-479.6s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #779 person       t=480.1-480.1s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #786 person       t=481.1-481.2s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #789 person       t=481.5-481.8s hits=3/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #790 person       t=481.5-481.6s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #792 person       t=482.5-482.7s hits=2/15 max=0.06/0.55 mean=0.05/0.28 exc=0.5 day    REJECT:too_few_hits
+  #795 person       t=482.8-482.9s hits=2/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #796 person       t=482.9-487.2s hits=4/15 max=0.10/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #797 person       t=483.0-483.0s hits=1/15 max=0.12/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #802 person       t=483.3-483.3s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #803 person       t=483.5-484.5s hits=30/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:low_max_conf
+  #805 cyclist      t=483.6-497.4s hits=281/30 max=0.71/0.60 mean=0.23/0.28 exc=2.4 day    REJECT:low_mean_conf
+  #806 person       t=483.7-483.7s hits=1/15 max=0.24/0.55 mean=0.24/0.28 exc=0.0 day    REJECT:too_few_hits
+  #809 person       t=484.6-484.6s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #828 person       t=485.6-487.3s hits=3/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #819 person       t=485.8-486.3s hits=4/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #818 person       t=485.9-485.9s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #820 person       t=485.9-485.9s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #823 cyclist      t=486.5-489.4s hits=49/30 max=0.88/0.60 mean=0.21/0.28 exc=0.0 day    REJECT:low_mean_conf
+  #827 person       t=486.8-487.3s hits=5/15 max=0.26/0.55 mean=0.11/0.28 exc=0.8 day    REJECT:too_few_hits
+  #830 person       t=487.2-487.2s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #831 person       t=487.4-487.4s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #832 person       t=487.4-487.9s hits=4/15 max=0.08/0.55 mean=0.06/0.28 exc=1.8 day    REJECT:too_few_hits
+  #835 person       t=487.6-488.3s hits=17/15 max=0.23/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:low_max_conf
+  #836 person       t=487.8-487.8s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #840 person       t=488.4-488.4s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #844 person       t=488.5-488.6s hits=2/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #843 person       t=488.5-488.5s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #855 person       t=488.7-492.0s hits=15/15 max=0.45/0.55 mean=0.11/0.28 exc=1.7 day    REJECT:low_max_conf
+  #852 person       t=489.0-489.0s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #854 person       t=489.3-490.4s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #856 person       t=490.3-490.4s hits=3/15 max=0.09/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #866 person       t=491.6-491.6s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #873 person       t=492.6-493.4s hits=10/15 max=0.16/0.55 mean=0.08/0.28 exc=0.1 day    REJECT:too_few_hits
+  #871 person       t=492.6-493.3s hits=16/15 max=0.25/0.55 mean=0.11/0.28 exc=0.0 day    REJECT:low_max_conf
+  #878 cyclist      t=493.3-500.5s hits=181/30 max=0.87/0.60 mean=0.13/0.28 exc=5.2 day    REJECT:low_mean_conf
+  #883 person       t=494.0-494.3s hits=3/15 max=0.16/0.55 mean=0.13/0.28 exc=1.8 day    REJECT:too_few_hits
+  #885 person       t=494.3-494.3s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #888 person       t=494.9-494.9s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #889 person       t=495.3-496.5s hits=29/15 max=0.09/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:low_max_conf
+  #891 person       t=495.5-495.5s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #892 person       t=495.6-496.2s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #893 person       t=495.6-496.5s hits=4/15 max=0.10/0.55 mean=0.09/0.28 exc=1.4 day    REJECT:too_few_hits
+  #896 person       t=495.8-495.8s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #900 person       t=496.7-497.3s hits=2/15 max=0.11/0.55 mean=0.09/0.28 exc=2.7 day    REJECT:too_few_hits
+  #911 person       t=498.5-498.9s hits=13/15 max=0.49/0.55 mean=0.14/0.28 exc=1.2 day    REJECT:too_few_hits
+  #910 person       t=498.5-498.6s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #914 person       t=498.9-501.4s hits=22/15 max=0.50/0.55 mean=0.24/0.28 exc=2.3 day    REJECT:low_max_conf
+  #918 person       t=500.0-500.0s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #944 cyclist      t=500.3-509.5s hits=263/30 max=0.90/0.60 mean=0.17/0.28 exc=3.8 day    REJECT:low_mean_conf
+  #922 person       t=500.6-500.6s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #924 cyclist      t=501.2-501.2s hits=1/30 max=0.05/0.60 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #925 person       t=501.4-501.4s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #928 person       t=501.5-504.0s hits=24/15 max=0.19/0.55 mean=0.11/0.28 exc=2.1 day    REJECT:low_max_conf
+  #929 person       t=501.7-502.5s hits=17/15 max=0.08/0.55 mean=0.07/0.28 exc=0.1 day    REJECT:low_max_conf
+  #932 person       t=501.8-502.7s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #933 person       t=501.9-503.1s hits=21/15 max=0.14/0.55 mean=0.08/0.28 exc=0.6 day    REJECT:low_max_conf
+  #934 person       t=502.0-502.0s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #935 person       t=502.6-502.6s hits=1/15 max=0.11/0.55 mean=0.11/0.28 exc=0.0 day    REJECT:too_few_hits
+  #936 person       t=502.6-502.6s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #940 person       t=502.9-502.9s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #942 person       t=503.6-504.3s hits=11/15 max=0.11/0.55 mean=0.08/0.28 exc=0.2 day    REJECT:too_few_hits
+  #972 cyclist      t=504.1-514.7s hits=400/30 max=0.87/0.60 mean=0.24/0.28 exc=6.7 day    REJECT:low_mean_conf
+  #946 person       t=504.3-506.1s hits=14/15 max=0.15/0.55 mean=0.08/0.28 exc=4.9 day    REJECT:too_few_hits
+  #950 cyclist      t=504.7-504.7s hits=1/30 max=0.10/0.60 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #952 person       t=505.0-505.5s hits=14/15 max=0.07/0.55 mean=0.06/0.28 exc=0.1 day    REJECT:too_few_hits
+  #954 person       t=505.5-505.6s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #956 person       t=505.6-506.6s hits=3/15 max=0.11/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #959 person       t=505.7-505.7s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #960 person       t=506.3-506.3s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1008 cyclist      t=506.5-541.4s hits=1225/30 max=0.80/0.60 mean=0.14/0.28 exc=7.9 day    REJECT:low_mean_conf
+  #963 person       t=506.5-506.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #979 cyclist      t=506.6-514.5s hits=134/30 max=0.92/0.60 mean=0.14/0.28 exc=6.5 day    REJECT:low_mean_conf
+  #985 person       t=509.3-509.3s hits=1/15 max=0.16/0.55 mean=0.16/0.28 exc=0.0 day    REJECT:too_few_hits
+  #987 person       t=509.4-509.4s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #989 person       t=509.8-509.8s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #990 person       t=510.8-510.8s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #993 person       t=510.9-511.5s hits=5/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1014 cyclist      t=511.6-529.5s hits=855/30 max=0.85/0.60 mean=0.26/0.28 exc=18.4 day    REJECT:low_mean_conf
+  #998 person       t=511.7-511.7s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #999 person       t=511.7-511.7s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1000 person       t=512.0-512.0s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1004 person       t=513.1-513.2s hits=2/15 max=0.08/0.55 mean=0.08/0.28 exc=0.4 day    REJECT:too_few_hits
+  #1010 person       t=513.5-521.5s hits=89/15 max=0.23/0.55 mean=0.09/0.28 exc=2.4 day    REJECT:low_max_conf
+  #1011 person       t=513.5-515.2s hits=19/15 max=0.15/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:low_max_conf
+  #1017 person       t=513.6-513.6s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1020 person       t=514.2-514.2s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1022 person       t=514.3-514.3s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1024 person       t=515.2-516.6s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1026 person       t=515.9-516.3s hits=5/15 max=0.08/0.55 mean=0.06/0.28 exc=0.1 day    REJECT:too_few_hits
+  #1028 person       t=516.3-516.3s hits=1/15 max=0.13/0.55 mean=0.13/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1030 person       t=516.5-517.2s hits=6/15 max=0.14/0.55 mean=0.09/0.28 exc=0.1 day    REJECT:too_few_hits
+  #1036 person       t=516.7-516.7s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1038 person       t=516.8-516.8s hits=2/15 max=0.09/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1039 person       t=517.1-517.5s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1041 person       t=517.3-517.4s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1042 person       t=517.4-517.5s hits=3/15 max=0.16/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1043 person       t=518.1-518.1s hits=1/15 max=0.13/0.55 mean=0.13/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1044 person       t=518.3-518.5s hits=2/15 max=0.14/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1046 person       t=518.6-519.5s hits=14/15 max=0.08/0.55 mean=0.06/0.28 exc=0.1 day    REJECT:too_few_hits
+  #1051 person       t=519.3-519.3s hits=2/15 max=0.10/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1055 person       t=519.7-519.7s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1057 person       t=520.7-520.7s hits=3/15 max=0.15/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1060 person       t=520.8-520.9s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1063 person       t=521.4-521.9s hits=2/15 max=0.10/0.55 mean=0.09/0.28 exc=0.1 day    REJECT:too_few_hits
+  #1065 person       t=521.6-521.9s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1066 person       t=521.7-521.9s hits=5/15 max=0.21/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1068 person       t=521.7-522.0s hits=3/15 max=0.06/0.55 mean=0.06/0.28 exc=1.0 day    REJECT:too_few_hits
+  #1070 person       t=521.9-521.9s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1071 cyclist      t=522.2-543.7s hits=628/30 max=0.99/0.60 mean=0.54/0.28 exc=12.9 day    COUNTED
+  #1083 person       t=522.6-524.7s hits=9/15 max=0.16/0.55 mean=0.08/0.28 exc=0.1 day    REJECT:too_few_hits
+  #1076 person       t=523.0-523.0s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1078 person       t=523.5-523.5s hits=2/15 max=0.25/0.55 mean=0.16/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1081 person       t=523.7-523.7s hits=2/15 max=0.08/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1082 person       t=523.7-523.8s hits=3/15 max=0.26/0.55 mean=0.17/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1084 person       t=524.3-524.3s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1086 person       t=524.6-525.4s hits=5/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1151 person       t=524.9-539.5s hits=232/15 max=0.70/0.55 mean=0.11/0.28 exc=6.9 day    REJECT:low_mean_conf
+  #1090 person       t=524.9-525.2s hits=4/15 max=0.10/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1093 person       t=525.4-525.4s hits=2/15 max=0.06/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1094 person       t=525.5-525.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1096 person       t=525.6-525.6s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1108 cyclist      t=526.4-530.2s hits=40/30 max=0.25/0.60 mean=0.07/0.28 exc=1.1 day    REJECT:low_max_conf
+  #1103 person       t=526.5-526.5s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1113 person       t=526.5-528.7s hits=5/15 max=0.11/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1106 person       t=526.6-527.5s hits=6/15 max=0.14/0.55 mean=0.08/0.28 exc=1.5 day    REJECT:too_few_hits
+  #1129 person       t=527.9-533.0s hits=25/15 max=0.27/0.55 mean=0.12/0.28 exc=7.2 day    REJECT:low_max_conf
+  #1115 person       t=527.9-527.9s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1117 person       t=528.2-528.5s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1121 person       t=528.9-529.2s hits=3/15 max=0.07/0.55 mean=0.07/0.28 exc=3.3 day    REJECT:too_few_hits
+  #1124 person       t=529.5-529.5s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1128 person       t=529.9-530.8s hits=5/15 max=0.10/0.55 mean=0.08/0.28 exc=3.2 day    REJECT:too_few_hits
+  #1131 person       t=530.4-530.5s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1132 person       t=530.5-530.5s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1134 person       t=530.6-530.8s hits=2/15 max=0.12/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1143 person       t=530.7-534.3s hits=12/15 max=0.10/0.55 mean=0.07/0.28 exc=2.5 day    REJECT:too_few_hits
+  #1135 person       t=530.7-530.7s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1146 cyclist      t=531.1-532.5s hits=3/30 max=0.07/0.60 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1140 person       t=531.2-531.4s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1142 person       t=531.5-531.5s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1147 person       t=532.7-532.7s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.2 day    REJECT:too_few_hits
+  #1148 person       t=533.0-533.0s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1149 person       t=533.4-533.4s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1156 person       t=534.2-536.2s hits=11/15 max=0.32/0.55 mean=0.11/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1157 person       t=534.3-534.5s hits=5/15 max=0.20/0.55 mean=0.13/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1162 person       t=534.5-534.5s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1164 person       t=534.5-534.5s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1165 person       t=534.5-534.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1185 person       t=535.1-539.2s hits=39/15 max=0.35/0.55 mean=0.12/0.28 exc=2.0 day    REJECT:low_max_conf
+  #1177 person       t=535.9-535.9s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1178 person       t=535.9-535.9s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1181 cyclist      t=536.1-539.9s hits=67/30 max=0.14/0.60 mean=0.07/0.28 exc=4.6 day    REJECT:low_max_conf
+  #1186 person       t=536.8-536.8s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1187 person       t=536.9-536.9s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1191 cyclist      t=537.5-537.7s hits=2/30 max=0.05/0.60 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1193 person       t=538.0-538.1s hits=2/15 max=0.10/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1233 person       t=538.3-552.8s hits=221/15 max=0.49/0.55 mean=0.09/0.28 exc=0.4 day    REJECT:low_max_conf
+  #1216 person       t=540.7-542.3s hits=23/15 max=0.11/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:low_max_conf
+  #1212 person       t=540.7-541.1s hits=2/15 max=0.11/0.55 mean=0.08/0.28 exc=0.9 day    REJECT:too_few_hits
+  #1213 person       t=540.8-540.8s hits=1/15 max=0.12/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1215 person       t=541.3-541.3s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1223 person       t=542.3-542.3s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1224 person       t=542.4-542.4s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1226 cyclist      t=542.5-545.5s hits=55/30 max=0.74/0.60 mean=0.19/0.28 exc=0.2 day    REJECT:low_mean_conf
+  #1232 person       t=543.3-543.3s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1234 person       t=543.4-543.4s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1235 person       t=543.5-543.5s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1236 person       t=543.5-543.5s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1239 person       t=544.5-544.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1246 cyclist      t=546.2-546.9s hits=15/30 max=0.53/0.60 mean=0.23/0.28 exc=5.3 day    REJECT:too_few_hits
+  #1251 person       t=546.6-546.6s hits=1/15 max=0.12/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1252 person       t=546.6-546.6s hits=1/15 max=0.09/0.55 mean=0.09/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1256 person       t=546.7-548.4s hits=15/15 max=0.29/0.55 mean=0.13/0.28 exc=1.1 day    REJECT:low_max_conf
+  #1261 person       t=547.3-547.5s hits=3/15 max=0.06/0.55 mean=0.05/0.28 exc=0.3 day    REJECT:too_few_hits
+  #1262 person       t=547.6-547.6s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1267 person       t=548.5-551.5s hits=49/15 max=0.15/0.55 mean=0.11/0.28 exc=0.0 day    REJECT:low_max_conf
+  #1269 person       t=548.8-549.3s hits=11/15 max=0.20/0.55 mean=0.11/0.28 exc=0.1 day    REJECT:too_few_hits
+  #1280 cyclist      t=548.9-555.0s hits=184/30 max=0.54/0.60 mean=0.12/0.28 exc=7.6 day    REJECT:low_max_conf
+  #1273 cyclist      t=549.2-549.3s hits=4/30 max=0.64/0.60 mean=0.36/0.28 exc=0.3 day    REJECT:too_few_hits
+  #1276 person       t=549.3-549.5s hits=2/15 max=0.15/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1277 person       t=549.3-552.5s hits=61/15 max=0.70/0.55 mean=0.29/0.28 exc=2.0 day    COUNTED
+  #1278 person       t=549.4-549.4s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1279 person       t=549.4-549.4s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1284 person       t=549.9-552.0s hits=11/15 max=0.14/0.55 mean=0.09/0.28 exc=4.4 day    REJECT:too_few_hits
+  #1293 person       t=551.6-551.7s hits=3/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1295 person       t=551.9-551.9s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1301 person       t=553.0-557.8s hits=66/15 max=0.33/0.55 mean=0.09/0.28 exc=3.5 day    REJECT:low_max_conf
+  #1307 person       t=553.4-555.5s hits=28/15 max=0.14/0.55 mean=0.07/0.28 exc=0.4 day    REJECT:low_max_conf
+  #1308 person       t=553.5-553.5s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1309 person       t=553.5-553.5s hits=1/15 max=0.14/0.55 mean=0.14/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1313 person       t=554.5-562.2s hits=98/15 max=0.63/0.55 mean=0.24/0.28 exc=0.1 day    REJECT:low_mean_conf
+  #1316 person       t=554.7-555.5s hits=3/15 max=0.06/0.55 mean=0.06/0.28 exc=0.1 day    REJECT:too_few_hits
+  #1315 person       t=554.7-554.7s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1317 person       t=554.8-554.8s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1320 person       t=555.1-555.1s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1324 person       t=556.0-556.0s hits=2/15 max=0.11/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1325 person       t=556.0-556.0s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1328 person       t=556.5-558.1s hits=13/15 max=0.18/0.55 mean=0.10/0.28 exc=6.0 day    REJECT:too_few_hits
+  #1330 person       t=556.7-556.8s hits=2/15 max=0.09/0.55 mean=0.08/0.28 exc=0.8 day    REJECT:too_few_hits
+  #1333 person       t=556.7-557.6s hits=5/15 max=0.11/0.55 mean=0.08/0.28 exc=2.5 day    REJECT:too_few_hits
+  #1332 person       t=556.7-556.7s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1336 person       t=557.2-557.2s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1339 cyclist      t=557.5-558.1s hits=2/30 max=0.09/0.60 mean=0.08/0.28 exc=2.8 day    REJECT:too_few_hits
+  #1364 person       t=557.6-563.2s hits=122/15 max=0.34/0.55 mean=0.09/0.28 exc=0.1 day    REJECT:low_max_conf
+  #1346 person       t=557.7-557.7s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1348 person       t=558.6-558.6s hits=1/15 max=0.12/0.55 mean=0.12/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1367 cyclist      t=558.7-566.9s hits=224/30 max=0.66/0.60 mean=0.11/0.28 exc=2.7 day    REJECT:low_mean_conf
+  #1352 person       t=558.7-558.7s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1354 person       t=558.9-559.5s hits=2/15 max=0.06/0.55 mean=0.06/0.28 exc=0.8 day    REJECT:too_few_hits
+  #1356 person       t=559.5-559.5s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1357 person       t=559.5-559.5s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1363 cyclist      t=559.7-561.2s hits=22/30 max=0.62/0.60 mean=0.20/0.28 exc=3.8 day    REJECT:too_few_hits
+  #1365 cyclist      t=560.6-565.2s hits=93/30 max=0.23/0.60 mean=0.10/0.28 exc=4.4 day    REJECT:low_max_conf
+  #1368 person       t=560.9-560.9s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1369 person       t=561.0-562.9s hits=16/15 max=0.17/0.55 mean=0.08/0.28 exc=1.5 day    REJECT:low_max_conf
+  #1375 person       t=561.3-561.3s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1377 person       t=561.4-561.4s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1378 person       t=561.7-561.7s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1401 person       t=562.0-566.5s hits=63/15 max=0.42/0.55 mean=0.12/0.28 exc=0.1 day    REJECT:low_max_conf
+  #1383 person       t=562.8-562.8s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1384 person       t=562.9-562.9s hits=1/15 max=0.15/0.55 mean=0.15/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1385 person       t=562.9-562.9s hits=1/15 max=0.07/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1387 person       t=563.2-563.2s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1389 person       t=563.6-564.4s hits=10/15 max=0.14/0.55 mean=0.08/0.28 exc=0.1 day    REJECT:too_few_hits
+  #1391 person       t=563.8-564.1s hits=2/15 max=0.07/0.55 mean=0.07/0.28 exc=2.1 day    REJECT:too_few_hits
+  #1394 person       t=564.1-564.1s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1396 person       t=564.4-564.4s hits=1/15 max=0.10/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1399 person       t=564.6-566.9s hits=32/15 max=0.27/0.55 mean=0.10/0.28 exc=2.5 day    REJECT:low_max_conf
+  #1400 person       t=564.6-564.6s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1404 person       t=564.9-565.3s hits=7/15 max=0.20/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1405 person       t=565.0-565.5s hits=17/15 max=0.16/0.55 mean=0.10/0.28 exc=0.0 day    REJECT:low_max_conf
+  #1406 person       t=565.1-565.1s hits=1/15 max=0.05/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1410 person       t=565.8-565.9s hits=2/15 max=0.12/0.55 mean=0.11/0.28 exc=0.1 day    REJECT:too_few_hits
+  #1411 person       t=565.9-566.5s hits=4/15 max=0.18/0.55 mean=0.12/0.28 exc=1.9 day    REJECT:too_few_hits
+  #1412 person       t=565.9-565.9s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1413 person       t=566.1-566.3s hits=4/15 max=0.07/0.55 mean=0.06/0.28 exc=0.4 day    REJECT:too_few_hits
+  #1414 person       t=566.3-566.3s hits=1/15 max=0.06/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1416 person       t=566.6-566.8s hits=2/15 max=0.08/0.55 mean=0.07/0.28 exc=0.1 day    REJECT:too_few_hits
+  #1417 person       t=566.7-566.7s hits=1/15 max=0.08/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:too_few_hits
+  #1418 person       t=566.9-566.9s hits=2/15 max=0.07/0.55 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+Points CSV : pilot_output/ft_window_v2/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_points.csv
+Wrote pilot_output/ft_window_v2/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_facility.csv
+Wrote pilot_output/ft_window_v2/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_speed.csv
+Wrote pilot_output/ft_window_v2/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_resolution.csv
+conflicts: 505 pairs, 419 under TTC<1.5s or PET<1.0s -> pilot_output/ft_window_v2/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_conflicts.csv
+
+Rendered 5694 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.018_window_377_567 ===
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  conf=0.05  stride=1  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (24 samples)
+5694 sampled frames, inference 1864.8s (0.33s/frame)
+fps=29.97  dt between samples=0.033s
+min hits per class: {'cyclist': 30, 'bicycle': 30, 'person': 15, 'other_vehicle': 15, '_default': 30}
+
+Raw tracks: 1418  ->  after merge: 749  (669 absorbed)
+COUNTED TRACKS BY CLASS: {'cyclist': 3, 'car': 106, 'person': 1}
+Rejected tracks: {'low_mean_conf': 58, 'low_max_conf': 55, 'too_few_hits': 526}
+
+Funnel CSV : pilot_output/ft_window_v2/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_funnel.csv
+Tracks CSV : pilot_output/ft_window_v2/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_tracks.csv
+Video      : pilot_output/ft_window_v2/Standard_SCU8OG_2019-07-10_0000.018_window_377_567_annotated_h264.mp4   <-- download this one
+
+3 cyclist track(s):
+  #235  t=402.8-405.1s  hits=89  max_conf=0.99  mean_conf=0.29  travelled=3.1 diagonals
+  #742  t=474.5-488.5s  hits=264  max_conf=0.98  mean_conf=0.42  travelled=3.0 diagonals
+  #1071  t=522.2-543.7s  hits=628  max_conf=0.99  mean_conf=0.54  travelled=12.9 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #723 cyclist   t=466.8-506.0s  rejected: 
+  #1008 cyclist   t=506.5-541.4s  rejected: mean_conf 0.14<0.18
+  #550 cyclist   t=431.7-480.9s  rejected: mean_conf 0.17<0.18
+  #244 cyclist   t=398.2-437.6s  rejected: mean_conf 0.11<0.18
+  #1014 cyclist   t=511.6-529.5s  rejected: 
+  #266 cyclist   t=399.2-418.3s  rejected: mean_conf 0.12<0.18
+  #972 cyclist   t=504.1-514.7s  rejected: 
+  #665 cyclist   t=459.5-474.8s  rejected: 
+
+Download the annotated mp4 in pilot_output/ft_window_v2 (look for _h264.mp4).
+raw VRU detections: 20967
+  cyclist: 11017
+  person: 9931
+  bicycle: 19
+by source:
+  coco bicycle: 19
+  coco cyclist: 7
+  coco person: 7965
+  primary cyclist: 11010
+  primary person: 1966
+At least one cyclist-class box was emitted. If the annotated video
+still has no rider, the tracker or the gates dropped it.

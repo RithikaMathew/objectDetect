@@ -1,0 +1,24 @@
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4|377.38|567.38|FT_REVIEW .018 dense_window n_counted=129 in_window=15
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.022.mp4|789.79|979.79|FT_REVIEW .022 dense_window n_counted=113 in_window=17
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.046.mp4|2458.96|2648.96|FT_REVIEW .046 dense_window n_counted=114 in_window=14
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.010.mp4|2890.73|3080.73|FT_REVIEW .010 dense_window n_counted=34 in_window=8
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4|518.35|546.54|TRACK .018 #1118 mean=0.48 max=0.99 hits=142
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4|545.71|552.22|TRACK .018 #1168 mean=0.40 max=0.85 hits=7
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4|380.38|386.22|TRACK .018 #787 mean=0.36 max=0.77 hits=5
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4|463.63|474.97|TRACK .018 #999 mean=0.29 max=0.69 hits=51
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4|463.63|519.85|TRACK .018 #1011 mean=0.29 max=0.89 hits=355
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.022.mp4|812.48|818.15|TRACK .022 #1257 mean=0.45 max=0.80 hits=3
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.022.mp4|793.80|799.80|TRACK .022 #1195 mean=0.36 max=0.51 hits=3
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.022.mp4|796.30|802.13|TRACK .022 #1202 mean=0.31 max=0.84 hits=5
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.022.mp4|917.59|923.42|TRACK .022 #1450 mean=0.31 max=0.61 hits=4
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.022.mp4|966.14|973.47|TRACK .022 #1574 mean=0.30 max=0.69 hits=10
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.046.mp4|2613.28|2618.95|TRACK .046 #4015 mean=0.42 max=0.72 hits=3
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.046.mp4|2461.46|2466.96|TRACK .046 #3799 mean=0.39 max=0.62 hits=3
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.046.mp4|2482.32|2488.65|TRACK .046 #3861 mean=0.34 max=0.72 hits=7
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.046.mp4|2626.63|2632.80|TRACK .046 #4045 mean=0.34 max=0.81 hits=4
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.046.mp4|2626.46|2633.30|TRACK .046 #4041 mean=0.32 max=0.79 hits=7
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.010.mp4|3013.18|3019.02|TRACK .010 #5575 mean=0.33 max=0.57 hits=5
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.010.mp4|2997.50|3007.17|TRACK .010 #5529 mean=0.27 max=0.63 hits=16
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.010.mp4|2893.23|2902.57|TRACK .010 #5270 mean=0.23 max=0.66 hits=32
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.010.mp4|3075.74|3087.25|TRACK .010 #5697 mean=0.20 max=0.67 hits=45
+pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.010.mp4|3003.51|3011.01|TRACK .010 #5549 mean=0.20 max=0.87 hits=11

@@ -1,0 +1,2 @@
+ERROR: /orange/xiangyan/rithika/vision/vision3/finetune_runs/rtdetr_v1/weights/best.pt missing. Run run_finetune.slurm first, or set
+FINETUNE_WEIGHTS to point at a different best.pt.

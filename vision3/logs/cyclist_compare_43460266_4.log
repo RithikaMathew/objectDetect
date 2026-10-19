@@ -1,0 +1,14 @@
+=== method E ===
+video:   ./test.mp4
+weights: /orange/xiangyan/rithika/vision/vision3/weights
+outdir:  /orange/xiangyan/rithika/vision/vision3/pilot_output/compare
+SupervisionWarnings: `overlap_ratio_wh` in `InferenceSlicer.__init__` is deprecated and will be removed in `supervision-0.27.0`. Please manually set it to `None` and use `overlap_wh` instead.
+[method E] device=cuda
+{
+  "method": "E: RT-DETR-l+fusion+tiling",
+  "output_path": "/orange/xiangyan/rithika/vision/vision3/pilot_output/compare/output_E.mp4",
+  "unique_cyclists": 1,
+  "frames": 5694,
+  "seconds": 355.5,
+  "fps": 16.02
+}

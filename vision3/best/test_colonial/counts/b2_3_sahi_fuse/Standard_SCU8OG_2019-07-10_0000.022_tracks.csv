@@ -1,0 +1,21 @@
+track_id,label,counted,first_time,last_time,bin_index,facility,secs,mean_conf,weighted_bicyclist,weighted_pedestrian,disp_px,det_label,det_cyclist_pct,xclip_label,labels_agree
+1,PEDESTRIAN,0,2019-07-10 21:17:08,2019-07-10 21:17:08,85,sidewalk,0.27,0.334,0.355,0.645,0.8,person,0.0,PEDESTRIAN,1
+2,unscored,0,2019-07-10 21:17:44,2019-07-10 21:17:44,85,sidewalk,0.07,0.472,nan,nan,0.3,person,0.0,unscored,
+3,unscored,0,2019-07-10 21:18:41,2019-07-10 21:18:42,85,sidewalk,0.23,0.359,nan,nan,0.5,person,0.0,unscored,
+4,BICYCLIST,0,2019-07-10 21:19:02,2019-07-10 21:19:04,85,unassigned,1.2,0.813,0.973,0.027,603.7,cyclist,94.4,BICYCLIST,1
+6,unscored,0,2019-07-10 21:19:05,2019-07-10 21:19:09,85,sidewalk,0.1,0.38,nan,nan,1.0,person,0.0,unscored,
+7,PEDESTRIAN,0,2019-07-10 21:19:17,2019-07-10 21:19:20,85,sidewalk,0.27,0.385,0.225,0.775,1.3,person,0.0,PEDESTRIAN,1
+8,unscored,0,2019-07-10 21:19:31,2019-07-10 21:19:31,85,sidewalk,0.17,0.509,nan,nan,0.4,person,0.0,unscored,
+9,unscored,0,2019-07-10 21:19:49,2019-07-10 21:19:50,85,sidewalk,0.1,0.346,nan,nan,1.6,person,0.0,unscored,
+10,unscored,0,2019-07-10 21:19:55,2019-07-10 21:19:55,85,unassigned,0.17,0.339,nan,nan,7.0,person,0.0,unscored,
+11,PEDESTRIAN,0,2019-07-10 21:20:11,2019-07-10 21:20:13,85,sidewalk,0.27,0.371,0.193,0.807,1.8,person,0.0,PEDESTRIAN,1
+12,BICYCLIST,1,2019-07-10 21:21:58,2019-07-10 21:22:09,85,bike_lane,5.24,0.838,0.912,0.088,724.2,cyclist,87.9,BICYCLIST,1
+14,PEDESTRIAN,0,2019-07-10 21:23:19,2019-07-10 21:23:23,85,sidewalk,0.3,0.371,0.326,0.674,0.7,person,0.0,PEDESTRIAN,1
+15,unscored,0,2019-07-10 21:26:18,2019-07-10 21:26:20,85,sidewalk,0.13,0.332,nan,nan,0.7,person,0.0,unscored,
+16,PEDESTRIAN,0,2019-07-10 21:26:46,2019-07-10 21:26:48,85,sidewalk,0.43,0.413,0.241,0.759,1.3,person,0.0,PEDESTRIAN,1
+17,unscored,0,2019-07-10 21:27:55,2019-07-10 21:27:55,85,sidewalk,0.1,0.391,nan,nan,0.2,person,0.0,unscored,
+18,BICYCLIST,1,2019-07-10 21:29:17,2019-07-10 21:29:23,85,sidewalk,3.47,0.818,0.616,0.384,516.6,person,49.0,BICYCLIST,0
+21,PEDESTRIAN,0,2019-07-10 21:29:22,2019-07-10 21:29:25,85,sidewalk,2.37,0.701,0.39,0.61,458.1,person,31.0,PEDESTRIAN,1
+22,PEDESTRIAN,1,2019-07-10 21:29:26,2019-07-10 21:29:30,85,sidewalk,3.44,0.731,0.297,0.703,474.5,cyclist,59.2,PEDESTRIAN,0
+23,BICYCLIST,1,2019-07-10 21:29:44,2019-07-10 21:29:58,85,sidewalk,10.58,0.661,0.668,0.332,524.9,cyclist,68.8,BICYCLIST,1
+24,unscored,0,2019-07-10 21:29:55,2019-07-10 21:29:56,85,sidewalk,0.23,0.446,nan,nan,130.3,person,0.0,unscored,

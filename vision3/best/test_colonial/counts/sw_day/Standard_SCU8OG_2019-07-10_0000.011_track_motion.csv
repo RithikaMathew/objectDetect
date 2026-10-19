@@ -1,0 +1,4 @@
+track_id,label,counted,facility,first_time,last_time,secs_visible,start_x,start_y,end_x,end_y,path_px,net_px,dx,dy,path_speed_px_s,net_speed_px_s,speed_heights_per_s,direction,det_label,mean_box_h
+1,BICYCLIST,0,sidewalk,10:08:29,10:08:30,1.13,85.2,82.6,71.9,80.4,12.5,11.8,-11.5,-2.6,8.2,7.7,0.32,static,person,25.9
+2,BICYCLIST,0,bike_lane,10:09:25,10:09:27,1.4,215.8,146.0,504.6,317.7,282.6,282.2,244.3,141.3,184.2,183.9,2.05,moving_right,cyclist,89.7
+3,unscored,0,unassigned,10:13:22,10:13:22,0.03,203.6,34.5,203.6,34.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,static,person,27.3

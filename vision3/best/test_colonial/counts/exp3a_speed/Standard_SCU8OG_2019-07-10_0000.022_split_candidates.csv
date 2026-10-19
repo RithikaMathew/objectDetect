@@ -1,0 +1,2 @@
+track_a,track_b,gap_s,dist_px,secs_a,secs_b,secs_a_plus_b,label_a,label_b,a_or_b_alone_passes_min,joined_passes_min
+4,7,6.41,64.3,0.9,1.0,1.9,BICYCLIST,PEDESTRIAN,0,0

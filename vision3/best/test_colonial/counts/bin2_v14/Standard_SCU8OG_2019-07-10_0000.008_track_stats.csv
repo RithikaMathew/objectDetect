@@ -1,0 +1,3 @@
+person_track,frames,secs,scores,first_last,mean_conf,mean_box_h,plain_bicyclist,plain_pedestrian,weighted_bicyclist,weighted_pedestrian,pct_scores_bicyclist_ge_0.9,label,counted
+
+vehicle_track,frames,max_disp_px,straightness,mean_conf,counted

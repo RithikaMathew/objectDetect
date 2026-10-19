@@ -1,0 +1,31 @@
+=== method I ===
+video:   ./test.mp4
+weights: /orange/xiangyan/rithika/vision/vision3/weights
+outdir:  /orange/xiangyan/rithika/vision/vision3/pilot_output/compare_v4
+[method I] device=cuda
+[2026-09-26 19:54:29] [INFO] rf-detr - File /home/rmathew1/.roboflow/models/rf-detr-large-2026.pth already exists with correct MD5 hash.
+[2026-09-26 19:54:29] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-09-26 19:54:29] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-09-26 19:54:30] [INFO] rf-detr - File /home/rmathew1/.roboflow/models/rf-detr-large-2026.pth already exists with correct MD5 hash.
+[I: RF-DETR-Large+fusion] supervision version: 0.30.5
+/orange/xiangyan/rithika/vision/vision3/compare_detectors_v7_fixed.py:249: FutureWarning: The `ByteTrack` was deprecated since v0.28.0. It will be removed in v0.31.0.
+  tracker = sv.ByteTrack(
+[2026-09-26 19:54:31] [WARNING] rf-detr - Model is not optimized for inference. Latency may be higher than expected. For full GPU throughput (e.g. ~8x on T4 via FP16 Tensor Cores), call model.inference(dtype=torch.float16).
+Traceback (most recent call last):
+  File "/orange/xiangyan/rithika/vision/vision3/compare_detectors_v7_fixed.py", line 599, in <module>
+    main()
+  File "/orange/xiangyan/rithika/vision/vision3/compare_detectors_v7_fixed.py", line 589, in main
+    summary = process_video(args.video, out_video, detect_fn, label)
+  File "/orange/xiangyan/rithika/vision/vision3/compare_detectors_v7_fixed.py", line 274, in process_video
+    detections = get_detections_fn(frame)
+  File "/orange/xiangyan/rithika/vision/vision3/compare_detectors_v7_fixed.py", line 562, in fn
+    dets = model.predict(rgb, threshold=0.15)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/rfdetr/detr.py", line 324, in wrapper
+    return method(self, *args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/rfdetr/detr.py", line 2693, in predict
+    img = _uint8_image_to_chw_view(tensor_source)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/rfdetr/detr.py", line 115, in _uint8_image_to_chw_view
+    return torch.from_numpy(image.transpose((2, 0, 1)))
+ValueError: At least one stride in the given numpy array is negative, and tensors with negative strides are not currently supported. (You can probably work around this by making a copy of your array  with array.copy().) 

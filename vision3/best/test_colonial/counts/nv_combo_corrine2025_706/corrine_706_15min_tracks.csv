@@ -1,0 +1,10 @@
+track_id,label,counted,first_time,last_time,bin_index,facility,secs,mean_conf,weighted_bicyclist,weighted_pedestrian,disp_px,det_label,det_cyclist_pct,xclip_label,labels_agree
+1,PEDESTRIAN,1,2025-03-12 08:07:44,2025-03-12 08:07:50,0,unassigned,6.2,0.846,0.345,0.655,473.8,person,0.0,PEDESTRIAN,1
+2,unscored,0,2025-03-12 08:08:58,2025-03-12 08:08:58,0,unassigned,0.07,0.762,nan,nan,0.0,person,0.0,unscored,
+3,BICYCLIST,0,2025-03-12 08:12:07,2025-03-12 08:12:12,0,unassigned,1.27,0.592,0.959,0.041,132.7,person,0.0,BICYCLIST,0
+6,unscored,0,2025-03-12 08:12:21,2025-03-12 08:12:22,0,unassigned,0.47,0.449,nan,nan,23.1,person,0.0,unscored,
+7,unscored,0,2025-03-12 08:13:16,2025-03-12 08:13:16,0,unassigned,0.27,0.642,nan,nan,24.1,person,0.0,unscored,
+8,unscored,0,2025-03-12 08:13:54,2025-03-12 08:13:54,0,unassigned,0.13,0.342,nan,nan,0.2,person,0.0,unscored,
+9,unscored,0,2025-03-12 08:15:05,2025-03-12 08:15:05,0,unassigned,0.33,0.299,nan,nan,0.6,person,0.0,unscored,
+10,unscored,0,2025-03-12 08:15:34,2025-03-12 08:15:38,0,unassigned,0.4,0.386,nan,nan,1.4,person,0.0,unscored,
+12,unscored,0,2025-03-12 08:17:52,2025-03-12 08:17:52,0,unassigned,0.07,0.435,nan,nan,0.0,person,0.0,unscored,

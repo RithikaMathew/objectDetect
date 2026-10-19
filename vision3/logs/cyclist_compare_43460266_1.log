@@ -1,0 +1,13 @@
+=== method B ===
+video:   ./test.mp4
+weights: /orange/xiangyan/rithika/vision/vision3/weights
+outdir:  /orange/xiangyan/rithika/vision/vision3/pilot_output/compare
+[method B] device=cuda
+{
+  "method": "B: YOLO11x+fusion",
+  "output_path": "/orange/xiangyan/rithika/vision/vision3/pilot_output/compare/output_B.mp4",
+  "unique_cyclists": 1,
+  "frames": 5694,
+  "seconds": 181.9,
+  "fps": 31.31
+}

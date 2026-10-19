@@ -1,0 +1,65 @@
+VALIDATION LOG  Colonial North  run=colonial_run5  written 2026-10-05 15:43:20
+====================================================================================================
+
+[RUN SUMMARY]
+  Run name: colonial_run5
+  Site / location: Colonial North - Colonial - BL Colonial camera (SCU8OG)
+  Video session start (camera clock): 2019-07-10 00:00:00 (chunk .001); verified from on-screen clock on .001 = 2019-07-10 12:00:00 AM, .008 = 7:00:01 AM, .025 = 2019-07-11 12:00:01 AM
+  Chunks processed: 3: [13, 14, 22]
+  Chunks expected: 3 (13,14,22); missing: none
+  Videos merged: 0 - each hourly mp4 is processed on its own and the results are joined by clock time; a rider crossing an hour boundary is split across two chunks (rare)
+  Total video duration processed: 3.00 h
+  15-min bins in workbook: 12 (12 evaluated, 0 partial/excluded)
+  Ground truth file: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/ground_truth/Colonial_North_676806_07-10-2019.xls
+  Weights: /orange/xiangyan/rithika/vision/vision3/runs/detect/finetune_runs/rtdetr_v3/weights/best.pt
+  Total runtime (sum over chunks): 356.6 min
+
+[CHECKS]
+  check 1: Bicycles channels used: ['North Bike Lane', 'North Sidewalk', 'North Bike Lane', 'North Sidewalk'] -> bike-lane cols [1, 3], sidewalk cols [2, 4]
+  check 2: Bin labels are consecutive 15-min steps starting 12:00 AM: YES
+  check 3: GT bicyclists, all 192 bins of the .xls (48 h): 89
+  check 4: GT CSV total for Colonial North: 89 -> MATCHES .xls
+  check 5: video_site_mapping: folder=BL Colonial, gt_cyclist_count=89, n_mp4_chunks=48 -> GT is a 89-count over 48 h of bins; chunk count consistent with the 192 GT bins
+
+[WARNINGS]
+  warning 1: chunk 13: streamed clip header (provisional) differs from the final count in 2 bin(s): bin 49 header {'bic': 0, 'ped': 0, 'veh': 617} vs final {'bic': 0, 'ped': 0, 'veh': 616}; bin 50 header {'bic': 1, 'ped': 0, 'veh': 523} vs final {'bic': 1, 'ped': 0, 'veh': 522}  -> the workbook uses the FINAL counts
+  warning 2: chunk 22: starts 2019-07-10 21:00:00 but previous processed chunk ends 2019-07-10 13:59:58.500000 (non-adjacent chunks)
+
+[BICYCLISTS (bike lane + sidewalk) per 15-min bin]  (bins with full coverage only)
+  bins: 12
+  AI total: 6
+  GT total: 9
+  bias (AI-GT per bin): -0.250
+  MAE: 0.750
+  RMSE: 1.258
+  WAPE (sum|err|/sum GT): 1.000
+  within +-1: 0.750
+  within +-2: 0.917
+  pearson r: 0.332
+  count-matched precision (approx): 0.500
+  count-matched recall (approx): 0.333
+
+[PEDESTRIANS per 15-min bin]  (bins with full coverage only)
+  bins: 12
+  AI total: 7
+  GT total: 15
+  bias (AI-GT per bin): -0.667
+  MAE: 1.000
+  RMSE: 1.414
+  WAPE (sum|err|/sum GT): 0.800
+  within +-1: 0.833
+  within +-2: 0.833
+  pearson r: 0.027
+  count-matched precision (approx): 0.714
+  count-matched recall (approx): 0.333
+
+[PER-HOUR]
+  chunk  hour start            AI bic  GT bic   AI ped  GT ped
+     13  2019-07-10 12:00 PM        5       3        1       2
+     14  2019-07-10 01:00 PM        1       3        5       6
+     22  2019-07-10 09:00 PM        0       3        1       7
+
+[BINS FLAGGED |AI-GT| > 2 bicyclists]
+  2019-07-10 09:15 PM-09:30 PM  AI 0  GT 3   clip: annotated/colonial_run5/Standard_SCU8OG_2019-07-10_0000.022/Standard_SCU8OG_2019-07-10_0000.022_20190710_2115-2130.mp4
+
+Workbook: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/validation/colonial_north_colonial_run5_validation.xlsx  (cached values stored via LibreOffice: False; Excel recalculates on open either way)

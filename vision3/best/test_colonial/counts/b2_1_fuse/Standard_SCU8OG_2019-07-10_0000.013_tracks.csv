@@ -1,0 +1,7 @@
+track_id,label,counted,first_time,last_time,bin_index,facility,secs,mean_conf,weighted_bicyclist,weighted_pedestrian,disp_px,det_label,det_cyclist_pct,xclip_label,labels_agree
+1,BICYCLIST,1,2019-07-10 12:45:40,2019-07-10 12:45:56,51,sidewalk,9.11,0.555,0.645,0.355,657.0,person,44.7,BICYCLIST,0
+4,BICYCLIST,1,2019-07-10 12:53:07,2019-07-10 12:53:13,51,sidewalk,3.67,0.569,0.787,0.213,355.0,person,46.4,BICYCLIST,0
+6,BICYCLIST,1,2019-07-10 12:53:45,2019-07-10 12:53:52,51,sidewalk,6.97,0.682,0.788,0.212,469.2,person,45.0,BICYCLIST,0
+7,PEDESTRIAN,1,2019-07-10 12:54:53,2019-07-10 12:55:03,51,unassigned,4.84,0.529,0.182,0.818,29.0,person,0.0,PEDESTRIAN,1
+9,PEDESTRIAN,1,2019-07-10 12:56:16,2019-07-10 12:56:38,51,unassigned,18.59,0.724,0.648,0.352,248.7,person,6.6,PEDESTRIAN,1
+13,unscored,0,2019-07-10 12:58:16,2019-07-10 12:58:16,51,unassigned,0.03,0.815,nan,nan,0.0,cyclist,100.0,unscored,

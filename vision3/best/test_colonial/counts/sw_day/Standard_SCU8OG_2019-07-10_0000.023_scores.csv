@@ -1,0 +1,4 @@
+tracker_id,frame,bicyclist,pedestrian,bicyclist_smooth,pedestrian_smooth,box_h
+3,18347,0.086,0.914,0.086,0.914,115.7
+3,18352,0.109,0.891,0.097,0.903,62.0
+3,18355,0.175,0.825,0.136,0.864,61.2

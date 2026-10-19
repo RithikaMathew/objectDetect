@@ -1,0 +1,27 @@
+NOTE: no zones file (/orange/xiangyan/rithika/vision/vision3/best/test_colonial/zones/colonial_north_v1.json) -> bike-lane/sidewalk split will be 'unassigned'
+chunk=008 run=bin2_v14 video=/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.008.mp4
+/orange/xiangyan/rithika/vision/vision3/best/test_colonial/code/xclip_overlay_v14_colonial.py:436: FutureWarning: The `ByteTrack` was deprecated since v0.28.0. It will be removed in v0.31.0.
+  return sv.ByteTrack(track_activation_threshold=args.track_thr,
+chunk 8: clip starts 2019-07-10 07:00:00  bins 28..31  fps=29.970  720x480
+detector classes: {0: 'bus', 1: 'car', 2: 'cyclist', 3: 'other_vehicle', 4: 'person', 5: 'truck'}
+ people=[2, 4] vehicles=[0, 1, 3, 5]
+Loading microsoft/xclip-base-patch32 on cuda ...
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights:   0%|          | 1/591 [00:00<01:13,  8.06it/s]Loading weights:   0%|          | 2/591 [00:00<01:32,  6.37it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 1789.89it/s]
+frame 27000/107878
+rendering remaining annotated clips ...
+clip written: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/annotated/bin2_v14/Standard_SCU8OG_2019-07-10_0000.008/Standard_SCU8OG_2019-07-10_0000.008_20190710_0715-0730.mp4
+streamed bins: []; bins whose streamed header differs from the final counts: none
+
+=== person tracks (after id stitching) ===
+track | frames | secs | scores | first-last frame | mean conf | mean box h | plain BIC | plain PED | wtd BIC | wtd PED | %scores bic>=.9 | %det=cyclist | FINAL LABEL
+Per-track quality stats (persons + vehicles): /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/bin2_v14/Standard_SCU8OG_2019-07-10_0000.008_track_stats.csv
+
+Raw detector detections by class (conf>=0.15): {'car': 71}
+Stitched raw->canonical merges: 0
+Final counts: bicyclists=0 pedestrians=0 vehicles=0
+Annotated clips (1): /orange/xiangyan/rithika/vision/vision3/best/test_colonial/annotated/bin2_v14/Standard_SCU8OG_2019-07-10_0000.008
+Scores: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/bin2_v14/Standard_SCU8OG_2019-07-10_0000.008_scores.csv
+Bin counts: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/bin2_v14/Standard_SCU8OG_2019-07-10_0000.008_bin_counts.csv
+Tracks: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/bin2_v14/Standard_SCU8OG_2019-07-10_0000.008_tracks.csv
+Run log: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/logs/bin2_v14/Standard_SCU8OG_2019-07-10_0000.008_run_log.json
+Runtime: 64.6 s

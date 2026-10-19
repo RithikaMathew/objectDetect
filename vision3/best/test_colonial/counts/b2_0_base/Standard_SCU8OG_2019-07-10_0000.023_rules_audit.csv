@@ -1,0 +1,2 @@
+track_id,first_time,last_time,secs,xclip_label,weighted_bicyclist,det_cyclist_pct,speed_heights_per_s,speed_span_s,net_px,direction,night_track,final_label,counted,speed_rule_vote,short_rule_would_count,passes_min_duration
+3,22:10:10,22:10:12,0.43,PEDESTRIAN,0.115,100.0,0.58,1.6,74.7,moving_right,0,PEDESTRIAN,0,,0,0

@@ -1,0 +1,14 @@
+track_id,label,counted,facility,first_time,last_time,secs_visible,start_x,start_y,end_x,end_y,path_px,net_px,dx,dy,path_speed_px_s,net_speed_px_s,speed_heights_per_s,direction,det_label,mean_box_h
+1,unscored,0,unassigned,14:01:03,14:01:03,0.03,696.7,323.6,696.7,323.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,static,cyclist,92.2
+2,PEDESTRIAN,1,unassigned,14:02:59,14:03:22,20.69,474.0,480.1,37.7,63.4,658.7,593.0,-422.6,-416.0,29.7,26.8,0.56,moving_left,person,52.7
+3,unscored,0,unassigned,14:03:00,14:03:00,0.03,685.2,290.7,685.2,290.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,static,cyclist,91.4
+4,BICYCLIST,0,unassigned,14:03:03,14:03:04,0.4,501.0,51.7,693.5,122.8,156.9,156.9,147.3,53.8,427.5,427.4,8.88,moving_right,cyclist,48.2
+5,unscored,0,unassigned,14:04:57,14:04:57,0.03,684.4,306.4,684.4,306.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,static,cyclist,134.9
+6,PEDESTRIAN,0,unassigned,14:06:16,14:06:17,0.57,28.6,70.2,30.7,68.8,1.8,1.7,1.5,-0.8,2.9,2.7,0.14,static,person,20.9
+7,unscored,0,unassigned,14:06:17,14:06:20,0.07,694.0,124.5,698.2,129.9,6.8,6.8,4.1,5.3,2.5,2.5,0.04,static,cyclist,57.8
+8,unscored,0,unassigned,14:07:17,14:07:17,0.07,714.4,480.0,714.5,480.0,0.1,0.1,0.1,-0.1,2.8,2.8,0.12,static,person,22.9
+9,unscored,0,unassigned,14:08:13,14:08:13,0.03,659.4,307.1,659.4,307.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,static,cyclist,122.6
+10,BICYCLIST,1,unassigned,14:09:09,14:09:18,6.74,701.9,477.7,58.3,61.0,755.1,749.2,-628.9,-407.2,88.4,87.7,1.51,moving_left,cyclist,58.6
+13,PEDESTRIAN,1,unassigned,14:11:37,14:12:21,36.57,457.3,480.3,95.5,131.4,836.4,499.3,-358.8,-347.2,18.7,11.2,0.39,moving_left,person,47.9
+15,PEDESTRIAN,1,unassigned,14:12:08,14:12:34,21.96,602.8,480.1,30.6,82.9,1371.8,628.5,-487.6,-396.5,52.4,24.0,0.78,moving_left,person,67.6
+23,PEDESTRIAN,1,unassigned,14:12:30,14:12:36,3.47,57.4,87.8,42.6,76.4,21.5,16.8,-14.0,-9.4,4.0,3.1,0.16,static,person,24.6

@@ -1,0 +1,37 @@
+Tracks: [1, 2, 3, 4, 5, 6]
+device: cuda
+[xclip] loading microsoft/xclip-base-patch32
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights:   0%|          | 1/591 [00:00<02:35,  3.79it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 2103.89it/s]
+[clip] loading openai/clip-vit-base-patch32
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 46171.57it/s]
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+[siglip] loading google/siglip-base-patch16-224
+Traceback (most recent call last):
+  File "/orange/xiangyan/rithika/vision/vision3/bike_ped_compare_v1.py", line 634, in <module>
+    main()
+  File "/orange/xiangyan/rithika/vision/vision3/bike_ped_compare_v1.py", line 470, in main
+    backends = build_backends(args.backends, args, device)
+  File "/orange/xiangyan/rithika/vision/vision3/bike_ped_compare_v1.py", line 366, in build_backends
+    out.append(ImageTextBackend("siglip", args.siglip_model, args, device))
+  File "/orange/xiangyan/rithika/vision/vision3/bike_ped_compare_v1.py", line 183, in __init__
+    self.proc = AutoProcessor.from_pretrained(model_id)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/transformers/models/auto/processing_auto.py", line 330, in from_pretrained
+    return processor_class.from_pretrained(
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/transformers/processing_utils.py", line 1736, in from_pretrained
+    args = cls._get_arguments_from_pretrained(pretrained_model_name_or_path, processor_dict, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/transformers/processing_utils.py", line 1861, in _get_arguments_from_pretrained
+    tokenizer = cls._load_tokenizer_from_pretrained(
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/transformers/processing_utils.py", line 1797, in _load_tokenizer_from_pretrained
+    tokenizer = auto_processor_class.from_pretrained(
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 942, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 2388, in __getattribute__
+    requires_backends(cls, cls._backends)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 2374, in requires_backends
+    raise ImportError("".join(failed))
+ImportError: 
+SiglipTokenizer requires the SentencePiece library but it was not found in your environment. Check out the instructions on the
+installation page of its repo: https://github.com/google/sentencepiece#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+

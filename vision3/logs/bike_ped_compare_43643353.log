@@ -1,0 +1,25 @@
+Tracks: [1, 2, 3, 4, 5, 6]
+device: cuda
+[xclip] loading microsoft/xclip-base-patch32
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights:   0%|          | 1/591 [00:00<02:59,  3.29it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 1861.33it/s]
+[clip] loading openai/clip-vit-base-patch32
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 44957.93it/s]
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+[siglip] loading google/siglip-base-patch16-224
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 44265.92it/s]
+[videomae] loading MCG-NJU/videomae-base-finetuned-kinetics
+Traceback (most recent call last):
+  File "/orange/xiangyan/rithika/vision/vision3/bike_ped_compare_v1.py", line 634, in <module>
+    main()
+  File "/orange/xiangyan/rithika/vision/vision3/bike_ped_compare_v1.py", line 470, in main
+    backends = build_backends(args.backends, args, device)
+  File "/orange/xiangyan/rithika/vision/vision3/bike_ped_compare_v1.py", line 368, in build_backends
+    out.append(VideoMAEBackend(args, device))
+  File "/orange/xiangyan/rithika/vision/vision3/bike_ped_compare_v1.py", line 211, in __init__
+    self.proc = VideoMAEImageProcessor.from_pretrained(args.videomae_model)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/transformers/image_processing_base.py", line 179, in from_pretrained
+    image_processor_dict, kwargs = cls.get_image_processor_dict(pretrained_model_name_or_path, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/transformers/image_processing_base.py", line 334, in get_image_processor_dict
+    raise OSError(
+OSError: Can't load image processor for 'MCG-NJU/videomae-base-finetuned-kinetics'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'MCG-NJU/videomae-base-finetuned-kinetics' is the correct path to a directory containing a preprocessor_config.json file

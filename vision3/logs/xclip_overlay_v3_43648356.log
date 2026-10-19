@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/orange/xiangyan/rithika/vision/vision3/xclip_overlay_v3.py", line 339, in <module>
+    main()
+  File "/orange/xiangyan/rithika/vision/vision3/xclip_overlay_v3.py", line 184, in main
+    det = RTDETR(args.weights)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/models/rtdetr/model.py", line 47, in __init__
+    super().__init__(model=model, task="detect")
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/engine/model.py", line 133, in __init__
+    self._load(model, task=task)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/engine/model.py", line 250, in _load
+    self.model, self.ckpt = load_checkpoint(weights)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/tasks.py", line 1957, in load_checkpoint
+    ckpt, weight = torch_safe_load(weight)  # load ckpt
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/tasks.py", line 1856, in torch_safe_load
+    ckpt = _load()
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/nn/tasks.py", line 1847, in _load
+    return torch_load(file, map_location="cpu")
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/ultralytics/utils/patches.py", line 201, in torch_load
+    return torch.load(*args, **kwargs)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/serialization.py", line 1561, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/serialization.py", line 795, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/torch/serialization.py", line 776, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+FileNotFoundError: [Errno 2] No such file or directory: '/orange/xiangyan/rithika/vision/vision3/finetune_runs/rtdetr_v1/weights/best.pt'

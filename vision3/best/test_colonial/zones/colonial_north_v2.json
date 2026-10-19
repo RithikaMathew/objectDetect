@@ -1,0 +1,8 @@
+{
+ "ref_size": [1440, 960],
+ "_note": "Rithika's polygons for the COLONIAL 2019 camera (2026-10-12). ref_size 1440x960 is INFERRED: the coordinates reach (1422, 953) and the aspect ratio matches 2x the 720x480 video. Check with draw_zones_preview.py. 'main road' = road, 'bikelane' = bike. 'grass' is kept for the record; the pipeline reads only road, bike and sidewalk.",
+ "road": [[99, 71], [616, 273], [925, 407], [1420, 694], [1418, 71], [1340, 40], [107, 40]],
+ "bike": [[107, 71], [925, 407], [1422, 698], [1418, 953], [1230, 945], [64, 81]],
+ "sidewalk": [[1228, 947], [674, 947], [431, 760], [206, 502], [23, 116], [60, 83]],
+ "grass": [[21, 119], [206, 506], [435, 764], [682, 951], [16, 951], [4, 123]]
+}

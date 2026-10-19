@@ -1,0 +1,17 @@
+=== session: MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000 ===
+in zip:
+177348092  07-12-2019 04:00   MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.048.mp4
+---------                     -------
+8507079488                     48 files
+
+on disk before:
+2
+
+10.13.133.144@o2ib,10.13.133.145@o2ib:10.13.133.146@o2ib,10.13.133.147@o2ib:10.13.133.148@o2ib,10.13.133.149@o2ib:10.13.133.150@o2ib,10.13.133.151@o2ib:/orange/hpg  2.0T  1.7T  314G  85% /orange/xiangyan
+
+on disk after:
+48
+7.8G	pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000
+
+Now confirm this matches n_mp4_chunks in video_site_mapping.csv before
+submitting run_site_array.slurm, and set --array to cover that count.

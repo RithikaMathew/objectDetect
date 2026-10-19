@@ -1,0 +1,33 @@
+=== task 14 / 48 ===
+chunk: pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.015.mp4
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.015 ===
+weights=yolov8l.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+21570 sampled frames, inference 3395.6s (0.16s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, '_default': 6}
+
+Raw tracks: 30082  ->  after merge: 20267  (9815 absorbed)
+COUNTED TRACKS BY CLASS: {'car': 928, 'person': 33, 'cyclist': 6, 'truck': 15}
+Rejected tracks: {'low_mean_conf': 299, 'static_object': 23, 'low_max_conf': 4705, 'too_few_hits': 14258}
+
+Funnel CSV : pilot_output/sessions/BL_Colonial_2019-07-10/Standard_SCU8OG_2019-07-10_0000.015_funnel.csv
+Tracks CSV : pilot_output/sessions/BL_Colonial_2019-07-10/Standard_SCU8OG_2019-07-10_0000.015_tracks.csv
+
+6 cyclist track(s):
+  #4563  t=548.0-554.4s  hits=24  max_conf=0.70  mean_conf=0.21  travelled=16.7 diagonals
+  #6265  t=729.4-742.4s  hits=136  max_conf=0.81  mean_conf=0.30  travelled=2.4 diagonals
+  #8403  t=991.0-992.8s  hits=12  max_conf=0.87  mean_conf=0.66  travelled=6.1 diagonals
+  #13230  t=1553.4-1565.1s  hits=68  max_conf=0.82  mean_conf=0.25  travelled=5.1 diagonals
+  #26526  t=3217.4-3224.4s  hits=33  max_conf=0.74  mean_conf=0.32  travelled=2.3 diagonals
+  #26558  t=3224.1-3226.2s  hits=16  max_conf=0.64  mean_conf=0.33  travelled=7.4 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #202 person    t=16.9-35.9s  rejected: max_conf 0.44<0.5, mean_conf 0.15<0.2
+  #6278 person    t=735.7-752.1s  rejected: max_conf 0.50<0.5, mean_conf 0.14<0.2
+  #1694 person    t=200.4-214.2s  rejected: max_conf 0.39<0.5, mean_conf 0.16<0.2
+  #452 person    t=37.2-51.9s  rejected: max_conf 0.39<0.5, mean_conf 0.14<0.2
+  #3393 person    t=405.4-416.6s  rejected: max_conf 0.47<0.5
+  #3462 person    t=416.4-430.8s  rejected: mean_conf 0.14<0.2
+  #28880 person    t=3457.1-3475.0s  rejected: max_conf 0.41<0.5, mean_conf 0.10<0.2
+  #6021 person    t=702.5-718.6s  rejected: mean_conf 0.17<0.2

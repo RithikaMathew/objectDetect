@@ -1,0 +1,4 @@
+track_a,track_b,gap_s,dist_px,secs_a,secs_b,secs_a_plus_b,label_a,label_b,a_or_b_alone_passes_min,joined_passes_min
+24,26,6.44,0.1,4.97,3.8,8.78,PEDESTRIAN,PEDESTRIAN,1,1
+26,27,5.77,1.0,3.8,18.72,22.52,PEDESTRIAN,PEDESTRIAN,1,1
+45,46,7.41,1.0,0.67,1.27,1.94,PEDESTRIAN,PEDESTRIAN,0,0

@@ -1,0 +1,159 @@
+=== task 17 / 48 ===
+chunk: pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4
+weights: runs/detect/sixclass_v1_yolov8l/weights/best.pt
+outdir: pilot_output/sessions/BL_Colonial_2019-07-10_ft
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  finetuned=True  detect_classes=[0, 1, 2, 3, 4, 5]  fuse_cyclist=False
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.018 ===
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+21571 sampled frames, inference 3426.3s (0.16s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, 'other_vehicle': 3, '_default': 6}
+
+Raw tracks: 8704  ->  after merge: 4808  (3896 absorbed)
+COUNTED TRACKS BY CLASS: {'car': 1689, 'cyclist': 129}
+Rejected tracks: {'low_max_conf': 1399, 'low_mean_conf': 269, 'static_object': 12, 'too_few_hits': 1310}
+
+Funnel CSV : pilot_output/sessions/BL_Colonial_2019-07-10_ft/Standard_SCU8OG_2019-07-10_0000.018_funnel.csv
+Tracks CSV : pilot_output/sessions/BL_Colonial_2019-07-10_ft/Standard_SCU8OG_2019-07-10_0000.018_tracks.csv
+
+129 cyclist track(s):
+  #148  t=75.6-81.7s  hits=35  max_conf=0.62  mean_conf=0.26  travelled=4.2 diagonals
+  #413  t=208.9-209.9s  hits=3  max_conf=0.53  mean_conf=0.34  travelled=2.0 diagonals
+  #525  t=266.6-270.4s  hits=13  max_conf=0.78  mean_conf=0.21  travelled=8.3 diagonals
+  #529  t=267.8-272.8s  hits=22  max_conf=0.56  mean_conf=0.21  travelled=2.5 diagonals
+  #557  t=276.6-278.1s  hits=8  max_conf=0.59  mean_conf=0.23  travelled=4.2 diagonals
+  #784  t=382.4-404.6s  hits=186  max_conf=0.61  mean_conf=0.18  travelled=5.4 diagonals
+  #787  t=382.9-383.7s  hits=5  max_conf=0.77  mean_conf=0.36  travelled=8.5 diagonals
+  #801  t=389.4-392.2s  hits=17  max_conf=0.63  mean_conf=0.20  travelled=4.7 diagonals
+  #807  t=391.4-393.2s  hits=10  max_conf=0.58  mean_conf=0.19  travelled=2.2 diagonals
+  #1011  t=466.1-517.4s  hits=355  max_conf=0.89  mean_conf=0.29  travelled=2.5 diagonals
+  #999  t=466.1-472.5s  hits=51  max_conf=0.69  mean_conf=0.29  travelled=2.0 diagonals
+  #1046  t=488.3-489.3s  hits=5  max_conf=0.52  mean_conf=0.19  travelled=3.9 diagonals
+  #1099  t=506.7-527.2s  hits=165  max_conf=0.79  mean_conf=0.21  travelled=2.8 diagonals
+  #1097  t=509.5-510.5s  hits=6  max_conf=0.57  mean_conf=0.23  travelled=3.6 diagonals
+  #1104  t=512.8-514.7s  hits=12  max_conf=0.71  mean_conf=0.28  travelled=4.2 diagonals
+  #1118  t=520.9-544.0s  hits=142  max_conf=0.99  mean_conf=0.48  travelled=8.9 diagonals
+  #1154  t=542.4-545.4s  hits=14  max_conf=0.56  mean_conf=0.20  travelled=1.6 diagonals
+  #1159  t=546.0-546.9s  hits=4  max_conf=0.57  mean_conf=0.29  travelled=1.7 diagonals
+  #1168  t=548.2-549.7s  hits=7  max_conf=0.85  mean_conf=0.40  travelled=3.7 diagonals
+  #1182  t=552.6-553.9s  hits=6  max_conf=0.57  mean_conf=0.23  travelled=5.9 diagonals
+  #1234  t=574.2-576.1s  hits=16  max_conf=0.63  mean_conf=0.20  travelled=4.2 diagonals
+  #1372  t=634.0-634.3s  hits=3  max_conf=0.75  mean_conf=0.49  travelled=1.3 diagonals
+  #1521  t=677.2-678.2s  hits=6  max_conf=0.53  mean_conf=0.30  travelled=5.3 diagonals
+  #1543  t=684.7-689.2s  hits=19  max_conf=0.60  mean_conf=0.23  travelled=2.5 diagonals
+  #1548  t=688.4-689.5s  hits=9  max_conf=0.54  mean_conf=0.32  travelled=4.1 diagonals
+  #1632  t=736.6-738.4s  hits=10  max_conf=0.73  mean_conf=0.19  travelled=4.4 diagonals
+  #1855  t=832.7-833.5s  hits=5  max_conf=0.69  mean_conf=0.30  travelled=0.9 diagonals
+  #1889  t=845.0-847.2s  hits=9  max_conf=0.58  mean_conf=0.21  travelled=5.5 diagonals
+  #1924  t=856.0-856.7s  hits=7  max_conf=0.51  mean_conf=0.22  travelled=2.6 diagonals
+  #1963  t=874.7-880.4s  hits=30  max_conf=0.88  mean_conf=0.20  travelled=3.3 diagonals
+  #1983  t=889.2-918.3s  hits=174  max_conf=0.75  mean_conf=0.19  travelled=4.2 diagonals
+  #2011  t=915.7-930.8s  hits=107  max_conf=0.77  mean_conf=0.40  travelled=3.7 diagonals
+  #2052  t=936.6-940.4s  hits=18  max_conf=0.81  mean_conf=0.36  travelled=4.3 diagonals
+  #2061  t=944.1-946.6s  hits=10  max_conf=0.54  mean_conf=0.18  travelled=2.1 diagonals
+  #2194  t=1000.0-1001.2s  hits=5  max_conf=0.72  mean_conf=0.20  travelled=2.0 diagonals
+  #2274  t=1020.5-1022.4s  hits=12  max_conf=0.77  mean_conf=0.42  travelled=5.8 diagonals
+  #2294  t=1028.5-1032.9s  hits=21  max_conf=0.71  mean_conf=0.38  travelled=11.0 diagonals
+  #2306  t=1032.4-1035.4s  hits=17  max_conf=0.62  mean_conf=0.37  travelled=2.3 diagonals
+  #2337  t=1043.2-1048.9s  hits=32  max_conf=0.71  mean_conf=0.25  travelled=7.1 diagonals
+  #2339  t=1043.4-1045.5s  hits=13  max_conf=0.64  mean_conf=0.24  travelled=7.5 diagonals
+  #2367  t=1053.4-1055.4s  hits=12  max_conf=0.63  mean_conf=0.28  travelled=2.3 diagonals
+  #2465  t=1112.3-1112.9s  hits=5  max_conf=0.61  mean_conf=0.23  travelled=1.1 diagonals
+  #2652  t=1180.2-1181.2s  hits=5  max_conf=0.52  mean_conf=0.28  travelled=3.5 diagonals
+  #2655  t=1181.0-1183.0s  hits=10  max_conf=0.75  mean_conf=0.37  travelled=3.6 diagonals
+  #2659  t=1182.0-1188.2s  hits=34  max_conf=0.74  mean_conf=0.29  travelled=17.2 diagonals
+  #2678  t=1188.2-1190.2s  hits=12  max_conf=0.64  mean_conf=0.25  travelled=1.2 diagonals
+  #2690  t=1192.2-1195.7s  hits=18  max_conf=0.70  mean_conf=0.27  travelled=5.5 diagonals
+  #2708  t=1197.7-1205.0s  hits=40  max_conf=0.59  mean_conf=0.19  travelled=2.9 diagonals
+  #2883  t=1273.4-1283.1s  hits=50  max_conf=0.78  mean_conf=0.22  travelled=4.8 diagonals
+  #2905  t=1286.5-1287.8s  hits=9  max_conf=0.70  mean_conf=0.35  travelled=3.2 diagonals
+  #2923  t=1292.8-1293.8s  hits=6  max_conf=0.76  mean_conf=0.44  travelled=3.1 diagonals
+  #2954  t=1302.3-1304.1s  hits=9  max_conf=0.67  mean_conf=0.31  travelled=4.4 diagonals
+  #2987  t=1310.3-1313.6s  hits=17  max_conf=0.89  mean_conf=0.27  travelled=4.8 diagonals
+  #3019  t=1324.2-1325.5s  hits=11  max_conf=0.80  mean_conf=0.23  travelled=3.9 diagonals
+  #3032  t=1328.0-1339.2s  hits=46  max_conf=0.89  mean_conf=0.18  travelled=16.7 diagonals
+  #3083  t=1344.3-1345.3s  hits=7  max_conf=0.81  mean_conf=0.37  travelled=4.1 diagonals
+  #3116  t=1355.7-1357.0s  hits=8  max_conf=0.78  mean_conf=0.26  travelled=4.4 diagonals
+  #3147  t=1365.7-1373.4s  hits=41  max_conf=0.83  mean_conf=0.39  travelled=10.7 diagonals
+  #3232  t=1400.4-1419.4s  hits=111  max_conf=0.78  mean_conf=0.31  travelled=6.5 diagonals
+  #3282  t=1424.9-1473.6s  hits=413  max_conf=0.81  mean_conf=0.23  travelled=3.5 diagonals
+  #3330  t=1446.4-1452.1s  hits=35  max_conf=0.61  mean_conf=0.20  travelled=4.1 diagonals
+  #3401  t=1481.0-1484.0s  hits=15  max_conf=0.80  mean_conf=0.24  travelled=2.9 diagonals
+  #3531  t=1526.2-1528.7s  hits=13  max_conf=0.75  mean_conf=0.28  travelled=3.7 diagonals
+  #3595  t=1547.7-1548.5s  hits=5  max_conf=0.79  mean_conf=0.37  travelled=3.2 diagonals
+  #3664  t=1567.7-1600.4s  hits=206  max_conf=0.92  mean_conf=0.34  travelled=10.4 diagonals
+  #3872  t=1663.7-1665.5s  hits=9  max_conf=0.79  mean_conf=0.30  travelled=5.2 diagonals
+  #3890  t=1669.7-1673.5s  hits=12  max_conf=0.62  mean_conf=0.18  travelled=2.6 diagonals
+  #3895  t=1671.3-1672.5s  hits=8  max_conf=0.80  mean_conf=0.31  travelled=1.4 diagonals
+  #3963  t=1697.5-1698.0s  hits=4  max_conf=0.63  mean_conf=0.35  travelled=1.7 diagonals
+  #4041  t=1723.6-1724.7s  hits=7  max_conf=0.65  mean_conf=0.30  travelled=12.3 diagonals
+  #4074  t=1735.7-1738.2s  hits=13  max_conf=0.73  mean_conf=0.25  travelled=4.9 diagonals
+  #4091  t=1740.2-1752.1s  hits=72  max_conf=0.72  mean_conf=0.22  travelled=12.4 diagonals
+  #4197  t=1788.8-1833.2s  hits=241  max_conf=0.61  mean_conf=0.28  travelled=6.2 diagonals
+  #4212  t=1796.0-1802.8s  hits=58  max_conf=0.76  mean_conf=0.29  travelled=4.1 diagonals
+  #4315  t=1842.3-1845.3s  hits=19  max_conf=0.53  mean_conf=0.22  travelled=5.3 diagonals
+  #4563  t=1926.1-1930.8s  hits=16  max_conf=0.56  mean_conf=0.21  travelled=4.0 diagonals
+  #4564  t=1926.1-1928.4s  hits=9  max_conf=0.77  mean_conf=0.24  travelled=3.8 diagonals
+  #4578  t=1931.9-1934.9s  hits=18  max_conf=0.83  mean_conf=0.31  travelled=4.8 diagonals
+  #4598  t=1937.9-1944.1s  hits=31  max_conf=0.85  mean_conf=0.36  travelled=6.6 diagonals
+  #4639  t=1959.0-1961.3s  hits=18  max_conf=0.84  mean_conf=0.21  travelled=1.5 diagonals
+  #4656  t=1965.6-1970.8s  hits=22  max_conf=0.76  mean_conf=0.25  travelled=2.2 diagonals
+  #4694  t=1987.0-2000.8s  hits=82  max_conf=0.66  mean_conf=0.21  travelled=2.1 diagonals
+  #4709  t=1991.2-1997.7s  hits=28  max_conf=0.76  mean_conf=0.35  travelled=9.6 diagonals
+  #4887  t=2068.9-2071.7s  hits=10  max_conf=0.86  mean_conf=0.22  travelled=1.2 diagonals
+  #4931  t=2083.9-2084.6s  hits=4  max_conf=0.55  mean_conf=0.31  travelled=2.6 diagonals
+  #4966  t=2095.1-2096.4s  hits=9  max_conf=0.67  mean_conf=0.23  travelled=4.8 diagonals
+  #5008  t=2109.6-2113.9s  hits=24  max_conf=0.77  mean_conf=0.30  travelled=3.4 diagonals
+  #5011  t=2111.4-2129.0s  hits=92  max_conf=0.61  mean_conf=0.21  travelled=5.9 diagonals
+  #5045  t=2126.1-2152.0s  hits=161  max_conf=0.70  mean_conf=0.20  travelled=1.7 diagonals
+  #5060  t=2136.1-2137.8s  hits=10  max_conf=0.80  mean_conf=0.41  travelled=3.1 diagonals
+  #5101  t=2158.0-2159.5s  hits=10  max_conf=0.81  mean_conf=0.42  travelled=3.8 diagonals
+  #5150  t=2186.2-2188.0s  hits=10  max_conf=0.69  mean_conf=0.45  travelled=4.8 diagonals
+  #5540  t=2330.3-2334.3s  hits=24  max_conf=0.80  mean_conf=0.39  travelled=8.3 diagonals
+  #5550  t=2333.0-2339.5s  hits=29  max_conf=0.53  mean_conf=0.20  travelled=4.1 diagonals
+  #5559  t=2337.0-2352.9s  hits=71  max_conf=0.91  mean_conf=0.18  travelled=11.2 diagonals
+  #5731  t=2416.6-2416.9s  hits=3  max_conf=0.88  mean_conf=0.49  travelled=0.8 diagonals
+  #5903  t=2477.1-2478.3s  hits=4  max_conf=0.53  mean_conf=0.25  travelled=2.2 diagonals
+  #5918  t=2480.5-2481.8s  hits=5  max_conf=0.54  mean_conf=0.19  travelled=1.3 diagonals
+  #6062  t=2540.9-2544.9s  hits=14  max_conf=0.77  mean_conf=0.22  travelled=13.1 diagonals
+  #6235  t=2604.8-2607.1s  hits=7  max_conf=0.76  mean_conf=0.31  travelled=9.5 diagonals
+  #6367  t=2646.6-2648.1s  hits=12  max_conf=0.72  mean_conf=0.20  travelled=1.0 diagonals
+  #6378  t=2649.8-2651.0s  hits=12  max_conf=0.65  mean_conf=0.24  travelled=11.0 diagonals
+  #6394  t=2654.2-2658.0s  hits=29  max_conf=0.80  mean_conf=0.19  travelled=7.2 diagonals
+  #6434  t=2666.2-2678.7s  hits=94  max_conf=0.80  mean_conf=0.24  travelled=12.2 diagonals
+  #6461  t=2680.8-2714.2s  hits=224  max_conf=0.94  mean_conf=0.46  travelled=2.9 diagonals
+  #6526  t=2711.7-2717.9s  hits=32  max_conf=0.51  mean_conf=0.22  travelled=4.2 diagonals
+  #6547  t=2720.7-2729.6s  hits=65  max_conf=0.81  mean_conf=0.18  travelled=5.8 diagonals
+  #6563  t=2728.9-2735.4s  hits=27  max_conf=0.69  mean_conf=0.20  travelled=6.5 diagonals
+  #6578  t=2734.1-2735.6s  hits=10  max_conf=0.71  mean_conf=0.32  travelled=3.6 diagonals
+  #6870  t=2840.8-2845.2s  hits=13  max_conf=0.64  mean_conf=0.22  travelled=2.6 diagonals
+  #6896  t=2855.9-2859.7s  hits=14  max_conf=0.72  mean_conf=0.23  travelled=3.5 diagonals
+  #6949  t=2888.2-2890.1s  hits=9  max_conf=0.86  mean_conf=0.28  travelled=2.2 diagonals
+  #6956  t=2892.1-2893.6s  hits=8  max_conf=0.62  mean_conf=0.28  travelled=4.5 diagonals
+  #6978  t=2904.4-2906.4s  hits=10  max_conf=0.76  mean_conf=0.31  travelled=6.0 diagonals
+  #7013  t=2929.4-2959.8s  hits=210  max_conf=0.86  mean_conf=0.18  travelled=5.6 diagonals
+  #7025  t=2936.1-2936.8s  hits=5  max_conf=0.77  mean_conf=0.32  travelled=10.5 diagonals
+  #7031  t=2938.4-2941.4s  hits=17  max_conf=0.93  mean_conf=0.45  travelled=6.3 diagonals
+  #7296  t=3026.2-3026.9s  hits=7  max_conf=0.77  mean_conf=0.38  travelled=1.9 diagonals
+  #7421  t=3083.2-3084.8s  hits=7  max_conf=0.60  mean_conf=0.23  travelled=3.6 diagonals
+  #7594  t=3149.8-3150.3s  hits=4  max_conf=0.53  mean_conf=0.25  travelled=1.4 diagonals
+  #7678  t=3179.7-3180.8s  hits=6  max_conf=0.62  mean_conf=0.38  travelled=8.8 diagonals
+  #7750  t=3201.9-3204.0s  hits=14  max_conf=0.65  mean_conf=0.24  travelled=5.2 diagonals
+  #7928  t=3290.3-3295.1s  hits=21  max_conf=0.60  mean_conf=0.21  travelled=2.5 diagonals
+  #8029  t=3322.8-3326.2s  hits=13  max_conf=0.88  mean_conf=0.20  travelled=3.8 diagonals
+  #8130  t=3357.4-3359.4s  hits=10  max_conf=0.78  mean_conf=0.25  travelled=3.4 diagonals
+  #8213  t=3389.4-3415.2s  hits=255  max_conf=0.85  mean_conf=0.28  travelled=3.1 diagonals
+  #8303  t=3436.4-3438.6s  hits=13  max_conf=0.55  mean_conf=0.26  travelled=7.0 diagonals
+  #8383  t=3471.1-3475.3s  hits=11  max_conf=0.68  mean_conf=0.18  travelled=4.6 diagonals
+  #8668  t=3571.6-3574.4s  hits=15  max_conf=0.51  mean_conf=0.26  travelled=5.9 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #6788 cyclist   t=2812.8-2884.7s  rejected: max_conf 0.39<0.5, mean_conf 0.14<0.18
+  #6941 cyclist   t=2882.9-2924.4s  rejected: mean_conf 0.15<0.18
+  #6669 cyclist   t=2762.8-2807.5s  rejected: mean_conf 0.12<0.18, excursion 0.19<0.75
+  #6152 cyclist   t=2569.4-2599.4s  rejected: max_conf 0.27<0.5, mean_conf 0.09<0.18
+  #7077 cyclist   t=2956.5-2985.8s  rejected: mean_conf 0.16<0.18
+  #1137 cyclist   t=530.4-570.9s  rejected: max_conf 0.36<0.5, mean_conf 0.10<0.18
+  #7824 cyclist   t=3230.1-3263.4s  rejected: mean_conf 0.11<0.18
+  #7592 cyclist   t=3145.0-3174.0s  rejected: mean_conf 0.13<0.18

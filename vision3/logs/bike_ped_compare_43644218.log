@@ -1,0 +1,92 @@
+Tracks: [1, 2, 3, 4, 5, 6]
+device: cuda
+[xclip] loading microsoft/xclip-base-patch32
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights:   0%|          | 1/591 [00:00<01:12,  8.16it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 4367.57it/s]
+[clip] loading openai/clip-vit-base-patch32
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 46995.66it/s]
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+[siglip] loading google/siglip-base-patch16-224
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 43849.64it/s]
+[videomae] loading MCG-NJU/videomae-base-finetuned-kinetics
+Loading weights:   0%|          | 0/162 [00:00<?, ?it/s]Loading weights: 100%|██████████| 162/162 [00:00<00:00, 43408.76it/s]
+[transformers] [1mVideoMAEForVideoClassification LOAD REPORT[0m from: MCG-NJU/videomae-base-finetuned-kinetics
+Key                                                            | Status     | 
+---------------------------------------------------------------+------------+-
+videomae.encoder.layer.{0...11}.attention.attention.v_bias     | UNEXPECTED | 
+videomae.encoder.layer.{0...11}.attention.attention.q_bias     | UNEXPECTED | 
+videomae.encoder.layer.{0...11}.attention.attention.key.bias   | MISSING    | 
+videomae.encoder.layer.{0...11}.attention.attention.value.bias | MISSING    | 
+videomae.encoder.layer.{0...11}.attention.attention.query.bias | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[videomae] bike classes: motorcycling, riding a bike, riding mountain bike
+thresholds on p_bike: xclip=0.5, clip=0.5, siglip=0.5, videomae=0.3, speed=0.5
+frame 100/5694
+frame 200/5694
+frame 300/5694
+frame 400/5694
+frame 500/5694
+frame 600/5694
+frame 700/5694
+frame 800/5694
+frame 900/5694
+frame 1000/5694
+frame 1100/5694
+frame 1200/5694
+frame 1300/5694
+frame 1400/5694
+frame 1500/5694
+frame 1600/5694
+frame 1700/5694
+frame 1800/5694
+frame 1900/5694
+frame 2000/5694
+frame 2100/5694
+frame 2200/5694
+frame 2300/5694
+frame 2400/5694
+frame 2500/5694
+frame 2600/5694
+frame 2700/5694
+frame 2800/5694
+frame 2900/5694
+frame 3000/5694
+frame 3100/5694
+frame 3200/5694
+frame 3300/5694
+frame 3400/5694
+frame 3500/5694
+frame 3600/5694
+frame 3700/5694
+frame 3800/5694
+frame 3900/5694
+frame 4000/5694
+frame 4100/5694
+frame 4200/5694
+frame 4300/5694
+frame 4400/5694
+frame 4500/5694
+frame 4600/5694
+frame 4700/5694
+frame 4800/5694
+frame 4900/5694
+frame 5000/5694
+frame 5100/5694
+frame 5200/5694
+frame 5300/5694
+frame 5400/5694
+frame 5500/5694
+frame 5600/5694
+
+=== summary ===
+backend | sec_per_call | unanswered | acc_id1(pede) | acc_id2(bicy) | acc_id5(pede) | macro_acc | mean_p_bike_by_track
+xclip | 0.7587 | 0 | 1.00 | 1.00 | 1.00 | 1.00 | 1:0.33 2:0.97 5:0.01
+clip | 0.0246 | 0 | 0.00 | 1.00 | 1.00 | 0.67 | 1:0.57 2:0.90 5:0.01
+siglip | 0.0538 | 0 | 0.86 | 0.88 | 1.00 | 0.91 | 1:0.43 2:0.82 5:0.10
+videomae | 0.0671 | 0 | 1.00 | 0.00 | 1.00 | 0.67 | 1:0.01 2:0.03 5:0.01
+speed | 0.0002 | 0 | 1.00 | 0.00 | 1.00 | 0.67 | 1:0.04 2:0.17 5:0.09
+
+Videos and CSVs in pilot_output/compare_v4/bike_ped_compare_v1

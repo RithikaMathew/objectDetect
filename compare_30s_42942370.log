@@ -1,0 +1,209 @@
+model.names (80): ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple', 'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch', 'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush']
+WARNING: not detected as six-class fine-tune — using COCO path (person/bicycle fuse). If you expected best.pt, check WEIGHTS.
+WARNING: all_videos.txt lists hour=22:00 for this chunk, but using chunk_hour=17 (camera OSD / --chunk-hour). Night gate follows chunk_hour.
+weights=yolov8l.pt  finetuned=False  ft_gates=False  detect_classes=[0, 1, 2, 3, 5, 7]  fuse_cyclist=True  chunk_hour=17  night_gate=False
+
+=== --debug-confirm (cyclist/bicycle/person) ===
+  #10 person       t=0.1-3.0s hits=36/15 max=0.37/0.50 mean=0.13/0.20 exc=16.8 day    REJECT:low_max_conf
+  #26 person       t=0.2-1.7s hits=27/15 max=0.33/0.50 mean=0.13/0.20 exc=20.4 day    REJECT:low_max_conf
+  #15 person       t=0.4-0.4s hits=1/15 max=0.10/0.50 mean=0.10/0.20 exc=0.0 day    REJECT:too_few_hits
+  #28 person       t=1.0-1.0s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #34 person       t=1.4-1.9s hits=8/15 max=0.33/0.50 mean=0.20/0.20 exc=19.4 day    REJECT:too_few_hits
+  #38 person       t=1.7-1.9s hits=4/15 max=0.23/0.50 mean=0.13/0.20 exc=0.2 day    REJECT:too_few_hits
+  #37 person       t=1.7-1.9s hits=3/15 max=0.09/0.50 mean=0.08/0.20 exc=1.5 day    REJECT:too_few_hits
+  #39 person       t=1.7-1.7s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #56 person       t=2.9-2.9s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #63 person       t=3.0-5.1s hits=11/15 max=0.16/0.50 mean=0.09/0.20 exc=15.4 day    REJECT:too_few_hits
+  #66 person       t=3.1-3.2s hits=4/15 max=0.11/0.50 mean=0.08/0.20 exc=0.4 day    REJECT:too_few_hits
+  #67 person       t=3.1-3.3s hits=3/15 max=0.08/0.50 mean=0.07/0.20 exc=0.0 day    REJECT:too_few_hits
+  #69 person       t=3.4-3.6s hits=3/15 max=0.11/0.50 mean=0.08/0.20 exc=0.0 day    REJECT:too_few_hits
+  #70 person       t=3.5-5.0s hits=7/15 max=0.15/0.50 mean=0.08/0.20 exc=3.0 day    REJECT:too_few_hits
+  #73 person       t=3.5-4.7s hits=9/15 max=0.16/0.50 mean=0.11/0.20 exc=4.0 day    REJECT:too_few_hits
+  #113 person       t=3.7-9.8s hits=73/15 max=0.20/0.50 mean=0.08/0.20 exc=22.3 day    REJECT:low_max_conf
+  #105 person       t=4.3-8.0s hits=11/15 max=0.17/0.50 mean=0.10/0.20 exc=3.6 day    REJECT:too_few_hits
+  #88 person       t=4.4-4.4s hits=1/15 max=0.11/0.50 mean=0.11/0.20 exc=0.0 day    REJECT:too_few_hits
+  #91 person       t=4.8-5.7s hits=27/15 max=0.18/0.50 mean=0.10/0.20 exc=22.9 day    REJECT:low_max_conf
+  #111 person       t=5.0-6.4s hits=5/15 max=0.10/0.50 mean=0.07/0.20 exc=1.0 day    REJECT:too_few_hits
+  #96 person       t=5.1-6.0s hits=24/15 max=0.29/0.50 mean=0.14/0.20 exc=0.5 day    REJECT:low_max_conf
+  #97 person       t=5.2-5.5s hits=3/15 max=0.36/0.50 mean=0.16/0.20 exc=4.5 day    REJECT:too_few_hits
+  #99 person       t=5.5-6.0s hits=3/15 max=0.06/0.50 mean=0.05/0.20 exc=0.5 day    REJECT:too_few_hits
+  #100 person       t=5.7-5.9s hits=4/15 max=0.11/0.50 mean=0.08/0.20 exc=34.6 day    REJECT:too_few_hits
+  #102 person       t=5.8-6.0s hits=5/15 max=0.16/0.50 mean=0.10/0.20 exc=0.0 day    REJECT:too_few_hits
+  #104 person       t=5.9-7.0s hits=11/15 max=0.12/0.50 mean=0.07/0.20 exc=0.7 day    REJECT:too_few_hits
+  #106 person       t=5.9-6.0s hits=3/15 max=0.09/0.50 mean=0.07/0.20 exc=0.3 day    REJECT:too_few_hits
+  #151 person       t=6.4-10.1s hits=27/15 max=0.58/0.50 mean=0.28/0.20 exc=9.9 day    COUNTED
+  #117 person       t=6.7-8.0s hits=4/15 max=0.10/0.50 mean=0.07/0.20 exc=0.0 day    REJECT:too_few_hits
+  #130 person       t=7.1-9.1s hits=5/15 max=0.11/0.50 mean=0.06/0.20 exc=0.1 day    REJECT:too_few_hits
+  #133 person       t=7.5-13.2s hits=66/15 max=0.53/0.50 mean=0.18/0.20 exc=3.2 day    REJECT:low_mean_conf
+  #145 person       t=8.1-8.8s hits=5/15 max=0.09/0.50 mean=0.08/0.20 exc=0.3 day    REJECT:too_few_hits
+  #152 person       t=8.6-8.6s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #182 person       t=9.1-11.5s hits=14/15 max=0.16/0.50 mean=0.09/0.20 exc=2.5 day    REJECT:too_few_hits
+  #172 person       t=9.5-10.4s hits=4/15 max=0.11/0.50 mean=0.08/0.20 exc=2.7 day    REJECT:too_few_hits
+  #183 person       t=10.1-10.9s hits=7/15 max=0.20/0.50 mean=0.12/0.20 exc=14.0 day    REJECT:too_few_hits
+  #184 person       t=10.7-10.8s hits=3/15 max=0.14/0.50 mean=0.10/0.20 exc=0.0 day    REJECT:too_few_hits
+  #188 person       t=10.8-10.8s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #190 person       t=11.0-12.6s hits=18/15 max=0.14/0.50 mean=0.08/0.20 exc=3.2 day    REJECT:low_max_conf
+  #199 person       t=11.3-11.7s hits=3/15 max=0.06/0.50 mean=0.06/0.20 exc=2.9 day    REJECT:too_few_hits
+  #200 person       t=11.4-15.1s hits=67/15 max=0.42/0.50 mean=0.11/0.20 exc=0.5 day    REJECT:low_max_conf
+  #207 person       t=12.0-12.4s hits=4/15 max=0.09/0.50 mean=0.06/0.20 exc=10.2 day    REJECT:too_few_hits
+  #211 person       t=12.1-12.1s hits=1/15 max=0.07/0.50 mean=0.07/0.20 exc=0.0 day    REJECT:too_few_hits
+  #214 person       t=12.4-13.1s hits=8/15 max=0.10/0.50 mean=0.08/0.20 exc=5.4 day    REJECT:too_few_hits
+  #217 person       t=12.5-13.0s hits=15/15 max=0.32/0.50 mean=0.11/0.20 exc=10.9 day    REJECT:low_max_conf
+  #218 person       t=12.7-12.7s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #219 person       t=12.9-13.4s hits=7/15 max=0.14/0.50 mean=0.10/0.20 exc=21.7 day    REJECT:too_few_hits
+  #220 person       t=13.0-13.4s hits=10/15 max=0.29/0.50 mean=0.09/0.20 exc=4.7 day    REJECT:too_few_hits
+  #240 person       t=13.1-14.6s hits=8/15 max=0.17/0.50 mean=0.08/0.20 exc=1.2 day    REJECT:too_few_hits
+  #226 person       t=13.3-16.0s hits=58/15 max=0.26/0.50 mean=0.11/0.20 exc=5.3 day    REJECT:low_max_conf
+  #227 person       t=13.3-14.0s hits=17/15 max=0.24/0.50 mean=0.12/0.20 exc=13.1 day    REJECT:low_max_conf
+  #230 person       t=13.5-13.5s hits=1/15 max=0.06/0.50 mean=0.06/0.20 exc=0.0 day    REJECT:too_few_hits
+  #242 person       t=14.0-14.2s hits=5/15 max=0.17/0.50 mean=0.14/0.20 exc=0.0 day    REJECT:too_few_hits
+  #244 person       t=14.0-14.0s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #245 person       t=14.1-14.9s hits=2/15 max=0.14/0.50 mean=0.10/0.20 exc=1.7 day    REJECT:too_few_hits
+  #272 person       t=15.6-15.6s hits=2/15 max=0.13/0.50 mean=0.09/0.20 exc=0.0 day    REJECT:too_few_hits
+  #275 person       t=15.7-15.7s hits=1/15 max=0.06/0.50 mean=0.06/0.20 exc=0.0 day    REJECT:too_few_hits
+  #279 person       t=15.9-15.9s hits=1/15 max=0.07/0.50 mean=0.07/0.20 exc=0.0 day    REJECT:too_few_hits
+  #317 person       t=16.0-24.8s hits=178/15 max=0.54/0.50 mean=0.13/0.20 exc=33.5 day    REJECT:low_mean_conf
+  #286 person       t=16.3-16.3s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #291 person       t=16.9-16.9s hits=1/15 max=0.12/0.50 mean=0.12/0.20 exc=0.0 day    REJECT:too_few_hits
+  #303 person       t=17.1-22.1s hits=48/15 max=0.45/0.50 mean=0.12/0.20 exc=4.9 day    REJECT:low_max_conf
+  #302 person       t=17.1-17.1s hits=1/15 max=0.07/0.50 mean=0.07/0.20 exc=0.0 day    REJECT:too_few_hits
+  #318 person       t=19.1-19.4s hits=6/15 max=0.19/0.50 mean=0.10/0.20 exc=15.1 day    REJECT:too_few_hits
+  #334 person       t=20.1-20.1s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #335 person       t=20.1-20.1s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #337 person       t=20.6-21.3s hits=5/15 max=0.09/0.50 mean=0.07/0.20 exc=1.2 day    REJECT:too_few_hits
+  #338 person       t=20.6-24.3s hits=83/15 max=0.28/0.50 mean=0.10/0.20 exc=39.1 day    REJECT:low_max_conf
+  #340 person       t=21.1-21.3s hits=4/15 max=0.08/0.50 mean=0.06/0.20 exc=0.3 day    REJECT:too_few_hits
+  #341 person       t=21.1-22.0s hits=22/15 max=0.20/0.50 mean=0.10/0.20 exc=4.6 day    REJECT:low_max_conf
+  #345 person       t=21.3-21.3s hits=2/15 max=0.09/0.50 mean=0.07/0.20 exc=1.4 day    REJECT:too_few_hits
+  #350 person       t=21.6-23.1s hits=33/15 max=0.43/0.50 mean=0.15/0.20 exc=3.2 day    REJECT:low_max_conf
+  #353 person       t=22.0-24.5s hits=20/15 max=0.26/0.50 mean=0.10/0.20 exc=6.5 day    REJECT:low_max_conf
+  #388 person       t=22.0-23.4s hits=3/15 max=0.10/0.50 mean=0.08/0.20 exc=0.1 day    REJECT:too_few_hits
+  #356 person       t=22.0-22.1s hits=4/15 max=0.11/0.50 mean=0.10/0.20 exc=0.4 day    REJECT:too_few_hits
+  #361 person       t=22.3-22.9s hits=7/15 max=0.10/0.50 mean=0.08/0.20 exc=0.1 day    REJECT:too_few_hits
+  #364 person       t=22.5-22.9s hits=5/15 max=0.07/0.50 mean=0.06/0.20 exc=0.0 day    REJECT:too_few_hits
+  #367 person       t=22.8-23.0s hits=3/15 max=0.08/0.50 mean=0.07/0.20 exc=0.0 day    REJECT:too_few_hits
+  #368 person       t=22.8-23.0s hits=2/15 max=0.08/0.50 mean=0.07/0.20 exc=0.0 day    REJECT:too_few_hits
+  #369 person       t=22.8-22.9s hits=2/15 max=0.06/0.50 mean=0.06/0.20 exc=0.0 day    REJECT:too_few_hits
+  #390 person       t=23.4-24.2s hits=5/15 max=0.31/0.50 mean=0.11/0.20 exc=20.5 day    REJECT:too_few_hits
+  #397 person       t=23.8-24.0s hits=4/15 max=0.17/0.50 mean=0.12/0.20 exc=0.1 day    REJECT:too_few_hits
+  #405 person       t=24.0-26.5s hits=23/15 max=0.26/0.50 mean=0.09/0.20 exc=0.6 day    REJECT:low_max_conf
+  #410 person       t=24.4-25.4s hits=8/15 max=0.20/0.50 mean=0.10/0.20 exc=41.6 day    REJECT:too_few_hits
+  #414 person       t=24.7-26.8s hits=35/15 max=0.45/0.50 mean=0.17/0.20 exc=26.9 day    REJECT:low_max_conf
+  #418 person       t=25.0-28.5s hits=47/15 max=0.29/0.50 mean=0.11/0.20 exc=2.1 day    REJECT:low_max_conf
+  #420 person       t=25.0-25.2s hits=3/15 max=0.13/0.50 mean=0.10/0.20 exc=8.1 day    REJECT:too_few_hits
+  #431 person       t=25.1-25.1s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #440 person       t=25.3-28.6s hits=36/15 max=0.22/0.50 mean=0.09/0.20 exc=12.0 day    REJECT:low_max_conf
+  #443 person       t=26.0-26.0s hits=1/15 max=0.07/0.50 mean=0.07/0.20 exc=0.0 day    REJECT:too_few_hits
+  #446 person       t=26.1-26.1s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #489 person       t=26.9-29.7s hits=17/15 max=0.26/0.50 mean=0.10/0.20 exc=8.9 day    REJECT:low_max_conf
+  #459 person       t=27.1-27.3s hits=3/15 max=0.20/0.50 mean=0.12/0.20 exc=4.6 day    REJECT:too_few_hits
+  #460 person       t=27.1-28.1s hits=4/15 max=0.09/0.50 mean=0.07/0.20 exc=2.8 day    REJECT:too_few_hits
+  #461 person       t=27.1-27.1s hits=1/15 max=0.08/0.50 mean=0.08/0.20 exc=0.0 day    REJECT:too_few_hits
+  #462 person       t=27.1-27.1s hits=1/15 max=0.05/0.50 mean=0.05/0.20 exc=0.0 day    REJECT:too_few_hits
+  #465 person       t=27.4-27.4s hits=1/15 max=0.08/0.50 mean=0.08/0.20 exc=0.0 day    REJECT:too_few_hits
+  #487 person       t=28.3-28.3s hits=2/15 max=0.08/0.50 mean=0.08/0.20 exc=0.0 day    REJECT:too_few_hits
+  #496 person       t=28.3-30.0s hits=29/15 max=0.12/0.50 mean=0.08/0.20 exc=12.1 day    REJECT:low_max_conf
+  #491 person       t=28.4-29.2s hits=6/15 max=0.13/0.50 mean=0.08/0.20 exc=11.7 day    REJECT:too_few_hits
+  #500 person       t=28.9-29.3s hits=3/15 max=0.14/0.50 mean=0.09/0.20 exc=7.5 day    REJECT:too_few_hits
+
+Rendered 899 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.018_window_0_30 ===
+weights=yolov8l.pt  conf=0.05  stride=1  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (24 samples)
+899 sampled frames, inference 212.1s (0.24s/frame)
+fps=29.97  dt between samples=0.033s
+min hits per class: {'cyclist': 15, 'bicycle': 15, 'person': 15, 'motorcycle': 15, 'other_vehicle': 15, '_default': 30}
+
+Raw tracks: 505  ->  after merge: 297  (208 absorbed)
+COUNTED TRACKS BY CLASS: {'car': 8, 'person': 1}
+Rejected tracks: {'low_max_conf': 37, 'low_mean_conf': 7, 'too_few_hits': 244}
+
+Funnel CSV : pilot_output/compare_30s/yolov8l_coco/Standard_SCU8OG_2019-07-10_0000.018_window_0_30_funnel.csv
+Tracks CSV : pilot_output/compare_30s/yolov8l_coco/Standard_SCU8OG_2019-07-10_0000.018_window_0_30_tracks.csv
+Video      : pilot_output/compare_30s/yolov8l_coco/Standard_SCU8OG_2019-07-10_0000.018_window_0_30_annotated_h264.mp4   <-- download this one
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #317 person    t=16.0-24.8s  rejected: mean_conf 0.13<0.2
+  #338 person    t=20.6-24.3s  rejected: max_conf 0.28<0.5, mean_conf 0.10<0.2
+  #113 person    t=3.7-9.8s  rejected: max_conf 0.20<0.5, mean_conf 0.08<0.2
+  #200 person    t=11.4-15.1s  rejected: max_conf 0.42<0.5, mean_conf 0.11<0.2, excursion 0.54<0.75
+  #133 person    t=7.5-13.2s  rejected: mean_conf 0.18<0.2
+  #226 person    t=13.3-16.0s  rejected: max_conf 0.26<0.5, mean_conf 0.11<0.2
+  #303 person    t=17.1-22.1s  rejected: max_conf 0.45<0.5, mean_conf 0.12<0.2
+  #418 person    t=25.0-28.5s  rejected: max_conf 0.29<0.5, mean_conf 0.11<0.2
+model.names (80): ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple', 'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch', 'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush']
+WARNING: not detected as six-class fine-tune — using COCO path (person/bicycle fuse). If you expected best.pt, check WEIGHTS.
+WARNING: all_videos.txt lists hour=22:00 for this chunk, but using chunk_hour=17 (camera OSD / --chunk-hour). Night gate follows chunk_hour.
+weights=yolo26l.pt  finetuned=False  ft_gates=False  detect_classes=[0, 1, 2, 3, 5, 7]  fuse_cyclist=True  chunk_hour=17  night_gate=False
+
+=== --debug-confirm (cyclist/bicycle/person) ===
+  #52 person       t=8.6-8.9s hits=4/15 max=0.09/0.50 mean=0.07/0.20 exc=0.0 day    REJECT:too_few_hits
+  #98 person       t=15.8-16.3s hits=6/15 max=0.07/0.50 mean=0.06/0.20 exc=13.5 day    REJECT:too_few_hits
+  #174 person       t=25.5-26.6s hits=7/15 max=0.09/0.50 mean=0.06/0.20 exc=21.4 day    REJECT:too_few_hits
+
+Rendered 899 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.018_window_0_30 ===
+weights=yolo26l.pt  conf=0.05  stride=1  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (24 samples)
+899 sampled frames, inference 121.9s (0.14s/frame)
+fps=29.97  dt between samples=0.033s
+min hits per class: {'cyclist': 15, 'bicycle': 15, 'person': 15, 'motorcycle': 15, 'other_vehicle': 15, '_default': 30}
+
+Raw tracks: 216  ->  after merge: 127  (89 absorbed)
+COUNTED TRACKS BY CLASS: {'truck': 1, 'car': 2}
+Rejected tracks: {'low_max_conf': 19, 'low_mean_conf': 11, 'too_few_hits': 94}
+
+Funnel CSV : pilot_output/compare_30s/yolo26l_coco/Standard_SCU8OG_2019-07-10_0000.018_window_0_30_funnel.csv
+Tracks CSV : pilot_output/compare_30s/yolo26l_coco/Standard_SCU8OG_2019-07-10_0000.018_window_0_30_tracks.csv
+Video      : pilot_output/compare_30s/yolo26l_coco/Standard_SCU8OG_2019-07-10_0000.018_window_0_30_annotated_h264.mp4   <-- download this one
+model.names (6): ['person', 'car', 'bus', 'truck', 'cyclist', 'other_vehicle']
+WARNING: all_videos.txt lists hour=22:00 for this chunk, but using chunk_hour=17 (camera OSD / --chunk-hour). Night gate follows chunk_hour.
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  finetuned=True  ft_gates=True  detect_classes=[0, 1, 2, 3, 4, 5]  fuse_cyclist=False  chunk_hour=17  night_gate=True
+  FT cyclist gates: max_conf>=0.6  mean_conf>=0.28  min_s>=1.0  night_mean+=0.07
+
+=== --debug-confirm (cyclist/bicycle/person) ===
+  #3 person       t=0.0-1.0s hits=30/15 max=0.09/0.55 mean=0.08/0.28 exc=0.0 day    REJECT:low_max_conf
+  #5 cyclist      t=0.2-14.1s hits=359/30 max=0.41/0.60 mean=0.15/0.28 exc=0.5 day    REJECT:low_max_conf
+  #6 cyclist      t=0.8-1.8s hits=10/30 max=0.12/0.60 mean=0.08/0.28 exc=0.6 day    REJECT:too_few_hits
+  #10 cyclist      t=3.0-4.0s hits=3/30 max=0.07/0.60 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+  #12 cyclist      t=5.0-5.5s hits=2/30 max=0.07/0.60 mean=0.07/0.28 exc=0.0 day    REJECT:too_few_hits
+  #14 cyclist      t=6.4-7.9s hits=21/30 max=0.15/0.60 mean=0.08/0.28 exc=2.9 day    REJECT:too_few_hits
+  #20 cyclist      t=10.4-10.4s hits=1/30 max=0.05/0.60 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #28 cyclist      t=11.5-12.9s hits=5/30 max=0.06/0.60 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #32 person       t=14.1-17.2s hits=59/15 max=0.74/0.55 mean=0.08/0.28 exc=1.0 day    REJECT:low_mean_conf
+  #37 cyclist      t=15.0-19.9s hits=106/30 max=0.34/0.60 mean=0.11/0.28 exc=1.1 day    REJECT:low_max_conf
+  #38 cyclist      t=15.3-15.5s hits=4/30 max=0.17/0.60 mean=0.09/0.28 exc=2.5 day    REJECT:too_few_hits
+  #40 cyclist      t=15.7-15.9s hits=7/30 max=0.11/0.60 mean=0.07/0.28 exc=1.2 day    REJECT:too_few_hits
+  #49 cyclist      t=18.3-20.0s hits=46/30 max=0.44/0.60 mean=0.12/0.28 exc=1.7 day    REJECT:low_max_conf
+  #52 cyclist      t=19.0-22.0s hits=54/30 max=0.24/0.60 mean=0.07/0.28 exc=18.9 day    REJECT:low_max_conf
+  #60 cyclist      t=21.7-29.9s hits=253/30 max=0.47/0.60 mean=0.13/0.28 exc=1.8 day    REJECT:low_max_conf
+  #65 cyclist      t=23.1-23.7s hits=7/30 max=0.14/0.60 mean=0.07/0.28 exc=11.2 day    REJECT:too_few_hits
+  #74 person       t=26.0-27.0s hits=9/15 max=0.06/0.55 mean=0.05/0.28 exc=0.0 day    REJECT:too_few_hits
+  #76 cyclist      t=26.1-30.0s hits=44/30 max=0.79/0.60 mean=0.08/0.28 exc=1.1 day    REJECT:low_mean_conf
+  #82 cyclist      t=28.7-28.7s hits=2/30 max=0.06/0.60 mean=0.06/0.28 exc=0.0 day    REJECT:too_few_hits
+
+Rendered 899 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.018_window_0_30 ===
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  conf=0.05  stride=1  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (24 samples)
+899 sampled frames, inference 137.5s (0.15s/frame)
+fps=29.97  dt between samples=0.033s
+min hits per class: {'cyclist': 30, 'bicycle': 30, 'person': 15, 'other_vehicle': 15, '_default': 30}
+
+Raw tracks: 83  ->  after merge: 51  (32 absorbed)
+COUNTED TRACKS BY CLASS: {'car': 13}
+Rejected tracks: {'low_max_conf': 6, 'low_mean_conf': 3, 'too_few_hits': 29}
+
+Funnel CSV : pilot_output/compare_30s/yolov8l_finetuned/Standard_SCU8OG_2019-07-10_0000.018_window_0_30_funnel.csv
+Tracks CSV : pilot_output/compare_30s/yolov8l_finetuned/Standard_SCU8OG_2019-07-10_0000.018_window_0_30_tracks.csv
+Video      : pilot_output/compare_30s/yolov8l_finetuned/Standard_SCU8OG_2019-07-10_0000.018_window_0_30_annotated_h264.mp4   <-- download this one
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #5 cyclist   t=0.2-14.1s  rejected: max_conf 0.41<0.5, mean_conf 0.15<0.18, excursion 0.46<0.75
+  #60 cyclist   t=21.7-29.9s  rejected: max_conf 0.47<0.5, mean_conf 0.13<0.18
+  #37 cyclist   t=15.0-19.9s  rejected: max_conf 0.34<0.5, mean_conf 0.11<0.18
+  #32 person    t=14.1-17.2s  rejected: mean_conf 0.08<0.2
+  #52 cyclist   t=19.0-22.0s  rejected: max_conf 0.24<0.5, mean_conf 0.07<0.18
+  #49 cyclist   t=18.3-20.0s  rejected: max_conf 0.44<0.5, mean_conf 0.12<0.18
+  #76 cyclist   t=26.1-30.0s  rejected: mean_conf 0.08<0.18
+  #3 person    t=0.0-1.0s  rejected: max_conf 0.09<0.5, mean_conf 0.08<0.2, excursion 0.00<0.75

@@ -1,0 +1,634 @@
+file,worksheet,status,channel,direction,metric,total
+Alafaya_East_673521_04-24-2019.xls,Pedestrians,ok,Alafaya East Bike Lane,Southbound,,4
+Alafaya_East_673521_04-24-2019.xls,Pedestrians,ok,Alafaya East Sidewalk,Southbound,,64
+Alafaya_East_673521_04-24-2019.xls,Pedestrians,ok,Alafaya East Bike Lane,Northbound,,8
+Alafaya_East_673521_04-24-2019.xls,Pedestrians,ok,Alafaya East Sidewalk,Northbound,,74
+Alafaya_East_673521_04-24-2019.xls,Pedestrians,ok,Alafaya West Bike Lane,Southbound,,38
+Alafaya_East_673521_04-24-2019.xls,Pedestrians,ok,Alafaya West Sidewalk,Southbound,,152
+Alafaya_East_673521_04-24-2019.xls,Pedestrians,ok,Alafaya West Bike Lane,Northbound,,26
+Alafaya_East_673521_04-24-2019.xls,Pedestrians,ok,Alafaya West Sidewalk,Northbound,,155
+Alafaya_East_673521_04-24-2019.xls,Pedestrians,ok,,Night,,183
+Alafaya_East_673521_04-24-2019.xls,Bicycles,ok,Alafaya East Bike Lane,Southbound,,5
+Alafaya_East_673521_04-24-2019.xls,Bicycles,ok,Alafaya East Sidewalk,Southbound,,99
+Alafaya_East_673521_04-24-2019.xls,Bicycles,ok,Alafaya East Bike Lane,Northbound,,42
+Alafaya_East_673521_04-24-2019.xls,Bicycles,ok,Alafaya East Sidewalk,Northbound,,99
+Alafaya_East_673521_04-24-2019.xls,Bicycles,ok,,,,245
+Alafaya_West_673519_04-17-2019.xls,Pedestrians,ok,Alafaya West Bike Lane,Southbound,,38
+Alafaya_West_673519_04-17-2019.xls,Pedestrians,ok,Alafaya West Sidewalk,Southbound,,152
+Alafaya_West_673519_04-17-2019.xls,Pedestrians,ok,Alafaya West Bike Lane,Northbound,,26
+Alafaya_West_673519_04-17-2019.xls,Pedestrians,ok,Alafaya West Sidewalk,Northbound,,155
+Alafaya_West_673519_04-17-2019.xls,Pedestrians,ok,,,,371
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,Alafaya West Bike Lane,Southbound,,59
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,Alafaya West Sidewalk,Southbound,,83
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,Alafaya West Bike Lane,Northbound,,12
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,Alafaya West Sidewalk,Northbound,,97
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,Alafaya East Bike Lane,Southbound,,5
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,Alafaya East Sidewalk,Southbound,,99
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,Alafaya East Bike Lane,Northbound,,42
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,Alafaya East Sidewalk,Northbound,,99
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,,,,182
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,,,,196
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,,,,101
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,,,,17
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,,,,378
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,,,,118
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,,,,496
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,,,,
+Alafaya_West_673519_04-17-2019.xls,Bicycles,ok,,,,213
+Aloma_Path_716686_10-30-2019.xls,Pedestrians,ok,Path,Southbound,,14
+Aloma_Path_716686_10-30-2019.xls,Pedestrians,ok,Path,Northbound,,13
+Aloma_Path_716686_10-30-2019.xls,Pedestrians,ok,,,,27
+Aloma_Path_716686_10-30-2019.xls,Bicycles,ok,Path,Southbound,,105
+Aloma_Path_716686_10-30-2019.xls,Bicycles,ok,Path,Northbound,,86
+Aloma_Path_716686_10-30-2019.xls,Bicycles,ok,,,,191
+Aloma_Sidewalk_716692_10-30-2019.xls,Pedestrians,ok,Sidewalk,Southbound,,16
+Aloma_Sidewalk_716692_10-30-2019.xls,Pedestrians,ok,Sidewalk,Northbound,,17
+Aloma_Sidewalk_716692_10-30-2019.xls,Pedestrians,ok,,,,33
+Aloma_Sidewalk_716692_10-30-2019.xls,Bicycles,ok,Sidewalk,Southbound,,6
+Aloma_Sidewalk_716692_10-30-2019.xls,Bicycles,ok,Sidewalk,Northbound,,13
+Aloma_Sidewalk_716692_10-30-2019.xls,Bicycles,ok,,,,19
+Baxter_697165_09-18-2019.xls,Bicycles,ok,EB Travel Lane,Westbound,,0
+Baxter_697165_09-18-2019.xls,Bicycles,ok,WB Travel Lane,Westbound,,29
+Baxter_697165_09-18-2019.xls,Bicycles,ok,EB Travel Lane,Eastbound,,6
+Baxter_697165_09-18-2019.xls,Bicycles,ok,WB Travel Lane,Eastbound,,0
+Carroll_NBL_693689_09-10-2019.xls,Pedestrians,ok,EB Travel Lane,Westbound,,6
+Carroll_NBL_693689_09-10-2019.xls,Pedestrians,ok,WB Travel Lane,Westbound,,2
+Carroll_NBL_693689_09-10-2019.xls,Pedestrians,ok,EB Travel Lane,Eastbound,,2
+Carroll_NBL_693689_09-10-2019.xls,Pedestrians,ok,WB Travel Lane,Eastbound,,2
+Carroll_NBL_693689_09-10-2019.xls,Pedestrians,ok,,,,12
+Carroll_NBL_693689_09-10-2019.xls,Bicycles,ok,EB Travel Lane,Westbound,,4
+Carroll_NBL_693689_09-10-2019.xls,Bicycles,ok,WB Travel Lane,Westbound,,9
+Carroll_NBL_693689_09-10-2019.xls,Bicycles,ok,EB Travel Lane,Eastbound,,18
+Carroll_NBL_693689_09-10-2019.xls,Bicycles,ok,WB Travel Lane,Eastbound,,0
+Carroll_NBL_693689_09-10-2019.xls,Bicycles,ok,,,,0
+Carroll_NBL_693689_09-10-2019.xls,Bicycles,ok,,,,0
+Carroll_NBL_693689_09-10-2019.xls,Bicycles,ok,,,,27
+Carroll_NBL_693689_09-10-2019.xls,Bicycles,ok,,,,4
+Clay_Ave._682520_07-31-2019.xls,Pedestrians,ok,NB Sidewalk,Southbound,,36
+Clay_Ave._682520_07-31-2019.xls,Pedestrians,ok,NB Travel Lane,Southbound,,1
+Clay_Ave._682520_07-31-2019.xls,Pedestrians,ok,SB Sidewalk,Southbound,,11
+Clay_Ave._682520_07-31-2019.xls,Pedestrians,ok,SB Travel Lane,Southbound,,2
+Clay_Ave._682520_07-31-2019.xls,Pedestrians,ok,NB Sidewalk,Northbound,,33
+Clay_Ave._682520_07-31-2019.xls,Pedestrians,ok,NB Travel Lane,Northbound,,1
+Clay_Ave._682520_07-31-2019.xls,Pedestrians,ok,SB Sidewalk,Northbound,,19
+Clay_Ave._682520_07-31-2019.xls,Pedestrians,ok,SB Travel Lane,Northbound,,2
+Clay_Ave._682520_07-31-2019.xls,Pedestrians,ok,,Night,,12
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,NB Sidewalk,Southbound,,6
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,NB Travel Lane,Southbound,,0
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,SB Sidewalk,Southbound,,6
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,SB Travel Lane,Southbound,,4
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,NB Sidewalk,Northbound,,6
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,NB Travel Lane,Northbound,,3
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,SB Sidewalk,Northbound,,1
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,SB Travel Lane,Northbound,,0
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,,,,12
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,,,,7
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,,,,7
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,,,,0
+Clay_Ave._682520_07-31-2019.xls,Bicycles,ok,,,,7
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,North Bike Lane,Westbound,,10
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,North Sidewalk,Westbound,,79
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,North Bike Lane,Eastbound,,8
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,North Sidewalk,Eastbound,,55
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,Bike Lane South,Westbound,,0
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,Sidewalk South,Westbound,,43
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,Bike Lane South,Eastbound,,0
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,Sidewalk South,Eastbound,,39
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,,Night,,94
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,,Facing,,106
+Colonial_North_676806_07-10-2019.xls,Pedestrians,ok,,Total,,234
+Colonial_North_676806_07-10-2019.xls,Bicycles,ok,North Bike Lane,Westbound,,32
+Colonial_North_676806_07-10-2019.xls,Bicycles,ok,North Sidewalk,Westbound,,26
+Colonial_North_676806_07-10-2019.xls,Bicycles,ok,North Bike Lane,Eastbound,,15
+Colonial_North_676806_07-10-2019.xls,Bicycles,ok,North Sidewalk,Eastbound,,16
+Colonial_North_676806_07-10-2019.xls,Bicycles,ok,,,,47
+Colonial_North_676806_07-10-2019.xls,Bicycles,ok,,,,42
+Colonial_South_679216_07-16-2019.xls,Pedestrians,ok,Bike Lane South,Westbound,,0
+Colonial_South_679216_07-16-2019.xls,Pedestrians,ok,Sidewalk South,Westbound,,43
+Colonial_South_679216_07-16-2019.xls,Pedestrians,ok,Bike Lane South,Eastbound,,0
+Colonial_South_679216_07-16-2019.xls,Pedestrians,ok,Sidewalk South,Eastbound,,39
+Colonial_South_679216_07-16-2019.xls,Pedestrians,ok,,,,82
+Colonial_South_679216_07-16-2019.xls,Bicycles,ok,Bike Lane South,Westbound,,8
+Colonial_South_679216_07-16-2019.xls,Bicycles,ok,Sidewalk South,Westbound,,33
+Colonial_South_679216_07-16-2019.xls,Bicycles,ok,Bike Lane South,Eastbound,,40
+Colonial_South_679216_07-16-2019.xls,Bicycles,ok,Sidewalk South,Eastbound,,46
+Colonial_South_679216_07-16-2019.xls,Bicycles,ok,,BL,,48
+Colonial_South_679216_07-16-2019.xls,Bicycles,ok,,SW,,79
+Columbia_Ave_693688_09-10-2019.xls,Pedestrians,ok,EB Bike Lane,Westbound,,3
+Columbia_Ave_693688_09-10-2019.xls,Pedestrians,ok,EB Sidewalk,Westbound,,124
+Columbia_Ave_693688_09-10-2019.xls,Pedestrians,ok,WB Bike Lane,Westbound,,4
+Columbia_Ave_693688_09-10-2019.xls,Pedestrians,ok,WB Sidewalk,Westbound,,208
+Columbia_Ave_693688_09-10-2019.xls,Pedestrians,ok,EB Bike Lane,Eastbound,,4
+Columbia_Ave_693688_09-10-2019.xls,Pedestrians,ok,EB Sidewalk,Eastbound,,142
+Columbia_Ave_693688_09-10-2019.xls,Pedestrians,ok,WB Bike Lane,Eastbound,,6
+Columbia_Ave_693688_09-10-2019.xls,Pedestrians,ok,WB Sidewalk,Eastbound,,159
+Columbia_Ave_693688_09-10-2019.xls,Pedestrians,ok,,Night,,124
+Columbia_Ave_693688_09-10-2019.xls,Pedestrians,ok,,,,650
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,EB Bike Lane,Westbound,,6
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,EB Sidewalk,Westbound,,54
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,WB Bike Lane,Westbound,,11
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,WB Sidewalk,Westbound,,59
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,EB Bike Lane,Eastbound,,19
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,EB Sidewalk,Eastbound,,62
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,WB Bike Lane,Eastbound,,2
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,WB Sidewalk,Eastbound,,30
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,,,,121
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,,,,84
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,,,,30
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,,,,8
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,,,,38
+Columbia_Ave_693688_09-10-2019.xls,Bicycles,ok,,,,205
+Curry_Ford_North_674521_05-15-2019.xls,Pedestrians,ok,Sidewalk WB,Westbound,,60
+Curry_Ford_North_674521_05-15-2019.xls,Pedestrians,ok,Travel Lane WB,Westbound,,2
+Curry_Ford_North_674521_05-15-2019.xls,Pedestrians,ok,Sidewalk WB,Eastbound,,35
+Curry_Ford_North_674521_05-15-2019.xls,Pedestrians,ok,Travel Lane WB,Eastbound,,2
+Curry_Ford_North_674521_05-15-2019.xls,Pedestrians,ok,Sidewalk EB,Westbound,,40
+Curry_Ford_North_674521_05-15-2019.xls,Pedestrians,ok,Travel Lane EB,Westbound,,4
+Curry_Ford_North_674521_05-15-2019.xls,Pedestrians,ok,Sidewalk EB,Eastbound,,47
+Curry_Ford_North_674521_05-15-2019.xls,Pedestrians,ok,Travel Lane EB,Eastbound,,4
+Curry_Ford_North_674521_05-15-2019.xls,Pedestrians,ok,,Night,,20
+Curry_Ford_North_674521_05-15-2019.xls,Pedestrians,ok,,,,
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,Sidewalk WB,Westbound,,42
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,Travel Lane WB,Westbound,,2
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,Sidewalk WB,Eastbound,,21
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,Travel Lane WB,Eastbound,,0
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,Sidewalk EB,Westbound,,26
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,Travel Lane EB,Westbound,,0
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,Sidewalk EB,Eastbound,,31
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,Travel Lane EB,Eastbound,,2
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,124
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,73
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,47
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,4
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,0
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,47
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,120
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,
+Curry_Ford_North_674521_05-15-2019.xls,Bicycles,ok,,,,
+Curry_Ford_South_674520_05-08-2019.xls,Pedestrians,ok,Sidewalk EB,Westbound,,40
+Curry_Ford_South_674520_05-08-2019.xls,Pedestrians,ok,Travel Lane EB,Westbound,,4
+Curry_Ford_South_674520_05-08-2019.xls,Pedestrians,ok,Sidewalk EB,Eastbound,,47
+Curry_Ford_South_674520_05-08-2019.xls,Pedestrians,ok,Travel Lane EB,Eastbound,,4
+Curry_Ford_South_674520_05-08-2019.xls,Pedestrians,ok,,,,95
+Curry_Ford_South_674520_05-08-2019.xls,Bicycles,ok,Sidewalk EB,Westbound,,26
+Curry_Ford_South_674520_05-08-2019.xls,Bicycles,ok,Travel Lane EB,Westbound,,3
+Curry_Ford_South_674520_05-08-2019.xls,Bicycles,ok,Sidewalk EB,Eastbound,,31
+Curry_Ford_South_674520_05-08-2019.xls,Bicycles,ok,Travel Lane EB,Eastbound,,2
+Curry_Ford_South_674520_05-08-2019.xls,Bicycles,ok,,TL,,5
+Curry_Ford_South_674520_05-08-2019.xls,Bicycles,ok,,SW,,57
+Daniels_Path_713788_10-23-2019.xls,Pedestrians,ok,Path,Southbound,,16
+Daniels_Path_713788_10-23-2019.xls,Pedestrians,ok,Path,Northbound,,15
+Daniels_Path_713788_10-23-2019.xls,Pedestrians,ok,,,,31
+Daniels_Path_713788_10-23-2019.xls,Bicycles,ok,Path,Southbound,,7
+Daniels_Path_713788_10-23-2019.xls,Bicycles,ok,Path,Northbound,,4
+Daniels_Path_713788_10-23-2019.xls,Bicycles,ok,,,,11
+Daniels_Sidewalk_713790_10-23-2019.xls,Pedestrians,ok,Sidewalk,Southbound,,17
+Daniels_Sidewalk_713790_10-23-2019.xls,Pedestrians,ok,Sidewalk,Northbound,,11
+Daniels_Sidewalk_713790_10-23-2019.xls,Pedestrians,ok,,,,28
+Daniels_Sidewalk_713790_10-23-2019.xls,Bicycles,ok,Sidewalk,Southbound,,7
+Daniels_Sidewalk_713790_10-23-2019.xls,Bicycles,ok,Sidewalk,Northbound,,5
+Edgewater_683772_08-07-2019.xls,Pedestrians,ok,NB Bike Lane,Southbound,,13
+Edgewater_683772_08-07-2019.xls,Pedestrians,ok,NB Sidewalk,Southbound,,127
+Edgewater_683772_08-07-2019.xls,Pedestrians,ok,SB Bike Lane,Southbound,,6
+Edgewater_683772_08-07-2019.xls,Pedestrians,ok,SB Sidewalk,Southbound,,97
+Edgewater_683772_08-07-2019.xls,Pedestrians,ok,NB Bike Lane,Northbound,,10
+Edgewater_683772_08-07-2019.xls,Pedestrians,ok,NB Sidewalk,Northbound,,171
+Edgewater_683772_08-07-2019.xls,Pedestrians,ok,SB Bike Lane,Northbound,,6
+Edgewater_683772_08-07-2019.xls,Pedestrians,ok,SB Sidewalk,Northbound,,130
+Edgewater_683772_08-07-2019.xls,Pedestrians,ok,,Night,,78
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,NB Bike Lane,Southbound,,10
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,NB Sidewalk,Southbound,,14
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,SB Bike Lane,Southbound,,70
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,SB Sidewalk,Southbound,,8
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,NB Bike Lane,Northbound,,76
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,NB Sidewalk,Northbound,,26
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,SB Bike Lane,Northbound,,12
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,SB Sidewalk,Northbound,,12
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,,,,34
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,,,,26
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,,,,146
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,,,,22
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,,,,48
+Edgewater_683772_08-07-2019.xls,Bicycles,ok,,,,60
+Edgewater_N_697168_09-18-2019.xls,Bicycles,ok,NB Bike Lane,Southbound,,8
+Edgewater_N_697168_09-18-2019.xls,Bicycles,ok,SB Bike Lane,Southbound,,98
+Edgewater_N_697168_09-18-2019.xls,Bicycles,ok,NB Bike Lane,Northbound,,79
+Edgewater_N_697168_09-18-2019.xls,Bicycles,ok,SB Bike Lane,Northbound,,15
+Glenridge_674477_06-26-2019.xls,Pedestrians,ok,Bike Lane EB,Westbound,,41
+Glenridge_674477_06-26-2019.xls,Pedestrians,ok,Bike Lane WB,Westbound,,1
+Glenridge_674477_06-26-2019.xls,Pedestrians,ok,Sidewalk EB,Westbound,,16
+Glenridge_674477_06-26-2019.xls,Pedestrians,ok,Sidewalk WB,Westbound,,72
+Glenridge_674477_06-26-2019.xls,Pedestrians,ok,Bike Lane EB,Eastbound,,1
+Glenridge_674477_06-26-2019.xls,Pedestrians,ok,Bike Lane WB,Eastbound,,5
+Glenridge_674477_06-26-2019.xls,Pedestrians,ok,Sidewalk EB,Eastbound,,15
+Glenridge_674477_06-26-2019.xls,Pedestrians,ok,Sidewalk WB,Eastbound,,96
+Glenridge_674477_06-26-2019.xls,Pedestrians,ok,,Night,,84
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,Bike Lane EB,Westbound,,0
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,Bike Lane WB,Westbound,,27
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,Sidewalk EB,Westbound,,2
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,Sidewalk WB,Westbound,,35
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,Bike Lane EB,Eastbound,,51
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,Bike Lane WB,Eastbound,,1
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,Sidewalk EB,Eastbound,,4
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,Sidewalk WB,Eastbound,,31
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,,,,39
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,,,,33
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,,,,78
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,,,,1
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,,,,34
+Glenridge_674477_06-26-2019.xls,Bicycles,ok,,,,72
+Glenridge_674477_06-26-2019.xls,Bicycles (2),NO_CHANNEL_ROW_FOUND,,,,
+Kaley_674479_06-26-2019.xls,Pedestrians,ok,Sidewalk EB,Westbound,,12
+Kaley_674479_06-26-2019.xls,Pedestrians,ok,Sidewalk WB,Westbound,,39
+Kaley_674479_06-26-2019.xls,Pedestrians,ok,Travel Lane EB,Westbound,,2
+Kaley_674479_06-26-2019.xls,Pedestrians,ok,Travel Lane WB,Westbound,,2
+Kaley_674479_06-26-2019.xls,Pedestrians,ok,Sidewalk EB,Eastbound,,20
+Kaley_674479_06-26-2019.xls,Pedestrians,ok,Sidewalk WB,Eastbound,,27
+Kaley_674479_06-26-2019.xls,Pedestrians,ok,Travel Lane EB,Eastbound,,1
+Kaley_674479_06-26-2019.xls,Pedestrians,ok,Travel Lane WB,Eastbound,,0
+Kaley_674479_06-26-2019.xls,Pedestrians,ok,,,,13
+Kaley_674479_06-26-2019.xls,Bicycles,ok,Sidewalk EB,Westbound,,6
+Kaley_674479_06-26-2019.xls,Bicycles,ok,Sidewalk WB,Westbound,,7
+Kaley_674479_06-26-2019.xls,Bicycles,ok,Travel Lane EB,Westbound,,1
+Kaley_674479_06-26-2019.xls,Bicycles,ok,Travel Lane WB,Westbound,,7
+Kaley_674479_06-26-2019.xls,Bicycles,ok,Sidewalk EB,Eastbound,,8
+Kaley_674479_06-26-2019.xls,Bicycles,ok,Sidewalk WB,Eastbound,,4
+Kaley_674479_06-26-2019.xls,Bicycles,ok,Travel Lane EB,Eastbound,,2
+Kaley_674479_06-26-2019.xls,Bicycles,ok,Travel Lane WB,Eastbound,,1
+Kaley_674479_06-26-2019.xls,Bicycles,ok,,,,15
+Kaley_674479_06-26-2019.xls,Bicycles,ok,,,,10
+Kaley_674479_06-26-2019.xls,Bicycles,ok,,,,9
+Kaley_674479_06-26-2019.xls,Bicycles,ok,,,,2
+Kaley_674479_06-26-2019.xls,Bicycles,ok,,,,12
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,Lakemont BL NB,Southbound,,3
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,Lakemont BL SB,Southbound,,12
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,Lakemont SW NB,Southbound,,27
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,Lakemont SW SB,Southbound,,37
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,Lakemont BL NB,Northbound,,2
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,Lakemont BL SB,Northbound,,22
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,Lakemont SW NB,Northbound,,22
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,Lakemont SW SB,Northbound,,54
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,,,,53
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,,,,59
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,,,,81
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,,,,14
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,,,,25
+Lakemont_Pathway_655478_05-01-2019.xls,Pedestrians,ok,,,,179
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,Lakemont BL NB,Southbound,,5
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,Lakemont BL SB,Southbound,,51
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,Lakemont SW NB,Southbound,,18
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,Lakemont SW SB,Southbound,,63
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,Lakemont BL NB,Northbound,,57
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,Lakemont BL SB,Northbound,,0
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,Lakemont SW NB,Northbound,,12
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,Lakemont SW SB,Northbound,,32
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,,,,75
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,,,,50
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,,,,108
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,,,,5
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,,,,55
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles,ok,,,,125
+Lakemont_Pathway_655478_05-01-2019.xls,Bicycles (2),NO_CHANNEL_ROW_FOUND,,,,
+Lee_Road_N_676809_07-10-2019.xls,Pedestrians,ok,North Sidewalk,Westbound,,39
+Lee_Road_N_676809_07-10-2019.xls,Pedestrians,ok,North Travel Lane,Westbound,,1
+Lee_Road_N_676809_07-10-2019.xls,Pedestrians,ok,North Sidewalk,Eastbound,,45
+Lee_Road_N_676809_07-10-2019.xls,Pedestrians,ok,North Travel Lane,Eastbound,,2
+Lee_Road_N_676809_07-10-2019.xls,Pedestrians,ok,South Sidewalk,Westbound,,63
+Lee_Road_N_676809_07-10-2019.xls,Pedestrians,ok,South Travel Lane,Westbound,,0
+Lee_Road_N_676809_07-10-2019.xls,Pedestrians,ok,South Sidewalk,Eastbound,,72
+Lee_Road_N_676809_07-10-2019.xls,Pedestrians,ok,South Travel Lane,Eastbound,,0
+Lee_Road_N_676809_07-10-2019.xls,Bicycles,ok,North Sidewalk,Westbound,,41
+Lee_Road_N_676809_07-10-2019.xls,Bicycles,ok,North Travel Lane,Westbound,,5
+Lee_Road_N_676809_07-10-2019.xls,Bicycles,ok,North Sidewalk,Eastbound,,27
+Lee_Road_N_676809_07-10-2019.xls,Bicycles,ok,North Travel Lane,Eastbound,,1
+Lee_Road_N_676809_07-10-2019.xls,Bicycles,ok,South Sidewalk,Westbound,,63
+Lee_Road_N_676809_07-10-2019.xls,Bicycles,ok,South Travel Lane,Westbound,,0
+Lee_Road_N_676809_07-10-2019.xls,Bicycles,ok,South Sidewalk,Eastbound,,72
+Lee_Road_N_676809_07-10-2019.xls,Bicycles,ok,South Travel Lane,Eastbound,,0
+Lee_Road_N_676809_07-10-2019.xls,Bicycles,ok,,,,91
+Lee_Road_South_679215_07-16-2019.xls,Pedestrians,ok,South Sidewalk,Westbound,,78
+Lee_Road_South_679215_07-16-2019.xls,Pedestrians,ok,South Travel Lane,Westbound,,1
+Lee_Road_South_679215_07-16-2019.xls,Pedestrians,ok,South Sidewalk,Eastbound,,63
+Lee_Road_South_679215_07-16-2019.xls,Pedestrians,ok,South Travel Lane,Eastbound,,0
+Lee_Road_South_679215_07-16-2019.xls,Pedestrians,ok,,,,142
+Lee_Road_South_679215_07-16-2019.xls,Bicycles,ok,South Sidewalk,Westbound,,63
+Lee_Road_South_679215_07-16-2019.xls,Bicycles,ok,South Travel Lane,Westbound,,0
+Lee_Road_South_679215_07-16-2019.xls,Bicycles,ok,South Sidewalk,Eastbound,,72
+Lee_Road_South_679215_07-16-2019.xls,Bicycles,ok,South Travel Lane,Eastbound,,0
+Livingston_673961_05-22-2019.xls,Pedestrians,ok,EB Bike Lane,Westbound,,4
+Livingston_673961_05-22-2019.xls,Pedestrians,ok,EB Sidewalk,Westbound,,25
+Livingston_673961_05-22-2019.xls,Pedestrians,ok,WB Bike Lane,Westbound,,4
+Livingston_673961_05-22-2019.xls,Pedestrians,ok,WB Sidewalk,Westbound,,99
+Livingston_673961_05-22-2019.xls,Pedestrians,ok,EB Bike Lane,Eastbound,,1
+Livingston_673961_05-22-2019.xls,Pedestrians,ok,EB Sidewalk,Eastbound,,28
+Livingston_673961_05-22-2019.xls,Pedestrians,ok,WB Bike Lane,Eastbound,,2
+Livingston_673961_05-22-2019.xls,Pedestrians,ok,WB Sidewalk,Eastbound,,120
+Livingston_673961_05-22-2019.xls,Pedestrians,ok,,,,29
+Livingston_673961_05-22-2019.xls,Pedestrians,ok,,,,283
+Livingston_673961_05-22-2019.xls,Bicycles,ok,EB Bike Lane,Westbound,,0
+Livingston_673961_05-22-2019.xls,Bicycles,ok,EB Sidewalk,Westbound,,6
+Livingston_673961_05-22-2019.xls,Bicycles,ok,WB Bike Lane,Westbound,,68
+Livingston_673961_05-22-2019.xls,Bicycles,ok,WB Sidewalk,Westbound,,6
+Livingston_673961_05-22-2019.xls,Bicycles,ok,EB Bike Lane,Eastbound,,71
+Livingston_673961_05-22-2019.xls,Bicycles,ok,EB Sidewalk,Eastbound,,8
+Livingston_673961_05-22-2019.xls,Bicycles,ok,WB Bike Lane,Eastbound,,4
+Livingston_673961_05-22-2019.xls,Bicycles,ok,WB Sidewalk,Eastbound,,7
+Livingston_673961_05-22-2019.xls,Bicycles,ok,,,,14
+Livingston_673961_05-22-2019.xls,Bicycles,ok,,,,13
+Livingston_673961_05-22-2019.xls,Bicycles,ok,,,,139
+Livingston_673961_05-22-2019.xls,Bicycles,ok,,,,4
+Livingston_673961_05-22-2019.xls,Bicycles,ok,,,,17
+Livingston_673961_05-22-2019.xls,Bicycles (2),NO_CHANNEL_ROW_FOUND,,,,
+N_Orange_683775_08-07-2019.xls,Pedestrians,ok,NB Sidewalk,Southbound,,189
+N_Orange_683775_08-07-2019.xls,Pedestrians,ok,NB Travel Lane,Southbound,,11
+N_Orange_683775_08-07-2019.xls,Pedestrians,ok,SB Sidewalk,Southbound,,164
+N_Orange_683775_08-07-2019.xls,Pedestrians,ok,SB Travel Lane,Southbound,,29
+N_Orange_683775_08-07-2019.xls,Pedestrians,ok,NB Sidewalk,Northbound,,195
+N_Orange_683775_08-07-2019.xls,Pedestrians,ok,NB Travel Lane,Northbound,,7
+N_Orange_683775_08-07-2019.xls,Pedestrians,ok,SB Sidewalk,Northbound,,163
+N_Orange_683775_08-07-2019.xls,Pedestrians,ok,SB Travel Lane,Northbound,,29
+N_Orange_683775_08-07-2019.xls,Pedestrians,ok,,Night,,178
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,NB Sidewalk,Southbound,,9
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,NB Travel Lane,Southbound,,2
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,SB Sidewalk,Southbound,,24
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,SB Travel Lane,Southbound,,39
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,NB Sidewalk,Northbound,,12
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,NB Travel Lane,Northbound,,4
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,SB Sidewalk,Northbound,,38
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,SB Travel Lane,Northbound,,2
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,,,,46
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,,,,55
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,,,,51
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,,,,4
+N_Orange_683775_08-07-2019.xls,Bicycles,ok,,,,59
+Par_Street_680840_07-24-2019.xls,Pedestrians,ok,North Bike Lane,Westbound,,0
+Par_Street_680840_07-24-2019.xls,Pedestrians,ok,North Sidewalk,Westbound,,19
+Par_Street_680840_07-24-2019.xls,Pedestrians,ok,South Bike Lane,Westbound,,2
+Par_Street_680840_07-24-2019.xls,Pedestrians,ok,North Bike Lane,Eastbound,,5
+Par_Street_680840_07-24-2019.xls,Pedestrians,ok,North Sidewalk,Eastbound,,32
+Par_Street_680840_07-24-2019.xls,Pedestrians,ok,South Bike Lane,Eastbound,,3
+Par_Street_680840_07-24-2019.xls,Pedestrians,ok,,Night,,20
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,North Bike Lane,Westbound,,17
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,North Sidewalk,Westbound,,10
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,South Bike Lane,Westbound,,0
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,North Bike Lane,Eastbound,,1
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,North Sidewalk,Eastbound,,9
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,South Bike Lane,Eastbound,,8
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,,,,10
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,,,,9
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,,,,25
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,,,,1
+Par_Street_680840_07-24-2019.xls,Bicycles,ok,,,,10
+Pine_Hills_BL_687194_08-21-2019.xls,Pedestrians,ok,SB Bike Lane,Southbound,,0
+Pine_Hills_BL_687194_08-21-2019.xls,Pedestrians,ok,SB Sidewalk,Southbound,,54
+Pine_Hills_BL_687194_08-21-2019.xls,Pedestrians,ok,SB Bike Lane,Northbound,,0
+Pine_Hills_BL_687194_08-21-2019.xls,Pedestrians,ok,SB Sidewalk,Northbound,,31
+Pine_Hills_BL_687194_08-21-2019.xls,Pedestrians,ok,NB Bike Lane,Southbound,,3
+Pine_Hills_BL_687194_08-21-2019.xls,Pedestrians,ok,NB Sidewalk,Southbound,,39
+Pine_Hills_BL_687194_08-21-2019.xls,Pedestrians,ok,NB Bike Lane,Northbound,,3
+Pine_Hills_BL_687194_08-21-2019.xls,Pedestrians,ok,NB Sidewalk,Northbound,,39
+Pine_Hills_BL_687194_08-21-2019.xls,Pedestrians,ok,,,,36
+Pine_Hills_BL_687194_08-21-2019.xls,Pedestrians,ok,,,,169
+Pine_Hills_BL_687194_08-21-2019.xls,Bicycles,ok,SB Bike Lane,Southbound,,31
+Pine_Hills_BL_687194_08-21-2019.xls,Bicycles,ok,SB Sidewalk,Southbound,,12
+Pine_Hills_BL_687194_08-21-2019.xls,Bicycles,ok,SB Bike Lane,Northbound,,9
+Pine_Hills_BL_687194_08-21-2019.xls,Bicycles,ok,SB Sidewalk,Northbound,,18
+Pine_Hills_BL_687194_08-21-2019.xls,Bicycles,ok,,BL,,40
+Pine_Hills_BL_687194_08-21-2019.xls,Bicycles,ok,,SW,,30
+Pine_Hills_BL_E_690212_08-28-2019.xls,Pedestrians,ok,NB Bike Lane,Southbound,,3
+Pine_Hills_BL_E_690212_08-28-2019.xls,Pedestrians,ok,NB Sidewalk,Southbound,,11
+Pine_Hills_BL_E_690212_08-28-2019.xls,Pedestrians,ok,NB Bike Lane,Northbound,,3
+Pine_Hills_BL_E_690212_08-28-2019.xls,Pedestrians,ok,NB Sidewalk,Northbound,,22
+Pine_Hills_BL_E_690212_08-28-2019.xls,Pedestrians,ok,,,,39
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,NB Bike Lane,Southbound,,18
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,NB Sidewalk,Southbound,,15
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,NB Bike Lane,Northbound,,14
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,NB Sidewalk,Northbound,,20
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,SB Bike Lane,Southbound,,31
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,SB Sidewalk,Southbound,,12
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,SB Bike Lane,Northbound,,9
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,SB Sidewalk,Northbound,,18
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,,,,32
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,,,,33
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,,,,45
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,,,,27
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,,,,60
+Pine_Hills_BL_E_690212_08-28-2019.xls,Bicycles,ok,,,,65
+Pine_Hills_NBL_687195_08-21-2019.xls,Pedestrians,ok,SB Sidewalk,Southbound,,123
+Pine_Hills_NBL_687195_08-21-2019.xls,Pedestrians,ok,SB Travel Lane,Southbound,,5
+Pine_Hills_NBL_687195_08-21-2019.xls,Pedestrians,ok,SB Sidewalk,Northbound,,106
+Pine_Hills_NBL_687195_08-21-2019.xls,Pedestrians,ok,SB Travel Lane,Northbound,,10
+Pine_Hills_NBL_687195_08-21-2019.xls,Pedestrians,ok,,,,244
+Pine_Hills_NBL_687195_08-21-2019.xls,Bicycles,ok,SB Sidewalk,Southbound,,43
+Pine_Hills_NBL_687195_08-21-2019.xls,Bicycles,ok,SB Travel Lane,Southbound,,7
+Pine_Hills_NBL_687195_08-21-2019.xls,Bicycles,ok,SB Sidewalk,Northbound,,35
+Pine_Hills_NBL_687195_08-21-2019.xls,Bicycles,ok,SB Travel Lane,Northbound,,3
+Pine_Hills_NBL_687195_08-21-2019.xls,Bicycles,ok,,TL,,10
+Pine_Hills_NBL_687195_08-21-2019.xls,Bicycles,ok,,SW,,78
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Pedestrians,ok,NB Sidewalk,Southbound,,97
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Pedestrians,ok,NB Travel Lane,Southbound,,1
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Pedestrians,ok,NB Sidewalk,Northbound,,105
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Pedestrians,ok,NB Travel Lane,Northbound,,0
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Pedestrians,ok,,,,203
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,NB Sidewalk,Southbound,,37
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,NB Travel Lane,Southbound,,0
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,NB Sidewalk,Northbound,,45
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,NB Travel Lane,Northbound,,1
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,SB Sidewalk,Southbound,,123
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,SB Travel Lane,Southbound,,5
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,SB Sidewalk,Northbound,,106
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,SB Travel Lane,Northbound,,0
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,,,,168
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,,,,143
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,,,,6
+Pine_Hils_NBL_E_690206_08-28-2019.xls,Bicycles,ok,,,,0
+Pleasant_Hill_Path_723248_11-12-2019.xls,Pedestrians,ok,Path,Southbound,,39
+Pleasant_Hill_Path_723248_11-12-2019.xls,Pedestrians,ok,Path,Northbound,,28
+Pleasant_Hill_Path_723248_11-12-2019.xls,Pedestrians,ok,,,,67
+Pleasant_Hill_Path_723248_11-12-2019.xls,Bicycles,ok,Path,Southbound,,31
+Pleasant_Hill_Path_723248_11-12-2019.xls,Bicycles,ok,Path,Northbound,,25
+Pleasant_Hill_Path_723248_11-12-2019.xls,Bicycles,ok,,,,56
+Rinehart_Path_704275_10-02-2019.xls,Pedestrians,ok,Path,Southbound,,86
+Rinehart_Path_704275_10-02-2019.xls,Pedestrians,ok,Path,Northbound,,100
+Rinehart_Path_704275_10-02-2019.xls,Pedestrians,ok,,,,186
+Rinehart_Path_704275_10-02-2019.xls,Bicycles,ok,Path,Southbound,,76
+Rinehart_Path_704275_10-02-2019.xls,Bicycles,ok,Path,Northbound,,88
+Rinehart_Path_704275_10-02-2019.xls,Bicycles,ok,,,,164
+Rinehart_Sidewalk_704401_10-02-2019.xls,Pedestrians,ok,Sidewalk,Southbound,,41
+Rinehart_Sidewalk_704401_10-02-2019.xls,Pedestrians,ok,Sidewalk,Northbound,,44
+Rinehart_Sidewalk_704401_10-02-2019.xls,Pedestrians,ok,,,,85
+Rinehart_Sidewalk_704401_10-02-2019.xls,Bicycles,ok,Sidewalk,Southbound,,24
+Rinehart_Sidewalk_704401_10-02-2019.xls,Bicycles,ok,Sidewalk,Northbound,,18
+Rinehart_Sidewalk_704401_10-02-2019.xls,Bicycles,ok,,,,42
+S_Orange_NB_673994_05-15-2019.xls,Pedestrians,ok,S Orange NB Bike Lane,Southbound,,1
+S_Orange_NB_673994_05-15-2019.xls,Pedestrians,ok,S Orange NB Sidewalk,Southbound,,18
+S_Orange_NB_673994_05-15-2019.xls,Pedestrians,ok,S Orange NB Bike Lane,Northbound,,1
+S_Orange_NB_673994_05-15-2019.xls,Pedestrians,ok,S Orange NB Sidewalk,Northbound,,21
+S_Orange_NB_673994_05-15-2019.xls,Pedestrians,ok,,,,41
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,S Orange NB Bike Lane,Southbound,,0
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,S Orange NB Sidewalk,Southbound,,4
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,S Orange NB Bike Lane,Northbound,,16
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,S Orange NB Sidewalk,Northbound,,5
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,S Orange SB Bike Lane,Southbound,,17
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,S Orange SB Sidewalk,Southbound,,19
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,S Orange SB Bike Lane,Northbound,,0
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,S Orange SB Sidewalk,Northbound,,18
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,,,,24
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,,,,22
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,,,,33
+S_Orange_NB_673994_05-15-2019.xls,Bicycles,ok,,,,0
+S_Orange_SB_673992_05-08-2019.xls,Pedestrians,ok,S Orange SB Bike Lane,Southbound,,1
+S_Orange_SB_673992_05-08-2019.xls,Pedestrians,ok,S Orange SB Sidewalk,Southbound,,26
+S_Orange_SB_673992_05-08-2019.xls,Pedestrians,ok,S Orange SB Bike Lane,Northbound,,0
+S_Orange_SB_673992_05-08-2019.xls,Pedestrians,ok,S Orange SB Sidewalk,Northbound,,23
+S_Orange_SB_673992_05-08-2019.xls,Pedestrians,ok,,,,50
+S_Orange_SB_673992_05-08-2019.xls,Bicycles,ok,S Orange SB Bike Lane,Southbound,,17
+S_Orange_SB_673992_05-08-2019.xls,Bicycles,ok,S Orange SB Sidewalk,Southbound,,19
+S_Orange_SB_673992_05-08-2019.xls,Bicycles,ok,S Orange SB Bike Lane,Northbound,,0
+S_Orange_SB_673992_05-08-2019.xls,Bicycles,ok,S Orange SB Sidewalk,Northbound,,18
+S_Orange_SB_673992_05-08-2019.xls,Bicycles,ok,,BL,,17
+S_Orange_SB_673992_05-08-2019.xls,Bicycles,ok,,SW,,37
+Summerlin_673963_05-22-2019.xls,Pedestrians,ok,NB Sidewalk,Southbound,,522
+Summerlin_673963_05-22-2019.xls,Pedestrians,ok,NB Travel Lane,Southbound,,10
+Summerlin_673963_05-22-2019.xls,Pedestrians,ok,SB Sidewalk,Southbound,,382
+Summerlin_673963_05-22-2019.xls,Pedestrians,ok,SB Travel Lane,Southbound,,19
+Summerlin_673963_05-22-2019.xls,Pedestrians,ok,NB Sidewalk,Northbound,,301
+Summerlin_673963_05-22-2019.xls,Pedestrians,ok,NB Travel Lane,Northbound,,16
+Summerlin_673963_05-22-2019.xls,Pedestrians,ok,SB Sidewalk,Northbound,,349
+Summerlin_673963_05-22-2019.xls,Pedestrians,ok,SB Travel Lane,Northbound,,9
+Summerlin_673963_05-22-2019.xls,Pedestrians,ok,,Night,,146
+Summerlin_673963_05-22-2019.xls,Pedestrians,ok,,,,1608
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,NB Sidewalk,Southbound,,25
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,NB Travel Lane,Southbound,,0
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,SB Sidewalk,Southbound,,49
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,SB Travel Lane,Southbound,,15
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,NB Sidewalk,Northbound,,40
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,NB Travel Lane,Northbound,,10
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,SB Sidewalk,Northbound,,27
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,SB Travel Lane,Northbound,,3
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,,,,89
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,,,,52
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,,,,25
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,,,,3
+Summerlin_673963_05-22-2019.xls,Bicycles,ok,,,,55
+University_North_673736_04-24-2019.xls,Pedestrians,ok,University N Sidewalk,Westbound,,65
+University_North_673736_04-24-2019.xls,Pedestrians,ok,University N Travel Lane,Westbound,,4
+University_North_673736_04-24-2019.xls,Pedestrians,ok,University N Sidewalk,Eastbound,,59
+University_North_673736_04-24-2019.xls,Pedestrians,ok,University N Travel Lane,Eastbound,,4
+University_North_673736_04-24-2019.xls,Pedestrians,ok,University S Sidewalk,Westbound,,344
+University_North_673736_04-24-2019.xls,Pedestrians,ok,University S Travel Lane,Westbound,,29
+University_North_673736_04-24-2019.xls,Pedestrians,ok,University S Sidewalk,Eastbound,,369
+University_North_673736_04-24-2019.xls,Pedestrians,ok,University S Travel Lane,Eastbound,,24
+University_North_673736_04-24-2019.xls,Pedestrians,ok,,Night,,210
+University_North_673736_04-24-2019.xls,Pedestrians,ok,,,,898
+University_North_673736_04-24-2019.xls,Bicycles,ok,University N Sidewalk,Westbound,,46
+University_North_673736_04-24-2019.xls,Bicycles,ok,University N Travel Lane,Westbound,,1
+University_North_673736_04-24-2019.xls,Bicycles,ok,University N Sidewalk,Eastbound,,48
+University_North_673736_04-24-2019.xls,Bicycles,ok,University N Travel Lane,Eastbound,,0
+University_North_673736_04-24-2019.xls,Bicycles,ok,University S Sidewalk,Westbound,,116
+University_North_673736_04-24-2019.xls,Bicycles,ok,University S Travel Lane,Westbound,,0
+University_North_673736_04-24-2019.xls,Bicycles,ok,University S Sidewalk,Eastbound,,122
+University_North_673736_04-24-2019.xls,Bicycles,ok,University S Travel Lane,Eastbound,,4
+University_North_673736_04-24-2019.xls,Bicycles,ok,,,,168
+University_North_673736_04-24-2019.xls,Bicycles,ok,,,,164
+University_North_673736_04-24-2019.xls,Bicycles,ok,,,,5
+University_North_673736_04-24-2019.xls,Bicycles,ok,,,,0
+University_North_673736_04-24-2019.xls,Bicycles,ok,,,,332
+University_North_673736_04-24-2019.xls,Bicycles,ok,,,,
+University_North_673736_04-24-2019.xls,Bicycles,ok,,,,164
+University_SW_Speed_701118_09-25-2019.xls,Bicycles,ok,North Sidewalk,Westbound,,139
+University_SW_Speed_701118_09-25-2019.xls,Bicycles,ok,North Sidewalk,Eastbound,,119
+University_SW_Speed_701118_09-25-2019.xls,Bicycles,ok,,,,258
+University_South_673740_04-17-2019.xls,Pedestrians,ok,University S Sidewalk,Westbound,,344
+University_South_673740_04-17-2019.xls,Pedestrians,ok,University S Travel Lane,Westbound,,29
+University_South_673740_04-17-2019.xls,Pedestrians,ok,University S Sidewalk,Eastbound,,369
+University_South_673740_04-17-2019.xls,Pedestrians,ok,University S Travel Lane,Eastbound,,24
+University_South_673740_04-17-2019.xls,Pedestrians,ok,,,,766
+University_South_673740_04-17-2019.xls,Bicycles,ok,University S Sidewalk,Westbound,,116
+University_South_673740_04-17-2019.xls,Bicycles,ok,University S Travel Lane,Westbound,,6
+University_South_673740_04-17-2019.xls,Bicycles,ok,University S Sidewalk,Eastbound,,122
+University_South_673740_04-17-2019.xls,Bicycles,ok,University S Travel Lane,Eastbound,,4
+University_South_673740_04-17-2019.xls,Bicycles,ok,,TL,,10
+University_South_673740_04-17-2019.xls,Bicycles,ok,,SW,,238
+West_Orange_Path_710336_10-15-2019.xls,Pedestrians,ok,Path,Southbound,,20
+West_Orange_Path_710336_10-15-2019.xls,Pedestrians,ok,Path,Northbound,,14
+West_Orange_Path_710336_10-15-2019.xls,Pedestrians,ok,,,,34
+West_Orange_Path_710336_10-15-2019.xls,Bicycles,ok,Path,Southbound,,50
+West_Orange_Path_710336_10-15-2019.xls,Bicycles,ok,Path,Northbound,,59
+West_Orange_Path_710336_10-15-2019.xls,Bicycles,ok,,,,109
+West_Orange_Sidewalk_710337_10-15-2019.xls,Pedestrians,ok,Sidewalk,Southbound,,43
+West_Orange_Sidewalk_710337_10-15-2019.xls,Pedestrians,ok,Sidewalk,Northbound,,28
+West_Orange_Sidewalk_710337_10-15-2019.xls,Pedestrians,ok,,,,71
+West_Orange_Sidewalk_710337_10-15-2019.xls,Bicycles,ok,Sidewalk,Southbound,,31
+West_Orange_Sidewalk_710337_10-15-2019.xls,Bicycles,ok,Sidewalk,Northbound,,16
+West_Orange_Sidewalk_710337_10-15-2019.xls,Bicycles,ok,,,,47
+Winter_Park_Rd._Speed_701117_09-25-2019.xls,Bicycles,ok,Travel Lane NB,Southbound,,0
+Winter_Park_Rd._Speed_701117_09-25-2019.xls,Bicycles,ok,Travel Lane SB,Southbound,,4
+Winter_Park_Rd._Speed_701117_09-25-2019.xls,Bicycles,ok,Travel Lane NB,Northbound,,7
+Winter_Park_Rd._Speed_701117_09-25-2019.xls,Bicycles,ok,Travel Lane SB,Northbound,,0
+Winter_Park_Road_668087_05-01-2019.xls,Pedestrians,ok,NB Sidewalk,Southbound,,52
+Winter_Park_Road_668087_05-01-2019.xls,Pedestrians,ok,NB Travel Lane,Southbound,,0
+Winter_Park_Road_668087_05-01-2019.xls,Pedestrians,ok,SB Sidewalk,Southbound,,54
+Winter_Park_Road_668087_05-01-2019.xls,Pedestrians,ok,SB Travel Lane,Southbound,,0
+Winter_Park_Road_668087_05-01-2019.xls,Pedestrians,ok,NB Sidewalk,Northbound,,62
+Winter_Park_Road_668087_05-01-2019.xls,Pedestrians,ok,NB Travel Lane,Northbound,,4
+Winter_Park_Road_668087_05-01-2019.xls,Pedestrians,ok,SB Sidewalk,Northbound,,71
+Winter_Park_Road_668087_05-01-2019.xls,Pedestrians,ok,SB Travel Lane,Northbound,,1
+Winter_Park_Road_668087_05-01-2019.xls,Pedestrians,ok,,Night,,27
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,NB Sidewalk,Southbound,,14
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,NB Travel Lane,Southbound,,1
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,SB Sidewalk,Southbound,,52
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,SB Travel Lane,Southbound,,13
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,NB Sidewalk,Northbound,,25
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,NB Travel Lane,Northbound,,8
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,SB Sidewalk,Northbound,,39
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,SB Travel Lane,Northbound,,3
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,,TL,,25
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,,SW,,130
+Winter_Park_Road_668087_05-01-2019.xls,Bicycles,ok,,Facing,,57
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Pedestrians,ok,NB Sidewalk,Southbound,,97
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Pedestrians,ok,NB Travel Lane,Southbound,,1
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Pedestrians,ok,NB Sidewalk,Northbound,,105
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Pedestrians,ok,NB Travel Lane,Northbound,,0
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Pedestrians,ok,SB Sidewalk,Southbound,,123
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Pedestrians,ok,SB Travel Lane,Southbound,,5
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Pedestrians,ok,SB Sidewalk,Northbound,,106
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Pedestrians,ok,SB Travel Lane,Northbound,,10
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Pedestrians,ok,,Night,,92
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,NB Sidewalk,Southbound,,37
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,NB Travel Lane,Southbound,,0
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,NB Sidewalk,Northbound,,45
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,NB Travel Lane,Northbound,,1
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,SB Sidewalk,Southbound,,123
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,SB Travel Lane,Southbound,,5
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,SB Sidewalk,Northbound,,106
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,SB Travel Lane,Northbound,,0
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,,,,168
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,,,,143
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,,,,6
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,,,,0
+Pine_Hils_NBL_08-28-2019.xls.xlsx,Bicycles,ok,,,,143
+S_Orange__05-15-2019.xls.xlsx,Pedestrians,ok,S Orange NB Bike Lane,Southbound,,1
+S_Orange__05-15-2019.xls.xlsx,Pedestrians,ok,S Orange NB Sidewalk,Southbound,,18
+S_Orange__05-15-2019.xls.xlsx,Pedestrians,ok,S Orange NB Bike Lane,Northbound,,1
+S_Orange__05-15-2019.xls.xlsx,Pedestrians,ok,S Orange NB Sidewalk,Northbound,,21
+S_Orange__05-15-2019.xls.xlsx,Pedestrians,ok,S Orange SB Bike Lane,Southbound,,1
+S_Orange__05-15-2019.xls.xlsx,Pedestrians,ok,S Orange SB Sidewalk,Southbound,,26
+S_Orange__05-15-2019.xls.xlsx,Pedestrians,ok,S Orange SB Bike Lane,Northbound,,0
+S_Orange__05-15-2019.xls.xlsx,Pedestrians,ok,S Orange SB Sidewalk,Northbound,,23
+S_Orange__05-15-2019.xls.xlsx,Pedestrians,ok,,Night,,17
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,S Orange NB Bike Lane,Southbound,,0
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,S Orange NB Sidewalk,Southbound,,4
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,S Orange NB Bike Lane,Northbound,,16
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,S Orange NB Sidewalk,Northbound,,5
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,S Orange SB Bike Lane,Southbound,,17
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,S Orange SB Sidewalk,Southbound,,19
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,S Orange SB Bike Lane,Northbound,,0
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,S Orange SB Sidewalk,Northbound,,18
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,,,,24
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,,,,22
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,,,,33
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,,,,0
+S_Orange__05-15-2019.xls.xlsx,Bicycles,ok,,,,22

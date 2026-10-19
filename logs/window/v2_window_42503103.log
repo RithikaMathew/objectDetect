@@ -1,0 +1,160 @@
+    merge? #8(car,h=191) vs #128(car,h=64): t_overlap=3.40s (52%) n_common=15 scale~47px mean_norm_dist=6.40 -> keep separate
+    merge? #8(car,h=191) vs #1(car,h=49): t_overlap=3.97s (91%) n_common=24 scale~19px mean_norm_dist=26.65 -> keep separate
+    merge? #8(car,h=191) vs #70(car,h=41): t_overlap=4.54s (100%) n_common=17 scale~27px mean_norm_dist=0.85 -> MERGE
+    merge? #8(car,h=232) vs #2(car,h=39): t_overlap=2.17s (86%) n_common=16 scale~29px mean_norm_dist=0.72 -> MERGE
+    merge? #8(car,h=271) vs #80(car,h=31): t_overlap=1.50s (100%) n_common=7 scale~13px mean_norm_dist=0.57 -> MERGE
+    merge? #8(car,h=302) vs #94(car,h=26): t_overlap=0.90s (100%) n_common=5 scale~13px mean_norm_dist=32.17 -> keep separate
+    merge? #8(car,h=302) vs #112(car,h=26): t_overlap=0.93s (100%) n_common=14 scale~71px mean_norm_dist=5.03 -> keep separate
+    merge? #8(car,h=302) vs #151(car,h=24): t_overlap=1.00s (32%) n_common=7 scale~19px mean_norm_dist=34.52 -> keep separate
+    merge? #8(car,h=302) vs #27(car,h=21): t_overlap=2.37s (100%) n_common=12 scale~56px mean_norm_dist=22.97 -> keep separate
+    merge? #8(car,h=302) vs #115(car,h=19): t_overlap=2.47s (100%) n_common=13 scale~74px mean_norm_dist=0.99 -> MERGE
+    merge? #8(car,h=321) vs #84(car,h=17): t_overlap=2.67s (100%) n_common=9 scale~22px mean_norm_dist=5.74 -> keep separate
+    merge? #8(car,h=321) vs #117(car,h=16): t_overlap=1.20s (100%) n_common=6 scale~19px mean_norm_dist=36.92 -> keep separate
+    merge? #8(car,h=321) vs #41(car,h=14): t_overlap=0.63s (100%) n_common=5 scale~17px mean_norm_dist=42.65 -> keep separate
+    merge? #8(car,h=321) vs #48(car,h=13): t_overlap=0.93s (100%) n_common=13 scale~15px mean_norm_dist=0.43 -> MERGE
+    merge? #8(car,h=334) vs #46(car,h=12): t_overlap=0.53s (100%) n_common=12 scale~20px mean_norm_dist=13.64 -> keep separate
+    merge? #8(car,h=334) vs #126(car,h=12): t_overlap=0.60s (100%) n_common=10 scale~98px mean_norm_dist=0.98 -> MERGE
+    merge? #8(car,h=346) vs #32(car,h=11): t_overlap=0.87s (100%) n_common=7 scale~54px mean_norm_dist=10.81 -> keep separate
+    merge? #8(car,h=346) vs #33(car,h=11): t_overlap=1.74s (100%) n_common=7 scale~45px mean_norm_dist=0.83 -> MERGE
+    merge? #8(car,h=357) vs #127(car,h=11): t_overlap=0.93s (100%) n_common=11 scale~99px mean_norm_dist=3.41 -> keep separate
+    merge? #8(car,h=357) vs #37(car,h=10): t_overlap=2.07s (100%) n_common=9 scale~23px mean_norm_dist=1.27 -> keep separate
+    merge? #8(car,h=357) vs #49(car,h=10): t_overlap=0.47s (100%) n_common=10 scale~15px mean_norm_dist=17.27 -> keep separate
+    merge? #8(car,h=357) vs #110(car,h=10): t_overlap=0.80s (100%) n_common=10 scale~14px mean_norm_dist=0.39 -> MERGE
+    merge? #8(car,h=367) vs #35(car,h=9): t_overlap=0.67s (100%) n_common=9 scale~81px mean_norm_dist=6.65 -> keep separate
+    merge? #8(car,h=367) vs #130(car,h=9): t_overlap=0.30s (100%) n_common=4 scale~100px mean_norm_dist=4.91 -> keep separate
+    merge? #8(car,h=367) vs #44(car,h=8): t_overlap=0.43s (100%) n_common=8 scale~31px mean_norm_dist=23.47 -> keep separate
+    merge? #8(car,h=367) vs #82(car,h=8): t_overlap=0.40s (100%) n_common=7 scale~11px mean_norm_dist=2.47 -> keep separate
+    merge? #8(car,h=367) vs #23(car,h=7): t_overlap=0.47s (100%) n_common=4 scale~23px mean_norm_dist=9.78 -> keep separate
+    merge? #8(car,h=367) vs #26(car,h=7): t_overlap=0.57s (100%) n_common=4 scale~35px mean_norm_dist=19.84 -> keep separate
+    merge? #8(car,h=367) vs #36(car,h=7): t_overlap=1.53s (100%) n_common=3 scale~46px mean_norm_dist=3.35 -> keep separate
+    merge? #8(car,h=367) vs #38(car,h=7): t_overlap=0.40s (100%) n_common=4 scale~54px mean_norm_dist=9.76 -> keep separate
+    merge? #8(car,h=367) vs #75(car,h=7): t_overlap=0.93s (100%) n_common=6 scale~17px mean_norm_dist=40.19 -> keep separate
+    merge? #8(car,h=367) vs #81(car,h=7): t_overlap=0.43s (100%) n_common=5 scale~19px mean_norm_dist=1.12 -> MERGE
+    merge? #8(car,h=374) vs #18(car,h=6): t_overlap=1.57s (100%) n_common=4 scale~17px mean_norm_dist=14.69 -> keep separate
+    merge? #8(car,h=374) vs #34(car,h=6): t_overlap=0.33s (100%) n_common=4 scale~94px mean_norm_dist=4.50 -> keep separate
+    merge? #8(car,h=374) vs #42(car,h=6): t_overlap=0.40s (100%) n_common=5 scale~15px mean_norm_dist=29.11 -> keep separate
+    merge? #8(car,h=374) vs #153(car,h=6): t_overlap=0.50s (100%) n_common=3 scale~20px mean_norm_dist=20.19 -> keep separate
+    merge? #8(car,h=374) vs #79(car,h=5): t_overlap=0.40s (100%) n_common=4 scale~34px mean_norm_dist=4.16 -> keep separate
+    merge? #8(car,h=374) vs #83(car,h=4): t_overlap=0.53s (100%) n_common=3 scale~38px mean_norm_dist=3.14 -> keep separate
+    merge? #8(car,h=374) vs #157(car,h=4): t_overlap=0.47s (78%) n_common=3 scale~19px mean_norm_dist=33.80 -> keep separate
+    merge? #72(cyclist,h=71) vs #105(cyclist,h=51): t_overlap=1.03s (40%) n_common=4 scale~44px mean_norm_dist=1.40 -> keep separate
+    merge? #72(cyclist,h=71) vs #92(person,h=29): t_overlap=1.90s (85%) n_common=12 scale~42px mean_norm_dist=1.47 -> keep separate
+    merge? #72(cyclist,h=71) vs #69(cyclist,h=28): t_overlap=1.27s (81%) n_common=12 scale~143px mean_norm_dist=0.67 -> MERGE
+    merge? #72(cyclist,h=99) vs #67(person,h=19): t_overlap=1.70s (94%) n_common=10 scale~103px mean_norm_dist=3.81 -> keep separate
+    merge? #72(cyclist,h=99) vs #73(cyclist,h=17): t_overlap=1.90s (100%) n_common=12 scale~99px mean_norm_dist=1.02 -> MERGE
+    merge? #72(cyclist,h=116) vs #102(cyclist,h=11): t_overlap=0.50s (100%) n_common=3 scale~35px mean_norm_dist=1.10 -> MERGE
+    merge? #72(cyclist,h=127) vs #68(person,h=10): t_overlap=1.03s (97%) n_common=3 scale~86px mean_norm_dist=8.49 -> keep separate
+    merge? #72(cyclist,h=127) vs #87(person,h=8): t_overlap=0.80s (100%) n_common=8 scale~87px mean_norm_dist=3.88 -> keep separate
+    merge? #72(cyclist,h=127) vs #76(person,h=3): t_overlap=0.20s (100%) n_common=3 scale~113px mean_norm_dist=1.55 -> keep separate
+    merge? #128(car,h=64) vs #167(car,h=39): t_overlap=2.67s (85%) n_common=9 scale~29px mean_norm_dist=4.87 -> keep separate
+    merge? #128(car,h=64) vs #151(car,h=24): t_overlap=3.10s (100%) n_common=7 scale~23px mean_norm_dist=31.25 -> keep separate
+    merge? #128(car,h=64) vs #184(car,h=23): t_overlap=0.97s (100%) n_common=6 scale~21px mean_norm_dist=22.65 -> keep separate
+    merge? #128(car,h=64) vs #134(car,h=17): t_overlap=0.97s (100%) n_common=7 scale~54px mean_norm_dist=16.61 -> keep separate
+    merge? #128(car,h=64) vs #173(car,h=12): t_overlap=0.93s (100%) n_common=8 scale~33px mean_norm_dist=3.28 -> keep separate
+    merge? #128(car,h=64) vs #127(car,h=11): t_overlap=0.53s (57%) n_common=5 scale~22px mean_norm_dist=17.42 -> keep separate
+    merge? #128(car,h=64) vs #133(car,h=8): t_overlap=0.87s (100%) n_common=4 scale~50px mean_norm_dist=15.52 -> keep separate
+    merge? #128(car,h=64) vs #179(car,h=7): t_overlap=0.40s (100%) n_common=3 scale~29px mean_norm_dist=21.61 -> keep separate
+    merge? #128(car,h=64) vs #152(car,h=6): t_overlap=0.83s (100%) n_common=5 scale~15px mean_norm_dist=19.85 -> keep separate
+    merge? #128(car,h=64) vs #176(car,h=5): t_overlap=0.20s (100%) n_common=3 scale~27px mean_norm_dist=3.77 -> keep separate
+    merge? #5(person,h=63) vs #25(person,h=11): t_overlap=0.77s (100%) n_common=6 scale~71px mean_norm_dist=5.44 -> keep separate
+    merge? #5(person,h=63) vs #24(person,h=5): t_overlap=0.27s (100%) n_common=5 scale~40px mean_norm_dist=11.53 -> keep separate
+    merge? #106(person,h=52) vs #105(cyclist,h=51): t_overlap=2.60s (100%) n_common=17 scale~38px mean_norm_dist=1.52 -> keep separate
+    merge? #106(person,h=52) vs #92(person,h=29): t_overlap=1.37s (61%) n_common=3 scale~45px mean_norm_dist=2.59 -> keep separate
+    merge? #106(person,h=52) vs #116(person,h=7): t_overlap=1.37s (100%) n_common=3 scale~33px mean_norm_dist=1.20 -> keep separate
+    merge? #106(person,h=52) vs #120(person,h=6): t_overlap=1.40s (100%) n_common=3 scale~31px mean_norm_dist=15.14 -> keep separate
+    merge? #105(cyclist,h=51) vs #92(person,h=29): t_overlap=1.37s (61%) n_common=10 scale~35px mean_norm_dist=2.19 -> keep separate
+    merge? #105(cyclist,h=51) vs #116(person,h=7): t_overlap=1.37s (100%) n_common=5 scale~56px mean_norm_dist=1.91 -> keep separate
+    merge? #105(cyclist,h=51) vs #120(person,h=6): t_overlap=1.17s (83%) n_common=4 scale~31px mean_norm_dist=20.54 -> keep separate
+    merge? #1(car,h=49) vs #27(car,h=21): t_overlap=2.37s (100%) n_common=7 scale~19px mean_norm_dist=27.75 -> keep separate
+    merge? #1(car,h=49) vs #41(car,h=14): t_overlap=0.63s (100%) n_common=8 scale~17px mean_norm_dist=29.89 -> keep separate
+    merge? #1(car,h=49) vs #32(car,h=11): t_overlap=0.87s (100%) n_common=3 scale~15px mean_norm_dist=11.12 -> keep separate
+    merge? #1(car,h=49) vs #37(car,h=10): t_overlap=1.60s (77%) n_common=5 scale~15px mean_norm_dist=26.78 -> keep separate
+    merge? #1(car,h=49) vs #23(car,h=7): t_overlap=0.47s (100%) n_common=7 scale~23px mean_norm_dist=24.32 -> keep separate
+    merge? #1(car,h=49) vs #26(car,h=7): t_overlap=0.57s (100%) n_common=4 scale~31px mean_norm_dist=18.67 -> keep separate
+    merge? #1(car,h=49) vs #18(car,h=6): t_overlap=1.57s (100%) n_common=5 scale~16px mean_norm_dist=11.95 -> keep separate
+    merge? #1(car,h=49) vs #42(car,h=6): t_overlap=0.40s (100%) n_common=6 scale~11px mean_norm_dist=1.62 -> keep separate
+    merge? #1(car,h=49) vs #43(car,h=4): t_overlap=0.33s (100%) n_common=3 scale~22px mean_norm_dist=21.85 -> keep separate
+    merge? #1(car,h=49) vs #4(car,h=3): t_overlap=0.13s (100%) n_common=3 scale~13px mean_norm_dist=36.63 -> keep separate
+    merge? #167(car,h=39) vs #151(car,h=24): t_overlap=1.63s (53%) n_common=4 scale~14px mean_norm_dist=50.86 -> keep separate
+    merge? #167(car,h=39) vs #184(car,h=23): t_overlap=0.97s (100%) n_common=13 scale~16px mean_norm_dist=26.54 -> keep separate
+    merge? #167(car,h=39) vs #173(car,h=12): t_overlap=0.93s (100%) n_common=5 scale~19px mean_norm_dist=9.94 -> keep separate
+    merge? #167(car,h=39) vs #189(car,h=11): t_overlap=0.67s (100%) n_common=3 scale~20px mean_norm_dist=10.74 -> keep separate
+    merge? #167(car,h=39) vs #179(car,h=7): t_overlap=0.40s (100%) n_common=3 scale~15px mean_norm_dist=46.90 -> keep separate
+    merge? #167(car,h=39) vs #186(car,h=6): t_overlap=0.80s (100%) n_common=5 scale~15px mean_norm_dist=28.73 -> keep separate
+    merge? #167(car,h=39) vs #196(car,h=6): t_overlap=0.40s (86%) n_common=3 scale~17px mean_norm_dist=40.54 -> keep separate
+    merge? #167(car,h=39) vs #187(car,h=4): t_overlap=0.40s (100%) n_common=3 scale~14px mean_norm_dist=1.60 -> keep separate
+    merge? #92(person,h=29) vs #95(person,h=7): t_overlap=0.80s (100%) n_common=3 scale~56px mean_norm_dist=6.95 -> keep separate
+    merge? #92(person,h=29) vs #98(cyclist,h=6): t_overlap=0.17s (100%) n_common=4 scale~37px mean_norm_dist=0.55 -> MERGE
+    merge? #92(cyclist,h=35) vs #103(person,h=4): t_overlap=0.33s (100%) n_common=3 scale~32px mean_norm_dist=12.60 -> keep separate
+    merge? #94(car,h=26) vs #84(car,h=17): t_overlap=0.90s (100%) n_common=10 scale~14px mean_norm_dist=33.01 -> keep separate
+    merge? #94(car,h=26) vs #90(car,h=9): t_overlap=0.63s (70%) n_common=7 scale~39px mean_norm_dist=17.29 -> keep separate
+    merge? #94(car,h=26) vs #97(car,h=3): t_overlap=0.53s (100%) n_common=3 scale~18px mean_norm_dist=30.20 -> keep separate
+    merge? #112(car,h=26) vs #109(car,h=4): t_overlap=0.87s (96%) n_common=3 scale~71px mean_norm_dist=3.76 -> keep separate
+    merge? #151(car,h=24) vs #179(car,h=7): t_overlap=0.40s (100%) n_common=7 scale~15px mean_norm_dist=1.24 -> keep separate
+    merge? #151(car,h=24) vs #153(car,h=6): t_overlap=0.50s (100%) n_common=3 scale~15px mean_norm_dist=22.81 -> keep separate
+    merge? #151(car,h=24) vs #171(car,h=6): t_overlap=1.23s (100%) n_common=4 scale~13px mean_norm_dist=28.58 -> keep separate
+    merge? #151(car,h=24) vs #181(car,h=5): t_overlap=0.33s (100%) n_common=3 scale~13px mean_norm_dist=33.16 -> keep separate
+    merge? #151(car,h=24) vs #157(car,h=4): t_overlap=0.60s (100%) n_common=3 scale~15px mean_norm_dist=1.26 -> keep separate
+    merge? #184(car,h=23) vs #189(car,h=11): t_overlap=0.23s (35%) n_common=3 scale~21px mean_norm_dist=25.72 -> keep separate
+    merge? #27(car,h=21) vs #32(car,h=11): t_overlap=0.87s (100%) n_common=10 scale~16px mean_norm_dist=29.70 -> keep separate
+    merge? #27(car,h=21) vs #38(car,h=7): t_overlap=0.40s (100%) n_common=7 scale~25px mean_norm_dist=16.27 -> keep separate
+    merge? #67(person,h=19) vs #68(person,h=10): t_overlap=1.07s (100%) n_common=4 scale~45px mean_norm_dist=1.48 -> keep separate
+    merge? #59(car,h=18) vs #57(car,h=14): t_overlap=0.93s (100%) n_common=12 scale~15px mean_norm_dist=1.17 -> MERGE
+    merge? #59(car,h=32) vs #58(car,h=8): t_overlap=0.77s (100%) n_common=5 scale~14px mean_norm_dist=37.03 -> keep separate
+    merge? #84(car,h=17) vs #82(car,h=8): t_overlap=0.13s (33%) n_common=3 scale~29px mean_norm_dist=3.80 -> keep separate
+    merge? #134(car,h=17) vs #133(car,h=8): t_overlap=0.87s (100%) n_common=5 scale~14px mean_norm_dist=22.24 -> keep separate
+    merge? #134(car,h=17) vs #135(car,h=8): t_overlap=0.73s (100%) n_common=4 scale~14px mean_norm_dist=33.00 -> keep separate
+    merge? #134(car,h=17) vs #138(car,h=4): t_overlap=0.67s (100%) n_common=4 scale~15px mean_norm_dist=1.24 -> keep separate
+    merge? #117(car,h=16) vs #121(car,h=13): t_overlap=0.67s (100%) n_common=6 scale~23px mean_norm_dist=16.84 -> keep separate
+    merge? #117(car,h=16) vs #125(car,h=3): t_overlap=0.13s (100%) n_common=3 scale~15px mean_norm_dist=1.19 -> MERGE
+    merge? #7(car,h=14) vs #6(car,h=6): t_overlap=0.27s (100%) n_common=5 scale~40px mean_norm_dist=2.59 -> keep separate
+    merge? #41(car,h=14) vs #37(car,h=10): t_overlap=0.63s (100%) n_common=3 scale~22px mean_norm_dist=32.54 -> keep separate
+    merge? #190(person,h=14) vs #199(person,h=4): t_overlap=0.40s (100%) n_common=4 scale~8px mean_norm_dist=4.87 -> keep separate
+    merge? #190(person,h=14) vs #191(person,h=3): t_overlap=0.47s (100%) n_common=3 scale~10px mean_norm_dist=2.78 -> keep separate
+    merge? #46(car,h=12) vs #49(car,h=10): t_overlap=0.47s (100%) n_common=10 scale~20px mean_norm_dist=0.68 -> MERGE
+    merge? #46(car,h=22) vs #44(car,h=8): t_overlap=0.40s (92%) n_common=6 scale~34px mean_norm_dist=12.50 -> keep separate
+    merge? #173(car,h=12) vs #170(car,h=5): t_overlap=0.10s (43%) n_common=3 scale~26px mean_norm_dist=26.81 -> keep separate
+    merge? #173(car,h=12) vs #176(car,h=5): t_overlap=0.20s (100%) n_common=4 scale~16px mean_norm_dist=1.04 -> MERGE
+    merge? #32(car,h=11) vs #38(car,h=7): t_overlap=0.40s (100%) n_common=7 scale~25px mean_norm_dist=3.97 -> keep separate
+    merge? #127(car,h=11) vs #130(car,h=9): t_overlap=0.30s (100%) n_common=4 scale~13px mean_norm_dist=14.77 -> keep separate
+    merge? #140(person,h=11) vs #142(person,h=8): t_overlap=0.47s (100%) n_common=3 scale~284px mean_norm_dist=0.98 -> MERGE
+    merge? #189(car,h=11) vs #200(car,h=4): t_overlap=0.20s (75%) n_common=3 scale~18px mean_norm_dist=21.09 -> keep separate
+    merge? #37(car,h=10) vs #42(car,h=6): t_overlap=0.40s (100%) n_common=3 scale~14px mean_norm_dist=29.88 -> keep separate
+    merge? #90(car,h=9) vs #97(car,h=3): t_overlap=0.53s (100%) n_common=3 scale~28px mean_norm_dist=1.75 -> keep separate
+    merge? #82(car,h=8) vs #75(car,h=7): t_overlap=0.40s (100%) n_common=5 scale~17px mean_norm_dist=38.80 -> keep separate
+    merge? #82(car,h=8) vs #79(car,h=5): t_overlap=0.33s (83%) n_common=4 scale~36px mean_norm_dist=3.17 -> keep separate
+    merge? #82(car,h=8) vs #83(car,h=4): t_overlap=0.30s (75%) n_common=3 scale~24px mean_norm_dist=1.61 -> keep separate
+    merge? #75(car,h=7) vs #79(car,h=5): t_overlap=0.40s (100%) n_common=3 scale~36px mean_norm_dist=15.69 -> keep separate
+    merge? #179(car,h=7) vs #181(car,h=5): t_overlap=0.20s (60%) n_common=3 scale~15px mean_norm_dist=30.73 -> keep separate
+    merge? #42(car,h=6) vs #43(car,h=4): t_overlap=0.33s (100%) n_common=3 scale~22px mean_norm_dist=22.25 -> keep separate
+    merge? #186(car,h=6) vs #187(car,h=4): t_overlap=0.40s (100%) n_common=3 scale~11px mean_norm_dist=36.94 -> keep separate
+
+Rendered 599 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.008_window_400_420 ===
+weights=yolov8l.pt  conf=0.05  stride=1  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (24 samples)
+599 sampled frames, inference 161.8s (0.27s/frame)
+fps=29.97  dt between samples=0.033s
+min hits per class: {'cyclist': 15, 'bicycle': 15, 'person': 15, 'motorcycle': 15, '_default': 30}
+
+Raw tracks: 201  ->  after merge: 183  (18 absorbed)
+COUNTED TRACKS BY CLASS: {'cyclist': 2}
+Rejected tracks: {'low_max_conf': 8, 'low_mean_conf': 3, 'too_few_hits': 170}
+
+Funnel CSV : pilot_output/v2/Standard_SCU8OG_2019-07-10_0000.008_window_400_420_funnel.csv
+Tracks CSV : pilot_output/v2/Standard_SCU8OG_2019-07-10_0000.008_window_400_420_tracks.csv
+Video      : pilot_output/v2/Standard_SCU8OG_2019-07-10_0000.008_window_400_420_annotated_h264.mp4   <-- download this one
+
+2 cyclist track(s):
+  #72  t=406.5-411.1s  hits=127  max_conf=0.92  mean_conf=0.41  travelled=21.9 diagonals
+  #105  t=410.0-412.6s  hits=51  max_conf=0.78  mean_conf=0.23  travelled=8.3 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #5 person    t=400.2-404.4s  rejected: mean_conf 0.17<0.2, excursion 0.65<0.75
+  #106 person    t=410.0-414.4s  rejected: mean_conf 0.20<0.2
+  #92 cyclist   t=409.2-411.4s  rejected: mean_conf 0.17<0.18
+  #169 person    t=417.0-419.0s  rejected: max_conf 0.24<0.5, mean_conf 0.10<0.2
+  #67 person    t=406.4-408.2s  rejected: max_conf 0.17<0.5, mean_conf 0.08<0.2
+  #140 person    t=414.3-415.6s  rejected: max_conf 0.13<0.5, mean_conf 0.08<0.2
+  #190 person    t=419.2-420.0s  rejected: hits 14<15, max_conf 0.21<0.5, mean_conf 0.14<0.2
+  #25 person    t=401.5-402.3s  rejected: hits 11<15, max_conf 0.08<0.5, mean_conf 0.06<0.2

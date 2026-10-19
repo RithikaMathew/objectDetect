@@ -1,0 +1,13 @@
+[0/5] checking outbound network access...
+      OK: can reach github.com
+      OK: can reach objects.githubusercontent.com
+      OK: can reach huggingface.co
+      FAIL: cannot reach cdn-lfs.huggingface.co ([Errno -2] Name or service not known)
+      FAIL: cannot reach cdn-lfs-us-1.huggingface.co ([Errno -2] Name or service not known)
+      -> unreachable: ['cdn-lfs.huggingface.co', 'cdn-lfs-us-1.huggingface.co']
+      -> if only the cdn-lfs.* hosts failed: this cluster's compute nodes likely
+         allowlist huggingface.co itself but not its file-storage CDN, which is
+         where actual model weights are served from. Ask your cluster admins to
+         allowlist *.huggingface.co and *.hf.co, or run this step on the login node.
+      -> if github.com or objects.githubusercontent.com failed too: no outbound
+         internet at all from this node — run on the login node instead of via sbatch.

@@ -1,0 +1,33 @@
+=== clip 30 / 34 ===
+video : pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.045.mp4
+window: 2618.62s - 2641.31s
+track : COUNTED #12674 cyclist hits=81 maxc=0.773 meanc=0.215 exc=1.01
+
+
+Rendered 136 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.045_window_2618_2641 ===
+weights=yolov8l.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+136 sampled frames, inference 22.8s (0.17s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, '_default': 6}
+
+Raw tracks: 61  ->  after merge: 41  (20 absorbed)
+COUNTED TRACKS BY CLASS: {'cyclist': 2, 'car': 1}
+Rejected tracks: {'low_max_conf': 9, 'too_few_hits': 29}
+
+Funnel CSV : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.045_window_2618_2641_funnel.csv
+Tracks CSV : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.045_window_2618_2641_tracks.csv
+Video      : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.045_window_2618_2641_annotated_h264.mp4   <-- download this one
+
+2 cyclist track(s):
+  #24  t=2618.6-2638.8s  hits=105  max_conf=0.77  mean_conf=0.20  travelled=1.0 diagonals
+  #9  t=2621.3-2625.5s  hits=16  max_conf=0.58  mean_conf=0.20  travelled=41.7 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #2 person    t=2618.6-2626.6s  rejected: max_conf 0.34<0.5, mean_conf 0.15<0.2, excursion 0.66<0.75
+  #27 person    t=2628.1-2630.8s  rejected: max_conf 0.27<0.5, mean_conf 0.14<0.2, excursion 0.73<0.75
+  #29 person    t=2628.6-2630.3s  rejected: max_conf 0.26<0.5, mean_conf 0.14<0.2
+  #57 person    t=2640.6-2641.1s  rejected: max_conf 0.09<0.5, mean_conf 0.07<0.2, excursion 0.08<0.75
+  #45 person    t=2632.6-2632.8s  rejected: hits 2<3, max_conf 0.35<0.5, excursion 0.01<0.75
+  #47 person    t=2634.6-2635.8s  rejected: hits 2<3, max_conf 0.11<0.5, mean_conf 0.09<0.2, excursion 0.00<0.75

@@ -1,0 +1,31 @@
+=== task 36 / 48 ===
+chunk: pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.037.mp4
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.037 ===
+weights=yolov8l.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+21570 sampled frames, inference 3542.0s (0.16s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, '_default': 6}
+
+Raw tracks: 26663  ->  after merge: 19321  (7342 absorbed)
+COUNTED TRACKS BY CLASS: {'car': 768, 'cyclist': 4, 'person': 23, 'truck': 24}
+Rejected tracks: {'low_mean_conf': 275, 'low_max_conf': 3762, 'static_object': 20, 'too_few_hits': 14445}
+
+Funnel CSV : pilot_output/sessions/BL_Colonial_2019-07-10/Standard_SCU8OG_2019-07-10_0000.037_funnel.csv
+Tracks CSV : pilot_output/sessions/BL_Colonial_2019-07-10/Standard_SCU8OG_2019-07-10_0000.037_tracks.csv
+
+4 cyclist track(s):
+  #1225  t=160.3-168.2s  hits=45  max_conf=0.59  mean_conf=0.18  travelled=1.0 diagonals
+  #4145  t=520.7-523.2s  hits=19  max_conf=0.85  mean_conf=0.44  travelled=51.6 diagonals
+  #6375  t=796.1-797.6s  hits=7  max_conf=0.52  mean_conf=0.28  travelled=1.1 diagonals
+  #25155  t=3360.0-3369.4s  hits=51  max_conf=0.77  mean_conf=0.27  travelled=14.2 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #18151 person    t=2366.4-2380.5s  rejected: max_conf 0.50<0.5, mean_conf 0.18<0.2
+  #25433 person    t=3411.4-3424.9s  rejected: mean_conf 0.16<0.2
+  #16034 person    t=2076.4-2087.8s  rejected: mean_conf 0.16<0.2
+  #14205 person    t=1822.0-1833.8s  rejected: max_conf 0.30<0.5, mean_conf 0.12<0.2
+  #15545 person    t=2000.0-2009.0s  rejected: mean_conf 0.13<0.2
+  #12155 person    t=1527.5-1536.2s  rejected: max_conf 0.47<0.5, mean_conf 0.14<0.2
+  #13336 person    t=1682.5-1693.7s  rejected: mean_conf 0.13<0.2
+  #24073 person    t=3208.4-3215.5s  rejected: max_conf 0.39<0.5, mean_conf 0.15<0.2

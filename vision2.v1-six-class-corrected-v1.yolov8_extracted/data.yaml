@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 6
+names: ['bus', 'car', 'cyclist', 'other_vehicle', 'person', 'truck']
+
+roboflow:
+  workspace: rithika-mathew
+  project: vision2-uheeg
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/rithika-mathew/vision2-uheeg/dataset/1

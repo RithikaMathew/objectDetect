@@ -1,0 +1,5 @@
+video_file,chunk,bin_index,bin_start,bin_end,seconds_covered,bicyclists_total,bicyclists_bike_lane,bicyclists_sidewalk,bicyclists_unassigned,pedestrians,vehicles
+Standard_SCU8OG_2019-07-10_0000.011.mp4,11,40,2019-07-10 10:00:00,2019-07-10 10:15:00,900.0,0,0,0,0,0,448
+Standard_SCU8OG_2019-07-10_0000.011.mp4,11,41,2019-07-10 10:15:00,2019-07-10 10:30:00,900.0,0,0,0,0,0,499
+Standard_SCU8OG_2019-07-10_0000.011.mp4,11,42,2019-07-10 10:30:00,2019-07-10 10:45:00,900.0,2,0,0,2,1,499
+Standard_SCU8OG_2019-07-10_0000.011.mp4,11,43,2019-07-10 10:45:00,2019-07-10 11:00:00,899.6,1,0,0,1,0,479

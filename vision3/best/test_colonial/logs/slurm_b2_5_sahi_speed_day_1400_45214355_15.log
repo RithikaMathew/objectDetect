@@ -1,0 +1,319 @@
+chunk=015 run=b2_5_sahi_speed video=/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.015.mp4
+/orange/xiangyan/rithika/vision/vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py:892: FutureWarning: The `ByteTrack` was deprecated since v0.28.0. It will be removed in v0.31.0.
+  return sv.ByteTrack(track_activation_threshold=args.track_thr,
+ground truth loaded for the clip headers: 192 bins
+chunk 15: clip starts 2019-07-10 14:00:00  bins 56..59  fps=29.970  720x480
+detector classes: {0: 'bus', 1: 'car', 2: 'cyclist', 3: 'other_vehicle', 4: 'person', 5: 'truck'}
+ people=[2, 4] vehicles=[0, 1, 3, 5]
+zones loaded from /orange/xiangyan/rithika/vision/vision3/best/test_colonial/zones/colonial_north_v1.json
+zone coords scaled from 720x480 to 720x480 (x1.000, y1.000)
+road zone active: vehicles outside it are dropped
+sidewalk zone active: vehicles inside it are dropped
+Loading microsoft/xclip-base-patch32 on cuda ...
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights:   0%|          | 1/591 [00:00<02:58,  3.30it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 1865.21it/s]
+E1 SAHI on: slice 640px overlap 0.2 imgsz 640 roi whole frame people-only=True
+E3 on: speed_rule=True (walk<1.0, ride>2.0 h/s, >= 1.5s) short_rule=False (>= 0.3s, det>=90.0%, wBIC>=0.9) motion_diag=False
+frame 100/107850
+frame 200/107850
+frame 300/107850
+frame 400/107850
+frame 500/107850
+frame 600/107850
+frame 700/107850
+frame 800/107850
+frame 900/107850
+frame 1000/107850
+frame 1100/107850
+frame 1200/107850
+frame 1300/107850
+frame 1400/107850
+frame 1500/107850
+frame 1600/107850
+frame 1700/107850
+frame 1800/107850
+frame 1900/107850
+frame 2000/107850
+frame 2100/107850
+frame 2200/107850
+frame 2300/107850
+frame 2400/107850
+frame 2500/107850
+frame 2600/107850
+frame 2700/107850
+frame 2800/107850
+frame 2900/107850
+frame 3000/107850
+frame 3100/107850
+frame 3200/107850
+frame 3300/107850
+frame 3400/107850
+frame 3500/107850
+frame 3600/107850
+frame 3700/107850
+frame 3800/107850
+frame 3900/107850
+frame 4000/107850
+frame 4100/107850
+frame 4200/107850
+frame 4300/107850
+frame 4400/107850
+frame 4500/107850
+frame 4600/107850
+frame 4700/107850
+frame 4800/107850
+frame 4900/107850
+frame 5000/107850
+frame 5100/107850
+frame 5200/107850
+frame 5300/107850
+frame 5400/107850
+frame 5500/107850
+frame 5600/107850
+frame 5700/107850
+frame 5800/107850
+frame 5900/107850
+frame 6000/107850
+frame 6100/107850
+frame 6200/107850
+frame 6300/107850
+frame 6400/107850
+frame 6500/107850
+frame 6600/107850
+frame 6700/107850
+frame 6800/107850
+frame 6900/107850
+frame 7000/107850
+frame 7100/107850
+frame 7200/107850
+frame 7300/107850
+frame 7400/107850
+frame 7500/107850
+frame 7600/107850
+frame 7700/107850
+frame 7800/107850
+frame 7900/107850
+frame 8000/107850
+frame 8100/107850
+frame 8200/107850
+frame 8300/107850
+frame 8400/107850
+frame 8500/107850
+frame 8600/107850
+frame 8700/107850
+frame 8800/107850
+frame 8900/107850
+frame 9000/107850
+frame 9100/107850
+frame 9200/107850
+frame 9300/107850
+frame 9400/107850
+frame 9500/107850
+frame 9600/107850
+frame 9700/107850
+frame 9800/107850
+frame 9900/107850
+frame 10000/107850
+frame 10100/107850
+frame 10200/107850
+frame 10300/107850
+frame 10400/107850
+frame 10500/107850
+frame 10600/107850
+frame 10700/107850
+frame 10800/107850
+frame 10900/107850
+frame 11000/107850
+frame 11100/107850
+frame 11200/107850
+frame 11300/107850
+frame 11400/107850
+frame 11500/107850
+frame 11600/107850
+frame 11700/107850
+frame 11800/107850
+frame 11900/107850
+frame 12000/107850
+frame 12100/107850
+frame 12200/107850
+frame 12300/107850
+frame 12400/107850
+frame 12500/107850
+frame 12600/107850
+frame 12700/107850
+frame 12800/107850
+frame 12900/107850
+frame 13000/107850
+frame 13100/107850
+frame 13200/107850
+frame 13300/107850
+frame 13400/107850
+frame 13500/107850
+frame 13600/107850
+frame 13700/107850
+frame 13800/107850
+frame 13900/107850
+frame 14000/107850
+frame 14100/107850
+frame 14200/107850
+frame 14300/107850
+frame 14400/107850
+frame 14500/107850
+frame 14600/107850
+frame 14700/107850
+frame 14800/107850
+frame 14900/107850
+frame 15000/107850
+frame 15100/107850
+frame 15200/107850
+frame 15300/107850
+frame 15400/107850
+frame 15500/107850
+frame 15600/107850
+frame 15700/107850
+frame 15800/107850
+frame 15900/107850
+frame 16000/107850
+frame 16100/107850
+frame 16200/107850
+frame 16300/107850
+frame 16400/107850
+frame 16500/107850
+frame 16600/107850
+frame 16700/107850
+frame 16800/107850
+frame 16900/107850
+frame 17000/107850
+frame 17100/107850
+frame 17200/107850
+frame 17300/107850
+frame 17400/107850
+frame 17500/107850
+frame 17600/107850
+frame 17700/107850
+frame 17800/107850
+frame 17900/107850
+frame 18000/107850
+frame 18100/107850
+frame 18200/107850
+frame 18300/107850
+frame 18400/107850
+frame 18500/107850
+frame 18600/107850
+frame 18700/107850
+frame 18800/107850
+frame 18900/107850
+frame 19000/107850
+frame 19100/107850
+frame 19200/107850
+frame 19300/107850
+frame 19400/107850
+frame 19500/107850
+frame 19600/107850
+frame 19700/107850
+frame 19800/107850
+frame 19900/107850
+frame 20000/107850
+frame 20100/107850
+frame 20200/107850
+frame 20300/107850
+frame 20400/107850
+frame 20500/107850
+frame 20600/107850
+frame 20700/107850
+frame 20800/107850
+frame 20900/107850
+frame 21000/107850
+frame 21100/107850
+frame 21200/107850
+frame 21300/107850
+frame 21400/107850
+frame 21500/107850
+frame 21600/107850
+frame 21700/107850
+frame 21800/107850
+frame 21900/107850
+frame 22000/107850
+frame 22100/107850
+frame 22200/107850
+frame 22300/107850
+frame 22400/107850
+frame 22500/107850
+frame 22600/107850
+frame 22700/107850
+frame 22800/107850
+frame 22900/107850
+frame 23000/107850
+frame 23100/107850
+frame 23200/107850
+frame 23300/107850
+frame 23400/107850
+frame 23500/107850
+frame 23600/107850
+frame 23700/107850
+frame 23800/107850
+frame 23900/107850
+frame 24000/107850
+frame 24100/107850
+frame 24200/107850
+frame 24300/107850
+frame 24400/107850
+frame 24500/107850
+frame 24600/107850
+frame 24700/107850
+frame 24800/107850
+frame 24900/107850
+frame 25000/107850
+frame 25100/107850
+frame 25200/107850
+frame 25300/107850
+frame 25400/107850
+frame 25500/107850
+frame 25600/107850
+frame 25700/107850
+frame 25800/107850
+frame 25900/107850
+frame 26000/107850
+frame 26100/107850
+frame 26200/107850
+frame 26300/107850
+frame 26400/107850
+frame 26500/107850
+frame 26600/107850
+frame 26700/107850
+frame 26800/107850
+frame 26900/107850
+rendering remaining annotated clips ...
+clip written: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/annotated/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015/b2_5_sahi_speed__day_1400-1415__sahi640+speedrule-lateral__20190710.mp4
+streamed bins: []; bins whose streamed header differs from the final counts: none
+
+=== person tracks (after id stitching) ===
+track | frames | secs | scores | first-last frame | mean conf | mean box h | plain BIC | plain PED | wtd BIC | wtd PED | %scores bic>=.9 | %det=cyclist | FINAL LABEL
+    1 |      1 |  0.0 |      0 | never scored | 0.82 |     92 | | | 100% | (unscored, not counted)
+    2 |    620 | 20.7 |    206 |     5402-6057 | 0.78 |     53 | 0.58 | 0.42 | 0.73 | 0.27 | 16% | 6% | PEDESTRIAN
+    3 |      1 |  0.0 |      0 | never scored | 0.74 |     91 | | | 100% | (unscored, not counted)
+    4 |     12 |  0.4 |      2 |     5514-5517 | 0.89 |     48 | 0.92 | 0.08 | 0.92 | 0.08 | 100% | 100% | (filtered: was BICYCLIST, not counted)
+    5 |      1 |  0.0 |      0 | never scored | 0.54 |    135 | | | 100% | (unscored, not counted)
+    6 |     17 |  0.6 |      4 |   11294-11303 | 0.50 |     21 | 0.13 | 0.87 | 0.13 | 0.87 | 0% | 0% | (filtered: was PEDESTRIAN, not counted)
+    7 |      2 |  0.1 |      0 | never scored | 0.58 |     58 | | | 100% | (unscored, not counted)
+    8 |      2 |  0.1 |      0 | never scored | 0.34 |     23 | | | 0% | (unscored, not counted)
+    9 |      1 |  0.0 |      0 | never scored | 0.75 |    123 | | | 100% | (unscored, not counted)
+   10 |    202 |  6.7 |     66 |   16480-16725 | 0.79 |     59 | 0.80 | 0.20 | 0.91 | 0.09 | 58% | 54% | BICYCLIST
+   13 |   1096 | 36.6 |    376 |   20907-22236 | 0.73 |     48 | 0.42 | 0.58 | 0.53 | 0.47 | 6% | 2% | PEDESTRIAN
+   15 |    658 | 22.0 |    229 |   21884-22618 | 0.68 |     68 | 0.24 | 0.76 | 0.24 | 0.76 | 0% | 5% | PEDESTRIAN
+   23 |    104 |  3.5 |     34 |   22509-22664 | 0.71 |     25 | 0.21 | 0.79 | 0.22 | 0.78 | 0% | 0% | PEDESTRIAN
+Per-track quality stats (persons + vehicles): /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015_track_stats.csv
+
+Raw detector detections by class (conf>=0.25): {'car': 55859, 'cyclist': 1102, 'person': 2855, 'truck': 404, 'bus': 1, 'other_vehicle': 1}
+Stitched raw->canonical merges: 11
+Final counts: bicyclists=1 pedestrians=4 vehicles=445
+Annotated clips (1): /orange/xiangyan/rithika/vision/vision3/best/test_colonial/annotated/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015
+Scores: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015_scores.csv
+Trajectories: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015_trajectories.csv
+Track motion: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015_track_motion.csv
+Split candidates: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015_split_candidates.csv (0 pairs; 0 would pass the 3 s minimum only if joined)
+Counted tracks by (X-CLIP label, direction): {('PEDESTRIAN', 'moving_left'): 3, ('BICYCLIST', 'moving_left'): 1, ('PEDESTRIAN', 'static'): 1}
+Rules audit: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015_rules_audit.csv
+Bin counts: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015_bin_counts.csv
+Tracks: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/counts/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015_tracks.csv
+Run log: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/logs/b2_5_sahi_speed/Standard_SCU8OG_2019-07-10_0000.015_run_log.json
+Runtime: 2564.0 s

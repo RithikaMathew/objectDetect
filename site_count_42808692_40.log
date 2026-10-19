@@ -1,0 +1,53 @@
+=== task 40 / 48 ===
+chunk: pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.041.mp4
+weights: runs/detect/sixclass_v1_yolov8l/weights/best.pt
+outdir: pilot_output/sessions/BL_Colonial_2019-07-10_ft
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  finetuned=True  detect_classes=[0, 1, 2, 3, 4, 5]  fuse_cyclist=False
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.041 ===
+weights=runs/detect/sixclass_v1_yolov8l/weights/best.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+21570 sampled frames, inference 3406.0s (0.16s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, 'other_vehicle': 3, '_default': 6}
+
+Raw tracks: 6496  ->  after merge: 4078  (2418 absorbed)
+COUNTED TRACKS BY CLASS: {'car': 1633, 'cyclist': 23, 'person': 3}
+Rejected tracks: {'low_mean_conf': 31, 'low_max_conf': 664, 'static_object': 30, 'too_few_hits': 1694}
+
+Funnel CSV : pilot_output/sessions/BL_Colonial_2019-07-10_ft/Standard_SCU8OG_2019-07-10_0000.041_funnel.csv
+Tracks CSV : pilot_output/sessions/BL_Colonial_2019-07-10_ft/Standard_SCU8OG_2019-07-10_0000.041_tracks.csv
+
+23 cyclist track(s):
+  #572  t=308.0-308.8s  hits=6  max_conf=0.54  mean_conf=0.24  travelled=3.1 diagonals
+  #599  t=330.3-331.3s  hits=7  max_conf=0.61  mean_conf=0.25  travelled=2.5 diagonals
+  #1473  t=791.3-799.0s  hits=56  max_conf=0.72  mean_conf=0.35  travelled=19.0 diagonals
+  #1581  t=839.8-841.7s  hits=9  max_conf=0.91  mean_conf=0.25  travelled=7.8 diagonals
+  #1647  t=865.4-870.4s  hits=37  max_conf=0.74  mean_conf=0.31  travelled=7.4 diagonals
+  #1656  t=869.0-869.7s  hits=4  max_conf=0.52  mean_conf=0.34  travelled=2.8 diagonals
+  #1849  t=990.7-991.8s  hits=5  max_conf=0.87  mean_conf=0.25  travelled=2.8 diagonals
+  #2205  t=1168.2-1177.2s  hits=62  max_conf=0.80  mean_conf=0.31  travelled=5.0 diagonals
+  #2217  t=1175.2-1176.7s  hits=13  max_conf=0.67  mean_conf=0.30  travelled=5.5 diagonals
+  #2292  t=1210.2-1212.5s  hits=5  max_conf=0.60  mean_conf=0.29  travelled=1.5 diagonals
+  #3127  t=1708.7-1709.4s  hits=3  max_conf=0.71  mean_conf=0.28  travelled=2.5 diagonals
+  #3194  t=1731.6-1734.1s  hits=15  max_conf=0.87  mean_conf=0.34  travelled=5.3 diagonals
+  #3676  t=2045.0-2057.2s  hits=81  max_conf=0.73  mean_conf=0.32  travelled=4.8 diagonals
+  #4045  t=2239.1-2239.6s  hits=4  max_conf=0.51  mean_conf=0.24  travelled=2.3 diagonals
+  #4149  t=2276.8-2279.1s  hits=12  max_conf=0.88  mean_conf=0.34  travelled=6.5 diagonals
+  #4493  t=2455.6-2464.3s  hits=65  max_conf=0.75  mean_conf=0.28  travelled=1.5 diagonals
+  #5134  t=2824.8-2825.3s  hits=4  max_conf=0.52  mean_conf=0.26  travelled=2.4 diagonals
+  #5312  t=2950.8-2952.8s  hits=7  max_conf=0.73  mean_conf=0.29  travelled=1.9 diagonals
+  #5330  t=2957.1-2958.5s  hits=6  max_conf=0.60  mean_conf=0.26  travelled=1.3 diagonals
+  #5411  t=2982.6-2983.0s  hits=3  max_conf=0.50  mean_conf=0.21  travelled=1.8 diagonals
+  #5523  t=3021.9-3034.9s  hits=88  max_conf=0.71  mean_conf=0.22  travelled=3.1 diagonals
+  #6261  t=3462.5-3488.2s  hits=148  max_conf=0.73  mean_conf=0.35  travelled=3.2 diagonals
+  #6320  t=3496.3-3497.2s  hits=4  max_conf=0.59  mean_conf=0.24  travelled=1.3 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #348 cyclist   t=195.5-201.4s  rejected: mean_conf 0.17<0.18
+  #5503 cyclist   t=3015.7-3021.4s  rejected: max_conf 0.31<0.5, mean_conf 0.14<0.18
+  #2340 person    t=1248.6-1254.4s  rejected: mean_conf 0.16<0.2
+  #1299 cyclist   t=679.2-683.2s  rejected: mean_conf 0.16<0.18
+  #2974 cyclist   t=1593.9-1598.4s  rejected: max_conf 0.19<0.5, mean_conf 0.10<0.18, excursion 0.03<0.75
+  #878 cyclist   t=477.5-481.3s  rejected: max_conf 0.19<0.5, mean_conf 0.09<0.18, excursion 0.36<0.75
+  #1290 cyclist   t=672.7-677.5s  rejected: max_conf 0.19<0.5, mean_conf 0.09<0.18
+  #2575 person    t=1370.4-1373.7s  rejected: max_conf 0.34<0.5, mean_conf 0.10<0.2, excursion 0.49<0.75

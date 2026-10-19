@@ -1,0 +1,33 @@
+=== clip 15 / 25 ===
+video : pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.031.mp4
+window: 2888.06s - 2903.23s
+track : COUNTED #11339 cyclist hits=39 maxc=0.773 meanc=0.270 exc=31.44
+
+
+Rendered 91 frames (all sampled)
+
+=== pilot_detect_v2  |  Standard_SCU8OG_2019-07-10_0000.031_window_2888_2903 ===
+weights=yolov8l.pt  conf=0.05  stride=5  imgsz=1280  center_dist=1.0  merge_dist=1.2  coast=0.8s (5 samples)
+91 sampled frames, inference 19.0s (0.21s/frame)
+fps=29.97  dt between samples=0.167s
+min hits per class: {'cyclist': 3, 'bicycle': 3, 'person': 3, 'motorcycle': 3, '_default': 6}
+
+Raw tracks: 131  ->  after merge: 82  (49 absorbed)
+COUNTED TRACKS BY CLASS: {'cyclist': 1, 'person': 1, 'car': 1}
+Rejected tracks: {'low_max_conf': 14, 'low_mean_conf': 2, 'too_few_hits': 63}
+
+Funnel CSV : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.031_window_2888_2903_funnel.csv
+Tracks CSV : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.031_window_2888_2903_tracks.csv
+Video      : pilot_output/cyclist_clips/Standard_SCU8OG_2019-07-10_0000.031_window_2888_2903_annotated_h264.mp4   <-- download this one
+
+1 cyclist track(s):
+  #14  t=2890.6-2900.7s  hits=39  max_conf=0.77  mean_conf=0.27  travelled=31.4 diagonals
+
+Closest rejected VRU tracks (check for missed cyclists):
+  #76 person    t=2895.7-2900.2s  rejected: max_conf 0.24<0.5, mean_conf 0.12<0.2
+  #5 person    t=2888.9-2890.4s  rejected: max_conf 0.21<0.5, mean_conf 0.11<0.2
+  #55 person    t=2892.9-2893.7s  rejected: max_conf 0.15<0.5, mean_conf 0.08<0.2, excursion 0.44<0.75
+  #29 person    t=2891.7-2893.1s  rejected: max_conf 0.09<0.5, mean_conf 0.07<0.2
+  #113 person    t=2900.1-2901.1s  rejected: max_conf 0.06<0.5, mean_conf 0.06<0.2
+  #68 person    t=2895.6-2896.1s  rejected: hits 2<3, max_conf 0.09<0.5, mean_conf 0.08<0.2, excursion 0.03<0.75
+  #111 person    t=2899.4-2899.7s  rejected: hits 2<3, max_conf 0.09<0.5, mean_conf 0.08<0.2, excursion 0.05<0.75

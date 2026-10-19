@@ -1,0 +1,105 @@
+=== method H ===
+video:   ./test.mp4
+weights: /orange/xiangyan/rithika/vision/vision3/weights
+outdir:  /orange/xiangyan/rithika/vision/vision3/pilot_output/compare_v4
+[method H] device=cuda
+[H: RT-DETR-l+fusion+2x-upscale+tiling] supervision version: 0.30.5
+/orange/xiangyan/rithika/vision/vision3/compare_detectors_v7_fixed.py:249: FutureWarning: The `ByteTrack` was deprecated since v0.28.0. It will be removed in v0.31.0.
+  tracker = sv.ByteTrack(
+[fuse call 1] raw_dets=2 person_any_conf=2 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 501] raw model returned 0 detections of any class this frame
+[fuse call 1001] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 1501] raw_dets=4 person_any_conf=4 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 2001] raw model returned 0 detections of any class this frame
+[fuse call 2501] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 500/5694 | CUMULATIVE since start -> post_fuse=0 post_conf=0 post_tracker=0 | unique_cyclists_so_far=0 | active_track_hit_counts={}
+[fuse call 3001] raw_dets=2 person_any_conf=2 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 3501] raw model returned 0 detections of any class this frame
+[fuse call 4001] raw_dets=1 person_any_conf=1 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 4501] raw_dets=20 person_any_conf=15 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=5 bicycle_pass_conf=1 (thresh=0.35)
+/orange/xiangyan/rithika/vision/yolo_env/lib/python3.10/site-packages/supervision/detection/tools/inference_slicer.py:410: SupervisionWarnings: Detections returned by the callback have coordinates outside the slice bounds. This may be caused by the callback running inference on the full image instead of the provided image slice. Ensure your callback uses the input slice for inference, not the original full-resolution image.
+  first_detections = self._run_callback(image, first_offset)
+[fuse call 5001] raw model returned 0 detections of any class this frame
+[fuse call 5501] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 1000/5694 | CUMULATIVE since start -> post_fuse=12 post_conf=12 post_tracker=6 | unique_cyclists_so_far=2 | active_track_hit_counts={1: 2, 2: 3, 3: 1}
+[fuse call 6001] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 6501] raw model returned 0 detections of any class this frame
+[fuse call 7001] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 7501] raw_dets=3 person_any_conf=3 person_pass_conf=3 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 8001] raw model returned 0 detections of any class this frame
+[fuse call 8501] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 1500/5694 | CUMULATIVE since start -> post_fuse=12 post_conf=12 post_tracker=6 | unique_cyclists_so_far=2 | active_track_hit_counts={1: 2, 2: 3, 3: 1}
+[fuse call 9001] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 9501] raw model returned 0 detections of any class this frame
+[fuse call 10001] raw_dets=1 person_any_conf=1 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 10501] raw_dets=2 person_any_conf=2 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 11001] raw model returned 0 detections of any class this frame
+[fuse call 11501] raw_dets=2 person_any_conf=2 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 2000/5694 | CUMULATIVE since start -> post_fuse=12 post_conf=12 post_tracker=6 | unique_cyclists_so_far=2 | active_track_hit_counts={1: 2, 2: 3, 3: 1}
+[fuse call 12001] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 12501] raw model returned 0 detections of any class this frame
+[fuse call 13001] raw_dets=3 person_any_conf=3 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 13501] raw_dets=3 person_any_conf=3 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 14001] raw model returned 0 detections of any class this frame
+[fuse call 14501] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 2500/5694 | CUMULATIVE since start -> post_fuse=12 post_conf=12 post_tracker=6 | unique_cyclists_so_far=2 | active_track_hit_counts={1: 2, 2: 3, 3: 1}
+[fuse call 15001] raw_dets=4 person_any_conf=4 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 15501] raw model returned 0 detections of any class this frame
+[fuse call 16001] raw_dets=5 person_any_conf=5 person_pass_conf=2 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 16501] raw_dets=4 person_any_conf=4 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 17001] raw model returned 0 detections of any class this frame
+[fuse call 17501] raw_dets=4 person_any_conf=4 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 3000/5694 | CUMULATIVE since start -> post_fuse=12 post_conf=12 post_tracker=6 | unique_cyclists_so_far=2 | active_track_hit_counts={1: 2, 2: 3, 3: 1}
+[fuse call 18001] raw_dets=3 person_any_conf=3 person_pass_conf=2 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 18501] raw model returned 0 detections of any class this frame
+[fuse call 19001] raw_dets=3 person_any_conf=3 person_pass_conf=2 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 19501] raw_dets=2 person_any_conf=2 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 20001] raw model returned 0 detections of any class this frame
+[fuse call 20501] raw_dets=7 person_any_conf=7 person_pass_conf=2 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 3500/5694 | CUMULATIVE since start -> post_fuse=12 post_conf=12 post_tracker=6 | unique_cyclists_so_far=2 | active_track_hit_counts={1: 2, 2: 3, 3: 1}
+[fuse call 21001] raw_dets=3 person_any_conf=3 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 21501] raw model returned 0 detections of any class this frame
+[fuse call 22001] raw_dets=4 person_any_conf=4 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 22501] raw_dets=13 person_any_conf=13 person_pass_conf=5 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 23001] raw_dets=2 person_any_conf=2 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 23501] raw_dets=4 person_any_conf=4 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 4000/5694 | CUMULATIVE since start -> post_fuse=12 post_conf=12 post_tracker=6 | unique_cyclists_so_far=2 | active_track_hit_counts={1: 2, 2: 3, 3: 1}
+[fuse call 24001] raw_dets=2 person_any_conf=2 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 24501] raw model returned 0 detections of any class this frame
+[fuse call 25001] raw_dets=1 person_any_conf=1 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 25501] raw_dets=6 person_any_conf=6 person_pass_conf=3 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 26001] raw model returned 0 detections of any class this frame
+[fuse call 26501] raw_dets=1 person_any_conf=1 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 4500/5694 | CUMULATIVE since start -> post_fuse=12 post_conf=12 post_tracker=6 | unique_cyclists_so_far=2 | active_track_hit_counts={1: 2, 2: 3, 3: 1}
+[fuse call 27001] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 27501] raw_dets=1 person_any_conf=1 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 28001] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 28501] raw_dets=3 person_any_conf=3 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 29001] raw_dets=1 person_any_conf=1 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 29501] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 5000/5694 | CUMULATIVE since start -> post_fuse=12 post_conf=12 post_tracker=6 | unique_cyclists_so_far=2 | active_track_hit_counts={1: 2, 2: 3, 3: 1}
+[fuse call 30001] raw_dets=2 person_any_conf=2 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 30501] raw_dets=2 person_any_conf=2 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 31001] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 31501] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 32001] raw_dets=4 person_any_conf=4 person_pass_conf=1 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 32501] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] frame 5500/5694 | CUMULATIVE since start -> post_fuse=12 post_conf=12 post_tracker=6 | unique_cyclists_so_far=2 | active_track_hit_counts={1: 2, 2: 3, 3: 1}
+[fuse call 33001] raw_dets=3 person_any_conf=3 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 33501] raw_dets=1 person_any_conf=1 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[fuse call 34001] raw_dets=2 person_any_conf=2 person_pass_conf=0 (thresh=0.25) | bicycle_any_conf=0 bicycle_pass_conf=0 (thresh=0.35)
+[H: RT-DETR-l+fusion+2x-upscale+tiling] FINAL STAGE TOTALS -> {'post_fuse': 12, 'post_conf': 12, 'post_tracker': 6} | max hit-count reached by any track: 3 (needs >= 2 to count)
+{
+  "method": "H: RT-DETR-l+fusion+2x-upscale+tiling",
+  "output_path": "/orange/xiangyan/rithika/vision/vision3/pilot_output/compare_v4/output_H.mp4",
+  "unique_cyclists": 2,
+  "frames": 5694,
+  "seconds": 493.3,
+  "fps": 11.54,
+  "stage_totals": {
+    "post_fuse": 12,
+    "post_conf": 12,
+    "post_tracker": 6
+  },
+  "max_hit_count": 3
+}
