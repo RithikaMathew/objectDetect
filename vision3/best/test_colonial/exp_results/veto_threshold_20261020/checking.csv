@@ -1,0 +1,2 @@
+threshold,correct,total,wrong_class,rejected,missed,unverified,unmatched_counted,cyclist_correct,cyclist_total,pedestrian_correct,pedestrian_total
+15,10,10,0,0,0,0,0,2,2,8,8

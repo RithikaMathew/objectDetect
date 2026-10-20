@@ -15,13 +15,16 @@ Read root README.md for current commands. Further detector/model sweeps are clos
 - [x] Inspect study workbooks: 23 unique Colonial speed records found (12 bike-lane incl. one e-bike; 11 sidewalk). Count workbook aggregate facility comparison exported. Physical record-to-person matches unverified.
 - [x] Add identity-required evaluation: unreviewed time matches cannot receive verified accuracy credit.
 
+- [x] Add and run full-system veto threshold replay: source-setting parity passed; development off–40%tie9/11,50%8/11; retains15%by tie rule, checking10/10. Exploratory only, all clips previously inspected; no deployed threshold changed. Results exp_results/veto_threshold_20261020.
+
 ## Final checks still open — do not claim these finished
 
 - [ ] Review saved reference tracks against the existing truth IDs; approve FULL-track identity in identity_review.csv. Inspect barricade-to-person switches; keeping TTA off does not prove all reference IDs clean.
-- [ ] Check v2 lane polygons on actual raw-frame overlays; provisional road/bike/sidewalk/grass assignments are not human lane truth.
-- [ ] Validate existing RF/DINO person boxes on selected raw frames, or explicitly close them as unvalidated exploratory audits. No extra inference is required. Review build: code/final_review.slurm.
-- [ ] Finish additional-site/year runs (Anderson 2021, Curry Ford North 2022) if not yet submitted; results have not been supplied. Both appear in training recipe, so not strict unseen-site validation.
-- [ ] Physical cyclist speed: identify actual measured 35-ft / 30-ft gate lines for this camera/date and link study record numbers to the clip/person. Lane polygons alone cannot supply this. Code supports measured crossing speeds; mph and paired speed errors are pending those inputs.
+- [x] Owner visually approved v2 zone previews (2026-10-20). Individual road/bike/sidewalk/grass assignments remain provisional, not human lane truth.
+- [x] Score owner-confirmed person boxes on all32selected frames (20human boxes): RF-DETR precision28.6%/recall20.0%; Grounding DINO27.1%/65.0%. Report exp_results/RF_DINO_person_validation_20261020.md. Selected-frame person-box validation only; not cyclist/counting accuracy or AP.
+- [x] Run reference system on Anderson 2021 and Curry Ford North 2022: both SUCCEEDED for900seconds. Anderson1cyclist/1pedestrian; CurryFord0/0. Both720x480.
+- [x] Obtain owner visual review of both new-site videos: Anderson misses a cyclist and motorcycle; Curry Ford misses a blurry cyclist. Exact times in exp_results/newsites_owner_review_20261020.md. This documents failures, not exhaustive accuracy. Both sites appear in training recipe.
+- [ ] Physical cyclist speed: identify actual measured gate endpoints for this camera/date and link study records to people. Owner confirmed colonial_speed_gates.json uses visible lane ends, not known measured endpoints; do not apply workbook35ft/30ft to these spans. Exploratory calibration attempted:0complete crossings across7bicycle candidate tracks and no verified Excel-person links (exp_results/exploratory_speed_calibration_20261020). Physical mph and paired speed errors remain blocked; image-motion estimates are available.
 
 ## Closed with limitations / no further experiment required now
 

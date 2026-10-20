@@ -2,6 +2,48 @@
 
 Start with root README.md and docs/tasks/todo.md. The owner wants to finish this bounded experiment set, not start more detector sweeps. All prior claims below are historical where they conflict with this section.
 
+
+## Vision3 version pruning — 2026-10-20
+
+Owner explicitly requested only necessary/latest files in Vision3. Deleted63superseded implementations/docs/launchers: root overlaysv1–v9, bestv10, Colonialv11–v18including nestedv17, comparison predecessors throughv7, old launchers, old aggregate readersv11/v12and duplicate preceding sweeps. Current Colonialv19and aggregatev13retained. Distinct utilities retained even if namedv1; moved root utilities into training/comparison/weights_tools/tools (26moves including report to reports/comparison). Patched retained launchers' Python paths. sweep_conf_v2 now imports aggregatev13; same parse_gt interface. No source data, truth, zones, weights, counts or results deleted. vision3/README.md explains current paths; docs/VISION3_CLEANUP_20261020.csv records removals/moves with original hashes. Old docs/recorded commands refer to historical paths and versions; tracked older versions remain in Git history. No jobs submitted.
+
+## Repository layout update — 2026-10-20
+
+Root README rewritten as the current entry point; entire prior guide preserved at docs/history/README_before_cleanup_20261020.md. Loose person_box_review.json, confirmed review JSON and colonial_speed_gates.json moved unchanged to data/reviews/colonial_20261020/. Root results.md and RESEARCH_research_oct19.md moved to reports/cluster_returns/20261019/. Duplicate root NEWSITES report removed only after byte equality with exp_results copy. Historical references below saying root inputs use the old paths; current paths are here. Cleanup manifest docs/REPO_CLEANUP_20261020.csv records hashes and moves/deletions. Active experiment/training paths unchanged; owner-edited deck preserved. Completed scheduler text logs removed only where structured run JSON survives; failed/incomplete logs retained as archive/diagnostics/20261019/*.txt. Cache/OS metadata removed.15%veto remains a tie-preserving choice, not uniquely best.
+
+## Full-system veto threshold replay — 2026-10-20
+
+Implemented `vision3/best/test_colonial/code/tune_veto.py`, CPU only. Replays raw X-CLIP → veto/promotion → motion → duration/strict night cyclist exception → static/quality checks using saved track/audit/statistics/log exports. All scored-track baseline labels and counted decisions must reproduce before reporting; parity passed on all four clips. Saved evidence is rounded, so counterfactual boundaries remain approximate. Unscored tracks remain unscored. No reference configuration changed.
+
+Default development: night21:15 and day14:00. Checking: night22:00/day12:45, accessed only after development selection. Already-inspected clips mean exploratory checking, not independent validation. Thresholds off,5,10,15,20,30,40,50. Choose most correct counted truth people, then fewest unmatched counted tracks, then original threshold/nearest threshold. Full-system development:off through40all9/11;50gives8/11. Retains15by tie preference, NOT a unique empirical optimum. Frozen15checks10/10 (2cyclist-group/8ped), legacy time matching. Motorcycle remains scored cyclist for compatibility. Optional --identity-map restricts to approved mappings; zero development reviewed rows rejects selection. Six regression tests pass. Do not infer the veto has no effect everywhere from a development tie or conflate this with veto-only X-CLIP probes or historical separate inference runs.
+
+Outputs: `exp_results/veto_threshold_20261020/{RESULTS.md,development_sweep.csv,checking.csv,per_person.csv,summary.json}`. No GPU/Slurm run needed; already executed locally. To repeat from cluster ROOT, use a NEW output directory:
+
+```bash
+python code/tune_veto.py --out exp_results/veto_threshold_repeat
+```
+
+All model inference, tracking and stitching remain fixed; no continuous-video rerender or stream-header replay. Independent untouched labelled footage is required for a validated threshold claim.
+
+## Latest owner review — zones and new-site failures
+
+See `vision3/best/test_colonial/exp_results/newsites_owner_review_20261020.md` for exact encounter times. Owner visually approved zone previews. Anderson: detected pedestrian and one cyclist; missed a second cyclist and a motorcycle. Curry Ford: missed a very blurry cyclist. This supersedes the earlier statement that no visual review was supplied. It is not exhaustive full-video truth or verified identity accuracy. Do not launch more model sweeps automatically.
+
+Workbook Colonial lengths confirmed: bike lane35ft (12 records including e-bike), sidewalk30ft (11 records). Endpoints/camera-date applicability and person-to-record links remain unverified; do not invent gates from lane polygons. Received root person_box_review.json unchanged:32frames/20boxes, only1reviewed checkbox true. Asked whether all frames are finished; never silently approve unchecked frames. Matching RF/DINO manifest/predictions are not local; need existing downloaded review pack to score, not another inference run.
+
+## Latest returned batch — completed, do not resubmit
+
+Owner supplied root NEWSITES_newsites_oct20.md. Preserved input and copied to vision3/best/test_colonial/exp_results/NEWSITES_newsites_oct20.md. Four work jobs report SUCCEEDED; final report exists:
+
+- Anderson St2021, April13 noon–12:15 inferred:900s processed,720x480@29.97fps; predicted1cyclist,1pedestrian,137vehicles; runtime38.7min.
+- CurryFordNorth2022, May17 noon–12:15 inferred:900s processed,720x480@29.97fps; predicted0cyclists,0pedestrians,448vehicles; runtime38.5min.
+- final_review SUCCEEDED; outputs at cluster ROOT/exp_results/final_review_20261020, now ready to download whole folder.
+- truth_headers SUCCEEDED; copies under ROOT/annotated_gt, originals preserved.
+
+Execution success is not accuracy. Owner has now supplied timestamped visual review: missed cyclists at both sites and a missed Anderson motorcycle; see latest review above. No exhaustive whole-video truth is available. Both sites appear in training recipe and neither video has more resolution than Colonial. Clocks are filename-inferred, not verified. Actual MP4 paths are recorded in returned report; use them rather than guessed paths. No repeat combined batch, new-site runs, RF full-frame audit or header job is needed.
+
+Next: finish existing raw-frame RF/DINO review and full-track identity checks; measured speed gate endpoints and record-to-person links are still human steps. Zone preview alignment is owner-approved; no validation is completed merely by the CPU job succeeding. Older pending-submission statements below are superseded by this update.
+
 ## Detector / X-CLIP comparison completed locally
 
 Owner requested which is more accurate on four existing truth clips. New `code/compare_classifiers.py` produced exp_results/classifier_comparison_20261020/{RESULTS.md,per_person.csv,summary.json}, no Slurm/inference. Same21matched/scored tracks, including rejectedn5; detector = cyclist if detector-cyclist share>=50%, otherwise pedestrian; X-CLIP = RAWweighted argmax from rules_audit.csv, NOT tracks.csv xclip_label (that field can already reflect rules).
@@ -542,3 +584,13 @@ sidewalk), Aloma Path (GT 191).
   78% of cyclists, who ride on sidewalks.
 - Array ranges: most sessions are 48 chunks but Rinehart Road SW is 96, two are
   49, three are under 40. Under-provisioning silently biases counts **down**.
+
+Owner confirmation (2026-10-20): all32person-box frames, including empty frames, were inspected; unchecked boxes were accidental. Original JSON preserved. `person_box_review_confirmed_20261020.json` marks all32reviewed based on explicit owner confirmation and retains all20boxes. Prediction pack still required for scoring; no accuracy calculated yet.
+
+Confirmed person-box scoring completed locally (2026-10-20): found existing pack at `/Users/rithika/Downloads/final_review_20261020/rf_boxes`. All32owner-confirmed frames,20human boxes, one-to-one IoU>=0.50, saved thresholds. RF-DETR:4TP/10FP/16FN, precision28.6%, recall20.0%. Grounding DINO:13TP/35FP/7FN, precision27.1%, recall65.0%. DINO finds more labelled person boxes but generates more false boxes; neither is a demonstrated replacement for the counting reference. Selected repeated frames, not unique people/AP/whole-video cyclist accuracy or an independent holdout. Report: `vision3/best/test_colonial/exp_results/RF_DINO_person_validation_20261020.md`. Earlier statements that pack was unavailable or no score existed are superseded.
+
+Received root colonial_speed_gates.json: two facilities with35ft/30ft and720x480reference, reviewer Rithika, but measurement_source="n/a". Original preserved. No physical speed calculated: exact measured endpoint correspondence not established. Asked owner whether these are known study endpoints or visible lane ends. Added placeholder-source rejection in exporter and speed measurement plus regression test. Numeric workbook lengths must not be assigned to arbitrary scene-wide segments.
+
+Owner clarification (2026-10-20): colonial_speed_gates.json marks visible lane ends, NOT known study measurement endpoints. Therefore it is unsuitable for mph calculation; do not replace its n/a source or accept35ft/30ft for those drawn spans. Original preserved; review decision in exp_results/colonial_speed_gate_review_20261020.json. Physical speed remains blocked pending identifiable independently measured endpoints (or appropriate metric calibration). Image-motion estimates remain available; no further GPU run needed.
+
+Exploratory calibration attempted locally (2026-10-20) at owner request: new code/exploratory_gate_check.py checks estimated finite gates without granting physical distance. Output exp_results/exploratory_speed_calibration_20261020/{RESULTS.md,crossings.csv,summary.json}. All7actual bicycle truth rows checked, both facilities (14checks), full saved unverified candidate tracks;0complete two-line crossings. None crosses the first line. Workbook rescanned:23Colonial speed records but0verified person links; no timestamps found in these speed rows. Thus0distance fits/0held-out validation pairs, no mph/MAE. Do not pair records by nearest speed or equate study record IDs with track IDs. Future fit requires independently matched people and crossings, fixed facility distance, and different people for validation. Three crossing tests pass (clip-time interpolation, finite-line nonextension, large-gap exclusion). No inference/batch submitted; original gates/truth untouched.

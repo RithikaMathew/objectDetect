@@ -1,0 +1,156 @@
+{
+  "run": "b4_combo_static5",
+  "baseline_threshold": 15.0,
+  "selected_threshold": 15.0,
+  "development_clips": [
+    "night",
+    "day"
+  ],
+  "checking_clips": [
+    "night_holdout_2200",
+    "day_holdout_1245"
+  ],
+  "development": [
+    {
+      "threshold": null,
+      "correct": 9,
+      "total": 11,
+      "wrong_class": 1,
+      "rejected": 1,
+      "missed": 0,
+      "unverified": 0,
+      "unmatched_counted": 0,
+      "cyclist_correct": 5,
+      "cyclist_total": 6,
+      "pedestrian_correct": 4,
+      "pedestrian_total": 5
+    },
+    {
+      "threshold": 5.0,
+      "correct": 9,
+      "total": 11,
+      "wrong_class": 1,
+      "rejected": 1,
+      "missed": 0,
+      "unverified": 0,
+      "unmatched_counted": 0,
+      "cyclist_correct": 5,
+      "cyclist_total": 6,
+      "pedestrian_correct": 4,
+      "pedestrian_total": 5
+    },
+    {
+      "threshold": 10.0,
+      "correct": 9,
+      "total": 11,
+      "wrong_class": 1,
+      "rejected": 1,
+      "missed": 0,
+      "unverified": 0,
+      "unmatched_counted": 0,
+      "cyclist_correct": 5,
+      "cyclist_total": 6,
+      "pedestrian_correct": 4,
+      "pedestrian_total": 5
+    },
+    {
+      "threshold": 15.0,
+      "correct": 9,
+      "total": 11,
+      "wrong_class": 1,
+      "rejected": 1,
+      "missed": 0,
+      "unverified": 0,
+      "unmatched_counted": 0,
+      "cyclist_correct": 5,
+      "cyclist_total": 6,
+      "pedestrian_correct": 4,
+      "pedestrian_total": 5
+    },
+    {
+      "threshold": 20.0,
+      "correct": 9,
+      "total": 11,
+      "wrong_class": 1,
+      "rejected": 1,
+      "missed": 0,
+      "unverified": 0,
+      "unmatched_counted": 0,
+      "cyclist_correct": 5,
+      "cyclist_total": 6,
+      "pedestrian_correct": 4,
+      "pedestrian_total": 5
+    },
+    {
+      "threshold": 30.0,
+      "correct": 9,
+      "total": 11,
+      "wrong_class": 1,
+      "rejected": 1,
+      "missed": 0,
+      "unverified": 0,
+      "unmatched_counted": 0,
+      "cyclist_correct": 5,
+      "cyclist_total": 6,
+      "pedestrian_correct": 4,
+      "pedestrian_total": 5
+    },
+    {
+      "threshold": 40.0,
+      "correct": 9,
+      "total": 11,
+      "wrong_class": 1,
+      "rejected": 1,
+      "missed": 0,
+      "unverified": 0,
+      "unmatched_counted": 0,
+      "cyclist_correct": 5,
+      "cyclist_total": 6,
+      "pedestrian_correct": 4,
+      "pedestrian_total": 5
+    },
+    {
+      "threshold": 50.0,
+      "correct": 8,
+      "total": 11,
+      "wrong_class": 2,
+      "rejected": 1,
+      "missed": 0,
+      "unverified": 0,
+      "unmatched_counted": 0,
+      "cyclist_correct": 4,
+      "cyclist_total": 6,
+      "pedestrian_correct": 4,
+      "pedestrian_total": 5
+    }
+  ],
+  "checking": [
+    {
+      "threshold": 15.0,
+      "correct": 10,
+      "total": 10,
+      "wrong_class": 0,
+      "rejected": 0,
+      "missed": 0,
+      "unverified": 0,
+      "unmatched_counted": 0,
+      "cyclist_correct": 2,
+      "cyclist_total": 2,
+      "pedestrian_correct": 8,
+      "pedestrian_total": 8
+    }
+  ],
+  "baseline_replay_parity": true,
+  "identity_policy": "legacy_time_only",
+  "source_precision": "rounded saved audit exports; original-setting parity required for every scored track",
+  "independent_validation": false,
+  "deployment_changed": false,
+  "selection_policy": "Most correct counted truth people, then fewest unmatched counted tracks, then current threshold, then closest numeric threshold",
+  "limitations": [
+    "All four clips previously inspected; checking is exploratory, not independent validation.",
+    "Detector, SAHI, tracking, stitching and X-CLIP evidence frozen; only final decisions replayed.",
+    "Rounded evidence can change borderline counterfactual decisions; source-setting parity is not a guarantee at other thresholds.",
+    "Unmatched counted tracks are not confirmed false positives; identity/time matching limitations remain.",
+    "Motorcycle grouped with cyclists for compatibility; raw class preserved."
+  ]
+}

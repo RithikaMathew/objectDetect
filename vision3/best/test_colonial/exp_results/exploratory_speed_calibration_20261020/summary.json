@@ -1,0 +1,12 @@
+{
+  "bicycle_truth_rows": 7,
+  "facility_checks": 14,
+  "complete_crossings": 0,
+  "workbook_Colonial_records": 23,
+  "verified_record_links": 0,
+  "calibrated_facility_distances": 0,
+  "held_out_speed_validation_pairs": 0,
+  "mph_calculated": false,
+  "mae_mph": null,
+  "reason": "No complete crossings and no verified record-to-person links; no distance fitted or speed validated."
+}

@@ -19,13 +19,35 @@ def build(pack,out):
 <label>Sidewalk measured distance (feet): <input id="sideLength" type="number" value="30" min="0.01" step="any"></label>
 <label>Your name <input id="reviewer"></label><label>How did you identify these exact measured segments? <input id="source" size="65"></label>
 <label><input id="confirmed" type="checkbox"> I confirm these image lines correspond to independently measured segments for this camera/date.</label>
-<button id="download">Download gate configuration</button><p id="message"></p>
+<button id="download">Download gate configuration</button><p id="message" role="status" aria-live="polite"></p><div id="fallback" hidden><label>Configuration JSON (backup if the browser blocks downloads)<textarea id="config" readonly rows="14" style="width:100%"></textarea></label></div>
 <script>
 const canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d'),pic=new Image(),facility=document.getElementById('facility');
 canvas.width=WIDTH;canvas.height=HEIGHT;pic.src=IMAGE;const points={bike_lane:[],sidewalk:[]};
 function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.drawImage(pic,0,0);for(const [name,p]of Object.entries(points)){ctx.strokeStyle=name==='bike_lane'?'#00ff00':'#ff22ff';ctx.fillStyle=ctx.strokeStyle;ctx.lineWidth=3;for(const q of p){ctx.beginPath();ctx.arc(q[0],q[1],4,0,7);ctx.fill()}for(let i=0;i+1<p.length;i+=2){ctx.beginPath();ctx.moveTo(...p[i]);ctx.lineTo(...p[i+1]);ctx.stroke()}}document.getElementById('status').textContent=`Selected ${facility.value}: ${points[facility.value].length}/4 points`;}
-pic.onload=draw;facility.onchange=draw;canvas.onclick=e=>{const p=points[facility.value];if(p.length>=4)return;const r=canvas.getBoundingClientRect();p.push([(e.clientX-r.left)*canvas.width/r.width,(e.clientY-r.top)*canvas.height/r.height]);draw()};document.getElementById('reset').onclick=()=>{points[facility.value]=[];draw()};
-document.getElementById('download').onclick=()=>{const reviewer=document.getElementById('reviewer').value.trim(),source=document.getElementById('source').value.trim(),gates=[];for(const [name,p]of Object.entries(points)){if(p.length===4){const length=Number(document.getElementById(name==='bike_lane'?'bikeLength':'sideLength').value);if(!(length>0))return;gates.push({facility:name,length_feet:length,line_a:p.slice(0,2),line_b:p.slice(2,4)})}}if(!gates.length||!reviewer||!source||!document.getElementById('confirmed').checked){document.getElementById('message').textContent='Finish at least one pair of gate lines and provide measurement confirmation, source and reviewer.';return;}const data={site:'Colonial North',recording_date:'2019-07-10',ref_size:[canvas.width,canvas.height],measurement_source:source,reviewer,gates},a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));a.download='colonial_speed_gates.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};</script>'''
+pic.onload=draw;if(pic.complete&&pic.naturalWidth)draw();pic.onerror=()=>{document.getElementById('message').textContent='Frame image missing. Keep rf_boxes beside this HTML file.';};facility.onchange=draw;canvas.onclick=e=>{const p=points[facility.value];if(p.length>=4)return;const r=canvas.getBoundingClientRect();p.push([(e.clientX-r.left)*canvas.width/r.width,(e.clientY-r.top)*canvas.height/r.height]);draw()};document.getElementById('reset').onclick=()=>{points[facility.value]=[];draw()};
+function exportGates(){
+ const message=document.getElementById('message'),reviewer=document.getElementById('reviewer').value.trim(),source=document.getElementById('source').value.trim(),gates=[],errors=[];
+ for(const [name,p]of Object.entries(points)){
+  const label=name==='bike_lane'?'Bike lane':'Sidewalk';
+  if(p.length>0&&p.length!==4)errors.push(`${label}: ${p.length}/4 points. Finish both cross-lines, or reset this facility.`);
+  if(p.length===4){const length=Number(document.getElementById(name==='bike_lane'?'bikeLength':'sideLength').value);
+   if(!Number.isFinite(length)||length<=0)errors.push(`${label}: enter a positive measured distance in feet.`);
+   else if([0,2].some(i=>Math.hypot(p[i][0]-p[i+1][0],p[i][1]-p[i+1][1])<1))errors.push(`${label}: each cross-line needs two different endpoints.`);
+   else gates.push({facility:name,length_feet:length,line_a:p.slice(0,2),line_b:p.slice(2,4)});
+  }
+ }
+ if(!gates.length)errors.push('Mark at least one facility: four clicks make two cross-lines.');
+ if(!reviewer)errors.push('Enter your name.');
+ if(['','n/a','na','none','unknown','not applicable','tbd'].includes(source.toLowerCase()))errors.push('Describe how the exact measured start/end lines were identified; a placeholder cannot establish the measured endpoints.');
+ if(!document.getElementById('confirmed').checked)errors.push('Confirm the lines match the measured section only if you know that correspondence.');
+ if(errors.length){message.textContent=errors.join(String.fromCharCode(10));message.style.whiteSpace='pre-line';return;}
+ const data={site:'Colonial North',recording_date:'2019-07-10',ref_size:[canvas.width,canvas.height],measurement_source:source,reviewer,gates};
+ const json=JSON.stringify(data,null,2);document.getElementById('config').value=json;document.getElementById('fallback').hidden=false;
+ try{const a=document.createElement('a'),url=URL.createObjectURL(new Blob([json],{type:'application/json'}));a.href=url;a.download='colonial_speed_gates.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);
+ message.textContent='Download requested: colonial_speed_gates.json. If no file appears, copy the JSON below and save it with that filename.';
+ }catch(error){message.textContent='Browser could not start the download. Copy the JSON below and save it as colonial_speed_gates.json.';}
+}
+document.getElementById('download').onclick=exportGates;</script>'''
     html=html.replace('WIDTH',str(frame['width'])).replace('HEIGHT',str(frame['height'])).replace('IMAGE',json.dumps(relative))
     out.write_text(html);print(out)
 

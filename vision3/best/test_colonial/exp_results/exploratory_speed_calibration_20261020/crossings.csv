@@ -1,0 +1,15 @@
+clip,truth_id,candidate_track_id,identity_verified,scope,facility,line_a_crossings,line_b_crossings,line_a_clip_seconds,line_b_clip_seconds,complete_crossing,crossing_seconds,speed_mph,status
+night,n2,12,0,full_unverified_candidate_track,bike_lane,0,0,[],[],0,,,no_unique_complete_crossing
+night,n2,12,0,full_unverified_candidate_track,sidewalk,0,0,[],[],0,,,no_unique_complete_crossing
+night,n3,18,0,full_unverified_candidate_track,bike_lane,0,0,[],[],0,,,no_unique_complete_crossing
+night,n3,18,0,full_unverified_candidate_track,sidewalk,0,1,[],[863.0771],0,,,no_unique_complete_crossing
+night,n4,22,0,full_unverified_candidate_track,bike_lane,0,0,[],[],0,,,no_unique_complete_crossing
+night,n4,22,0,full_unverified_candidate_track,sidewalk,0,1,[],[870.0182],0,,,no_unique_complete_crossing
+night,n5,21,0,full_unverified_candidate_track,bike_lane,0,0,[],[],0,,,no_unique_complete_crossing
+night,n5,21,0,full_unverified_candidate_track,sidewalk,0,1,[],[865.4352],0,,,no_unique_complete_crossing
+day,d1,10,0,full_unverified_candidate_track,bike_lane,0,0,[],[],0,,,no_unique_complete_crossing
+day,d1,10,0,full_unverified_candidate_track,sidewalk,0,0,[],[],0,,,no_unique_complete_crossing
+day_holdout_1245,h2,7,0,full_unverified_candidate_track,bike_lane,0,0,[],[],0,,,no_unique_complete_crossing
+day_holdout_1245,h2,7,0,full_unverified_candidate_track,sidewalk,0,1,[],[495.1212],0,,,no_unique_complete_crossing
+day_holdout_1245,h3,9,0,full_unverified_candidate_track,bike_lane,0,1,[],[534.0641],0,,,no_unique_complete_crossing
+day_holdout_1245,h3,9,0,full_unverified_candidate_track,sidewalk,0,0,[],[],0,,,no_unique_complete_crossing

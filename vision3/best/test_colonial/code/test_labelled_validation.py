@@ -10,6 +10,14 @@ from rf_person_review import score_frame,evaluate
 
 
 class LabelledValidationTests(unittest.TestCase):
+    def test_placeholder_gate_source_cannot_produce_mph(self):
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td)/'gates.json'
+            p.write_text(json.dumps(dict(site='Colonial North',recording_date='2019-07-10',
+                ref_size=[720,480],reviewer='owner',measurement_source='n/a',gates=[])))
+            with self.assertRaisesRegex(ValueError,'endpoint source'):
+                measure([],30,p,[720,480])
+
     def test_time_overlap_never_implies_verified_identity(self):
         truth=[dict(id='p1',s=600,e=614,c='pedestrian')]
         tracks=[dict(id='barricade',f=0,l=615,counted=1,lab='pedestrian'),dict(id='person',f=600,l=613,counted=1,lab='pedestrian')]

@@ -15,7 +15,8 @@ def crossing(a,b,c,d):
 def measure(samples,fps,path,size):
     config=json.loads(path.read_text())
     if config.get('site')!='Colonial North' or config.get('recording_date')!='2019-07-10':raise ValueError('Wrong camera/date for speed gates')
-    if not config.get('measurement_source')or not config.get('reviewer'):raise ValueError('Measured gate source/reviewer required')
+    source=str(config.get('measurement_source','')).strip().lower()
+    if source in ('','n/a','na','none','unknown','not applicable','tbd') or not str(config.get('reviewer','')).strip():raise ValueError('Actual measured endpoint source/reviewer required; placeholder sources cannot establish physical speed')
     scale=np.array(size)/np.array(config['ref_size'])
     estimates=[]
     for gate in config['gates']:

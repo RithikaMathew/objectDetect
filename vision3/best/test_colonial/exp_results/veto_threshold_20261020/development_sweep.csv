@@ -1,0 +1,9 @@
+threshold,correct,total,wrong_class,rejected,missed,unverified,unmatched_counted,cyclist_correct,cyclist_total,pedestrian_correct,pedestrian_total
+off,9,11,1,1,0,0,0,5,6,4,5
+5,9,11,1,1,0,0,0,5,6,4,5
+10,9,11,1,1,0,0,0,5,6,4,5
+15,9,11,1,1,0,0,0,5,6,4,5
+20,9,11,1,1,0,0,0,5,6,4,5
+30,9,11,1,1,0,0,0,5,6,4,5
+40,9,11,1,1,0,0,0,5,6,4,5
+50,8,11,2,1,0,0,0,4,6,4,5

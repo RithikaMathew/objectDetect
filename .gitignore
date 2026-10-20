@@ -67,3 +67,9 @@ logs/.batch*.lock
 logs/.scale_*.lock
 .research_env/
 .research_models/
+
+# Compiled Python and common temporary/editor artifacts
+*.py[cod]
+*.tmp
+*.swp
+*.swo

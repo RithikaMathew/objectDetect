@@ -1,0 +1,99 @@
+split,threshold,clip,truth_id,raw_class,status,track_id,label,counted
+development,off,night,n1,motorcycle,FOUND,4,cyclist,1
+development,off,night,n2,cyclist,FOUND,12,cyclist,1
+development,off,night,n3,cyclist,FOUND,18,cyclist,1
+development,off,night,n4,cyclist,FOUND,22,cyclist,1
+development,off,night,n5,cyclist,DETECTED BUT NOT COUNTED,21,pedestrian,0
+development,off,night,n6,pedestrian,WRONG CLASS,23,cyclist,1
+development,off,day,d2,pedestrian,FOUND,2,pedestrian,1
+development,off,day,d1,cyclist,FOUND,10,cyclist,1
+development,off,day,d3,pedestrian,FOUND,13,pedestrian,1
+development,off,day,d4,pedestrian,FOUND,15,pedestrian,1
+development,off,day,d5,pedestrian,FOUND,23,pedestrian,1
+development,5,night,n1,motorcycle,FOUND,4,cyclist,1
+development,5,night,n2,cyclist,FOUND,12,cyclist,1
+development,5,night,n3,cyclist,FOUND,18,cyclist,1
+development,5,night,n4,cyclist,FOUND,22,cyclist,1
+development,5,night,n5,cyclist,DETECTED BUT NOT COUNTED,21,pedestrian,0
+development,5,night,n6,pedestrian,WRONG CLASS,23,cyclist,1
+development,5,day,d2,pedestrian,FOUND,2,pedestrian,1
+development,5,day,d1,cyclist,FOUND,10,cyclist,1
+development,5,day,d3,pedestrian,FOUND,13,pedestrian,1
+development,5,day,d4,pedestrian,FOUND,15,pedestrian,1
+development,5,day,d5,pedestrian,FOUND,23,pedestrian,1
+development,10,night,n1,motorcycle,FOUND,4,cyclist,1
+development,10,night,n2,cyclist,FOUND,12,cyclist,1
+development,10,night,n3,cyclist,FOUND,18,cyclist,1
+development,10,night,n4,cyclist,FOUND,22,cyclist,1
+development,10,night,n5,cyclist,DETECTED BUT NOT COUNTED,21,pedestrian,0
+development,10,night,n6,pedestrian,WRONG CLASS,23,cyclist,1
+development,10,day,d2,pedestrian,FOUND,2,pedestrian,1
+development,10,day,d1,cyclist,FOUND,10,cyclist,1
+development,10,day,d3,pedestrian,FOUND,13,pedestrian,1
+development,10,day,d4,pedestrian,FOUND,15,pedestrian,1
+development,10,day,d5,pedestrian,FOUND,23,pedestrian,1
+development,15,night,n1,motorcycle,FOUND,4,cyclist,1
+development,15,night,n2,cyclist,FOUND,12,cyclist,1
+development,15,night,n3,cyclist,FOUND,18,cyclist,1
+development,15,night,n4,cyclist,FOUND,22,cyclist,1
+development,15,night,n5,cyclist,DETECTED BUT NOT COUNTED,21,pedestrian,0
+development,15,night,n6,pedestrian,WRONG CLASS,23,cyclist,1
+development,15,day,d2,pedestrian,FOUND,2,pedestrian,1
+development,15,day,d1,cyclist,FOUND,10,cyclist,1
+development,15,day,d3,pedestrian,FOUND,13,pedestrian,1
+development,15,day,d4,pedestrian,FOUND,15,pedestrian,1
+development,15,day,d5,pedestrian,FOUND,23,pedestrian,1
+development,20,night,n1,motorcycle,FOUND,4,cyclist,1
+development,20,night,n2,cyclist,FOUND,12,cyclist,1
+development,20,night,n3,cyclist,FOUND,18,cyclist,1
+development,20,night,n4,cyclist,FOUND,22,cyclist,1
+development,20,night,n5,cyclist,DETECTED BUT NOT COUNTED,21,pedestrian,0
+development,20,night,n6,pedestrian,WRONG CLASS,23,cyclist,1
+development,20,day,d2,pedestrian,FOUND,2,pedestrian,1
+development,20,day,d1,cyclist,FOUND,10,cyclist,1
+development,20,day,d3,pedestrian,FOUND,13,pedestrian,1
+development,20,day,d4,pedestrian,FOUND,15,pedestrian,1
+development,20,day,d5,pedestrian,FOUND,23,pedestrian,1
+development,30,night,n1,motorcycle,FOUND,4,cyclist,1
+development,30,night,n2,cyclist,FOUND,12,cyclist,1
+development,30,night,n3,cyclist,FOUND,18,cyclist,1
+development,30,night,n4,cyclist,FOUND,22,cyclist,1
+development,30,night,n5,cyclist,DETECTED BUT NOT COUNTED,21,pedestrian,0
+development,30,night,n6,pedestrian,WRONG CLASS,23,cyclist,1
+development,30,day,d2,pedestrian,FOUND,2,pedestrian,1
+development,30,day,d1,cyclist,FOUND,10,cyclist,1
+development,30,day,d3,pedestrian,FOUND,13,pedestrian,1
+development,30,day,d4,pedestrian,FOUND,15,pedestrian,1
+development,30,day,d5,pedestrian,FOUND,23,pedestrian,1
+development,40,night,n1,motorcycle,FOUND,4,cyclist,1
+development,40,night,n2,cyclist,FOUND,12,cyclist,1
+development,40,night,n3,cyclist,FOUND,18,cyclist,1
+development,40,night,n4,cyclist,FOUND,22,cyclist,1
+development,40,night,n5,cyclist,DETECTED BUT NOT COUNTED,21,pedestrian,0
+development,40,night,n6,pedestrian,WRONG CLASS,23,cyclist,1
+development,40,day,d2,pedestrian,FOUND,2,pedestrian,1
+development,40,day,d1,cyclist,FOUND,10,cyclist,1
+development,40,day,d3,pedestrian,FOUND,13,pedestrian,1
+development,40,day,d4,pedestrian,FOUND,15,pedestrian,1
+development,40,day,d5,pedestrian,FOUND,23,pedestrian,1
+development,50,night,n1,motorcycle,FOUND,4,cyclist,1
+development,50,night,n2,cyclist,FOUND,12,cyclist,1
+development,50,night,n3,cyclist,WRONG CLASS,18,pedestrian,1
+development,50,night,n4,cyclist,FOUND,22,cyclist,1
+development,50,night,n5,cyclist,DETECTED BUT NOT COUNTED,21,pedestrian,0
+development,50,night,n6,pedestrian,WRONG CLASS,23,cyclist,1
+development,50,day,d2,pedestrian,FOUND,2,pedestrian,1
+development,50,day,d1,cyclist,FOUND,10,cyclist,1
+development,50,day,d3,pedestrian,FOUND,13,pedestrian,1
+development,50,day,d4,pedestrian,FOUND,15,pedestrian,1
+development,50,day,d5,pedestrian,FOUND,23,pedestrian,1
+checking,15,night_holdout_2200,p1,pedestrian,FOUND,18,pedestrian,1
+checking,15,night_holdout_2200,p2,pedestrian,FOUND,27,pedestrian,1
+checking,15,night_holdout_2200,p3,pedestrian,FOUND,33,pedestrian,1
+checking,15,night_holdout_2200,p4,pedestrian,FOUND,36,pedestrian,1
+checking,15,night_holdout_2200,p5,pedestrian,FOUND,40,pedestrian,1
+checking,15,day_holdout_1245,h1,pedestrian,FOUND,1,pedestrian,1
+checking,15,day_holdout_1245,h2,cyclist,FOUND,7,cyclist,1
+checking,15,day_holdout_1245,h3,cyclist,FOUND,9,cyclist,1
+checking,15,day_holdout_1245,h4,pedestrian,FOUND,14,pedestrian,1
+checking,15,day_holdout_1245,h5,pedestrian,FOUND,15,pedestrian,1

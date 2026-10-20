@@ -19,7 +19,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from aggregate_colonial_v12 import parse_gt  # noqa: E402
+from aggregate_colonial_v13 import parse_gt  # noqa: E402
 
 
 def main():
