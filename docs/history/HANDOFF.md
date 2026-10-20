@@ -1,3 +1,73 @@
+# Current handoff — 2026-10-19
+
+This section supersedes the September handoff retained below. Start with **root README.md**; do not resubmit the completed research_oct19 suite.
+
+## Latest evidence and interpretation
+
+Sources: root `results.md` (cluster terminal output) and `RESEARCH_research_oct19.md` (report from the same run, NOT an independent replication). All 21 non-report tasks succeeded and the final report exists.
+
+| Configuration | Correct truth people | Extra counted tracks | Mean recorded runtime / clip | Decision |
+|---|---:|---:|---:|---|
+| b4_combo_static5 | 19/21 | 0 | 42.0 min | Keep as current reference |
+| TTA scale + flip | 19/21 | 1 | 88.5 min | No gain; review extra track |
+| Sensitive settings | 19/21 | 28 | 39.7 min | Candidate review only |
+| Zero-DCE, two night clips | 7/11 | 0 | 51.5 min | Leave off; night reference is 9/11 |
+
+19/21 is a small four-clip validation set, not proof of reliability across cameras or full days. Evaluation matches by time, with ambiguity when people overlap. Both remaining reference errors are in the 21:15 night clip: a pedestrian classified as cyclist (14:21–14:26) and a 2.37-second rider rejected (14:47–14:58). No truth encounter was wholly missed under this matcher. Sensitive mode changed several settings simultaneously; it is not an isolated minimum-duration experiment. Recorded runtime comparisons are not controlled hardware benchmarks.
+
+Grounding DINO: 165 sampled frames, 386 proposals, 308 with low overlap with saved b4 boxes. These are repeated frame boxes, NOT 308 missed people or person recall. Baseline overlays include rejected/coasted tracks. Inspect before drawing conclusions.
+
+Higher resolution: two sources found; Corrine 706 is 960x540, 15 fps, with fisheye distortion. Three matched Corrine runs each counted 0 cyclists/1 pedestrian, but no truth exists, so accuracy remains unknown. Any year is acceptable if resolution exceeds the Colonial 720x480 footage. Zone and fisheye previews are guesses pending visual review.
+
+Latest presentation: `reports/presentations/bike_weekly_meeting_10_19_results.pptx` (12 slides, updated and visually checked). Earlier presentations remain historical.
+
+## What the owner should review
+
+Cluster ROOT = `/orange/xiangyan/rithika/vision/vision3/best/test_colonial`.
+
+1. `ROOT/annotated/research_oct19_tta/`: the 22:00–22:15 video (source chunk .023). Determine whether its single extra pedestrian is a duplicate, false alarm, or a real person omitted from truth. Locate the actual output with `find annotated/research_oct19_tta -type f -name '*2200-2215*.mp4'` from ROOT; no local cluster file existence has been verified.
+2. Reference 21:15 video: check 14:21–14:26 (walker) and 14:47–14:58 (short rider). Exact reference video locations are documented in `docs/VIDEO_PATHS.md`. Do not relabel existing truth.
+3. `ROOT/logs/research_oct19/grounding/night/`: JPGs near clip seconds 861–866 and 887–898. Left = saved b4 tracks, right = Grounding DINO. Are proposals real, and do they explain the two errors? Other four-clip audit folders: `day`, `night_holdout_2200`, `day_holdout_1245`.
+4. Optional existing sensitive-candidate review pack: download the whole `ROOT/logs/research_oct19/review_12min/` directory and open `review.html`. Label b/p/n using its controls and return the exported CSV. Twelve minutes is the raw snippet budget, not a promise of human review time. This is NOT the deferred 40-track study.
+
+## New code added this session — not yet run on GPU
+
+`vision3/best/test_colonial/code/rfdetr_audit.py`: pretrained RF-DETR Medium (rfdetr==1.11.2), threshold .30, full-frame proposal audit on exactly the Grounding DINO sampling scheme. One GPU job creates an isolated environment, preserves the working Torch/torchvision versions through pip constraints, downloads the model, audits all four clips, and writes `logs/rfdetr_oct19/RESULTS.md`. Per-clip side-by-side JPGs/CSVs, model metadata/checkpoint hashes, package freeze, status and Slurm log remain alongside it. Baseline model, outputs and yolo_env are not changed. Package conflicts fail explicitly rather than replacing working Torch. Default is dry-run; output directory prevents duplicate submission. On failure inspect status/log before choosing a new tag.
+
+This is a modern alternative detector benchmark, NOT a replacement counting pipeline or a claim of improved cyclist accuracy. COCO person/bicycle/motorcycle are separate categories. Low overlap is not a verified miss. No new truth boxes are requested before running; visual adjudication is needed afterward. Existing Grounding DINO audit gained an optional inference callback; its default behavior stays unchanged.
+
+Primary method/API source: https://github.com/roboflow/rf-detr ; published package metadata: https://pypi.org/project/rfdetr/1.11.2/ . The published wheel was checked for RFDETRMedium, COCO_CLASSES and RF_HOME support. CPU tests check category filtering, dry-run behavior and tag safety; existing research tests pass. CUDA inference/package setup still require the cluster run.
+
+After committing/pushing on the Mac, on HiPerGator:
+
+```bash
+cd /orange/xiangyan/rithika/vision
+git pull --ff-only origin main
+cd vision3/best/test_colonial
+source /orange/xiangyan/rithika/vision/yolo_env/bin/activate
+python code/rfdetr_audit.py --go
+```
+
+Read `logs/rfdetr_oct19/RESULTS.md` after completion; failures are in `logs/rfdetr_oct19/status.json` and `job_<id>.log`. The original 22-task suite does NOT need resubmitting.
+
+## Constraints for the next assistant
+
+- Existing four truth CSVs under ROOT/truth total 21 people; no repeat labeling requested.
+- Full-day 24/48-hour scaling removed from the active plan.
+- Own-night fine-tuning and ~40-track hand-label comparison are on the back burner.
+- Do not promote TTA, sensitive thresholds, Zero-DCE, Grounding DINO or RF-DETR without evidence.
+- Higher resolution may be from any year; 720x480 cameras do not qualify merely because newer.
+- Current pipeline: fine-tuned RT-DETR v3 + SAHI + ByteTrack/stitching + X-CLIP + rules/fusion/static filter. Current code is under vision3/best/test_colonial/code.
+- Slurm partition hpg-turin, account/qos **xiangyan**. Working environment: /orange/xiangyan/rithika/vision/yolo_env. Submit GPU work with sbatch.
+- Keep root README.md the single user entry point. Do not delete truth, structured results, weights or videos during cleanup.
+- Git transfers code/docs, not ignored cluster videos/model weights. Preserve cluster changes if pull conflicts; never force-reset/clean results.
+
+---
+
+# Historical September handoff (superseded)
+
+The text below records an earlier pipeline/dataset audit. Its 48-hour counts, next steps, file paths and account settings are historical, not the current Colonial validation status.
+
 # Project Handoff — Cyclist Detection from Archival Traffic Video
 
 **For:** an AI coding assistant (or new collaborator) picking this up cold.

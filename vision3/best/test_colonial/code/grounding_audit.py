@@ -59,7 +59,7 @@ def max_iou(box, tracks):
     return best
 
 
-def audit(root, ready, clip, video, out):
+def audit(root, ready, clip, video, out, backend=None):
     import cv2
     from PIL import Image
     from eval_truth import CLIPS, read_truth
@@ -69,7 +69,11 @@ def audit(root, ready, clip, video, out):
     if not truth or skipped:
         raise RuntimeError(f"incomplete truth for audit: {skipped}")
     model_info = json.loads(ready.read_text())
-    processor, model = load_model(model_info["model_path"], True)
+    if backend is None:
+        processor, model = load_model(model_info["model_path"], True)
+        infer = lambda image: predict(processor, model, image)
+    else:
+        infer = backend
     cap = cv2.VideoCapture(str(video))
     if not cap.isOpened(): raise RuntimeError(f"cannot open {video}")
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -89,7 +93,7 @@ def audit(root, ready, clip, video, out):
         cap.set(cv2.CAP_PROP_POS_FRAMES, fi-1)
         ok, frame = cap.read()
         if not ok: raise RuntimeError(f"cannot read audit frame {fi}")
-        result = predict(processor, model, Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)))
+        result = infer(Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)))
         left, right = frame.copy(), frame.copy()
         for t in tracks[fi]:
             cx,cy,w,h = [float(t[k]) for k in ("box_cx","box_cy","box_w","box_h")]
@@ -103,7 +107,7 @@ def audit(root, ready, clip, video, out):
             cv2.rectangle(right,(x1,y1),(x2,y2),(0,200,255),2)
             cv2.putText(right,f"{label} {score:.2f}",(max(0,x1),max(18,y1)),cv2.FONT_HERSHEY_SIMPLEX,.5,(0,200,255),1)
         cv2.putText(left,"Saved b4 tracks (includes rejected/coasted)",(8,22),cv2.FONT_HERSHEY_SIMPLEX,.5,(255,255,255),1)
-        cv2.putText(right,"Grounding DINO proposals",(8,22),cv2.FONT_HERSHEY_SIMPLEX,.5,(255,255,255),1)
+        cv2.putText(right,model_info.get("display_name", "Grounding DINO proposals"),(8,22),cv2.FONT_HERSHEY_SIMPLEX,.5,(255,255,255),1)
         import numpy as np
         if not cv2.imwrite(str(out / f"{fi:06d}_{when:.1f}s.jpg"),np.hstack([left,right])):
             raise RuntimeError("could not write audit image")

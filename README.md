@@ -1,8 +1,24 @@
-# Start here: submit the active research batch
+# Start here: Colonial validation results
 
-**This is the one Markdown file to use now.** The other MD files are background/reference. You have not submitted this batch yet. Push/pull once, then run the single submission command below. There is no need to run the earlier individual submission commands.
+**Batch completed.** Read the updated results presentation and RESEARCH_research_oct19.md. The submission commands below are retained for reference; this batch does not need resubmitting.
 
-Current measured reference: **b4_combo_static5 = 19/21 people correctly counted and labelled, with zero extra counted tracks**, across four 15-minute Colonial clips. Existing truth files remain valid; no repeat labelling is requested. New research code is implemented and locally tested, but has not run on HiPerGator yet.
+Current measured reference: **b4_combo_static5 = 19/21 people correctly counted and labelled, with zero extra counted tracks**, across four 15-minute Colonial clips. Existing truth files remain valid; no repeat labelling is requested. The research batch has now run: TTA stayed at 19/21 with one extra track; sensitive settings stayed at 19/21 with 28 extras; Zero-DCE scored 7/11 on the night clips versus 9/11. Grounding and higher-resolution outputs still need visual/ground-truth checking.
+
+## Current next step: optional RF-DETR audit
+
+Session recovery: [current handoff](docs/history/HANDOFF.md). The existing `research_oct19` batch is complete. **Do not run its old submission command below again.**
+
+New code: pretrained RF-DETR Medium, a modern detector alternative, on the same sampled frames as Grounding DINO. This is a visual proposal audit, not a new counting-accuracy result. No training or new labels are required to run it. After pushing your Mac changes and pulling on HiPerGator:
+
+```bash
+cd /orange/xiangyan/rithika/vision/vision3/best/test_colonial
+source /orange/xiangyan/rithika/vision/yolo_env/bin/activate
+python code/rfdetr_audit.py --go
+```
+
+One GPU submission runs all four audits. Read `logs/rfdetr_oct19/RESULTS.md` when done; inspect `status.json` and `job_<id>.log` if setup fails. Omit `--go` for a dry-run. The working model and environment remain unchanged. GPU execution has not yet been verified.
+
+**Please review:** the TTA 22:00–22:15 annotated video for its one extra pedestrian; the reference night video at 14:21–14:26 and 14:47–14:58; and matching Grounding DINO JPGs. Exact directories and commands are in the current handoff above. Existing truth does not need relabeling.
 
 ## 1. On your Mac: commit and push
 
@@ -17,7 +33,7 @@ git push origin main
 
 The many deletions are mostly old text logs and duplicate root files from the authorized cleanup. Differing source versions are in archive/. Truth, saved count tables, structured run records and current Colonial paths are preserved. No model weights or source videos are transferred by Git.
 
-## 2. On HiPerGator: pull and submit ONCE
+## 2. Historical completed-suite commands (do not resubmit)
 
 Use your existing checkout at /orange/xiangyan/rithika/vision. Check that it is on main and that old jobs using removed root-level scripts have finished. If pull reports local conflicts, preserve those files and send the error; do not force-reset or clean your cluster results.
 
@@ -28,7 +44,7 @@ git branch --show-current
 git pull --ff-only origin main
 cd vision3/best/test_colonial
 source /orange/xiangyan/rithika/vision/yolo_env/bin/activate
-python code/submit_research.py --tag research_oct19 --go
+# Already completed: python code/submit_research.py --tag research_oct19 --go
 ```
 
 That last command submits the whole suite. Submit once; the manifest folder prevents duplicates. To preview without submission, omit --go. A genuinely new batch needs a new --tag. The launcher checks required video, model, baseline table and truth paths before submitting. It stops and records job IDs if submission fails part-way; do not blindly re-run with a new tag in that case.
@@ -75,7 +91,7 @@ Send the contents of exp_results/RESEARCH_research_oct19.md. It contains the exa
 ## Reference only
 
 - [Exact previously generated video paths](docs/VIDEO_PATHS.md)
-- [Latest results PowerPoint](reports/presentations/bike_weekly_meeting_10_19.pptx) — measured results predate the newly implemented research batch.
+- [Latest results PowerPoint](reports/presentations/bike_weekly_meeting_10_19_results.pptx) — updated from the completed research report.
 - [Task detail](docs/tasks/todo.md)
 - [Research rationale and primary sources](docs/RESEARCH_METHODS.md)
 - [Long validation history](docs/colonial/README_colonial_validation_v31.md)
