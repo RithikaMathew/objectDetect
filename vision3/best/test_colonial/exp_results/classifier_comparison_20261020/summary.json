@@ -1,0 +1,39 @@
+{
+  "run": "b4_combo_static5",
+  "truth_rows": 21,
+  "included": 21,
+  "detector_correct": 16,
+  "xclip_correct": 14,
+  "identity_policy": "legacy_time_only",
+  "groups": {
+    "both_right": [
+      "night/n1",
+      "night/n2",
+      "day/d1",
+      "day/d4",
+      "day/d5",
+      "night_holdout_2200/p1",
+      "night_holdout_2200/p2",
+      "night_holdout_2200/p3",
+      "night_holdout_2200/p4",
+      "day_holdout_1245/h3",
+      "day_holdout_1245/h4"
+    ],
+    "both_wrong": [
+      "night/n5",
+      "night/n6"
+    ],
+    "detector_only_right": [
+      "night/n4",
+      "day/d2",
+      "day/d3",
+      "day_holdout_1245/h1",
+      "day_holdout_1245/h5"
+    ],
+    "xclip_only_right": [
+      "night/n3",
+      "night_holdout_2200/p5",
+      "day_holdout_1245/h2"
+    ]
+  }
+}

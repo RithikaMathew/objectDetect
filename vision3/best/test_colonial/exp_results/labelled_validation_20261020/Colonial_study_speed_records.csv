@@ -1,0 +1,24 @@
+record_number,street,facility,zone_length_feet,seconds,source_mph,recomputed_mph,source_minus_recomputed_mph,notes,source_cells
+54,Colonial,Bike Lane,35.0,1.46,16.325342465753426,16.344956,-0.019614,,Bike Lane!A12;BL Analysis!A61
+51,Colonial,Bike Lane,35.0,1.73,13.777456647398845,13.794009,-0.016553,,Bike Lane!A19;BL Analysis!A54
+58,Colonial,Bike Lane,35.0,2.0,11.9175,11.931818,-0.014318,,Bike Lane!A25;BL Analysis!A48
+62,Colonial,Bike Lane,35.0,2.15,11.086046511627908,11.099366,-0.013319,,Bike Lane!A38;BL Analysis!A35
+57,Colonial,Bike Lane,35.0,2.18,10.93348623853211,10.946622,-0.013136,,Bike Lane!A40;BL Analysis!A33
+60,Colonial,Bike Lane,35.0,2.42,9.849173553719009,9.861007,-0.011833,,Bike Lane!A50;BL Analysis!A23
+56,Colonial,Bike Lane,35.0,2.56,9.310546875,9.321733,-0.011186,,Bike Lane!A56;BL Analysis!A17
+55,Colonial,Bike Lane,35.0,2.6,9.167307692307693,9.178322,-0.011014,,Bike Lane!A58;BL Analysis!A15
+59,Colonial,Bike Lane,35.0,2.92,8.162671232876713,8.172478,-0.009807,,Bike Lane!A65;BL Analysis!A8
+53,Colonial,Bike Lane,35.0,3.33,7.1576576576576585,7.166257,-0.0086,,Bike Lane!A69;BL Analysis!A4
+61,Colonial,Bike Lane,35.0,4.11,5.799270072992701,5.806238,-0.006967,,Bike Lane!A71;BL Analysis!A2
+89,Colonial,Sidewalk,30.0,1.85,11.043243243243243,11.056511,-0.013268,,Sidewalk!A24
+79,Colonial,Sidewalk,30.0,2.23,9.161434977578477,9.172442,-0.011007,,Sidewalk!A42
+88,Colonial,Sidewalk,30.0,2.32,8.806034482758621,8.816614,-0.01058,,Sidewalk!A48
+83,Colonial,Sidewalk,30.0,2.33,8.768240343347639,8.778775,-0.010535,,Sidewalk!A49
+84,Colonial,Sidewalk,30.0,2.39,8.548117154811715,8.558387,-0.01027,,Sidewalk!A51
+81,Colonial,Sidewalk,30.0,2.62,7.797709923664122,7.807078,-0.009368,,Sidewalk!A63
+85,Colonial,Sidewalk,30.0,2.82,7.24468085106383,7.253385,-0.008704,,Sidewalk!A69
+82,Colonial,Sidewalk,30.0,2.92,6.996575342465754,7.004981,-0.008406,,Sidewalk!A71
+87,Colonial,Sidewalk,30.0,3.28,6.228658536585367,6.236142,-0.007483,,Sidewalk!A79
+80,Colonial,Sidewalk,30.0,3.33,6.135135135135136,6.142506,-0.007371,,Sidewalk!A81
+86,Colonial,Sidewalk,30.0,3.86,5.2927461139896375,5.299105,-0.006359,,Sidewalk!A88
+52,Colonial,Bike Lane,35.0,1.2,19.8625,19.886364,-0.023864,e-bike,BL Analysis!A71

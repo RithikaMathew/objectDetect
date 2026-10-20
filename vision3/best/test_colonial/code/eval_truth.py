@@ -48,7 +48,9 @@ def read_truth(path):
     rows, skipped = [], []
     if not os.path.isfile(path):
         return rows, [f"(missing file {path})"]
-    for r in csv.DictReader(l for l in open(path, encoding="utf-8") if not l.startswith("#")):
+    with open(path, encoding="utf-8") as stream:
+        source_rows = list(csv.DictReader(l for l in stream if not l.startswith("#")))
+    for r in source_rows:
         s, e, c = mmss(r.get("start_mmss")), mmss(r.get("end_mmss")), norm_class(r.get("class"))
         if s is None or c is None:
             skipped.append(f"{r.get('id')} (start='{r.get('start_mmss')}', class='{r.get('class')}')")
@@ -60,7 +62,9 @@ def read_truth(path):
 
 def read_tracks(path, t0):
     out = []
-    for r in csv.DictReader(open(path)):
+    with open(path, newline="") as stream:
+        source_rows = list(csv.DictReader(stream))
+    for r in source_rows:
         f = (datetime.datetime.strptime(r["first_time"], "%Y-%m-%d %H:%M:%S") - t0).total_seconds()
         l = (datetime.datetime.strptime(r["last_time"], "%Y-%m-%d %H:%M:%S") - t0).total_seconds() + 1.0
         lab = {"BICYCLIST": "cyclist", "PEDESTRIAN": "pedestrian"}.get(r["label"], "unscored")
@@ -73,19 +77,48 @@ def fmt(sec):
     return f"{int(sec // 60)}:{int(sec % 60):02d}"
 
 
-def match(truth, tracks):
+def load_identity_map(path):
+    """Only explicit, evidenced FULL-track human approvals establish identity."""
+    approved={}
+    with open(path,newline='') as stream:
+        for r in csv.DictReader(stream):
+            if r.get('decision','').strip().lower()!='approved':continue
+            if not r.get('reviewer','').strip() or not r.get('evidence','').strip() or r.get('full_track_reviewed','').lower()!='yes':
+                raise ValueError('Identity approval requires reviewer, evidence and full_track_reviewed=yes')
+            key=(r['run'],r['clip']);mapping=approved.setdefault(key,{})
+            if r['truth_id'] in mapping or r['track_id'] in mapping.values():
+                raise ValueError('Identity approvals must be one-to-one within a run/clip')
+            mapping[r['truth_id']]=r['track_id']
+    return approved
+
+
+def match(truth, tracks, identity=None):
     used, res = set(), []
+    reserved=set(identity.values()) if identity is not None else set()
+    if identity is not None:
+        if len(reserved)!=len(identity):raise ValueError('Identity map must be one-to-one')
+        if set(identity)-{t['id']for t in truth}:raise ValueError('Unknown truth ID in identity map')
     for t in truth:
         best, bkey = None, None
         for k in tracks:
             if k["id"] in used:
                 continue
+            if identity is not None:
+                expected=identity.get(t['id'])
+                if expected is not None and k['id']!=expected:continue
+                if expected is None and k['id'] in reserved:continue
             ov = min(t["e"] + TOL, k["l"]) - max(t["s"] - TOL, k["f"])
             if ov <= 0:
                 continue
             key = (k["counted"], ov)
             if bkey is None or key > bkey:
                 best, bkey = k, key
+        if identity is not None and t['id'] not in identity:
+            res.append((t,"UNVERIFIED",best))
+            if best is not None:used.add(best['id'])
+            continue
+        if identity is not None and best is None:
+            raise ValueError(f"Approved identity {t['id']} has no temporally overlapping track")
         if best is None:
             res.append((t, "MISSED", None))
             continue
@@ -96,7 +129,7 @@ def match(truth, tracks):
             res.append((t, "WRONG CLASS", best))
         else:
             res.append((t, "DETECTED BUT NOT COUNTED", best))
-    extra = [k for k in tracks if k["counted"] and k["id"] not in used]
+    extra = [k for k in tracks if k["counted"] and k["id"] not in (reserved if identity is not None else used)]
     return res, extra
 
 
@@ -106,11 +139,16 @@ def main():
     ap.add_argument("--prefix", default="exp")
     ap.add_argument("--runs", default=None, help="comma list; default = every folder in counts/ starting with --prefix")
     ap.add_argument("--baseline", default="exp0_base")
+    ap.add_argument("--require-identity",action="store_true",help="unreviewed time matches receive NO accuracy credit")
+    ap.add_argument("--identity-map",help="CSV with human full-track identity approvals")
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
+    if a.identity_map:a.require_identity=True
     root = os.path.abspath(a.root)
+    identities=load_identity_map(a.identity_map) if a.identity_map else {}
     runs = a.runs.split(",") if a.runs else sorted(d for d in os.listdir(os.path.join(root, "counts")) if d.startswith(a.prefix))
     out = [f"# Experiment evaluation  ({datetime.datetime.now():%Y-%m-%d %H:%M})", "", f"root: {root}", f"runs: {', '.join(runs)}", ""]
+    out += ["Identity policy: "+("HUMAN APPROVAL REQUIRED. UNVERIFIED rows excluded from correct/reviewed denominators; unmatched counted tracks are unverified, not proven false positives." if a.require_identity else "LEGACY TIME-ONLY. FOUND is NOT identity-verified accuracy."),""]
     summary = []
     truths = {}
     for cname, cc in CLIPS.items():
@@ -128,9 +166,9 @@ def main():
             t0 = datetime.datetime.strptime(cc["start"], "%Y-%m-%d %H:%M:%S")
             tracks = read_tracks(sorted(tf)[0], t0)
             truth = truths[cname][0]
-            res, extra = match(truth, tracks)
+            res, extra = match(truth, tracks, identities.get((run,cname),{}) if a.require_identity else None)
             cnt = lambda cls, st: sum(1 for t, s, _ in res if t["c"] == cls and s == st)
-            tot = lambda cls: sum(1 for t, _, _ in res if t["c"] == cls)
+            tot = lambda cls: sum(1 for t, s, _ in res if t["c"] == cls and (not a.require_identity or s!="UNVERIFIED"))
             rl = glob.glob(os.path.join(root, "logs", run, f"*.{cc['chunk']:03d}_run_log.json"))
             rt = ""
             if rl:
@@ -151,7 +189,7 @@ def main():
             for k in extra:
                 detail.append(f"| EXTRA | counted {k['lab']} | {fmt(max(k['f'],0))}-{fmt(k['l'])} | no truth row | #{k['id']} {k['secs']}s det={k['det']} |")
             detail.append("")
-    out += ["## Summary (person level; FOUND = counted with the right class; motorcycle scored as cyclist)", "",
+    out += ["## Summary ("+("verified correct / identity-reviewed; no accuracy claim for unreviewed rows" if a.require_identity else "TIME-MATCHED ONLY; not identity verified")+"; motorcycle scored as cyclist)", "",
             "| run | clip | cyclists found | pedestrians found | wrong class | detected, not counted | missed | extra counted | counted bic/ped | runtime min |",
             "|---|---|---|---|---|---|---|---|---|---|"]
     out += ["| " + " | ".join(str(x) for x in r) + " |" for r in summary]
@@ -176,6 +214,8 @@ def main():
                 hit = [c for c in cands if min(t["e"] + TOL, c[2]) - max(t["s"] - TOL, c[1]) > 0]
                 out.append(f"- truth {t['id']} ({t['raw']} {fmt(t['s'])}): " + (", ".join(f"cand {c[0]} ({c[3]}s, box h {c[4]})" for c in hit) if hit else "no motion candidate"))
             out.append("")
+    if a.require_identity:
+        out=[line.replace("extra counted |", "unmatched counted (unverified) |").replace("| EXTRA |", "| UNREVIEWED TRACK |") for line in out]
     txt = "\n".join(out)
     path = a.out or os.path.join(root, "exp_results", f"EVAL_{datetime.datetime.now():%Y%m%d_%H%M}.md")
     os.makedirs(os.path.dirname(path), exist_ok=True)

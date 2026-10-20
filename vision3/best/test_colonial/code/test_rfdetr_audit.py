@@ -26,6 +26,14 @@ class RFDETRAuditTests(unittest.TestCase):
             run.assert_not_called()
             self.assertFalse((Path(td)/'logs').exists())
 
+    def test_tiled_default_has_separate_output_tag(self):
+        with tempfile.TemporaryDirectory() as td, patch('sys.argv', ['rfdetr_audit.py','--root',td,'--tiled']), \
+                patch.object(rf.subprocess, 'run') as run, contextlib.redirect_stdout(io.StringIO()) as output:
+            rf.main()
+            run.assert_not_called()
+            self.assertIn('rfdetr_tiled_oct19',output.getvalue())
+            self.assertIn('tiled=True',output.getvalue())
+
     def test_invalid_tag_cannot_escape_logs(self):
         with patch('sys.argv', ['rfdetr_audit.py','--tag','../escape']), \
                 contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):

@@ -1,0 +1,5 @@
+clip,study_bike_lane,study_sidewalk,hand_truth_bicycles,hand_truth_motorcycles,provisional_bike_lane,provisional_sidewalk,provisional_road,uncertain,validation
+night,0,3,4,1,1,2,0,1,NOT_VALIDATED_independent_aggregate_counts_not_person_lane_truth
+day,1,0,1,0,0,0,0,1,NOT_VALIDATED_independent_aggregate_counts_not_person_lane_truth
+night_holdout_2200,0,0,0,0,0,0,0,0,NOT_VALIDATED_independent_aggregate_counts_not_person_lane_truth
+day_holdout_1245,2,0,2,0,1,0,0,1,NOT_VALIDATED_independent_aggregate_counts_not_person_lane_truth

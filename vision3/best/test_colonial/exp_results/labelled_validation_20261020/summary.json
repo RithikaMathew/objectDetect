@@ -1,0 +1,15 @@
+{
+  "truth_rows": 21,
+  "image_motion_rows": 20,
+  "identity_verified_rows": 0,
+  "provisional_lanes": {
+    "bike_lane": 3,
+    "sidewalk": 12,
+    "uncertain": 5,
+    "road": 1
+  },
+  "metric_speed_rows": 0,
+  "unique_Colonial_speed_references": 23,
+  "zone_alignment_validated": false,
+  "matched_speed_validation": false
+}

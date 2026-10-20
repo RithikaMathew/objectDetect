@@ -31,10 +31,12 @@ def execute(plan, task, directory):
         for name in re.findall(r'\$\{([A-Z][A-Z0-9_]*)', (code/'run_xclip_colonial_v19.slurm').read_text()):
             env.pop(name,None)
         env.update(task['env'])
-        if task.get('higher_resolution'):
+        if task.get('higher_resolution') or task.get('scale_pixels'):
             import cv2
             cap=cv2.VideoCapture(env['VIDEO_OVERRIDE']);w=cap.get(3);h=cap.get(4);fps=cap.get(5);cap.release()
-            if w*h<=720*480 or fps<=0:raise RuntimeError('higher-resolution clip is unreadable or not above 720x480')
+            if min(w,h)<=0 or fps<=0:raise RuntimeError('clip metadata is unreadable')
+            if task.get('higher_resolution') and w*h<=720*480:
+                raise RuntimeError('higher-resolution clip is not above 720x480')
             scale=w/720
             env.update(STITCH_PX=str(150*scale),SPLIT_PX=str(120*scale),
                        SAHI_SLICE=str(max(32,round(640*scale/32)*32)),STATIC_MAX_NET_PX=str(5*scale))
@@ -70,6 +72,15 @@ def execute(plan, task, directory):
         run([root/'.research_env'/plan['tag']/'bin/python',code/'grounding_audit.py','audit','--root',root,'--ready',ready,
              '--clip',task['clip'],'--video',task['video'],'--out',out],env=env)
         return dict(output=str(out),**json.loads((out/'summary.json').read_text()))
+    if task['kind']=='final_review':
+        run(['bash',code/'final_review.slurm'],cwd=root)
+        output=root/'exp_results/final_review_20261020'
+        for path in (output/'rf_boxes/review.html',output/'speed_gate_setup.html'):
+            if not path.is_file():raise RuntimeError(f'Missing review output: {path}')
+        return dict(output=str(output),requires_human_review=True)
+    if task['kind']=='truth_headers':
+        run([sys.executable,code/'stamp_truth_headers.py','--root',root,'--runs',*task['runs'],'--go'],cwd=root)
+        return dict(output=str(root/'annotated_gt'),originals_preserved=True)
     if task['kind']=='scan':
         out=directory/'busy/inventory.csv';out.parent.mkdir(parents=True,exist_ok=True)
         run([sys.executable,code/'pick_busy_windows.py','--list',root/'videos_to_scan.txt',
@@ -116,6 +127,9 @@ def execute(plan, task, directory):
 
 def report(directory, final=False):
     plan=json.loads((directory/'manifest.json').read_text());root=Path(plan['root'])
+    if plan.get('purpose')=='two_new_sites':
+        from submit_newsites import write_report
+        return write_report(directory,plan,final)
     out=root/f'exp_results/RESEARCH_{plan["tag"]}.md';out.parent.mkdir(parents=True,exist_ok=True)
     lines=[f'# Research suite: {plan["tag"]}','', 'This report concerns the new suite only. Existing b4 remains the reference; no automatic model promotion.','',
            '| Task | Job | Status | Detail |','|---|---|---|---|']

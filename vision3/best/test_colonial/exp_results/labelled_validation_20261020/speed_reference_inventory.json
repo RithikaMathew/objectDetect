@@ -1,0 +1,593 @@
+{
+  "source": "/Users/rithika/Desktop/objectDetect/Bike Lane Study Counts/bicyclist speeds.xlsx",
+  "sheets": [
+    {
+      "sheet": "Travel Lane",
+      "streets": [
+        "Baxter",
+        "Carroll",
+        "Lee",
+        "Winter Park"
+      ],
+      "nonempty_rows": 46
+    },
+    {
+      "sheet": "Sheet4",
+      "streets": [],
+      "nonempty_rows": 8
+    },
+    {
+      "sheet": "Bike Lane",
+      "streets": [
+        "Colonial",
+        "Columbia",
+        "Edgewater"
+      ],
+      "nonempty_rows": 72
+    },
+    {
+      "sheet": "Sheet2",
+      "streets": [],
+      "nonempty_rows": 9
+    },
+    {
+      "sheet": "Sidewalk",
+      "streets": [
+        "Colonial",
+        "University"
+      ],
+      "nonempty_rows": 91
+    },
+    {
+      "sheet": "Sheet3",
+      "streets": [],
+      "nonempty_rows": 15
+    },
+    {
+      "sheet": "Path",
+      "streets": [],
+      "nonempty_rows": 129
+    },
+    {
+      "sheet": "TL Analysis",
+      "streets": [
+        "Baxter",
+        "Carroll",
+        "Lee",
+        "Winter Park"
+      ],
+      "nonempty_rows": 45
+    },
+    {
+      "sheet": "BL Analysis",
+      "streets": [
+        "Colonial",
+        "Columbia",
+        "Edgewater"
+      ],
+      "nonempty_rows": 72
+    },
+    {
+      "sheet": "SW Analysis",
+      "streets": [
+        "University"
+      ],
+      "nonempty_rows": 56
+    },
+    {
+      "sheet": "Silver Star",
+      "streets": [
+        "Silver Star"
+      ],
+      "nonempty_rows": 61
+    }
+  ],
+  "colonial_cells": [
+    {
+      "sheet": "Bike Lane",
+      "cell": "B12",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Bike Lane",
+      "cell": "B19",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Bike Lane",
+      "cell": "B25",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Bike Lane",
+      "cell": "B38",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Bike Lane",
+      "cell": "B40",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Bike Lane",
+      "cell": "B50",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Bike Lane",
+      "cell": "B56",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Bike Lane",
+      "cell": "B58",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Bike Lane",
+      "cell": "B65",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Bike Lane",
+      "cell": "B69",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Bike Lane",
+      "cell": "B71",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B24",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B42",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B48",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B49",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B51",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B63",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B69",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B71",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B79",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B81",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "Sidewalk",
+      "cell": "B88",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B2",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B4",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B8",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B15",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B17",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B23",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B33",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B35",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B48",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B54",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B61",
+      "value": "Colonial"
+    },
+    {
+      "sheet": "BL Analysis",
+      "cell": "B71",
+      "value": "Colonial"
+    }
+  ],
+  "unique_colonial_records": [
+    {
+      "record_number": "54",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 1.46,
+      "source_mph": 16.325342465753426,
+      "recomputed_mph": 16.344956,
+      "source_minus_recomputed_mph": -0.019614,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A12",
+        "BL Analysis!A61"
+      ]
+    },
+    {
+      "record_number": "51",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 1.73,
+      "source_mph": 13.777456647398845,
+      "recomputed_mph": 13.794009,
+      "source_minus_recomputed_mph": -0.016553,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A19",
+        "BL Analysis!A54"
+      ]
+    },
+    {
+      "record_number": "58",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 2.0,
+      "source_mph": 11.9175,
+      "recomputed_mph": 11.931818,
+      "source_minus_recomputed_mph": -0.014318,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A25",
+        "BL Analysis!A48"
+      ]
+    },
+    {
+      "record_number": "62",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 2.15,
+      "source_mph": 11.086046511627908,
+      "recomputed_mph": 11.099366,
+      "source_minus_recomputed_mph": -0.013319,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A38",
+        "BL Analysis!A35"
+      ]
+    },
+    {
+      "record_number": "57",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 2.18,
+      "source_mph": 10.93348623853211,
+      "recomputed_mph": 10.946622,
+      "source_minus_recomputed_mph": -0.013136,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A40",
+        "BL Analysis!A33"
+      ]
+    },
+    {
+      "record_number": "60",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 2.42,
+      "source_mph": 9.849173553719009,
+      "recomputed_mph": 9.861007,
+      "source_minus_recomputed_mph": -0.011833,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A50",
+        "BL Analysis!A23"
+      ]
+    },
+    {
+      "record_number": "56",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 2.56,
+      "source_mph": 9.310546875,
+      "recomputed_mph": 9.321733,
+      "source_minus_recomputed_mph": -0.011186,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A56",
+        "BL Analysis!A17"
+      ]
+    },
+    {
+      "record_number": "55",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 2.6,
+      "source_mph": 9.167307692307693,
+      "recomputed_mph": 9.178322,
+      "source_minus_recomputed_mph": -0.011014,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A58",
+        "BL Analysis!A15"
+      ]
+    },
+    {
+      "record_number": "59",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 2.92,
+      "source_mph": 8.162671232876713,
+      "recomputed_mph": 8.172478,
+      "source_minus_recomputed_mph": -0.009807,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A65",
+        "BL Analysis!A8"
+      ]
+    },
+    {
+      "record_number": "53",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 3.33,
+      "source_mph": 7.1576576576576585,
+      "recomputed_mph": 7.166257,
+      "source_minus_recomputed_mph": -0.0086,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A69",
+        "BL Analysis!A4"
+      ]
+    },
+    {
+      "record_number": "61",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 4.11,
+      "source_mph": 5.799270072992701,
+      "recomputed_mph": 5.806238,
+      "source_minus_recomputed_mph": -0.006967,
+      "notes": "",
+      "source_cells": [
+        "Bike Lane!A71",
+        "BL Analysis!A2"
+      ]
+    },
+    {
+      "record_number": "89",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 1.85,
+      "source_mph": 11.043243243243243,
+      "recomputed_mph": 11.056511,
+      "source_minus_recomputed_mph": -0.013268,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A24"
+      ]
+    },
+    {
+      "record_number": "79",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 2.23,
+      "source_mph": 9.161434977578477,
+      "recomputed_mph": 9.172442,
+      "source_minus_recomputed_mph": -0.011007,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A42"
+      ]
+    },
+    {
+      "record_number": "88",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 2.32,
+      "source_mph": 8.806034482758621,
+      "recomputed_mph": 8.816614,
+      "source_minus_recomputed_mph": -0.01058,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A48"
+      ]
+    },
+    {
+      "record_number": "83",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 2.33,
+      "source_mph": 8.768240343347639,
+      "recomputed_mph": 8.778775,
+      "source_minus_recomputed_mph": -0.010535,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A49"
+      ]
+    },
+    {
+      "record_number": "84",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 2.39,
+      "source_mph": 8.548117154811715,
+      "recomputed_mph": 8.558387,
+      "source_minus_recomputed_mph": -0.01027,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A51"
+      ]
+    },
+    {
+      "record_number": "81",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 2.62,
+      "source_mph": 7.797709923664122,
+      "recomputed_mph": 7.807078,
+      "source_minus_recomputed_mph": -0.009368,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A63"
+      ]
+    },
+    {
+      "record_number": "85",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 2.82,
+      "source_mph": 7.24468085106383,
+      "recomputed_mph": 7.253385,
+      "source_minus_recomputed_mph": -0.008704,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A69"
+      ]
+    },
+    {
+      "record_number": "82",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 2.92,
+      "source_mph": 6.996575342465754,
+      "recomputed_mph": 7.004981,
+      "source_minus_recomputed_mph": -0.008406,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A71"
+      ]
+    },
+    {
+      "record_number": "87",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 3.28,
+      "source_mph": 6.228658536585367,
+      "recomputed_mph": 6.236142,
+      "source_minus_recomputed_mph": -0.007483,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A79"
+      ]
+    },
+    {
+      "record_number": "80",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 3.33,
+      "source_mph": 6.135135135135136,
+      "recomputed_mph": 6.142506,
+      "source_minus_recomputed_mph": -0.007371,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A81"
+      ]
+    },
+    {
+      "record_number": "86",
+      "street": "Colonial",
+      "facility": "Sidewalk",
+      "zone_length_feet": 30.0,
+      "seconds": 3.86,
+      "source_mph": 5.2927461139896375,
+      "recomputed_mph": 5.299105,
+      "source_minus_recomputed_mph": -0.006359,
+      "notes": "",
+      "source_cells": [
+        "Sidewalk!A88"
+      ]
+    },
+    {
+      "record_number": "52",
+      "street": "Colonial",
+      "facility": "Bike Lane",
+      "zone_length_feet": 35.0,
+      "seconds": 1.2,
+      "source_mph": 19.8625,
+      "recomputed_mph": 19.886364,
+      "source_minus_recomputed_mph": -0.023864,
+      "notes": "e-bike",
+      "source_cells": [
+        "BL Analysis!A71"
+      ]
+    }
+  ],
+  "conclusion": "Colonial speed rows exist (35-ft bike-lane / 30-ft sidewalk zones), but no video timestamps or image gate endpoints are supplied. Record-to-person validation remains blocked. Source mph uses an approximate conversion; recomputation is a workbook arithmetic check, NOT model speed validation."
+}

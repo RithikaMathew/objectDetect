@@ -97,7 +97,7 @@ def submit(plan, directory, concurrency=4, runner=subprocess.run):
         if t['gpu'] and lanes[lane]:deps.append(lanes[lane])
         cmd=['sbatch','--parsable',f'--job-name={plan["tag"]}_{t["key"]}',
              f'--output={directory}/{t["key"]}_%j.log',
-             '--time=06:00:00' if t['gpu'] else '--time=01:00:00']
+             '--time='+t.get('walltime','06:00:00' if t['gpu'] else '01:00:00')]
         if t['gpu']:cmd.append('--gpus=1')
         # afterany ensures failed setup doesn't strand dependents forever.
         if deps:cmd.append('--dependency=afterany:'+':'.join(dict.fromkeys(deps)))

@@ -74,6 +74,8 @@ import sys
 import time
 from collections import defaultdict, deque
 
+from annotation_truth import colonial_truth_bins, truth_text
+
 import cv2
 import numpy as np
 import supervision as sv
@@ -233,16 +235,17 @@ def draw_vehicle(img, box, tid, name, scale):
          scale * 0.6, thick, VEH_COLOR)
 
 
-def add_header(img, scale, counts, fi, total, clock="", binline=""):
-    bar = int(100 * scale)
+def add_header(img, scale, counts, fi, total, clock="", binline="", gtline="GT: not labelled"):
+    bar = int(140 * scale)
     out = cv2.copyMakeBorder(img, bar, 0, 0, 0, cv2.BORDER_CONSTANT, value=HEADER_COLOR)
     thick, fs = max(1, int(round(scale * 2))), scale * 0.7
     lines = [f"{clock}   |   frame {fi}/{total if total > 0 else '?'}",
              f"Hour so far (live count) - Bic: {counts[0]}  Ped: {counts[1]}  Veh: {counts[2]}",
-             binline]
+             binline, gtline]
     for i, t in enumerate(lines):
-        cv2.putText(out, t, (10, int(bar * (0.28 + 0.31 * i))), cv2.FONT_HERSHEY_SIMPLEX,
-                    fs, (0, 0, 0), thick, cv2.LINE_AA)
+        cv2.putText(out, t, (10, int(bar * (0.19 + 0.24 * i))), cv2.FONT_HERSHEY_SIMPLEX,
+                    min(fs, max(.15, (out.shape[1]-20) / max(1, cv2.getTextSize(t, cv2.FONT_HERSHEY_SIMPLEX, 1., thick)[0][0]))),
+                    (0, 0, 0), thick, cv2.LINE_AA)
     return out
 
 
@@ -665,6 +668,8 @@ def main():
     ap.add_argument("--zone-ref-size", default=None,
                     help='"WxH" of the image the zone coords were picked on (e.g. 716x477); '
                          "polygons are scaled to the real video size. Omit if coords are already in video pixels.")
+    ap.add_argument("--gt-truth-dir", default=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "truth"),
+                    help="hand-labelled Colonial CSVs for headers; guarded by exact source name/date")
     ap.add_argument("--gt-xls", default=None,
                     help="counter .xls (SpreadsheetML): print the ground truth of each 15-min bin in the clip header")
     ap.add_argument("--zones-json", default=None,
@@ -821,7 +826,7 @@ def main():
     W, H = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     scale = max(0.6, H / 1080.0 * 0.9)
-    bar = int(100 * scale)
+    bar = int(140 * scale)
 
     t_start = time.time()
     tag = os.path.splitext(os.path.basename(args.video))[0]
@@ -875,6 +880,7 @@ def main():
             print(f"ground truth loaded for the clip headers: {len(gt_bins)} bins")
         except Exception as e_:   # header only: never stop the run for this
             print(f"WARNING: could not load ground truth for the headers ({e_})")
+    gt_bins.update(colonial_truth_bins(args.video, args.session_start, args.bin_minutes, args.gt_truth_dir))
     if night_on:
         print(f"night mode ON {args.night_start}-{args.night_end}: det conf {args.det_conf}->{night_det_conf}, "
               f"bicyclist min {args.bic_min_sec}->{night_bic_sec} s, pedestrian min {args.ped_min_sec}->{night_ped_sec} s", flush=True)
@@ -1109,9 +1115,9 @@ def main():
             sys.exit(f"ERROR: cannot open VideoWriter for {tmp}")
         d_ = ai[b]
         g_ = gt_bins.get(b)
-        gt_txt = f" | GT: Bic {g_['bic_bl'] + g_['bic_sw']} Ped {g_['ped']}" if g_ else ""
+        gtline = truth_text(g_)
         binline = (f"Bin {s0:%I:%M}-{s1:%I:%M %p} AI {'snapshot' if provisional else 'total'}: "
-                   f"Bic {d_['bic']} Ped {d_['ped']} Veh {d_['veh']}{gt_txt}")
+                   f"Bic {d_['bic']} Ped {d_['ped']} Veh {d_['veh']}")
         while r2["fi"] < sp[1]:
             ok, frame = cap2.read()
             if not ok:
@@ -1141,7 +1147,7 @@ def main():
                 if tid in good:
                     draw_person(frame, (cx, cy, w, h), tid, None if pr is None else label_of(tid), pr, scale, det_info(tid))
             wr.write(add_header(frame, scale, rec["counts"], r2["fi"], total,
-                                f"{clock_of(r2['fi']):%Y-%m-%d %I:%M:%S %p}", binline))
+                                f"{clock_of(r2['fi']):%Y-%m-%d %I:%M:%S %p}", binline, gtline))
         wr.release()
         clip_paths.append(finalize_clip(tmp, final))
         print(f"clip written: {clip_paths[-1]}", flush=True)

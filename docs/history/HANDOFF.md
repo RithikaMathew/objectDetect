@@ -1,8 +1,119 @@
-# Current handoff — 2026-10-19
+# Current handoff — 2026-10-20
 
-This section supersedes the September handoff retained below. Start with **root README.md**; do not resubmit the completed research_oct19 suite.
+Start with root README.md and docs/tasks/todo.md. The owner wants to finish this bounded experiment set, not start more detector sweeps. All prior claims below are historical where they conflict with this section.
 
-## Latest evidence and interpretation
+## Detector / X-CLIP comparison completed locally
+
+Owner requested which is more accurate on four existing truth clips. New `code/compare_classifiers.py` produced exp_results/classifier_comparison_20261020/{RESULTS.md,per_person.csv,summary.json}, no Slurm/inference. Same21matched/scored tracks, including rejectedn5; detector = cyclist if detector-cyclist share>=50%, otherwise pedestrian; X-CLIP = RAWweighted argmax from rules_audit.csv, NOT tracks.csv xclip_label (that field can already reflect rules).
+
+Detector16/21(76.2%), X-CLIP14/21(66.7%). Byclip night21:15=3/6vs3/6;day14:00=5/5vs3/5;night22:00=4/5vs5/5;day12:45=4/5vs3/5. Cyclistgroup5/8vs6/8(includes1motorcycle);pedestrians11/13vs8/13. Bothright11,bothwrong2,detectoronly5,XCLIPonly3. No general superiority or detection-recall claim; provisional time matches still require identity review. Optional --identity-map limits analysis to approved identities and gives no percentages when none reviewed. Two local regression tests pass, including raw-label versus post-rule distinction and keeping rejected tracks. No new model sweep or change to fusion thresholds.
+
+## Current batch entry point
+
+Owner confirmed none of the recent pending changes have been run on HiPerGator. Use `python code/submit_final_batch.py --go` once after push/pull, not merely `sbatch code/final_review.slurm`. Combined plan has5jobs: two reference new-site pipelines, CPU review/gate/zone build, CPU GT-header copies, dependent report. Manifest logs/newsites_oct20; report exp_results/NEWSITES_newsites_oct20.md. No repeat old research suite or full-frame RF audit. CPU header walltime4h, review30min. Required audit assets, source videos, existing annotations and duplicate outputs checked before submission. Partial submission guard retains jobIDs.
+
+Normal3s day/night; strict NIGHT cyclist exception >=0.3s, detector cyclist share>=90%, weightedXCLIP>=0.90, finalclasscyclist. NOT blanket0.4snight. New-site env explicitly pins3s and strict exception values. Reference weights/rules unchanged. Human validation and physical speed calibration remain manual after batch. No jobs submitted locally.
+
+## Presentation and preferences
+
+- Always create a NEW dated PowerPoint copy; never overwrite the owner's deck.
+- Owner added fusion, speed and per-clip results slides. Preserve them: saved original has eight slides.
+- New deliverable: reports/presentations/bike_weekly_meeting_10_20_reviewed.pptx, eight slides, reordered definitions → method → fusion → speed → development results → research results → other camera → task audit.
+- Original October19 deck was read, not written by this turn. Owner saved a sensitivity-row edit during work; incorporated its “0.4 s day/night” clarification in the new copy. Do not claim the original checksum stayed fixed while the owner was editing.
+- Forty-track comparison and own-night fine-tuning remain deferred. Full-day scaling remains removed.
+
+## Current detector evidence
+
+Reference b4_combo_static5: 19/21 under LEGACY TIME MATCHING, no extra counted tracks. Not identity-verified accuracy. TTA: same19/21 plus1extra, with owner-confirmed barricade-to-person ID jumps. Sensitive: same19/21 plus28extras. Zero-DCE:7/11 on night vs reference9/11. No promotion of those methods.
+
+Sensitive settings were confidence/tracker thresholds0.15, minimum duration0.4s for BOTH day and night, static filterOFF. This differs from the reference: usual3s with a strict NIGHT-only0.3–3s cyclist exception. Reference and new-site runs do not enable broad sensitivity. Do not rewrite historical experiment settings or silently remove the reference's short-night exception.
+
+Truth correction: n3/n4/n5 are cyclists at14:21–14:26; n5 legacy track21 is rejected. n6 is pedestrian at14:47–14:58, legacy track23 wrong class. Earlier notes reversed these time descriptions. Actual truth CSVs were never changed. Motorcycle n1 is grouped with cyclists only in the older count score; preserve its raw class for lane/speed analysis.
+
+Fusion weighted score is sum(box_height * class_probability) / sum(box_heights), then fixed veto/speed rules. The motion feature is smoothed 2-D path length / elapsed seconds / mean box height; the speed RELABELLING rule is lateral-only, but the measured path itself is not just x-displacement. It is not mph.
+
+## Completed lane and image-motion analysis
+
+Code: code/labelled_lane_speed.py. Outputs: exp_results/labelled_validation_20261020/ under cluster ROOT / local vision3/best/test_colonial.
+
+- Exactly21 truth rows;20 usable image-motion estimates, one insufficient candidate.
+- Provisional candidate lanes:12sidewalk,3bike-lane (includes motorcycle),1road,5uncertain. NONE are yet identity/lane validated.
+- Uses observed, non-coasted foot points within each truth window; v2 polygons scaled from inferred1440x960 to720x480. Multiple polygon hits are uncertain. No forced road-to-bike/sidewalk assignment.
+- people_lane_speed.csv, study_lane_comparison.csv, identity_review.csv, Colonial_study_speed_records.csv, study_record_links.csv, summary.json, RESULTS.md and identity_pending.md.
+- Study count workbook gives aggregate lane counts, not person-level lane truth. At21:15 its3bicycles disagree with hand truth4bicycles+motorcycle. Do not force model/human totals to agree.
+
+## Speed reference: important correction and remaining inputs
+
+Full workbook scan DOES find23uniqueColonial speed records:12bike-lane including one e-bike,11sidewalk. Raw and analysis-sheet copies are deduplicated by record/facility/distance/time. Initial preview-based statement “no Colonial records” was incorrect and corrected during the turn.
+
+Colonial lengths:35ft bike lane,30ft sidewalk. Source mph uses approximate0.681 conversion; exact3600/5280 recomputation is saved separately. Arithmetic checking is NOT model-speed validation. Rows lack matching video timestamps, image gate endpoints and clear camera/date identification. Owner believes record numbers correspond; that is not an explicit mapping to n1/d1/h1/p1 truth IDs. Use study_record_links.csv with reviewer/evidence, never ordinal matching.
+
+Owner provided zones/colonial_north_v2.json. It defines lane AREA polygons, not measured start/end cross-lines. No physical endpoint or human height is guessed. speed_gate_setup.html lets the user mark actual measured cross-lines on a raw frame and confirm source/camera/date/reviewer; code/speed_gates.py computes feet / crossing seconds only for complete unique finite-gate crossings. The empty zones/colonial_speed_gates.template.json deliberately cannot be used as a calibration.
+
+Analyzer accepts --speed-gates, --identity-map and --record-links. Only identity-approved people with metric estimates and evidenced one-to-one study links contribute paired MAE/RMSE. No usable pairs gives null metrics, not zero error. Homography support also requires independently measured same-camera metric coordinates. MPH and matched speed validation remain UNFINISHED because endpoints and verified links have not been supplied.
+
+## Prevent false identity credit
+
+code/eval_truth.py --require-identity [--identity-map CSV] preserves old time-only results but gives unapproved matches UNVERIFIED, excluded from correct/reviewed denominator. Approvals require reviewer, evidence, full_track_reviewed=yes and one-to-one IDs. Check the ENTIRE track, including before/after the truth window. This prevents false verified credit; it does NOT repair ByteTrack or stitching ID switches. No extra40-track campaign or repeat time/class labels requested. Current pending report has0reviewed, not0%accuracy.
+
+## RF-DETR / Grounding validation and one final CPU job
+
+RF-DETR completed165frames/48proposals/9low-overlap; Grounding165/386/308. These totals cannot rank accuracy. New code/rf_person_review.py builds raw selected frames with predictions hidden, encounter midpoints plus four fixed background frames per clip, deduplicating simultaneous encounters (up to37frames). Box every visible human including riders, explicitly mark reviewed even for empty frames, export JSON. Unreviewed frames excluded. Person-only precision/recall at maximum one-to-oneIoU≥0.5, NOT cyclist-mode accuracy, AP, unique-person recall or an independent holdout.
+
+Cluster command: sbatch code/final_review.slurm. No new inference/download. Builds exp_results/final_review_20261020/ with rf_boxes/review.html, raw frames, zone_previews and speed_gate_setup.html. Download WHOLE folder to Mac. Missing completed audit assets fail explicitly. This CPU job has not been run from this Mac; source videos/images are cluster-only. Raw-frame HTML and gate-page JavaScript smoke checks passed locally.
+
+Existing new-site command remains code/submit_newsites.py --go, two GPU jobs plus report for Anderson2021/CurryFordNorth2022. No returned results supplied. Both sites appear in training recipe, not strict unseen-site generalization. Do not resubmit if already queued/running.
+
+## Verification and task status
+
+Nine new validation tests pass: no time-only identity credit; approvals require evidence; zone overlap; no silent mph conversion; synthetic measured gate speed;23deduplicatedreferences; verified speed-pair gating; one-to-one detector boxes; no empty-frame assumption for unreviewed images. Existing17recovery tests pass; header tests also pass. Source workbooks read with standard-library XML/ZIP, never edited. No Excel workbook authored.
+
+Current task audit correctly leaves identity review, lane alignment, optional RF box validation, returned new-site results and physical speed correspondence open. Broad sensitivity's12-minute review-budget benefit is unmeasured and retired as a claim; walking-away explanation remains partial. Further model sweeps are closed. README.md has current commands; historical notes below do not authorize new experiments.
+
+---
+# Historical session notes (superseded where inconsistent)
+
+## Latest clarification and two-site implementation
+
+The five-slide results deck now spells out the full system and replaces ambiguous “all4”, “nightonly”, “extra counts”, “Min/clip” and “sensitive” labels. Extra counts = tracks unmatched to human-labelled encounters (may be duplicates/false objects or missing truth); processing minutes = runtime per15-minutevideo. Night-only rows repeat the same configuration on the11nighttruth people to compare brightening fairly. Time-only matching can credit a track that starts on a barricade and later follows a person, so19/21is not identity-verified accuracy. RF-DETR48boxes vs GroundingDINO386on165frames = no demonstrated counting improvement; accuracy cannot be inferred from proposal volume. Exact Corrine paths and review questions are in the final-slide speaker notes and docs/VIDEO_PATHS.md.
+
+New launcher `code/submit_newsites.py --go` (from cluster ROOT) submits reference-system runs on AndersonSt2021 and CurryFordNorth2022 plus final report. Dry-run by default. It discovers real source files under their known dataset folders, prefers a readable noon/daytime hourly file, processes only the first900seconds, and records source/metadata/clock provenance. It refuses missing inputs before submitting and reuses the existing duplicate-guarded manifest + afterany scheduler orchestration. These sites appear in the documented TRAIN recipe, so do not claim strict unseen-site generalization. No complete new truth and no accuracy score. No resolution requirement; pixel-based parameters scale with width. No inherited Colonial zones. Source clocks are inferred from filename/hour index and explicitly marked unverified. User must confirm embedded clock when reviewing.
+
+Command: `python code/submit_newsites.py --go`; default tag `newsites_oct20`. TwoGPUjobs, finalCPUreport `exp_results/NEWSITES_newsites_oct20.md`, actual video paths read from successful run JSONs. Do not invent exact output filenames before the cluster source selection has run. Rebuild report without resubmitting via `python code/research_worker.py logs/newsites_oct20 report`. Status/logs/manifest in logs/newsites_oct20. No jobs actually submitted from this Mac session.
+
+Shared worker now supports `scale_pixels` even for720x480sources (old higher_resolution path still enforces its requirement). Slurm wrapper accepts CLOCK_NOTE and writes it into the run log. Tests cover source-clock parsing, fixed source selection/fallback, reference configuration, report actual paths/non-accuracy disclaimer and safe dry-run; existing17recovery tests pass. GPU execution still pending.
+
+## Latest owner review and follow-up — 2026-10-19
+
+This update supersedes the “RF-DETR not yet run” statements in the initial session record below.
+
+**TTA night 22:00–22:15:** owner reports barricade labelled pedestrian around clip 04:30, IDs 10/12/20/28. ID12 later follows a real pedestrian at clock22:06:00–22:06:14 (clip06:00–06:14); ID20 follows a real pedestrian22:10:00–22:10:15 (clip10:00–10:15). Three pedestrians at22:10:58–22:11:17 have IDs28/35/31. This establishes visual ID contamination/association errors. Do not treat 19/21 from time-only evaluation as identity-verified accuracy. Do not silently change the existing truth CSVs to match predicted IDs or overwrite saved scores. The cause could be ByteTrack association or later stitching; saved trajectories require diagnosis before changing either.
+
+**Older Corrine combination (`nv_combo_corrine2025_706`, SAHI853):** owner reports an e-scooter labelled pedestrian, two distant cyclists missed, and a distant parked car without a drawn box. Scooter mode is not an explicit current category; “person found” does not mean transport mode correct. Annotated vehicle boxes appear only for confirmed/countable vehicles, including a 40px movement requirement; no rendered parked-car box alone does not prove no raw detection. New `research_oct19_hires_combo` (SAHI864) filename was supplied WITHOUT a verdict; do not copy the old verdict onto it. Complete Corrine truth totals remain unknown.
+
+**RF-DETR full-frame audit completed**, owner-supplied report:
+
+| Clip | Frames | Proposals | Low overlap |
+|---|---:|---:|---:|
+| night | 42 | 12 | 3 |
+| day | 41 | 15 | 3 |
+| night_holdout_2200 | 37 | 3 | 0 |
+| day_holdout_1245 | 45 | 18 | 3 |
+| Total | 165 | 48 | 9 |
+
+Pretrained Medium, threshold 0.30. Proposal quantity cannot establish accuracy or rank it against Grounding DINO. In particular37 frames / 3 boxes in the 22:00 clip is sparse output, not three unique recovered pedestrians. Visual matching remains needed. These were frames from Colonial 2019, not a new-site video run.
+
+**Additional code, not yet run on cluster:** `python code/rfdetr_audit.py --tiled --go` submits one GPU job with full-frame + 320px tiles,25%overlap,class-awareNMS IoU.50,threshold 0.30, same 165 frames. Writes `logs/rfdetr_tiled_oct19/RESULTS.md`. Existing full-frame output stays unchanged. Intended to test small/distant boxes; not integrated cyclist counting or a promised improvement. Local tests cover edge coverage, coordinate mapping, class-aware duplicate removal and empty output.
+
+**GT header fix:** current v19 renderer uses the existing four hand-labelled truth CSVs for the exact Colonial source/date, in preference to older aggregate spreadsheet counts. Dedicated fourth yellow header line avoids long-line clipping; unknown bins/cameras explicitly show `GT: not labelled`. Frame dimensions/writer height are updated consistently; no counting logic changed. `stamp_truth_headers.py` creates copies of existing annotated videos under `annotated_gt/<run>/...` with a new yellow truth strip; no model inference, no overwrite of originals. Old MP4s are not automatically changed by pulling code. It defaults to a plan; `--go` encodes. Do not invent Corrine counts from a partial two-cyclist observation.
+
+Exact other-site video paths and an actual-filename listing command: `docs/VIDEO_PATHS.md`. Only Corrine 706 was processed in the higher-resolution suite; the three versions are the same site/year/clip. Source scans of other cameras/years are not completed annotated experiments.
+
+**Presentation:** `reports/presentations/bike_weekly_meeting_10_19_results.pptx` is now five slides: definitions → system/methodology → Colonial results → other-camera/RF-DETR evidence → targeted next checks. V3 is explicitly a fine-tuned RT-DETR detector, not an unexplained “best model.” Deferred work stays out.
+
+More research options remain (appearance-aware association, temporal detector features, camera-domain training), but prioritize the observed ID jumps and small distant cyclists. Do not imply every method has been exhausted or silently reactivate deferred training/full-day scaling.
+
+## Earlier October batch evidence and interpretation
 
 Sources: root `results.md` (cluster terminal output) and `RESEARCH_research_oct19.md` (report from the same run, NOT an independent replication). All 21 non-report tasks succeeded and the final report exists.
 
@@ -19,7 +130,7 @@ Grounding DINO: 165 sampled frames, 386 proposals, 308 with low overlap with sav
 
 Higher resolution: two sources found; Corrine 706 is 960x540, 15 fps, with fisheye distortion. Three matched Corrine runs each counted 0 cyclists/1 pedestrian, but no truth exists, so accuracy remains unknown. Any year is acceptable if resolution exceeds the Colonial 720x480 footage. Zone and fisheye previews are guesses pending visual review.
 
-Latest presentation: `reports/presentations/bike_weekly_meeting_10_19_results.pptx` (12 slides, updated and visually checked). Earlier presentations remain historical.
+Latest presentation: `reports/presentations/bike_weekly_meeting_10_19_results.pptx` (now condensed to five slides; see latest update above). Earlier presentations remain historical.
 
 ## What the owner should review
 

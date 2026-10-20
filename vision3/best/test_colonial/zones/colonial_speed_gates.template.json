@@ -1,0 +1,12 @@
+{
+  "site": "Colonial North",
+  "recording_date": "2019-07-10",
+  "ref_size": [720, 480],
+  "measurement_source": "",
+  "reviewer": "",
+  "_note": "UNFILLED TEMPLATE. Confirm the workbook's Colonial 35-ft bike-lane and 30-ft sidewalk segments refer to THIS camera/date. Mark both finite gate lines on the raw 720x480 frame. No endpoint is guessed; leave unfilled until independently checked.",
+  "gates": [
+    {"facility": "bike_lane", "length_feet": 35, "line_a": [], "line_b": []},
+    {"facility": "sidewalk", "length_feet": 30, "line_a": [], "line_b": []}
+  ]
+}

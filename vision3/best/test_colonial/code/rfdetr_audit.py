@@ -34,7 +34,7 @@ def inputs(root):
             for clip, cc in CLIPS.items()]
 
 
-def audit_all(root, out):
+def audit_all(root, out, tiled=False):
     import importlib.metadata
     import torch
     from PIL import Image
@@ -46,7 +46,9 @@ def audit_all(root, out):
     cache = root / '.research_models/rfdetr'
     os.environ['RF_HOME'] = str(cache)
     model = RFDETRMedium(device='cuda')
-    infer = lambda image: selected_proposals(model.predict(image, threshold=.3), COCO_CLASSES)
+    base_infer = lambda image: selected_proposals(model.predict(image, threshold=.3), COCO_CLASSES)
+    from proposal_tiling import tiled_proposals
+    infer = (lambda image: tiled_proposals(image, base_infer)) if tiled else base_infer
     infer(Image.new('RGB', (720, 480)))
     checkpoints = {}
     for path in cache.rglob('*'):
@@ -55,7 +57,8 @@ def audit_all(root, out):
             with path.open('rb') as stream:
                 for block in iter(lambda: stream.read(1024*1024), b''): digest.update(block)
             checkpoints[str(path)] = digest.hexdigest()
-    info = dict(display_name='RF-DETR Medium proposals', package=importlib.metadata.version('rfdetr'),
+    info = dict(display_name='RF-DETR Medium '+('full + tiled proposals' if tiled else 'proposals'),
+                tiling=dict(size=320,overlap=.25,nms_iou=.5) if tiled else None, package=importlib.metadata.version('rfdetr'),
                 torch=torch.__version__, threshold=.3, checkpoint_sha256=checkpoints)
     ready = out / 'model.json'
     ready.write_text(json.dumps(info, indent=2))
@@ -66,7 +69,8 @@ def audit_all(root, out):
         summaries[clip] = json.loads((target / 'summary.json').read_text())
     rows = ['# RF-DETR matched-frame audit', '',
             'Pretrained Medium, threshold 0.30. Same encounter/background frames as Grounding DINO.',
-            'Full-frame inference only; the saved b4 comparator includes SAHI/tracking.', '',
+            ('Full-frame + 320px tiles, overlap .25, class-aware NMS IoU .50.' if tiled else
+             'Full-frame inference only; the saved b4 comparator includes SAHI/tracking.'), '',
             '| Clip | Frames | Proposals | Low overlap with saved b4 tracks |',
             '|---|---:|---:|---:|']
     for clip, s in summaries.items():
@@ -80,7 +84,7 @@ def audit_all(root, out):
     (out / 'RESULTS.md').write_text('\n'.join(rows)+'\n')
 
 
-def worker(root, out):
+def worker(root, out, tiled=False):
     status = out / 'status.json'
     status.write_text(json.dumps(dict(state='RUNNING')))
     try:
@@ -101,7 +105,7 @@ def worker(root, out):
         with (out / 'packages.txt').open('w') as f:
             subprocess.run([str(python), '-m', 'pip', 'freeze'], stdout=f, check=True)
         subprocess.run([str(python), str(Path(__file__).resolve()), '--root', str(root),
-                        '--out', str(out), '--audit-all'], check=True)
+                        '--out', str(out), '--audit-all'] + (['--tiled'] if tiled else []), check=True)
     except BaseException:
         status.write_text(json.dumps(dict(state='FAILED', error=traceback.format_exc()), indent=2))
         raise
@@ -113,15 +117,17 @@ def main():
     ap.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     ap.add_argument('--tag', default='rfdetr_oct19')
     ap.add_argument('--go', action='store_true')
+    ap.add_argument('--tiled', action='store_true', help='full-frame plus 320px tiles; default tag rfdetr_tiled_oct19')
     ap.add_argument('--worker', action='store_true', help=argparse.SUPPRESS)
     ap.add_argument('--audit-all', action='store_true', help=argparse.SUPPRESS)
     ap.add_argument('--out', type=Path, help=argparse.SUPPRESS)
     a = ap.parse_args(); root = a.root.resolve()
-    if a.audit_all: return audit_all(root, a.out)
-    if a.worker: return worker(root, a.out)
+    if a.audit_all: return audit_all(root, a.out, a.tiled)
+    if a.worker: return worker(root, a.out, a.tiled)
+    if a.tiled and a.tag == "rfdetr_oct19": a.tag = "rfdetr_tiled_oct19"
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]*', a.tag): ap.error('invalid tag')
     out = root / 'logs' / a.tag
-    print(f'One GPU job: isolated rfdetr=={VERSION}, four matched-frame audits, final RESULTS.md at {out}')
+    print(f'One GPU job: isolated rfdetr=={VERSION}, four matched-frame audits (tiled={a.tiled}), final RESULTS.md at {out}')
     if not a.go: return
     from eval_truth import CLIPS
     required = []
@@ -136,7 +142,7 @@ def main():
     if missing: raise FileNotFoundError('\n'.join(missing))
     out.mkdir(parents=True, exist_ok=False)  # Prevent duplicate submissions.
     command = 'set -euo pipefail\nsource '+shlex.quote(str(activation))+'\n'+shlex.join([
-        'python', str(Path(__file__).resolve()), '--root', str(root), '--out', str(out), '--worker'])
+        'python', str(Path(__file__).resolve()), '--root', str(root), '--out', str(out), '--worker'] + (['--tiled'] if a.tiled else []))
     (out / 'job.sh').write_text('#!/bin/bash\n'+command+'\n')
     try:
         result = subprocess.run(['sbatch','--parsable','--partition=hpg-turin','--account=xiangyan',

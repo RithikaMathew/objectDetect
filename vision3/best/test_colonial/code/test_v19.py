@@ -113,3 +113,18 @@ import datetime
 cl_=lambda fi: datetime.datetime(2019,7,10,21,15)+datetime.timedelta(seconds=fi/fps)
 print(v.MotionDiag.contact_sheet(rows,cl_,"/tmp/cs.png"))
 print("ALL TESTS PASSED")
+
+# Truth is a separate fourth line and the output matches the writer height.
+from unittest.mock import patch
+image=np.zeros((480,720,3),np.uint8)
+with patch.object(v.cv2,'putText', wraps=v.cv2.putText) as put:
+    header=v.add_header(image,.6,[0,5,100],100,30000,'2019-07-10 10:00:00 PM',
+                        'Bin 10:00-10:15 PM AI total: Bic 0 Ped 5 Veh 100','GT: Cyclists 0 | Pedestrians 5')
+    assert header.shape==(480+int(140*.6),720,3)
+    assert put.call_count==4
+    assert put.call_args_list[-1].args[1]=='GT: Cyclists 0 | Pedestrians 5'
+    for call in put.call_args_list:
+        _,text,origin,font,fs,_,thick,_=call.args
+        assert origin[1]<84
+        assert cv2.getTextSize(text,font,fs,thick)[0][0]<=701
+print('GT header size and fit ok')
