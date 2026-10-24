@@ -2,6 +2,7 @@ import argparse
 import csv
 import json
 import shutil
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -46,6 +47,13 @@ class SpeedScreenTests(unittest.TestCase):
         self.assertNotIn('--extract',cmd[-1])
         self.assertIn('--selected-sources',cmd[-1])
         self.assertIn("FFMPEG_BINARY='/tmp/ffmpeg binary'",cmd[-1])
+
+    @unittest.skipUnless(Path('/usr/bin/python3').exists(),'secondary Python required')
+    def test_runtime_scripts_parse_on_system_python(self):
+        folder=Path(__file__).resolve().parent
+        names=['speed_site_screen.py','preview_ffmpeg.py','retry_speed_previews.py','submit_speed_pilot.py','speed_research.py','metric_trajectory_speed.py']
+        code="import pathlib,sys; [compile(pathlib.Path(p).read_text(),p,'exec') for p in sys.argv[1:]]"
+        subprocess.run(['/usr/bin/python3','-c',code,*[str(folder/name) for name in names]],check=True,capture_output=True,text=True)
 
     @unittest.skipUnless(shutil.which('ffmpeg'),'ffmpeg required to exercise isolated binary fallback')
     def test_cached_binary_works_without_path_ffmpeg(self):
