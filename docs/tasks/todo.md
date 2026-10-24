@@ -1,5 +1,7 @@
 # Current to-do — audited 2026-10-20
 
+New October23 scope is in root todo.md and docs/STUDY_NEXT_STEPS.md: broader study-video processing is now requested; code prepared and archive inventory complete, cluster inference not yet run. The prior full-day exclusion below applies only to the older experiment scope.
+
 Read root README.md for current commands. Further detector/model sweeps are closed; finish validation of the existing work. Existing four truth files stay unchanged.
 
 ## Completed experiments / analysis

@@ -49,7 +49,12 @@ def execute(plan, task, directory):
         if result['frames_processed']<=0:raise RuntimeError('pipeline processed no frames')
         for field in ('tracks_csv','bin_counts_csv'):
             if not Path(result[field]).is_file():raise RuntimeError(f'missing final {field}')
-        return dict(run_log=str(records[0]),final_counts=result['final_counts'],runtime_s=result['runtime_s'])
+        output=dict(run_log=str(records[0]),final_counts=result['final_counts'],runtime_s=result['runtime_s'])
+        if plan.get('purpose')=='study_batch':
+            from lane_use_report import report as lane_report
+            destination=root/'exp_results'/f'STUDY_{plan["tag"]}'/'per_source'/key
+            output['lane_report']=lane_report(records[0],destination,task.get('lane_zones'),task['site'])
+        return output
     if task['kind']=='setup':
         venv=root/'.research_env'/plan['tag']; python=venv/'bin/python'
         if not python.exists():run([sys.executable,'-m','venv','--system-site-packages',venv])
@@ -127,6 +132,9 @@ def execute(plan, task, directory):
 
 def report(directory, final=False):
     plan=json.loads((directory/'manifest.json').read_text());root=Path(plan['root'])
+    if plan.get('purpose')=='study_batch':
+        from study_batch import write_report
+        return write_report(directory,plan,final)
     if plan.get('purpose')=='two_new_sites':
         from submit_newsites import write_report
         return write_report(directory,plan,final)

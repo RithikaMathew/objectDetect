@@ -1,0 +1,42 @@
+site,files,nominal_video_hours,measured_hours,probed_files,clock_blocked,mapping_score
+Alafaya East,48,48,,0,0,1.00
+Alafaya West,48,48,,0,0,1.00
+Aloma Path,48,48,,0,0,1.50
+Aloma Sidewalk,48,48,,0,0,1.50
+Baxter,48,48,,0,0,1.00
+Carroll NBL,48,48,,0,0,1.50
+Clay Ave,48,48,,0,0,1.00
+Colonial North,48,48,,0,0,1.00
+Colonial South,48,48,,0,0,1.00
+Columbia Ave,49,49,,0,17,1.00
+Curry Ford North,48,48,,0,0,1.00
+Curry Ford South,49,49,,0,45,1.00
+Daniels Path,48,48,,0,0,1.50
+Daniels Sidewalk,48,48,,0,0,1.50
+Edgewater,48,48,,0,0,1.00
+Edgewater N,48,48,,0,0,1.00
+Glenridge,48,48,,0,0,1.00
+Kaley,48,48,,0,0,1.00
+Lakemont Pathway,48,48,,0,0,0.50
+Lee Road N,48,48,,0,0,1.00
+Lee Road South,48,48,,0,0,1.00
+Livingston,48,48,,0,0,1.00
+N Orange,48,48,,0,0,1.00
+Par Street,48,48,,0,0,1.00
+Pine Hills BL,48,48,,0,0,1.50
+Pine Hills BL E,25,25,,0,0,1.50
+Pine Hills NBL,48,48,,0,0,1.50
+Pine Hils NBL E,48,48,,0,0,1.50
+Pleasant Hill Path,31,31,,0,0,1.50
+Rinehart Path,48,48,,0,0,1.50
+Rinehart Sidewalk,48,48,,0,0,1.50
+S Orange NB,48,48,,0,0,0.50
+S Orange SB,48,48,,0,0,0.50
+Summerlin,48,48,,0,0,1.00
+University North,48,48,,0,0,1.00
+University SW Speed,48,48,,0,0,1.50
+University South,48,48,,0,0,1.00
+West Orange Path,37,37,,0,0,1.50
+West Orange Sidewalk,48,48,,0,0,1.50
+Winter Park Rd Speed,48,48,,0,0,1.00
+Winter Park Road,48,48,,0,0,1.00

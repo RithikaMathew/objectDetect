@@ -1,0 +1,21 @@
+{
+  "site_date_pairs": 41,
+  "listed_video_files": 1919,
+  "nominal_video_hours": 1919,
+  "nominal_other_than_Colonial_North_hours": 1871,
+  "Colonial_North": {
+    "site": "Colonial North",
+    "files": 48,
+    "nominal_video_hours": 48,
+    "measured_hours": "",
+    "probed_files": 0,
+    "clock_blocked": 0,
+    "mapping_score": "1.00"
+  },
+  "measured_hours": 0.0,
+  "probed_files": 0,
+  "clock_blocked_files": 62,
+  "assumed_gpu_hours_at_2_8x": 5373.2,
+  "nominal_two_gpu_days": 111.94166666666666,
+  "exact_total_known": false
+}

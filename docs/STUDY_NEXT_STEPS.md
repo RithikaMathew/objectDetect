@@ -1,0 +1,159 @@
+# October 23 tasks — start here
+
+This implements the new root todo.md request. Earlier “no full-day scaling” instructions describe the prior scope; the owner has now asked for broader study-video processing. No new GPU jobs have been submitted from this Mac. Do not rerun the completed October20batch.
+
+## What is done
+
+- Prepared a fixed-reference inventory/submit/report tool: `code/study_batch.py`.
+- Local archive inventory: **1,919 unique files / 41 site/date pairs**, about1,919video-hours IF each file is one hour. Colonial North has48files (~48hours); all other recordings total1,871 nominal hours. Actual durations are not available on this Mac.
+- Nominal processing estimate at2.8 GPU-hours/video-hour:5,373 GPU-hours total, ~112 days at two continuously available GPUs, excluding queues. Other-than-Colonial-North:5,239GPU-hours. These extrapolations are not throughput guarantees.
+- One full Colonial North hourly source is the default pilot (chunk013, inferred12:00–13:00). Previously labelled clips total one hour across four separate windows; they are not the full recording.
+- Added partial-track metric speed estimation after scene calibration. Two-line crossings are no longer required; real scene scale still is.
+- Added conflict-area time-gap review and optional vehicle trajectory export for new runs. This is not confirmed near-miss detection or footprint PET/TTC.
+- Wrote `reports/methodology/object_detection_study_20261023.tex`, including existing results, new workflow, limitations, research references and proposed multi-agent architecture. Compiled PDF: `output/pdf/object_detection_study_20261023.pdf`.
+
+## Recommended next pilot: Pine Hills BL E
+
+The owner asked for a shorter recording and an adjustable zone tool. Pine Hills BL E is the shortest matched recording: **25 nominal hourly files**, compared with Pleasant Hill Path31 and West Orange Path37. The count folder has road names/dates/directions but **no explicit camera coordinates found**; all 41count workbooks have blank Site Code fields. West Orange/Park in the speed workbook is a location clue, not a verified camera. See exp_results/study_inventory_20261023/SITE_SELECTION.md.
+
+We do not need to process the full25 hours: start with one noon source hour. Exact GPS is not needed to draw lanes. Metric speed still needs identified image/map correspondences.
+
+## First cluster commands
+
+Push the repository changes from your Mac, then on HiPerGator:
+
+```bash
+cd /orange/xiangyan/rithika/vision
+git pull --ff-only origin main
+cd vision3/best/test_colonial
+source /orange/xiangyan/rithika/vision/yolo_env/bin/activate
+
+python code/study_batch.py inventory --probe \
+  --out exp_results/study_inventory_live_20261023
+
+python code/site_zone_setup.py \
+  --inventory exp_results/study_inventory_live_20261023/inventory.csv \
+  --site 'Pine Hills BL E' --out exp_results/pine_hills_zone_editor_oct23
+```
+
+Metadata probing is read-only apart from the new output folder; it opens each source and reads a frame, not the whole video. Missing files and unreadable metadata are listed. Change `--data-root` if videos are extracted somewhere other than `/orange/xiangyan/rithika/vision/pilot_clips`. Choose fresh output/tag names if these already exist. Submission is duplicate-guarded; if it fails partway, earlier jobs may already be running—read `logs/pine_hills_pilot_oct23/manifest.json`, do not blindly resubmit.
+
+Download the entire `exp_results/pine_hills_zone_editor_oct23/` folder and open `index.html`. Choose the camera, click polygon vertices for road, bike lane, sidewalk, path and grass as applicable. Add another region for a separate area of the same type. Empty categories are allowed; finish or clear partial polygons. Enter your name, confirm the outlines, and export JSON. The editor autosaves drawings, supports importing a previous JSON, and shows backup JSON if downloads are blocked. Each page embeds its image, so no external frame link breaks.
+
+Copy the exported JSON back to HiPerGator into `vision3/best/test_colonial/zones/study_20261023/`, keeping the filename. Then submit:
+
+```bash
+python code/study_batch.py submit \
+  --inventory exp_results/study_inventory_live_20261023/inventory.csv \
+  --scope pilot --site 'Pine Hills BL E' --pilot-chunk 13 \
+  --zones-dir zones/study_20261023 --require-zones \
+  --tag pine_hills_pilot_oct23 --go
+```
+
+This is one full hourly source, not the entire Pine Hills recording. Omit `--go` for a preview. For Colonial instead, omit `--site` and use another fresh tag. Read `exp_results/STUDY_pine_hills_pilot_oct23/RESULTS.md` and `outputs.csv` after completion. `outputs.csv` gives exact annotated filenames and the saved count/bin files. Check the full pilot video for missed cyclists, false detections, ID jumps and boundary fragments. Inspect actual runtime and memory via Slurm before scaling. No new truth campaign is required merely to run this pilot.
+
+## Count and lane-use records for every processed source
+
+Each source exports:
+
+- `per_track_lane_use.csv`: source path, site, person/vehicle namespace, track ID, predicted user type, counted/rejected status, dominant facility, lane observation fractions, provisional visited facilities,15-minute midpoint bin and identity/zone quality flags.
+- `counts_by_user_lane.csv`: one dominant-facility allocation per counted track.
+- `counts_15min_by_user_lane.csv`: the same breakdown by15-minute bin.
+- Existing original track/count CSVs and the structured run log; optional vehicle trajectories are enabled for study jobs.
+
+The final study report combines sources into `all_tracks.csv`, `counts_by_site_user_lane.csv`, and `counts_15min_by_user_lane.csv`. Car/bus/truck/other vehicle classes remain separate where the model supplies them; the cyclist model category can include motorcycles/e-scooters and must not be advertised as independently verified mode truth. Lane counts are predicted track counts, not people verified across all source files. A person can move between facilities: fractions/visited-facility memberships retain this information, but they must not be summed as unique people. Dominance below70% or ambiguous/out-of-zone evidence yields uncertain; no zone file yields unassigned. Boundary fragments and identity switches require review.
+
+Road-user lane classification is a **postprocessing step** using the user-marked zones. It does not change detection/count filtering on the new camera or pretend to have model accuracy. Colonial retains its existing inference masks. Rejected tracks remain in the per-track ledger but do not inflate counted totals. Original vehicle totals are retained even if historical vehicle histories are unavailable.
+
+To build editors for all matched cameras, omit `--site` from the zone-setup command and download that whole editor folder. Save all exported JSONs in the same zones directory. Pass `--zones-dir ... --require-zones` to the study submit command when every selected camera must have marked lane areas.
+
+If you change zones after inference, reclassify the saved tracks **without another GPU run** into a fresh output folder:
+
+```bash
+python code/study_batch.py lanes \
+  --manifest logs/pine_hills_pilot_oct23/manifest.json \
+  --zones-dir zones/study_20261023 \
+  --out exp_results/pine_hills_lane_update_oct23
+```
+
+## All other study recordings
+
+The one-hour pilot is recommended first. The full batch is prepared, not executed. Preview selection:
+
+```bash
+python code/study_batch.py submit \
+  --inventory exp_results/study_inventory_live_20261023/inventory.csv \
+  --scope all --exclude-site 'Colonial North' --tag study_others_oct23 \
+  --zones-dir zones/study_20261023 --require-zones
+```
+
+Add `--go` to submit after sources/clocks are resolved. Use `--scope colonial` for all Colonial North files, `--scope all` without exclusion for all 41mapped site-date pairs, or `--scope all --site 'Colonial South'` for a specific study recording. At most two GPU jobs run concurrently by default; this bounds concurrency, not total cost. Jobs are source-file-sized, with a dependent final CPU report. Queuing/job-count limits can still stop a very large submission; the manifest preserves every returned job ID.
+
+**62 multipart filenames do not encode a reliable source-start hour.** They are explicitly blocked, not assigned invented times or silently excluded. The inventory writes `clock_overrides_needed.csv`. Confirm each source's embedded first-frame clock and fill clock (`YYYY-MM-DD HH:MM:SS`), reviewer and evidence. Supply the completed CSV using `--clock-overrides /path/to/clocks.csv`. Plain hourly filenames use inferred clocks, which also require confirmation before scientific time-based comparisons. Source durations may overlap or contain gaps; verify continuous coverage and avoid double counting at file boundaries.
+
+The mapping table's1,967 chunk sum is inflated relative to1,919 unique archived paths (Rinehart Sidewalk 96 versus 48). Lower-score mappings also need a camera/date check. Missing video extraction and unresolved mappings are not fixed by inference code. Site workbooks provide aggregate counts, not per-person truth; compare only aligned camera/channel/date/time coverage. Header GT is left unlabelled when valid person-level labels are unavailable. Other cameras do not inherit Colonial lane polygons; their own marked polygons drive the lane-use report. Study results are not automatically accuracy or unseen-site validation.
+
+## Speed: partial trajectories with real ground scale
+
+Current image motion is in pixels/second or body heights/second. A partial track cannot determine absolute mph without ground scale. The earlier35ft/30ftlengths belong to unidentified study segments, not the owner's drawn lane ends.
+
+Need the exact Colonial camera/map location, then at least six identifiable persistent ground landmarks: four or more distributed fit points and at least two independent check points. All map/survey ground coordinates must share one local origin and axes, in metres. Distances from a ruler alone do not establish arbitrary 2D point coordinates. Google Maps measurements can support an estimate, not survey-grade precision. Match the historical road layout and camera view. Include a source URL/date, landmark descriptions and correspondence evidence. For fisheye footage, first establish a lens correction; a single planar mapping cannot remove lens distortion.
+
+Template: `data/reviews/calibration/landmarks.template.csv`. Work on a copy; fill image_x/image_y in the720x480reference and local east_metres/north_metres, role fit/check, and evidence. Then:
+
+```bash
+python code/map_calibration.py \
+  --landmarks /path/to/completed_landmarks.csv \
+  --reviewer Rithika --source 'Map or survey reference, date and landmark evidence' \
+  --out /path/to/colonial_map_estimate.json
+
+python code/metric_trajectory_speed.py \
+  --people exp_results/labelled_validation_20261020/people_lane_speed.csv \
+  --calibration /path/to/colonial_map_estimate.json \
+  --out exp_results/colonial_partial_track_speed.csv
+```
+
+For a new study road, fit `map_calibration.py` with `--site 'Pine Hills BL E' --date 2019-08-28` and that camera's actual reference size. Then use `metric_trajectory_speed.py --run-log /path/to/new_source_run_log.json --site 'Pine Hills BL E' --calibration /path/to/its_calibration.json --out /path/to/new_speed_estimates.csv`. This supports its counted pedestrians/cyclists and observed counted vehicles, while retaining unverified identity status. Do not reuse Colonial calibration.
+
+These CPU commands are for **after** real landmark correspondence is supplied; the blank template is intentionally unusable. They estimate speed only for the existing seven bicycle truth candidates, preserve identity status, avoid extrapolation outside the landmark hull, reject long gaps/coasted positions, and require1.5-second continuous segments. Local one-second linear velocity fits produce median speed and dispersion. No model's counting/motion feature has been changed to these estimates.
+
+The calibration report includes independent landmark residuals; low residuals are not proof of accurate speeds. Human identity confirmation and independent known-speed matches are still needed for speed validation. No mph has been calculated from invented distances or Excel means. Matching Excel records by nearest predicted speed is circular and prohibited.
+
+## Conflict review without mph
+
+A timing-based candidate method can start before mph validation: how soon does another road user enter the same small conflict area? FHWA defines PET around a common conflict location; this code is a simpler **ground-point/zone proxy**, not exact footprint PET or TTC.
+
+Create a JSON with `ref_size`, a small camera-specific `polygon`, `reviewer` and `source`. A whole sidewalk/bike-lane polygon is too broad. Use observed entries/exits and visually check path overlap. Example fields (coordinates must be supplied, never guessed):
+
+```json
+{"ref_size":[720,480],"polygon":[],"reviewer":"Rithika","source":"Describe the observed conflict area and camera"}
+```
+
+For one source with the same frame origin and dimensions:
+
+```bash
+python code/conflict_zone_review.py \
+  --people /path/to/source_trajectories.csv \
+  --vehicles /path/to/source_vehicle_trajectories.csv \
+  --zone /path/to/reviewed_conflict_zone.json \
+  --fps 29.97 --frame-size 720x480 \
+  --out exp_results/conflict_candidates_review
+```
+
+Use the actual FPS/resolution from that source's run log. Outputs are frame1-relative times, not necessarily clip-player times; account for the processed clip start. The optional3-second review window is not a validated safety cutoff. Simultaneous point occupancy is a separate flag, not proof of collision. Censored visits and missing intervals are rejected. Vehicle and person ID namespaces remain separate.
+
+Historical files do not contain complete vehicle trajectories, so cyclist-car events cannot be recovered from them alone. New study jobs enable `EXPORT_VEHICLE_TRAJECTORIES=1`, an optional exporter in v19 that leaves detection/count decisions unchanged. Vehicle exports contain observed tracked vehicles, which can still miss stationary objects or occluded traffic. End-to-end GPU export and real conflict review are pending. Candidate counts must not be called confirmed near-miss counts.
+
+## Multi-agent suggestions
+
+Use agents to organize evidence, not invent geometry:
+
+1. Data/coverage agent: verify camera, dates, channels and clock.
+2. Perception-quality agent: flag occlusion, track fragments and label disagreement.
+3. Calibration agent: check landmark evidence and held-out errors; stop metric claims without scale.
+4. Deterministic conflict tool: calculate measures and retrieve exact source intervals.
+5. Skeptical review agent: challenge ID switches and spatially unrelated paths, then send evidence to a human adjudicator.
+
+Keep structured provenance for every event: video/frame interval, IDs, tool outputs, calibration version, uncertainty flags and reviewer. Multiple agents agreeing is not independent validation. This architecture is proposed, not an implemented or benchmarked agent system.
+
+Research sources: [FHWA SSAM definitions](https://www.fhwa.dot.gov/publications/research/safety/08051/02.cfm), [OpenCV homography](https://docs.opencv.org/3.4.19/d9/dab/tutorial_homography.html), [BMVC traffic calibration paper](https://www.bmva-archive.org.uk/bmvc/2014/papers/paper013/index.html), [Google Maps distance measurement](https://support.google.com/maps/answer/1628031?hl=en).

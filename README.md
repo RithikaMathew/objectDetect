@@ -1,5 +1,9 @@
 # Object detection study — start here
 
+**October23 request:** follow [STUDY_NEXT_STEPS.md](docs/STUDY_NEXT_STEPS.md) for the new partial-track speed/calibration tools, study-footage inventory, optional conflict review, and one-hour Colonial pilot. [Methodology LaTeX](reports/methodology/object_detection_study_20261023.tex) and [compiled report](output/pdf/object_detection_study_20261023.pdf). Wider study processing is newly requested and prepared, not run. The earlier completed October20batch below must not be resubmitted.
+
+Latest follow-up: shortest listed camera recording is Pine Hills BL E (~25hours). A one-hour pilot and per-camera zone editor are prepared. Counts are recorded by source, user type, facility and15-minute bin, with a per-track lane ledger; new site coordinates still need identification. Follow the same next-steps guide above.
+
 The final experiment batch is complete. **Do not resubmit it.** Remaining work is checking track identities and individual lane assignments; physical speed is blocked by missing calibration and person-to-study links.
 
 ## Current results

@@ -763,6 +763,7 @@ def main():
     ap.add_argument("--static-max-speed", type=float, default=0.05, help="body heights per second of ground-point PATH (box jitter and body sway count: real standing people stay above this)")
     ap.add_argument("--static-min-sec", type=float, default=3.0)
     ap.add_argument("--motion-diag", action="store_true", help="E3: write unexplained-motion candidates (does not change counts)")
+    ap.add_argument("--export-vehicle-trajectories", action="store_true", help="Save observed vehicle tracks for later conflict review; counting unchanged")
     args = ap.parse_args()
     if args.tta and any(v <= 0 or v % 32 for v in args.tta_sizes):
         ap.error("--tta-sizes must be positive multiples of 32")
@@ -958,6 +959,7 @@ def main():
     pconf_sum, pconf_n, ph_sum = defaultdict(float), defaultdict(int), defaultdict(float)
     veh_conf_sum = defaultdict(float)
     foot_fr, foot_pt = defaultdict(list), defaultdict(list)   # tid -> frames / (x, y) ground points (detected frames only)
+    vehicle_traj_rows = []
     traj_rows = []                                             # one row per track per frame (coasted frames flagged)
 
     sbox, last_seen = {}, {}
@@ -1294,6 +1296,8 @@ def main():
         for tid, cx, cy, w, h, c, cf in run(vtrack, veh_ids, vxyxy, vconf, vcls, zone=road_poly,
                                             exclude=side_poly, aspect=(args.veh_aspect_min, args.veh_aspect_max)):
             vehicles.append((tid, vnames[c], cx, cy, w, h))
+            if args.export_vehicle_trajectories:
+                vehicle_traj_rows.append([tid, fi, f"{clock_of(fi):%H:%M:%S.%f}", float(cx), float(cy+h/2), float(cx), float(cy), float(w), float(h), 0, vnames[c]])
             veh_len[tid] += 1
             veh_conf_sum[tid] += cf
             veh_first_fi.setdefault(tid, fi)
@@ -1602,6 +1606,13 @@ def main():
         cs = MotionDiag.contact_sheet(mrows, clock_of, base + "_motion_candidates.png")
         print(f"Motion candidates: {len(mrows)} unexplained moving blobs >= 0.7 s -> {mpath}  contact sheet: {cs}")
 
+    vehicle_traj_path = None
+    if args.export_vehicle_trajectories:
+        vehicle_traj_path = unique_path(base + "_vehicle_trajectories.csv")
+        with open(vehicle_traj_path, "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["track_id", "frame", "time", "foot_x", "foot_y", "box_cx", "box_cy", "box_w", "box_h", "coasted", "label", "counted"])
+            writer.writerows(row + [int(row[0] in veh_counted)] for row in vehicle_traj_rows)
     runlog = {
         "video_file": os.path.basename(args.video), "video_path": args.video, "chunk_index": chunk_idx,
         "n_input_videos_merged": 1,
@@ -1619,6 +1630,7 @@ def main():
         "stream_header_mismatch_bins": {str(k): v for k, v in stream_mismatch.items()},
         "annotated_clips": clip_paths, "bin_counts_csv": bin_path, "tracks_csv": trk_path,
         "scores_csv": log_path, "track_stats_csv": stats_path,
+        "vehicle_trajectories_csv": vehicle_traj_path,
         "trajectories_csv": traj_path, "track_motion_csv": mot_path, "split_candidates_csv": split_path,
         "runtime_s": round(time.time() - t_start, 1),
         "finished": datetime.datetime.now().isoformat(timespec="seconds"),

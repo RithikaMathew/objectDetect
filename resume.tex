@@ -1,0 +1,218 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+\usepackage{latexsym}
+\usepackage[top=0.25in, bottom=0.25in, left=0.35in, right=0.35in]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{needspace}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\ifdefined\pdfglyphtounicode\input{glyphtounicode}\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\ifdefined\pdfgentounicode\pdfgentounicode=1\fi
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+\newcommand{\resumeSubheading}[4]{
+  \Needspace{5\baselineskip}
+  \vspace{-1pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}, topsep=1pt, partopsep=0pt, itemsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=1pt, itemsep=0pt, parsep=0pt, leftmargin=*]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+%-------------------------------------------
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Rithika Mathew} \\ \vspace{2pt}
+    \small 954-440-9750 ~
+    \href{mailto:rithikamathew2005@gmail.com}{\underline{rithikamathew2005@gmail.com}} \\
+    \vspace{1pt}
+    {\footnotesize
+    \mbox{%
+    \href{https://www.linkedin.com/in/rithika-mathew}{\underline{linkedin.com/in/rithika-mathew}} ~|~
+    \href{https://github.com/RithikaMathew}{\underline{github.com/RithikaMathew}} ~|~
+    \href{https://rithikamportfolio.netlify.app/}{\underline{rithikamportfolio.netlify.app}}%
+    }}
+    \vspace{-6pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Florida}{Gainesville, FL}
+      {Master of Science in Computer Science, GPA: 4.0/4.0}{Expected December 2027}
+    \resumeSubheading
+      {Florida Atlantic University}{Boca Raton, FL}
+      {Bachelor of Science in Computer Science, GPA: 4.0/4.0}{December 2025}
+  \resumeSubHeadingListEnd
+
+%-----------PEER REVIEWED PUBLICATIONS AND PATENTS-----------
+\section{Peer Reviewed Publications and Patents}
+  \resumeSubHeadingListStart
+    \resumeItem{Mathew, R. et al. (2026). Power Utility Ticket Processing via Domain Knowledge-Infused Large Language Models. \textit{IEEE Access}, 14, 152731--152743. \href{https://doi.org/10.1109/ACCESS.2026.3732663}{\underline{doi:10.1109/ACCESS.2026.3732663}}}
+    \resumeItem{PowerGPT: Systems and Methods for Smart Grid Data Analysis and Management, USPTO Application No. US 63/660,675, Filed: 06/17/2024.}
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt, itemsep=0pt]
+    \small{\item{
+     \textbf{Languages}{: Python (PyTorch, TensorFlow, scikit-learn, pandas, NumPy, Hugging Face Transformers, Matplotlib, Scipy, Seaborn), Swift, C++, C, SQL, TypeScript, JavaScript} \\
+     \textbf{AI \& ML}{: Agentic AI, MCP, LLMs (DistilBERT, GPT, Claude, Qwen, DeepSeek), CNNs, Logistic Regression, Transformers, Transfer/Federated Learning, RAG, LangChain, LangGraph, LangSmith, NVFLARE, AWS SageMaker, Gemini, Tavily API} \\
+     \textbf{Computer Vision}{: YOLO (YOLO11n-Pose), RT-DETR, SAHI, ByteTrack, OpenCV, CLIP/X-CLIP, Roboflow} \\
+     \textbf{Systems}{: React, Streamlit, Flask, FastAPI, n8n, iOS/Swift, RealityKit, AVFoundation, MongoDB, SQL Server, Wasabi S3, Docker, Slurm/HiPerGator, VS Code, Git/GitLab, SSRS, Auth0, SendGrid, Cursor, Claude Code, AWS} \\
+    }}
+ \end{itemize}
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{Research Experience}
+  \resumeSubHeadingListStart
+
+\resumeSubheading
+  {Just \& Green Transportation Lab -- Graduate Researcher}{March 2026 -- Present}
+  {Florida Department of Transportation, University of Florida}{Gainesville, FL}
+  \resumeItemListStart
+    \resumeItem{Architected a multi-agent LLM pipeline with LangChain/LangGraph, vision analysis, multi-persona evaluation, iterative skeptic/mediator loops, human-in-the-loop gates, and few-shot prompting; integrated Qwen/Gemini models, HiPerGator B200 GPU inference, and LangSmith tracing}
+\resumeItem{Built hybrid RAG combining vector and keyword search over transportation design standards, and an interactive Python/Streamlit dashboard for Florida micromobility crash analysis with dynamic filters, geographic visualizations, and mode comparisons}
+\resumeItem{Built a traffic-video pipeline combining fine-tuned RT-DETR, SAHI tiled detection, ByteTrack with ID stitching, and X-CLIP with detector/motion fusion; correctly counted and classified 19 of 21 labelled road users across four development clips under temporal matching}
+\resumeItem{Automated GPU experiments with Slurm on HiPerGator and CPU evaluation tools for ablations, threshold selection, person-box precision/recall, and lane-use analysis; assessed three additional camera sites and documented missed distant and blurry cyclists}
+  \resumeItemListEnd
+
+    \resumeSubheading
+      {Florida Power \& Light (FPL) Undergraduate Researcher}{May 2024 -- Present}
+      {FAU InETech Lab, Research Mentor: Dr. Yufei Tang}{Boca Raton, FL}
+      \resumeItemListStart
+        \resumeItem{\textbf{PowerGPT:} Designed an AI-chatbot for smart grid systems using React/Flask GUI for an NSF REU project; implemented ML features for wind power forecasting and fault prediction (condition monitoring); listed as inventor on USPTO patent No. US~63/660,675}
+        \resumeItem{\textbf{Utility Ticket Classification:} Fine-tuned domain-adapted DistilBERT for multi-output classification; stratified K-fold CV on 30,000+ hurricane outage entries}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------RELEVANT WORK EXPERIENCE-----------
+\section{Relevant Work Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Stryker (Medical Robotics Company)}{January 2025 -- December 2025}
+      {FAU Senior Design Project -- Sprint Leader}{Weston, FL}
+      \resumeItemListStart
+        \resumeItem{Led Vision180, an Apple Vision Pro surgical training platform using Swift, RealityKit, and AVFoundation to capture and synchronize spatial video from three iPhones into a 180\textdegree{} panoramic view with 3D anatomical models and multi-user annotation layers}
+        \resumeItem{Engineered real-time frame synchronization, stereoscopic rendering, and on-device image stitching/parallax correction; coordinated Agile sprints as Sprint Leader via GitLab CI/CD}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Palm Beach Accountable Care Organization (PBACO)}{June 2025 -- August 2025}
+      {Software Engineering Intern (SQL \& ETL Focus)}{West Palm Beach, FL}
+      \resumeItemListStart
+        \resumeItem{Built scalable Python ETL pipelines and a multithreaded Wasabi S3 migration tool to archive millions of low-usage files, improving data accuracy and throughput by 3--25x}
+        \resumeItem{Applied statistical anomaly detection (Poisson distribution) to healthcare data feeds enabling 90\% faster outage detection; optimized SQL Server queries across 100k+ patient records and built SSRS reports}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Cuffless Blood Pressure Estimation -- Dream Team Engineering}{January 2026 -- Present}
+      {Cardiac Team, University of Florida}{Gainesville, FL}
+      \resumeItemListStart
+        \resumeItem{Extracting systolic/diastolic BP from PPG waveform signals using CNN and Transformer architectures with calibration techniques on AWS SageMaker GPUs, targeting MAE $\leq$5~mmHg}
+      \resumeItemListEnd
+
+
+
+    \resumeSubheading
+      {GroundWork -- Worksite Safety Platform}{October 2026}
+      {SwampHacks XII, Sperry Tech PlanIT Control Challenge -- 1st Place}{Gainesville, FL}
+      \resumeItemListStart
+        \resumeItem{Built the ML and AI integrations for a platform combining weather forecasts, soil conditions, and AI to help utility crews assess worksite safety and decide when ground protection mats are needed; trained a logistic regression model on historical forecasts and National Weather Service alerts (ROC-AUC 0.852 vs.\ 0.778 rule-based baseline)}
+        \resumeItem{Integrated Gemini to generate daily safety briefings, automated 6 PM email delivery with n8n, and built a Claude MCP server so supervisors can query site conditions, retrieve briefings, and run storm simulations in natural language}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {BreakPoint -- Athlete Fatigue Detection}{October 2026}
+      {Dream Team Engineering Designathon, Software Track -- 2nd Place}{Gainesville, FL}
+      \resumeItemListStart
+        \resumeItem{Computer vision app that tracks unreported athletic fatigue and gives coaches real-time per-athlete insights to prevent overexertion; built with YOLO11n-Pose, OpenCV, FastAPI, and Gemini, using self-recorded 73-rep squat data}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {OwlGuide -- Multimodal AI Assistant}{November 2025}
+      {FAU Agentic AI Hackathon -- 2nd Place}{Boca Raton, FL}
+      \resumeItemListStart
+        \resumeItem{Chrome extension (TypeScript) using Gemini API for real-time DOM highlighting, step-by-step navigation assistance, and AI-powered email drafting for FAU web interfaces}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------HONORS AND AWARDS-----------
+\section{Honors and Awards}
+ \begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt]
+    \small{\item{
+     \textbf{SwampHacks XII, Sperry Tech PlanIT Control Challenge: 1st Place} -- GroundWork (Oct 2026) $\cdot$
+     \textbf{Dream Team Engineering Designathon, Software Track: 2nd Place} -- BreakPoint (Oct 2026) $\cdot$
+     \textbf{CRA Outstanding Undergraduate Researcher Award: Honorable Mention} (2025--2026) $\cdot$
+     \textbf{FAU Senior Design: Faculty, People's Choice \& Judge's Choice Award} (April 2025) $\cdot$
+     \textbf{FAU Agentic AI Hackathon: 2nd Place} -- OwlGuide, Multimodal AI Assistant (Nov 2025) $\cdot$
+     \textbf{Engineering Excellence Award} (April 2025) $\cdot$
+     \textbf{Hersker Shaw Gosser Phi Kappa Phi Scholarship} (March 2025) $\cdot$
+     \textbf{George Snow Scholar \& Rotary Scholar of the Month} (2023--2024)
+    }}
+ \end{itemize}
+
+\end{document}

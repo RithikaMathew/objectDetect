@@ -1,0 +1,7 @@
+landmark,role,image_x,image_y,east_metres,north_metres,evidence
+fit_landmark_1,fit,,,,,
+fit_landmark_2,fit,,,,,
+fit_landmark_3,fit,,,,,
+fit_landmark_4,fit,,,,,
+independent_check_1,check,,,,,
+independent_check_2,check,,,,,

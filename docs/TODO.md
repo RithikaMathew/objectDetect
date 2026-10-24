@@ -1,11 +1,5 @@
-# Task audit — 2026-10-20
+# Current task entry points — October23,2026
 
-The current detailed checklist is [tasks/todo.md](tasks/todo.md). This replaces the stale October19 audit that described the completed research suite as pending.
+The new owner requests are in root [todo.md](../todo.md), with implementation status and pending inputs. Read [STUDY_NEXT_STEPS.md](STUDY_NEXT_STEPS.md) for cluster commands, speed calibration, conflict screening, hours estimates, and the LaTeX report.
 
-**The experiment batch is finished; final validation is not all finished.** Fusion/speed ablations, proposal audits, sensitivity, TTA and brightening have results. Corrine review exposes a generalization failure. Additional-site jobs have now SUCCEEDED: Anderson2021 predicts1cyclist/1pedestrian and CurryFordNorth2022 predicts0/0, both full15minutes. Owner review now confirms missed cyclists at both sites and a missed Anderson motorcycle; whole-video accuracy remains unmeasured. Review materials and GT-header copies also succeeded; do not resubmit the batch.
-
-New lane/image-motion analysis uses only the21 existing truth rows and is provisional:20 usable image-speed estimates,5 uncertain lanes,0 human-verified identity mappings supplied. No mph accuracy is claimed. The speed workbook DOES contain23uniqueColonialrecords; earlier preview-based statements to the contrary were incorrect. Lane-area polygons are not metric calibration or measured speed gates. Counts are aggregate facility observations, not per-person lane/speed truth.
-
-Remaining: full-track identity review, optional existing-frame RF/DINO box validation, measured speed-gate endpoints and record-to-person correspondence. Report incomplete or retired tasks honestly; do not check all tasks as done merely because code exists. Further detector sweeps are closed by owner preference. Back-burner and full-day exclusions remain.
-
-Owner approved zone previews. Colonial study lengths are35ft bike lane/30ft sidewalk; physical endpoints remain unknown. New findings and review-JSON status: [owner review](../vision3/best/test_colonial/exp_results/newsites_owner_review_20261020.md).
+The earlier detector-experiment audit is [tasks/todo.md](tasks/todo.md). Existing RF/DINO32-frame review is complete; do not repeat it. Identity approval, real metric calibration and independent speed correspondence remain open. Wider study-video inference is newly requested but not run; the completed October20batch does not need resubmission.

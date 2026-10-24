@@ -1,0 +1,194 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,booktabs,longtable,array,enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{needspace}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist{nosep}
+\title{Traffic-Camera Road-User Detection, Lane Use, and Trajectory Analysis\\\large Methods, Development Results, and Limitations}
+\author{Rithika Mathew}
+\date{October 23, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+This report documents a fixed-camera pipeline for detecting, tracking, classifying, and counting cyclists and pedestrians. A fine-tuned RT-DETR detector, tiled inference, tracking, video-text classification, and explicit decision rules constitute the current reference system. It correctly counts and classifies 19 of 21 labelled road users under legacy temporal matching on four repeatedly inspected Colonial clips. This is a development result, not independently validated identity accuracy. Additional-site observations expose missed cyclists. This report separates completed results from proposed metric speed calibration, conflict screening, and large study-batch execution. No validated physical speeds or confirmed near-miss results are currently available.
+\end{abstract}
+
+\section{Scope and data}
+Four Colonial North clips from July 10, 2019 have existing manual encounter labels: 12:45--13:00, 14:00--14:15, 21:15--21:30, and 22:00--22:15. Together they contain 13 pedestrians, seven actual bicyclists, and one motorcycle. For compatibility with the legacy evaluation, the motorcycle is grouped with cyclists; raw categories remain separate in exports. These four clips total one hour, but are not a continuous hour.
+
+The archived file listing and site mapping identify 1,919 unique candidate source files across 41 site/date pairs. Colonial North has 48 hourly-indexed files, implying approximately 48 hours if each is an hour. Other sources account for 1,871 nominal hours. These are archive-based estimates: actual durations require metadata probes on HiPerGator. The previous mapping summed to 1,967 chunks because Rinehart Sidewalk was listed as 96 despite only 48 matching unique archive paths. Sixty-two multipart filenames lack a safely inferable start time. Candidate camera/date mappings, particularly lower-score aliases, require verification before study comparisons.
+
+\subsection{Shorter recording and location audit}
+All 41 SpreadsheetML count workbooks were inspected for location metadata. Their Site Code fields are blank; no explicit camera latitude/longitude or intersection field was found in the searched XLS/XLSX tables. Road names, recording dates and directions do not establish an exact camera position. The shortest matched archive recording is Pine Hills BL E (25 nominal hourly files), followed by Pleasant Hill Path (31) and West Orange Path (37). A one-hour noon Pine Hills source is now the recommended next pilot, rather than processing its entire recording.
+
+The speed workbook contains the name West Orange/Park and a 29-foot path measurement, providing a useful location clue. However, official West Orange Trail maps include Park Avenue contexts along the wider corridor\cite{trailmap}; that clue has not established a unique camera or measured image segment. No coordinates were invented. Matching a daytime video frame to persistent map landmarks remains necessary for metric calibration; GPS is not required merely to mark lane areas.
+
+\section{Current pipeline and definitions}
+\begin{description}[style=nextline]
+\item[RT-DETR V3] The project's fine-tuned RT-DETR checkpoint; ``V3'' is a local training-run name, not a separate published architecture.
+\item[SAHI] Sliced inference processes overlapping image tiles to improve opportunities to detect small objects. Tile detections are combined with full-image detections.
+\item[ByteTrack and stitching] Tracking links detections over frames. An additional stitching rule links compatible fragments. Neither guarantees that a track always follows one real person.
+\item[X-CLIP] Video-text classification compares sampled track crops with bicycle-riding and walking/standing prompts.
+\item[TTA] Test-time augmentation repeats inference on transformed inputs; the tested scale/flip variant is not enabled in the reference.
+\end{description}
+The reference combines these components with detector-label fusion, image-motion relabelling, duration checks, and static-object rejection. Detection, tracking, mode classification, and counting are distinct stages; a person may be detected but rejected by a counting rule.
+
+\subsection{Weighted classification and fusion}
+For track crops with bicycle probabilities $p_i$ and box heights $h_i$, the weighted bicycle score is
+\[
+ \bar p_{\rm bicycle}=\frac{\sum_i h_i p_i}{\sum_i h_i}.
+\]
+The raw label is the largest weighted class score. Let $q$ be the percentage of detector observations on the track labelled cyclist. With at least 20 detector observations, the reference changes a raw cyclist label to pedestrian if $q<15\%$. This is a manually selected development heuristic, not a learned probability calibration or a published universal cutoff. Detector promotion is off in the current reference.
+
+The motion rule runs after detector fusion. It uses image displacement over time normalized by mean box height. For lateral movement and at least 1.5 seconds of motion evidence, a cyclist label can become pedestrian when normalized speed is below 0.8 body heights/second and $q<50\%$; a pedestrian label can become cyclist when speed exceeds 2 body heights/second and $q\ge50\%$. These thresholds are project heuristics. Body heights/second is not mph.
+
+\subsection{Duration and static rules}
+Normal counting duration is three seconds for both pedestrians and cyclists, day and night. During 21:00--06:00 only, a final cyclist label can use an exception down to 0.3 seconds when $q\ge90\%$ and weighted bicycle score is at least 0.90. This is not a blanket 0.4-second night minimum. The broad sensitivity experiment instead used a 0.4-second minimum during both day and night, lower confidence/tracker thresholds, and no static filter; it is off in the reference.
+
+The static filter rejects a track lasting at least three seconds with net image displacement below five pixels and normalized path speed below 0.05 body heights/second. Frame counts and detector quality checks are retained. Static rejection can remove false objects, but does not prove that surviving tracks are correct identities.
+
+\section{Evaluation design}
+Manual truth records identify encounters and classes. Legacy matching greedily pairs tracks and encounters by time with a tolerance; it does not establish full-track identity. An ID that begins on a barricade and later follows a person can receive temporal credit. Human approval of the entire track, with reviewer and evidence, is required by the strict identity evaluator before granting verified credit. No such approvals have yet been supplied.
+
+The classifier comparison uses the same matched scored tracks, including tracks not counted. Detector track-majority labels use $q\ge50\%$ for cyclist. X-CLIP comparison uses raw weighted labels from the rules audit, before fusion. Consequently this is conditional classification, not standalone detection recall.
+
+Person-box evaluation uses 32 owner-reviewed selected frames with 20 human boxes. One-to-one matching requires intersection-over-union at least 0.50. Precision is $TP/(TP+FP)$ and recall is $TP/(TP+FN)$. Frames repeat people and were encounter-targeted, so these scores are not unique-person recall, average precision, or independent whole-video accuracy.
+
+\section{Completed development results}
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrr}
+\toprule
+System or ablation & Correct counted truth & Unmatched counted tracks\\
+\midrule
+Reference combination &19/21&0\\
+Without motion relabelling &17/21&not restated here\\
+Without detector veto, historical run &18/21&not restated here\\
+Test-time augmentation &19/21&1\\
+Broad sensitivity &19/21&28\\
+\bottomrule
+\end{tabular}
+\caption{Legacy temporal development evaluation. Unmatched tracks are not automatically proven false positives. Historical separate runs are not interchangeable with frozen-output rule replay.}
+\end{table}
+Zero-DCE yielded 7/11 on the night subset versus the reference's 9/11; the tested brightening route did not improve this comparison. Contributions of motion and veto are marginal with the other components active; their gains must not be added as independent benefits.
+
+Detector-majority classification was correct for 16/21 tracks, versus raw X-CLIP at 14/21. The detector classified 11/13 pedestrians correctly versus X-CLIP's 8/13; X-CLIP classified 6/8 of the scored cyclist group correctly versus the detector's 5/8. Both were right on 11, both wrong on two, detector-only right on five, and X-CLIP-only right on three. This small comparison does not establish a universally superior model.
+
+\subsection{Full-system veto threshold replay}
+The CPU replay checks that saved audit/statistics exports reproduce the original final label and count decision for every scored track before tuning. It preserves the full order of fusion, motion, duration/night exception, and static/quality checks. Original-setting parity passed on all four clips. Saved values are rounded, so counterfactual boundaries remain approximate even when baseline parity passes.
+
+Threshold selection uses the 21:15 night and 14:00 day clips (11 truth people); checking uses the other two clips. The selected value is frozen before checking. Because all four clips have previously been inspected, this is exploratory splitting, not an untouched validation set. The fixed tie policy prefers more correctly counted truth people, then fewer unmatched counted tracks, then the current threshold and nearest numerical alternative.
+
+Turning veto off or setting 5, 10, 15, 20, 30, or 40 percent all yielded 9/11 development matches; 50 percent yielded 8/11. The rule therefore retained 15 percent by tie preference. The frozen value scored 10/10 on checking clips. Fifteen percent was not uniquely best, nor independently validated. The reference configuration was not changed.
+
+\subsection{Alternative person detectors}
+\begin{center}
+\begin{tabular}{lrrrrr}
+\toprule
+Model & TP & FP & FN & Precision & Recall\\
+\midrule
+RF-DETR &4&10&16&28.6\%&20.0\%\\
+Grounding DINO &13&35&7&27.1\%&65.0\%\\
+\bottomrule
+\end{tabular}
+\end{center}
+Grounding DINO recovered more labelled person boxes but generated many false boxes. RF-DETR missed most labelled boxes. Earlier full audits proposed 48 RF-DETR boxes and 386 DINO boxes over 165 frames; proposal totals alone were not accuracy. Neither result validates a replacement for the reference counting pipeline or cyclist classification.
+
+\subsection{Additional sites and fisheye footage}
+Anderson St (April 13, 2021) and Curry Ford North (May 17, 2022) each completed 15-minute runs at $720\times480$. Predicted person counts were one cyclist/one pedestrian at Anderson and zero/zero at Curry Ford. Owner review reported:
+\begin{itemize}
+\item Anderson: a detected pedestrian at 12:01:24--12:01:32 and cyclist at 12:01:37--12:01:45; another cyclist missed at 12:01:40--12:02:43; motorcycle missed at 12:05:48--12:05:50.
+\item Curry Ford: a very blurry cyclist missed at 12:09:05--12:09:11.
+\end{itemize}
+These are reported failures, not exhaustive new truth. Both sites appear in the documented training recipe, so they are not guaranteed unseen-site tests.
+
+Corrine camera 706 (2025) supplied $960\times540$, 15-fps fisheye footage. The matched baseline, combination, and TTA runs each counted zero cyclists and one pedestrian. Owner review of an earlier combination reported an e-scooter as pedestrian and two missed distant cyclists. Fisheye dewarping code and parameter previews exist, but lens calibration and detection improvements after dewarping have not been established. Higher pixel count does not guarantee usable detail or generalization.
+
+\section{Lane use on existing truth people}
+Owner-approved area outlines define bike lane, sidewalk, road and grass. Ground-position points are mapped into these polygons. A dominant facility is reported only when at least 70 percent of usable observations support it without unresolved polygon overlap. Ambiguity may reflect a boundary, jitter, a real lane change, or insufficient observations; it is not automatically evidence of using both lanes.
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Raw class &Sidewalk&Bike lane&Road&Uncertain\\
+\midrule
+Bicycle &2&2&0&3\\
+Pedestrian &10&0&1&2\\
+Motorcycle &0&1&0&0\\
+\bottomrule
+\end{tabular}
+\end{center}
+These assignments remain provisional because the candidate identities and each person's facility have not been independently approved. Aggregate study lane counts are contextual checks, not individual lane truth. Historical study totals and hand truth also differ in the 21:15 bin; they must not be forced to agree.
+
+\subsection{User-adjustable zones and full-study lane ledger}
+The new per-camera editor extracts a real daytime frame and embeds it in an offline HTML page. The owner can draw road, bike-lane, sidewalk, shared-use-path and grass polygons, add disconnected same-type regions, undo/reset, import earlier outlines, and export a confirmed camera/date-specific JSON. Drawings autosave locally; backup JSON is displayed when exporting. Other cameras never inherit Colonial boundaries.
+
+For each processed source, the lane ledger records person/vehicle namespace, track ID, predicted user type, counted/rejected status, dominant facility, observed facility fractions, provisional visited facilities, and the track's midpoint 15-minute bin. Counted-track summaries are produced by source, site, user type, lane and 15-minute interval. Separate visits retain possible lane changes but cannot be summed as distinct people. Car, bus, truck and other-vehicle categories remain separate where available. The classifier's cyclist category may include motorcycles or scooters; it is not verified detailed mode truth. IDs reset per source, so boundary fragments and repeated identities remain possible.
+
+Zone assignment is postprocessing for new cameras and does not modify their detection/count filtering. No marked zones yields unassigned, not guessed lane use. Low dominance, cross-type overlap or insufficient observations yields uncertain. Optional vehicle history exports retain the final counted flag. A CPU-only reclassification command rebuilds lane ledgers after zone edits without rerunning detection. These new-camera outputs are prepared but have not yet been generated from real cluster inference.
+
+\section{Physical speed from partial trajectories}
+\subsection{What is known and what is missing}
+The speed workbook contains 23 unique Colonial records: 12 bike-lane records including an e-bike, and 11 sidewalk records. Recorded study section lengths are 35 feet and 30 feet respectively. The owner-confirmed drawn lines mark visible lane ends, not the known measured study endpoints. The seven bicycle candidate tracks contain no complete crossing of both drawn finite lines, even when their full saved tracks are checked. No Excel record has a verified link to a specific cyclist in these four clips. Therefore no physical speed or matched speed error has been calculated.
+
+A short trajectory is sufficient for speed once pixel positions have a justified metric mapping. It does not need to traverse the entire image or two distant gates. A homography maps points on an approximately planar surface into ground coordinates\cite{opencv,calibration}. With image foot point $(u_i,v_i)$,
+\[
+ \begin{bmatrix}a_i\\b_i\\c_i\end{bmatrix}=H\begin{bmatrix}u_i\\v_i\\1\end{bmatrix},\qquad
+ X_i=a_i/c_i,\quad Y_i=b_i/c_i.
+\]
+Local linear fits of $(X_i,Y_i)$ against timestamps give $v_x,v_y$ and speed $\sqrt{v_x^2+v_y^2}$. Metres/second converts to mph by multiplying by 2.236936. This differs from estimating scale using assumed human height.
+
+\subsection{Map landmark workflow and implemented safeguards}
+Google Maps supports measuring distances between selected map points\cite{maps}, but these are not survey-grade measurements or proof that points match this historical camera. Obtain the exact location, identify persistent ground-level landmarks in the image and map, and record their local east/north positions in metres relative to one common origin. Use at least four distributed, noncollinear fit landmarks and two additional check landmarks. The new map-calibration tool fits only the former and reports ground-coordinate error at the latter. All correspondences require a name, evidence, source and reviewer. A map-derived fit is labelled an estimate, not validated speed.
+
+For the existing truth candidates, the partial-track tool restricts estimation to the calibration landmark hull, ignores coasted positions, splits gaps longer than 0.5 seconds, requires continuous segments at least 1.5 seconds long, and estimates local velocities with one-second windows. It reports median window speed and median absolute deviation, not a statistical confidence interval. Identity status is retained; no matched speed validation is implied. Fisheye cameras require lens correction before a planar mapping can be treated as adequate. Sidewalk elevation, camera movement, point jitter, and extrapolation can bias results.
+
+For a new study road, the same estimator can read its run log and process counted person and vehicle tracks after its own camera/date-specific calibration is supplied. A Colonial calibration is not reused for Pine Hills or other roads. These are unvalidated estimates until independent speed checks are available.
+
+Alternatively, independently identified Excel people can calibrate a fixed segment distance using recorded speed times crossing duration, followed by checking \emph{different people} crossing the same segment. Pairing by nearest speed or evaluating on the same people used to fit the scale would be circular. Neither method can recover absolute scale solely from unconstrained pixel trajectories.
+
+\section{Near-miss review without first validating mph}
+Post-encroachment time (PET) concerns the time between one road user leaving a common conflict location and another arriving. Time-to-collision (TTC) concerns projected collision time under motion assumptions\cite{ssam}. A timing-based review can begin without mph, but reliable location overlap, identities, timing and road-user geometry still matter. A low temporal gap alone is not proof of a dangerous event.
+
+The new conflict-zone tool screens gaps between observed ground-point visits to a small, user-reviewed polygon. It interpolates polygon crossings only between nearby observations, rejects censored entries/exits and long gaps, and marks short gaps or simultaneous point occupancy for visual review. Its default three-second candidate window is a review setting, not an established safety threshold. This is a point/zone proxy, not footprint PET or validated TTC. A broad lane polygon is not an appropriate conflict area. Confirm the exact interacting paths, visible evasive action, clearance and detection quality during adjudication.
+
+Historical trajectory exports contain people, not complete vehicle trajectories. They cannot establish cyclist--vehicle near misses. An optional observed-vehicle trajectory export has therefore been added without changing detector or counting decisions, and enabled for future study-batch runs. This feature has synthetic/unit coverage but has not yet been exercised on real GPU inference. Stationary or undetected vehicles may still be missing. Confirmed near misses remain zero established results, not a measured absence of conflicts.
+
+\section{Study-batch execution and resource plan}
+The new launcher inventories unique source paths, can probe actual metadata on the cluster, and keeps the current reference settings fixed. Without a site override the one-hour Colonial North pilot remains the CLI default; the updated instructions select one Pine Hills BL E hour with its own marked zones. Source clocks are inferred only for understood filenames; 62 multipart files need independently confirmed clock overrides. Missing/unreadable selected files or unresolved clocks block submission rather than silently reducing coverage. Each source has its own job/run outputs, and duplicate submission/output guards are retained.
+
+At the illustrative development throughput of 42 minutes per 15 minutes of footage, 1,919 nominal video-hours imply about 5,373 GPU-hours. With two continuously available GPUs that is approximately 112 days, before queueing and failures. Other-than-Colonial-North footage alone implies about 5,239 GPU-hours. These estimates extrapolate beyond the tested 15-minute windows; resolution, object density, decoding, GPU type, memory and encoding affect runtime. Source-file resets can duplicate boundary-crossing people, and memory use on a whole hour has not been benchmarked. The pilot should measure these before full study execution.
+
+Outputs contain predicted counts and exact annotation paths. Study comparison requires matching camera, dates, clock, channels and covered intervals. Partial coverage must not be compared with a full-study total. No new video batch has been submitted from this Mac session; a cluster metadata inventory and pilot are still required.
+
+\Needspace{10\baselineskip}
+\section{Proposed multi-agent assistance}
+A multi-agent workflow can organize evidence and review, while numerical geometry remains deterministic:
+\begin{enumerate}
+\item A data agent checks camera/date, frame rate, coverage and study-file correspondence.
+\item A perception-quality agent flags uncertain detections, occlusion, fragmented identities and class disagreements using saved outputs.
+\item A calibration agent checks landmark provenance, held-out residuals, camera stability and applicability of the ground plane; missing calibration stops metric claims.
+\item A conflict-analysis tool computes trajectory measures and candidate intervals; an evidence agent retrieves the exact raw/annotated video interval and IDs.
+\item A skeptical reviewer agent challenges identity switches, spatially separate paths, missing vehicles and unsupported severity claims. A human adjudicates final events.
+\end{enumerate}
+Each stage should emit structured evidence: source video, frame interval, IDs, calibration version, computed values, quality flags and reviewer decision. Agents must not invent counts, distances, identities or additional detections. Agreement among language-model agents is not independent validation. This is a proposed architecture, not an implemented or benchmarked multi-agent near-miss system. The current repository has deterministic component tools, not an autonomous agent team.
+
+\section{Limitations and remaining work}
+The principal limits are small repeatedly inspected samples, provisional temporal identity matching, missed distant/blurry people, training-site overlap, unresolved lane assignments, heuristic thresholds, rounded replay evidence, unknown fisheye calibration, incomplete vehicle histories, and absent metric speed validation. More architecture sweeps are not required to document these limits. Night fine-tuning and a new 40-track campaign remain deferred. The latest request reopens preparation for broader study-video execution; earlier full-day exclusions describe the prior scope, not completed new runs.
+
+Next steps are to supply the exact Colonial camera/map location, establish image/map landmarks with check points, probe cluster footage, run and review one full hourly source, and then decide whether the much larger batch is justified. Approve full-track identities before interpreting candidate-level scores as identity-verified. Validate any calibrated speed on independent known-speed people or suitable independent measurements. Visually adjudicate conflict candidates before making safety conclusions.
+
+\section{Reproducible artifacts}
+Current implementation is under \path{vision3/best/test_colonial/code/}. Main additions include the zone editor and lane-use ledger as well as \path{study_batch.py}, \path{map_calibration.py}, \path{metric_trajectory_speed.py}, and \path{conflict_zone_review.py}. The archive inventory is under \path{exp_results/study_inventory_20261023/}. Prior result folders retain classifier comparison, box review, provisional lane analysis, veto tuning and crossing feasibility. Exact commands and pending-input status are in \path{docs/STUDY_NEXT_STEPS.md}; original truth and user inputs remain unchanged.
+
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{ssam} Federal Highway Administration. \emph{Surrogate Safety Assessment Model and Validation: Final Report}, Chapter 2, 2008. \url{https://www.fhwa.dot.gov/publications/research/safety/08051/02.cfm}.
+\bibitem{opencv} OpenCV. \emph{Basic concepts of the homography explained with code}. \url{https://docs.opencv.org/3.4.19/d9/dab/tutorial_homography.html}.
+\bibitem{calibration} M. Dubsk\'a, A. Herout, and J. Sochor. \emph{Automatic Camera Calibration for Traffic Understanding}. BMVC, 2014. \url{https://www.bmva-archive.org.uk/bmvc/2014/papers/paper013/index.html}.
+\bibitem{maps} Google Maps Help. \emph{Measure distance between points}. \url{https://support.google.com/maps/answer/1628031?hl=en}.
+\bibitem{trailmap} Orange County Parks and Recreation. \emph{West Orange Trail pocket map}. \url{https://apps.ocfl.net/dept/CEsrvcs/Parks/WOTPocketBroch.pdf}.
+\end{thebibliography}
+\end{document}
