@@ -1,0 +1,1817 @@
+[
+  {
+    "site": "Alafaya West",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Alafaya/Standard_SCU8OG_2019-04-17_0000/Standard_SCU8OG_2019-04-17_0000.013.jpg",
+        "uncompressed_bytes": 25965,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Alafaya/Standard_SCU8OG_2019-04-17_0000/Standard_SCU8OG_2019-04-17_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 2f02000076ee360000000000000000009a050000d1070000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Alafaya/Standard_SCU8OG_2019-04-17_0000/Standard_SCU8OG_2019-04-17_0000.001.jpg",
+        "uncompressed_bytes": 19832,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Alafaya/Standard_SCU8OG_2019-04-17_0000/Standard_SCU8OG_2019-04-17_0000.001.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: bc02000055f3360000000000bc020000d2070000b00a0000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Alafaya/Standard_SCU8OG_2019-04-17_0000/Standard_SCU8OG_2019-04-17_0000.013.mp4"
+    }
+  },
+  {
+    "site": "University South",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8PM_2019-04-17_0000/Standard_SCU8PM_2019-04-17_0000.013.jpg",
+        "uncompressed_bytes": 33821,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8PM_2019-04-17_0000/Standard_SCU8PM_2019-04-17_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: eb040000d9ed3600000000004203000020060000130b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8PM_2019-04-17_0000/Standard_SCU8PM_2019-04-17_0000.001.jpg",
+        "uncompressed_bytes": 21508,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8PM_2019-04-17_0000/Standard_SCU8PM_2019-04-17_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 9b0300001af3360000000000a6030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8PM_2019-04-17_0000/Standard_SCU8PM_2019-04-17_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Alafaya East",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Alafaya/Standard_SCU8PM_2019-04-24_0000/Standard_SCU8PM_2019-04-24_0000.013.jpg",
+        "uncompressed_bytes": 32985,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Alafaya/Standard_SCU8PM_2019-04-24_0000/Standard_SCU8PM_2019-04-24_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 020400009dee36000000000021000000a5060000f20a0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Alafaya/Standard_SCU8PM_2019-04-24_0000/Standard_SCU8PM_2019-04-24_0000.001.jpg",
+        "uncompressed_bytes": 19855,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Alafaya/Standard_SCU8PM_2019-04-24_0000/Standard_SCU8PM_2019-04-24_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 1603000015f336000000000020030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Alafaya/Standard_SCU8PM_2019-04-24_0000/Standard_SCU8PM_2019-04-24_0000.013.mp4"
+    }
+  },
+  {
+    "site": "University North",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8OG_2019-04-24_0000/Standard_SCU8OG_2019-04-24_0000.013.jpg",
+        "uncompressed_bytes": 38922,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8OG_2019-04-24_0000/Standard_SCU8OG_2019-04-24_0000.013.cut",
+        "uncompressed_bytes": 32,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 38060000c1ed36000000000042030000bc050000350b0000a40c0000e5120000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8OG_2019-04-24_0000/Standard_SCU8OG_2019-04-24_0000.001.jpg",
+        "uncompressed_bytes": 22879,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8OG_2019-04-24_0000/Standard_SCU8OG_2019-04-24_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: b903000005f7360000000000e9030000"
+      }
+    ],
+    "video": {
+      "status": "probed",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8OG_2019-04-24_0000/Standard_SCU8OG_2019-04-24_0000.013.mp4",
+      "metadata": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_time_base": "35730244/2141670831",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "width": 720,
+            "height": 480,
+            "coded_width": 720,
+            "coded_height": 480,
+            "closed_captions": 0,
+            "has_b_frames": 0,
+            "pix_fmt": "yuv420p",
+            "level": 40,
+            "refs": 1,
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "r_frame_rate": "30000/1001",
+            "avg_frame_rate": "2141670831/71460488",
+            "time_base": "1/90000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 323852852,
+            "duration": "3598.365022",
+            "bit_rate": "488008",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "107843",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0
+            },
+            "tags": {
+              "creation_time": "2019-04-24T15:00:04.000000Z",
+              "language": "und",
+              "encoder": "JVT/AVC Coding"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL University/Standard_SCU8OG_2019-04-24_0000/Standard_SCU8OG_2019-04-24_0000.013.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "3598.365022",
+          "size": "219957621",
+          "bit_rate": "489016",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "miovisom",
+            "creation_time": "2019-04-24T15:00:04.000000Z"
+          }
+        }
+      }
+    }
+  },
+  {
+    "site": "Lakemont Pathway",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Lakemont/Standard_SCU8OG_2019-05-01_0000/Standard_SCU8OG_2019-05-01_0000.013.jpg",
+        "uncompressed_bytes": 30368,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Lakemont/Standard_SCU8OG_2019-05-01_0000/Standard_SCU8OG_2019-05-01_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 880100005dee3600000000000000000020060000d1070000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Lakemont/Standard_SCU8OG_2019-05-01_0000/Standard_SCU8OG_2019-05-01_0000.001.jpg",
+        "uncompressed_bytes": 21216,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Lakemont/Standard_SCU8OG_2019-05-01_0000/Standard_SCU8OG_2019-05-01_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: bb02000054f3360000000000de020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Lakemont/Standard_SCU8OG_2019-05-01_0000/Standard_SCU8OG_2019-05-01_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Winter Park Road",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Winter Park Road/Standard_SCU8PM_2019-05-01_0000/Standard_SCU8PM_2019-05-01_0000.013.jpg",
+        "uncompressed_bytes": 21541,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Winter Park Road/Standard_SCU8PM_2019-05-01_0000/Standard_SCU8PM_2019-05-01_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 5b03000094ef360000000000000000008f040000f2070000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Winter Park Road/Standard_SCU8PM_2019-05-01_0000/Standard_SCU8PM_2019-05-01_0000.001.jpg",
+        "uncompressed_bytes": 19005,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Winter Park Road/Standard_SCU8PM_2019-05-01_0000/Standard_SCU8PM_2019-05-01_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: cd03000017f8360000000000e9030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Winter Park Road/Standard_SCU8PM_2019-05-01_0000/Standard_SCU8PM_2019-05-01_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Curry Ford South",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Curry Ford/Standard_SCU8PM_2019-05-08_0000.02/Standard_SCU8PM_2019-05-08_0000.02.013.jpg",
+        "uncompressed_bytes": 32602,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Curry Ford/Standard_SCU8PM_2019-05-08_0000.02/Standard_SCU8PM_2019-05-08_0000.02.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: ee050000bbed3600000000004203000015050000130b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Curry Ford/Standard_SCU8PM_2019-05-08_0000.02/Standard_SCU8PM_2019-05-08_0000.02.001.jpg",
+        "uncompressed_bytes": 22815,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Curry Ford/Standard_SCU8PM_2019-05-08_0000.02/Standard_SCU8PM_2019-05-08_0000.02.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 7607000053fb3600000000008f070000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Curry Ford/Standard_SCU8PM_2019-05-08_0000.02/Standard_SCU8PM_2019-05-08_0000.02.013.mp4"
+    }
+  },
+  {
+    "site": "S Orange SB",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL S Orange/Standard_SCU8OG_2019-05-08_0000/Standard_SCU8OG_2019-05-08_0000.013.jpg",
+        "uncompressed_bytes": 23631,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL S Orange/Standard_SCU8OG_2019-05-08_0000/Standard_SCU8OG_2019-05-08_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 66040000ebed3600000000002003000084060000130b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL S Orange/Standard_SCU8OG_2019-05-08_0000/Standard_SCU8OG_2019-05-08_0000.001.jpg",
+        "uncompressed_bytes": 18989,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL S Orange/Standard_SCU8OG_2019-05-08_0000/Standard_SCU8OG_2019-05-08_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 4403000059f336000000000063030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL S Orange/Standard_SCU8OG_2019-05-08_0000/Standard_SCU8OG_2019-05-08_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Curry Ford North",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Curry Ford/Standard_SCU8PM_2019-05-15_0000/Standard_SCU8PM_2019-05-15_0000.013.jpg",
+        "uncompressed_bytes": 31769,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Curry Ford/Standard_SCU8PM_2019-05-15_0000/Standard_SCU8PM_2019-05-15_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: eb0400003aea36000000000037020000150500002a0a0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Curry Ford/Standard_SCU8PM_2019-05-15_0000/Standard_SCU8PM_2019-05-15_0000.001.jpg",
+        "uncompressed_bytes": 20787,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Curry Ford/Standard_SCU8PM_2019-05-15_0000/Standard_SCU8PM_2019-05-15_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 2a0300005ff336000000000042030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Curry Ford/Standard_SCU8PM_2019-05-15_0000/Standard_SCU8PM_2019-05-15_0000.013.mp4"
+    }
+  },
+  {
+    "site": "S Orange NB",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL S Orange/Standard_SCU8OG_2019-05-15_0000/Standard_SCU8OG_2019-05-15_0000.013.jpg",
+        "uncompressed_bytes": 34214,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL S Orange/Standard_SCU8OG_2019-05-15_0000/Standard_SCU8OG_2019-05-15_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 0b05000081e936000000000063030000fe050000130b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL S Orange/Standard_SCU8OG_2019-05-15_0000/Standard_SCU8OG_2019-05-15_0000.001.jpg",
+        "uncompressed_bytes": 21873,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL S Orange/Standard_SCU8OG_2019-05-15_0000/Standard_SCU8OG_2019-05-15_0000.001.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: dc0300001cf3360000000000c7030000b0070000990b0000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL S Orange/Standard_SCU8OG_2019-05-15_0000/Standard_SCU8OG_2019-05-15_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Livingston",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Livingston/Standard_SCU8PM_2019-05-22_0000/Standard_SCU8PM_2019-05-22_0000.013.jpg",
+        "uncompressed_bytes": 29598,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Livingston/Standard_SCU8PM_2019-05-22_0000/Standard_SCU8PM_2019-05-22_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 72040000b2ee36000000000058020000bc0500004b0a0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Livingston/Standard_SCU8PM_2019-05-22_0000/Standard_SCU8PM_2019-05-22_0000.001.jpg",
+        "uncompressed_bytes": 19973,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Livingston/Standard_SCU8PM_2019-05-22_0000/Standard_SCU8PM_2019-05-22_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: cf02000046f3360000000000ff020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Livingston/Standard_SCU8PM_2019-05-22_0000/Standard_SCU8PM_2019-05-22_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Summerlin",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Summerlin/Standard_SCU8OG_2019-05-22_0000/Standard_SCU8OG_2019-05-22_0000.013.jpg",
+        "uncompressed_bytes": 31831,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Summerlin/Standard_SCU8OG_2019-05-22_0000/Standard_SCU8OG_2019-05-22_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: c9040000c3ed3600000000006303000041060000130b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Summerlin/Standard_SCU8OG_2019-05-22_0000/Standard_SCU8OG_2019-05-22_0000.001.jpg",
+        "uncompressed_bytes": 20432,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Summerlin/Standard_SCU8OG_2019-05-22_0000/Standard_SCU8OG_2019-05-22_0000.001.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 1a0300004ff336000000000020030000d2070000140b0000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Summerlin/Standard_SCU8OG_2019-05-22_0000/Standard_SCU8OG_2019-05-22_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Glenridge",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Glenridge/Standard_SCU8PM_2019-06-26_0000/Standard_SCU8PM_2019-06-26_0000.013.jpg",
+        "uncompressed_bytes": 32860,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Glenridge/Standard_SCU8PM_2019-06-26_0000/Standard_SCU8PM_2019-06-26_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 830100007fef36000000000000000000a506000035080000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Glenridge/Standard_SCU8PM_2019-06-26_0000/Standard_SCU8PM_2019-06-26_0000.001.jpg",
+        "uncompressed_bytes": 20406,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Glenridge/Standard_SCU8PM_2019-06-26_0000/Standard_SCU8PM_2019-06-26_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 9d0200005af3360000000000de020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Glenridge/Standard_SCU8PM_2019-06-26_0000/Standard_SCU8PM_2019-06-26_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Kaley",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Kaley/Standard_SCU8OG_2019-06-26_0000/Standard_SCU8OG_2019-06-26_0000.013.jpg",
+        "uncompressed_bytes": 28138,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Kaley/Standard_SCU8OG_2019-06-26_0000/Standard_SCU8OG_2019-06-26_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 180300006aeb36000000000000000000b1040000f3070000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Kaley/Standard_SCU8OG_2019-06-26_0000/Standard_SCU8OG_2019-06-26_0000.001.jpg",
+        "uncompressed_bytes": 21425,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Kaley/Standard_SCU8OG_2019-06-26_0000/Standard_SCU8OG_2019-06-26_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: ab0300005df3360000000000c7030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Kaley/Standard_SCU8OG_2019-06-26_0000/Standard_SCU8OG_2019-06-26_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Colonial North",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.jpg",
+        "uncompressed_bytes": 24848,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: e1030000a6ea360000000000f4010000dd050000e7090000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.001.jpg",
+        "uncompressed_bytes": 20975,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.001.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: e802000061f3360000000000de020000d2070000d10a0000"
+      }
+    ],
+    "video": {
+      "status": "probed",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4",
+      "metadata": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_time_base": "34089529/2043326374",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "width": 720,
+            "height": 480,
+            "coded_width": 720,
+            "coded_height": 480,
+            "closed_captions": 0,
+            "has_b_frames": 0,
+            "pix_fmt": "yuv420p",
+            "level": 40,
+            "refs": 1,
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "r_frame_rate": "30000/1001",
+            "avg_frame_rate": "1833298022/61171105",
+            "time_base": "1/90000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 323909909,
+            "duration": "3598.998989",
+            "bit_rate": "392941",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "107862",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0
+            },
+            "tags": {
+              "creation_time": "2019-07-10T15:00:03.000000Z",
+              "language": "und",
+              "encoder": "JVT/AVC Coding"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "3598.998989",
+          "size": "177227899",
+          "bit_rate": "393949",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "miovisom",
+            "creation_time": "2019-07-10T15:00:03.000000Z"
+          }
+        }
+      }
+    }
+  },
+  {
+    "site": "Lee Road N",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.jpg",
+        "uncompressed_bytes": 26390,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.cut",
+        "uncompressed_bytes": 40,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 9e030000fdee3600000000001502000084060000080a0000340e0000da11000006160000cd190000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.001.jpg",
+        "uncompressed_bytes": 20401,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 8b03000044f7360000000000c7030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Colonial South",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-16_0000/Standard_SCU8OG_2019-07-16_0000.013.jpg",
+        "uncompressed_bytes": 33889,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-16_0000/Standard_SCU8OG_2019-07-16_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 2e05000097ed36000000000063030000a50600001e0c0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-16_0000/Standard_SCU8OG_2019-07-16_0000.001.jpg",
+        "uncompressed_bytes": 26728,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-16_0000/Standard_SCU8OG_2019-07-16_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: a20200005cf3360000000000bc020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-16_0000/Standard_SCU8OG_2019-07-16_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Lee Road South",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-16_0000/Standard_SCU8PM_2019-07-16_0000.013.jpg",
+        "uncompressed_bytes": 35805,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-16_0000/Standard_SCU8PM_2019-07-16_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 64040000deed36000000000042030000a5060000560b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-16_0000/Standard_SCU8PM_2019-07-16_0000.001.jpg",
+        "uncompressed_bytes": 25333,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-16_0000/Standard_SCU8PM_2019-07-16_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: e902000060f3360000000000ff020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-16_0000/Standard_SCU8PM_2019-07-16_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Par Street",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Par/Standard_SCU8OG_2019-07-24_0000/Standard_SCU8OG_2019-07-24_0000.013.jpg",
+        "uncompressed_bytes": 28281,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Par/Standard_SCU8OG_2019-07-24_0000/Standard_SCU8OG_2019-07-24_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 7e0000001fee360000000000000000002b070000d1070000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Par/Standard_SCU8OG_2019-07-24_0000/Standard_SCU8OG_2019-07-24_0000.001.jpg",
+        "uncompressed_bytes": 22108,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Par/Standard_SCU8OG_2019-07-24_0000/Standard_SCU8OG_2019-07-24_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: c902000063f3360000000000de020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Par/Standard_SCU8OG_2019-07-24_0000/Standard_SCU8OG_2019-07-24_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Clay Ave",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Clay/Standard_SCU8PM_2019-07-31_0000/Standard_SCU8PM_2019-07-31_0000.013.jpg",
+        "uncompressed_bytes": 26009,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Clay/Standard_SCU8PM_2019-07-31_0000/Standard_SCU8PM_2019-07-31_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 88040000bfed36000000000042030000a5060000770b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Clay/Standard_SCU8PM_2019-07-31_0000/Standard_SCU8PM_2019-07-31_0000.001.jpg",
+        "uncompressed_bytes": 19647,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Clay/Standard_SCU8PM_2019-07-31_0000/Standard_SCU8PM_2019-07-31_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: bc02000054f3360000000000de020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Clay/Standard_SCU8PM_2019-07-31_0000/Standard_SCU8PM_2019-07-31_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Edgewater",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Edgewater/Standard_SCU8OG_2019-08-07_0000/Standard_SCU8OG_2019-08-07_0000.013.jpg",
+        "uncompressed_bytes": 23726,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Edgewater/Standard_SCU8OG_2019-08-07_0000/Standard_SCU8OG_2019-08-07_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: ca04000097e7360000000000ff020000fe050000f10a0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Edgewater/Standard_SCU8OG_2019-08-07_0000/Standard_SCU8OG_2019-08-07_0000.001.jpg",
+        "uncompressed_bytes": 20296,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Edgewater/Standard_SCU8OG_2019-08-07_0000/Standard_SCU8OG_2019-08-07_0000.001.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: e802000064f3360000000000de020000b0070000af0a0000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Edgewater/Standard_SCU8OG_2019-08-07_0000/Standard_SCU8OG_2019-08-07_0000.013.mp4"
+    }
+  },
+  {
+    "site": "N Orange",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL N Orange/Standard_SCU8PM_2019-08-07_0000/Standard_SCU8PM_2019-08-07_0000.013.jpg",
+        "uncompressed_bytes": 28234,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL N Orange/Standard_SCU8PM_2019-08-07_0000/Standard_SCU8PM_2019-08-07_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 7205000099ed360000000000420300009a050000340b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL N Orange/Standard_SCU8PM_2019-08-07_0000/Standard_SCU8PM_2019-08-07_0000.001.jpg",
+        "uncompressed_bytes": 23239,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL N Orange/Standard_SCU8PM_2019-08-07_0000/Standard_SCU8PM_2019-08-07_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: f50200006df336000000000020030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL N Orange/Standard_SCU8PM_2019-08-07_0000/Standard_SCU8PM_2019-08-07_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Pine Hills BL",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8PM_2019-08-21_0000/Standard_SCU8PM_2019-08-21_0000.013.jpg",
+        "uncompressed_bytes": 32953,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8PM_2019-08-21_0000/Standard_SCU8PM_2019-08-21_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: ae0400002cec360000000000de020000a5060000980b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8PM_2019-08-21_0000/Standard_SCU8PM_2019-08-21_0000.001.jpg",
+        "uncompressed_bytes": 20685,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8PM_2019-08-21_0000/Standard_SCU8PM_2019-08-21_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: b4020000c1f3360000000000de020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8PM_2019-08-21_0000/Standard_SCU8PM_2019-08-21_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Pine Hills NBL",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Pine Hills/Standard_SCU8OG_2019-08-21_0000/Standard_SCU8OG_2019-08-21_0000.013.jpg",
+        "uncompressed_bytes": 34795,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Pine Hills/Standard_SCU8OG_2019-08-21_0000/Standard_SCU8OG_2019-08-21_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 50050000b6ea36000000000042030000bc050000140b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Pine Hills/Standard_SCU8OG_2019-08-21_0000/Standard_SCU8OG_2019-08-21_0000.001.jpg",
+        "uncompressed_bytes": 23443,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Pine Hills/Standard_SCU8OG_2019-08-21_0000/Standard_SCU8OG_2019-08-21_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: e802000063f3360000000000ff020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Pine Hills/Standard_SCU8OG_2019-08-21_0000/Standard_SCU8OG_2019-08-21_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Pine Hills BL E",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8OG_2019-08-28_0000/Standard_SCU8OG_2019-08-28_0000.013.jpg",
+        "uncompressed_bytes": 30908,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8OG_2019-08-28_0000/Standard_SCU8OG_2019-08-28_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 660100004ff03600000000000000000062060000d1070000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8OG_2019-08-28_0000/Standard_SCU8OG_2019-08-28_0000.001.jpg",
+        "uncompressed_bytes": 19404,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8OG_2019-08-28_0000/Standard_SCU8OG_2019-08-28_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: bd02000057f3360000000000ff020000"
+      }
+    ],
+    "video": {
+      "status": "probed",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8OG_2019-08-28_0000/Standard_SCU8OG_2019-08-28_0000.013.mp4",
+      "metadata": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_time_base": "19287574/1156097189",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "width": 720,
+            "height": 480,
+            "coded_width": 720,
+            "coded_height": 480,
+            "closed_captions": 0,
+            "has_b_frames": 0,
+            "pix_fmt": "yuv420p",
+            "level": 40,
+            "refs": 1,
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "r_frame_rate": "30000/1001",
+            "avg_frame_rate": "1717342054/57302037",
+            "time_base": "1/90000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 323963963,
+            "duration": "3599.599589",
+            "bit_rate": "392828",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "107880",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0
+            },
+            "tags": {
+              "creation_time": "2019-08-28T15:00:03.000000Z",
+              "language": "und",
+              "encoder": "JVT/AVC Coding"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8OG_2019-08-28_0000/Standard_SCU8OG_2019-08-28_0000.013.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "3599.599589",
+          "size": "177206827",
+          "bit_rate": "393836",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "miovisom",
+            "creation_time": "2019-08-28T15:00:03.000000Z"
+          }
+        }
+      }
+    }
+  },
+  {
+    "site": "Pine Hils NBL E",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Pine Hills/Standard_SCU8PM_2019-08-28_0000/Standard_SCU8PM_2019-08-28_0000.013.jpg",
+        "uncompressed_bytes": 35010,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Pine Hills/Standard_SCU8PM_2019-08-28_0000/Standard_SCU8PM_2019-08-28_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 3a030000b1ec36000000000058020000e80600004b0a0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Pine Hills/Standard_SCU8PM_2019-08-28_0000/Standard_SCU8PM_2019-08-28_0000.001.jpg",
+        "uncompressed_bytes": 22301,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Pine Hills/Standard_SCU8PM_2019-08-28_0000/Standard_SCU8PM_2019-08-28_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 1a03000051f336000000000042030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Pine Hills/Standard_SCU8PM_2019-08-28_0000/Standard_SCU8PM_2019-08-28_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Carroll NBL",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Carroll/Standard_SCU8OG_2019-09-10_0000/Standard_SCU8OG_2019-09-10_0000.013.jpg",
+        "uncompressed_bytes": 33519,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Carroll/Standard_SCU8OG_2019-09-10_0000/Standard_SCU8OG_2019-09-10_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 030100005eee36000000000000000000a5060000f2070000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Carroll/Standard_SCU8OG_2019-09-10_0000/Standard_SCU8OG_2019-09-10_0000.001.jpg",
+        "uncompressed_bytes": 12702,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/NBL Carroll/Standard_SCU8OG_2019-09-10_0000/Standard_SCU8OG_2019-09-10_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 7e0200005ef33600000000009b020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Carroll/Standard_SCU8OG_2019-09-10_0000/Standard_SCU8OG_2019-09-10_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Columbia Ave",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000.02/Standard_SCU8PM_2019-09-10_0000.02.013.jpg",
+        "uncompressed_bytes": 26841,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000.02/Standard_SCU8PM_2019-09-10_0000.02.013.cut",
+        "uncompressed_bytes": 32,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: d50500007eed3600000000008403000079050000560b000028961100269c1100"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000.02/Standard_SCU8PM_2019-09-10_0000.02.001.jpg",
+        "uncompressed_bytes": 24035,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000.02/Standard_SCU8PM_2019-09-10_0000.02.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 68070000cef83600000000008f070000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000.02/Standard_SCU8PM_2019-09-10_0000.02.013.mp4"
+    }
+  },
+  {
+    "site": "Baxter",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/TL Speed Baxter/Standard_SCU8PM_2019-09-18_0000/Standard_SCU8PM_2019-09-18_0000.013.jpg",
+        "uncompressed_bytes": 32713,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/TL Speed Baxter/Standard_SCU8PM_2019-09-18_0000/Standard_SCU8PM_2019-09-18_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: a9010000d9ed3600000000000000000020060000f3070000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/TL Speed Baxter/Standard_SCU8PM_2019-09-18_0000/Standard_SCU8PM_2019-09-18_0000.001.jpg",
+        "uncompressed_bytes": 19830,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/TL Speed Baxter/Standard_SCU8PM_2019-09-18_0000/Standard_SCU8PM_2019-09-18_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: dd020000c6f3360000000000ff020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/TL Speed Baxter/Standard_SCU8PM_2019-09-18_0000/Standard_SCU8PM_2019-09-18_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Edgewater N",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.jpg",
+        "uncompressed_bytes": 29551,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 2105000096ed3600000000006303000020060000560b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.001.jpg",
+        "uncompressed_bytes": 21272,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: b803000067f3360000000000c7030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.mp4"
+    }
+  },
+  {
+    "site": "University SW Speed",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/SW Speed University/Standard_SCU8PM_2019-09-25_0000/Standard_SCU8PM_2019-09-25_0000.013.jpg",
+        "uncompressed_bytes": 39977,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/SW Speed University/Standard_SCU8PM_2019-09-25_0000/Standard_SCU8PM_2019-09-25_0000.013.cut",
+        "uncompressed_bytes": 32,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: d6050000ece936000000000063030000fe050000560b00002a0d000028130000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/SW Speed University/Standard_SCU8PM_2019-09-25_0000/Standard_SCU8PM_2019-09-25_0000.001.jpg",
+        "uncompressed_bytes": 22470,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/SW Speed University/Standard_SCU8PM_2019-09-25_0000/Standard_SCU8PM_2019-09-25_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: e4020000cbf3360000000000ff020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/SW Speed University/Standard_SCU8PM_2019-09-25_0000/Standard_SCU8PM_2019-09-25_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Winter Park Rd Speed",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/TL Speed Winter Park/Standard_SCU8OG_2019-09-25_0000/Standard_SCU8OG_2019-09-25_0000.013.jpg",
+        "uncompressed_bytes": 30247,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/TL Speed Winter Park/Standard_SCU8OG_2019-09-25_0000/Standard_SCU8OG_2019-09-25_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 5b03000049ef36000000000021000000a50600004b0a0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/TL Speed Winter Park/Standard_SCU8OG_2019-09-25_0000/Standard_SCU8OG_2019-09-25_0000.001.jpg",
+        "uncompressed_bytes": 16492,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/TL Speed Winter Park/Standard_SCU8OG_2019-09-25_0000/Standard_SCU8OG_2019-09-25_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: f50200004af336000000000020030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/TL Speed Winter Park/Standard_SCU8OG_2019-09-25_0000/Standard_SCU8OG_2019-09-25_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Rinehart Path",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.013.jpg",
+        "uncompressed_bytes": 28741,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 45010000bfef3600000000000000000084060000d1070000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.001.jpg",
+        "uncompressed_bytes": 16204,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: c803000040f7360000000000e9030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Rinehart Sidewalk",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road SW/Standard_SCU8OG_2019-10-02_0000/Standard_SCU8OG_2019-10-02_0000.013.jpg",
+        "uncompressed_bytes": 31615,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road SW/Standard_SCU8OG_2019-10-02_0000/Standard_SCU8OG_2019-10-02_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 5002000031ee36000000000042000000a506000040090000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road SW/Standard_SCU8OG_2019-10-02_0000/Standard_SCU8OG_2019-10-02_0000.001.jpg",
+        "uncompressed_bytes": 19609,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road SW/Standard_SCU8OG_2019-10-02_0000/Standard_SCU8OG_2019-10-02_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: a402000060f3360000000000bc020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road SW/Standard_SCU8OG_2019-10-02_0000/Standard_SCU8OG_2019-10-02_0000.013.mp4"
+    }
+  },
+  {
+    "site": "West Orange Path",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.013.jpg",
+        "uncompressed_bytes": 21610,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.013.cut",
+        "uncompressed_bytes": 32,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 88010000ecef36000000000000000000a5060000f2070000340e0000e50f0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.001.jpg",
+        "uncompressed_bytes": 12236,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: ae0300005cf3360000000000c7030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.013.mp4"
+    }
+  },
+  {
+    "site": "West Orange Sidewalk",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/WORT Sidewalk/Standard_SCU8PM_2019-10-15_0000/Standard_SCU8PM_2019-10-15_0000.013.jpg",
+        "uncompressed_bytes": 30602,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/WORT Sidewalk/Standard_SCU8PM_2019-10-15_0000/Standard_SCU8PM_2019-10-15_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 230400001de836000000000079020000200600004b0a0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/WORT Sidewalk/Standard_SCU8PM_2019-10-15_0000/Standard_SCU8PM_2019-10-15_0000.001.jpg",
+        "uncompressed_bytes": 20604,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/WORT Sidewalk/Standard_SCU8PM_2019-10-15_0000/Standard_SCU8PM_2019-10-15_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 050300005af336000000000020030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/WORT Sidewalk/Standard_SCU8PM_2019-10-15_0000/Standard_SCU8PM_2019-10-15_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Daniels Path",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Daniels Path/Standard_SCU8PM_2019-10-23_0000/Standard_SCU8PM_2019-10-23_0000.013.jpg",
+        "uncompressed_bytes": 53650,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Daniels Path/Standard_SCU8PM_2019-10-23_0000/Standard_SCU8PM_2019-10-23_0000.013.cut",
+        "uncompressed_bytes": 32,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: b40500008ced3600000000006303000062060000340b00004b0d000007130000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Daniels Path/Standard_SCU8PM_2019-10-23_0000/Standard_SCU8PM_2019-10-23_0000.001.jpg",
+        "uncompressed_bytes": 23799,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Daniels Path/Standard_SCU8PM_2019-10-23_0000/Standard_SCU8PM_2019-10-23_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: cf03000045f7360000000000e9030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Daniels Path/Standard_SCU8PM_2019-10-23_0000/Standard_SCU8PM_2019-10-23_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Daniels Sidewalk",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Daniels SW/Standard_SCU8OG_2019-10-23_0000/Standard_SCU8OG_2019-10-23_0000.013.jpg",
+        "uncompressed_bytes": 39842,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Daniels SW/Standard_SCU8OG_2019-10-23_0000/Standard_SCU8OG_2019-10-23_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: f5050000d7eb3600000000008403000058050000780b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Daniels SW/Standard_SCU8OG_2019-10-23_0000/Standard_SCU8OG_2019-10-23_0000.001.jpg",
+        "uncompressed_bytes": 22027,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Daniels SW/Standard_SCU8OG_2019-10-23_0000/Standard_SCU8OG_2019-10-23_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: e50300003af73600000000000a040000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Daniels SW/Standard_SCU8OG_2019-10-23_0000/Standard_SCU8OG_2019-10-23_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Aloma Path",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.013.jpg",
+        "uncompressed_bytes": 37478,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 9805000089ed360000000000630300009a050000560b0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.001.jpg",
+        "uncompressed_bytes": 19957,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: 1103000045f336000000000020030000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Aloma Sidewalk",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Aloma SW/Standard_SCU8OG_2019-10-30_0000/Standard_SCU8OG_2019-10-30_0000.013.jpg",
+        "uncompressed_bytes": 34058,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Aloma SW/Standard_SCU8OG_2019-10-30_0000/Standard_SCU8OG_2019-10-30_0000.013.cut",
+        "uncompressed_bytes": 32,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: a80100008aef3600000000002100000062060000f2070000f20d0000c50f0000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Aloma SW/Standard_SCU8OG_2019-10-30_0000/Standard_SCU8OG_2019-10-30_0000.001.jpg",
+        "uncompressed_bytes": 16040,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Aloma SW/Standard_SCU8OG_2019-10-30_0000/Standard_SCU8OG_2019-10-30_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: bf02000056f3360000000000de020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Aloma SW/Standard_SCU8OG_2019-10-30_0000/Standard_SCU8OG_2019-10-30_0000.013.mp4"
+    }
+  },
+  {
+    "site": "Pleasant Hill Path",
+    "sidecars": [
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Pleasant Hill Path/Standard_SCU8OG_2019-11-12_0000/Standard_SCU8OG_2019-11-12_0000.013.jpg",
+        "uncompressed_bytes": 36201,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Pleasant Hill Path/Standard_SCU8OG_2019-11-12_0000/Standard_SCU8OG_2019-11-12_0000.013.cut",
+        "uncompressed_bytes": 24,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: b3020000e4ef3600000000002c01000041060000fd080000"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Pleasant Hill Path/Standard_SCU8OG_2019-11-12_0000/Standard_SCU8OG_2019-11-12_0000.001.jpg",
+        "uncompressed_bytes": 18652,
+        "gps": null,
+        "text_clues": [],
+        "status": "no_readable_EXIF_GPS"
+      },
+      {
+        "member": "MioVision Data/Bike Lane Study/MioVision Video/Pleasant Hill Path/Standard_SCU8OG_2019-11-12_0000/Standard_SCU8OG_2019-11-12_0000.001.cut",
+        "uncompressed_bytes": 16,
+        "gps": null,
+        "text_clues": [],
+        "status": "sidecar_read",
+        "preview_text": "Binary sidecar: d90200004ff3360000000000ff020000"
+      }
+    ],
+    "video": {
+      "status": "not_extracted",
+      "path": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Pleasant Hill Path/Standard_SCU8OG_2019-11-12_0000/Standard_SCU8OG_2019-11-12_0000.013.mp4"
+    }
+  }
+]

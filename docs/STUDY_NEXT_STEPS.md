@@ -175,3 +175,39 @@ This job requests2CPUs/4GB/30minutes and no GPU. It reads the original ZIP centr
 The output folder is `exp_results/speed_readiness_JOBID/` (replace JOBID with the returned Slurm ID). Read `RESULTS.md`, `GPS_candidates.csv`, `camera_metadata.json`, and `reference_summary.csv`. Zero metadata clues is a possible legitimate outcome, not calibrated speed. Sampled sidecars lacking GPS do not prove the original camera had no location data. All source-speed rows/source cells are retained for future independently matched validation.
 
 Local workbook-only report: `exp_results/speed_reference_readiness_20261023/RESULTS.md`; no new cluster results are claimed. Four new metadata/reference tests pass.
+
+
+## Manual pilot reference prepared in parallel
+
+Already run locally: `exp_results/pine_hills_manual_reference_20261023/RESULTS.md` plus raw15-minute channel counts, grouped user/side/facility counts, and worksheet coverage. For2019-08-28 12:00–13:00 the workbook records NBcyclists0bike-lane/1sidewalk, SBcyclists4bike-lane/0sidewalk, NBpedestrians0/0. SBpedestrian channels are absent, not zero. Keep raw sides separate until the actual camera side is established. Model-vs-manual comparison is pending detection results and that correspondence.
+
+The pedestrian sheet has99quarter-hour rows (throughAug29 00:30), while bicycles has192(two days). This is a real coverage difference; do not compare full-file totals as if coverage were identical. A count total is not per-person identity/detection accuracy.
+
+To independently regenerate on cluster after push/pull, no sbatch or GPU is needed; use a fresh output folder:
+
+```bash
+python code/study_count_reference.py \
+  --workbook '/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Pine_Hills_BL_E_690212_08-28-2019.xls' \
+  --start '2019-08-28 12:00:00' --end '2019-08-28 13:00:00' \
+  --out exp_results/pine_hills_manual_reference_repeat
+```
+
+Do not repeat this merely to occupy the queue; the saved result is ready. The useful pending work is reviewing the pilot output and returned calibration metadata.
+
+
+## Speed-specific alternative: University SW Speed
+
+Owner supplied camera_metadata.json; inspected all41camera entries locally. No readable location clues were found in sampled CUT previews (binary); explicit GPS remains0. Most sources were not extracted at the time of the audit. Raw metadata preserved at data/reviews/speed_readiness_47393224/camera_metadata.json.
+
+A stronger speed candidate than Pine Hills is the purpose-labelled **SW Speed University** recording (September25,2019). The speed workbook contains78University sidewalk records, all55ft. This street-name match and folder label are promising, but do not establish which recording/person/segment each speed belongs to. No existing video has independently validated model mph.
+
+Prepared one source hour08:00–09:00, chunk009. Selection uses the largest manual first-day daylight hourly cyclist count (11), earliest tie among08:00/14:00/16:00, without detector outputs. Manual data is North Sidewalk;11cyclist observations. Event-enriched selection is not an unbiased validation set. Reference records, empty person-link template and manual-hour counts: exp_results/university_speed_candidate_20261023/.
+
+After push/pull, on HiPerGator with the environment active:
+
+```bash
+cd /orange/xiangyan/rithika/vision/vision3/best/test_colonial
+bash code/prepare_university_speed.sh
+```
+
+This extracts only one source file (~282MBlisted compressed/file size), probes metadata, isolates that hour's inventory, and builds a real-frame editor/manual-reference folder. No GPU or model job is submitted. It prints a fresh folder exp_results/university_speed_prepare_XXXXXX/; download its entire zone_editor subfolder. Open index.html -> University SW Speed. Send the downloaded folder/local path for image inspection and check the expected08:05clock. Endpoints, date/person links or alternate metric landmarks must be identified before claiming mph; marking area polygons alone is not speed calibration. Pine Hills detection can continue independently.

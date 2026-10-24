@@ -1,0 +1,9 @@
+worksheet,user_type,bin_start,bin_end,camera_side_label,channel_label,direction,facility,count,status,source_row,source_column
+Bicycles,cyclist,2019-09-25 08:00:00,2019-09-25 08:15:00,NORTH,North Sidewalk,Westbound,sidewalk,1,recorded,39,2
+Bicycles,cyclist,2019-09-25 08:00:00,2019-09-25 08:15:00,NORTH,North Sidewalk,Eastbound,sidewalk,1,recorded,39,3
+Bicycles,cyclist,2019-09-25 08:15:00,2019-09-25 08:30:00,NORTH,North Sidewalk,Westbound,sidewalk,1,recorded,40,2
+Bicycles,cyclist,2019-09-25 08:15:00,2019-09-25 08:30:00,NORTH,North Sidewalk,Eastbound,sidewalk,0,recorded,40,3
+Bicycles,cyclist,2019-09-25 08:30:00,2019-09-25 08:45:00,NORTH,North Sidewalk,Westbound,sidewalk,3,recorded,41,2
+Bicycles,cyclist,2019-09-25 08:30:00,2019-09-25 08:45:00,NORTH,North Sidewalk,Eastbound,sidewalk,0,recorded,41,3
+Bicycles,cyclist,2019-09-25 08:45:00,2019-09-25 09:00:00,NORTH,North Sidewalk,Westbound,sidewalk,5,recorded,42,2
+Bicycles,cyclist,2019-09-25 08:45:00,2019-09-25 09:00:00,NORTH,North Sidewalk,Eastbound,sidewalk,0,recorded,42,3

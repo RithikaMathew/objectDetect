@@ -1,0 +1,2 @@
+worksheet,first_bin,last_bin,all_time_bins,selected_time_bins,missing_selected_cells,non_15min_steps,channels
+Bicycles,2019-09-25 00:00:00,2019-09-26 23:45:00,192,4,0,0,"[""North Sidewalk"", ""North Sidewalk""]"

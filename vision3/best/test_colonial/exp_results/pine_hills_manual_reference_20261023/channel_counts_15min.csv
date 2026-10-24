@@ -1,0 +1,49 @@
+worksheet,user_type,bin_start,bin_end,camera_side_label,channel_label,direction,facility,count,status,source_row,source_column
+Pedestrians,pedestrian,2019-08-28 12:00:00,2019-08-28 12:15:00,NB,NB Bike Lane,Southbound,bike_lane,0,recorded,59,2
+Pedestrians,pedestrian,2019-08-28 12:00:00,2019-08-28 12:15:00,NB,NB Sidewalk,Southbound,sidewalk,0,recorded,59,3
+Pedestrians,pedestrian,2019-08-28 12:00:00,2019-08-28 12:15:00,NB,NB Bike Lane,Northbound,bike_lane,0,recorded,59,4
+Pedestrians,pedestrian,2019-08-28 12:00:00,2019-08-28 12:15:00,NB,NB Sidewalk,Northbound,sidewalk,0,recorded,59,5
+Pedestrians,pedestrian,2019-08-28 12:15:00,2019-08-28 12:30:00,NB,NB Bike Lane,Southbound,bike_lane,0,recorded,60,2
+Pedestrians,pedestrian,2019-08-28 12:15:00,2019-08-28 12:30:00,NB,NB Sidewalk,Southbound,sidewalk,0,recorded,60,3
+Pedestrians,pedestrian,2019-08-28 12:15:00,2019-08-28 12:30:00,NB,NB Bike Lane,Northbound,bike_lane,0,recorded,60,4
+Pedestrians,pedestrian,2019-08-28 12:15:00,2019-08-28 12:30:00,NB,NB Sidewalk,Northbound,sidewalk,0,recorded,60,5
+Pedestrians,pedestrian,2019-08-28 12:30:00,2019-08-28 12:45:00,NB,NB Bike Lane,Southbound,bike_lane,0,recorded,61,2
+Pedestrians,pedestrian,2019-08-28 12:30:00,2019-08-28 12:45:00,NB,NB Sidewalk,Southbound,sidewalk,0,recorded,61,3
+Pedestrians,pedestrian,2019-08-28 12:30:00,2019-08-28 12:45:00,NB,NB Bike Lane,Northbound,bike_lane,0,recorded,61,4
+Pedestrians,pedestrian,2019-08-28 12:30:00,2019-08-28 12:45:00,NB,NB Sidewalk,Northbound,sidewalk,0,recorded,61,5
+Pedestrians,pedestrian,2019-08-28 12:45:00,2019-08-28 13:00:00,NB,NB Bike Lane,Southbound,bike_lane,0,recorded,62,2
+Pedestrians,pedestrian,2019-08-28 12:45:00,2019-08-28 13:00:00,NB,NB Sidewalk,Southbound,sidewalk,0,recorded,62,3
+Pedestrians,pedestrian,2019-08-28 12:45:00,2019-08-28 13:00:00,NB,NB Bike Lane,Northbound,bike_lane,0,recorded,62,4
+Pedestrians,pedestrian,2019-08-28 12:45:00,2019-08-28 13:00:00,NB,NB Sidewalk,Northbound,sidewalk,0,recorded,62,5
+Bicycles,cyclist,2019-08-28 12:00:00,2019-08-28 12:15:00,NB,NB Bike Lane,Southbound,bike_lane,0,recorded,60,2
+Bicycles,cyclist,2019-08-28 12:00:00,2019-08-28 12:15:00,NB,NB Sidewalk,Southbound,sidewalk,0,recorded,60,3
+Bicycles,cyclist,2019-08-28 12:00:00,2019-08-28 12:15:00,NB,NB Bike Lane,Northbound,bike_lane,0,recorded,60,4
+Bicycles,cyclist,2019-08-28 12:00:00,2019-08-28 12:15:00,NB,NB Sidewalk,Northbound,sidewalk,0,recorded,60,5
+Bicycles,cyclist,2019-08-28 12:00:00,2019-08-28 12:15:00,SB,SB Bike Lane,Southbound,bike_lane,2,recorded,60,6
+Bicycles,cyclist,2019-08-28 12:00:00,2019-08-28 12:15:00,SB,SB Sidewalk,Southbound,sidewalk,0,recorded,60,7
+Bicycles,cyclist,2019-08-28 12:00:00,2019-08-28 12:15:00,SB,SB Bike Lane,Northbound,bike_lane,0,recorded,60,8
+Bicycles,cyclist,2019-08-28 12:00:00,2019-08-28 12:15:00,SB,SB Sidewalk,Northbound,sidewalk,0,recorded,60,9
+Bicycles,cyclist,2019-08-28 12:15:00,2019-08-28 12:30:00,NB,NB Bike Lane,Southbound,bike_lane,0,recorded,61,2
+Bicycles,cyclist,2019-08-28 12:15:00,2019-08-28 12:30:00,NB,NB Sidewalk,Southbound,sidewalk,0,recorded,61,3
+Bicycles,cyclist,2019-08-28 12:15:00,2019-08-28 12:30:00,NB,NB Bike Lane,Northbound,bike_lane,0,recorded,61,4
+Bicycles,cyclist,2019-08-28 12:15:00,2019-08-28 12:30:00,NB,NB Sidewalk,Northbound,sidewalk,0,recorded,61,5
+Bicycles,cyclist,2019-08-28 12:15:00,2019-08-28 12:30:00,SB,SB Bike Lane,Southbound,bike_lane,2,recorded,61,6
+Bicycles,cyclist,2019-08-28 12:15:00,2019-08-28 12:30:00,SB,SB Sidewalk,Southbound,sidewalk,0,recorded,61,7
+Bicycles,cyclist,2019-08-28 12:15:00,2019-08-28 12:30:00,SB,SB Bike Lane,Northbound,bike_lane,0,recorded,61,8
+Bicycles,cyclist,2019-08-28 12:15:00,2019-08-28 12:30:00,SB,SB Sidewalk,Northbound,sidewalk,0,recorded,61,9
+Bicycles,cyclist,2019-08-28 12:30:00,2019-08-28 12:45:00,NB,NB Bike Lane,Southbound,bike_lane,0,recorded,62,2
+Bicycles,cyclist,2019-08-28 12:30:00,2019-08-28 12:45:00,NB,NB Sidewalk,Southbound,sidewalk,0,recorded,62,3
+Bicycles,cyclist,2019-08-28 12:30:00,2019-08-28 12:45:00,NB,NB Bike Lane,Northbound,bike_lane,0,recorded,62,4
+Bicycles,cyclist,2019-08-28 12:30:00,2019-08-28 12:45:00,NB,NB Sidewalk,Northbound,sidewalk,1,recorded,62,5
+Bicycles,cyclist,2019-08-28 12:30:00,2019-08-28 12:45:00,SB,SB Bike Lane,Southbound,bike_lane,0,recorded,62,6
+Bicycles,cyclist,2019-08-28 12:30:00,2019-08-28 12:45:00,SB,SB Sidewalk,Southbound,sidewalk,0,recorded,62,7
+Bicycles,cyclist,2019-08-28 12:30:00,2019-08-28 12:45:00,SB,SB Bike Lane,Northbound,bike_lane,0,recorded,62,8
+Bicycles,cyclist,2019-08-28 12:30:00,2019-08-28 12:45:00,SB,SB Sidewalk,Northbound,sidewalk,0,recorded,62,9
+Bicycles,cyclist,2019-08-28 12:45:00,2019-08-28 13:00:00,NB,NB Bike Lane,Southbound,bike_lane,0,recorded,63,2
+Bicycles,cyclist,2019-08-28 12:45:00,2019-08-28 13:00:00,NB,NB Sidewalk,Southbound,sidewalk,0,recorded,63,3
+Bicycles,cyclist,2019-08-28 12:45:00,2019-08-28 13:00:00,NB,NB Bike Lane,Northbound,bike_lane,0,recorded,63,4
+Bicycles,cyclist,2019-08-28 12:45:00,2019-08-28 13:00:00,NB,NB Sidewalk,Northbound,sidewalk,0,recorded,63,5
+Bicycles,cyclist,2019-08-28 12:45:00,2019-08-28 13:00:00,SB,SB Bike Lane,Southbound,bike_lane,0,recorded,63,6
+Bicycles,cyclist,2019-08-28 12:45:00,2019-08-28 13:00:00,SB,SB Sidewalk,Southbound,sidewalk,0,recorded,63,7
+Bicycles,cyclist,2019-08-28 12:45:00,2019-08-28 13:00:00,SB,SB Bike Lane,Northbound,bike_lane,0,recorded,63,8
+Bicycles,cyclist,2019-08-28 12:45:00,2019-08-28 13:00:00,SB,SB Sidewalk,Northbound,sidewalk,0,recorded,63,9

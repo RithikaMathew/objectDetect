@@ -39,4 +39,10 @@ Estimate: at2.8GPU-hours per video-hour, full nominal footage requires5,373GPU-h
 Verification: all15test modules pass; generated zone-editor JavaScript checks pass; nine-page LaTeX report compiled and visually inspected. No new source inference, physical speed measurement or confirmed near-miss result is claimed.
 
 - [x] Add independent CPU speed-readiness job to audit source JPG/CUT GPS/location clues and MP4 metadata while detection runs. Full workbook scan completed locally:375deduplicated reference rows; no Pine-named street speed records.
-- [ ] Run speed_readiness.slurm on HiPerGator and inspect actual GPS/measurement clues. No physical speed or calibration success claimed until evidence is returned.
+- [x] Run speed_readiness.slurm on HiPerGator: job47393224completed; returned report shows41cameras audited,0explicit GPS candidates,375reference rows and0Pine-named rows.
+- [ ] Inspect raw camera_metadata.json/textual clues locally (not yet downloaded). Metric calibration remains unresolved; the successful audit did not supply supported mph.
+
+- [x] Prepare exact Pine Hills pilot-hour manual count reference, preserving raw channel sides, quarter-hour bins and missing values. Source worksheets differ in coverage (pedestrians99bins vsbicycles192); NB/SB bicycle counts must not be merged into a one-sided camera comparison. Detector comparison remains pending actualresults/camera-side correspondence.
+
+- [x] Inspect supplied camera_metadata.json: no usable textual location clues in sampled CUT previews; GPS remainsunresolved. Prepare University SW Speed as an alternative with78University sidewalk speed references (55ft), one08:00–09:00source hour and11manual cyclist observations. Recording/person/measurement-segment correspondence still requires verification.
+- [ ] Run code/prepare_university_speed.sh on cluster and inspect downloaded real-frame editor for metric landmarks/reference markers. Preparation submits noGPUjob and does not establish validated speed by itself.
