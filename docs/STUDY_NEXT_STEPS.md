@@ -279,3 +279,20 @@ Returned method_status.json: pedestrian-height fit lacks20independent qualifying
 ICCV adapter previously sampled every15sourceframes (~2Hz) with last-frame greedyIoU, potentially fragmenting fast cars. Updated to every3frames (~10Hz), one-to-one HungarianIoU matching with constant-velocity box prediction and max0.3secondtrack gap. Score>=0.8, minimum boxdimension15px, >=4observations, netmotion>=30px retained; minimum10usablecartracks retained. Budget3000sampledframes (~5source minutes), early stop after20usablecartracks and15source seconds, independently of speed-reference agreement. This is a new adapter configuration, not a demonstrated improvement on real footage yet.
 
 Always saves raw_car_observations.npz, tracking_diagnostics.json (detections/track lengths/usabletracks/sample rate/scanned seconds) and periodic annotated diagnostic_frames even when minimumtrackguard fails. Doesnotexportcar speeds. Existingpedestrian-heightmethod remainsdata-insufficient; no newgeometry orindependentspeedvalidation claimed. Afterpush/pull, a targeted GPUretry canuse `sbatch code/speed_research.slurm`; it doesnotrepeatcamera previews orZIPextraction. Newoutputexp_results/colonial_speed_research_JOBID. Do not alsoresubmitfullpilotbundle. Review preview retryresults separately. Eleven speedresearch tests andeightpreview/recoverytests pass includingPython3.9compilecoverage, plusnine studyextensionspreviouslypassed.
+
+Owner now requests choosing shortest recording before further inference. See [duration guide](VIDEO_DURATION_README.md): Pleasant Hill31sourcefiles is shortest speed-reference candidate, estimated31h—not a fully measured total. ColonialNorth48sourcesmeasured47.99h. Only short excerpts are needed; no new job submitted. Latest47545558learnedcalibration exists but0bicyclemph; report rebuilt locally withoutGPU.
+
+
+Latestownerrequest: adaptive15-minute bicycle speedcomparison across12reference locations, Colonialexcluded/SilverStarunmapped. Maininstructions now at SPEED_REFERENCE_README.md top. Submit with python code/adaptive_speed_batch.py submit --max-windows4 --exploratory-road-plane-transfer --go (separate --max-windows and4 tokens when typing). Onejobarray12sites/concurrency2 +CPUfinalreport. Targetsone-thirdreferencecapped5/min3andboundedbystudyn=>Lee2,Columbia3,Daniels4,others5. Up to4consecutive15minwindows/site,stoponchronologicaleligiblecandidatequota,groupmeanpooledindividualspeeds. Provisionalbicycle/motorcyclelabels,identityunverified,road-planeextrapolationexplicitandstrictresultsretained. Nojobsubmittedlocally; exactREADMEcommandusesproper spaces.
+
+
+## Latest update: independent site reports and Colonial included (October 24)
+
+The adaptive speed batch now includes Colonial North: 13 candidate locations, Silver Star still unmapped. Each site writes RESULTS.md/comparison.csv/status.json at startup, after every completed 15-minute window, and on caught failure. Human-readable site folders contain calibration diagnostics and windows/wNN inference logs/settings/raw output references. No waiting for other sites. Global aggregation remains an afterany job. Colonial source clocks now use the selected source hour with chunk 1, independent of array index. Colonial pooled study mean is explicitly not facility-matched validation. Code prepared locally; not submitted here.
+
+Run after pushing and pulling updated code:
+```bash
+python code/adaptive_speed_batch.py submit --max-windows 4 --exploratory-road-plane-transfer --go
+```
+
+Tests: 39 local checks passed. GPU model execution has not been run locally.

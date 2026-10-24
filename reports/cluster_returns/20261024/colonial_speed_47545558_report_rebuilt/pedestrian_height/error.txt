@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/rithika/Desktop/objectDetect/vision3/best/test_colonial/code/speed_research.py", line 260, in run
+    raise ValueError(reason)
+ValueError: ValueError: Need20 head/foot observations from separate qualifying tracks

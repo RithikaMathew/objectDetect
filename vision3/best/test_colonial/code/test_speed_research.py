@@ -93,4 +93,16 @@ class CarTrackingTests(unittest.TestCase):
         self.assertEqual(len(r),5)
         self.assertTrue(np.isfinite(r[0][-1]).all())
 
+class ReportReuseTests(unittest.TestCase):
+    def test_relative_root_rebuild_does_not_load_models(self):
+        import json,subprocess,sys,tempfile
+        from pathlib import Path
+        folder=Path(__file__).resolve().parent;root=folder.parent
+        with tempfile.TemporaryDirectory() as td:
+            d=Path(td);prior=d/'previous';prior.mkdir()
+            result=subprocess.run([sys.executable,str(folder/'speed_research.py'),'--root','.','--reuse-calibration',str(prior),'--out',str(d/'report')],cwd=root,capture_output=True,text=True)
+            self.assertEqual(result.returncode,0,result.stderr)
+            statuses=json.loads((d/'report/method_status.json').read_text())
+            self.assertEqual(next(r['state'] for r in statuses if r['method']=='university_manual_map_gates'),'CALCULATED_FROM_SAVED_TIMING')
+
 if __name__=='__main__':unittest.main()

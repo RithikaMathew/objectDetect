@@ -1,5 +1,9 @@
 # Object detection study — start here
 
+**Latest requested experiment:** [adaptive15-minute bicycle speed comparison](docs/SPEED_REFERENCE_README.md#latest-run-adaptive15-minute-bicycle-speed-comparison). It processes consecutive15-minute windows until each site reaches its sample target, capped at60minutes/site. Colonial North included;13candidate locations. Each site publishes its own results after every completed segment and on failure. Prepared, not run.
+
+[Video duration guide—source-file counts, confirmed versus estimated recording hours, and shortest candidates](docs/VIDEO_DURATION_README.md).
+
 **Bicyclist speed statistics:** [Speed reference README—average, median and range for every location](docs/SPEED_REFERENCE_README.md). These are averages across measured cyclists, not hourly or15-minute averages. Future speed reports include the exact video measurement intervals.
 
 **October23 request:** follow [STUDY_NEXT_STEPS.md](docs/STUDY_NEXT_STEPS.md) for the new partial-track speed/calibration tools, study-footage inventory, optional conflict review, and one-hour Colonial pilot. [Methodology LaTeX](reports/methodology/object_detection_study_20261023.tex) and [compiled report](output/pdf/object_detection_study_20261023.pdf). Wider study processing is newly requested and prepared, not run. The earlier completed October20batch below must not be resubmitted.

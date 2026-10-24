@@ -1,0 +1,40 @@
+[
+  {
+    "method": "pedestrian_height",
+    "state": "NOT_COMPLETED",
+    "detail": "ValueError: Need20 head/foot observations from separate qualifying tracks"
+  },
+  {
+    "method": "iccv2021",
+    "state": "EXPERIMENT_COMPLETED",
+    "detail": {
+      "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+      "car_tracks": 28,
+      "car_boxes": 458,
+      "geometry_check_passed": true,
+      "validation": "learned_scale_not_independently_speed_validated",
+      "sidewalk_transfer": "unverified_road_sidewalk_height_difference",
+      "reused_from": "/Users/rithika/Downloads/colonial_speed_research_47545558/iccv2021"
+    }
+  },
+  {
+    "method": "bmvc2014",
+    "state": "NOT_IMPLEMENTED_MISSING_COMPONENTS",
+    "detail": "Full 3D-box/vanishing-point implementation and verified vehicle-dimension priors not integrated; no paper reproduction claimed."
+  },
+  {
+    "method": "sochor2017",
+    "state": "NOT_IMPLEMENTED_MISSING_COMPONENTS",
+    "detail": "Requires vehicle identification and metric 3D CAD/render assets; unavailable in current repository."
+  },
+  {
+    "method": "keypoint2026",
+    "state": "NOT_IMPLEMENTED_MISSING_COMPONENTS",
+    "detail": "Requires trained36-keypoint detector/template assets; no verified author checkpoint integrated."
+  },
+  {
+    "method": "university_manual_map_gates",
+    "state": "CALCULATED_FROM_SAVED_TIMING",
+    "detail": "One manually timed bicyclist; compared with separate University sidewalk study records"
+  }
+]

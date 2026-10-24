@@ -1,0 +1,16 @@
+site,reference_location,previews,review_scope,confirmed_candidate_lower_bound,interpretation
+Aloma Path,Aloma,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Baxter,Baxter,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Carroll NBL,Carroll,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Colonial North,Colonial,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Colonial South,Colonial,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Columbia Ave,Columbia,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",1,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Daniels Path,Daniels,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Edgewater N,Edgewater,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Lee Road N,Lee,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Lee Road South,Lee,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Pleasant Hill Path,Pleasant Hill,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Rinehart Path,Rinehart/CST,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+University SW Speed,University,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+West Orange Path,West Orange/Park,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists
+Winter Park Rd Speed,Winter Park,3,"systematic sampled frames at1,4,...43seconds in all3previews; not continuous exhaustive viewing",0,lower_bound_not_ground_truth_count; no_candidate_confirmed_does_not_mean_no_cyclists

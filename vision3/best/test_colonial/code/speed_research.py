@@ -129,7 +129,8 @@ def iccv_calibration(video,author,size,out,device='cpu',frames=3000,sample_strid
     from torchvision.models.detection import maskrcnn_resnet50_fpn,MaskRCNN_ResNet50_FPN_Weights
     if not author.exists():
         subprocess.run(['git','clone','https://github.com/naver/cctv.git',str(author)],check=True)
-    subprocess.run(['git','-C',str(author),'checkout',AUTHOR_COMMIT],check=True,capture_output=True)
+    actual=subprocess.check_output(['git','-C',str(author),'rev-parse','HEAD'],text=True).strip()
+    if actual!=AUTHOR_COMMIT:subprocess.run(['git','-C',str(author),'checkout',AUTHOR_COMMIT],check=True,capture_output=True)
     actual=subprocess.check_output(['git','-C',str(author),'rev-parse','HEAD'],text=True).strip()
     if actual!=AUTHOR_COMMIT:raise ValueError('Author revision mismatch')
     sys.path.insert(0,str(author))
@@ -246,14 +247,23 @@ def university_manual_comparison(config,reference_rows):
 
 
 def run(a):
-    out=a.out;out.mkdir(parents=True,exist_ok=False);root=a.root
+    out=a.out;out.mkdir(parents=True,exist_ok=False);root=a.root.resolve()
     status=[];allrows=[]
     save(out/'experiment_policy.json',dict(selection='closest_study_group_mean_exploratory_not_accuracy',output_user_types=['cyclist'],reference_used_for_fitting=False,person_height_prior_metres=1.7,iccv_author_commit=AUTHOR_COMMIT,source_video=str(a.video) if a.video else None,frames=a.frames,sample_stride=a.sample_stride))
     for name,fn in [('pedestrian_height',lambda d:height_calibration(root,[720,480],d)),('iccv2021',lambda d:iccv_calibration(a.video,a.author_dir,[720,480],d,a.device,a.frames,a.sample_stride))]:
         d=out/name;d.mkdir()
         try:
-            if name=='iccv2021' and a.video is None:raise ValueError('Original Colonial daytime video required; not available in this invocation')
-            H,info,hull=fn(d);save(d/'calibration.json',dict(H=H.tolist(),hull=hull.tolist(),**info))
+            if name=='iccv2021' and a.video is None and a.reuse_calibration is None:raise ValueError('Original Colonial daytime video required; not available in this invocation')
+            if a.reuse_calibration is not None:
+                previous=a.reuse_calibration/name
+                if not (previous/'calibration.json').is_file():
+                    reason=(previous/'error.txt').read_text().splitlines()[-1] if (previous/'error.txt').exists() else 'No saved calibration'
+                    raise ValueError(reason)
+                info=json.loads((previous/'calibration.json').read_text())
+                H=np.asarray(info.pop('H'));hull=np.asarray(info.pop('hull'),np.float32)
+                info['reused_from']=str(previous)
+            else:H,info,hull=fn(d)
+            save(d/'calibration.json',dict(H=H.tolist(),hull=hull.tolist(),**info))
             rows=trajectory_results(root,H,hull,name)
             for r in rows:r['calibration_geometry_check_passed']=info['geometry_check_passed']
             write_rows(d/'speeds.csv',rows);allrows+=rows
@@ -321,7 +331,7 @@ def run(a):
     (out/'RESULTS.md').write_text('\n'.join(lines)+'\n');print('\n'.join(lines))
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--out',type=Path,required=True);p.add_argument('--video',type=Path);p.add_argument('--author-dir',type=Path,default=Path.home()/'.cache/objectdetect/naver-cctv');p.add_argument('--device',default='cpu');p.add_argument('--frames',type=int,default=3000);p.add_argument('--sample-stride',type=int,default=3)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--out',type=Path,required=True);p.add_argument('--video',type=Path);p.add_argument('--author-dir',type=Path,default=Path.home()/'.cache/objectdetect/naver-cctv');p.add_argument('--device',default='cpu');p.add_argument('--reuse-calibration',type=Path,help='CPU-only report rebuild from prior method calibrations; no detection or model loading');p.add_argument('--frames',type=int,default=3000);p.add_argument('--sample-stride',type=int,default=3)
     args=p.parse_args()
     if args.frames<1 or args.sample_stride<1:p.error('Positive frame budget and sample stride required')
     run(args)

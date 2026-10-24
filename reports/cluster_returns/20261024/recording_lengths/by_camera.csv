@@ -1,0 +1,42 @@
+camera,speed_reference_candidate,source_files,measured_source_files,measured_subtotal_hours,exact_total_hours,nominal_hours_if_hourly_chunks,clock_blocked_files,duration_status
+Pine Hills BL E,,25,1,0.999888774691358,,25,0,incomplete_duration_metadata
+Pleasant Hill Path,Pleasant Hill,31,0,,,31,0,incomplete_duration_metadata
+West Orange Path,West Orange/Park,37,0,,,37,0,incomplete_duration_metadata
+Alafaya East,,48,0,,,48,0,incomplete_duration_metadata
+Alafaya West,,48,0,,,48,0,incomplete_duration_metadata
+Aloma Path,Aloma,48,0,,,48,0,incomplete_duration_metadata
+Aloma Sidewalk,,48,0,,,48,0,incomplete_duration_metadata
+Baxter,Baxter,48,0,,,48,0,incomplete_duration_metadata
+Carroll NBL,Carroll,48,0,,,48,0,incomplete_duration_metadata
+Clay Ave,,48,0,,,48,0,incomplete_duration_metadata
+Colonial North,Colonial,48,48,47.98885909876543,47.98885909876543,48,0,all_sources_probed
+Colonial South,Colonial,48,0,,,48,0,incomplete_duration_metadata
+Curry Ford North,,48,0,,,48,0,incomplete_duration_metadata
+Daniels Path,Daniels,48,0,,,48,0,incomplete_duration_metadata
+Daniels Sidewalk,,48,0,,,48,0,incomplete_duration_metadata
+Edgewater,,48,0,,,48,0,incomplete_duration_metadata
+Edgewater N,Edgewater,48,0,,,48,0,incomplete_duration_metadata
+Glenridge,,48,0,,,48,0,incomplete_duration_metadata
+Kaley,,48,0,,,48,0,incomplete_duration_metadata
+Lakemont Pathway,,48,0,,,48,0,incomplete_duration_metadata
+Lee Road N,Lee,48,0,,,48,0,incomplete_duration_metadata
+Lee Road South,Lee,48,0,,,48,0,incomplete_duration_metadata
+Livingston,,48,0,,,48,0,incomplete_duration_metadata
+N Orange,,48,0,,,48,0,incomplete_duration_metadata
+Par Street,,48,0,,,48,0,incomplete_duration_metadata
+Pine Hills BL,,48,0,,,48,0,incomplete_duration_metadata
+Pine Hills NBL,,48,0,,,48,0,incomplete_duration_metadata
+Pine Hils NBL E,,48,0,,,48,0,incomplete_duration_metadata
+Rinehart Path,Rinehart/CST,48,0,,,48,0,incomplete_duration_metadata
+Rinehart Sidewalk,,48,0,,,48,0,incomplete_duration_metadata
+S Orange NB,,48,0,,,48,0,incomplete_duration_metadata
+S Orange SB,,48,0,,,48,0,incomplete_duration_metadata
+Summerlin,,48,0,,,48,0,incomplete_duration_metadata
+University North,,48,2,1.9993326604938273,,48,0,incomplete_duration_metadata
+University SW Speed,University,48,1,0.9996848672839506,,48,0,incomplete_duration_metadata
+University South,,48,0,,,48,0,incomplete_duration_metadata
+West Orange Sidewalk,,48,0,,,48,0,incomplete_duration_metadata
+Winter Park Rd Speed,Winter Park,48,0,,,48,0,incomplete_duration_metadata
+Winter Park Road,,48,0,,,48,0,incomplete_duration_metadata
+Columbia Ave,Columbia,49,0,,,49,17,incomplete_duration_metadata
+Curry Ford South,,49,0,,,49,45,incomplete_duration_metadata

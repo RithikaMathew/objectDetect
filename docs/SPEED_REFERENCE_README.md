@@ -1,5 +1,55 @@
 # Bicyclist speed references — plain-language guide
 
+## Latest run: adaptive15-minute bicycle speed comparison
+
+Updated October24,2026. This is prepared code, not a completed result. The owner requested combining consecutive15-minute segments until a small target sample is collected. Colonial North is included in this latest batch because its automatic bicycle speeds remain unfinished; Silver Star has no mapped footage. Thirteen candidate reference locations are planned, using one camera each.
+
+### Sample targets
+
+Target = min(study sample,5,max(3,ceil(study sample/3))). This is a practical exploratory quota, not a statistically powered validation sample. It gives2forLee,3forColumbia,4forDaniels and5forotherlocations.
+
+| Reference location | Study cyclists | Study mean mph | Target candidates | Camera |
+|---|---:|---:|---:|---|
+| Aloma | 26 | 13.58 | 5 | Aloma Path |
+| Baxter | 14 | 16.77 | 5 | Baxter |
+| Carroll | 15 | 11.89 | 5 | Carroll NBL |
+| Colonial | 23 | 9.54 | 5 | Colonial North |
+| Columbia | 9 | 12.24 | 3 | Columbia Ave |
+| Daniels | 11 | 11.95 | 4 | Daniels Path |
+| Edgewater | 50 | 12.02 | 5 | Edgewater N |
+| Lee | 2 | 8.73 | 2 | Lee Road N |
+| Pleasant Hill | 41 | 9.86 | 5 | Pleasant Hill Path |
+| Rinehart/CST | 25 | 12.92 | 5 | Rinehart Path |
+| University | 78 | 9.49 | 5 | University SW Speed |
+| West Orange/Park | 25 | 10.77 | 5 | West Orange Path |
+| Winter Park | 13 | 16.08 | 5 | Winter Park Rd Speed |
+
+### How the run works
+
+1. Estimate a separate camera calibration from cars for each source. Cars supply scale; no car or pedestrian speeds are output. If calibration fails, stop that site and report the cause rather than process an hour without usable scale.
+2. Run the fixed reference detector/tracker/count filters on12:00–12:15 of the selected source, then12:15–12:30, etc. Source clocks are filename-based and exact saved measurement intervals are retained. The selected noon hour is fixed beforehand and is not chosen by speed agreement.
+3. Accumulate chronological bicycle candidates with counted status and sufficient continuous trajectory observations. Reject boundary-censored tracks to reduce cross-segment duplication; within-segment fragmentation can still duplicate people.
+4. Stop as soon as the quota is reached, after the completed15-minute segment. If a segment has extra candidates, select earliest eligible ones, not those closest to study speed. Mean = sum of selected per-candidate speeds divided by candidate count, not mean of segment means.
+5. Maximum4segments/60minutes per location in this first run. If the target is not met, preserve the smaller sample and label it incomplete. Maximum13hours of source footage across13locations; actual processing time is model/GPU-dependent. Only2GPUsite jobs run concurrently.
+
+### Interpretation
+
+The current model combines bicycle/motorcycle categories; these are provisional bicycle candidates until visually checked, not confirmed distinct bicyclists. Cars may calibrate the road, but sidewalks/paths can be elevated. The explicit exploratory transfer flag below permits applying that road-plane mapping outside its car-observation support. Each estimate records this assumption, fraction of observations inside support, and strict supported speed separately. No distance is tuned to the workbook, no missing speed becomes0mph, and no accuracy claim is made. Candidate camera/facility aliases and recording correspondence remain unverified. A close group mean is the requested exploratory comparison, not matched-person validation.
+
+### One submission command
+
+After pushing/pulling updated files, from vision3/best/test_colonial with yolo_env active:
+
+```bash
+python code/adaptive_speed_batch.py submit \
+  --max-windows 4 --exploratory-road-plane-transfer --go
+```
+
+Without --go it only prints the plan. The command submits one12-task GPUarray (concurrency2) plus a CPUfinal report dependent on all site jobs finishing, including failed ones. It does not repeat the preview-screening jobs. Requires already-extracted source files, cached detector/XCLIP dependencies and model weights; missing sources/weights stop submission. Runtime and data-success are not yet verified on cluster. Partial job submissions are recorded in manifest.json; do not blindly resubmit if the final-report submission fails.
+
+Output folder: `exp_results/ADAPTIVE_SPEED_TAG/`. Read `RESULTS.md` and `comparison.csv` for study mean, model-candidate mean, difference, sample size, quota, minutes and incomplete/failure status. `selected_candidates.csv` lists exact individual measurement intervals, source/annotation video paths and transfer/identity qualifications. Each site also retains calibration diagnostics, candidate exclusions and all processed-window records. The three other researched full-paper implementations remain pending; this batch uses the implemented ICCV2021 adapter.
+
+
 Updated October 24, 2026. **These are speeds measured in the original study, not model predictions.** All 375 deduplicated records concern bicyclists across 14 workbook location labels. The labels do not identify exact camera coordinates.
 
 ## What does an average mean here?
@@ -18,6 +68,7 @@ Median means the middle speed after sorting the observations; it is less affecte
 | Baxter | 14 | 16.77 | 15.99 | 11.50–26.36 | Travel Lane |
 | Carroll | 15 | 11.89 | 10.80 | 8.34–16.18 | Travel Lane |
 | Colonial | 23 | 9.54 | 8.81 | 5.29–19.86 | Bike Lane, Sidewalk |
+| Colonial | 23 | 9.54 | 5 | Colonial North |
 | Columbia | 9 | 12.24 | 11.42 | 9.63–15.13 | Bike Lane |
 | Daniels | 11 | 11.95 | 12.68 | 8.59–14.36 | Path |
 | Edgewater | 50 | 12.02 | 11.03 | 6.10–21.22 | Bike Lane |
@@ -97,3 +148,24 @@ The command submits a CPU preview job for15candidate cameras (13reference locati
 
 
 Preview generation dependency: FFmpeg withlibx264 is checked before extraction. The launcher can install an isolated bundled binary if needed; see [preview recovery instructions](STUDY_NEXT_STEPS.md#preview-recovery-after-job47544655-october24). The October24initial0/15preview result was missingFFmpeg, not evidence that all15cameras had unusable images.
+
+
+### Counts and timestamps in adaptive results
+
+comparison.csv now distinguishes all bicycle-labelled candidate tracks found, candidates counted by the fixed pipeline, speed-eligible candidates and the smaller chronological sample selected for the average. Candidate tracks are not verified unique cyclists; possible motorcycles/fragmentation require review. all_candidate_timestamps.csv records every candidate with track first/last-seen clocks, source/annotated-video paths, measurement intervals and rejection reasons; selected_candidates.csv identifies those used in the average. The final README summary shows found/usable/used counts and selected measurement times. Existing per-site candidate exports can regenerate these report fields without new inference.
+
+Colonial already has four hand-labelled clips and saved detections:7actual bicyclists,13pedestrians,1motorcycle. The saved legacy evaluation counted6of7bicyclists; the remaining bicyclist was detected but rejected from counting. Counts/timestamps exist; physical bicyclemph is still not successfully validated. Do not rerun Colonial object detection solely to recover those counts/timestamps; reuse saved tracks and truth files. The latest owner request includes Colonial North in this adaptive batch; the selected noon hour is sampled, not all four labelled clips. Its location-wide 9.54mph study mean pools two facilities: bike lane 11.11mph (12 records), sidewalk 7.82mph (11 records). This pooled comparison is not facility-matched validation.
+
+### Results saved separately as each site progresses
+
+Under `exp_results/ADAPTIVE_SPEED_TAG/`, open a site folder such as `s03_colonial_north/RESULTS.md`. Use the exact folder names in `manifest.json`. Site reports appear at startup, update after every completed 15-minute window, and record failures immediately. You do not need to wait for the final combined report.
+
+- `comparison.csv`: study mean, provisional model mean, found/countable/speed-usable/selected candidate counts and processed intervals.
+- `all_bicycle_candidates.csv` and `all_candidate_timestamps.csv`: candidate timestamps, exclusions, speed intervals and annotated video paths, once candidates exist.
+- `selected_candidates.csv`: candidates used in the mean, once any are selected.
+- `status.json`: current stage, active window, completed windows and failure message. A stopped Slurm job may retain its last in-progress stage.
+- `calibration/`: calibration geometry and diagnostics.
+- `windows/w00/`, etc.: `pipeline_task.json`, `pipeline.log`, successful `result.json`, copied `run_log.json` and available raw track CSVs. Videos remain in their original annotated folders; the run log records their paths.
+- `error.txt`: worker traceback on a caught failure. Slurm array logs remain in the batch root as `site_ARRAY_INDEX.log`, including calibration output or termination messages.
+
+The combined root report is generated after all site workers finish. Empty or failed stages do not become zero-speed measurements. Existing submitted jobs retain their old manifest; inclusion of Colonial applies to a newly submitted batch using this updated code.
