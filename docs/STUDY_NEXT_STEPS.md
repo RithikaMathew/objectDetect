@@ -157,3 +157,21 @@ Use agents to organize evidence, not invent geometry:
 Keep structured provenance for every event: video/frame interval, IDs, tool outputs, calibration version, uncertainty flags and reviewer. Multiple agents agreeing is not independent validation. This architecture is proposed, not an implemented or benchmarked agent system.
 
 Research sources: [FHWA SSAM definitions](https://www.fhwa.dot.gov/publications/research/safety/08051/02.cfm), [OpenCV homography](https://docs.opencv.org/3.4.19/d9/dab/tutorial_homography.html), [BMVC traffic calibration paper](https://www.bmva-archive.org.uk/bmvc/2014/papers/paper013/index.html), [Google Maps distance measurement](https://support.google.com/maps/answer/1628031?hl=en).
+
+
+## Parallel CPU speed-readiness job (while Pine Hills inference runs)
+
+Added `code/speed_readiness.py` and `code/speed_readiness.slurm`. The full speed workbook was scanned locally:375deduplicated reference rows,23Colonial, no Pine-named street rows. This is reference availability, not new measured model speeds. An unknown street alias is not ruled out.
+
+After push/pull, submit independently from cluster `vision3/best/test_colonial`:
+
+```bash
+mkdir -p logs
+sbatch code/speed_readiness.slurm
+```
+
+This job requests2CPUs/4GB/30minutes and no GPU. It reads the original ZIP central directory and selected small JPEG/CUT companion files for41study cameras, plus ffprobe location metadata for any corresponding extracted noon videos. It does not extract whole videos, alter the detection run, communicate externally or infer physical track speeds. Candidate GPS/sidecar clues must be checked against the camera view; a camera coordinate alone is not ground-plane calibration.
+
+The output folder is `exp_results/speed_readiness_JOBID/` (replace JOBID with the returned Slurm ID). Read `RESULTS.md`, `GPS_candidates.csv`, `camera_metadata.json`, and `reference_summary.csv`. Zero metadata clues is a possible legitimate outcome, not calibrated speed. Sampled sidecars lacking GPS do not prove the original camera had no location data. All source-speed rows/source cells are retained for future independently matched validation.
+
+Local workbook-only report: `exp_results/speed_reference_readiness_20261023/RESULTS.md`; no new cluster results are claimed. Four new metadata/reference tests pass.

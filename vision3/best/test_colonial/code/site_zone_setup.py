@@ -74,11 +74,17 @@ def build(inventory,out,sites=None):
                 status.append(dict(site=site,status='READY',video=video,page=filename,error=''));completed=True;break
             except Exception as exc:errors.append(str(exc))
             finally:cap.release()
-        if not completed:status.append(dict(site=site,status='MISSING_OR_UNREADABLE',video='',page='',error='; '.join(errors)or'No local readable source'))
-    (out/'index.html').write_text('<!doctype html><meta charset="utf-8"><h1>Study camera zone editors</h1><p>Open a camera, draw its areas and save the downloaded JSON files in one directory. Missing source cameras are listed in status.csv.</p><ul>'+''.join(links)+'</ul>')
+        if not completed:
+            expected=[r['video'] for r in rows if r['site']==site]
+            reason='; '.join(errors)or'No source file exists locally with a usable clock. Build on HiPerGator where the raw videos are extracted; check inventory video paths.'
+            status.append(dict(site=site,status='MISSING_OR_UNREADABLE',video=expected[0]if expected else'',page='',error=reason))
+    problems=''.join('<li><strong>'+html.escape(r['site'])+'</strong>: '+html.escape(r['error'])+'<br>Expected source: <code>'+html.escape(r['video'])+'</code></li>' for r in status if r['status']!='READY')
+    message='<p>No camera editors were generated. There is nothing to draw yet. This is a source-video/path problem, not a browser problem.</p>'if not links else ''
+    (out/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Study camera zone editors</title><style>body{font:18px sans-serif;margin:30px;max-width:1100px}code{overflow-wrap:anywhere}li{margin:15px 0}</style><h1>Study camera zone editors</h1>'+message+'<p>Open a camera below to mark areas. Generate these pages on HiPerGator using extracted raw video files, then download the folder.</p><ul>'+''.join(links)+'</ul>'+('<h2>Source problems</h2><ul>'+problems+'</ul>'if problems else''))
     with (out/'status.csv').open('w',newline='')as f:
         w=csv.DictWriter(f,fieldnames=list(status[0]));w.writeheader();w.writerows(status)
     print(out/'index.html')
+    if not links:raise RuntimeError('No camera editor generated. Read the source problems in index.html/status.csv; verify extracted video paths on HiPerGator.')
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--inventory',type=Path,required=True);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--site',action='append')

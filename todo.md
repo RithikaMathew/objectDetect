@@ -32,7 +32,11 @@ Estimate: at2.8GPU-hours per video-hour, full nominal footage requires5,373GPU-h
 - [x] Add offline per-camera area editor: site_zone_setup.py. Supports road, bike lane, sidewalk, shared-use path, grass, multiple same-type regions, undo/reset, autosave, import and JSON export with confirmation/backup. Actual new-site frames must be extracted on the cluster.
 - [x] Add per-source/per-site/per15-minute user-type and lane-use ledgers, including individual track records and uncertain/unassigned status. Optional vehicle export retains counted status. Postprocess edited zones without rerunning detection.
 - [x] Extend partial-track speed CLI to counted users/vehicles from a new-camera run log with its own valid scene calibration.
-- [ ] Extract the new road's source frame, mark zones and confirm map/landmark correspondence. No coordinates, zone geometry or physical speeds invented.
+- [x] Extract Pine Hills source frame and receive owner-confirmed zones. Validated and copied to vision3/best/test_colonial/zones/study_20261023/pine_hills_bl_e_45bfdf.json; preview checked.
+- [ ] Establish map/landmark correspondence for physical speed; camera coordinates remain unknown. Area outlines do not supply metric calibration.
 - [ ] Run the prepared one-hour Pine Hills pilot on HiPerGator, then inspect predicted counts and lane summaries before larger processing. No new GPU jobs submitted locally.
 
 Verification: all15test modules pass; generated zone-editor JavaScript checks pass; nine-page LaTeX report compiled and visually inspected. No new source inference, physical speed measurement or confirmed near-miss result is claimed.
+
+- [x] Add independent CPU speed-readiness job to audit source JPG/CUT GPS/location clues and MP4 metadata while detection runs. Full workbook scan completed locally:375deduplicated reference rows; no Pine-named street speed records.
+- [ ] Run speed_readiness.slurm on HiPerGator and inspect actual GPS/measurement clues. No physical speed or calibration success claimed until evidence is returned.
