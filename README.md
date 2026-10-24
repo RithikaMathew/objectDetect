@@ -1,10 +1,78 @@
 # Object detection study — start here
 
+**Bicyclist speed statistics:** [Speed reference README—average, median and range for every location](docs/SPEED_REFERENCE_README.md). These are averages across measured cyclists, not hourly or15-minute averages. Future speed reports include the exact video measurement intervals.
+
 **October23 request:** follow [STUDY_NEXT_STEPS.md](docs/STUDY_NEXT_STEPS.md) for the new partial-track speed/calibration tools, study-footage inventory, optional conflict review, and one-hour Colonial pilot. [Methodology LaTeX](reports/methodology/object_detection_study_20261023.tex) and [compiled report](output/pdf/object_detection_study_20261023.pdf). Wider study processing is newly requested and prepared, not run. The earlier completed October20batch below must not be resubmitted.
 
 Latest follow-up: shortest listed camera recording is Pine Hills BL E (~25hours). A one-hour pilot and per-camera zone editor are prepared. Counts are recorded by source, user type, facility and15-minute bin, with a per-track lane ledger; new site coordinates still need identification. Follow the same next-steps guide above.
 
-The final experiment batch is complete. **Do not resubmit it.** Remaining work is checking track identities and individual lane assignments; physical speed is blocked by missing calibration and person-to-study links.
+The final experiment batch is complete. **Do not resubmit it.** Remaining work is checking track identities and individual lane assignments; automatic physical-speed estimation remains pending calibration; the University manual map-based estimate below is exploratory, not independently validated.
+
+## Bicyclist speed study — information for review (October 24, 2026)
+
+**All 375 speed-reference records below describe bicyclists, across 14 street labels.** They come from `bicyclist speeds.xlsx` in the Bike Lane Study Counts folder. They are speed observations, not total traffic counts, video-hours, pedestrian speeds or car speeds. Location labels below reproduce the workbook; aliases and exact camera/date correspondence are not established for every street.
+
+| Workbook location | Bicycle speed records | Facilities measured |
+|---|---:|---|
+| Aloma | 26 | Path |
+| Baxter | 14 | Travel Lane |
+| Carroll | 15 | Travel Lane |
+| Colonial | 23 | Bike Lane, Sidewalk |
+| Columbia | 9 | Bike Lane |
+| Daniels | 11 | Path |
+| Edgewater | 50 | Bike Lane |
+| Lee | 2 | Travel Lane |
+| Pleasant Hill | 41 | Path |
+| Rinehart/CST | 25 | Path |
+| Silver Star | 43 | Sidewalk |
+| University | 78 | Sidewalk |
+| West Orange/Park | 25 | Path |
+| Winter Park | 13 | Travel Lane |
+
+Source: [deduplicated reference records with workbook cell addresses](vision3/best/test_colonial/exp_results/speed_reference_readiness_20261023/all_reference_records.csv). Counts include all primary A–I table records, with repeated analysis-sheet copies deduplicated. They include the Colonial e-bike record retained in the analysis table.
+
+**What can be compared:** estimated bicyclist speeds can be compared with the study speed distribution for the same street and facility (for example, University sidewalk versus University sidewalk). Matching recording, people and endpoints is still needed for individual speed-error validation. Selecting the method closest to the study average is an exploratory selection rule, not proof of accuracy. The study observations may have been timed in person separately from the videos.
+
+### University: manual distance/time comparison already calculated
+
+The owner measured **55.17 feet** on Google Maps and marked A/B crossing lines on the University video. A red-top bicyclist around08:52 was manually reviewed using front-wheel ground contact at both lines. Crossing brackets give a midpoint travel time of **4.625seconds**.
+
+| Quantity | Result |
+|---|---:|
+| Manual map-distance estimate: one video bicyclist | **8.13 mph** |
+| Range from crossing-time uncertainty alone | 7.52–8.85 mph |
+| Study University sidewalk records | 78 |
+| Mean study speed | 9.49 mph |
+| Median study speed | 9.14 mph |
+| Study observed speed range | 4.61–17.10 mph |
+| Estimate minus study mean | −1.36 mph |
+
+The estimate lies inside the study range. It is a **single-person versus group comparison**, not a matched-person accuracy result. The timing-only range excludes map-distance, endpoint placement and perspective errors. The workbook55-foot section and the owner55.17-foot map segment are not confirmed as identical. None of109saved University person tracks provided a reliable complete automatic A–B crossing, so8.13mph is a manual video estimate, not automatic tracker output.
+
+[Calculated comparison](reports/cluster_returns/20261024/bicyclist_speed_comparison/RESULTS.md) · [Original video evidence and crossing timing](reports/cluster_returns/20261024/university_map_speeds/RESULTS.md) · [Reproducible manual timing input](data/reviews/speed/university_manual_crossing_20261024.json).
+
+### Single HiPerGator speed experiment
+
+**Bicyclist speeds only are exported; motorcycles, pedestrian speeds and car speeds are excluded.** Cars may act as approximate measuring sticks for camera calibration; pedestrian heads/feet may support the separate height-based calibration experiment. Those calibration inputs do not change the requested speed-output scope. The job currently applies map-free methods to existing Colonial bicycle candidates and includes the saved University manual-method comparison in its final report. It does not process all14locations.
+
+After pushing/pulling the latest code, from `vision3/best/test_colonial`:
+
+```bash
+python code/submit_speed_pilot.py --go
+```
+
+Download `exp_results/SPEED_PILOT_TAG/` afterward. The entry point submits CPU previews for15candidate cameras across13reference locations, then the prepared Colonial GPU experiments. Other-camera previews require review before speed inference; Silver Star has no mapped candidate. Read reports under `camera_previews/` and `speed_results/`. Read `RESULTS.md`, `method_status.json`, `university_manual_comparison.csv` and, if enough valid estimates exist, `exploratory_closeness_ranking.csv`. Methods are compared within the same street/facility; the University example is not ranked against Colonial samples. No additional University GPU run is needed to reproduce the saved manual comparison.
+
+| Method | Implementation / current result |
+|---|---|
+| University A–B map distance and manual timing | Calculated locally:8.13mph; included in the job report. |
+| ICCV2021 pretrained car-based camera calibration | Author-model adapter implemented; real Colonial calibration pending HiPerGator run. |
+| Pedestrian-height camera calibration | Paper-inspired implementation; current saved inputs insufficient (1qualifying independent track,20required). No speed result produced. |
+| BMVC2014 automatic3D-box/vanishing-point calibration | Full pipeline not implemented. |
+| Sochor2017 CAD vehicle-model calibration | Required CAD/render pipeline and assets not integrated. |
+| 2026vehicle keypoint-template method | Required trained36-keypoint model/assets not integrated. |
+
+No claim that all five papers have been implemented or run. Synthetic geometry tests and author-network loading checks passed; these are software checks, not real-world speed validation. [Research sources and limitations](docs/research/CCTV_TRAJECTORY_SPEED_20261024.md).
 
 ## Current results
 

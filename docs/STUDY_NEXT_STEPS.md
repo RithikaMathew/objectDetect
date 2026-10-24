@@ -211,3 +211,45 @@ bash code/prepare_university_speed.sh
 ```
 
 This extracts only one source file (~282MBlisted compressed/file size), probes metadata, isolates that hour's inventory, and builds a real-frame editor/manual-reference folder. No GPU or model job is submitted. It prints a fresh folder exp_results/university_speed_prepare_XXXXXX/; download its entire zone_editor subfolder. Open index.html -> University SW Speed. Send the downloaded folder/local path for image inspection and check the expected08:05clock. Endpoints, date/person links or alternate metric landmarks must be identified before claiming mph; marking area polygons alone is not speed calibration. Pine Hills detection can continue independently.
+
+
+## October 24: map-free speed experiments
+
+Run only after pushing/pulling the new code. From HiPerGator test_colonial:
+
+```bash
+sbatch code/speed_research.slurm
+```
+
+This requests one GPU for up to4hours and processes sampled original Colonial daytime frames for car-based scale estimation; it does not rerun the whole object-count study. Results: `exp_results/colonial_speed_research_JOBID/RESULTS.md`. Download the entire result folder. Dependencies include working torch/torchvision, scipy, numpy, cv2 and Git/network access for pinned author code and MaskRCNN weights. Missing dependencies/assets are reported per method, not hidden or substituted. Original raw Colonial chunk013 must exist at the configured path.
+
+Implemented: ICCV2021 author pretrained transformer adapter (car instance masks, simple IoU association, seeded fitting); paper-inspired pedestrian head/feet average-height optimization. Local synthetic projection/recovery/input-refusal tests pass; author pretrained network loaded and inference smoke-tested. No real ICCV camera calibration executed locally: torchvision absent and original raw clip required. Existing saved Colonial data provides only1qualifying independent pedestrian track versus20required, so the local height experiment declined calibration. Three other researched methods remain NOT_IMPLEMENTED_MISSING_COMPONENTS (BMVC2014 full3D-box pipeline, Sochor2017 CAD/render assets,2026trained36-keypoint model); this command is not a claim to run all five papers.
+
+`method_status.json` distinguishes completion/failures; `all_speed_estimates.csv` only exists when experiments yield rows. `descriptive_group_comparison.csv` compares available predicted group means to source workbook group means, explicitly not accuracy/ranking. No scale fitting or automatic winner selection uses the workbook. Distinct source people/times prevent matched validation; road-to-sidewalk plane transfer remains unverified. Geometry checks alone do not establish physical accuracy. No new Slurm job submitted by Codex.
+
+
+October24 owner clarification: choose a method close to study speeds for exploratory use, not necessarily most accurate. Runner now outputs pedestrian AND bicyclist partial-track estimates from existing labelled truth candidates; car detections only estimate camera scale, no car-speed output. Workbook375speed rows across14street labels are bicycle references, not pedestrian reference speeds. `exploratory_closeness_ranking.csv` ranks available geometry-check-passing methods by absolute difference from study mean, per facility and using the same candidate set across competing methods; single-method output explicitly not a competition. No ranking when no valid estimates. This selection does not establish metric accuracy. The same one sbatch command runs the two implemented experiments and records remaining three as missing components; it does NOT implement all five. No fresh calibration job has run here.
+
+
+Latest October24 scope (supersedes earlier pedestrian-output instructions): owner requests BICYCLIST SPEED OUTPUTS ONLY. `speed_research.py` now excludes pedestrian and motorcycle speed results. Calibration may still use car size or pedestrian height. Job also includes saved University manual A/B method and compares8.13mph to78University sidewalk study values (mean9.49mph; difference−1.36mph). One-person versus separate-group descriptive comparison, not matched validation. Versioned manual input in data/reviews/speed/university_manual_crossing_20261024.json; no University reinference required. Root README now contains all14reference streets,375bicycle rows, facility types, method implementation statuses and professor-facing interpretation. Existing sbatch command unchanged; upload/pull new input/code before submitting. Job isColonial automatic experiments plusUniversity savedmanual comparison, NOTall14site processing orall5paperimplementations.
+
+Dedicated professor-facing statistics: [SPEED_REFERENCE_README.md](SPEED_REFERENCE_README.md). Future speed outputs include the exact observed measurement intervals (date, source, clock times, clip seconds and frame ranges), not just the full-hour source label. Study-reference means are across measured cyclists, not per-hour/per15-minute values; reference observation clocks are unknown.
+
+
+## Latest entry point: small multi-camera speed pilot (October24)
+
+After pushing the latest code/docs/manual inputs and pulling on HiPerGator:
+
+```bash
+cd /orange/xiangyan/rithika/vision/vision3/best/test_colonial
+source /orange/xiangyan/rithika/vision/yolo_env/bin/activate
+python code/submit_speed_pilot.py --go
+```
+
+This one submission command checks key Python dependencies before submitting two jobs: CPU candidate-camera screening followed by the prepared Colonial GPU calibration experiments (afterany dependency). It prints the bundle folder `exp_results/SPEED_PILOT_TAG/` and records both job IDs in submission.json. Partial submission keeps the first job ID; do not blindly submit again if the second submission fails.
+
+CPU screening selects15candidate camera/date sessions spanning13of14reference street labels. Silver Star has no candidate in current mapped inventory. Aliases are tentative, not independently verified reference-camera matches. First recording day, nearest-noon daylight source is fixed before looking at detector results/speeds. It extracts only needed source files from original ZIP, with a5GB cap on new extraction, and makes45-second excerpts at source05:00,20:00,35:00 plus JPG frames. At most33.75minutes across all15cameras, not hours of viewing per camera. Missing/unreadable/budget-limited sources are explicit, not zero cyclists. A resolution/sharpness table is a screening aid, not an accuracy ranking. No all-site detector/speed inference is performed in this stage.
+
+Download the bundle after completion. Open camera_previews/index.html and speed_results/RESULTS.md. Review up to5first clearly visible bicycle encounters per usable camera, aiming for3where feasible; accept1–2with sample count disclosed. Inspect fixed intervals in chronological order, without selecting people whose estimated speeds happen to agree. Misses remain detection failures and cannot simply disappear from evaluation. No guarantee these short excerpts contain5cyclists; report fewer honestly. For later expansion choose additional intervals before inspecting their results. Prefer cameras with visible bicycles/ground contact and usable tracking, not just high pixel dimensions. Comparing model speed with separate street/facility study groups remains exploratory; cannot reconstruct hourly reference speeds from rows lacking clock times.
+
+The GPU job still only attempts implemented Colonial methods and includes saved University manual timing; three full paper implementations/assets are pending. Screening other cameras does not automatically transfer Colonial calibration or zones. This bundle replaces the need to submit a separate screening command plus a separate speed command; do not submit the older direct speed job as well for the same purpose.4screening tests (including real synthetic-video extraction),8speed research tests and9study extension tests pass. Cluster job performance/real camera calibration remains untested here.

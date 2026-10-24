@@ -63,6 +63,8 @@ class StudyExtensions(unittest.TestCase):
         r=estimate(samples,10,np.eye(3),hull)
         self.assertAlmostEqual(r['speed_mph'],4.474,places=3)
         self.assertGreater(r['windows'],0)
+        import json
+        self.assertEqual(json.loads(r['measurement_frame_intervals']),[[1,41]])
 
     def test_speed_does_not_bridge_occlusion_or_extrapolate_outside_calibration(self):
         samples=[dict(frame=i,foot_x=i,foot_y=5)for i in [1,2,3,40,41,42]]

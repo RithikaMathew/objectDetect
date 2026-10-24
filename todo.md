@@ -40,9 +40,15 @@ Verification: all15test modules pass; generated zone-editor JavaScript checks pa
 
 - [x] Add independent CPU speed-readiness job to audit source JPG/CUT GPS/location clues and MP4 metadata while detection runs. Full workbook scan completed locally:375deduplicated reference rows; no Pine-named street speed records.
 - [x] Run speed_readiness.slurm on HiPerGator: job47393224completed; returned report shows41cameras audited,0explicit GPS candidates,375reference rows and0Pine-named rows.
-- [ ] Inspect raw camera_metadata.json/textual clues locally (not yet downloaded). Metric calibration remains unresolved; the successful audit did not supply supported mph.
+- [x] Inspect supplied camera_metadata.json/textual clues locally: no usable location clues found. Metric calibration remains unresolved; the successful audit did not supply supported mph.
 
 - [x] Prepare exact Pine Hills pilot-hour manual count reference, preserving raw channel sides, quarter-hour bins and missing values. Source worksheets differ in coverage (pedestrians99bins vsbicycles192); NB/SB bicycle counts must not be merged into a one-sided camera comparison. Detector comparison remains pending actualresults/camera-side correspondence.
 
 - [x] Inspect supplied camera_metadata.json: no usable textual location clues in sampled CUT previews; GPS remainsunresolved. Prepare University SW Speed as an alternative with78University sidewalk speed references (55ft), one08:00–09:00source hour and11manual cyclist observations. Recording/person/measurement-segment correspondence still requires verification.
-- [ ] Run code/prepare_university_speed.sh on cluster and inspect downloaded real-frame editor for metric landmarks/reference markers. Preparation submits noGPUjob and does not establish validated speed by itself.
+- [x] University preparation completed on cluster; real frame and owner zones visually checked. Canonical JSON saved in zones/study_20261023. No identifiable measured endpoints found.
+- [ ] Submit University SW Speed 08:00–09:00 pilot after pushing/pulling the zone JSON; inspect counts, lanes and trajectories. Physical speeds and matched reference validation remain pending.
+
+- [x] Prepare map-free speed research runner: ICCV2021 pretrained car-based adapter and paper-inspired pedestrian-height calibration; three synthetic tests passed.
+- [ ] Run real Colonial car-based calibration on HiPerGator with sbatch code/speed_research.slurm. Existing saved pedestrian inputs insufficient (1qualifyingtrack); no new mph produced. Three other researched pipelines still need implementations/assets; aggregate workbook closeness cannot establish an independently validated winner.
+
+- [x] Document14locations/375bicycle speed reference records in rootREADME; make speedexperiment outputs bicycle-only and add University manual8.13mph comparison versus9.49mph study mean. No new automatic calibration or matched-person speed validation claimed.

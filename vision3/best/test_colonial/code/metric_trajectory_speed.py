@@ -27,21 +27,23 @@ def estimate(samples,fps,H,calibration_hull,min_span=1.5,max_gap=.5,window=1.0):
             continue
         current.append((frame,*(v[:2]/v[2])))
     if current:segments.append(current)
-    speeds=[];used=0
+    speeds=[];used=0;measurement_intervals=[]
     for segment in segments:
         a=np.asarray(segment)
         if len(a)<5 or (a[-1,0]-a[0,0])/fps<min_span:continue
-        used+=1;t=a[:,0]/fps
+        used+=1;t=a[:,0]/fps;used_frames=[]
         for i in np.linspace(0,len(a)-1,min(200,len(a)),dtype=int):
             mask=np.abs(t-t[i])<=window/2
             if mask.sum()<5 or np.ptp(t[mask])<window*.6:continue
             tc=t[mask]-t[mask].mean();den=float(tc@tc)
             if den<=0:continue
             velocity=tc@a[mask,1:]/den;speeds.append(float(np.linalg.norm(velocity)))
-    if not speeds:return dict(speed_mph='',speed_kmh='',windows=0,segments=used,status='no_sufficient_continuous_in_calibration_segment')
+            used_frames.extend(a[mask,0].astype(int).tolist())
+        if used_frames:measurement_intervals.append([min(used_frames),max(used_frames)])
+    if not speeds:return dict(speed_mph='',speed_kmh='',windows=0,segments=used,measurement_frame_intervals='[]',status='no_sufficient_continuous_in_calibration_segment')
     median=float(np.median(speeds));mad=float(np.median(np.abs(np.array(speeds)-median)))
     return dict(speed_mph=round(median*2.2369362921,3),speed_kmh=round(median*3.6,3),
-        windows=len(speeds),segments=used,window_speed_MAD_mph=round(mad*2.2369362921,3),
+        windows=len(speeds),segments=used,measurement_frame_intervals=json.dumps(measurement_intervals),window_speed_MAD_mph=round(mad*2.2369362921,3),
         status='map_or_metric_calibrated_partial_track_estimate_not_speed_validated')
 
 
