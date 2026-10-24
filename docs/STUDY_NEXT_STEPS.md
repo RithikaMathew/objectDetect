@@ -253,3 +253,18 @@ CPU screening selects15candidate camera/date sessions spanning13of14reference st
 Download the bundle after completion. Open camera_previews/index.html and speed_results/RESULTS.md. Review up to5first clearly visible bicycle encounters per usable camera, aiming for3where feasible; accept1–2with sample count disclosed. Inspect fixed intervals in chronological order, without selecting people whose estimated speeds happen to agree. Misses remain detection failures and cannot simply disappear from evaluation. No guarantee these short excerpts contain5cyclists; report fewer honestly. For later expansion choose additional intervals before inspecting their results. Prefer cameras with visible bicycles/ground contact and usable tracking, not just high pixel dimensions. Comparing model speed with separate street/facility study groups remains exploratory; cannot reconstruct hourly reference speeds from rows lacking clock times.
 
 The GPU job still only attempts implemented Colonial methods and includes saved University manual timing; three full paper implementations/assets are pending. Screening other cameras does not automatically transfer Colonial calibration or zones. This bundle replaces the need to submit a separate screening command plus a separate speed command; do not submit the older direct speed job as well for the same purpose.4screening tests (including real synthetic-video extraction),8speed research tests and9study extension tests pass. Cluster job performance/real camera calibration remains untested here.
+
+
+## Preview recovery after job47544655 (October24)
+
+Original bundle: exp_results/SPEED_PILOT_20261024_183520. CPU job47544655 extracted2,931,198,701bytes but generated0/15previews because ffmpeg was absent fromPATH. That is an environment dependency failure, not bad camera quality. Speed job47544658 is separate; do not submit the full bundle again for preview recovery.
+
+Push/pull the new preview_ffmpeg.py, retry_speed_previews.py, speed_site_screen.py and submit_speed_pilot.py. Activate yolo_env on the HiPerGator login node, then:
+
+```bash
+python code/retry_speed_previews.py exp_results/SPEED_PILOT_20261024_183520 --go
+```
+
+This resolves/checksFFmpeg withlibx264. If absent, installs the pinned imageio-ffmpeg0.6.0 wheel into ~/.cache/objectdetect/preview_runtime using pip --target (no changes to shared YOLO packages), then passes its absolute binary path to the CPU job. [Package source and bundled executable details](https://pypi.org/project/imageio-ffmpeg/0.6.0/). No GPU submission and no ZIP extraction. Original selected_sources.csv reused exactly; prior reports untouched. New output camera_previews_retry_TIMESTAMP under the same bundle, path and CPU jobID printed, manifest preview_retry_JOBID.json. Download that new directory when done and open index.html.
+
+Future full submissions bootstrap/checkFFmpeg before job submission; workers also check before extraction and now exit with error if0previews, after retaining diagnostic reports. Per-camera encoder stderr appears in screening.csv/RESULTS.md. Seven screening/recovery tests, eight speed tests and nine study-extension tests pass locally. Cluster recovery still requires running above command; no retry submitted locally.

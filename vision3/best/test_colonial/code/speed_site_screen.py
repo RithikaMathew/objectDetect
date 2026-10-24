@@ -12,6 +12,7 @@ from pathlib import Path
 import cv2
 from study_batch import inventory
 from site_zone_setup import zone_key
+from preview_ffmpeg import resolve
 
 # Explicit candidate aliases; never equated with verified reference camera/date.
 CANDIDATES={
@@ -45,7 +46,14 @@ def plan(root,data_root):
 
 
 def screen(a):
-    a.out.mkdir(parents=True,exist_ok=False);rows=plan(a.root,a.data_root)
+    ffmpeg=resolve()  # Fail before extracting videos if preview tools are missing.
+    selected=getattr(a,'selected_sources',None)
+    if selected:
+        with selected.open() as f:rows=list(csv.DictReader(f))
+    else:rows=plan(a.root,a.data_root)
+    if not rows:raise ValueError('No candidate sources')
+    a.out.mkdir(parents=True,exist_ok=False)
+    (a.out/'ffmpeg.txt').write_text(ffmpeg+'\n')
     with (a.out/'selected_sources.csv').open('w',newline='') as f:
         w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
     results=[];spent=0;archive=None
@@ -79,12 +87,12 @@ def screen(a):
                     sharp.append(float(cv2.Laplacian(cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY),cv2.CV_64F).var()))
                     cv2.imwrite(str(dest/f'frame_{offset}.jpg'),frame)
                     preview=dest/f'preview_{offset}.mp4'
-                    subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-nostdin','-n','-ss',str(offset),'-i',str(video),'-t',str(a.preview_seconds),'-an','-vf','fps=10','-c:v','libx264','-preset','fast','-crf','24',str(preview)],check=True,timeout=180)
+                    subprocess.run([ffmpeg,'-hide_banner','-loglevel','error','-nostdin','-n','-ss',str(offset),'-i',str(video),'-t',str(a.preview_seconds),'-an','-vf','fps=10','-c:v','libx264','-preset','fast','-crf','24',str(preview)],check=True,timeout=180,capture_output=True,text=True)
                     previews.append(dict(file=str(preview.relative_to(a.out)),source_start_seconds=offset,source_end_seconds=offset+a.preview_seconds,source_clock=r['clock'],clock_status=r['clock_status']))
                 if not previews:raise ValueError('No readable preview interval')
                 result.update(status='PREVIEWS_READY_REVIEW_REQUIRED',median_frame_sharpness=sorted(sharp)[len(sharp)//2],previews=json.dumps(previews))
             finally:cap.release()
-        except Exception as e:result.update(status='NOT_SCREENED',error=str(e))
+        except Exception as e:result.update(status='NOT_SCREENED',error=(str(e)+' '+str(getattr(e,'stderr','') or '')[-2000:]))
         results.append(result);print(r['site'],result['status'],result['error'],flush=True)
     if archive:archive.close()
     covered={r['reference_location'] for r in rows}
@@ -99,10 +107,15 @@ def screen(a):
             file=html.escape(preview['file']);links.append(f'<p>Source seconds {preview["source_start_seconds"]}–{preview["source_end_seconds"]}</p><video controls preload="none" width="640" src="{file}"></video>')
     (a.out/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Speed camera previews</title><h1>Bicycle speed camera previews</h1><p>Candidate camera aliases, not verified study matches. Review visibility and bicycle ground contact. These clips are not speed estimates or detector outputs.</p>'+''.join(links))
     ready=sum(r['status']=='PREVIEWS_READY_REVIEW_REQUIRED' for r in results)
-    (a.out/'RESULTS.md').write_text(f'# Bicycle speed camera screening\n\nReady cameras: {ready}/{len(rows)} candidates. Missing/failed sources recorded in screening.csv. Newly extracted bytes: {spent}.\n\nDownload this entire folder and open index.html. Fixed first-day nearest-noon source per candidate; previews start at05:00,20:00,35:00 into that source. No inference, cyclist selection, lane marking or new calibration. Resolution and Laplacian sharpness describe frames, not accuracy or cyclist visibility. Do not automatically rank cameras by sharpness.\n\nAim for5clearly visible cyclists per usable camera, accepting1–4with sample size disclosed;3is a practical review target, not a statistical guarantee. Select first eligible encounters in chronological order within fixed intervals, regardless of predicted speed or label; do not stop when means match the workbook. A miss remains a detection failure, not silently excluded from detection review. If fewer cyclists appear, report insufficiency before expanding to predetermined additional intervals. Camera/reference facility/date and road-to-sidewalk calibration require review. Current mappings are candidate aliases; Silver Star has no candidate in current inventory.\n')
+    errors=Counter(r['error'] for r in results if r['status']=='NOT_SCREENED')
+    error_summary='\n'.join(f'- {count} cameras: {error}' for error,count in errors.items())
+    (a.out/'RESULTS.md').write_text(f'# Bicycle speed camera screening\n\nReady cameras: {ready}/{len(rows)} candidates. Missing/failed sources recorded in screening.csv. Newly extracted bytes: {spent}.\n\nDownload this entire folder and open index.html. Fixed first-day nearest-noon source per candidate; previews start at05:00,20:00,35:00 into that source. No inference, cyclist selection, lane marking or new calibration. Resolution and Laplacian sharpness describe frames, not accuracy or cyclist visibility. Do not automatically rank cameras by sharpness.\n\nAim for5clearly visible cyclists per usable camera, accepting1–4with sample size disclosed;3is a practical review target, not a statistical guarantee. Select first eligible encounters in chronological order within fixed intervals, regardless of predicted speed or label; do not stop when means match the workbook. A miss remains a detection failure, not silently excluded from detection review. If fewer cyclists appear, report insufficiency before expanding to predetermined additional intervals. Camera/reference facility/date and road-to-sidewalk calibration require review. Current mappings are candidate aliases; Silver Star has no candidate in current inventory.\n\n## Preview errors\n{error_summary or 'None.'}\n')
+
+    if ready==0:raise RuntimeError('No camera previews generated; read RESULTS.md and screening.csv. Source files were preserved.')
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--data-root',type=Path,default=Path('/orange/xiangyan/rithika/vision/pilot_clips'));p.add_argument('--archive',type=Path,default=Path('/orange/xiangyan/rithika/vision/MioVision_Data.zip'));p.add_argument('--out',type=Path,required=True);p.add_argument('--extract',action='store_true');p.add_argument('--max-extract-gb',type=float,default=5);p.add_argument('--preview-seconds',type=int,default=45)
+    p.add_argument('--selected-sources',type=Path,help='Reuse the exact original source selection without choosing again')
     a=p.parse_args()
     if not 1<=a.preview_seconds<=120 or a.max_extract_gb<=0:p.error('Preview1–120s, positive extraction budget required')
     screen(a)

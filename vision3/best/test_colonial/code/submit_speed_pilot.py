@@ -7,6 +7,7 @@ import shlex
 import subprocess
 from pathlib import Path
 from speed_site_screen import plan,CANDIDATES
+from preview_ffmpeg import resolve
 
 
 def commands(root,out,screen_id=None):
@@ -34,6 +35,7 @@ if __name__=='__main__':
         probe='source /orange/xiangyan/rithika/vision/yolo_env/bin/activate && python -c '+shlex.quote('import torch, torchvision, scipy, numpy, cv2; from torchvision.models.detection import maskrcnn_resnet50_fpn')
         subprocess.run(['bash','-lc',probe],check=True)
         subprocess.run(['git','--version'],check=True,stdout=subprocess.DEVNULL)
+        resolve(install=True)  # Bootstrap/check preview executable before submitting either job.
         out.mkdir(parents=True,exist_ok=False);manifest=dict(summary=summary,jobs=[])
         try:
             first,_=commands(root,out)

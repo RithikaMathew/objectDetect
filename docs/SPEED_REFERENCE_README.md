@@ -95,3 +95,5 @@ The command submits a CPU preview job for15candidate cameras (13reference locati
 - [University video evidence and calculation](../reports/cluster_returns/20261024/university_map_speeds/RESULTS.md).
 - [Current command guide](STUDY_NEXT_STEPS.md).
 
+
+Preview generation dependency: FFmpeg withlibx264 is checked before extraction. The launcher can install an isolated bundled binary if needed; see [preview recovery instructions](STUDY_NEXT_STEPS.md#preview-recovery-after-job47544655-october24). The October24initial0/15preview result was missingFFmpeg, not evidence that all15cameras had unusable images.
