@@ -9,7 +9,7 @@ import traceback
 from pathlib import Path
 from collections import defaultdict
 import numpy as np
-from scipy.optimize import least_squares
+from scipy.optimize import least_squares,linear_sum_assignment
 import cv2
 from metric_trajectory_speed import estimate
 
@@ -84,7 +84,47 @@ def height_calibration(root,size,out):
     return H,info,cv2.convexHull(np.asarray(feet,np.float32)[:,:2])
 
 
-def iccv_calibration(video,author,size,out,device='cpu',frames=160):
+class CarAssociation:
+    """One-to-one overlap matching with short-lived constant-velocity prediction."""
+    def __init__(self,max_gap_frames):
+        self.max_gap=max_gap_frames;self.active={};self.nextid=0
+
+    @staticmethod
+    def iou(a,b):
+        lt=np.maximum(a[:2],b[:2]);rb=np.minimum(a[2:],b[2:]);inter=np.maximum(rb-lt,0).prod()
+        return float(inter/((a[2:]-a[:2]).prod()+(b[2:]-b[:2]).prod()-inter+1e-8))
+
+    def update(self,frame,boxes):
+        self.active={k:v for k,v in self.active.items() if 0<frame-v['frame']<=self.max_gap}
+        ids=list(self.active);assigned={}
+        if ids and len(boxes):
+            overlaps=np.array([[self.iou(v['box']+v['velocity']*(frame-v['frame']),b) for b in boxes] for v in self.active.values()])
+            rr,cc=linear_sum_assignment(1-overlaps)
+            assigned={int(c):ids[int(r)] for r,c in zip(rr,cc) if overlaps[r,c]>.2}
+        output=[]
+        for i,box in enumerate(boxes):
+            if i in assigned:tid=assigned[i]
+            else:self.nextid+=1;tid=self.nextid
+            previous=self.active.get(tid)
+            velocity=(box-previous['box'])/(frame-previous['frame']) if previous else np.zeros(4)
+            self.active[tid]=dict(box=np.asarray(box).copy(),velocity=velocity,frame=frame)
+            output.append(tid)
+        return output
+
+
+def usable_car_records(groups):
+    records=[]
+    for tid,rows in groups.items():
+        if len(rows)<4:continue
+        centers=np.array([(r[1][:2]+r[1][2:])/2 for r in rows])
+        if np.linalg.norm(centers[-1]-centers[0])<30:continue
+        ts=np.array([r[0] for r in rows]);motion=np.column_stack([np.gradient(centers[:,i],ts) for i in (0,1)])
+        for (fi,box,mask),c,m in zip(rows,centers,motion):
+            if np.linalg.norm(m)>1e-5:records.append((tid,fi,box,mask,c,m))
+    return records
+
+
+def iccv_calibration(video,author,size,out,device='cpu',frames=3000,sample_stride=3):
     import torch
     from torchvision.models.detection import maskrcnn_resnet50_fpn,MaskRCNN_ResNet50_FPN_Weights
     if not author.exists():
@@ -107,39 +147,43 @@ def iccv_calibration(video,author,size,out,device='cpu',frames=160):
     if not v.isOpened():raise ValueError('Cannot open raw source video')
     if [int(v.get(3)),int(v.get(4))]!=size:raise ValueError('Use original720x480 source, not annotated video with header')
     fps=v.get(cv2.CAP_PROP_FPS);total=int(v.get(cv2.CAP_PROP_FRAME_COUNT))
-    previous=[];groups=defaultdict(list);nextid=0
-    def iou(a,b):
-        lt=np.maximum(a[:2],b[:2]);rb=np.minimum(a[2:],b[2:]);inter=np.maximum(rb-lt,0).prod()
-        return inter/((a[2:]-a[:2]).prod()+(b[2:]-b[:2]).prod()-inter+1e-8)
-    for fi in range(0,min(total,frames*15),15):
+    association=CarAssociation(max_gap_frames=max(sample_stride,round(fps*.3)))
+    groups=defaultdict(list);sampled=0;detections=0;lastframe=0
+    debug=out/'diagnostic_frames';debug.mkdir()
+    for fi in range(0,min(total,frames*sample_stride),sample_stride):
         v.set(cv2.CAP_PROP_POS_FRAMES,fi);ok,image=v.read()
         if not ok:break
+        sampled+=1;lastframe=fi
         rgb=cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
         tensor=torch.from_numpy(rgb.copy()).permute(2,0,1).float().to(device)/255
         with torch.no_grad():pred=detector([tensor])[0]
         boxes=pred['boxes'].cpu().numpy();scores=pred['scores'].cpu().numpy();labels=pred['labels'].cpu().numpy()
-        masks=pred['masks'].cpu().numpy()[:,0];current=[];used=set()
+        masks=pred['masks'].cpu().numpy()[:,0];selected=[]
         for box,score,label,mask in zip(boxes,scores,labels,masks):
             if label!=3 or score<.8 or min(box[2:]-box[:2])<15:continue
-            ranked=sorted([(iou(box,b),tid) for b,tid in previous if tid not in used],reverse=True)
-            if ranked and ranked[0][0]>.2:tid=ranked[0][1]
-            else:nextid+=1;tid=nextid
-            used.add(tid);current.append((box,tid))
             x1,y1,x2,y2=np.round(box).astype(int);x1=max(x1,0);y1=max(y1,0);x2=min(x2,size[0]);y2=min(y2,size[1])
             if x2<=x1 or y2<=y1:continue
             crop=cv2.resize(mask[y1:y2,x1:x2],(14,14))
-            groups[tid].append((fi,box,crop))
-        previous=current
-        if fi%300==0:print('Mask calibration frame',fi,flush=True)
-    v.release();records=[]
-    for tid,rows in groups.items():
-        if len(rows)<4:continue
-        centers=np.array([(r[1][:2]+r[1][2:])/2 for r in rows])
-        if np.linalg.norm(centers[-1]-centers[0])<30:continue
-        ts=np.array([r[0] for r in rows]);motion=np.column_stack([np.gradient(centers[:,i],ts) for i in (0,1)])
-        for (fi,box,mask),c,m in zip(rows,centers,motion):
-            if np.linalg.norm(m)>1e-5:records.append((tid,fi,box,mask,c,m))
-    if len({r[0] for r in records})<10:raise ValueError('Fewer than10 usable car tracks; calibration refused')
+            if not np.isfinite(crop).all() or crop.sum()<=0:continue
+            selected.append((box,crop,float(score)))
+        ids=association.update(fi,[r[0] for r in selected]);detections+=len(selected)
+        for tid,(box,mask,score) in zip(ids,selected):groups[tid].append((fi,box,mask))
+        if sampled==1 or sampled%100==0:
+            canvas=image.copy()
+            for tid,(box,mask,score) in zip(ids,selected):
+                x1,y1,x2,y2=map(int,box);cv2.rectangle(canvas,(x1,y1),(x2,y2),(0,255,0),1)
+                cv2.putText(canvas,str(tid),(x1,max(12,y1)),cv2.FONT_HERSHEY_SIMPLEX,.4,(0,255,0),1)
+            cv2.imwrite(str(debug/f'frame_{fi:06d}.jpg'),canvas)
+            records=usable_car_records(groups)
+            save(out/'tracking_diagnostics.json',dict(sampled_frames=sampled,source_frames_elapsed=fi,sample_stride=sample_stride,car_detections=detections,created_track_ids=len(groups),usable_car_tracks=len({r[0] for r in records}),per_track_observations={str(k):len(v) for k,v in groups.items()},selection='car score>=0.8, min box dimension15px, >=4observations, net movement>=30px'))
+            print('Car calibration:',sampled,'frames;',len({r[0] for r in records}),'usable tracks',flush=True)
+            if fi/fps>=15 and len({r[0] for r in records})>=20:break
+    v.release();records=usable_car_records(groups)
+    raw=[(tid,*r) for tid,rr in groups.items() for r in rr]
+    np.savez_compressed(out/'raw_car_observations.npz',track_ids=np.array([r[0] for r in raw]),frames=np.array([r[1] for r in raw]),boxes=np.array([r[2] for r in raw]),masks=np.array([r[3] for r in raw]))
+    count=len({r[0] for r in records})
+    save(out/'tracking_diagnostics.json',dict(sampled_frames=sampled,last_source_frame=lastframe,source_seconds_scanned=lastframe/fps,sample_stride=sample_stride,sampling_hz=fps/sample_stride,car_detections=detections,created_track_ids=len(groups),usable_car_tracks=count,per_track_observations={str(k):len(v) for k,v in groups.items()}))
+    if count<10:raise ValueError(f'Only{count}usable car tracks from{detections}detections/{sampled}sampled frames; inspect tracking_diagnostics.json and diagnostic_frames before retrying')
     tracks={k:np.asarray([r[i] for r in records]) for i,k in enumerate(['track_ids','timestamps','boxes','masks','centers','motion'])}
     np.savez_compressed(out/'car_calibration_observations.npz',**tracks)
     from types import SimpleNamespace
@@ -204,8 +248,8 @@ def university_manual_comparison(config,reference_rows):
 def run(a):
     out=a.out;out.mkdir(parents=True,exist_ok=False);root=a.root
     status=[];allrows=[]
-    save(out/'experiment_policy.json',dict(selection='closest_study_group_mean_exploratory_not_accuracy',output_user_types=['cyclist'],reference_used_for_fitting=False,person_height_prior_metres=1.7,iccv_author_commit=AUTHOR_COMMIT,source_video=str(a.video) if a.video else None,frames=a.frames))
-    for name,fn in [('pedestrian_height',lambda d:height_calibration(root,[720,480],d)),('iccv2021',lambda d:iccv_calibration(a.video,a.author_dir,[720,480],d,a.device,a.frames))]:
+    save(out/'experiment_policy.json',dict(selection='closest_study_group_mean_exploratory_not_accuracy',output_user_types=['cyclist'],reference_used_for_fitting=False,person_height_prior_metres=1.7,iccv_author_commit=AUTHOR_COMMIT,source_video=str(a.video) if a.video else None,frames=a.frames,sample_stride=a.sample_stride))
+    for name,fn in [('pedestrian_height',lambda d:height_calibration(root,[720,480],d)),('iccv2021',lambda d:iccv_calibration(a.video,a.author_dir,[720,480],d,a.device,a.frames,a.sample_stride))]:
         d=out/name;d.mkdir()
         try:
             if name=='iccv2021' and a.video is None:raise ValueError('Original Colonial daytime video required; not available in this invocation')
@@ -277,5 +321,7 @@ def run(a):
     (out/'RESULTS.md').write_text('\n'.join(lines)+'\n');print('\n'.join(lines))
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--out',type=Path,required=True);p.add_argument('--video',type=Path);p.add_argument('--author-dir',type=Path,default=Path.home()/'.cache/objectdetect/naver-cctv');p.add_argument('--device',default='cpu');p.add_argument('--frames',type=int,default=160)
-    run(p.parse_args())
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--out',type=Path,required=True);p.add_argument('--video',type=Path);p.add_argument('--author-dir',type=Path,default=Path.home()/'.cache/objectdetect/naver-cctv');p.add_argument('--device',default='cpu');p.add_argument('--frames',type=int,default=3000);p.add_argument('--sample-stride',type=int,default=3)
+    args=p.parse_args()
+    if args.frames<1 or args.sample_stride<1:p.error('Positive frame budget and sample stride required')
+    run(args)

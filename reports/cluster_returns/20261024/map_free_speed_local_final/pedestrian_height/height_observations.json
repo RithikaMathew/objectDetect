@@ -1,0 +1,22 @@
+{
+  "feet": [
+    [
+      165.0,
+      303.3,
+      1
+    ]
+  ],
+  "heads": [
+    [
+      165.0,
+      206.1,
+      1
+    ]
+  ],
+  "provenance": [
+    {
+      "source": "Standard_SCU8OG_2019-07-10_0000.023_trajectories.csv",
+      "track_id": "36"
+    }
+  ]
+}

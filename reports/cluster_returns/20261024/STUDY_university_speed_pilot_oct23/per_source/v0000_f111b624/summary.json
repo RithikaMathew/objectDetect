@@ -1,0 +1,13 @@
+{
+  "site": "University SW Speed",
+  "source": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/SW Speed University/Standard_SCU8PM_2019-09-25_0000/Standard_SCU8PM_2019-09-25_0000.009.mp4",
+  "rows": 8186,
+  "predicted_counts": {
+    "bicyclists": 0,
+    "pedestrians": 5,
+    "vehicles": 2075
+  },
+  "zone_file": "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/zones/study_20261023/university_sw_speed_9dc0b1.json",
+  "vehicle_tracks_available": true,
+  "limitation": "Track midpoint allocates one count to one15-minute bin. Dominant lane requires70%of observed points. Separate visited facility memberships can overlap and must not be summed as unique people. Boundary jitter and ID switches remain. Cyclist model label includes possible motorcycles/e-scooters; no new mode accuracy claim. Original vehicle total kept even when no vehicle histories exist. No zones=>unassigned, not inferred facility. Counts reset per source."
+}

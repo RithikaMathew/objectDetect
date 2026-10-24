@@ -14,5 +14,5 @@ source /orange/xiangyan/rithika/vision/yolo_env/bin/activate
 # Original source, not annotated/header-added video. No full study/model rerun.
 SOURCE_VIDEO='/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4'
 python code/speed_research.py --root . --video "$SOURCE_VIDEO" \
-  --frames 600 --device cuda \
+  --frames 3000 --sample-stride 3 --device cuda \
   --out "exp_results/colonial_speed_research_${SLURM_JOB_ID}"

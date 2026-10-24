@@ -1,0 +1,5 @@
+method,facility,estimated_people,reference_records,estimated_mean_mph,reference_mean_mph,absolute_difference_of_group_means_mph,interpretation
+pedestrian_height,bike_lane,0,12,,11.112413245655505,,exploratory_closeness_to_unmatched_study_mean_not_accuracy
+pedestrian_height,sidewalk,0,11,,7.82023419133123,,exploratory_closeness_to_unmatched_study_mean_not_accuracy
+iccv2021,bike_lane,0,12,,11.112413245655505,,exploratory_closeness_to_unmatched_study_mean_not_accuracy
+iccv2021,sidewalk,0,11,,7.82023419133123,,exploratory_closeness_to_unmatched_study_mean_not_accuracy

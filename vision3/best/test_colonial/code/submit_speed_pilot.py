@@ -14,7 +14,7 @@ def commands(root,out,screen_id=None):
     activate='/orange/xiangyan/rithika/vision/yolo_env/bin/activate'
     base=f'cd {shlex.quote(str(root))} && source {shlex.quote(activate)} && '
     cpu=base+'python code/speed_site_screen.py --extract --out '+shlex.quote(str(out/'camera_previews'))
-    gpu=base+'python code/speed_research.py --video '+shlex.quote('/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4')+' --frames 600 --device cuda --out '+shlex.quote(str(out/'speed_results'))
+    gpu=base+'python code/speed_research.py --video '+shlex.quote('/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4')+' --frames 3000 --sample-stride 3 --device cuda --out '+shlex.quote(str(out/'speed_results'))
     common=['sbatch','--parsable','--partition=hpg-turin','--account=xiangyan','--qos=xiangyan']
     first=common+['--job-name=speed_camera_screen','--cpus-per-task=4','--mem=6G','--time=01:00:00','--output='+str(out/'screen_%j.log'),'--wrap',cpu]
     second=common+['--job-name=bicycle_speed_methods','--cpus-per-task=4','--mem=16G','--gpus=1','--time=04:00:00','--output='+str(out/'speed_%j.log')]

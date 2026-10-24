@@ -1,0 +1,38 @@
+{
+  "site": "University SW Speed",
+  "recording_date": "2019-09-25",
+  "distance_feet": 55.17,
+  "measurement_source": "Owner Google Maps straight-segment screenshot; map center28.5972321,-81.2578709",
+  "reviewer": "Rithika (map distance and drawn gates); Codex pixel transcription",
+  "ref_size": [
+    1600,
+    1070
+  ],
+  "trajectory_size": [
+    720,
+    480
+  ],
+  "line_a": [
+    [
+      552,
+      262
+    ],
+    [
+      629,
+      205
+    ]
+  ],
+  "line_b": [
+    [
+      857,
+      1053
+    ],
+    [
+      1164,
+      943
+    ]
+  ],
+  "max_gap_seconds": 0.5,
+  "calibration_status": "approximate_map_distance_unvalidated",
+  "notes": "Endpoints transcribed from owner screenshot; not workbook55ft endpoints, surveyed distance or independently matched validation."
+}

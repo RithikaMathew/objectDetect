@@ -1,0 +1,6 @@
+{
+  "valid_comparison_rows": 0,
+  "purpose": "closest_study_mean_not_accuracy",
+  "has_competing_methods": false,
+  "pedestrian_reference_speeds_available": false
+}

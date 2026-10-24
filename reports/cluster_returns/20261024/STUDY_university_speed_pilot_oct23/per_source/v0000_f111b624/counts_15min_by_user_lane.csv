@@ -1,0 +1,13 @@
+site,bin_start,user_type,facility,predicted_count
+University SW Speed,2019-09-25 08:00:00,car,road,591
+University SW Speed,2019-09-25 08:00:00,car,uncertain,44
+University SW Speed,2019-09-25 08:15:00,car,road,366
+University SW Speed,2019-09-25 08:15:00,car,uncertain,82
+University SW Speed,2019-09-25 08:15:00,pedestrian,road,1
+University SW Speed,2019-09-25 08:30:00,car,road,437
+University SW Speed,2019-09-25 08:30:00,car,uncertain,70
+University SW Speed,2019-09-25 08:30:00,pedestrian,sidewalk,1
+University SW Speed,2019-09-25 08:45:00,car,road,424
+University SW Speed,2019-09-25 08:45:00,car,uncertain,61
+University SW Speed,2019-09-25 08:45:00,pedestrian,sidewalk,1
+University SW Speed,2019-09-25 08:45:00,pedestrian,uncertain,2

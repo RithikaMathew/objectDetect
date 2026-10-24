@@ -1,0 +1,24 @@
+{
+  "site": "University",
+  "camera": "University SW Speed",
+  "recording_date": "2019-09-25",
+  "facility": "Sidewalk",
+  "subject": "red_top_cyclist_around_0852",
+  "user_type": "cyclist",
+  "distance_feet": 55.17,
+  "distance_source": "Owner straight-line Google Maps measurement screenshot",
+  "map_center": [
+    28.5972321,
+    -81.2578709
+  ],
+  "gate_pixel_config": "zones/study_20261023/university_map_speed_gates_20261024.json",
+  "a_before_clip_seconds": 422.5,
+  "a_after_clip_seconds": 423.0,
+  "b_before_clip_seconds": 427.25,
+  "b_after_clip_seconds": 427.5,
+  "video": "university_speed_pilot_oct23_v0000_f111b624__day_0845-0900__sahi640+speedrule-lateral+shortrule-night+detfuse+staticfilter__20190925.mp4",
+  "timing_source": "Manual inspection of front-wheel ground contact in annotated video; presentation seconds",
+  "evidence_folder": "reports/cluster_returns/20261024/university_map_speeds/manual_evidence",
+  "identity_excel_matched": false,
+  "limitations": "Timing range excludes distance/map-endpoint placement error. Single cyclist, separate study observations. Not automatic tracking speed or matched validation."
+}

@@ -1,0 +1,6 @@
+site,user_type,facility,predicted_count
+University SW Speed,car,road,1818
+University SW Speed,car,uncertain,257
+University SW Speed,pedestrian,road,1
+University SW Speed,pedestrian,sidewalk,2
+University SW Speed,pedestrian,uncertain,2

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/rithika/Desktop/objectDetect/vision3/best/test_colonial/code/speed_research.py", line 198, in run
+    H,info,hull=fn(d);save(d/'calibration.json',dict(H=H.tolist(),hull=hull.tolist(),**info))
+                ~~^^^
+  File "/Users/rithika/Desktop/objectDetect/vision3/best/test_colonial/code/speed_research.py", line 194, in <lambda>
+    for name,fn in [('pedestrian_height',lambda d:height_calibration(root,[720,480],d)),('iccv2021',lambda d:iccv_calibration(a.video,a.author_dir,[720,480],d,a.device,a.frames))]:
+                                                  ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/rithika/Desktop/objectDetect/vision3/best/test_colonial/code/speed_research.py", line 83, in height_calibration
+    H,info=fit_height(np.asarray(feet),np.asarray(heads),size)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rithika/Desktop/objectDetect/vision3/best/test_colonial/code/speed_research.py", line 50, in fit_height
+    if len(feet)<20:raise ValueError('Need20 head/foot observations from separate qualifying tracks')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Need20 head/foot observations from separate qualifying tracks

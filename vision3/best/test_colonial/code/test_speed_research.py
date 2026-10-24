@@ -1,7 +1,7 @@
 """Check physical projection and synthetic calibration independently of study speeds."""
 import unittest
 import numpy as np
-from speed_research import geometry,height_residual,fit_height,university_manual_comparison,measurement_times
+from speed_research import geometry,height_residual,fit_height,university_manual_comparison,measurement_times,CarAssociation,usable_car_records
 
 class CalibrationTests(unittest.TestCase):
     def observations(self):
@@ -69,5 +69,28 @@ class MeasurementTimeTests(unittest.TestCase):
         r=measurement_times(dict(measurement_frame_intervals='[]'),[],datetime(2019,7,10,12,45))
         self.assertEqual(r['measurement_start'],'')
         self.assertEqual(r['measurement_intervals'],'[]')
+
+class CarTrackingTests(unittest.TestCase):
+    def test_velocity_prediction_keeps_id_after_larger_step(self):
+        t=CarAssociation(max_gap_frames=9)
+        box=np.array([0.,0,20,20])
+        first=t.update(0,[box])[0]
+        self.assertEqual(t.update(3,[box+[6,0,6,0]])[0],first)
+        # Twelve-pixel displacement across six frames is predicted from prior motion.
+        self.assertEqual(t.update(9,[box+[18,0,18,0]])[0],first)
+
+    def test_assignments_are_one_to_one_and_expire(self):
+        t=CarAssociation(max_gap_frames=9);box=np.array([0.,0,20,20])
+        first=t.update(0,[box])[0]
+        ids=t.update(3,[box+[2,0,2,0],box+[3,0,3,0]])
+        self.assertEqual(len(set(ids)),2)
+        self.assertNotEqual(t.update(30,[box])[0],first)
+
+    def test_static_car_not_accepted_as_scale_motion_track(self):
+        mask=np.ones((14,14));box=np.array([0.,0,20,20])
+        self.assertEqual(usable_car_records({1:[(i,box,mask) for i in range(5)]}),[])
+        r=usable_car_records({1:[(i,box+[i*10,0,i*10,0],mask) for i in range(5)]})
+        self.assertEqual(len(r),5)
+        self.assertTrue(np.isfinite(r[0][-1]).all())
 
 if __name__=='__main__':unittest.main()

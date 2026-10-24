@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/rithika/Desktop/objectDetect/vision3/best/test_colonial/code/speed_research.py", line 211, in run
+    if name=='iccv2021' and a.video is None:raise ValueError('Original Colonial daytime video required; not available in this invocation')
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Original Colonial daytime video required; not available in this invocation

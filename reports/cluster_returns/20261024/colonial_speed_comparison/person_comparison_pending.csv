@@ -1,0 +1,8 @@
+clip,truth_id,candidate_track_id,identity_verified,study_record_number,independent_match_evidence,model_speed_mph,reference_speed_mph,absolute_error_mph
+night,n2,12,0,,,,,
+night,n3,18,0,,,,,
+night,n4,22,0,,,,,
+night,n5,21,0,,,,,
+day,d1,10,0,,,,,
+day_holdout_1245,h2,7,0,,,,,
+day_holdout_1245,h3,9,0,,,,,

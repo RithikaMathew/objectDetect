@@ -1,0 +1,13 @@
+{
+  "site": "Pine Hills BL E",
+  "source": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Pine Hills/Standard_SCU8OG_2019-08-28_0000/Standard_SCU8OG_2019-08-28_0000.013.mp4",
+  "rows": 2439,
+  "predicted_counts": {
+    "bicyclists": 1,
+    "pedestrians": 6,
+    "vehicles": 492
+  },
+  "zone_file": "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/zones/study_20261023/pine_hills_bl_e_45bfdf.json",
+  "vehicle_tracks_available": true,
+  "limitation": "Track midpoint allocates one count to one15-minute bin. Dominant lane requires70%of observed points. Separate visited facility memberships can overlap and must not be summed as unique people. Boundary jitter and ID switches remain. Cyclist model label includes possible motorcycles/e-scooters; no new mode accuracy claim. Original vehicle total kept even when no vehicle histories exist. No zones=>unassigned, not inferred facility. Counts reset per source."
+}

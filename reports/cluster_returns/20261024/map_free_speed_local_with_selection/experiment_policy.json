@@ -1,0 +1,8 @@
+{
+  "selection": "closest_study_group_mean_exploratory_not_accuracy",
+  "reference_used_for_fitting": false,
+  "person_height_prior_metres": 1.7,
+  "iccv_author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+  "source_video": null,
+  "frames": 160
+}

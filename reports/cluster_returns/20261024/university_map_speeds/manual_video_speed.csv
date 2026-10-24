@@ -1,0 +1,2 @@
+subject,method,distance_ft,a_before_clip_seconds,a_after_clip_seconds,b_before_clip_seconds,b_after_clip_seconds,travel_seconds_midpoint,speed_mph_midpoint,timing_only_mph_low,timing_only_mph_high,excel_matched
+red_top_cyclist_around_0852,manual_video_front_wheel_crossing_brackets,55.17,422.5,423.0,427.25,427.5,4.625,8.13,7.52,8.85,0

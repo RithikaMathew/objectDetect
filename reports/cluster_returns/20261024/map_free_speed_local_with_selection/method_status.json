@@ -1,0 +1,27 @@
+[
+  {
+    "method": "pedestrian_height",
+    "state": "NOT_COMPLETED",
+    "detail": "Need20 head/foot observations from separate qualifying tracks"
+  },
+  {
+    "method": "iccv2021",
+    "state": "NOT_COMPLETED",
+    "detail": "Original Colonial daytime video required; not available in this invocation"
+  },
+  {
+    "method": "bmvc2014",
+    "state": "NOT_IMPLEMENTED_MISSING_COMPONENTS",
+    "detail": "Full 3D-box/vanishing-point implementation and verified vehicle-dimension priors not integrated; no paper reproduction claimed."
+  },
+  {
+    "method": "sochor2017",
+    "state": "NOT_IMPLEMENTED_MISSING_COMPONENTS",
+    "detail": "Requires vehicle identification and metric 3D CAD/render assets; unavailable in current repository."
+  },
+  {
+    "method": "keypoint2026",
+    "state": "NOT_IMPLEMENTED_MISSING_COMPONENTS",
+    "detail": "Requires trained36-keypoint detector/template assets; no verified author checkpoint integrated."
+  }
+]

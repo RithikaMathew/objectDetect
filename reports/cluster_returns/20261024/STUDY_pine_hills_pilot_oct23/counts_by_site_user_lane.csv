@@ -1,0 +1,10 @@
+site,user_type,facility,predicted_count
+Pine Hills BL E,bus,road,1
+Pine Hills BL E,car,road,488
+Pine Hills BL E,car,uncertain,2
+Pine Hills BL E,cyclist_or_motorcycle,road,1
+Pine Hills BL E,pedestrian,bike_lane,1
+Pine Hills BL E,pedestrian,grass,3
+Pine Hills BL E,pedestrian,sidewalk,1
+Pine Hills BL E,pedestrian,uncertain,1
+Pine Hills BL E,truck,road,1
