@@ -703,3 +703,8 @@ python code/adaptive_speed_batch.py submit --max-windows 4 --exploratory-road-pl
 ```
 
 Tests: 39 local checks passed. GPU model execution has not been run locally.
+
+
+October 24 owner video review and original count check: reports/cluster_returns/20261024/count_review_baxter_carroll/ saves owner observations and original per-channel count rows. Carroll 12:30–12:45 study total 2 versus model0; owner saw cyclists12:39 and12:43:53, latter overlaps rejected track34. Baxter all noon-hour study bins0 versus model0; owner short review saw no cyclist. Count bins cannot identify exact seconds or link speed references.
+
+Manual alternative prepared October24: [manual bicycle speed review](../MANUAL_BICYCLE_SPEED_README.md). CPU-only workbook-positive interval clips and browser manual point marking; thresholds unchanged, saved learned calibration gives exploratory mph. Initial scope selected adaptive source hours; outside-hour positive bins listed, not silently covered. Two tests passed; extraction not run locally.

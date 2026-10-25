@@ -1,0 +1,19 @@
+{
+  "source": "owner visual review; not independently visually verified by assistant",
+  "carroll": [
+    {
+      "start": "2019-09-10 12:39:00",
+      "end": "2019-09-10 12:39:02",
+      "observation": "cyclist visible; no detection overlay reported"
+    },
+    {
+      "start": "2019-09-10 12:43:53",
+      "end": "2019-09-10 12:43:56",
+      "observation": "cyclist visible; no detection overlay reported; saved track34 overlaps this encounter but was rejected"
+    }
+  ],
+  "baxter": {
+    "interval": "previously requested short review near 12:25:34",
+    "observation": "owner saw no cyclist; not a full-hour absence claim"
+  }
+}

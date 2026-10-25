@@ -124,3 +124,5 @@ Loose review inputs and returned reports were moved into folders; an identical r
 [Cleanup manifest](docs/REPO_CLEANUP_20261020.csv) records moves/deletions with hashes. [Earlier command guide](docs/history/README_before_cleanup_20261020.md) is historical and must not be treated as a request to resubmit jobs. Future HiPerGator pulls keep the active experiment paths intact; the moved review inputs now use the paths above.
 
 Vision3 was also pruned:63superseded files removed,26retained files grouped into training/comparison/weights_tools/tools (and an aggregate report moved to reports). See [Vision3 guide](vision3/README.md) and [file manifest](docs/VISION3_CLEANUP_20261020.csv). Current v19 pipeline paths and saved experiment outputs are unchanged.
+
+Manual alternative prepared October24: [manual bicycle speed review](docs/MANUAL_BICYCLE_SPEED_README.md). CPU-only workbook-positive interval clips and browser manual point marking; thresholds unchanged, saved learned calibration gives exploratory mph. Initial scope selected adaptive source hours; outside-hour positive bins listed, not silently covered. Two tests passed; extraction not run locally.
