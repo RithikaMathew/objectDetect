@@ -1,0 +1,6 @@
+window,track_id,observed_frames,reported_duration_seconds,mean_detector_confidence,mean_box_height_pixels,weighted_bicycle_score,detector_cyclist_percent,duration_below_3_seconds,other_rejection_gates,source
+w00,2,88,2.9,0.91,81.0,0.99,100%,True,Not established by this printed summary,Owner pasted Aloma recovery47763750 pipeline logs in sofar.md
+w02,1,49,1.6,0.81,70.0,0.98,100%,True,Not established by this printed summary,Owner pasted Aloma recovery47763750 pipeline logs in sofar.md
+w03,1,60,2.0,0.96,75.0,0.99,100%,True,Not established by this printed summary,Owner pasted Aloma recovery47763750 pipeline logs in sofar.md
+w03,2,80,2.7,0.66,31.0,0.92,46%,True,Not established by this printed summary,Owner pasted Aloma recovery47763750 pipeline logs in sofar.md
+w03,8,50,1.7,0.91,73.0,1.0,100%,True,Not established by this printed summary,Owner pasted Aloma recovery47763750 pipeline logs in sofar.md

@@ -51,6 +51,17 @@ class AdaptiveSpeedTests(unittest.TestCase):
             self.assertTrue(Path(recovered['tasks'][0]['reuse_calibration']).exists())
             self.assertNotIn('reuse_calibration',json.loads((d/'manifest.json').read_text())['tasks'][0])
 
+    def test_all_site_short_run_reuses_every_camera_calibration(self):
+        with tempfile.TemporaryDirectory() as td:
+            d=Path(td);p=make_plan(ROOT,'original');(d/'manifest.json').write_text(json.dumps(p))
+            for t in p['tasks']:
+                cal=d/t['key']/'calibration';cal.mkdir(parents=True)
+                (cal/'calibration.json').write_text(json.dumps(dict(H=[[1,0,0],[0,1,0],[0,0,1]],hull=[[[0,0]],[[20,0]],[[0,20]]],geometry_check_passed=True)))
+            new=recovery_plan(d,0,'shortday',all_sites=True)
+            self.assertEqual(len(new['tasks']),13)
+            self.assertEqual({t['source']['site'] for t in new['tasks']},{t['source']['site'] for t in p['tasks']})
+            self.assertTrue(all(Path(t['reuse_calibration']).is_file() for t in new['tasks']))
+
     def test_recovery_refuses_invalid_saved_scale(self):
         with self.assertRaises(ValueError):
             checked_saved_calibration(dict(H=[[0,0,0],[0,0,0],[0,0,0]],hull=[[[0,0]],[[1,0]],[[0,1]]],geometry_check_passed=True))
@@ -82,6 +93,19 @@ class AdaptiveSpeedTests(unittest.TestCase):
         self.assertEqual(b['env']['SLURM_ARRAY_TASK_ID'],'1')
         self.assertEqual(b['env']['CHUNK'],'1')
         self.assertEqual(b['env']['SESSION_START'],'2019-09-18_12:00:00')
+
+    def test_short_day_option_preserves_pedestrian_night_and_other_filters(self):
+        row=dict(site='Baxter',video='/tmp/source.013.mp4',archive_path='source.013.mp4',clock='2019-09-18 12:00:00',clock_status='filename_inferred',fps=30,duration_seconds=3600,probe_status='readable_metadata_not_full_decode')
+        original=window_pipeline(ROOT,'baseline',row,0,900,30,108000)
+        short=window_pipeline(ROOT,'short',row,0,900,30,108000,1.5)
+        self.assertEqual(short['env']['BIC_MIN_SEC'],'1.5')
+        self.assertEqual(short['env']['PED_MIN_SEC'],'3')
+        self.assertEqual(short['env']['NIGHT_BIC_MIN_SEC'],'3')
+        self.assertEqual(short['env']['SHORT_MIN_SEC'],'0.3')
+        for key in ('STATIC_FILTER','DET_VETO_PCT','SHORT_RULE_NIGHT_ONLY'):
+            self.assertEqual(short['env'].get(key),original['env'].get(key))
+        self.assertEqual(original['env']['BIC_MIN_SEC'],'3')
+        with self.assertRaises(ValueError):window_pipeline(ROOT,'bad',row,0,900,30,108000,0)
 
     def test_selection_combines_windows_and_ignores_speed_agreement(self):
         accepted=[]

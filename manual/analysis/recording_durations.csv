@@ -1,0 +1,15 @@
+location,camera,source_files,available_hours,basis
+Aloma,Aloma Path,48,~48,Estimated from hourly file count
+Baxter,Baxter,48,~48,Estimated from hourly file count
+Carroll,Carroll NBL,48,~48,Estimated from hourly file count
+Colonial,Colonial North,48,47.99,Measured
+Columbia,Columbia Ave,49,Unknown,Multipart files; total unverified
+Daniels,Daniels Path,48,~48,Estimated from hourly file count
+Edgewater,Edgewater N,48,~48,Estimated from hourly file count
+Lee,Lee Road N,48,~48,Estimated from hourly file count
+Pleasant Hill,Pleasant Hill Path,31,~31,Estimated from hourly file count
+Rinehart/CST,Rinehart Path,48,~48,Estimated from hourly file count
+Silver Star,No mapped source,,Unknown,No mapped recording
+University,University SW Speed,48,~48,Estimated from hourly file count
+West Orange/Park,West Orange Path,37,~37,Estimated from hourly file count
+Winter Park,Winter Park Rd Speed,48,~48,Estimated from hourly file count

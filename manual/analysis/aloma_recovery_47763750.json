@@ -1,0 +1,63 @@
+{
+  "source": "Owner-pasted sacct/status/RESULTS.md in sofar.md; jobs47763750and47763751 completed exit0",
+  "status": {
+    "site": "Aloma",
+    "camera": "Aloma Path",
+    "state": "TARGET_NOT_REACHED_WITHIN_LIMIT",
+    "target": 5,
+    "samples": [],
+    "windows": [
+      {
+        "segment": 0,
+        "source_start_seconds": 0,
+        "source_end_seconds": 900,
+        "clock_start": "2019-10-30 12:00:00",
+        "clock_end": "2019-10-30 12:15:00",
+        "run_log": "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/logs/recovery_20261025_231145_s00_aloma_path_w00_v0000_d76968ef/Standard_SCU8PM_2019-10-30_0000.013_run_log.json",
+        "found_candidate_tracks": 1,
+        "counted_candidate_tracks": 0,
+        "eligible_candidates": 0,
+        "cumulative_selected": 0
+      },
+      {
+        "segment": 1,
+        "source_start_seconds": 900,
+        "source_end_seconds": 1800,
+        "clock_start": "2019-10-30 12:15:00",
+        "clock_end": "2019-10-30 12:30:00",
+        "run_log": "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/logs/recovery_20261025_231145_s00_aloma_path_w01_v0000_d76968ef/Standard_SCU8PM_2019-10-30_0000.013_run_log.json",
+        "found_candidate_tracks": 0,
+        "counted_candidate_tracks": 0,
+        "eligible_candidates": 0,
+        "cumulative_selected": 0
+      },
+      {
+        "segment": 2,
+        "source_start_seconds": 1800,
+        "source_end_seconds": 2700,
+        "clock_start": "2019-10-30 12:30:00",
+        "clock_end": "2019-10-30 12:45:00",
+        "run_log": "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/logs/recovery_20261025_231145_s00_aloma_path_w02_v0000_d76968ef/Standard_SCU8PM_2019-10-30_0000.013_run_log.json",
+        "found_candidate_tracks": 1,
+        "counted_candidate_tracks": 0,
+        "eligible_candidates": 0,
+        "cumulative_selected": 0
+      },
+      {
+        "segment": 3,
+        "source_start_seconds": 2700,
+        "source_end_seconds": 3598.5318555555555,
+        "clock_start": "2019-10-30 12:45:00",
+        "clock_end": "2019-10-30 12:59:58.531856",
+        "run_log": "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/logs/recovery_20261025_231145_s00_aloma_path_w03_v0000_d76968ef/Standard_SCU8PM_2019-10-30_0000.013_run_log.json",
+        "found_candidate_tracks": 3,
+        "counted_candidate_tracks": 0,
+        "eligible_candidates": 0,
+        "cumulative_selected": 0
+      }
+    ],
+    "failure": "",
+    "stage": "finished",
+    "active_window": 3
+  }
+}

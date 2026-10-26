@@ -1,0 +1,2242 @@
+[
+  {
+    "encounter_id": "s00_aloma_path_2019-10-30_120000__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 7144,
+      "requested_last_frame": 7228
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 238.580344,
+        "frame": 7150,
+        "error_px": 10.16147081233659
+      },
+      {
+        "seconds": 238.780344,
+        "frame": 7156,
+        "error_px": 15.6234452345803
+      },
+      {
+        "seconds": 238.980344,
+        "frame": 7162,
+        "error_px": 17.802687114175747
+      },
+      {
+        "seconds": 239.180344,
+        "frame": 7168,
+        "error_px": 19.29761280469934
+      },
+      {
+        "seconds": 239.380344,
+        "frame": 7174,
+        "error_px": 24.200448508204417
+      },
+      {
+        "seconds": 239.580344,
+        "frame": 7180,
+        "error_px": 23.50645300486432
+      },
+      {
+        "seconds": 239.780344,
+        "frame": 7186,
+        "error_px": 22.61553634813114
+      },
+      {
+        "seconds": 239.980344,
+        "frame": 7192,
+        "error_px": 19.80980799136076
+      },
+      {
+        "seconds": 240.180344,
+        "frame": 7198,
+        "error_px": 20.185916107610137
+      },
+      {
+        "seconds": 240.380344,
+        "frame": 7204,
+        "error_px": 17.943127441090674
+      },
+      {
+        "seconds": 240.580344,
+        "frame": 7210,
+        "error_px": 15.968107251582659
+      },
+      {
+        "seconds": 240.780344,
+        "frame": 7216,
+        "error_px": 13.464226098993247
+      },
+      {
+        "seconds": 240.980344,
+        "frame": 7222,
+        "error_px": 10.962385526323853
+      },
+      {
+        "seconds": 241.180344,
+        "frame": 7228,
+        "error_px": 7.113318611205768
+      }
+    ]
+  },
+  {
+    "encounter_id": "s00_aloma_path_2019-10-30_123000__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 4516,
+      "requested_last_frame": 4576
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 150.879252,
+        "frame": 4522,
+        "error_px": 2.3258969226925315
+      },
+      {
+        "seconds": 151.079252,
+        "frame": 4528,
+        "error_px": 11.10319201083595
+      },
+      {
+        "seconds": 151.279252,
+        "frame": 4534,
+        "error_px": 18.439846375067866
+      },
+      {
+        "seconds": 151.479252,
+        "frame": 4540,
+        "error_px": 20.70116791087741
+      },
+      {
+        "seconds": 151.679252,
+        "frame": 4546,
+        "error_px": 21.107064196387302
+      },
+      {
+        "seconds": 151.879252,
+        "frame": 4552,
+        "error_px": 21.329932808119057
+      },
+      {
+        "seconds": 152.079252,
+        "frame": 4558,
+        "error_px": 19.033597266466312
+      },
+      {
+        "seconds": 152.279252,
+        "frame": 4564,
+        "error_px": 8.248404269763567
+      },
+      {
+        "seconds": 152.479252,
+        "frame": 4570,
+        "error_px": 9.005030744793729
+      },
+      {
+        "seconds": 152.679252,
+        "frame": 4576,
+        "error_px": 12.121429846813012
+      }
+    ]
+  },
+  {
+    "encounter_id": "s00_aloma_path_2019-10-30_124500__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 1130,
+      "requested_last_frame": 1184
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 37.913169,
+        "frame": 1136,
+        "error_px": 2.1766278607617977
+      },
+      {
+        "seconds": 38.113169,
+        "frame": 1142,
+        "error_px": 11.402569193447455
+      },
+      {
+        "seconds": 38.313169,
+        "frame": 1148,
+        "error_px": 17.358883541319667
+      },
+      {
+        "seconds": 38.513169,
+        "frame": 1154,
+        "error_px": 23.186262037970288
+      },
+      {
+        "seconds": 38.713169,
+        "frame": 1160,
+        "error_px": 21.530527931067237
+      },
+      {
+        "seconds": 38.913169,
+        "frame": 1166,
+        "error_px": 22.990165144169215
+      },
+      {
+        "seconds": 39.113169,
+        "frame": 1172,
+        "error_px": 19.649254514807573
+      },
+      {
+        "seconds": 39.313169,
+        "frame": 1178,
+        "error_px": 18.646741437110254
+      },
+      {
+        "seconds": 39.513169,
+        "frame": 1184,
+        "error_px": 17.93103261053768
+      }
+    ]
+  },
+  {
+    "encounter_id": "s00_aloma_path_2019-10-30_124500__c02",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 10398,
+      "requested_last_frame": 10523
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 347.133676,
+        "frame": 10404,
+        "error_px": 18.255252609224925
+      },
+      {
+        "seconds": 347.333676,
+        "frame": 10410,
+        "error_px": 37.6878162470745
+      },
+      {
+        "seconds": 347.533676,
+        "frame": 10416,
+        "error_px": 60.990838158091016
+      },
+      {
+        "seconds": 347.733676,
+        "frame": 10422,
+        "error_px": 90.12363895280396
+      },
+      {
+        "seconds": 347.933676,
+        "frame": 10428,
+        "error_px": 113.6958652651902
+      },
+      {
+        "seconds": 348.133676,
+        "frame": 10434,
+        "error_px": 143.31579940783385
+      },
+      {
+        "seconds": 348.333676,
+        "frame": 10440,
+        "error_px": 162.57147997877897
+      },
+      {
+        "seconds": 348.533676,
+        "frame": 10446,
+        "error_px": 211.5057831401861
+      },
+      {
+        "seconds": 348.733676,
+        "frame": 10452,
+        "error_px": 248.4762251110207
+      },
+      {
+        "seconds": 348.933676,
+        "frame": 10458,
+        "error_px": 283.19865690973046
+      },
+      {
+        "seconds": 349.133676,
+        "frame": 10464,
+        "error_px": 322.0350034471919
+      },
+      {
+        "seconds": 349.333676,
+        "frame": 10470,
+        "error_px": 364.16788326134804
+      },
+      {
+        "seconds": 349.533676,
+        "frame": 10476,
+        "error_px": 408.3549728330159
+      },
+      {
+        "seconds": 349.733676,
+        "frame": 10482,
+        "error_px": 445.44174435921934
+      },
+      {
+        "seconds": 349.933676,
+        "frame": 10488,
+        "error_px": 486.4599998439849
+      },
+      {
+        "seconds": 350.133676,
+        "frame": 10494,
+        "error_px": 529.7900710979861
+      },
+      {
+        "seconds": 350.333676,
+        "frame": 10500,
+        "error_px": 562.1811608477312
+      },
+      {
+        "seconds": 350.533676,
+        "frame": 10506,
+        "error_px": 597.9490582030451
+      },
+      {
+        "seconds": 350.733676,
+        "frame": 10511,
+        "error_px": 627.3164748959412
+      },
+      {
+        "seconds": 350.933676,
+        "frame": 10517,
+        "error_px": 656.0986402371652
+      },
+      {
+        "seconds": 351.133676,
+        "frame": 10523,
+        "error_px": 680.900493461992
+      }
+    ]
+  },
+  {
+    "encounter_id": "s02_carroll_nbl_2019-09-10_123000__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 16168,
+      "requested_last_frame": 16228
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 539.668868,
+        "frame": 16174,
+        "error_px": 3.9469881380253686
+      },
+      {
+        "seconds": 539.868868,
+        "frame": 16180,
+        "error_px": 7.6182485545112275
+      },
+      {
+        "seconds": 540.068868,
+        "frame": 16186,
+        "error_px": 16.23097681148248
+      },
+      {
+        "seconds": 540.268868,
+        "frame": 16192,
+        "error_px": 19.540297030022955
+      },
+      {
+        "seconds": 540.468868,
+        "frame": 16198,
+        "error_px": 24.956106839642594
+      },
+      {
+        "seconds": 540.668868,
+        "frame": 16204,
+        "error_px": 29.025314606306257
+      },
+      {
+        "seconds": 540.868868,
+        "frame": 16210,
+        "error_px": 36.781638271500576
+      },
+      {
+        "seconds": 541.068868,
+        "frame": 16216,
+        "error_px": 36.952909531391064
+      },
+      {
+        "seconds": 541.268868,
+        "frame": 16222,
+        "error_px": 40.33423597190059
+      },
+      {
+        "seconds": 541.468868,
+        "frame": 16228,
+        "error_px": 37.981824548879494
+      }
+    ]
+  },
+  {
+    "encounter_id": "s02_carroll_nbl_2019-09-10_123000__c02",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 24957,
+      "requested_last_frame": 25022
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 832.916728,
+        "frame": 24963,
+        "error_px": 2.195651592528936
+      },
+      {
+        "seconds": 833.116728,
+        "frame": 24969,
+        "error_px": 9.530821222010301
+      },
+      {
+        "seconds": 833.316728,
+        "frame": 24975,
+        "error_px": 14.925976659670678
+      },
+      {
+        "seconds": 833.516728,
+        "frame": 24981,
+        "error_px": 23.810440404081646
+      },
+      {
+        "seconds": 833.716728,
+        "frame": 24987,
+        "error_px": 23.926261919535797
+      },
+      {
+        "seconds": 833.916728,
+        "frame": 24993,
+        "error_px": 16.783778460739946
+      },
+      {
+        "seconds": 834.116728,
+        "frame": 24999,
+        "error_px": 25.03806338428161
+      },
+      {
+        "seconds": 834.316728,
+        "frame": 25004,
+        "error_px": 15.43484245769061
+      },
+      {
+        "seconds": 834.516728,
+        "frame": 25010,
+        "error_px": 13.263479189199609
+      },
+      {
+        "seconds": 834.716728,
+        "frame": 25016,
+        "error_px": 12.791052304668774
+      },
+      {
+        "seconds": 834.916728,
+        "frame": 25022,
+        "error_px": 13.435204730340851
+      }
+    ]
+  },
+  {
+    "encounter_id": "s03_colonial_north_2019-07-10_123000__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "point_left_image",
+      "requested_first_frame": 18602,
+      "requested_last_frame": 18725
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 620.989532,
+        "frame": 18611,
+        "error_px": 7.786976352984354
+      },
+      {
+        "seconds": 621.189532,
+        "frame": 18617,
+        "error_px": 12.66537876226794
+      },
+      {
+        "seconds": 621.389532,
+        "frame": 18623,
+        "error_px": 18.40839796726843
+      },
+      {
+        "seconds": 621.589532,
+        "frame": 18629,
+        "error_px": 16.17575855923278
+      },
+      {
+        "seconds": 621.789532,
+        "frame": 18635,
+        "error_px": 19.372694459236214
+      },
+      {
+        "seconds": 621.989532,
+        "frame": 18641,
+        "error_px": 22.77740614280782
+      },
+      {
+        "seconds": 622.189532,
+        "frame": 18647,
+        "error_px": 20.60632277859275
+      },
+      {
+        "seconds": 622.389532,
+        "frame": 18653,
+        "error_px": 26.854180024463957
+      },
+      {
+        "seconds": 622.589532,
+        "frame": 18659,
+        "error_px": 27.62820282043789
+      },
+      {
+        "seconds": 622.789532,
+        "frame": 18665,
+        "error_px": 29.857335284829144
+      },
+      {
+        "seconds": 622.989532,
+        "frame": 18671,
+        "error_px": 33.16765575774979
+      },
+      {
+        "seconds": 623.189532,
+        "frame": 18677,
+        "error_px": 34.80892486195672
+      },
+      {
+        "seconds": 623.389532,
+        "frame": 18683,
+        "error_px": 42.67409309869559
+      },
+      {
+        "seconds": 623.589532,
+        "frame": 18689,
+        "error_px": 48.95502905752165
+      },
+      {
+        "seconds": 623.789532,
+        "frame": 18695,
+        "error_px": 56.744037443651415
+      },
+      {
+        "seconds": 623.989532,
+        "frame": 18701,
+        "error_px": 60.811233724082605
+      },
+      {
+        "seconds": 624.189532,
+        "frame": 18707,
+        "error_px": 69.82072250352321
+      },
+      {
+        "seconds": 624.389532,
+        "frame": 18713,
+        "error_px": 69.85178168195984
+      },
+      {
+        "seconds": 624.589532,
+        "frame": 18719,
+        "error_px": null
+      },
+      {
+        "seconds": 624.789532,
+        "frame": 18725,
+        "error_px": null
+      }
+    ]
+  },
+  {
+    "encounter_id": "s03_colonial_north_2019-07-10_124500__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "incoherent_patch_motion",
+      "requested_first_frame": 14733,
+      "requested_last_frame": 14853
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 491.886378,
+        "frame": 14742,
+        "error_px": 7.814570063391588
+      },
+      {
+        "seconds": 492.086378,
+        "frame": 14748,
+        "error_px": 19.21670140313401
+      },
+      {
+        "seconds": 492.286378,
+        "frame": 14754,
+        "error_px": 25.7839095327606
+      },
+      {
+        "seconds": 492.586378,
+        "frame": 14763,
+        "error_px": 31.50564963753461
+      },
+      {
+        "seconds": 492.786378,
+        "frame": 14769,
+        "error_px": 27.33502339678689
+      },
+      {
+        "seconds": 492.986378,
+        "frame": 14775,
+        "error_px": 23.612469168691778
+      },
+      {
+        "seconds": 493.186378,
+        "frame": 14781,
+        "error_px": 21.124918505702222
+      },
+      {
+        "seconds": 493.386378,
+        "frame": 14787,
+        "error_px": 23.878406499150127
+      },
+      {
+        "seconds": 493.586378,
+        "frame": 14793,
+        "error_px": 25.573724062754938
+      },
+      {
+        "seconds": 493.786378,
+        "frame": 14799,
+        "error_px": 32.28241080144135
+      },
+      {
+        "seconds": 493.986378,
+        "frame": 14805,
+        "error_px": 36.888481188607756
+      },
+      {
+        "seconds": 494.186378,
+        "frame": 14811,
+        "error_px": 45.64308794032986
+      },
+      {
+        "seconds": 494.386378,
+        "frame": 14817,
+        "error_px": 51.91723513596202
+      },
+      {
+        "seconds": 494.586378,
+        "frame": 14823,
+        "error_px": 58.504279416028695
+      },
+      {
+        "seconds": 494.786378,
+        "frame": 14829,
+        "error_px": 69.01471421708496
+      },
+      {
+        "seconds": 494.986378,
+        "frame": 14835,
+        "error_px": 81.64631687797485
+      },
+      {
+        "seconds": 495.186378,
+        "frame": 14841,
+        "error_px": 89.98204503864231
+      },
+      {
+        "seconds": 495.386378,
+        "frame": 14847,
+        "error_px": null
+      },
+      {
+        "seconds": 495.586378,
+        "frame": 14853,
+        "error_px": null
+      }
+    ]
+  },
+  {
+    "encounter_id": "s03_colonial_north_2019-07-10_124500__c02",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "point_left_image",
+      "requested_first_frame": 15905,
+      "requested_last_frame": 16007
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 530.890949,
+        "frame": 15911,
+        "error_px": 2.7048577836264753
+      },
+      {
+        "seconds": 531.190949,
+        "frame": 15920,
+        "error_px": 6.144787396120481
+      },
+      {
+        "seconds": 531.390948,
+        "frame": 15926,
+        "error_px": 6.179262530904406
+      },
+      {
+        "seconds": 531.590948,
+        "frame": 15932,
+        "error_px": 8.07404309247749
+      },
+      {
+        "seconds": 531.890947,
+        "frame": 15941,
+        "error_px": 15.172135256026731
+      },
+      {
+        "seconds": 532.090947,
+        "frame": 15947,
+        "error_px": 17.018889535653038
+      },
+      {
+        "seconds": 532.390946,
+        "frame": 15956,
+        "error_px": 24.287010347352787
+      },
+      {
+        "seconds": 532.690946,
+        "frame": 15965,
+        "error_px": 27.736574769595244
+      },
+      {
+        "seconds": 532.890945,
+        "frame": 15971,
+        "error_px": 32.19120708059828
+      },
+      {
+        "seconds": 533.090945,
+        "frame": 15977,
+        "error_px": 40.48130910202728
+      },
+      {
+        "seconds": 533.290944,
+        "frame": 15983,
+        "error_px": 55.217723874665104
+      },
+      {
+        "seconds": 533.490944,
+        "frame": 15989,
+        "error_px": 66.55531255771908
+      },
+      {
+        "seconds": 533.690943,
+        "frame": 15995,
+        "error_px": 66.6181284071676
+      },
+      {
+        "seconds": 533.890943,
+        "frame": 16001,
+        "error_px": null
+      },
+      {
+        "seconds": 534.090943,
+        "frame": 16007,
+        "error_px": null
+      }
+    ]
+  },
+  {
+    "encounter_id": "s04_columbia_ave_2019-09-10_120000__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 4576,
+      "requested_last_frame": 4684
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 152.978007,
+        "frame": 4585,
+        "error_px": 15.769065513967103
+      },
+      {
+        "seconds": 153.278007,
+        "frame": 4594,
+        "error_px": 33.74274716149366
+      },
+      {
+        "seconds": 153.478007,
+        "frame": 4600,
+        "error_px": 46.66776255696743
+      },
+      {
+        "seconds": 153.778007,
+        "frame": 4609,
+        "error_px": 72.04239968937353
+      },
+      {
+        "seconds": 153.978007,
+        "frame": 4615,
+        "error_px": 84.73061028028285
+      },
+      {
+        "seconds": 154.178007,
+        "frame": 4621,
+        "error_px": 101.94081182831155
+      },
+      {
+        "seconds": 154.478007,
+        "frame": 4630,
+        "error_px": 120.9902909846869
+      },
+      {
+        "seconds": 154.778007,
+        "frame": 4639,
+        "error_px": 145.0360633454122
+      },
+      {
+        "seconds": 155.078007,
+        "frame": 4648,
+        "error_px": 174.92115081725547
+      },
+      {
+        "seconds": 155.378007,
+        "frame": 4657,
+        "error_px": 195.70408726430549
+      },
+      {
+        "seconds": 155.678007,
+        "frame": 4666,
+        "error_px": 222.32866734709424
+      },
+      {
+        "seconds": 155.978007,
+        "frame": 4675,
+        "error_px": 241.73997471008968
+      },
+      {
+        "seconds": 156.278007,
+        "frame": 4684,
+        "error_px": 259.06247152554096
+      }
+    ]
+  },
+  {
+    "encounter_id": "s04_columbia_ave_2019-09-10_120000__c02",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 9027,
+      "requested_last_frame": 9102
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 301.391673,
+        "frame": 9033,
+        "error_px": 2.278755081509691
+      },
+      {
+        "seconds": 301.591673,
+        "frame": 9039,
+        "error_px": 4.428581676888975
+      },
+      {
+        "seconds": 301.791673,
+        "frame": 9045,
+        "error_px": 11.269213430505161
+      },
+      {
+        "seconds": 301.991673,
+        "frame": 9051,
+        "error_px": 14.708890809595005
+      },
+      {
+        "seconds": 302.191673,
+        "frame": 9057,
+        "error_px": 10.745445283053854
+      },
+      {
+        "seconds": 302.391673,
+        "frame": 9063,
+        "error_px": 13.284150730915938
+      },
+      {
+        "seconds": 302.591673,
+        "frame": 9069,
+        "error_px": 14.412664763480526
+      },
+      {
+        "seconds": 302.791673,
+        "frame": 9075,
+        "error_px": 21.015522331985277
+      },
+      {
+        "seconds": 302.991673,
+        "frame": 9081,
+        "error_px": 25.915757871794924
+      },
+      {
+        "seconds": 303.191673,
+        "frame": 9087,
+        "error_px": 23.28064472553568
+      },
+      {
+        "seconds": 303.491673,
+        "frame": 9096,
+        "error_px": 29.89002446424463
+      },
+      {
+        "seconds": 303.691673,
+        "frame": 9102,
+        "error_px": 28.426257656202786
+      }
+    ]
+  },
+  {
+    "encounter_id": "s04_columbia_ave_2019-09-10_121500__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 22207,
+      "requested_last_frame": 22264
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 741.184184,
+        "frame": 22213,
+        "error_px": 6.537442437484021
+      },
+      {
+        "seconds": 741.484184,
+        "frame": 22222,
+        "error_px": 10.074410962040645
+      },
+      {
+        "seconds": 741.684184,
+        "frame": 22228,
+        "error_px": 15.736650761804862
+      },
+      {
+        "seconds": 741.884184,
+        "frame": 22234,
+        "error_px": 17.542623526779863
+      },
+      {
+        "seconds": 742.184184,
+        "frame": 22243,
+        "error_px": 31.17679112881439
+      },
+      {
+        "seconds": 742.384184,
+        "frame": 22249,
+        "error_px": 22.858244465332064
+      },
+      {
+        "seconds": 742.684184,
+        "frame": 22258,
+        "error_px": 30.22615834901713
+      },
+      {
+        "seconds": 742.884184,
+        "frame": 22264,
+        "error_px": 32.52454601615642
+      }
+    ]
+  },
+  {
+    "encounter_id": "s04_columbia_ave_2019-09-10_123000__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 7884,
+      "requested_last_frame": 7938
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 263.277634,
+        "frame": 7890,
+        "error_px": 9.3947936761183
+      },
+      {
+        "seconds": 263.477634,
+        "frame": 7896,
+        "error_px": 12.139218082035061
+      },
+      {
+        "seconds": 263.677634,
+        "frame": 7902,
+        "error_px": 16.073517085682045
+      },
+      {
+        "seconds": 263.877633,
+        "frame": 7908,
+        "error_px": 23.573354872178374
+      },
+      {
+        "seconds": 264.077633,
+        "frame": 7914,
+        "error_px": 14.608886757996348
+      },
+      {
+        "seconds": 264.277632,
+        "frame": 7920,
+        "error_px": 11.682797801689826
+      },
+      {
+        "seconds": 264.477632,
+        "frame": 7926,
+        "error_px": 18.480819198688668
+      },
+      {
+        "seconds": 264.677632,
+        "frame": 7932,
+        "error_px": 20.357680477941905
+      },
+      {
+        "seconds": 264.877631,
+        "frame": 7938,
+        "error_px": 28.354442115025577
+      }
+    ]
+  },
+  {
+    "encounter_id": "s06_edgewater_n_2019-09-18_120000__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 10914,
+      "requested_last_frame": 11004
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 364.36645,
+        "frame": 10920,
+        "error_px": 8.878200155346105
+      },
+      {
+        "seconds": 364.56645,
+        "frame": 10926,
+        "error_px": 9.384818674239892
+      },
+      {
+        "seconds": 364.76645,
+        "frame": 10932,
+        "error_px": 17.54909761530722
+      },
+      {
+        "seconds": 364.96645,
+        "frame": 10938,
+        "error_px": 21.620930947446702
+      },
+      {
+        "seconds": 365.16645,
+        "frame": 10944,
+        "error_px": 20.575298278156176
+      },
+      {
+        "seconds": 365.36645,
+        "frame": 10950,
+        "error_px": 32.26691689139609
+      },
+      {
+        "seconds": 365.56645,
+        "frame": 10956,
+        "error_px": 34.632557142920035
+      },
+      {
+        "seconds": 365.76645,
+        "frame": 10962,
+        "error_px": 34.57871499773277
+      },
+      {
+        "seconds": 365.96645,
+        "frame": 10968,
+        "error_px": 38.51858908559386
+      },
+      {
+        "seconds": 366.16645,
+        "frame": 10974,
+        "error_px": 38.78776028104965
+      },
+      {
+        "seconds": 366.36645,
+        "frame": 10980,
+        "error_px": 38.1778768719095
+      },
+      {
+        "seconds": 366.56645,
+        "frame": 10986,
+        "error_px": 39.70073192016199
+      },
+      {
+        "seconds": 366.76645,
+        "frame": 10992,
+        "error_px": 35.79867119208243
+      },
+      {
+        "seconds": 366.96645,
+        "frame": 10998,
+        "error_px": 39.89818383800774
+      },
+      {
+        "seconds": 367.16645,
+        "frame": 11004,
+        "error_px": 33.35226928938813
+      }
+    ]
+  },
+  {
+    "encounter_id": "s06_edgewater_n_2019-09-18_121500__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 12326,
+      "requested_last_frame": 12367
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 411.461503,
+        "frame": 12332,
+        "error_px": 7.553392055024995
+      },
+      {
+        "seconds": 411.661503,
+        "frame": 12338,
+        "error_px": 12.733989122119459
+      },
+      {
+        "seconds": 411.861503,
+        "frame": 12344,
+        "error_px": 13.318487038431893
+      },
+      {
+        "seconds": 412.061503,
+        "frame": 12349,
+        "error_px": 3.391173718372964
+      },
+      {
+        "seconds": 412.261503,
+        "frame": 12355,
+        "error_px": 5.898572560453387
+      },
+      {
+        "seconds": 412.461503,
+        "frame": 12361,
+        "error_px": 5.469789265595044
+      },
+      {
+        "seconds": 412.661503,
+        "frame": 12367,
+        "error_px": 1.6915776806732494
+      }
+    ]
+  },
+  {
+    "encounter_id": "s06_edgewater_n_2019-09-18_121500__c02",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 23073,
+      "requested_last_frame": 23142
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 770.061677,
+        "frame": 23079,
+        "error_px": 7.178325216878063
+      },
+      {
+        "seconds": 770.361677,
+        "frame": 23088,
+        "error_px": 19.663370512764065
+      },
+      {
+        "seconds": 770.561677,
+        "frame": 23094,
+        "error_px": 32.42863634707814
+      },
+      {
+        "seconds": 770.761677,
+        "frame": 23100,
+        "error_px": 47.11412441278586
+      },
+      {
+        "seconds": 770.961677,
+        "frame": 23106,
+        "error_px": 49.56122075673297
+      },
+      {
+        "seconds": 771.161677,
+        "frame": 23112,
+        "error_px": 55.54265854932632
+      },
+      {
+        "seconds": 771.361677,
+        "frame": 23118,
+        "error_px": 52.34043220938729
+      },
+      {
+        "seconds": 771.561677,
+        "frame": 23124,
+        "error_px": 52.302724412524164
+      },
+      {
+        "seconds": 771.761677,
+        "frame": 23130,
+        "error_px": 51.064295501630085
+      },
+      {
+        "seconds": 771.961677,
+        "frame": 23136,
+        "error_px": 47.98306913614772
+      },
+      {
+        "seconds": 772.161677,
+        "frame": 23142,
+        "error_px": 18.594920730752182
+      }
+    ]
+  },
+  {
+    "encounter_id": "s06_edgewater_n_2019-09-18_123000__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 4373,
+      "requested_last_frame": 4478
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 146.112352,
+        "frame": 4379,
+        "error_px": 27.92718431690483
+      },
+      {
+        "seconds": 146.412351,
+        "frame": 4388,
+        "error_px": 68.79492517756758
+      },
+      {
+        "seconds": 146.612351,
+        "frame": 4394,
+        "error_px": 97.12877644466606
+      },
+      {
+        "seconds": 146.812349,
+        "frame": 4400,
+        "error_px": 132.65802344563107
+      },
+      {
+        "seconds": 147.012349,
+        "frame": 4406,
+        "error_px": 165.4945324311951
+      },
+      {
+        "seconds": 147.212349,
+        "frame": 4412,
+        "error_px": 202.38266565767466
+      },
+      {
+        "seconds": 147.412347,
+        "frame": 4418,
+        "error_px": 240.76888624320156
+      },
+      {
+        "seconds": 147.612347,
+        "frame": 4424,
+        "error_px": 280.02737583705164
+      },
+      {
+        "seconds": 147.812347,
+        "frame": 4430,
+        "error_px": 315.63101330432175
+      },
+      {
+        "seconds": 148.012346,
+        "frame": 4436,
+        "error_px": 355.7826569795909
+      },
+      {
+        "seconds": 148.212346,
+        "frame": 4442,
+        "error_px": 393.48358322059124
+      },
+      {
+        "seconds": 148.412346,
+        "frame": 4448,
+        "error_px": 434.170995101208
+      },
+      {
+        "seconds": 148.612346,
+        "frame": 4454,
+        "error_px": 468.20010808958267
+      },
+      {
+        "seconds": 148.812346,
+        "frame": 4460,
+        "error_px": 505.1415557054
+      },
+      {
+        "seconds": 149.012346,
+        "frame": 4466,
+        "error_px": 534.9511237600586
+      },
+      {
+        "seconds": 149.212346,
+        "frame": 4472,
+        "error_px": 562.9748472629926
+      },
+      {
+        "seconds": 149.412346,
+        "frame": 4478,
+        "error_px": 596.1037564965756
+      }
+    ]
+  },
+  {
+    "encounter_id": "s06_edgewater_n_2019-09-18_124500__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 2130,
+      "requested_last_frame": 2279
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 71.259166,
+        "frame": 2136,
+        "error_px": 24.023829425860555
+      },
+      {
+        "seconds": 71.559165,
+        "frame": 2145,
+        "error_px": 47.70263439321535
+      },
+      {
+        "seconds": 71.859164,
+        "frame": 2154,
+        "error_px": 72.80320687909219
+      },
+      {
+        "seconds": 72.059164,
+        "frame": 2160,
+        "error_px": 92.58819910333607
+      },
+      {
+        "seconds": 72.359163,
+        "frame": 2169,
+        "error_px": 124.6591153825111
+      },
+      {
+        "seconds": 72.559162,
+        "frame": 2175,
+        "error_px": 141.60175557015975
+      },
+      {
+        "seconds": 72.759161,
+        "frame": 2181,
+        "error_px": 170.44746328171436
+      },
+      {
+        "seconds": 73.05916,
+        "frame": 2190,
+        "error_px": 197.89065854181484
+      },
+      {
+        "seconds": 73.25916,
+        "frame": 2196,
+        "error_px": 222.7835298892239
+      },
+      {
+        "seconds": 73.559159,
+        "frame": 2205,
+        "error_px": 255.13886779205086
+      },
+      {
+        "seconds": 73.859158,
+        "frame": 2214,
+        "error_px": 288.5687876090319
+      },
+      {
+        "seconds": 74.059157,
+        "frame": 2220,
+        "error_px": 313.4266139835494
+      },
+      {
+        "seconds": 74.259156,
+        "frame": 2226,
+        "error_px": 335.26076566025966
+      },
+      {
+        "seconds": 74.459156,
+        "frame": 2232,
+        "error_px": 354.3508393560881
+      },
+      {
+        "seconds": 74.659155,
+        "frame": 2238,
+        "error_px": 377.59203018214527
+      },
+      {
+        "seconds": 74.859155,
+        "frame": 2244,
+        "error_px": 401.2303812354785
+      },
+      {
+        "seconds": 75.159154,
+        "frame": 2253,
+        "error_px": 431.7695480048105
+      },
+      {
+        "seconds": 75.459153,
+        "frame": 2262,
+        "error_px": 464.6953938639476
+      },
+      {
+        "seconds": 75.659152,
+        "frame": 2268,
+        "error_px": 478.153908968549
+      },
+      {
+        "seconds": 75.859152,
+        "frame": 2274,
+        "error_px": 497.114868155102
+      },
+      {
+        "seconds": 76.059151,
+        "frame": 2279,
+        "error_px": 511.34167018971993
+      }
+    ]
+  },
+  {
+    "encounter_id": "s06_edgewater_n_2019-09-18_124500__c02",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 9089,
+      "requested_last_frame": 9257
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 303.664673,
+        "frame": 9101,
+        "error_px": 25.27308722284236
+      },
+      {
+        "seconds": 303.864673,
+        "frame": 9107,
+        "error_px": 33.86647730338901
+      },
+      {
+        "seconds": 304.164673,
+        "frame": 9116,
+        "error_px": 60.95854265791277
+      },
+      {
+        "seconds": 304.464673,
+        "frame": 9125,
+        "error_px": 90.45688855300875
+      },
+      {
+        "seconds": 304.764673,
+        "frame": 9134,
+        "error_px": 119.99493875394528
+      },
+      {
+        "seconds": 305.064673,
+        "frame": 9143,
+        "error_px": 150.24473411701968
+      },
+      {
+        "seconds": 305.364673,
+        "frame": 9152,
+        "error_px": 176.50314948530328
+      },
+      {
+        "seconds": 305.664673,
+        "frame": 9161,
+        "error_px": 213.2403000001861
+      },
+      {
+        "seconds": 306.264673,
+        "frame": 9179,
+        "error_px": 274.9072240960643
+      },
+      {
+        "seconds": 306.564673,
+        "frame": 9188,
+        "error_px": 314.8746970981228
+      },
+      {
+        "seconds": 306.764673,
+        "frame": 9194,
+        "error_px": 337.77326346554344
+      },
+      {
+        "seconds": 307.164673,
+        "frame": 9206,
+        "error_px": 374.4503583230115
+      },
+      {
+        "seconds": 307.464673,
+        "frame": 9215,
+        "error_px": 410.2212704240781
+      },
+      {
+        "seconds": 307.664673,
+        "frame": 9221,
+        "error_px": 427.25095382195286
+      },
+      {
+        "seconds": 307.964673,
+        "frame": 9230,
+        "error_px": 458.6988611043942
+      },
+      {
+        "seconds": 308.164673,
+        "frame": 9236,
+        "error_px": 476.0700338594491
+      },
+      {
+        "seconds": 308.364673,
+        "frame": 9242,
+        "error_px": 495.98088998505557
+      },
+      {
+        "seconds": 308.564673,
+        "frame": 9248,
+        "error_px": 513.8421004826116
+      },
+      {
+        "seconds": 308.864673,
+        "frame": 9257,
+        "error_px": 533.9893290456247
+      }
+    ]
+  },
+  {
+    "encounter_id": "s07_lee_road_n_2019-07-10_120000__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 16766,
+      "requested_last_frame": 16865
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 559.636585,
+        "frame": 16772,
+        "error_px": 16.300393755446688
+      },
+      {
+        "seconds": 559.836585,
+        "frame": 16778,
+        "error_px": 25.050224226921294
+      },
+      {
+        "seconds": 560.136585,
+        "frame": 16787,
+        "error_px": 45.61894288471001
+      },
+      {
+        "seconds": 560.536585,
+        "frame": 16799,
+        "error_px": 82.44715397110697
+      },
+      {
+        "seconds": 560.836585,
+        "frame": 16808,
+        "error_px": 114.35309226594252
+      },
+      {
+        "seconds": 561.136585,
+        "frame": 16817,
+        "error_px": 157.52882324907085
+      },
+      {
+        "seconds": 561.436585,
+        "frame": 16826,
+        "error_px": 214.81271723631667
+      },
+      {
+        "seconds": 561.736585,
+        "frame": 16835,
+        "error_px": 256.22357300686406
+      },
+      {
+        "seconds": 561.936585,
+        "frame": 16841,
+        "error_px": 314.1459749070474
+      },
+      {
+        "seconds": 562.136585,
+        "frame": 16847,
+        "error_px": 374.2859496763401
+      },
+      {
+        "seconds": 562.336585,
+        "frame": 16853,
+        "error_px": 436.4647027127769
+      },
+      {
+        "seconds": 562.536585,
+        "frame": 16859,
+        "error_px": 512.8755824679376
+      },
+      {
+        "seconds": 562.736585,
+        "frame": 16865,
+        "error_px": 577.0794321940826
+      }
+    ]
+  },
+  {
+    "encounter_id": "s07_lee_road_n_2019-07-10_120000__c02",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 23270,
+      "requested_last_frame": 23342
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 776.954835,
+        "frame": 23285,
+        "error_px": 22.504581757181978
+      },
+      {
+        "seconds": 777.254835,
+        "frame": 23294,
+        "error_px": 37.841895973634365
+      },
+      {
+        "seconds": 777.654835,
+        "frame": 23306,
+        "error_px": 93.53004149091622
+      },
+      {
+        "seconds": 778.054835,
+        "frame": 23318,
+        "error_px": 183.45250688025138
+      },
+      {
+        "seconds": 778.454835,
+        "frame": 23330,
+        "error_px": 288.0000984590504
+      },
+      {
+        "seconds": 778.654835,
+        "frame": 23336,
+        "error_px": 363.8570928309255
+      },
+      {
+        "seconds": 778.854835,
+        "frame": 23342,
+        "error_px": 451.39410523238234
+      }
+    ]
+  },
+  {
+    "encounter_id": "s07_lee_road_n_2019-07-10_121500__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 19752,
+      "requested_last_frame": 19854
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 659.847602,
+        "frame": 19776,
+        "error_px": 40.57761927759112
+      },
+      {
+        "seconds": 660.647602,
+        "frame": 19800,
+        "error_px": 119.30518771151003
+      },
+      {
+        "seconds": 661.147602,
+        "frame": 19815,
+        "error_px": 192.88938606084096
+      },
+      {
+        "seconds": 661.447602,
+        "frame": 19824,
+        "error_px": 250.66077301000476
+      },
+      {
+        "seconds": 661.647602,
+        "frame": 19830,
+        "error_px": 302.58139861830796
+      },
+      {
+        "seconds": 661.847602,
+        "frame": 19836,
+        "error_px": 355.52313001553307
+      },
+      {
+        "seconds": 662.047602,
+        "frame": 19842,
+        "error_px": 420.27547410814526
+      },
+      {
+        "seconds": 662.247602,
+        "frame": 19848,
+        "error_px": 488.0144578484604
+      },
+      {
+        "seconds": 662.447602,
+        "frame": 19854,
+        "error_px": 547.1471983733437
+      }
+    ]
+  },
+  {
+    "encounter_id": "s07_lee_road_n_2019-07-10_121500__c02",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 23232,
+      "requested_last_frame": 23348
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 775.361245,
+        "frame": 23238,
+        "error_px": 30.801810642620854
+      },
+      {
+        "seconds": 775.561245,
+        "frame": 23244,
+        "error_px": 37.80210701902104
+      },
+      {
+        "seconds": 775.861245,
+        "frame": 23253,
+        "error_px": 31.14585783190128
+      },
+      {
+        "seconds": 776.061245,
+        "frame": 23259,
+        "error_px": 22.87206099555486
+      },
+      {
+        "seconds": 776.361245,
+        "frame": 23268,
+        "error_px": 24.53769285267137
+      },
+      {
+        "seconds": 776.661245,
+        "frame": 23277,
+        "error_px": 26.823191535895077
+      },
+      {
+        "seconds": 777.061245,
+        "frame": 23289,
+        "error_px": 34.4737954634452
+      },
+      {
+        "seconds": 777.461245,
+        "frame": 23301,
+        "error_px": 32.55649959095099
+      },
+      {
+        "seconds": 777.961245,
+        "frame": 23316,
+        "error_px": 34.59837860521074
+      },
+      {
+        "seconds": 778.261245,
+        "frame": 23325,
+        "error_px": 35.282505240199725
+      },
+      {
+        "seconds": 778.661245,
+        "frame": 23337,
+        "error_px": 38.350286664808614
+      },
+      {
+        "seconds": 779.061245,
+        "frame": 23348,
+        "error_px": 42.17735688819352
+      }
+    ]
+  },
+  {
+    "encounter_id": "s08_pleasant_hill_path_2019-11-12_124500__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 24367,
+      "requested_last_frame": 24469
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 813.557223,
+        "frame": 24382,
+        "error_px": 8.34680315361601
+      },
+      {
+        "seconds": 813.957223,
+        "frame": 24394,
+        "error_px": 3.2732557877074187
+      },
+      {
+        "seconds": 814.257223,
+        "frame": 24403,
+        "error_px": 9.052014440380296
+      },
+      {
+        "seconds": 814.557223,
+        "frame": 24412,
+        "error_px": 14.343820984224598
+      },
+      {
+        "seconds": 814.857223,
+        "frame": 24421,
+        "error_px": 10.154656276553627
+      },
+      {
+        "seconds": 815.157223,
+        "frame": 24430,
+        "error_px": 8.834972013511184
+      },
+      {
+        "seconds": 815.557223,
+        "frame": 24442,
+        "error_px": 3.8552366130017637
+      },
+      {
+        "seconds": 815.857223,
+        "frame": 24451,
+        "error_px": 0.810713743799895
+      },
+      {
+        "seconds": 816.157223,
+        "frame": 24460,
+        "error_px": 2.3135457533821366
+      },
+      {
+        "seconds": 816.457223,
+        "frame": 24469,
+        "error_px": 10.04436866385231
+      }
+    ]
+  },
+  {
+    "encounter_id": "s08_pleasant_hill_path_2019-11-12_124500__c02",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 24372,
+      "requested_last_frame": 24473
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 813.695906,
+        "frame": 24386,
+        "error_px": 7.331189320381039
+      },
+      {
+        "seconds": 813.995906,
+        "frame": 24395,
+        "error_px": 6.045930367116517
+      },
+      {
+        "seconds": 814.295906,
+        "frame": 24404,
+        "error_px": 7.705930107467745
+      },
+      {
+        "seconds": 814.595906,
+        "frame": 24413,
+        "error_px": 12.526007761697889
+      },
+      {
+        "seconds": 814.895906,
+        "frame": 24422,
+        "error_px": 15.298861302409886
+      },
+      {
+        "seconds": 815.195906,
+        "frame": 24431,
+        "error_px": 11.719493025310895
+      },
+      {
+        "seconds": 815.495906,
+        "frame": 24440,
+        "error_px": 17.093407951360078
+      },
+      {
+        "seconds": 815.795906,
+        "frame": 24449,
+        "error_px": 16.299003654242846
+      },
+      {
+        "seconds": 816.095906,
+        "frame": 24458,
+        "error_px": 13.245900148508964
+      },
+      {
+        "seconds": 816.395906,
+        "frame": 24467,
+        "error_px": 12.55745142940299
+      },
+      {
+        "seconds": 816.595906,
+        "frame": 24473,
+        "error_px": 8.638194515173359
+      }
+    ]
+  },
+  {
+    "encounter_id": "s09_rinehart_path_2019-10-02_120000__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "point_left_image",
+      "requested_first_frame": 21088,
+      "requested_last_frame": 21160
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 704.036991,
+        "frame": 21100,
+        "error_px": 10.391140410139396
+      },
+      {
+        "seconds": 704.436991,
+        "frame": 21112,
+        "error_px": 28.5614038931995
+      },
+      {
+        "seconds": 704.736991,
+        "frame": 21121,
+        "error_px": 38.99869580858182
+      },
+      {
+        "seconds": 705.036991,
+        "frame": 21130,
+        "error_px": 52.86347182633875
+      },
+      {
+        "seconds": 705.336991,
+        "frame": 21139,
+        "error_px": 53.72655129310624
+      },
+      {
+        "seconds": 705.636991,
+        "frame": 21148,
+        "error_px": 39.792616954509626
+      },
+      {
+        "seconds": 705.836991,
+        "frame": 21154,
+        "error_px": 48.16405756866832
+      },
+      {
+        "seconds": 706.036991,
+        "frame": 21160,
+        "error_px": null
+      }
+    ]
+  },
+  {
+    "encounter_id": "s10_university_sw_speed_2019-09-25_124500__c01",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 1323,
+      "requested_last_frame": 1460
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 44.729557,
+        "frame": 1341,
+        "error_px": 19.841754543427292
+      },
+      {
+        "seconds": 45.229557,
+        "frame": 1356,
+        "error_px": 26.23915110099898
+      },
+      {
+        "seconds": 45.729557,
+        "frame": 1371,
+        "error_px": 56.86389612193567
+      },
+      {
+        "seconds": 46.229557,
+        "frame": 1386,
+        "error_px": 80.57758225847914
+      },
+      {
+        "seconds": 46.629557,
+        "frame": 1397,
+        "error_px": 107.80106906287072
+      },
+      {
+        "seconds": 47.029557,
+        "frame": 1409,
+        "error_px": 136.89703954890453
+      },
+      {
+        "seconds": 47.529557,
+        "frame": 1424,
+        "error_px": 191.92290736114555
+      },
+      {
+        "seconds": 47.829557,
+        "frame": 1433,
+        "error_px": 234.27327726504
+      },
+      {
+        "seconds": 48.129557,
+        "frame": 1442,
+        "error_px": 299.4860649340286
+      },
+      {
+        "seconds": 48.329557,
+        "frame": 1448,
+        "error_px": 336.1710155669327
+      },
+      {
+        "seconds": 48.529557,
+        "frame": 1454,
+        "error_px": 385.52726083503734
+      },
+      {
+        "seconds": 48.729557,
+        "frame": 1460,
+        "error_px": 412.63794741866224
+      }
+    ]
+  },
+  {
+    "encounter_id": "s10_university_sw_speed_2019-09-25_124500__c02",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 2760,
+      "requested_last_frame": 2850
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 92.807736,
+        "frame": 2781,
+        "error_px": 29.031779924629703
+      },
+      {
+        "seconds": 93.307735,
+        "frame": 2796,
+        "error_px": 45.06399448831015
+      },
+      {
+        "seconds": 93.907733,
+        "frame": 2814,
+        "error_px": 111.84731450342075
+      },
+      {
+        "seconds": 94.207732,
+        "frame": 2823,
+        "error_px": 146.39112594761573
+      },
+      {
+        "seconds": 94.507731,
+        "frame": 2832,
+        "error_px": 189.30895779639147
+      },
+      {
+        "seconds": 94.80773,
+        "frame": 2841,
+        "error_px": 260.7397673831721
+      },
+      {
+        "seconds": 95.107729,
+        "frame": 2850,
+        "error_px": 312.4404835893785
+      }
+    ]
+  },
+  {
+    "encounter_id": "s10_university_sw_speed_2019-09-25_124500__c03",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 10690,
+      "requested_last_frame": 10780
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 357.385674,
+        "frame": 10711,
+        "error_px": 45.78053183148222
+      },
+      {
+        "seconds": 357.885674,
+        "frame": 10726,
+        "error_px": 85.69148831459009
+      },
+      {
+        "seconds": 358.385674,
+        "frame": 10741,
+        "error_px": 139.33641693453183
+      },
+      {
+        "seconds": 358.785674,
+        "frame": 10753,
+        "error_px": 192.96569447113328
+      },
+      {
+        "seconds": 359.085674,
+        "frame": 10762,
+        "error_px": 250.61024777500577
+      },
+      {
+        "seconds": 359.385674,
+        "frame": 10771,
+        "error_px": 313.6353173939604
+      },
+      {
+        "seconds": 359.685674,
+        "frame": 10780,
+        "error_px": 389.23806148426127
+      }
+    ]
+  },
+  {
+    "encounter_id": "s10_university_sw_speed_2019-09-25_124500__c04",
+    "metadata": {
+      "fps": 29.97002997002997,
+      "width": 720,
+      "height": 480,
+      "tracking_stop": "complete",
+      "requested_first_frame": 12460,
+      "requested_last_frame": 12586
+    },
+    "heldout_click_checks": [
+      {
+        "seconds": 416.037788,
+        "frame": 12469,
+        "error_px": 6.40153777190187
+      },
+      {
+        "seconds": 416.437788,
+        "frame": 12481,
+        "error_px": 26.087882471666113
+      },
+      {
+        "seconds": 416.837788,
+        "frame": 12493,
+        "error_px": 86.33797867712978
+      },
+      {
+        "seconds": 417.137788,
+        "frame": 12502,
+        "error_px": 110.77544715865596
+      },
+      {
+        "seconds": 417.437788,
+        "frame": 12511,
+        "error_px": 134.96467446063028
+      },
+      {
+        "seconds": 417.737788,
+        "frame": 12520,
+        "error_px": 163.24078771749782
+      },
+      {
+        "seconds": 418.037788,
+        "frame": 12529,
+        "error_px": 182.41347766253384
+      },
+      {
+        "seconds": 418.237788,
+        "frame": 12535,
+        "error_px": 189.76446686266345
+      },
+      {
+        "seconds": 418.537788,
+        "frame": 12544,
+        "error_px": 207.6327190047352
+      },
+      {
+        "seconds": 418.837788,
+        "frame": 12553,
+        "error_px": 218.28816050679237
+      },
+      {
+        "seconds": 419.237788,
+        "frame": 12565,
+        "error_px": 240.13658441015136
+      },
+      {
+        "seconds": 419.637788,
+        "frame": 12577,
+        "error_px": 251.71000328765163
+      },
+      {
+        "seconds": 419.937788,
+        "frame": 12586,
+        "error_px": 254.00399604795777
+      }
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "state": "FINISHED",
+  "completed": 30,
+  "accepted_flow_speeds": 2,
+  "policy": "failed pixel/coverage checks excluded; shared scale not independently validated"
+}

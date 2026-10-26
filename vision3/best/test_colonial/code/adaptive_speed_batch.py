@@ -57,9 +57,14 @@ def clock_seconds(clock):
     t=dt.time.fromisoformat(clock);return t.hour*3600+t.minute*60+t.second+t.microsecond/1e6
 
 
-def window_pipeline(root,tag,row,start,end,fps,frames):
+def window_pipeline(root,tag,row,start,end,fps,frames,day_bicycle_min_seconds=None):
     task=build_plan(root,tag,[row])['tasks'][0]
     task['env'].update(START_FRAME=str(round(start*fps)+1),MAX_FRAMES=str(min(int(frames),round(end*fps))),EXPORT_VEHICLE_TRAJECTORIES='0',SLURM_ARRAY_TASK_ID='1',CHUNK='1',SESSION_START=row['clock'].replace(' ','_'))
+    if day_bicycle_min_seconds is not None:
+        if not .3<=day_bicycle_min_seconds<=3:raise ValueError('Day bicycle minimum must be0.3–3seconds')
+        # Preserve the former nighttime fallback when changing the daytime setting.
+        task['env']['NIGHT_BIC_MIN_SEC']=task['env'].get('NIGHT_BIC_MIN_SEC') or task['env']['BIC_MIN_SEC']
+        task['env']['BIC_MIN_SEC']=str(day_bicycle_min_seconds)
     return task
 
 
@@ -117,27 +122,33 @@ def checked_saved_calibration(saved):
     return H,hull,{k:v for k,v in saved.items() if k not in ('H','hull')}
 
 
-def recovery_plan(directory,index,tag):
-    original=json.loads((directory/'manifest.json').read_text());task=dict(original['tasks'][index])
-    calibration=directory/task['key']/'calibration/calibration.json'
-    checked_saved_calibration(json.loads(calibration.read_text()))
-    task['reuse_calibration']=str(calibration.resolve())
-    return dict(original,tag=tag,tasks=[task],jobs=[],recovery_of=str(directory.resolve()),created=dt.datetime.now().isoformat())
+def recovery_plan(directory,index,tag,all_sites=False):
+    original=json.loads((directory/'manifest.json').read_text());tasks=[]
+    selected=original['tasks'] if all_sites else [original['tasks'][index]]
+    for source in selected:
+        task=dict(source);calibration=directory/task['key']/'calibration/calibration.json'
+        checked_saved_calibration(json.loads(calibration.read_text()))
+        task['reuse_calibration']=str(calibration.resolve());tasks.append(task)
+    return dict(original,tag=tag,tasks=tasks,jobs=[],recovery_of=str(directory.resolve()),created=dt.datetime.now().isoformat())
 
 
 def recover(a):
-    tag='recovery_'+dt.datetime.now().strftime('%Y%m%d_%H%M%S')
-    p=recovery_plan(a.directory.resolve(),a.index,tag)
+    tag=('shortday_' if a.day_bicycle_min_seconds is not None else 'recovery_')+dt.datetime.now().strftime('%Y%m%d_%H%M%S')
+    p=recovery_plan(a.directory.resolve(),a.index,tag,a.all_sites)
+    if a.day_bicycle_min_seconds is not None:p['day_bicycle_min_seconds']=a.day_bicycle_min_seconds
     destination=a.directory.resolve().parent/('ADAPTIVE_SPEED_'+tag)
-    print('Recovering only:',p['tasks'][0]['source']['site']);print('Output:',destination)
+    print('Selected sites:',[t['source']['site'] for t in p['tasks']]);print('Output:',destination)
     if not a.go:print('Dry run; add --go on HiPerGator.');return
     if not shutil_which('sbatch'):raise RuntimeError('Submit on HiPerGator')
     root=Path(p['root'])
-    if not Path(p['tasks'][0]['source']['video']).is_file():raise FileNotFoundError(p['tasks'][0]['source']['video'])
+    for task in p['tasks']:
+        if not Path(task['source']['video']).is_file():raise FileNotFoundError(task['source']['video'])
     destination.mkdir(exist_ok=False);save(destination/'manifest.json',p)
     env='cd '+shlex.quote(str(root))+' && source /orange/xiangyan/rithika/vision/yolo_env/bin/activate && '
     common=['sbatch','--parsable','--partition=hpg-turin','--account=xiangyan','--qos=xiangyan']
-    command=common+['--job-name=recover_bicycle_speed','--gpus=1','--cpus-per-task=4','--mem=32G','--time=08:00:00','--output='+str(destination/'recovery_%j.log'),'--wrap',env+'python code/adaptive_speed_batch.py worker --directory '+shlex.quote(str(destination))+' --index 0']
+    array=['--array=0-'+str(len(p['tasks'])-1)+'%2'] if len(p['tasks'])>1 else []
+    worker_index='"$SLURM_ARRAY_TASK_ID"' if array else '0'
+    command=common+array+['--job-name=recover_bicycle_speed','--gpus=1','--cpus-per-task=4','--mem=32G','--time=08:00:00','--output='+str(destination/('recovery_%A_%a.log' if array else 'recovery_%j.log')),'--wrap',env+'python code/adaptive_speed_batch.py worker --directory '+shlex.quote(str(destination))+' --index '+worker_index]
     job=subprocess.check_output(command,text=True).strip().split(';')[0]
     if not job.isdigit():raise ValueError('Unexpected recovery job ID')
     p['jobs'].append(dict(stage='recovery_worker',id=job));save(destination/'manifest.json',p)
@@ -176,7 +187,7 @@ def worker(directory,index):
             start=segment*900;end=min((segment+1)*900,frames/fps)
             if end-start<60:break
             tag=p['tag']+'_'+task['key']+'_w'+str(segment).zfill(2)
-            pipeline=window_pipeline(root,tag,row,start,end,fps,frames)
+            pipeline=window_pipeline(root,tag,row,start,end,fps,frames,p.get('day_bicycle_min_seconds'))
             # No foreign camera zones/Colonial truth transferred. Fixed model/count filters.
             if (root/'counts'/pipeline['env']['RUN']).exists():raise ValueError('Existing pipeline run: '+pipeline['env']['RUN'])
             window=out/'windows'/('w'+str(segment).zfill(2));window.mkdir(parents=True)
@@ -228,7 +239,7 @@ def report(directory,task=None):
             found=len(candidate_rows);counted=sum(r.get('counted')=='1' for r in candidate_rows);eligible=sum(r.get('eligible')=='1' for r in candidate_rows)
         rows.append(dict(location=task['reference_site'],camera=task['source']['site'],study_cyclists=task['reference_count'],study_mean_mph=task['reference_mean_mph'],target=task['target'],found_candidate_tracks=found,counted_candidate_tracks=counted,speed_eligible_candidate_tracks=eligible,model_candidate_sample=len(values),model_candidate_mean_mph=mean if mean is not None else '',difference_from_study_mean_mph=mean-task['reference_mean_mph'] if mean is not None else '',state=s['state'],source_recording_date=task['source']['study_date'],source_clock_status=task['source']['clock_status'],minutes_processed=sum(w['source_end_seconds']-w['source_start_seconds'] for w in s.get('windows',[]))/60,video_intervals=json.dumps(s.get('windows',[])),failure=s.get('failure',''),interpretation='provisional_unmatched_group_comparison; identity_type_and_plane_transfer_unverified'))
     write_rows(destination/'comparison.csv',rows);write_rows(destination/'selected_candidates.csv',samples);write_rows(destination/'all_candidate_timestamps.csv',all_candidates)
-    lines=['# Adaptive bicyclist-candidate speed comparison','','Each site processes consecutive15-minute windows until its candidate quota or the stated time limit. Means combine selected per-candidate speeds with equal weight, not averages of segment averages. Selection is chronological, never based on similarity to study speeds.','', '| Location | Study n | Study mean mph | Target | Found tracks | Speed-usable | Used for mean | Model mean mph | Difference mph | Minutes | State |','|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|']
+    lines=['# Adaptive bicyclist-candidate speed comparison','',f"Daytime bicycle counting minimum: {p.get('day_bicycle_min_seconds',3)} seconds. Pedestrian and nighttime policies remain as configured in each saved pipeline_task.json. This is a separate duration experiment; changing counting eligibility does not guarantee a usable metric trajectory or a true unique cyclist.",'','Each site processes consecutive15-minute windows until its candidate quota or the stated time limit. Means combine selected per-candidate speeds with equal weight, not averages of segment averages. Selection is chronological, never based on similarity to study speeds.','', '| Location | Study n | Study mean mph | Target | Found tracks | Speed-usable | Used for mean | Model mean mph | Difference mph | Minutes | State |','|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|']
     number=lambda x:'' if x=='' else f'{x:.2f}'
     for r in rows:lines.append(f"| {r['location']} | {r['study_cyclists']} | {r['study_mean_mph']:.2f} | {r['target']} | {r['found_candidate_tracks']} | {r['speed_eligible_candidate_tracks']} | {r['model_candidate_sample']} | {number(r['model_candidate_mean_mph'])} | {number(r['difference_from_study_mean_mph'])} | {r['minutes_processed']:.2f} | {r['state']} |")
     lines+=['','## Exact measurement times','','| Location | Window | Candidate | Used clock start | Used clock end | mph |','|---|---:|---|---|---|---:|']
@@ -239,6 +250,7 @@ def report(directory,task=None):
 
 def submit(a):
     root=a.root.resolve();p=make_plan(root,a.tag,a.max_windows,a.exploratory_road_plane_transfer);directory=root/'exp_results'/('ADAPTIVE_SPEED_'+a.tag)
+    if a.day_bicycle_min_seconds is not None:p['day_bicycle_min_seconds']=a.day_bicycle_min_seconds
     print('Output:',directory)
     for t in p['tasks']:print(t['reference_site'],t['source']['site'],'reference',t['reference_count'],'target',t['target'])
     print('Skipped:',p['skipped']);print('Maximum footage minutes:',len(p['tasks'])*a.max_windows*15)
@@ -267,12 +279,13 @@ def shutil_which(name):
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser(description=__doc__);sub=ap.add_subparsers(dest='command',required=True)
-    s=sub.add_parser('submit');s.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);s.add_argument('--tag',default=dt.datetime.now().strftime('%Y%m%d_%H%M%S'));s.add_argument('--max-windows',type=int,default=4);s.add_argument('--exploratory-road-plane-transfer',action='store_true');s.add_argument('--go',action='store_true')
-    q=sub.add_parser('recover');q.add_argument('--directory',type=Path,required=True);q.add_argument('--index',type=int,default=0);q.add_argument('--go',action='store_true')
+    s=sub.add_parser('submit');s.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);s.add_argument('--tag',default=dt.datetime.now().strftime('%Y%m%d_%H%M%S'));s.add_argument('--max-windows',type=int,default=4);s.add_argument('--exploratory-road-plane-transfer',action='store_true');s.add_argument('--day-bicycle-min-seconds',type=float);s.add_argument('--go',action='store_true')
+    q=sub.add_parser('recover');q.add_argument('--directory',type=Path,required=True);q.add_argument('--index',type=int,default=0);q.add_argument('--all-sites',action='store_true');q.add_argument('--day-bicycle-min-seconds',type=float);q.add_argument('--go',action='store_true')
     w=sub.add_parser('worker');w.add_argument('--directory',type=Path,required=True);w.add_argument('--index',type=int,required=True)
     v=sub.add_parser('window');v.add_argument('--directory',type=Path,required=True);v.add_argument('--index',type=int,required=True);v.add_argument('--window',type=Path,required=True)
     r=sub.add_parser('report');r.add_argument('--directory',type=Path,required=True)
     a=ap.parse_args()
+    if a.command in ('submit','recover') and a.day_bicycle_min_seconds is not None and not .3<=a.day_bicycle_min_seconds<=3:ap.error('Day bicycle minimum must be0.3–3seconds')
     if a.command=='submit':
         if not 1<=a.max_windows<=4 or not a.tag or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for c in a.tag):ap.error('Tag must be simple letters/numbers/underscores; max-windows1–4')
         submit(a)

@@ -1,0 +1,56 @@
+{
+  "source": "manual/analysis/aloma_recovery_47763750.json",
+  "automatic_comparison": [
+    {
+      "location": "Aloma",
+      "camera": "Aloma Path",
+      "model_candidate_sample": 0,
+      "model_candidate_mean_mph": "",
+      "minutes_processed": 59.97553092592592,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT",
+      "found_candidate_tracks": 5,
+      "counted_candidate_tracks": 0,
+      "speed_eligible_candidate_tracks": 0
+    }
+  ],
+  "automatic_count_bins": [
+    {
+      "location": "Aloma",
+      "camera": "Aloma Path",
+      "bin_start": "2019-10-30 12:00:00",
+      "bin_end": "2019-10-30 12:15:00",
+      "seconds_covered": 900,
+      "bicyclists_total": 0,
+      "source": "Recovered completed window status reports zero counted bicycle candidates"
+    },
+    {
+      "location": "Aloma",
+      "camera": "Aloma Path",
+      "bin_start": "2019-10-30 12:15:00",
+      "bin_end": "2019-10-30 12:30:00",
+      "seconds_covered": 900,
+      "bicyclists_total": 0,
+      "source": "Recovered completed window status reports zero counted bicycle candidates"
+    },
+    {
+      "location": "Aloma",
+      "camera": "Aloma Path",
+      "bin_start": "2019-10-30 12:30:00",
+      "bin_end": "2019-10-30 12:45:00",
+      "seconds_covered": 900,
+      "bicyclists_total": 0,
+      "source": "Recovered completed window status reports zero counted bicycle candidates"
+    }
+  ],
+  "automatic_partial_count_bins": [
+    {
+      "location": "Aloma",
+      "camera": "Aloma Path",
+      "bin_start": "2019-10-30 12:45:00",
+      "bin_end": "2019-10-30 13:00:00",
+      "seconds_covered": 898.5318555555555,
+      "bicyclists_total": 0,
+      "source": "Recovered completed window status reports zero counted bicycle candidates"
+    }
+  ]
+}

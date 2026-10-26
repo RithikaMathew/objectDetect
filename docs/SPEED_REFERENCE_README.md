@@ -1,5 +1,10 @@
 # Bicyclist speed references — plain-language guide
 
+## Reading the count and speed samples correctly (October 25 clarification)
+
+The current [manual comparison](../manual/README.md) explains the sampling and lists available recording hours for all 14 speed-reference locations. A fixed first-day hour nearest noon was selected before looking at results; the manual pack retains positive study-count bins within that hour. Aloma therefore has 45 minutes of selected footage and 4 study-count cyclists. Its separate 26-record speed sample has no linked clock times. Mighk Wilson confirms that speeds were measured from study video at half-speed and corrected in the calculation; some corridors had separate speed-analysis visits. The exact source recordings/clock times for the26Aloma speed rows remain unmatched;26is neither a detector total nor a48-hour count. Most full-recording lengths are inventory estimates; only Colonial North has complete measured duration metadata locally.
+
+
 ## Latest run: adaptive15-minute bicycle speed comparison
 
 Updated October24,2026. This is prepared code, not a completed result. The owner requested combining consecutive15-minute segments until a small target sample is collected. Colonial North is included in this latest batch because its automatic bicycle speeds remain unfinished; Silver Star has no mapped footage. Thirteen candidate reference locations are planned, using one camera each.
@@ -169,3 +174,11 @@ Under `exp_results/ADAPTIVE_SPEED_TAG/`, open a site folder such as `s03_colonia
 - `error.txt`: worker traceback on a caught failure. Slurm array logs remain in the batch root as `site_ARRAY_INDEX.log`, including calibration output or termination messages.
 
 The combined root report is generated after all site workers finish. Empty or failed stages do not become zero-speed measurements. Existing submitted jobs retain their old manifest; inclusion of Colonial applies to a newly submitted batch using this updated code.
+
+## Annotator provenance: Mighk Wilson (message supplied October 25)
+
+Mighk explains that the consolidated **bicyclist speeds.xlsx** contains speeds he measured by stopwatch while watching video at half playback speed; he accounted for that playback rate in the calculation. Some corridors have multiple files because they used two cameras, and others because he returned later for speed analysis. Baxter was a speed-specific recording to increase the travel-lane cycling sample on two-lane streets without bike lanes.
+
+This corrects the earlier working assumption that reference speeds were timed in person. The reference speeds are video-derived, but the message does not supply individual source filenames, clock times, measured endpoints or person identities. We must still match those before reporting per-person speed error. Do not multiply workbook mph by two again. Local formula inspection found distance/time formulas in primary sheets and explicit distance/(time/2) on Silver Star, so raw stopwatch-time conventions should not be assumed identical across sheets. We retain supplied mph values.
+
+The count/speed records are useful human annotations for validation, but aggregate tables are not per-frame bounding-box training labels. See manual/README.md and manual/analysis/source_provenance.md for the current interpretation.
