@@ -11,15 +11,15 @@ Each selected bin is 15 minutes. Selected bins (JSONs) shows the total intervals
 | Location | Selected 15-min bins (JSONs) | Validation: study cyclist count | HiPerGator: cyclist count / validation in covered bins | Manual: annotated cyclists | Not annotated | Validation: mean mph (sample) | HiPerGator: mean mph (sample) | Manual: mean mph (sample) |
 |---|---:|---:|---|---:|---:|---|---|---|
 | Aloma | 3 (3) | 4 | Unavailable: run interrupted | 4 | 0 | 13.58 (26) | Unavailable: run interrupted | 19.81 (4) |
-| Carroll | 1 (1) | 2 | 0 / 2 (1/1 bins) | 2 | 0 | 11.89 (15) | No qualifying speed estimate | 12.37 (2) |
+| Carroll | 1 (1) | 2 | 0 / 2 (1/1 bins) | 2 | 0 | 11.89 (15) | All 12 candidate tracks rejected by counting filters | 12.37 (2) |
 | Colonial | 2 (2) | 3 | 3 / 3 (2/2 bins) | 3 | 0 | 9.54 (23) | 7.63 (3) | 10.71 (3) |
 | Columbia | 4 (3) | 6 | 6 / 3 (2/4 bins) | 4 | 2 | 12.24 (9) | 3.04 (3) | 12.47 (4) |
 | Edgewater | 4 (4) | 10 | 2 / 5 (3/4 bins) | 6 | 4 | 12.02 (50) | 17.57 (2) | 14.00 (5) |
 | Lee | 4 (2) | 10 | 2 / 10 (4/4 bins) | 4 | 6 | 8.73 (2) | 9.88 (2) | 12.36 (4) |
 | Pleasant Hill | 1 (1) | 2 | 2 / 2 (1/1 bins) | 2 | 0 | 9.86 (41) | 8.99 (2) | 8.99 (2) |
-| Rinehart/CST | 3 (1) | 3 | 0 / 3 (3/3 bins) | 1 | 2 | 12.92 (25) | No qualifying speed estimate | 12.01 (1) |
+| Rinehart/CST | 3 (1) | 3 | 0 / 3 (3/3 bins) | 1 | 2 | 12.92 (25) | All 3 candidate tracks rejected by counting filters | 12.01 (1) |
 | University | 2 (1) | 5 | 1 / 1 (1/2 bins) | 4 | 1 | 9.49 (78) | 11.17 (3) | 16.98 (4) |
-| West Orange/Park | 3 (0) | 5 | 1 / 5 (3/3 bins) | 0 | 5 | 10.77 (25) | 11.59 (1) | No annotations |
+| West Orange/Park | 3 (0) | 5 | 1 / 5 (3/3 bins) | 0 | 5 | 10.77 (25) | 11.59 (1) | Not measurable: 5 study cyclists not located in manual review |
 
 Automatic mph comes from the finished automatic batch; manual mph uses your repaired clicks. The two means may use different cyclists and intervals, so their difference is not tracking error or accuracy. Both use learned camera scale; manual clicking does not independently validate that scale. Numbers in parentheses after mph are cyclist speed samples, not total cyclist counts. Validation count is the study count reference; Validation mph is the separate study speed reference, not known per-person speeds for these clips. Automatic counts are compared only when the same full selected bins have been exported. Until then they remain unavailable, not zero. The final exported batch values are used when supplied. HiPerGator cyclist count / validation compares only the same exported complete bins; its parentheses show how many selected bins are included. Missing bins are not counted as zero. Aloma was interrupted by NODE_FAIL despite its stale STARTED status.
 
@@ -98,6 +98,18 @@ Files: site_summary.csv compares means and coverage; interval_counts.csv preserv
 Applied the final batch calibration export to the existing annotations. No new GPU processing or manual annotations were required. One Edgewater encounter has only1.4seconds of clicked observations and is excluded by the current1.5-second safeguard; this is not a missing-calibration problem. Any shorter-span exploratory result would need a separately disclosed policy.
 
 Automatic and manual methods share learned camera scale. Both remain exploratory, and their means may use different cyclists and time windows. No matched-person mph accuracy is claimed.
+
+## Why values are missing — all locations
+
+- Aloma automatic: confirmed compute-node failure before the first segment completed. Recovery worker47763750 and report47763751 were submitted by the owner; do not submit a duplicate.
+- Carroll automatic:12bicycle-labelled candidates were recorded, but0passed counting filters. Saved track34 lasted2.47seconds, below the daytime3-second minimum; exact additional rejection gates require the saved rules audit. Repeating unchanged inference is not a fix.
+- Rinehart automatic:3bicycle-labelled candidates,0accepted by counting filters. This is not zero detector proposals. The saved rules audit is needed to identify duration/static/confidence/size rejection details; no specific gate is assumed.
+- West Orange manual: study5in selected bins, no submitted cyclist positions. Owner could not identify bicycles in the footage. Possible small/blurry riders or camera-channel coverage mismatch remain unresolved. An automatic speed cannot be copied into the manual column. Short candidate clips from saved tracks can help locate them.
+- Edgewater individual manual speed: one encounter has1.4seconds of clicked positions, below the current1.5-second safeguard. Site mean uses the other5encounters. No missing calibration remains.
+- Columbia automatic coverage: the worker reached its provisional speed quota after30minutes, so later selected study bins were not processed. Its early stop is different from a detection failure.
+- Edgewater/University complete-bin coverage: final export omitted some rows under899seconds. Counts from those partial rows can be recovered by the expanded audit, but remain labelled partial, not full-bin truth comparisons.
+
+After pushing/pulling updated code, run `sbatch code/audit_missing_speed.slurm` from test_colonial. Output: exp_results/MISSING_SPEED_AUDIT_JOBID/. To inspect every missing value and create small review clues on HiPerGator, use code/audit_missing_speed.py. It reads saved tracks/rules and extracts at most six12-second clips per missing manual interval; no detector run, threshold change or invented label. If no candidate exists for a missed cyclist, no clip can prove its absence. Clips are for locating encounters; return to the original manual editor for annotations with correct source time.
 
 ## Recover Aloma automatic results
 
