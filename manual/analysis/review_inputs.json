@@ -80,119 +80,6 @@
             1.0
           ]
         ],
-        "hull": [
-          [
-            [
-              697.90283203125,
-              103.43745422363281
-            ]
-          ],
-          [
-            [
-              654.7518310546875,
-              113.6312026977539
-            ]
-          ],
-          [
-            [
-              28.26084327697754,
-              114.49588775634766
-            ]
-          ],
-          [
-            [
-              21.87156105041504,
-              112.33619689941406
-            ]
-          ],
-          [
-            [
-              18.535308837890625,
-              111.16458129882812
-            ]
-          ],
-          [
-            [
-              96.0896224975586,
-              77.96341705322266
-            ]
-          ],
-          [
-            [
-              232.99957275390625,
-              26.620113372802734
-            ]
-          ],
-          [
-            [
-              243.90643310546875,
-              23.524166107177734
-            ]
-          ],
-          [
-            [
-              260.10809326171875,
-              21.176918029785156
-            ]
-          ],
-          [
-            [
-              280.7005615234375,
-              19.37265396118164
-            ]
-          ],
-          [
-            [
-              296.73779296875,
-              18.714561462402344
-            ]
-          ],
-          [
-            [
-              317.96875,
-              18.46690559387207
-            ]
-          ],
-          [
-            [
-              391.21392822265625,
-              18.197050094604492
-            ]
-          ],
-          [
-            [
-              460.59075927734375,
-              23.511762619018555
-            ]
-          ],
-          [
-            [
-              498.0332336425781,
-              27.39752769470215
-            ]
-          ],
-          [
-            [
-              572.872802734375,
-              36.68070602416992
-            ]
-          ],
-          [
-            [
-              601.0322265625,
-              42.31100082397461
-            ]
-          ],
-          [
-            [
-              634.5101318359375,
-              49.57169723510742
-            ]
-          ]
-        ],
-        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
-        "car_tracks": 20,
-        "car_boxes": 204,
         "geometry_check_passed": true,
         "validation": "learned_scale_not_independently_speed_validated",
         "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
@@ -279,119 +166,6 @@
             1.0
           ]
         ],
-        "hull": [
-          [
-            [
-              697.90283203125,
-              103.43745422363281
-            ]
-          ],
-          [
-            [
-              654.7518310546875,
-              113.6312026977539
-            ]
-          ],
-          [
-            [
-              28.26084327697754,
-              114.49588775634766
-            ]
-          ],
-          [
-            [
-              21.87156105041504,
-              112.33619689941406
-            ]
-          ],
-          [
-            [
-              18.535308837890625,
-              111.16458129882812
-            ]
-          ],
-          [
-            [
-              96.0896224975586,
-              77.96341705322266
-            ]
-          ],
-          [
-            [
-              232.99957275390625,
-              26.620113372802734
-            ]
-          ],
-          [
-            [
-              243.90643310546875,
-              23.524166107177734
-            ]
-          ],
-          [
-            [
-              260.10809326171875,
-              21.176918029785156
-            ]
-          ],
-          [
-            [
-              280.7005615234375,
-              19.37265396118164
-            ]
-          ],
-          [
-            [
-              296.73779296875,
-              18.714561462402344
-            ]
-          ],
-          [
-            [
-              317.96875,
-              18.46690559387207
-            ]
-          ],
-          [
-            [
-              391.21392822265625,
-              18.197050094604492
-            ]
-          ],
-          [
-            [
-              460.59075927734375,
-              23.511762619018555
-            ]
-          ],
-          [
-            [
-              498.0332336425781,
-              27.39752769470215
-            ]
-          ],
-          [
-            [
-              572.872802734375,
-              36.68070602416992
-            ]
-          ],
-          [
-            [
-              601.0322265625,
-              42.31100082397461
-            ]
-          ],
-          [
-            [
-              634.5101318359375,
-              49.57169723510742
-            ]
-          ]
-        ],
-        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
-        "car_tracks": 20,
-        "car_boxes": 204,
         "geometry_check_passed": true,
         "validation": "learned_scale_not_independently_speed_validated",
         "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
@@ -478,119 +252,6 @@
             1.0
           ]
         ],
-        "hull": [
-          [
-            [
-              697.90283203125,
-              103.43745422363281
-            ]
-          ],
-          [
-            [
-              654.7518310546875,
-              113.6312026977539
-            ]
-          ],
-          [
-            [
-              28.26084327697754,
-              114.49588775634766
-            ]
-          ],
-          [
-            [
-              21.87156105041504,
-              112.33619689941406
-            ]
-          ],
-          [
-            [
-              18.535308837890625,
-              111.16458129882812
-            ]
-          ],
-          [
-            [
-              96.0896224975586,
-              77.96341705322266
-            ]
-          ],
-          [
-            [
-              232.99957275390625,
-              26.620113372802734
-            ]
-          ],
-          [
-            [
-              243.90643310546875,
-              23.524166107177734
-            ]
-          ],
-          [
-            [
-              260.10809326171875,
-              21.176918029785156
-            ]
-          ],
-          [
-            [
-              280.7005615234375,
-              19.37265396118164
-            ]
-          ],
-          [
-            [
-              296.73779296875,
-              18.714561462402344
-            ]
-          ],
-          [
-            [
-              317.96875,
-              18.46690559387207
-            ]
-          ],
-          [
-            [
-              391.21392822265625,
-              18.197050094604492
-            ]
-          ],
-          [
-            [
-              460.59075927734375,
-              23.511762619018555
-            ]
-          ],
-          [
-            [
-              498.0332336425781,
-              27.39752769470215
-            ]
-          ],
-          [
-            [
-              572.872802734375,
-              36.68070602416992
-            ]
-          ],
-          [
-            [
-              601.0322265625,
-              42.31100082397461
-            ]
-          ],
-          [
-            [
-              634.5101318359375,
-              49.57169723510742
-            ]
-          ]
-        ],
-        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
-        "car_tracks": 20,
-        "car_boxes": 204,
         "geometry_check_passed": true,
         "validation": "learned_scale_not_independently_speed_validated",
         "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
@@ -705,119 +366,6 @@
             1.0
           ]
         ],
-        "hull": [
-          [
-            [
-              695.3443603515625,
-              101.586181640625
-            ]
-          ],
-          [
-            [
-              691.3199462890625,
-              205.99166870117188
-            ]
-          ],
-          [
-            [
-              644.8749389648438,
-              209.15403747558594
-            ]
-          ],
-          [
-            [
-              609.613037109375,
-              211.33782958984375
-            ]
-          ],
-          [
-            [
-              157.5701446533203,
-              239.24391174316406
-            ]
-          ],
-          [
-            [
-              105.35724639892578,
-              239.81011962890625
-            ]
-          ],
-          [
-            [
-              72.82362365722656,
-              223.87844848632812
-            ]
-          ],
-          [
-            [
-              39.23981475830078,
-              104.43119812011719
-            ]
-          ],
-          [
-            [
-              62.03148651123047,
-              98.78954315185547
-            ]
-          ],
-          [
-            [
-              176.78219604492188,
-              78.44995880126953
-            ]
-          ],
-          [
-            [
-              235.9414520263672,
-              73.32427215576172
-            ]
-          ],
-          [
-            [
-              344.54437255859375,
-              69.54401397705078
-            ]
-          ],
-          [
-            [
-              402.4443359375,
-              69.8796157836914
-            ]
-          ],
-          [
-            [
-              412.831787109375,
-              69.95803833007812
-            ]
-          ],
-          [
-            [
-              465.84063720703125,
-              70.56182098388672
-            ]
-          ],
-          [
-            [
-              479.0543212890625,
-              71.09457397460938
-            ]
-          ],
-          [
-            [
-              503.84368896484375,
-              73.37721252441406
-            ]
-          ],
-          [
-            [
-              601.9744873046875,
-              83.47039031982422
-            ]
-          ]
-        ],
-        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
-        "car_tracks": 21,
-        "car_boxes": 179,
         "geometry_check_passed": true,
         "validation": "learned_scale_not_independently_speed_validated",
         "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
@@ -932,65 +480,6 @@
             1.0
           ]
         ],
-        "hull": [
-          [
-            [
-              691.776123046875,
-              92.23310089111328
-            ]
-          ],
-          [
-            [
-              682.1182250976562,
-              234.54794311523438
-            ]
-          ],
-          [
-            [
-              78.43873596191406,
-              35.88429260253906
-            ]
-          ],
-          [
-            [
-              58.52452087402344,
-              24.337255477905273
-            ]
-          ],
-          [
-            [
-              87.6862564086914,
-              14.53001594543457
-            ]
-          ],
-          [
-            [
-              118.58027648925781,
-              11.733952522277832
-            ]
-          ],
-          [
-            [
-              319.44049072265625,
-              13.052218437194824
-            ]
-          ],
-          [
-            [
-              578.2532958984375,
-              17.41501235961914
-            ]
-          ],
-          [
-            [
-              622.3516235351562,
-              18.765819549560547
-            ]
-          ]
-        ],
-        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
-        "car_tracks": 28,
-        "car_boxes": 458,
         "geometry_check_passed": true,
         "validation": "learned_scale_not_independently_speed_validated",
         "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
@@ -1105,65 +594,6 @@
             1.0
           ]
         ],
-        "hull": [
-          [
-            [
-              691.776123046875,
-              92.23310089111328
-            ]
-          ],
-          [
-            [
-              682.1182250976562,
-              234.54794311523438
-            ]
-          ],
-          [
-            [
-              78.43873596191406,
-              35.88429260253906
-            ]
-          ],
-          [
-            [
-              58.52452087402344,
-              24.337255477905273
-            ]
-          ],
-          [
-            [
-              87.6862564086914,
-              14.53001594543457
-            ]
-          ],
-          [
-            [
-              118.58027648925781,
-              11.733952522277832
-            ]
-          ],
-          [
-            [
-              319.44049072265625,
-              13.052218437194824
-            ]
-          ],
-          [
-            [
-              578.2532958984375,
-              17.41501235961914
-            ]
-          ],
-          [
-            [
-              622.3516235351562,
-              18.765819549560547
-            ]
-          ]
-        ],
-        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
-        "car_tracks": 28,
-        "car_boxes": 458,
         "geometry_check_passed": true,
         "validation": "learned_scale_not_independently_speed_validated",
         "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
@@ -1334,89 +764,6 @@
             1.0
           ]
         ],
-        "hull": [
-          [
-            [
-              705.75830078125,
-              82.84173583984375
-            ]
-          ],
-          [
-            [
-              668.0299072265625,
-              133.44488525390625
-            ]
-          ],
-          [
-            [
-              653.9309692382812,
-              142.0006866455078
-            ]
-          ],
-          [
-            [
-              528.50244140625,
-              207.12469482421875
-            ]
-          ],
-          [
-            [
-              213.33676147460938,
-              344.44305419921875
-            ]
-          ],
-          [
-            [
-              167.07492065429688,
-              321.40325927734375
-            ]
-          ],
-          [
-            [
-              130.8524169921875,
-              166.9928741455078
-            ]
-          ],
-          [
-            [
-              136.73876953125,
-              157.74476623535156
-            ]
-          ],
-          [
-            [
-              257.9679260253906,
-              118.3109130859375
-            ]
-          ],
-          [
-            [
-              338.77178955078125,
-              93.90997314453125
-            ]
-          ],
-          [
-            [
-              432.06201171875,
-              71.05366516113281
-            ]
-          ],
-          [
-            [
-              526.4551391601562,
-              64.13729095458984
-            ]
-          ],
-          [
-            [
-              561.7944946289062,
-              62.45716857910156
-            ]
-          ]
-        ],
-        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
-        "car_tracks": 20,
-        "car_boxes": 177,
         "geometry_check_passed": true,
         "validation": "learned_scale_not_independently_speed_validated",
         "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
@@ -1587,89 +934,6 @@
             1.0
           ]
         ],
-        "hull": [
-          [
-            [
-              705.75830078125,
-              82.84173583984375
-            ]
-          ],
-          [
-            [
-              668.0299072265625,
-              133.44488525390625
-            ]
-          ],
-          [
-            [
-              653.9309692382812,
-              142.0006866455078
-            ]
-          ],
-          [
-            [
-              528.50244140625,
-              207.12469482421875
-            ]
-          ],
-          [
-            [
-              213.33676147460938,
-              344.44305419921875
-            ]
-          ],
-          [
-            [
-              167.07492065429688,
-              321.40325927734375
-            ]
-          ],
-          [
-            [
-              130.8524169921875,
-              166.9928741455078
-            ]
-          ],
-          [
-            [
-              136.73876953125,
-              157.74476623535156
-            ]
-          ],
-          [
-            [
-              257.9679260253906,
-              118.3109130859375
-            ]
-          ],
-          [
-            [
-              338.77178955078125,
-              93.90997314453125
-            ]
-          ],
-          [
-            [
-              432.06201171875,
-              71.05366516113281
-            ]
-          ],
-          [
-            [
-              526.4551391601562,
-              64.13729095458984
-            ]
-          ],
-          [
-            [
-              561.7944946289062,
-              62.45716857910156
-            ]
-          ]
-        ],
-        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
-        "car_tracks": 20,
-        "car_boxes": 177,
         "geometry_check_passed": true,
         "validation": "learned_scale_not_independently_speed_validated",
         "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
@@ -1840,89 +1104,6 @@
             1.0
           ]
         ],
-        "hull": [
-          [
-            [
-              705.75830078125,
-              82.84173583984375
-            ]
-          ],
-          [
-            [
-              668.0299072265625,
-              133.44488525390625
-            ]
-          ],
-          [
-            [
-              653.9309692382812,
-              142.0006866455078
-            ]
-          ],
-          [
-            [
-              528.50244140625,
-              207.12469482421875
-            ]
-          ],
-          [
-            [
-              213.33676147460938,
-              344.44305419921875
-            ]
-          ],
-          [
-            [
-              167.07492065429688,
-              321.40325927734375
-            ]
-          ],
-          [
-            [
-              130.8524169921875,
-              166.9928741455078
-            ]
-          ],
-          [
-            [
-              136.73876953125,
-              157.74476623535156
-            ]
-          ],
-          [
-            [
-              257.9679260253906,
-              118.3109130859375
-            ]
-          ],
-          [
-            [
-              338.77178955078125,
-              93.90997314453125
-            ]
-          ],
-          [
-            [
-              432.06201171875,
-              71.05366516113281
-            ]
-          ],
-          [
-            [
-              526.4551391601562,
-              64.13729095458984
-            ]
-          ],
-          [
-            [
-              561.7944946289062,
-              62.45716857910156
-            ]
-          ]
-        ],
-        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
-        "car_tracks": 20,
-        "car_boxes": 177,
         "geometry_check_passed": true,
         "validation": "learned_scale_not_independently_speed_validated",
         "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
@@ -2093,89 +1274,6 @@
             1.0
           ]
         ],
-        "hull": [
-          [
-            [
-              705.75830078125,
-              82.84173583984375
-            ]
-          ],
-          [
-            [
-              668.0299072265625,
-              133.44488525390625
-            ]
-          ],
-          [
-            [
-              653.9309692382812,
-              142.0006866455078
-            ]
-          ],
-          [
-            [
-              528.50244140625,
-              207.12469482421875
-            ]
-          ],
-          [
-            [
-              213.33676147460938,
-              344.44305419921875
-            ]
-          ],
-          [
-            [
-              167.07492065429688,
-              321.40325927734375
-            ]
-          ],
-          [
-            [
-              130.8524169921875,
-              166.9928741455078
-            ]
-          ],
-          [
-            [
-              136.73876953125,
-              157.74476623535156
-            ]
-          ],
-          [
-            [
-              257.9679260253906,
-              118.3109130859375
-            ]
-          ],
-          [
-            [
-              338.77178955078125,
-              93.90997314453125
-            ]
-          ],
-          [
-            [
-              432.06201171875,
-              71.05366516113281
-            ]
-          ],
-          [
-            [
-              526.4551391601562,
-              64.13729095458984
-            ]
-          ],
-          [
-            [
-              561.7944946289062,
-              62.45716857910156
-            ]
-          ]
-        ],
-        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
-        "car_tracks": 20,
-        "car_boxes": 177,
         "geometry_check_passed": true,
         "validation": "learned_scale_not_independently_speed_validated",
         "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
@@ -2272,7 +1370,28 @@
         ]
       },
       "source_start_seconds": 0.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.042417722278171116,
+            0.08076874415079753,
+            0.0
+          ],
+          [
+            0.0,
+            -0.7471176995171441,
+            0.0
+          ],
+          [
+            0.0,
+            0.005688663323720296,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s06_edgewater_n_2019-09-18_120000.mp4"
     },
     {
@@ -2365,7 +1484,28 @@
         ]
       },
       "source_start_seconds": 900.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.042417722278171116,
+            0.08076874415079753,
+            0.0
+          ],
+          [
+            0.0,
+            -0.7471176995171441,
+            0.0
+          ],
+          [
+            0.0,
+            0.005688663323720296,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s06_edgewater_n_2019-09-18_121500.mp4"
     },
     {
@@ -2458,7 +1598,28 @@
         ]
       },
       "source_start_seconds": 1800.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.042417722278171116,
+            0.08076874415079753,
+            0.0
+          ],
+          [
+            0.0,
+            -0.7471176995171441,
+            0.0
+          ],
+          [
+            0.0,
+            0.005688663323720296,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s06_edgewater_n_2019-09-18_123000.mp4"
     },
     {
@@ -2551,7 +1712,28 @@
         ]
       },
       "source_start_seconds": 2700.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.042417722278171116,
+            0.08076874415079753,
+            0.0
+          ],
+          [
+            0.0,
+            -0.7471176995171441,
+            0.0
+          ],
+          [
+            0.0,
+            0.005688663323720296,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s06_edgewater_n_2019-09-18_124500.mp4"
     },
     {
@@ -2700,7 +1882,28 @@
         ]
       },
       "source_start_seconds": 0.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.05092850791083442,
+            0.14557985729641384,
+            0.0
+          ],
+          [
+            0.0,
+            -0.28032101525200737,
+            0.0
+          ],
+          [
+            0.0,
+            0.007859702242745294,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s07_lee_road_n_2019-07-10_120000.mp4"
     },
     {
@@ -2849,7 +2052,28 @@
         ]
       },
       "source_start_seconds": 900.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.05092850791083442,
+            0.14557985729641384,
+            0.0
+          ],
+          [
+            0.0,
+            -0.28032101525200737,
+            0.0
+          ],
+          [
+            0.0,
+            0.007859702242745294,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s07_lee_road_n_2019-07-10_121500.mp4"
     },
     {
@@ -2998,7 +2222,28 @@
         ]
       },
       "source_start_seconds": 1800.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.05092850791083442,
+            0.14557985729641384,
+            0.0
+          ],
+          [
+            0.0,
+            -0.28032101525200737,
+            0.0
+          ],
+          [
+            0.0,
+            0.007859702242745294,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s07_lee_road_n_2019-07-10_123000.mp4"
     },
     {
@@ -3147,7 +2392,28 @@
         ]
       },
       "source_start_seconds": 2700.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.05092850791083442,
+            0.14557985729641384,
+            0.0
+          ],
+          [
+            0.0,
+            -0.28032101525200737,
+            0.0
+          ],
+          [
+            0.0,
+            0.007859702242745294,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s07_lee_road_n_2019-07-10_124500.mp4"
     },
     {
@@ -3212,7 +2478,28 @@
         ]
       },
       "source_start_seconds": 2700.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.053199058108859595,
+            0.10779991149902345,
+            0.0
+          ],
+          [
+            0.0,
+            -0.6271593305799696,
+            0.0
+          ],
+          [
+            0.0,
+            0.006013939778010051,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s08_pleasant_hill_path_2019-11-12_124500.mp4"
     },
     {
@@ -3277,7 +2564,28 @@
         ]
       },
       "source_start_seconds": 0.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.04399380154079861,
+            0.05294442176818848,
+            0.0
+          ],
+          [
+            0.0,
+            -0.3017539978027344,
+            0.0
+          ],
+          [
+            0.0,
+            0.0033810145325130886,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s09_rinehart_path_2019-10-02_120000.mp4"
     },
     {
@@ -3342,7 +2650,28 @@
         ]
       },
       "source_start_seconds": 900.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.04399380154079861,
+            0.05294442176818848,
+            0.0
+          ],
+          [
+            0.0,
+            -0.3017539978027344,
+            0.0
+          ],
+          [
+            0.0,
+            0.0033810145325130886,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s09_rinehart_path_2019-10-02_121500.mp4"
     },
     {
@@ -3407,7 +2736,28 @@
         ]
       },
       "source_start_seconds": 2700.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.04399380154079861,
+            0.05294442176818848,
+            0.0
+          ],
+          [
+            0.0,
+            -0.3017539978027344,
+            0.0
+          ],
+          [
+            0.0,
+            0.0033810145325130886,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s09_rinehart_path_2019-10-02_124500.mp4"
     },
     {
@@ -3472,7 +2822,28 @@
         ]
       },
       "source_start_seconds": 0.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.11277569664849176,
+            0.591274897257487,
+            0.0
+          ],
+          [
+            0.0,
+            -1.8039777967664932,
+            0.0
+          ],
+          [
+            0.0,
+            0.015588226583268907,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s10_university_sw_speed_2019-09-25_120000.mp4"
     },
     {
@@ -3537,7 +2908,28 @@
         ]
       },
       "source_start_seconds": 2700.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.11277569664849176,
+            0.591274897257487,
+            0.0
+          ],
+          [
+            0.0,
+            -1.8039777967664932,
+            0.0
+          ],
+          [
+            0.0,
+            0.015588226583268907,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s10_university_sw_speed_2019-09-25_124500.mp4"
     },
     {
@@ -3602,7 +2994,28 @@
         ]
       },
       "source_start_seconds": 900.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.09674002329508465,
+            0.336348999871148,
+            0.0
+          ],
+          [
+            0.0,
+            -1.6160237630208334,
+            0.0
+          ],
+          [
+            0.0,
+            0.009572694698969524,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s11_west_orange_path_2019-10-15_121500.mp4"
     },
     {
@@ -3667,7 +3080,28 @@
         ]
       },
       "source_start_seconds": 1800.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.09674002329508465,
+            0.336348999871148,
+            0.0
+          ],
+          [
+            0.0,
+            -1.6160237630208334,
+            0.0
+          ],
+          [
+            0.0,
+            0.009572694698969524,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s11_west_orange_path_2019-10-15_123000.mp4"
     },
     {
@@ -3732,11 +3166,33 @@
         ]
       },
       "source_start_seconds": 2700.0,
-      "calibration": null,
+      "calibration": {
+        "H": [
+          [
+            0.09674002329508465,
+            0.336348999871148,
+            0.0
+          ],
+          [
+            0.0,
+            -1.6160237630208334,
+            0.0
+          ],
+          [
+            0.0,
+            0.009572694698969524,
+            1.0
+          ]
+        ],
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
       "video": "s11_west_orange_path_2019-10-15_124500.mp4"
     }
   ],
-  "unavailable_count": 0,
+  "unavailable_count": 828,
+  "calibration_export": "manual/analysis/final_batch_export.json",
   "reference_source": "/Users/rithika/Desktop/objectDetect/vision3/best/test_colonial/exp_results/speed_reference_readiness_20261023/all_reference_records.csv",
   "original_files": [
     "s00_aloma_path_2019-10-30_120000_manual_bicycle_observations.json",

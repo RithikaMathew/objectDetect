@@ -109,6 +109,44 @@ def snapshot(directory,task,status):
     report(directory,task=task)
 
 
+def checked_saved_calibration(saved):
+    H=np.asarray(saved['H'],dtype=float);hull=np.asarray(saved['hull'],dtype=np.float32)
+    if H.shape!=(3,3) or not np.isfinite(H).all() or abs(np.linalg.det(H))<1e-15 or not saved.get('geometry_check_passed'):
+        raise ValueError('Saved calibration failed numerical checks')
+    if hull.size<6 or not np.isfinite(hull).all():raise ValueError('Invalid saved calibration support')
+    return H,hull,{k:v for k,v in saved.items() if k not in ('H','hull')}
+
+
+def recovery_plan(directory,index,tag):
+    original=json.loads((directory/'manifest.json').read_text());task=dict(original['tasks'][index])
+    calibration=directory/task['key']/'calibration/calibration.json'
+    checked_saved_calibration(json.loads(calibration.read_text()))
+    task['reuse_calibration']=str(calibration.resolve())
+    return dict(original,tag=tag,tasks=[task],jobs=[],recovery_of=str(directory.resolve()),created=dt.datetime.now().isoformat())
+
+
+def recover(a):
+    tag='recovery_'+dt.datetime.now().strftime('%Y%m%d_%H%M%S')
+    p=recovery_plan(a.directory.resolve(),a.index,tag)
+    destination=a.directory.resolve().parent/('ADAPTIVE_SPEED_'+tag)
+    print('Recovering only:',p['tasks'][0]['source']['site']);print('Output:',destination)
+    if not a.go:print('Dry run; add --go on HiPerGator.');return
+    if not shutil_which('sbatch'):raise RuntimeError('Submit on HiPerGator')
+    root=Path(p['root'])
+    if not Path(p['tasks'][0]['source']['video']).is_file():raise FileNotFoundError(p['tasks'][0]['source']['video'])
+    destination.mkdir(exist_ok=False);save(destination/'manifest.json',p)
+    env='cd '+shlex.quote(str(root))+' && source /orange/xiangyan/rithika/vision/yolo_env/bin/activate && '
+    common=['sbatch','--parsable','--partition=hpg-turin','--account=xiangyan','--qos=xiangyan']
+    command=common+['--job-name=recover_bicycle_speed','--gpus=1','--cpus-per-task=4','--mem=32G','--time=08:00:00','--output='+str(destination/'recovery_%j.log'),'--wrap',env+'python code/adaptive_speed_batch.py worker --directory '+shlex.quote(str(destination))+' --index 0']
+    job=subprocess.check_output(command,text=True).strip().split(';')[0]
+    if not job.isdigit():raise ValueError('Unexpected recovery job ID')
+    p['jobs'].append(dict(stage='recovery_worker',id=job));save(destination/'manifest.json',p)
+    final=common+['--job-name=recovery_speed_report','--dependency=afterany:'+job,'--cpus-per-task=1','--mem=2G','--time=00:10:00','--output='+str(destination/'report_%j.log'),'--wrap',env+'python code/adaptive_speed_batch.py report --directory '+shlex.quote(str(destination))]
+    final_job=subprocess.check_output(final,text=True).strip().split(';')[0]
+    if not final_job.isdigit():raise ValueError('Unexpected report job ID')
+    p['jobs'].append(dict(stage='recovery_report',id=final_job));save(destination/'manifest.json',p);print('Submitted:',p['jobs'])
+
+
 def worker(directory,index):
     p=json.loads((directory/'manifest.json').read_text());root=Path(p['root']);task=p['tasks'][index];out=directory/task['key'];out.mkdir(exist_ok=False)
     status=dict(site=task['reference_site'],camera=task['source']['site'],state='STARTED',target=task['target'],samples=[],windows=[],failure='')
@@ -122,7 +160,12 @@ def worker(directory,index):
         finally:cap.release()
         row.update(fps=fps,duration_seconds=frames/fps,frames=int(frames),width=size[0],height=size[1],probe_status='readable_metadata_not_full_decode')
         caldir=out/'calibration';caldir.mkdir()
-        H,info,hull=iccv_calibration(video,Path.home()/'.cache/objectdetect/naver-cctv',size,caldir,'cuda',3000,3)
+        if task.get('reuse_calibration'):
+            saved=json.loads(Path(task['reuse_calibration']).read_text())
+            H,hull,info=checked_saved_calibration(saved)
+            info['reused_from']=task['reuse_calibration']
+        else:
+            H,info,hull=iccv_calibration(video,Path.home()/'.cache/objectdetect/naver-cctv',size,caldir,'cuda',3000,3)
         save(caldir/'calibration.json',dict(H=H.tolist(),hull=hull.tolist(),**info))
         try:
             import torch
@@ -225,6 +268,7 @@ def shutil_which(name):
 if __name__=='__main__':
     ap=argparse.ArgumentParser(description=__doc__);sub=ap.add_subparsers(dest='command',required=True)
     s=sub.add_parser('submit');s.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);s.add_argument('--tag',default=dt.datetime.now().strftime('%Y%m%d_%H%M%S'));s.add_argument('--max-windows',type=int,default=4);s.add_argument('--exploratory-road-plane-transfer',action='store_true');s.add_argument('--go',action='store_true')
+    q=sub.add_parser('recover');q.add_argument('--directory',type=Path,required=True);q.add_argument('--index',type=int,default=0);q.add_argument('--go',action='store_true')
     w=sub.add_parser('worker');w.add_argument('--directory',type=Path,required=True);w.add_argument('--index',type=int,required=True)
     v=sub.add_parser('window');v.add_argument('--directory',type=Path,required=True);v.add_argument('--index',type=int,required=True);v.add_argument('--window',type=Path,required=True)
     r=sub.add_parser('report');r.add_argument('--directory',type=Path,required=True)
@@ -232,6 +276,7 @@ if __name__=='__main__':
     if a.command=='submit':
         if not 1<=a.max_windows<=4 or not a.tag or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for c in a.tag):ap.error('Tag must be simple letters/numbers/underscores; max-windows1–4')
         submit(a)
+    elif a.command=='recover':recover(a)
     elif a.command=='window':
         p=json.loads((a.directory/'manifest.json').read_text())
         result=execute(dict(root=p['root'],purpose='adaptive_speed_batch'),json.loads((a.window/'pipeline_task.json').read_text()),a.window)

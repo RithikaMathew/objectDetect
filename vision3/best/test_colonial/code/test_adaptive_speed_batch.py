@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 import numpy as np
-from adaptive_speed_batch import quota,boundary_safe,make_plan,report,gather_window,window_pipeline,select_chronologically,snapshot
+from adaptive_speed_batch import quota,boundary_safe,make_plan,report,gather_window,window_pipeline,select_chronologically,snapshot,recovery_plan,checked_saved_calibration
 ROOT=Path(__file__).resolve().parents[1]
 
 class AdaptiveSpeedTests(unittest.TestCase):
@@ -38,6 +38,22 @@ class AdaptiveSpeedTests(unittest.TestCase):
         task=window_pipeline(ROOT,'test_colonial_clock',row,900,1800,30,108000)
         self.assertEqual(task['env']['CHUNK'],'1')
         self.assertEqual(task['env']['SESSION_START'],row['clock'].replace(' ','_'))
+
+    def test_recovery_keeps_only_failed_site_and_reuses_calibration(self):
+        with tempfile.TemporaryDirectory() as td:
+            d=Path(td);p=make_plan(ROOT,'original');(d/'manifest.json').write_text(json.dumps(p))
+            cal=d/p['tasks'][0]['key']/'calibration';cal.mkdir(parents=True)
+            (cal/'calibration.json').write_text(json.dumps(dict(H=[[1,0,0],[0,1,0],[0,0,1]],hull=[[[0,0]],[[20,0]],[[0,20]]],geometry_check_passed=True)))
+            recovered=recovery_plan(d,0,'recovered')
+            self.assertEqual(len(recovered['tasks']),1)
+            self.assertEqual(recovered['tasks'][0]['source']['site'],'Aloma Path')
+            self.assertEqual(recovered['tag'],'recovered')
+            self.assertTrue(Path(recovered['tasks'][0]['reuse_calibration']).exists())
+            self.assertNotIn('reuse_calibration',json.loads((d/'manifest.json').read_text())['tasks'][0])
+
+    def test_recovery_refuses_invalid_saved_scale(self):
+        with self.assertRaises(ValueError):
+            checked_saved_calibration(dict(H=[[0,0,0],[0,0,0],[0,0,0]],hull=[[[0,0]],[[1,0]],[[0,1]]],geometry_check_passed=True))
 
     def test_boundary_censoring_avoids_quota_duplicates(self):
         self.assertFalse(boundary_safe(900,910,900,1800))
