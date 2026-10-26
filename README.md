@@ -1,3 +1,5 @@
+**Latest manual review results:** [manual/README.md](manual/README.md) — corrected encounter IDs, per-site count gaps, estimated speeds and pending calibration.
+
 # Object detection study — start here
 
 **Latest requested experiment:** [adaptive15-minute bicycle speed comparison](docs/SPEED_REFERENCE_README.md#latest-run-adaptive15-minute-bicycle-speed-comparison). It processes consecutive15-minute windows until each site reaches its sample target, capped at60minutes/site. Colonial North included;13candidate locations. Each site publishes its own results after every completed segment and on failure. Prepared, not run.

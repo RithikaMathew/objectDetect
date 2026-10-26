@@ -1,0 +1,5 @@
+interval,original_id,new_encounters,gaps_seconds,reason
+s00_aloma_path_2019-10-30_124500,1,2,[307.421],Owner says distant encounters are separate cyclists; >30-second annotation gap
+s04_columbia_ave_2019-09-10_120000,1,2,[144.914],Owner says distant encounters are separate cyclists; >30-second annotation gap
+s06_edgewater_n_2019-09-18_121500,2,2,[357.2],Owner says distant encounters are separate cyclists; >30-second annotation gap
+s07_lee_road_n_2019-07-10_121500,4,2,[112.714],Owner says distant encounters are separate cyclists; >30-second annotation gap

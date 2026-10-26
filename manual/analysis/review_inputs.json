@@ -1,0 +1,3761 @@
+{
+  "entries": [
+    {
+      "key": "s00_aloma_path_2019-10-30_120000",
+      "camera": "Aloma Path",
+      "source": {
+        "reference_location": "Aloma",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Aloma Path",
+        "study_date": "2019-10-30",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-10-30 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "191"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Aloma_Path_716686_10-30-2019.xls",
+      "reference": {
+        "start": "2019-10-30 12:00:00",
+        "end": "2019-10-30 12:15:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-30 12:00:00",
+            "bin_end": "2019-10-30 12:15:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Southbound",
+            "facility": "path",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 55,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-30 12:00:00",
+            "bin_end": "2019-10-30 12:15:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Northbound",
+            "facility": "path",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 55,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 0.0,
+      "calibration": {
+        "H": [
+          [
+            0.06605287657843696,
+            0.13016023635864257,
+            0.0
+          ],
+          [
+            0.0,
+            -0.9144337972005209,
+            0.0
+          ],
+          [
+            0.0,
+            0.00578633017010159,
+            1.0
+          ]
+        ],
+        "hull": [
+          [
+            [
+              697.90283203125,
+              103.43745422363281
+            ]
+          ],
+          [
+            [
+              654.7518310546875,
+              113.6312026977539
+            ]
+          ],
+          [
+            [
+              28.26084327697754,
+              114.49588775634766
+            ]
+          ],
+          [
+            [
+              21.87156105041504,
+              112.33619689941406
+            ]
+          ],
+          [
+            [
+              18.535308837890625,
+              111.16458129882812
+            ]
+          ],
+          [
+            [
+              96.0896224975586,
+              77.96341705322266
+            ]
+          ],
+          [
+            [
+              232.99957275390625,
+              26.620113372802734
+            ]
+          ],
+          [
+            [
+              243.90643310546875,
+              23.524166107177734
+            ]
+          ],
+          [
+            [
+              260.10809326171875,
+              21.176918029785156
+            ]
+          ],
+          [
+            [
+              280.7005615234375,
+              19.37265396118164
+            ]
+          ],
+          [
+            [
+              296.73779296875,
+              18.714561462402344
+            ]
+          ],
+          [
+            [
+              317.96875,
+              18.46690559387207
+            ]
+          ],
+          [
+            [
+              391.21392822265625,
+              18.197050094604492
+            ]
+          ],
+          [
+            [
+              460.59075927734375,
+              23.511762619018555
+            ]
+          ],
+          [
+            [
+              498.0332336425781,
+              27.39752769470215
+            ]
+          ],
+          [
+            [
+              572.872802734375,
+              36.68070602416992
+            ]
+          ],
+          [
+            [
+              601.0322265625,
+              42.31100082397461
+            ]
+          ],
+          [
+            [
+              634.5101318359375,
+              49.57169723510742
+            ]
+          ]
+        ],
+        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+        "car_tracks": 20,
+        "car_boxes": 204,
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
+      "video": "s00_aloma_path_2019-10-30_120000.mp4"
+    },
+    {
+      "key": "s00_aloma_path_2019-10-30_123000",
+      "camera": "Aloma Path",
+      "source": {
+        "reference_location": "Aloma",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Aloma Path",
+        "study_date": "2019-10-30",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-10-30 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "191"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Aloma_Path_716686_10-30-2019.xls",
+      "reference": {
+        "start": "2019-10-30 12:30:00",
+        "end": "2019-10-30 12:45:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-30 12:30:00",
+            "bin_end": "2019-10-30 12:45:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Southbound",
+            "facility": "path",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-30 12:30:00",
+            "bin_end": "2019-10-30 12:45:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Northbound",
+            "facility": "path",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 1800.0,
+      "calibration": {
+        "H": [
+          [
+            0.06605287657843696,
+            0.13016023635864257,
+            0.0
+          ],
+          [
+            0.0,
+            -0.9144337972005209,
+            0.0
+          ],
+          [
+            0.0,
+            0.00578633017010159,
+            1.0
+          ]
+        ],
+        "hull": [
+          [
+            [
+              697.90283203125,
+              103.43745422363281
+            ]
+          ],
+          [
+            [
+              654.7518310546875,
+              113.6312026977539
+            ]
+          ],
+          [
+            [
+              28.26084327697754,
+              114.49588775634766
+            ]
+          ],
+          [
+            [
+              21.87156105041504,
+              112.33619689941406
+            ]
+          ],
+          [
+            [
+              18.535308837890625,
+              111.16458129882812
+            ]
+          ],
+          [
+            [
+              96.0896224975586,
+              77.96341705322266
+            ]
+          ],
+          [
+            [
+              232.99957275390625,
+              26.620113372802734
+            ]
+          ],
+          [
+            [
+              243.90643310546875,
+              23.524166107177734
+            ]
+          ],
+          [
+            [
+              260.10809326171875,
+              21.176918029785156
+            ]
+          ],
+          [
+            [
+              280.7005615234375,
+              19.37265396118164
+            ]
+          ],
+          [
+            [
+              296.73779296875,
+              18.714561462402344
+            ]
+          ],
+          [
+            [
+              317.96875,
+              18.46690559387207
+            ]
+          ],
+          [
+            [
+              391.21392822265625,
+              18.197050094604492
+            ]
+          ],
+          [
+            [
+              460.59075927734375,
+              23.511762619018555
+            ]
+          ],
+          [
+            [
+              498.0332336425781,
+              27.39752769470215
+            ]
+          ],
+          [
+            [
+              572.872802734375,
+              36.68070602416992
+            ]
+          ],
+          [
+            [
+              601.0322265625,
+              42.31100082397461
+            ]
+          ],
+          [
+            [
+              634.5101318359375,
+              49.57169723510742
+            ]
+          ]
+        ],
+        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+        "car_tracks": 20,
+        "car_boxes": 204,
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
+      "video": "s00_aloma_path_2019-10-30_123000.mp4"
+    },
+    {
+      "key": "s00_aloma_path_2019-10-30_124500",
+      "camera": "Aloma Path",
+      "source": {
+        "reference_location": "Aloma",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Aloma Path",
+        "study_date": "2019-10-30",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Aloma Path/Standard_SCU8PM_2019-10-30_0000/Standard_SCU8PM_2019-10-30_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-10-30 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "191"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Aloma_Path_716686_10-30-2019.xls",
+      "reference": {
+        "start": "2019-10-30 12:45:00",
+        "end": "2019-10-30 13:00:00",
+        "count": 2,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-30 12:45:00",
+            "bin_end": "2019-10-30 13:00:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Southbound",
+            "facility": "path",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-30 12:45:00",
+            "bin_end": "2019-10-30 13:00:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Northbound",
+            "facility": "path",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 2700.0,
+      "calibration": {
+        "H": [
+          [
+            0.06605287657843696,
+            0.13016023635864257,
+            0.0
+          ],
+          [
+            0.0,
+            -0.9144337972005209,
+            0.0
+          ],
+          [
+            0.0,
+            0.00578633017010159,
+            1.0
+          ]
+        ],
+        "hull": [
+          [
+            [
+              697.90283203125,
+              103.43745422363281
+            ]
+          ],
+          [
+            [
+              654.7518310546875,
+              113.6312026977539
+            ]
+          ],
+          [
+            [
+              28.26084327697754,
+              114.49588775634766
+            ]
+          ],
+          [
+            [
+              21.87156105041504,
+              112.33619689941406
+            ]
+          ],
+          [
+            [
+              18.535308837890625,
+              111.16458129882812
+            ]
+          ],
+          [
+            [
+              96.0896224975586,
+              77.96341705322266
+            ]
+          ],
+          [
+            [
+              232.99957275390625,
+              26.620113372802734
+            ]
+          ],
+          [
+            [
+              243.90643310546875,
+              23.524166107177734
+            ]
+          ],
+          [
+            [
+              260.10809326171875,
+              21.176918029785156
+            ]
+          ],
+          [
+            [
+              280.7005615234375,
+              19.37265396118164
+            ]
+          ],
+          [
+            [
+              296.73779296875,
+              18.714561462402344
+            ]
+          ],
+          [
+            [
+              317.96875,
+              18.46690559387207
+            ]
+          ],
+          [
+            [
+              391.21392822265625,
+              18.197050094604492
+            ]
+          ],
+          [
+            [
+              460.59075927734375,
+              23.511762619018555
+            ]
+          ],
+          [
+            [
+              498.0332336425781,
+              27.39752769470215
+            ]
+          ],
+          [
+            [
+              572.872802734375,
+              36.68070602416992
+            ]
+          ],
+          [
+            [
+              601.0322265625,
+              42.31100082397461
+            ]
+          ],
+          [
+            [
+              634.5101318359375,
+              49.57169723510742
+            ]
+          ]
+        ],
+        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+        "car_tracks": 20,
+        "car_boxes": 204,
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
+      "video": "s00_aloma_path_2019-10-30_124500.mp4"
+    },
+    {
+      "key": "s02_carroll_nbl_2019-09-10_123000",
+      "camera": "Carroll NBL",
+      "source": {
+        "reference_location": "Carroll",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Carroll NBL",
+        "study_date": "2019-09-10",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/NBL Carroll/Standard_SCU8OG_2019-09-10_0000/Standard_SCU8OG_2019-09-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Carroll/Standard_SCU8OG_2019-09-10_0000/Standard_SCU8OG_2019-09-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "31"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Carroll_NBL_693689_09-10-2019.xls",
+      "reference": {
+        "start": "2019-09-10 12:30:00",
+        "end": "2019-09-10 12:45:00",
+        "count": 2,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Travel Lane",
+            "direction": "Westbound",
+            "facility": "road",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Travel Lane",
+            "direction": "Westbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Travel Lane",
+            "direction": "Eastbound",
+            "facility": "road",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Travel Lane",
+            "direction": "Eastbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 5
+          }
+        ]
+      },
+      "source_start_seconds": 1800.0,
+      "calibration": {
+        "H": [
+          [
+            0.05071112314860026,
+            0.09694507386949328,
+            0.0
+          ],
+          [
+            0.0,
+            -0.44396209716796875,
+            0.0
+          ],
+          [
+            0.0,
+            0.0049250861008962,
+            1.0
+          ]
+        ],
+        "hull": [
+          [
+            [
+              695.3443603515625,
+              101.586181640625
+            ]
+          ],
+          [
+            [
+              691.3199462890625,
+              205.99166870117188
+            ]
+          ],
+          [
+            [
+              644.8749389648438,
+              209.15403747558594
+            ]
+          ],
+          [
+            [
+              609.613037109375,
+              211.33782958984375
+            ]
+          ],
+          [
+            [
+              157.5701446533203,
+              239.24391174316406
+            ]
+          ],
+          [
+            [
+              105.35724639892578,
+              239.81011962890625
+            ]
+          ],
+          [
+            [
+              72.82362365722656,
+              223.87844848632812
+            ]
+          ],
+          [
+            [
+              39.23981475830078,
+              104.43119812011719
+            ]
+          ],
+          [
+            [
+              62.03148651123047,
+              98.78954315185547
+            ]
+          ],
+          [
+            [
+              176.78219604492188,
+              78.44995880126953
+            ]
+          ],
+          [
+            [
+              235.9414520263672,
+              73.32427215576172
+            ]
+          ],
+          [
+            [
+              344.54437255859375,
+              69.54401397705078
+            ]
+          ],
+          [
+            [
+              402.4443359375,
+              69.8796157836914
+            ]
+          ],
+          [
+            [
+              412.831787109375,
+              69.95803833007812
+            ]
+          ],
+          [
+            [
+              465.84063720703125,
+              70.56182098388672
+            ]
+          ],
+          [
+            [
+              479.0543212890625,
+              71.09457397460938
+            ]
+          ],
+          [
+            [
+              503.84368896484375,
+              73.37721252441406
+            ]
+          ],
+          [
+            [
+              601.9744873046875,
+              83.47039031982422
+            ]
+          ]
+        ],
+        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+        "car_tracks": 21,
+        "car_boxes": 179,
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
+      "video": "s02_carroll_nbl_2019-09-10_123000.mp4"
+    },
+    {
+      "key": "s03_colonial_north_2019-07-10_123000",
+      "camera": "Colonial North",
+      "source": {
+        "reference_location": "Colonial",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Colonial North",
+        "study_date": "2019-07-10",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-07-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "89"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Colonial_North_676806_07-10-2019.xls",
+      "reference": {
+        "start": "2019-07-10 12:30:00",
+        "end": "2019-07-10 12:45:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Bike Lane",
+            "direction": "Westbound",
+            "facility": "bike_lane",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 62,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 62,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Bike Lane",
+            "direction": "Eastbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 62,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 62,
+            "source_column": 5
+          }
+        ]
+      },
+      "source_start_seconds": 1800.0,
+      "calibration": {
+        "H": [
+          [
+            0.11527766121758355,
+            0.9352010938856337,
+            0.0
+          ],
+          [
+            0.0,
+            -2.5003953721788195,
+            0.0
+          ],
+          [
+            0.0,
+            0.028543061680263944,
+            1.0
+          ]
+        ],
+        "hull": [
+          [
+            [
+              691.776123046875,
+              92.23310089111328
+            ]
+          ],
+          [
+            [
+              682.1182250976562,
+              234.54794311523438
+            ]
+          ],
+          [
+            [
+              78.43873596191406,
+              35.88429260253906
+            ]
+          ],
+          [
+            [
+              58.52452087402344,
+              24.337255477905273
+            ]
+          ],
+          [
+            [
+              87.6862564086914,
+              14.53001594543457
+            ]
+          ],
+          [
+            [
+              118.58027648925781,
+              11.733952522277832
+            ]
+          ],
+          [
+            [
+              319.44049072265625,
+              13.052218437194824
+            ]
+          ],
+          [
+            [
+              578.2532958984375,
+              17.41501235961914
+            ]
+          ],
+          [
+            [
+              622.3516235351562,
+              18.765819549560547
+            ]
+          ]
+        ],
+        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+        "car_tracks": 28,
+        "car_boxes": 458,
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
+      "video": "s03_colonial_north_2019-07-10_123000.mp4"
+    },
+    {
+      "key": "s03_colonial_north_2019-07-10_124500",
+      "camera": "Colonial North",
+      "source": {
+        "reference_location": "Colonial",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Colonial North",
+        "study_date": "2019-07-10",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-07-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "89"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Colonial_North_676806_07-10-2019.xls",
+      "reference": {
+        "start": "2019-07-10 12:45:00",
+        "end": "2019-07-10 13:00:00",
+        "count": 2,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Bike Lane",
+            "direction": "Westbound",
+            "facility": "bike_lane",
+            "count": 2,
+            "status": "recorded",
+            "source_row": 63,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 63,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Bike Lane",
+            "direction": "Eastbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 63,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 63,
+            "source_column": 5
+          }
+        ]
+      },
+      "source_start_seconds": 2700.0,
+      "calibration": {
+        "H": [
+          [
+            0.11527766121758355,
+            0.9352010938856337,
+            0.0
+          ],
+          [
+            0.0,
+            -2.5003953721788195,
+            0.0
+          ],
+          [
+            0.0,
+            0.028543061680263944,
+            1.0
+          ]
+        ],
+        "hull": [
+          [
+            [
+              691.776123046875,
+              92.23310089111328
+            ]
+          ],
+          [
+            [
+              682.1182250976562,
+              234.54794311523438
+            ]
+          ],
+          [
+            [
+              78.43873596191406,
+              35.88429260253906
+            ]
+          ],
+          [
+            [
+              58.52452087402344,
+              24.337255477905273
+            ]
+          ],
+          [
+            [
+              87.6862564086914,
+              14.53001594543457
+            ]
+          ],
+          [
+            [
+              118.58027648925781,
+              11.733952522277832
+            ]
+          ],
+          [
+            [
+              319.44049072265625,
+              13.052218437194824
+            ]
+          ],
+          [
+            [
+              578.2532958984375,
+              17.41501235961914
+            ]
+          ],
+          [
+            [
+              622.3516235351562,
+              18.765819549560547
+            ]
+          ]
+        ],
+        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+        "car_tracks": 28,
+        "car_boxes": 458,
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
+      "video": "s03_colonial_north_2019-07-10_124500.mp4"
+    },
+    {
+      "key": "s04_columbia_ave_2019-09-10_120000",
+      "camera": "Columbia Ave",
+      "source": {
+        "reference_location": "Columbia",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Columbia Ave",
+        "study_date": "2019-09-10",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000/Standard_SCU8PM_2019-09-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000/Standard_SCU8PM_2019-09-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "243"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Columbia_Ave_693688_09-10-2019.xls",
+      "reference": {
+        "start": "2019-09-10 12:00:00",
+        "end": "2019-09-10 12:15:00",
+        "count": 2,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:00:00",
+            "bin_end": "2019-09-10 12:15:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Bike Lane",
+            "direction": "Westbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:00:00",
+            "bin_end": "2019-09-10 12:15:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:00:00",
+            "bin_end": "2019-09-10 12:15:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Bike Lane",
+            "direction": "Westbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:00:00",
+            "bin_end": "2019-09-10 12:15:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 5
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:00:00",
+            "bin_end": "2019-09-10 12:15:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Bike Lane",
+            "direction": "Eastbound",
+            "facility": "bike_lane",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 6
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:00:00",
+            "bin_end": "2019-09-10 12:15:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 7
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:00:00",
+            "bin_end": "2019-09-10 12:15:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Bike Lane",
+            "direction": "Eastbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 8
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:00:00",
+            "bin_end": "2019-09-10 12:15:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 9
+          }
+        ]
+      },
+      "source_start_seconds": 0.0,
+      "calibration": {
+        "H": [
+          [
+            0.06418289608425565,
+            0.15263879564073352,
+            0.0
+          ],
+          [
+            0.0,
+            -0.37609664069281684,
+            0.0
+          ],
+          [
+            0.0,
+            0.006505814525816176,
+            1.0
+          ]
+        ],
+        "hull": [
+          [
+            [
+              705.75830078125,
+              82.84173583984375
+            ]
+          ],
+          [
+            [
+              668.0299072265625,
+              133.44488525390625
+            ]
+          ],
+          [
+            [
+              653.9309692382812,
+              142.0006866455078
+            ]
+          ],
+          [
+            [
+              528.50244140625,
+              207.12469482421875
+            ]
+          ],
+          [
+            [
+              213.33676147460938,
+              344.44305419921875
+            ]
+          ],
+          [
+            [
+              167.07492065429688,
+              321.40325927734375
+            ]
+          ],
+          [
+            [
+              130.8524169921875,
+              166.9928741455078
+            ]
+          ],
+          [
+            [
+              136.73876953125,
+              157.74476623535156
+            ]
+          ],
+          [
+            [
+              257.9679260253906,
+              118.3109130859375
+            ]
+          ],
+          [
+            [
+              338.77178955078125,
+              93.90997314453125
+            ]
+          ],
+          [
+            [
+              432.06201171875,
+              71.05366516113281
+            ]
+          ],
+          [
+            [
+              526.4551391601562,
+              64.13729095458984
+            ]
+          ],
+          [
+            [
+              561.7944946289062,
+              62.45716857910156
+            ]
+          ]
+        ],
+        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+        "car_tracks": 20,
+        "car_boxes": 177,
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
+      "video": "s04_columbia_ave_2019-09-10_120000.mp4"
+    },
+    {
+      "key": "s04_columbia_ave_2019-09-10_121500",
+      "camera": "Columbia Ave",
+      "source": {
+        "reference_location": "Columbia",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Columbia Ave",
+        "study_date": "2019-09-10",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000/Standard_SCU8PM_2019-09-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000/Standard_SCU8PM_2019-09-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "243"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Columbia_Ave_693688_09-10-2019.xls",
+      "reference": {
+        "start": "2019-09-10 12:15:00",
+        "end": "2019-09-10 12:30:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:15:00",
+            "bin_end": "2019-09-10 12:30:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Bike Lane",
+            "direction": "Westbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:15:00",
+            "bin_end": "2019-09-10 12:30:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:15:00",
+            "bin_end": "2019-09-10 12:30:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Bike Lane",
+            "direction": "Westbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:15:00",
+            "bin_end": "2019-09-10 12:30:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 5
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:15:00",
+            "bin_end": "2019-09-10 12:30:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Bike Lane",
+            "direction": "Eastbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 6
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:15:00",
+            "bin_end": "2019-09-10 12:30:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 7
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:15:00",
+            "bin_end": "2019-09-10 12:30:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Bike Lane",
+            "direction": "Eastbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 8
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:15:00",
+            "bin_end": "2019-09-10 12:30:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 9
+          }
+        ]
+      },
+      "source_start_seconds": 900.0,
+      "calibration": {
+        "H": [
+          [
+            0.06418289608425565,
+            0.15263879564073352,
+            0.0
+          ],
+          [
+            0.0,
+            -0.37609664069281684,
+            0.0
+          ],
+          [
+            0.0,
+            0.006505814525816176,
+            1.0
+          ]
+        ],
+        "hull": [
+          [
+            [
+              705.75830078125,
+              82.84173583984375
+            ]
+          ],
+          [
+            [
+              668.0299072265625,
+              133.44488525390625
+            ]
+          ],
+          [
+            [
+              653.9309692382812,
+              142.0006866455078
+            ]
+          ],
+          [
+            [
+              528.50244140625,
+              207.12469482421875
+            ]
+          ],
+          [
+            [
+              213.33676147460938,
+              344.44305419921875
+            ]
+          ],
+          [
+            [
+              167.07492065429688,
+              321.40325927734375
+            ]
+          ],
+          [
+            [
+              130.8524169921875,
+              166.9928741455078
+            ]
+          ],
+          [
+            [
+              136.73876953125,
+              157.74476623535156
+            ]
+          ],
+          [
+            [
+              257.9679260253906,
+              118.3109130859375
+            ]
+          ],
+          [
+            [
+              338.77178955078125,
+              93.90997314453125
+            ]
+          ],
+          [
+            [
+              432.06201171875,
+              71.05366516113281
+            ]
+          ],
+          [
+            [
+              526.4551391601562,
+              64.13729095458984
+            ]
+          ],
+          [
+            [
+              561.7944946289062,
+              62.45716857910156
+            ]
+          ]
+        ],
+        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+        "car_tracks": 20,
+        "car_boxes": 177,
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
+      "video": "s04_columbia_ave_2019-09-10_121500.mp4"
+    },
+    {
+      "key": "s04_columbia_ave_2019-09-10_123000",
+      "camera": "Columbia Ave",
+      "source": {
+        "reference_location": "Columbia",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Columbia Ave",
+        "study_date": "2019-09-10",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000/Standard_SCU8PM_2019-09-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000/Standard_SCU8PM_2019-09-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "243"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Columbia_Ave_693688_09-10-2019.xls",
+      "reference": {
+        "start": "2019-09-10 12:30:00",
+        "end": "2019-09-10 12:45:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Bike Lane",
+            "direction": "Westbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Bike Lane",
+            "direction": "Westbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 5
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Bike Lane",
+            "direction": "Eastbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 6
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 7
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Bike Lane",
+            "direction": "Eastbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 8
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:30:00",
+            "bin_end": "2019-09-10 12:45:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 9
+          }
+        ]
+      },
+      "source_start_seconds": 1800.0,
+      "calibration": {
+        "H": [
+          [
+            0.06418289608425565,
+            0.15263879564073352,
+            0.0
+          ],
+          [
+            0.0,
+            -0.37609664069281684,
+            0.0
+          ],
+          [
+            0.0,
+            0.006505814525816176,
+            1.0
+          ]
+        ],
+        "hull": [
+          [
+            [
+              705.75830078125,
+              82.84173583984375
+            ]
+          ],
+          [
+            [
+              668.0299072265625,
+              133.44488525390625
+            ]
+          ],
+          [
+            [
+              653.9309692382812,
+              142.0006866455078
+            ]
+          ],
+          [
+            [
+              528.50244140625,
+              207.12469482421875
+            ]
+          ],
+          [
+            [
+              213.33676147460938,
+              344.44305419921875
+            ]
+          ],
+          [
+            [
+              167.07492065429688,
+              321.40325927734375
+            ]
+          ],
+          [
+            [
+              130.8524169921875,
+              166.9928741455078
+            ]
+          ],
+          [
+            [
+              136.73876953125,
+              157.74476623535156
+            ]
+          ],
+          [
+            [
+              257.9679260253906,
+              118.3109130859375
+            ]
+          ],
+          [
+            [
+              338.77178955078125,
+              93.90997314453125
+            ]
+          ],
+          [
+            [
+              432.06201171875,
+              71.05366516113281
+            ]
+          ],
+          [
+            [
+              526.4551391601562,
+              64.13729095458984
+            ]
+          ],
+          [
+            [
+              561.7944946289062,
+              62.45716857910156
+            ]
+          ]
+        ],
+        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+        "car_tracks": 20,
+        "car_boxes": 177,
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
+      "video": "s04_columbia_ave_2019-09-10_123000.mp4"
+    },
+    {
+      "key": "s04_columbia_ave_2019-09-10_124500",
+      "camera": "Columbia Ave",
+      "source": {
+        "reference_location": "Columbia",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Columbia Ave",
+        "study_date": "2019-09-10",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000/Standard_SCU8PM_2019-09-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Columbia/Standard_SCU8PM_2019-09-10_0000/Standard_SCU8PM_2019-09-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "243"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Columbia_Ave_693688_09-10-2019.xls",
+      "reference": {
+        "start": "2019-09-10 12:45:00",
+        "end": "2019-09-10 13:00:00",
+        "count": 2,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:45:00",
+            "bin_end": "2019-09-10 13:00:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Bike Lane",
+            "direction": "Westbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:45:00",
+            "bin_end": "2019-09-10 13:00:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:45:00",
+            "bin_end": "2019-09-10 13:00:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Bike Lane",
+            "direction": "Westbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:45:00",
+            "bin_end": "2019-09-10 13:00:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 5
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:45:00",
+            "bin_end": "2019-09-10 13:00:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Bike Lane",
+            "direction": "Eastbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 6
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:45:00",
+            "bin_end": "2019-09-10 13:00:00",
+            "camera_side_label": "EB",
+            "channel_label": "EB Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 2,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 7
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:45:00",
+            "bin_end": "2019-09-10 13:00:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Bike Lane",
+            "direction": "Eastbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 8
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-10 12:45:00",
+            "bin_end": "2019-09-10 13:00:00",
+            "camera_side_label": "WB",
+            "channel_label": "WB Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 9
+          }
+        ]
+      },
+      "source_start_seconds": 2700.0,
+      "calibration": {
+        "H": [
+          [
+            0.06418289608425565,
+            0.15263879564073352,
+            0.0
+          ],
+          [
+            0.0,
+            -0.37609664069281684,
+            0.0
+          ],
+          [
+            0.0,
+            0.006505814525816176,
+            1.0
+          ]
+        ],
+        "hull": [
+          [
+            [
+              705.75830078125,
+              82.84173583984375
+            ]
+          ],
+          [
+            [
+              668.0299072265625,
+              133.44488525390625
+            ]
+          ],
+          [
+            [
+              653.9309692382812,
+              142.0006866455078
+            ]
+          ],
+          [
+            [
+              528.50244140625,
+              207.12469482421875
+            ]
+          ],
+          [
+            [
+              213.33676147460938,
+              344.44305419921875
+            ]
+          ],
+          [
+            [
+              167.07492065429688,
+              321.40325927734375
+            ]
+          ],
+          [
+            [
+              130.8524169921875,
+              166.9928741455078
+            ]
+          ],
+          [
+            [
+              136.73876953125,
+              157.74476623535156
+            ]
+          ],
+          [
+            [
+              257.9679260253906,
+              118.3109130859375
+            ]
+          ],
+          [
+            [
+              338.77178955078125,
+              93.90997314453125
+            ]
+          ],
+          [
+            [
+              432.06201171875,
+              71.05366516113281
+            ]
+          ],
+          [
+            [
+              526.4551391601562,
+              64.13729095458984
+            ]
+          ],
+          [
+            [
+              561.7944946289062,
+              62.45716857910156
+            ]
+          ]
+        ],
+        "author_commit": "80b8bc4964eddfda32c40e6d1c8fe8b62f777f55",
+        "car_tracks": 20,
+        "car_boxes": 177,
+        "geometry_check_passed": true,
+        "validation": "learned_scale_not_independently_speed_validated",
+        "sidewalk_transfer": "unverified_road_sidewalk_height_difference"
+      },
+      "video": "s04_columbia_ave_2019-09-10_124500.mp4"
+    },
+    {
+      "key": "s06_edgewater_n_2019-09-18_120000",
+      "camera": "Edgewater N",
+      "source": {
+        "reference_location": "Edgewater",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Edgewater N",
+        "study_date": "2019-09-18",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-18 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "200"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Edgewater_N_697168_09-18-2019.xls",
+      "reference": {
+        "start": "2019-09-18 12:00:00",
+        "end": "2019-09-18 12:15:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:00:00",
+            "bin_end": "2019-09-18 12:15:00",
+            "camera_side_label": "NB",
+            "channel_label": "NB Bike Lane",
+            "direction": "Southbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 55,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:00:00",
+            "bin_end": "2019-09-18 12:15:00",
+            "camera_side_label": "SB",
+            "channel_label": "SB Bike Lane",
+            "direction": "Southbound",
+            "facility": "bike_lane",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 55,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:00:00",
+            "bin_end": "2019-09-18 12:15:00",
+            "camera_side_label": "NB",
+            "channel_label": "NB Bike Lane",
+            "direction": "Northbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 55,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:00:00",
+            "bin_end": "2019-09-18 12:15:00",
+            "camera_side_label": "SB",
+            "channel_label": "SB Bike Lane",
+            "direction": "Northbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 55,
+            "source_column": 5
+          }
+        ]
+      },
+      "source_start_seconds": 0.0,
+      "calibration": null,
+      "video": "s06_edgewater_n_2019-09-18_120000.mp4"
+    },
+    {
+      "key": "s06_edgewater_n_2019-09-18_121500",
+      "camera": "Edgewater N",
+      "source": {
+        "reference_location": "Edgewater",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Edgewater N",
+        "study_date": "2019-09-18",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-18 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "200"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Edgewater_N_697168_09-18-2019.xls",
+      "reference": {
+        "start": "2019-09-18 12:15:00",
+        "end": "2019-09-18 12:30:00",
+        "count": 3,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:15:00",
+            "bin_end": "2019-09-18 12:30:00",
+            "camera_side_label": "NB",
+            "channel_label": "NB Bike Lane",
+            "direction": "Southbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:15:00",
+            "bin_end": "2019-09-18 12:30:00",
+            "camera_side_label": "SB",
+            "channel_label": "SB Bike Lane",
+            "direction": "Southbound",
+            "facility": "bike_lane",
+            "count": 3,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:15:00",
+            "bin_end": "2019-09-18 12:30:00",
+            "camera_side_label": "NB",
+            "channel_label": "NB Bike Lane",
+            "direction": "Northbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:15:00",
+            "bin_end": "2019-09-18 12:30:00",
+            "camera_side_label": "SB",
+            "channel_label": "SB Bike Lane",
+            "direction": "Northbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 5
+          }
+        ]
+      },
+      "source_start_seconds": 900.0,
+      "calibration": null,
+      "video": "s06_edgewater_n_2019-09-18_121500.mp4"
+    },
+    {
+      "key": "s06_edgewater_n_2019-09-18_123000",
+      "camera": "Edgewater N",
+      "source": {
+        "reference_location": "Edgewater",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Edgewater N",
+        "study_date": "2019-09-18",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-18 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "200"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Edgewater_N_697168_09-18-2019.xls",
+      "reference": {
+        "start": "2019-09-18 12:30:00",
+        "end": "2019-09-18 12:45:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:30:00",
+            "bin_end": "2019-09-18 12:45:00",
+            "camera_side_label": "NB",
+            "channel_label": "NB Bike Lane",
+            "direction": "Southbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:30:00",
+            "bin_end": "2019-09-18 12:45:00",
+            "camera_side_label": "SB",
+            "channel_label": "SB Bike Lane",
+            "direction": "Southbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:30:00",
+            "bin_end": "2019-09-18 12:45:00",
+            "camera_side_label": "NB",
+            "channel_label": "NB Bike Lane",
+            "direction": "Northbound",
+            "facility": "bike_lane",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:30:00",
+            "bin_end": "2019-09-18 12:45:00",
+            "camera_side_label": "SB",
+            "channel_label": "SB Bike Lane",
+            "direction": "Northbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 5
+          }
+        ]
+      },
+      "source_start_seconds": 1800.0,
+      "calibration": null,
+      "video": "s06_edgewater_n_2019-09-18_123000.mp4"
+    },
+    {
+      "key": "s06_edgewater_n_2019-09-18_124500",
+      "camera": "Edgewater N",
+      "source": {
+        "reference_location": "Edgewater",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Edgewater N",
+        "study_date": "2019-09-18",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Speed Edgewater/Standard_SCU8OG_2019-09-18_0000/Standard_SCU8OG_2019-09-18_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-18 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "200"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Edgewater_N_697168_09-18-2019.xls",
+      "reference": {
+        "start": "2019-09-18 12:45:00",
+        "end": "2019-09-18 13:00:00",
+        "count": 5,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:45:00",
+            "bin_end": "2019-09-18 13:00:00",
+            "camera_side_label": "NB",
+            "channel_label": "NB Bike Lane",
+            "direction": "Southbound",
+            "facility": "bike_lane",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:45:00",
+            "bin_end": "2019-09-18 13:00:00",
+            "camera_side_label": "SB",
+            "channel_label": "SB Bike Lane",
+            "direction": "Southbound",
+            "facility": "bike_lane",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:45:00",
+            "bin_end": "2019-09-18 13:00:00",
+            "camera_side_label": "NB",
+            "channel_label": "NB Bike Lane",
+            "direction": "Northbound",
+            "facility": "bike_lane",
+            "count": 2,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-18 12:45:00",
+            "bin_end": "2019-09-18 13:00:00",
+            "camera_side_label": "SB",
+            "channel_label": "SB Bike Lane",
+            "direction": "Northbound",
+            "facility": "bike_lane",
+            "count": 2,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 5
+          }
+        ]
+      },
+      "source_start_seconds": 2700.0,
+      "calibration": null,
+      "video": "s06_edgewater_n_2019-09-18_124500.mp4"
+    },
+    {
+      "key": "s07_lee_road_n_2019-07-10_120000",
+      "camera": "Lee Road N",
+      "source": {
+        "reference_location": "Lee",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Lee Road N",
+        "study_date": "2019-07-10",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-07-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "209"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Lee_Road_N_676809_07-10-2019.xls",
+      "reference": {
+        "start": "2019-07-10 12:00:00",
+        "end": "2019-07-10 12:15:00",
+        "count": 3,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:00:00",
+            "bin_end": "2019-07-10 12:15:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 2,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:00:00",
+            "bin_end": "2019-07-10 12:15:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Travel Lane",
+            "direction": "Westbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:00:00",
+            "bin_end": "2019-07-10 12:15:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:00:00",
+            "bin_end": "2019-07-10 12:15:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Travel Lane",
+            "direction": "Eastbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 5
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:00:00",
+            "bin_end": "2019-07-10 12:15:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 6
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:00:00",
+            "bin_end": "2019-07-10 12:15:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Travel Lane",
+            "direction": "Westbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 7
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:00:00",
+            "bin_end": "2019-07-10 12:15:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 8
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:00:00",
+            "bin_end": "2019-07-10 12:15:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Travel Lane",
+            "direction": "Eastbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 9
+          }
+        ]
+      },
+      "source_start_seconds": 0.0,
+      "calibration": null,
+      "video": "s07_lee_road_n_2019-07-10_120000.mp4"
+    },
+    {
+      "key": "s07_lee_road_n_2019-07-10_121500",
+      "camera": "Lee Road N",
+      "source": {
+        "reference_location": "Lee",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Lee Road N",
+        "study_date": "2019-07-10",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-07-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "209"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Lee_Road_N_676809_07-10-2019.xls",
+      "reference": {
+        "start": "2019-07-10 12:15:00",
+        "end": "2019-07-10 12:30:00",
+        "count": 2,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:15:00",
+            "bin_end": "2019-07-10 12:30:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:15:00",
+            "bin_end": "2019-07-10 12:30:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Travel Lane",
+            "direction": "Westbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:15:00",
+            "bin_end": "2019-07-10 12:30:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:15:00",
+            "bin_end": "2019-07-10 12:30:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Travel Lane",
+            "direction": "Eastbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 5
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:15:00",
+            "bin_end": "2019-07-10 12:30:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 6
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:15:00",
+            "bin_end": "2019-07-10 12:30:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Travel Lane",
+            "direction": "Westbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 7
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:15:00",
+            "bin_end": "2019-07-10 12:30:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 8
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:15:00",
+            "bin_end": "2019-07-10 12:30:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Travel Lane",
+            "direction": "Eastbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 9
+          }
+        ]
+      },
+      "source_start_seconds": 900.0,
+      "calibration": null,
+      "video": "s07_lee_road_n_2019-07-10_121500.mp4"
+    },
+    {
+      "key": "s07_lee_road_n_2019-07-10_123000",
+      "camera": "Lee Road N",
+      "source": {
+        "reference_location": "Lee",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Lee Road N",
+        "study_date": "2019-07-10",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-07-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "209"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Lee_Road_N_676809_07-10-2019.xls",
+      "reference": {
+        "start": "2019-07-10 12:30:00",
+        "end": "2019-07-10 12:45:00",
+        "count": 2,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Travel Lane",
+            "direction": "Westbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Travel Lane",
+            "direction": "Eastbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 5
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 2,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 6
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Travel Lane",
+            "direction": "Westbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 7
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 8
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:30:00",
+            "bin_end": "2019-07-10 12:45:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Travel Lane",
+            "direction": "Eastbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 9
+          }
+        ]
+      },
+      "source_start_seconds": 1800.0,
+      "calibration": null,
+      "video": "s07_lee_road_n_2019-07-10_123000.mp4"
+    },
+    {
+      "key": "s07_lee_road_n_2019-07-10_124500",
+      "camera": "Lee Road N",
+      "source": {
+        "reference_location": "Lee",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Lee Road N",
+        "study_date": "2019-07-10",
+        "mapping_score": "1.00",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/NBL Lee Road/Standard_SCU8PM_2019-07-10_0000/Standard_SCU8PM_2019-07-10_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-07-10 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "209"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Lee_Road_N_676809_07-10-2019.xls",
+      "reference": {
+        "start": "2019-07-10 12:45:00",
+        "end": "2019-07-10 13:00:00",
+        "count": 3,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Travel Lane",
+            "direction": "Westbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 3
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 4
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Travel Lane",
+            "direction": "Eastbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 5
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 6
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Travel Lane",
+            "direction": "Westbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 7
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 8
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-07-10 12:45:00",
+            "bin_end": "2019-07-10 13:00:00",
+            "camera_side_label": "SOUTH",
+            "channel_label": "South Travel Lane",
+            "direction": "Eastbound",
+            "facility": "road",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 9
+          }
+        ]
+      },
+      "source_start_seconds": 2700.0,
+      "calibration": null,
+      "video": "s07_lee_road_n_2019-07-10_124500.mp4"
+    },
+    {
+      "key": "s08_pleasant_hill_path_2019-11-12_124500",
+      "camera": "Pleasant Hill Path",
+      "source": {
+        "reference_location": "Pleasant Hill",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Pleasant Hill Path",
+        "study_date": "2019-11-12",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/Pleasant Hill Path/Standard_SCU8OG_2019-11-12_0000/Standard_SCU8OG_2019-11-12_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Pleasant Hill Path/Standard_SCU8OG_2019-11-12_0000/Standard_SCU8OG_2019-11-12_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-11-12 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "56"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Pleasant_Hill_Path_723248_11-12-2019.xls",
+      "reference": {
+        "start": "2019-11-12 12:45:00",
+        "end": "2019-11-12 13:00:00",
+        "count": 2,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-11-12 12:45:00",
+            "bin_end": "2019-11-12 13:00:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Southbound",
+            "facility": "path",
+            "count": 2,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-11-12 12:45:00",
+            "bin_end": "2019-11-12 13:00:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Northbound",
+            "facility": "path",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 2700.0,
+      "calibration": null,
+      "video": "s08_pleasant_hill_path_2019-11-12_124500.mp4"
+    },
+    {
+      "key": "s09_rinehart_path_2019-10-02_120000",
+      "camera": "Rinehart Path",
+      "source": {
+        "reference_location": "Rinehart/CST",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Rinehart Path",
+        "study_date": "2019-10-02",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-10-02 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "164"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Rinehart_Path_704275_10-02-2019.xls",
+      "reference": {
+        "start": "2019-10-02 12:00:00",
+        "end": "2019-10-02 12:15:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-02 12:00:00",
+            "bin_end": "2019-10-02 12:15:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Southbound",
+            "facility": "path",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-02 12:00:00",
+            "bin_end": "2019-10-02 12:15:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Northbound",
+            "facility": "path",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 0.0,
+      "calibration": null,
+      "video": "s09_rinehart_path_2019-10-02_120000.mp4"
+    },
+    {
+      "key": "s09_rinehart_path_2019-10-02_121500",
+      "camera": "Rinehart Path",
+      "source": {
+        "reference_location": "Rinehart/CST",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Rinehart Path",
+        "study_date": "2019-10-02",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-10-02 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "164"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Rinehart_Path_704275_10-02-2019.xls",
+      "reference": {
+        "start": "2019-10-02 12:15:00",
+        "end": "2019-10-02 12:30:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-02 12:15:00",
+            "bin_end": "2019-10-02 12:30:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Southbound",
+            "facility": "path",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-02 12:15:00",
+            "bin_end": "2019-10-02 12:30:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Northbound",
+            "facility": "path",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 900.0,
+      "calibration": null,
+      "video": "s09_rinehart_path_2019-10-02_121500.mp4"
+    },
+    {
+      "key": "s09_rinehart_path_2019-10-02_124500",
+      "camera": "Rinehart Path",
+      "source": {
+        "reference_location": "Rinehart/CST",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "Rinehart Path",
+        "study_date": "2019-10-02",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/Rinehart Road Path/Standard_SCU8PM_2019-10-02_0000/Standard_SCU8PM_2019-10-02_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-10-02 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "164"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/Rinehart_Path_704275_10-02-2019.xls",
+      "reference": {
+        "start": "2019-10-02 12:45:00",
+        "end": "2019-10-02 13:00:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-02 12:45:00",
+            "bin_end": "2019-10-02 13:00:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Southbound",
+            "facility": "path",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-02 12:45:00",
+            "bin_end": "2019-10-02 13:00:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Northbound",
+            "facility": "path",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 59,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 2700.0,
+      "calibration": null,
+      "video": "s09_rinehart_path_2019-10-02_124500.mp4"
+    },
+    {
+      "key": "s10_university_sw_speed_2019-09-25_120000",
+      "camera": "University SW Speed",
+      "source": {
+        "reference_location": "University",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "University SW Speed",
+        "study_date": "2019-09-25",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/SW Speed University/Standard_SCU8PM_2019-09-25_0000/Standard_SCU8PM_2019-09-25_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/SW Speed University/Standard_SCU8PM_2019-09-25_0000/Standard_SCU8PM_2019-09-25_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-25 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "258"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/University_SW_Speed_701118_09-25-2019.xls",
+      "reference": {
+        "start": "2019-09-25 12:00:00",
+        "end": "2019-09-25 12:15:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-25 12:00:00",
+            "bin_end": "2019-09-25 12:15:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 55,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-25 12:00:00",
+            "bin_end": "2019-09-25 12:15:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 55,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 0.0,
+      "calibration": null,
+      "video": "s10_university_sw_speed_2019-09-25_120000.mp4"
+    },
+    {
+      "key": "s10_university_sw_speed_2019-09-25_124500",
+      "camera": "University SW Speed",
+      "source": {
+        "reference_location": "University",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "University SW Speed",
+        "study_date": "2019-09-25",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/SW Speed University/Standard_SCU8PM_2019-09-25_0000/Standard_SCU8PM_2019-09-25_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/SW Speed University/Standard_SCU8PM_2019-09-25_0000/Standard_SCU8PM_2019-09-25_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-09-25 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "258"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/University_SW_Speed_701118_09-25-2019.xls",
+      "reference": {
+        "start": "2019-09-25 12:45:00",
+        "end": "2019-09-25 13:00:00",
+        "count": 4,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-25 12:45:00",
+            "bin_end": "2019-09-25 13:00:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Westbound",
+            "facility": "sidewalk",
+            "count": 3,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-09-25 12:45:00",
+            "bin_end": "2019-09-25 13:00:00",
+            "camera_side_label": "NORTH",
+            "channel_label": "North Sidewalk",
+            "direction": "Eastbound",
+            "facility": "sidewalk",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 2700.0,
+      "calibration": null,
+      "video": "s10_university_sw_speed_2019-09-25_124500.mp4"
+    },
+    {
+      "key": "s11_west_orange_path_2019-10-15_121500",
+      "camera": "West Orange Path",
+      "source": {
+        "reference_location": "West Orange/Park",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "West Orange Path",
+        "study_date": "2019-10-15",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-10-15 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "109"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/West_Orange_Path_710336_10-15-2019.xls",
+      "reference": {
+        "start": "2019-10-15 12:15:00",
+        "end": "2019-10-15 12:30:00",
+        "count": 2,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-15 12:15:00",
+            "bin_end": "2019-10-15 12:30:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Southbound",
+            "facility": "path",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-15 12:15:00",
+            "bin_end": "2019-10-15 12:30:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Northbound",
+            "facility": "path",
+            "count": 2,
+            "status": "recorded",
+            "source_row": 56,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 900.0,
+      "calibration": null,
+      "video": "s11_west_orange_path_2019-10-15_121500.mp4"
+    },
+    {
+      "key": "s11_west_orange_path_2019-10-15_123000",
+      "camera": "West Orange Path",
+      "source": {
+        "reference_location": "West Orange/Park",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "West Orange Path",
+        "study_date": "2019-10-15",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-10-15 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "109"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/West_Orange_Path_710336_10-15-2019.xls",
+      "reference": {
+        "start": "2019-10-15 12:30:00",
+        "end": "2019-10-15 12:45:00",
+        "count": 2,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-15 12:30:00",
+            "bin_end": "2019-10-15 12:45:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Southbound",
+            "facility": "path",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-15 12:30:00",
+            "bin_end": "2019-10-15 12:45:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Northbound",
+            "facility": "path",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 57,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 1800.0,
+      "calibration": null,
+      "video": "s11_west_orange_path_2019-10-15_123000.mp4"
+    },
+    {
+      "key": "s11_west_orange_path_2019-10-15_124500",
+      "camera": "West Orange Path",
+      "source": {
+        "reference_location": "West Orange/Park",
+        "camera_match_status": "candidate_alias_not_verified",
+        "site": "West Orange Path",
+        "study_date": "2019-10-15",
+        "mapping_score": "1.50",
+        "mapping_ambiguous": "no",
+        "archive_path": "MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.013.mp4",
+        "video": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/WORT Path/Standard_SCU8OG_2019-10-15_0000/Standard_SCU8OG_2019-10-15_0000.013.mp4",
+        "exists": 1,
+        "clock": "2019-10-15 12:00:00",
+        "clock_status": "filename_inferred_not_verified",
+        "duration_seconds": "",
+        "fps": "",
+        "frames": "",
+        "width": "",
+        "height": "",
+        "probe_status": "not_probed",
+        "nominal_hours": 1,
+        "gt_cyclist_count": "109"
+      },
+      "workbook": "/orange/xiangyan/rithika/vision/Bike Lane Study Counts/West_Orange_Path_710336_10-15-2019.xls",
+      "reference": {
+        "start": "2019-10-15 12:45:00",
+        "end": "2019-10-15 13:00:00",
+        "count": 1,
+        "missing": false,
+        "channels": [
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-15 12:45:00",
+            "bin_end": "2019-10-15 13:00:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Southbound",
+            "facility": "path",
+            "count": 0,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 2
+          },
+          {
+            "worksheet": "Bicycles",
+            "user_type": "cyclist",
+            "bin_start": "2019-10-15 12:45:00",
+            "bin_end": "2019-10-15 13:00:00",
+            "camera_side_label": "not_specified",
+            "channel_label": "Path",
+            "direction": "Northbound",
+            "facility": "path",
+            "count": 1,
+            "status": "recorded",
+            "source_row": 58,
+            "source_column": 3
+          }
+        ]
+      },
+      "source_start_seconds": 2700.0,
+      "calibration": null,
+      "video": "s11_west_orange_path_2019-10-15_124500.mp4"
+    }
+  ],
+  "unavailable_count": 0,
+  "reference_source": "/Users/rithika/Desktop/objectDetect/vision3/best/test_colonial/exp_results/speed_reference_readiness_20261023/all_reference_records.csv",
+  "original_files": [
+    "s00_aloma_path_2019-10-30_120000_manual_bicycle_observations.json",
+    "s00_aloma_path_2019-10-30_123000_manual_bicycle_observations.json",
+    "s00_aloma_path_2019-10-30_124500_manual_bicycle_observations.json",
+    "s02_carroll_nbl_2019-09-10_123000_manual_bicycle_observations.json",
+    "s03_colonial_north_2019-07-10_123000_manual_bicycle_observations.json",
+    "s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json",
+    "s04_columbia_ave_2019-09-10_120000_manual_bicycle_observations.json",
+    "s04_columbia_ave_2019-09-10_121500_manual_bicycle_observations.json",
+    "s04_columbia_ave_2019-09-10_123000_manual_bicycle_observations.json",
+    "s06_edgewater_n_2019-09-18_120000_manual_bicycle_observations.json",
+    "s06_edgewater_n_2019-09-18_121500_manual_bicycle_observations.json",
+    "s06_edgewater_n_2019-09-18_123000_manual_bicycle_observations.json",
+    "s06_edgewater_n_2019-09-18_124500_manual_bicycle_observations.json",
+    "s07_lee_road_n_2019-07-10_120000_manual_bicycle_observations.json",
+    "s07_lee_road_n_2019-07-10_121500_manual_bicycle_observations.json",
+    "s08_pleasant_hill_path_2019-11-12_124500_manual_bicycle_observations.json",
+    "s09_rinehart_path_2019-10-02_120000_manual_bicycle_observations.json",
+    "s10_university_sw_speed_2019-09-25_124500_manual_bicycle_observations.json"
+  ]
+}

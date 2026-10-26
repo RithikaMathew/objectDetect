@@ -1,0 +1,130 @@
+{
+  "source": "Owner pasted ADAPTIVE_SPEED_20261024_195012/RESULTS.md in earlier conversation; means rounded to2decimals; Aloma NODE_FAIL confirmed by sacct. Not a matched-person comparison.",
+  "automatic_comparison": [
+    {
+      "location": "Aloma",
+      "model_candidate_sample": 0,
+      "model_candidate_mean_mph": "",
+      "minutes_processed": 0,
+      "state": "NODE_FAIL"
+    },
+    {
+      "location": "Baxter",
+      "model_candidate_sample": 0,
+      "model_candidate_mean_mph": "",
+      "minutes_processed": 59.99,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT"
+    },
+    {
+      "location": "Carroll",
+      "model_candidate_sample": 0,
+      "model_candidate_mean_mph": "",
+      "minutes_processed": 59.99,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT"
+    },
+    {
+      "location": "Colonial",
+      "model_candidate_sample": 3,
+      "model_candidate_mean_mph": 7.63,
+      "minutes_processed": 59.98,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT"
+    },
+    {
+      "location": "Columbia",
+      "model_candidate_sample": 3,
+      "model_candidate_mean_mph": 3.04,
+      "minutes_processed": 30,
+      "state": "TARGET_REACHED_PROVISIONAL"
+    },
+    {
+      "location": "Daniels",
+      "model_candidate_sample": 0,
+      "model_candidate_mean_mph": "",
+      "minutes_processed": 59.98,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT"
+    },
+    {
+      "location": "Edgewater",
+      "model_candidate_sample": 2,
+      "model_candidate_mean_mph": 17.57,
+      "minutes_processed": 59.98,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT"
+    },
+    {
+      "location": "Lee",
+      "model_candidate_sample": 2,
+      "model_candidate_mean_mph": 9.88,
+      "minutes_processed": 59.98,
+      "state": "TARGET_REACHED_PROVISIONAL"
+    },
+    {
+      "location": "Pleasant Hill",
+      "model_candidate_sample": 2,
+      "model_candidate_mean_mph": 8.99,
+      "minutes_processed": 59.99,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT"
+    },
+    {
+      "location": "Rinehart/CST",
+      "model_candidate_sample": 0,
+      "model_candidate_mean_mph": "",
+      "minutes_processed": 59.99,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT"
+    },
+    {
+      "location": "University",
+      "model_candidate_sample": 3,
+      "model_candidate_mean_mph": 11.17,
+      "minutes_processed": 59.97,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT"
+    },
+    {
+      "location": "West Orange/Park",
+      "model_candidate_sample": 1,
+      "model_candidate_mean_mph": 11.59,
+      "minutes_processed": 59.99,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT"
+    },
+    {
+      "location": "Winter Park",
+      "model_candidate_sample": 0,
+      "model_candidate_mean_mph": "",
+      "minutes_processed": 59.99,
+      "state": "TARGET_NOT_REACHED_WITHIN_LIMIT"
+    }
+  ],
+  "automatic_count_bins": [
+    {
+      "location": "Carroll",
+      "camera": "Carroll NBL",
+      "bin_start": "2019-09-10 12:45:00",
+      "bin_end": "2019-09-10 13:00:00",
+      "seconds_covered": "899.7",
+      "bicyclists_total": "0"
+    },
+    {
+      "location": "Carroll",
+      "camera": "Carroll NBL",
+      "bin_start": "2019-09-10 12:30:00",
+      "bin_end": "2019-09-10 12:45:00",
+      "seconds_covered": "900.0",
+      "bicyclists_total": "0"
+    },
+    {
+      "location": "Carroll",
+      "camera": "Carroll NBL",
+      "bin_start": "2019-09-10 12:00:00",
+      "bin_end": "2019-09-10 12:15:00",
+      "seconds_covered": "900.0",
+      "bicyclists_total": "0"
+    },
+    {
+      "location": "Carroll",
+      "camera": "Carroll NBL",
+      "bin_start": "2019-09-10 12:15:00",
+      "bin_end": "2019-09-10 12:30:00",
+      "seconds_covered": "900.0",
+      "bicyclists_total": "0"
+    }
+  ]
+}
