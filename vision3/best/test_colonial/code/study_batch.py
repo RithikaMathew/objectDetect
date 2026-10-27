@@ -131,7 +131,7 @@ def build_plan(root,tag,rows,zones_dir=None,require_zones=False):
         # Only this known camera/date may inherit its existing area polygons.
         if row['site']=='Colonial North':
             env['ZONES_JSON']=str(root/'zones/colonial_north_v1.json')
-            chunk=int(re.search(r'\.(\d{3})\.mp4$',row['video'])[1])
+            chunk=int(row['chunk_index_override']) if row.get('chunk_index_override') is not None else int(re.search(r'\.(\d{3})\.mp4$',row['video'])[1])
             env['CHUNK']=str(chunk)
             env['SESSION_START']=(dt.datetime.fromisoformat(row['clock'])-dt.timedelta(hours=chunk-1)).strftime('%Y-%m-%d_%H:%M:%S')
         wall_seconds=max(3600,math.ceil(duration*4+1800));hours=math.ceil(wall_seconds/3600)

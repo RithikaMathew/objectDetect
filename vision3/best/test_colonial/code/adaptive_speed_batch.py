@@ -132,17 +132,58 @@ def recovery_plan(directory,index,tag,all_sites=False):
     return dict(original,tag=tag,tasks=tasks,jobs=[],recovery_of=str(directory.resolve()),created=dt.datetime.now().isoformat())
 
 
+def matched_manual_plan(directory,manual_pack,observations,tag,day_min=1.5):
+    original=json.loads((directory/'manifest.json').read_text())
+    pack=json.loads((manual_pack/'manifest.json').read_text())
+    manual_data=json.loads(observations.read_text());keys={r['key'] for r in manual_data['observations']}
+    if not keys:raise ValueError('No submitted manual observations')
+    entries={e['key']:e for e in pack['entries']}
+    if keys-set(entries):raise ValueError('Annotations refer to intervals outside the manual pack')
+    tasks=[]
+    for old in original['tasks']:
+        selected=[]
+        for key in sorted(keys):
+            e=entries[key]
+            if e['camera']!=old['source']['site']:continue
+            if any(e['source'][k]!=old['source'][k] for k in ('clock','archive_path')):raise ValueError('Manual/source recording mismatch: '+key)
+            seconds=(dt.datetime.fromisoformat(e['reference']['start'])-dt.datetime.fromisoformat(old['source']['clock'])).total_seconds()
+            if seconds%900 or not 0<=seconds<3600:raise ValueError('Manual interval is not a selected source-hour bin')
+            people=[r for r in manual_data.get('encounters',[]) if r['encounter_id'].rsplit('__',1)[0]==key]
+            values=[float(r['speed_mph']) for r in people if r.get('speed_mph','')!='']
+            selected.append(dict(key=key,segment=int(seconds//900),video=str((manual_pack/e['video']).resolve()),clock=e['reference']['start'],study_count=e['reference']['count'],manual_count=len(people) if people else '',manual_speed_sample=len(values),manual_mean_mph=float(np.mean(values)) if values else ''))
+        if not selected:continue
+        task=dict(old);calibration=directory/task['key']/'calibration/calibration.json'
+        checked_saved_calibration(json.loads(calibration.read_text()))
+        task.update(reuse_calibration=str(calibration.resolve()),manual_intervals=selected)
+        tasks.append(task)
+    if sum(len(t['manual_intervals']) for t in tasks)!=len(keys):raise ValueError('Not all manual intervals mapped to a camera')
+    return dict(original,tag=tag,tasks=tasks,jobs=[],day_bicycle_min_seconds=day_min,force_all_intervals=True,manual_selection='Only intervals with submitted annotation points; all eligible speeds, no quota stopping',manual_observations=str(observations.resolve()),manual_pack=str(manual_pack.resolve()),recovery_of=str(directory.resolve()),created=dt.datetime.now().isoformat())
+
+
+def match_manual(a):
+    tag='manualmatch_'+dt.datetime.now().strftime('%Y%m%d_%H%M%S')
+    plan=matched_manual_plan(a.directory.resolve(),a.manual_pack.resolve(),a.observations.resolve(),tag,a.day_bicycle_min_seconds)
+    launch_recovery(plan,a.directory.resolve().parent/('ADAPTIVE_SPEED_'+tag),a.go)
+
+
 def recover(a):
     tag=('shortday_' if a.day_bicycle_min_seconds is not None else 'recovery_')+dt.datetime.now().strftime('%Y%m%d_%H%M%S')
     p=recovery_plan(a.directory.resolve(),a.index,tag,a.all_sites)
     if a.day_bicycle_min_seconds is not None:p['day_bicycle_min_seconds']=a.day_bicycle_min_seconds
     destination=a.directory.resolve().parent/('ADAPTIVE_SPEED_'+tag)
+    launch_recovery(p,destination,a.go)
+
+
+def launch_recovery(p,destination,go):
     print('Selected sites:',[t['source']['site'] for t in p['tasks']]);print('Output:',destination)
-    if not a.go:print('Dry run; add --go on HiPerGator.');return
+    if p.get('force_all_intervals'):print('Matched manual intervals:',sum(len(t['manual_intervals']) for t in p['tasks']))
+    if not go:print('Dry run; add --go on HiPerGator.');return
     if not shutil_which('sbatch'):raise RuntimeError('Submit on HiPerGator')
     root=Path(p['root'])
     for task in p['tasks']:
         if not Path(task['source']['video']).is_file():raise FileNotFoundError(task['source']['video'])
+        for interval in task.get('manual_intervals',[]):
+            if not Path(interval['video']).is_file():raise FileNotFoundError(interval['video'])
     destination.mkdir(exist_ok=False);save(destination/'manifest.json',p)
     env='cd '+shlex.quote(str(root))+' && source /orange/xiangyan/rithika/vision/yolo_env/bin/activate && '
     common=['sbatch','--parsable','--partition=hpg-turin','--account=xiangyan','--qos=xiangyan']
@@ -160,7 +201,7 @@ def recover(a):
 
 def worker(directory,index):
     p=json.loads((directory/'manifest.json').read_text());root=Path(p['root']);task=p['tasks'][index];out=directory/task['key'];out.mkdir(exist_ok=False)
-    status=dict(site=task['reference_site'],camera=task['source']['site'],state='STARTED',target=task['target'],samples=[],windows=[],failure='')
+    status=dict(site=task['reference_site'],camera=task['source']['site'],state='STARTED',target='all eligible' if p.get('force_all_intervals') else task['target'],samples=[],windows=[],failure='')
     snapshot(directory,task,status)
     try:
         status['stage']='calibration';snapshot(directory,task,status)
@@ -183,8 +224,22 @@ def worker(directory,index):
             torch.cuda.empty_cache()
         except ImportError:pass
         accepted=[];allrows=[]
-        for segment in range(p['max_windows']):
-            start=segment*900;end=min((segment+1)*900,frames/fps)
+        source_row=dict(row);source_fps=fps;source_frames=frames
+        manual_windows={w['segment']:w for w in task.get('manual_intervals',[])}
+        segments=sorted(manual_windows) if p.get('force_all_intervals') else range(p['max_windows'])
+        for segment in segments:
+            row=dict(source_row);fps=source_fps;frames=source_frames
+            if p.get('force_all_intervals'):
+                chosen=manual_windows[segment];cap=cv2.VideoCapture(chosen['video'])
+                try:
+                    fps=cap.get(5);frames=cap.get(7);clip_size=[int(cap.get(3)),int(cap.get(4))];ok,_=cap.read()
+                    if not ok or fps<=0 or frames<=0 or clip_size!=size:raise ValueError('Manual clip unreadable or dimensions mismatch')
+                finally:cap.release()
+                row.update(video=chosen['video'],clock=chosen['clock'],chunk_index_override=1,fps=fps,frames=int(frames),duration_seconds=frames/fps)
+                start=0;end=frames/fps
+                expected=min(900,source_frames/source_fps-segment*900)
+                if not 60<=end<=901 or abs(end-expected)>.25:raise ValueError('Manual clip duration differs from expected source interval')
+            else:start=segment*900;end=min((segment+1)*900,frames/fps)
             if end-start<60:break
             tag=p['tag']+'_'+task['key']+'_w'+str(segment).zfill(2)
             pipeline=window_pipeline(root,tag,row,start,end,fps,frames,p.get('day_bicycle_min_seconds'))
@@ -203,13 +258,13 @@ def worker(directory,index):
                 source=Path(raw.get(field,''))
                 if source.is_file():shutil.copy2(source,window/source.name)
             status['stage']='speed_estimation';snapshot(directory,task,status)
-            rr=gather_window(Path(result['run_log']),H,hull,start,end,task,segment,p['exploratory_road_plane_transfer'])
-            eligible_count=select_chronologically(accepted,rr,task['target'])
+            rr=gather_window(Path(result['run_log']),H,hull,start,end,dict(task,source=row),segment,p['exploratory_road_plane_transfer'])
+            eligible_count=select_chronologically(accepted,rr,len(accepted)+len(rr) if p.get('force_all_intervals') else task['target'])
             allrows+=rr
             status['windows'].append(dict(segment=segment,source_start_seconds=start,source_end_seconds=end,clock_start=(dt.datetime.fromisoformat(row['clock'])+dt.timedelta(seconds=start)).isoformat(sep=' '),clock_end=(dt.datetime.fromisoformat(row['clock'])+dt.timedelta(seconds=end)).isoformat(sep=' '),run_log=result['run_log'],found_candidate_tracks=len(rr),counted_candidate_tracks=sum(r['counted']=='1' for r in rr),eligible_candidates=eligible_count,cumulative_selected=len(accepted)))
             status['samples']=accepted;write_rows(out/'all_bicycle_candidates.csv',allrows);snapshot(directory,task,status)
-            if len(accepted)>=task['target']:break
-        status.update(state='TARGET_REACHED_PROVISIONAL' if len(accepted)>=task['target'] else 'TARGET_NOT_REACHED_WITHIN_LIMIT',samples=accepted)
+            if not p.get('force_all_intervals') and len(accepted)>=task['target']:break
+        status.update(state='MANUAL_INTERVALS_COMPLETED_PROVISIONAL' if p.get('force_all_intervals') else 'TARGET_REACHED_PROVISIONAL' if len(accepted)>=task['target'] else 'TARGET_NOT_REACHED_WITHIN_LIMIT',samples=accepted)
         write_rows(out/'selected_bicycle_candidates.csv',accepted)
     except Exception as exc:
         status.update(state='FAILED',failure=str(exc));(out/'error.txt').write_text(traceback.format_exc())
@@ -237,7 +292,7 @@ def report(directory,task=None):
         eligible=sum(w['eligible_candidates'] for w in windows) if windows and all('eligible_candidates' in w for w in windows) else ''
         if candidate_rows is not None:
             found=len(candidate_rows);counted=sum(r.get('counted')=='1' for r in candidate_rows);eligible=sum(r.get('eligible')=='1' for r in candidate_rows)
-        rows.append(dict(location=task['reference_site'],camera=task['source']['site'],study_cyclists=task['reference_count'],study_mean_mph=task['reference_mean_mph'],target=task['target'],found_candidate_tracks=found,counted_candidate_tracks=counted,speed_eligible_candidate_tracks=eligible,model_candidate_sample=len(values),model_candidate_mean_mph=mean if mean is not None else '',difference_from_study_mean_mph=mean-task['reference_mean_mph'] if mean is not None else '',state=s['state'],source_recording_date=task['source']['study_date'],source_clock_status=task['source']['clock_status'],minutes_processed=sum(w['source_end_seconds']-w['source_start_seconds'] for w in s.get('windows',[]))/60,video_intervals=json.dumps(s.get('windows',[])),failure=s.get('failure',''),interpretation='provisional_unmatched_group_comparison; identity_type_and_plane_transfer_unverified'))
+        rows.append(dict(location=task['reference_site'],camera=task['source']['site'],study_cyclists=task['reference_count'],study_mean_mph=task['reference_mean_mph'],target='all eligible' if p.get('force_all_intervals') else task['target'],found_candidate_tracks=found,counted_candidate_tracks=counted,speed_eligible_candidate_tracks=eligible,model_candidate_sample=len(values),model_candidate_mean_mph=mean if mean is not None else '',difference_from_study_mean_mph=mean-task['reference_mean_mph'] if mean is not None else '',state=s['state'],source_recording_date=task['source']['study_date'],source_clock_status=task['source']['clock_status'],minutes_processed=sum(w['source_end_seconds']-w['source_start_seconds'] for w in s.get('windows',[]))/60,video_intervals=json.dumps(s.get('windows',[])),failure=s.get('failure',''),interpretation='provisional_unmatched_group_comparison; identity_type_and_plane_transfer_unverified'))
     write_rows(destination/'comparison.csv',rows);write_rows(destination/'selected_candidates.csv',samples);write_rows(destination/'all_candidate_timestamps.csv',all_candidates)
     lines=['# Adaptive bicyclist-candidate speed comparison','',f"Daytime bicycle counting minimum: {p.get('day_bicycle_min_seconds',3)} seconds. Pedestrian and nighttime policies remain as configured in each saved pipeline_task.json. This is a separate duration experiment; changing counting eligibility does not guarantee a usable metric trajectory or a true unique cyclist.",'','Each site processes consecutive15-minute windows until its candidate quota or the stated time limit. Means combine selected per-candidate speeds with equal weight, not averages of segment averages. Selection is chronological, never based on similarity to study speeds.','', '| Location | Study n | Study mean mph | Target | Found tracks | Speed-usable | Used for mean | Model mean mph | Difference mph | Minutes | State |','|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|']
     number=lambda x:'' if x=='' else f'{x:.2f}'
@@ -245,6 +300,21 @@ def report(directory,task=None):
     lines+=['','## Exact measurement times','','| Location | Window | Candidate | Used clock start | Used clock end | mph |','|---|---:|---|---|---|---:|']
     for r in samples:lines.append(f"| {r['site']} | {r['segment']} | {r['track_id']} | {r['measurement_start']} | {r['measurement_end']} | {r['speed_mph']} |")
     lines+=['', 'all_candidate_timestamps.csv includes every bicycle-labelled candidate track with first/last seen clock times, source and annotated paths, speed-measurement intervals and exclusion reasons. selected_candidates.csv contains only candidates used in the reported average. Found tracks includes rejected candidates and is not a verified unique-person count; counted tracks and speed-usable tracks are separate in comparison.csv. Unknown counts from failed/missing stages remain blank.', '', 'Missing speed is not zero. These are provisional bicycle candidates: the current detector combines bicycles/motorcycles; person identities and user types require visual checking. Boundary-censored candidates are excluded to reduce duplicate counts across segments, but fragmentation inside segments can still duplicate people. Rejected count-filter tracks do not silently become counted bicycles.','',f"Exploratory road-plane transfer enabled: {p['exploratory_road_plane_transfer']}. When enabled, out-of-car-support estimates assume the road and bicycle surface are approximately coplanar; strict_supported_speed_mph and support fractions are retained separately. No distance is fitted to workbook averages. These estimates are not independently validated physical speeds.", '', 'Camera aliases and facility correspondence remain candidate matches. No individual study records are linked to video people. Study averages lack observation timestamps. Calibration insufficiency stops a site before expensive repeated windows. No fixed full-hour processing when target is reached earlier.','', 'Colonial location-wide study mean pools bike lane and sidewalk; it is not a facility-matched validation. Only the selected source hour is sampled, not all four labelled clips. See the reference README for separate facility means.', '', 'Debugging: status.json records the current stage and completed windows; error.txt contains a worker traceback. windows/wNN/pipeline.log captures inference output, pipeline_task.json stores exact settings, result.json and run_log.json point to raw outputs and annotated videos. Calibration diagnostics are in calibration/. Slurm termination may leave the last in-progress stage; consult site_ARRAY_INDEX.log in the batch root.', '', 'Skipped: '+json.dumps(p['skipped'])]
+    if p.get('force_all_intervals'):
+        matched=[]
+        for t in p['tasks']:
+            status_path=directory/t['key']/'status.json'
+            status=json.loads(status_path.read_text()) if status_path.exists() else {}
+            complete={w['segment']:w for w in status.get('windows',[])}
+            for interval in t['manual_intervals']:
+                w=complete.get(interval['segment']);selected=[r for r in status.get('samples',[]) if r['segment']==interval['segment']]
+                values=[float(r['speed_mph']) for r in selected]
+                matched.append(dict(location=t['reference_site'],camera=t['source']['site'],manual_clip=interval['key'],interval_start=interval['clock'],study_count=interval['study_count'],manual_count=interval['manual_count'],automatic_count=w['counted_candidate_tracks'] if w else '',manual_mean_mph=interval['manual_mean_mph'],manual_speed_sample=interval['manual_speed_sample'],automatic_mean_mph=float(np.mean(values)) if values else '',automatic_speed_sample=len(values) if w else '',status='COMPLETED_SAME_CLIP' if w else 'NOT_COMPLETED'))
+        write_rows(destination/'matched_intervals.csv',matched)
+        lines+=['','## Identical video intervals','','| Camera | Interval start | Study count | Manual count | Automatic count | Manual mph | Automatic mph | State |','|---|---|---:|---:|---:|---:|---:|---|']
+        for r in matched:lines.append(f"| {r['camera']} | {r['interval_start']} | {r['study_count']} | {r['manual_count']} | {r['automatic_count']} | {r['manual_mean_mph']} | {r['automatic_mean_mph']} | {r['status']} |")
+        lines[0]='# Same-video automatic/manual comparison run'
+        lines[4]='Processes exactly the submitted manual-annotation clips, with no quota early stopping. Every eligible automatic bicycle candidate contributes to the mean. Same video coverage does not imply same verified cyclist identities. Missing/unannotated intervals are outside this run.'
     (destination/'RESULTS.md').write_text('\n'.join(lines)+'\n')
 
 
@@ -281,14 +351,16 @@ if __name__=='__main__':
     ap=argparse.ArgumentParser(description=__doc__);sub=ap.add_subparsers(dest='command',required=True)
     s=sub.add_parser('submit');s.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);s.add_argument('--tag',default=dt.datetime.now().strftime('%Y%m%d_%H%M%S'));s.add_argument('--max-windows',type=int,default=4);s.add_argument('--exploratory-road-plane-transfer',action='store_true');s.add_argument('--day-bicycle-min-seconds',type=float);s.add_argument('--go',action='store_true')
     q=sub.add_parser('recover');q.add_argument('--directory',type=Path,required=True);q.add_argument('--index',type=int,default=0);q.add_argument('--all-sites',action='store_true');q.add_argument('--day-bicycle-min-seconds',type=float);q.add_argument('--go',action='store_true')
+    m=sub.add_parser('match-manual');m.add_argument('--directory',type=Path,required=True);m.add_argument('--manual-pack',type=Path,required=True);m.add_argument('--observations',type=Path,default=Path(__file__).resolve().parents[4]/'manual/analysis/normalized_observations.json');m.add_argument('--day-bicycle-min-seconds',type=float,default=1.5);m.add_argument('--go',action='store_true')
     w=sub.add_parser('worker');w.add_argument('--directory',type=Path,required=True);w.add_argument('--index',type=int,required=True)
     v=sub.add_parser('window');v.add_argument('--directory',type=Path,required=True);v.add_argument('--index',type=int,required=True);v.add_argument('--window',type=Path,required=True)
     r=sub.add_parser('report');r.add_argument('--directory',type=Path,required=True)
     a=ap.parse_args()
-    if a.command in ('submit','recover') and a.day_bicycle_min_seconds is not None and not .3<=a.day_bicycle_min_seconds<=3:ap.error('Day bicycle minimum must be0.3–3seconds')
+    if a.command in ('submit','recover','match-manual') and a.day_bicycle_min_seconds is not None and not .3<=a.day_bicycle_min_seconds<=3:ap.error('Day bicycle minimum must be0.3–3seconds')
     if a.command=='submit':
         if not 1<=a.max_windows<=4 or not a.tag or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for c in a.tag):ap.error('Tag must be simple letters/numbers/underscores; max-windows1–4')
         submit(a)
+    elif a.command=='match-manual':match_manual(a)
     elif a.command=='recover':recover(a)
     elif a.command=='window':
         p=json.loads((a.directory/'manifest.json').read_text())

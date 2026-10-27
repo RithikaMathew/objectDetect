@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 import numpy as np
-from adaptive_speed_batch import quota,boundary_safe,make_plan,report,gather_window,window_pipeline,select_chronologically,snapshot,recovery_plan,checked_saved_calibration
+from adaptive_speed_batch import quota,boundary_safe,make_plan,report,gather_window,window_pipeline,select_chronologically,snapshot,recovery_plan,checked_saved_calibration,matched_manual_plan,worker
 ROOT=Path(__file__).resolve().parents[1]
 
 class AdaptiveSpeedTests(unittest.TestCase):
@@ -61,6 +61,57 @@ class AdaptiveSpeedTests(unittest.TestCase):
             self.assertEqual(len(new['tasks']),13)
             self.assertEqual({t['source']['site'] for t in new['tasks']},{t['source']['site'] for t in p['tasks']})
             self.assertTrue(all(Path(t['reuse_calibration']).is_file() for t in new['tasks']))
+
+    def test_manual_matching_uses_only_submitted_intervals_without_quota(self):
+        with tempfile.TemporaryDirectory() as td:
+            d=Path(td);p=make_plan(ROOT,'original');(d/'manifest.json').write_text(json.dumps(p));pack=d/'pack';pack.mkdir()
+            t=p['tasks'][0];source=t['source'];e=[]
+            for segment in (0,2,3):
+                start=__import__('datetime').datetime.fromisoformat(source['clock'])+__import__('datetime').timedelta(seconds=segment*900)
+                e.append(dict(key=t['key']+'_'+str(segment),camera=source['site'],source=source,reference=dict(start=start.isoformat(sep=' '),count=1),video='clip'+str(segment)+'.mp4'))
+            (pack/'manifest.json').write_text(json.dumps(dict(entries=e)))
+            obs=d/'points.json';obs.write_text(json.dumps(dict(observations=[dict(key=e[0]['key']),dict(key=e[1]['key'])])))
+            cal=d/t['key']/'calibration';cal.mkdir(parents=True)
+            (cal/'calibration.json').write_text(json.dumps(dict(H=[[1,0,0],[0,1,0],[0,0,1]],hull=[[[0,0]],[[20,0]],[[0,20]]],geometry_check_passed=True)))
+            plan=matched_manual_plan(d,pack,obs,'match')
+            self.assertEqual(len(plan['tasks']),1)
+            self.assertEqual([w['segment'] for w in plan['tasks'][0]['manual_intervals']],[0,2])
+            self.assertTrue(plan['force_all_intervals'])
+            self.assertEqual(plan['day_bicycle_min_seconds'],1.5)
+            self.assertEqual(plan['tasks'][0]['manual_intervals'][1]['clock'],e[1]['reference']['start'])
+
+    def test_cut_colonial_clip_has_chunk_one_and_correct_clock(self):
+        t=next(t for t in make_plan(ROOT,'test')['tasks'] if t['reference_site']=='Colonial')
+        row=dict(t['source'],video='/tmp/manual_colonial_123000.mp4',clock='2019-07-10 12:30:00',fps=30,duration_seconds=900,chunk_index_override=1,probe_status='readable_metadata_not_full_decode')
+        pipeline=window_pipeline(ROOT,'matched_colonial',row,0,900,30,27000,1.5)
+        self.assertEqual(pipeline['env']['CHUNK'],'1')
+        self.assertEqual(pipeline['env']['SESSION_START'],'2019-07-10_12:30:00')
+        self.assertEqual(pipeline['env']['VIDEO_OVERRIDE'],row['video'])
+        self.assertEqual(pipeline['env']['START_FRAME'],'1')
+        self.assertEqual(pipeline['env']['MAX_FRAMES'],'27000')
+
+    def test_matched_worker_processes_later_clip_after_target_already_reached(self):
+        class Capture:
+            def __init__(self,path):self.clip=Path(path).name.startswith('clip')
+            def get(self,k):return {3:720,4:480,5:30,7:27000 if self.clip else 108000}[k]
+            def read(self):return True,np.zeros((480,720,3),np.uint8)
+            def release(self):pass
+        with tempfile.TemporaryDirectory() as td:
+            d=Path(td);p=make_plan(ROOT,'matched_worker_test');t=p['tasks'][0];p['tasks']=[t];p['force_all_intervals']=True;t['target']=1
+            t['manual_intervals']=[dict(key='clip'+str(i),segment=i,video='/tmp/clip'+str(i)+'.mp4',clock='2019-10-30 '+clock,study_count=1,manual_count=1,manual_mean_mph=10,manual_speed_sample=1) for i,clock in [(0,'12:00:00'),(2,'12:30:00')]]
+            cal=d/'saved.json';cal.write_text(json.dumps(dict(H=[[1,0,0],[0,1,0],[0,0,1]],hull=[[[0,0]],[[20,0]],[[0,20]]],geometry_check_passed=True)));t['reuse_calibration']=str(cal)
+            (d/'manifest.json').write_text(json.dumps(p))
+            def child(args,**kwargs):
+                w=Path(args[args.index('--window')+1]);raw=w/'raw_run_log.json';raw.write_text('{}');(w/'result.json').write_text(json.dumps(dict(run_log=str(raw))))
+            def candidates(log,H,hull,start,end,task,segment,extrapolate):
+                return [dict(track_id=str(segment),eligible=1,counted='1',track_start=task['source']['clock'],speed_mph=10,site=task['reference_site'],segment=segment,measurement_start=task['source']['clock'],measurement_end=task['source']['clock'])]
+            with patch('adaptive_speed_batch.cv2.VideoCapture',Capture),patch('adaptive_speed_batch.subprocess.run',child),patch('adaptive_speed_batch.gather_window',candidates),patch('adaptive_speed_batch.window_pipeline',return_value=dict(env=dict(RUN='unit_matched_never_existing'))),patch('adaptive_speed_batch.iccv_calibration',side_effect=AssertionError('Must reuse calibration')):
+                worker(d,0)
+            status=json.loads((d/t['key']/'status.json').read_text())
+            self.assertEqual([w['segment'] for w in status['windows']],[0,2])
+            self.assertEqual(len(status['samples']),2)
+            self.assertEqual(status['state'],'MANUAL_INTERVALS_COMPLETED_PROVISIONAL')
+            self.assertTrue((d/t['key']/'matched_intervals.csv').exists())
 
     def test_recovery_refuses_invalid_saved_scale(self):
         with self.assertRaises(ValueError):

@@ -1,3 +1,5 @@
+> October 26 correction: only Colonial North has a fully measured total. File-count estimates are not verified hours. Run `sbatch code/audit_video_durations.slurm` on HiPerGator to measure all 1,919 inventoried originals across 41 cameras. Outputs are incremental and resumable in `exp_results/VIDEO_DURATION_AUDIT/`.
+
 # Video lengths: previews, source files and full camera recordings
 
 Updated October24,2026. No new object detection or cluster processing was run to produce this table.
@@ -14,31 +16,44 @@ The file counts are confirmed from the archive inventory. **Estimated hours assu
 
 | Candidate camera | Source files | Full recording duration |
 |---|---:|---|
-| Pleasant Hill Path | 31 | Approximately 31 hours; not fully measured |
-| West Orange Path | 37 | Approximately 37 hours; not fully measured |
-| Aloma Path | 48 | Approximately 48 hours; not fully measured |
-| Baxter | 48 | Approximately 48 hours; not fully measured |
-| Carroll NBL | 48 | Approximately 48 hours; not fully measured |
+| Pleasant Hill Path | 31 | Unverified; full duration audit pending |
+| West Orange Path | 37 | Unverified; full duration audit pending |
+| Aloma Path | 48 | Unverified; full duration audit pending |
+| Baxter | 48 | Unverified; full duration audit pending |
+| Carroll NBL | 48 | Unverified; full duration audit pending |
 | Colonial North | 48 | **47.99 hours measured** |
-| Colonial South | 48 | Approximately 48 hours; not fully measured |
-| Daniels Path | 48 | Approximately 48 hours; not fully measured |
-| Edgewater N | 48 | Approximately 48 hours; not fully measured |
-| Lee Road N | 48 | Approximately 48 hours; not fully measured |
-| Lee Road South | 48 | Approximately 48 hours; not fully measured |
-| Rinehart Path | 48 | Approximately 48 hours; not fully measured |
-| University SW Speed | 48 | Approximately 48 hours; not fully measured |
-| Winter Park Rd Speed | 48 | Approximately 48 hours; not fully measured |
+| Colonial South | 48 | Unverified; full duration audit pending |
+| Daniels Path | 48 | Unverified; full duration audit pending |
+| Edgewater N | 48 | Unverified; full duration audit pending |
+| Lee Road N | 48 | Unverified; full duration audit pending |
+| Lee Road South | 48 | Unverified; full duration audit pending |
+| Rinehart Path | 48 | Unverified; full duration audit pending |
+| University SW Speed | 48 | Unverified; full duration audit pending |
+| Winter Park Rd Speed | 48 | Unverified; full duration audit pending |
 | Columbia Ave | 49 | Unknown; multipart sources need duration audit |
 
-**Shortest listed speed-reference candidate: Pleasant Hill Path,31source files (~31hours if hourly). Next: West Orange Path,37files (~37hours).** All other screened cameras have48files except Columbia with49. Silver Star has no mapped source. These are candidate street/camera matches, not verified correspondence to individual speed observations.
+**Pleasant Hill Path has the fewest files (31), followed by West Orange Path (37); their actual playback hours and duration ranking are unverified.** All other screened cameras have48files except Columbia with49. Silver Star has no mapped source. These are candidate street/camera matches, not verified correspondence to individual speed observations.
 
-Pine Hills BL E is the shortest recording in the entire inventory with25files (~25hours), but the speed workbook has no Pine-named reference rows. Therefore it does not currently meet the request for a location with bicycle-speed reference measurements.
+Pine Hills BL E has the fewest files in the entire inventory (25); its duration is unverified, but the speed workbook has no Pine-named reference rows. Therefore it does not currently meet the request for a location with bicycle-speed reference measurements.
 
-## Practical recommendation
+## Verify full playback hours
 
-You do not need to watch or process31–48hours. Respecting the preference for the shortest source collection, start with Pleasant Hill Path and inspect a fixed short daytime segment; extend only as needed to find1–5cyclists. Total session length does not predict how quickly cyclists appear. A fifteen-minute excerpt costs about the same processing time whether it comes from a31-hour or48-hour recording. The existing45-second previews are a quality screen, not a representative speed sample. No new submission is required just to choose the site.
+After pushing these changes and pulling on HiPerGator, run from `vision3/best/test_colonial`:
 
-If exact full-session duration is required before choosing, original MP4 metadata must be audited on HiPerGator for all files, including those still inside the ZIP. That would be a metadata task, not object detection; current partial local metadata cannot establish those totals.
+```bash
+mkdir -p logs
+sbatch code/audit_video_durations.slurm
+```
+
+This CPU-only job measures all 1,919 inventoried original files, including Columbia's multipart files. It reads existing extracted originals when present; otherwise it temporarily extracts one archive member, reads its duration and deletes that temporary copy. It does not run detection or decode full videos. Reading compressed archive members may still take time. It saves `per_source.csv`, `by_camera.csv` and `RESULTS.md` after every file in `exp_results/VIDEO_DURATION_AUDIT/`. Repeating the submission resumes measured files and retries errors. A camera's full total stays blank until every inventoried source is measured. Summed playback hours do not establish gap-free recording coverage.
+
+Check progress with:
+
+```bash
+cat exp_results/VIDEO_DURATION_AUDIT/RESULTS.md
+```
+
+The full archive is on HiPerGator and is unavailable locally; this job has been prepared and tested, not submitted here.
 
 ## Latest Colonial speed run47545558
 

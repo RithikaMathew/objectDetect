@@ -6,22 +6,24 @@
 
 | Location | Available video hours | Manual selection: bins / minutes | HiPerGator completed minutes | Validation count | HiPerGator count / validation in covered bins | Manual count | Validation mph (speed sample) | HiPerGator mph (sample) | Manual mph (sample) |
 |---|---|---|---:|---:|---|---:|---|---|---|
-| Aloma | ~48 | 3 / 45 | 60.0 | 4 | 0 / 2 (2/3 bins) | 4 | 13.58 (26) | All candidate tracks filtered | 19.81 (4) |
-| Carroll | ~48 | 1 / 15 | 60.0 | 2 | 0 / 2 (1/1 bins) | 2 | 11.89 (15) | All candidate tracks filtered | 12.37 (2) |
+| Aloma | Unverified | 3 / 45 | 60.0 | 4 | 0 / 2 (2/3 bins) | 4 | 13.58 (26) | All candidate tracks filtered | 19.81 (4) |
+| Carroll | Unverified | 1 / 15 | 60.0 | 2 | 0 / 2 (1/1 bins) | 2 | 11.89 (15) | All candidate tracks filtered | 12.37 (2) |
 | Colonial | 47.99 | 2 / 30 | 60.0 | 3 | 3 / 3 (2/2 bins) | 3 | 9.54 (23) | 7.63 (3) | 10.71 (3) |
-| Columbia | Unknown | 4 / 60 | 30.0 | 6 | 6 / 3 (2/4 bins) | 4 | 12.24 (9) | 3.04 (3) | 12.47 (4) |
-| Edgewater | ~48 | 4 / 60 | 60.0 | 10 | 2 / 5 (3/4 bins) | 6 | 12.02 (50) | 17.57 (2) | 14.00 (5) |
-| Lee | ~48 | 4 / 60 | 60.0 | 10 | 2 / 10 (4/4 bins) | 4 | 8.73 (2) | 9.88 (2) | 12.36 (4) |
-| Pleasant Hill | ~31 | 1 / 15 | 60.0 | 2 | 2 / 2 (1/1 bins) | 2 | 9.86 (41) | 8.99 (2) | 8.99 (2) |
-| Rinehart/CST | ~48 | 3 / 45 | 60.0 | 3 | 0 / 3 (3/3 bins) | 1 | 12.92 (25) | All candidate tracks filtered | 12.01 (1) |
-| University | ~48 | 2 / 30 | 60.0 | 5 | 1 / 1 (1/2 bins) | 4 | 9.49 (78) | 11.17 (3) | 16.98 (4) |
-| West Orange/Park | ~37 | 3 / 45 | 60.0 | 5 | 1 / 5 (3/3 bins) | 0 | 10.77 (25) | 11.59 (1) | Cyclists not located in review |
+| Columbia | Unverified | 4 / 60 | 30.0 | 6 | 6 / 3 (2/4 bins) | 4 | 12.24 (9) | 3.04 (3) | 12.47 (4) |
+| Edgewater | Unverified | 4 / 60 | 60.0 | 10 | 2 / 5 (3/4 bins) | 6 | 12.02 (50) | 17.57 (2) | 14.00 (5) |
+| Lee | Unverified | 4 / 60 | 60.0 | 10 | 2 / 10 (4/4 bins) | 4 | 8.73 (2) | 9.88 (2) | 12.36 (4) |
+| Pleasant Hill | Unverified | 1 / 15 | 60.0 | 2 | 2 / 2 (1/1 bins) | 2 | 9.86 (41) | 8.99 (2) | 8.99 (2) |
+| Rinehart/CST | Unverified | 3 / 45 | 60.0 | 3 | 0 / 3 (3/3 bins) | 1 | 12.92 (25) | All candidate tracks filtered | 12.01 (1) |
+| University | Unverified | 2 / 30 | 60.0 | 5 | 1 / 1 (1/2 bins) | 4 | 9.49 (78) | 11.17 (3) | 16.98 (4) |
+| West Orange/Park | Unverified | 3 / 45 | 60.0 | 5 | 1 / 5 (3/3 bins) | 0 | 10.77 (25) | 11.59 (1) | Cyclists not located in review |
+
+**Next comparison:** [same-video HiPerGator rerun](../docs/MATCHED_MANUAL_SPEED_RUN.md) is prepared for the18submitted annotation clips (nine cameras), using the new1.5-second daytime setting and no sample-quota early stopping. It reads the exact manual MP4s. Results are pending; this table still shows the earlier baseline coverage.
 
 **Time coverage differs:** Manual selection is the positive-count intervals offered for review, not continuous annotation or measured riding time. HiPerGator completed minutes includes its finished consecutive windows, including zero-count bins, until its quota or one-hour limit. Aloma manual selection is 45 minutes; its recovery completed about 60 minutes after the original node failure. Most other sites completed about 60 minutes; Columbia stopped after 30 minutes. Speed estimates themselves use only the saved per-cyclist seconds, and may involve different people. This is not a matched-duration or matched-person speed comparison.
 
 Numbers after mph are the number of cyclists contributing to that average. Count coverage such as **2/4 bins** means only two of the four selected intervals are included in that automatic count comparison. A missing speed is not zero.
 
-**Why Aloma has 4 cyclists but 26 speed records:** Aloma Path has approximately 48 hours of available footage. This pilot selected the first available day’s hour nearest noon; within that hour, only intervals with positive study bicycle counts were sent for manual review. For Aloma these were 12:00–12:15, 12:30–12:45 and 12:45–13:00 on October 30, 2019: 45 minutes containing 4 study bicycles, all 4 annotated. The remaining interval recorded zero bicycles.
+**Why Aloma has 4 cyclists but 26 speed records:** Aloma Path has 48 source files; their total playback hours are not yet verified. This pilot selected the first available day’s hour nearest noon; within that hour, only intervals with positive study bicycle counts were sent for manual review. For Aloma these were 12:00–12:15, 12:30–12:45 and 12:45–13:00 on October 30, 2019: 45 minutes containing 4 study bicycles, all 4 annotated. The remaining interval recorded zero bicycles.
 
 | Dataset | Bicycle count |
 |---|---:|
@@ -32,7 +34,7 @@ Numbers after mph are the number of cyclists contributing to that average. Count
 
 The full count period is **October 30–31, 2019**. The full counts come from the Bicycles worksheets in Aloma_Path_716686_10-30-2019.xls and Aloma_Sidewalk_716692_10-30-2019.xls (192 fifteen-minute bins each, with no missing count cells). The 26 speed observations come from the separate consolidated speed workbook; no individual timestamps link them to the counted encounters.
 
-The **26** belongs to the broader Aloma location speed-reference dataset, not this 45-minute sample. It is not a count of every cyclist in the approximately 48-hour recording. Mighk revisited some corridors for speed analysis, and the speed records have no linked video timestamps. **We cannot confirm that all 26 came from that same 48-hour recording.** Their average is a location-level reference, not the known speeds of these same four cyclists.
+The **26** belongs to the broader Aloma location speed-reference dataset, not this 45-minute sample. It is not a count of every cyclist in the available recording collection. Mighk revisited some corridors for speed analysis, and the speed records have no linked video timestamps. **We cannot confirm that all 26 came from that same 48-hour recording.** Their average is a location-level reference, not the known speeds of these same four cyclists.
 
 **Study speed method:** Mighk Wilson stopwatch-timed cyclists from half-speed video and accounted for playback speed in the workbook. We use the supplied mph values without doubling them again.
 
@@ -72,25 +74,25 @@ For existing video, a correctly measured two-line section is the simplest additi
 
 ### Recording hours for every speed-reference location
 
-**Source files** counts separate MP4 video files. **Total available hours** is the sum of their playback lengths, not the number of files or time analysed. For example, 48 one-hour files total about 48 hours, but 48 shorter files would total less. **Only Colonial North is fully measured; ~ means an estimate assuming hourly files.** Other camera sides are not added together.
+**Source files** counts separate MP4 video files. **Total available hours** is the sum of their playback lengths, not the number of files or time analysed. For example, 48 one-hour files total about 48 hours, but 48 shorter files would total less. **Only Colonial North is fully measured. Other totals remain unverified until every source duration has been read.** Other camera sides are not added together.
 
 **Why Columbia is unknown:** the inventory contains 49 MP4s, including multipart recordings with names such as `0000.02.001.mp4`. Their full durations have not been measured, so 49 files cannot safely be called 49 hours. The selected noon source can still be reviewed; the unknown value concerns the complete collection’s length.
 
 | Location | Camera | Source files | Total available hours | Basis |
 |---|---|---:|---|---|
-| Aloma | Aloma Path | 48 | ~48 | Estimated from hourly file count |
-| Baxter | Baxter | 48 | ~48 | Estimated from hourly file count |
-| Carroll | Carroll NBL | 48 | ~48 | Estimated from hourly file count |
-| Colonial | Colonial North | 48 | 47.99 | Measured |
-| Columbia | Columbia Ave | 49 | Unknown | Multipart files; total unverified |
-| Daniels | Daniels Path | 48 | ~48 | Estimated from hourly file count |
-| Edgewater | Edgewater N | 48 | ~48 | Estimated from hourly file count |
-| Lee | Lee Road N | 48 | ~48 | Estimated from hourly file count |
-| Pleasant Hill | Pleasant Hill Path | 31 | ~31 | Estimated from hourly file count |
-| Rinehart/CST | Rinehart Path | 48 | ~48 | Estimated from hourly file count |
+| Aloma | Aloma Path | 48 | Unverified | Full duration audit pending |
+| Baxter | Baxter | 48 | Unverified | Full duration audit pending |
+| Carroll | Carroll NBL | 48 | Unverified | Full duration audit pending |
+| Colonial | Colonial North | 48 | 47.99 | Measured from all source durations |
+| Columbia | Columbia Ave | 49 | Unverified | Full duration audit pending |
+| Daniels | Daniels Path | 48 | Unverified | Full duration audit pending |
+| Edgewater | Edgewater N | 48 | Unverified | Full duration audit pending |
+| Lee | Lee Road N | 48 | Unverified | Full duration audit pending |
+| Pleasant Hill | Pleasant Hill Path | 31 | Unverified | Full duration audit pending |
+| Rinehart/CST | Rinehart Path | 48 | Unverified | Full duration audit pending |
 | Silver Star | No mapped source |  | Unknown | No mapped recording |
-| University | University SW Speed | 48 | ~48 | Estimated from hourly file count |
-| West Orange/Park | West Orange Path | 37 | ~37 | Estimated from hourly file count |
-| Winter Park | Winter Park Rd Speed | 48 | ~48 | Estimated from hourly file count |
+| University | University SW Speed | 48 | Unverified | Full duration audit pending |
+| West Orange/Park | West Orange Path | 37 | Unverified | Full duration audit pending |
+| Winter Park | Winter Park Rd Speed | 48 | Unverified | Full duration audit pending |
 
 Detailed encounter times and exclusions: [analysis/DETAILS.md](analysis/DETAILS.md). Tables: [site summaries](analysis/site_summary.csv), [15-minute counts](analysis/interval_counts.csv), [per-cyclist speeds](analysis/encounters.csv). Original annotation JSONs are unchanged.
