@@ -2,6 +2,14 @@
 
 *Prepared Oct 26, 2026 for Rithika. Scope note: this is a focused literature pass (a handful of targeted searches this session), not a systematic review. Items marked **\[verified\]** were confirmed against a source page in this session; items marked **\[from memory\]** are well-known works I did not re-open here, so check the DOI/arXiv link before citing. I did not extract accuracy numbers I could not see.*
 
+## Implementation status — October 27, 2026
+
+The latest combined CPU entry point is `sbatch code/speed_plan.slurm` from `vision3/best/test_colonial`; see [run guide](docs/SPEED_PLAN_RUN.md). It includes robust time-aware fitting, the old/endpoint comparison on the same annotations, review-clip packet timestamp audit, per-cyclist plots, assumption-based sensitivity scenarios, sampling-only study-group comparisons, and unverified wheel-edge candidate crops. The current detector already uses ByteTrack and ID stitching.
+
+Marking and full 3-D wheel geometry checks are implemented as optional evidence-driven functions; actual scale evidence is still missing, so no metric wheel or marking result is claimed. A compact ground homography cannot recover vertical wheel scale. No new tracker/keypoint training or automatic camera location search is included. University map/video endpoint correspondence remains unconfirmed. The roadmap below is research context, not a claim that all papers have been reproduced.
+
+Original-file duration audit is complete for all 1,919 files/41 cameras. Columbia's 49 parts sum to 47.98 playback hours; Aloma Path's 48 sources sum to 47.99. See [verified hours](docs/VIDEO_DURATION_README.md). These lengths do not identify the timestamp-less speed-study cyclists.
+
 ## 1. Executive summary
 
 **Is metric speed identifiable from monocular pixel trajectories alone? No.** A single camera cannot distinguish a small, slow scene from a large, fast one: scaling every 3D point by *s* produces the identical image, so pixel tracks fix speed only up to an unknown scale factor. To get mph you must inject at least one metric fact, and it must be *measured or assumed*, never inferred from pixels.
@@ -17,7 +25,7 @@ Three consequences for your project:
 2. **Your 2.56 vs 3.39 mph MAE cannot rank manual vs automated.** With validation means around 9-14 mph, 2.5 mph is roughly 20%, comparable to plausible scale error, and the comparison is location-mean vs a few different cyclists (n = 1-6 per site for your side).
 3. **Metric-depth foundation models are not yet a defensible scale source** for fixed traffic cameras. I found no peer-reviewed cyclist-speed validation for them, and their errors behave like exactly the per-camera scale bias above.
 
-**Recommendation in one line:** a hybrid pipeline, with a per-camera ground-plane homography anchored by map-measured distances between persistent ground features (no site visits), cross-checked by your existing car-based scale and by bicycle-wheel/standard-marking priors, then a robust slope-based speed estimator with propagated uncertainty. An end-to-end network that outputs mph cannot be independently validated with your data.
+**Revised constraints:** you have only the CCTV videos. There are no start or end points, no measured distances, no coordinates, and the location names are vague (for example "Colonial Road" without a position along it). That removes map-anchored calibration as a starting point. **Recommendation in one line:** a hybrid pipeline that takes scale from priors visible in the video itself (your car-based calibration, bicycle wheel size, standard markings), reports how closely they agree (agreement is not full uncertainty, since they can share a bias), and uses a robust slope-based speed estimator. With no independent distance for any camera, this can show a method is less noisy and internally consistent; it cannot prove absolute mph accuracy.
 
 ## 2. Three separate problems
 
@@ -50,7 +58,7 @@ v = d s / d t   (fit s(t) along the path, not sum of segment lengths)
 mph = v[m/s] x 2.23694
 ```
 
-**Important for your current formula.** `total distance = sum of segment lengths` is biased **upward** with click or box jitter: noise adds spurious path length (a zig-zag is always longer than the line). Fit a low-order curve (or robust linear fit) to along-track position vs time and use its slope. Use the chord (net displacement / time) as a sanity bound.
+**Important for your current formula.** `total distance = sum of segment lengths` is biased **upward** with click or box jitter: noise adds spurious path length (a zig-zag is always longer than the line). Fit a low-order curve (or robust linear fit) to along-track position vs time and use its slope. Use the chord (net displacement / time) as a sanity bound. Your automatic estimator already fits short windows and takes their median, so this change mainly affects the manual calculation.
 
 **Sensitivity to contact-point error.** For a camera at height h with focal length f (pixels), a vertical pixel error dv at ground distance Y gives ground error roughly dY = Y^2 dv / (f h). Errors grow quadratically with distance from the camera, which is why oblique views and far-field tracks are the worst. Bounding-box bottom-centre is not the tyre contact point (it can sit on the shadow, foot, or pedal, and shifts with posture); rear-wheel contact points are better, and wheel keypoints are the principled fix.
 
@@ -86,17 +94,19 @@ mph = v[m/s] x 2.23694
 
 ## 5. Approaches ranked for your situation
 
-### #1. Map-anchored ground homography + robust slope estimator (implement first)
+### #1. Scale from priors inside the video + robust slope estimator (implement first)
 
-- **Scale source:** distances between persistent ground features visible in each camera (stop bars, crosswalk edges, lane-stripe starts, curb corners, driveway edges, poles) measured on **satellite/orthophoto imagery** or GIS parcel and road-centerline layers. No site visit. Orthoimagery distances over tens of metres are typically well within a few percent, but check each imagery source's stated accuracy.
-- **Cross-check:** standard marking geometry (dashed lane line length and gap, bike-lane stencil, crosswalk bar widths, sidewalk joint spacing). Confirm the local standard (FDOT/MUTCD) per site rather than assuming it.
-- **Annotation:** one-time per camera (4-8 landmark clicks plus the map measurements), not per cyclist. Reuse across all cyclists.
-- **Why first:** it replaces an inferred scale with a measured one, it is independently auditable (hold out some landmark pairs), and it works with your existing RT-DETR tracks and clicks.
-- **Limits:** needs enough landmarks spread across the cyclist's path; lens distortion; non-planar sidewalks and raised curbs; map date vs video date.
+- **Scale sources, all from the video:** (a) your existing car-based calibration (naver/cctv) as the baseline; (b) bicycle wheel size (experimental): on close, side-on cyclists, fit an ellipse to the wheel and compare its pixel size with a prior of roughly 0.65-0.70 m (an assumption; tyre and bike type vary). A wheel is a vertical object, so the ground homography cannot convert it to metres; this needs a camera model with the vertical scale and viewing angle, and it will often return "insufficient evidence"; (c) standard markings where visible (dashed lane-line length and gap, crosswalk bars, bike symbols, lane width). Confirm the standard for each site rather than assuming it, since you do not know exactly where the camera is.
+- **What it gives you:** a check on whether the car-based scale is internally consistent. How closely the sources agree is a consistency check, not an uncertainty bound, because they can share the same bias. None of them is a measurement.
+- **Annotation:** none new for cars and wheels (automated); a few clicks per camera for markings.
+- **Why first:** it works now with only your MP4s and clicks, it produces intervals instead of single numbers, and it flags cameras whose sources disagree.
+- **Limits:** all sources are priors and can share the same bias. Agreement is a consistency result, not validation. Wheel fits fail on distant, blurred or end-on cyclists.
 
-### #2. Multi-source scale fusion (use as the cross-check and the uncertainty estimate)
+### #2. Locate each camera, then anchor with imagery (optional upgrade)
 
-Combine independent scale estimates per camera: (a) your car-based naver/cctv scale, (b) map anchors from #1, (c) bicycle wheel diameter (a common adult bicycle wheel is on the order of 0.65-0.70 m outer diameter; confirm the range you use and treat it as a prior with spread, since tyres, fat-bike and e-scooter/small-wheel cases differ), (d) marking dimensions. Fuse as a weighted average in log-scale; large disagreement flags a bad calibration. This is the only route to fully map-free scale, and it still rests on priors, so report it as an estimate with an interval.
+You have no coordinates, but frames often show clues: street signs, business names, bus stops, signal-pole layout, distinctive buildings. Use them to find the exact spot in a web map and Street View. For a camera you can pin down with certainty, read the positions of features visible in both the frame and the imagery in a local metric frame, fit H from those image-to-ground correspondences (distances alone do not define the mapping), and hold out some landmark pairs. Cameras you cannot pin down stay on #1 with their wider interval. Imagery dates may differ from the video date, so avoid features that may have been repainted or moved.
+
+**University exception (from your note):** you have a map location and an approximately 55.17 ft measurement for University. Its correspondence to two points in the video still needs confirming. If confirmed, it is the one place a distance-based check is possible, so keep that evidence.
 
 ### #3. Better detection/tracking with wheel keypoints, plus robust estimation
 
@@ -112,7 +122,7 @@ Frames with PTS timestamps, fps and variable-frame-rate check, image size, RT-DE
 
 ### 6.2 Recover metric scale
 
-Per camera: (1) select 4-8 landmarks, estimate H with cv2.findHomography (RANSAC), (2) measure landmark distances on orthoimagery, (3) fit scale, hold out at least two landmark pairs, (4) report held-out distance error as the camera's scale uncertainty, (5) compare with the car-based and wheel-based scale.
+Per camera: (1) run the existing car-based calibration and record its scale, (2) estimate scale from wheel size on usable tracks and from any standard markings in view, (3) record how closely the sources agree (an agreement measure, not a full uncertainty), (4) where the camera can be located (see #2), also fit H from image-to-ground correspondences and hold out at least two landmark pairs, (5) flag any camera whose sources disagree by more than a threshold you set before looking at results.
 
 ### 6.3 Distance and speed
 
@@ -120,11 +130,11 @@ Map each contact point through H to metres; fit along-track position vs time wit
 
 ### 6.4 Perspective, occlusion, tracking failure
 
-Down-weight points far from the horizon; drop points inside the lens-distortion margin; interpolate only across short gaps (state the maximum gap); split tracks at ID switches and require a minimum ground distance and duration; flag any track that was gap-filled.
+Down-weight points near the horizon (far ground, where one pixel spans many metres); drop points inside the lens-distortion margin; interpolate only across short gaps (state the maximum gap); split tracks at ID switches and require a minimum ground distance and duration; flag any track that was gap-filled.
 
 ### 6.5 Uncertainty and invalid-speed detection
 
-Monte Carlo: jitter contact points by the empirical click/keypoint error (several pixels, estimate it from repeated clicks), resample landmark distance errors, recompute speed 500-1000 times, report the median and 90% interval. Reject or flag if: interval wider than a chosen fraction of the speed, segment speeds vary implausibly (change greater than a physical acceleration bound), speed outside a plausible cyclist range, ground distance small relative to jitter, or H is ill-conditioned (near-horizon points).
+Monte Carlo: jitter contact points by the empirical click/keypoint error (several pixels, estimate it from repeated clicks), vary the assumed scale over a plausible range, recompute speed 500-1000 times, and report the median and 5th-95th percentile as a sensitivity range. It shows how assumed errors move mph; it is not a verified accuracy interval. Reject or flag if: interval wider than a chosen fraction of the speed, segment speeds vary implausibly (change greater than a physical acceleration bound), speed outside a plausible cyclist range, ground distance small relative to jitter, or H is ill-conditioned (near-horizon points).
 
 ### 6.6 Comparison with existing results
 
@@ -133,7 +143,7 @@ Run old manual, old automated, and new method on the **same trajectories**. Repo
 ### 6.7 Validation without pretending averages are ground truth
 
 - **Do not** compute per-cyclist error against a location mean. Compare **distributions**: difference of means with a bootstrap or Welch interval that includes **both** samples' variability. With your n of 1-6 per site, intervals will be wide; say so.
-- **Independent per-cyclist reference from the same video:** frame-accurate gate timing between two painted lines whose separation you measure on orthoimagery. This is independent of the learned calibration (not of the map), costs a few clicks per cyclist, and mirrors the BrnoCompSpeed gate idea and the FHWA tripline approach in your README.
+- **Independent per-cyclist reference from the same video:** gate timing needs a measured distance, which you do not have, so it is not available now. It becomes possible per camera only if the camera is located (see #2) and the line separation can be read from imagery. Even then it is independent of the learned calibration but not of the imagery.
 - **Strongest independent reference:** new recordings with a GPS/bike-computer rider or radar/laser at a camera. Even 10-20 passes at one or two cameras gives a true scale-bias estimate.
 
 ### 6.8 Metrics
@@ -142,7 +152,7 @@ For paired cyclist-level references: bias (mean signed error, mph), MAE, RMSE, m
 
 ### 6.9 How many cyclists?
 
-Half-width of a 95% interval on bias is about 1.96 x SD(error) / sqrt(n). If the SD of paired errors is about 2 mph (an assumption; estimate it from a pilot), n = 30 gives about +/-0.7 mph overall and n = 100 gives about +/-0.4. Because scale bias is per camera, you need roughly **10+ independently referenced cyclists per camera** to estimate that camera's bias, and at least a few cameras to say anything general. Your current 30 annotated cyclists over 10 sites (about 3 per site) can illustrate the method, not validate it.
+Half-width of a 95% interval on bias is about 1.96 x SD(error) / sqrt(n). If the SD of paired errors is about 2 mph (an assumption; estimate it from a pilot), n = 30 gives about +/-0.7 mph overall and n = 100 gives about +/-0.4. Because scale bias is per camera, you need roughly **10+ independently referenced cyclists per camera** to estimate that camera's bias, and at least a few cameras to say anything general. Your current 30 annotated cyclists over 10 sites (about 3 per site) can illustrate the method, not validate it. These sample sizes only matter once some independent reference exists.
 
 ### 6.10 Preventing leakage
 
@@ -154,46 +164,58 @@ Half-width of a 95% interval on bias is about 1.96 x SD(error) / sqrt(n). If the
 
 1. **Ingest:** read PTS with PyAV or ffprobe; undistort if lens parameters exist.
 2. **Detect/track:** RT-DETR boxes to BoT-SORT or ByteTrack; keep your X-CLIP cyclist/pedestrian filter; optionally a small keypoint head for rear-wheel contact.
-3. **Calibrate per camera:** landmark clicks + orthoimagery distances to H and scale; save as JSON per camera with held-out error.
+3. **Calibrate per camera:** car-based calibration plus wheel and marking checks; save the scale and its spread as JSON per camera (add a landmark homography with held-out error only where the camera can be located).
 4. **Speed:** project, smooth, estimate slope, Monte Carlo interval.
 5. **QA report:** per cyclist, a plot of ground path, along-track position vs time with the fit, and the interval.
 
 Core snippets:
 
-```
+```python
 import numpy as np, cv2
+from scipy.stats import theilslopes
 
-def fit_homography(px, world_m):
-    H, _ = cv2.findHomography(px.astype(np.float32), world_m.astype(np.float32), cv2.RANSAC, 0.01)
+def fit_homography(px, ground_m):
+    # px: clicked image points; ground_m: their coordinates in a local metric frame
+    H, _ = cv2.findHomography(px.astype(np.float32), ground_m.astype(np.float32), cv2.RANSAC, 0.05)
     return H
 
 def to_ground(H, px):
-    p = cv2.perspectiveTransform(px.reshape(-1,1,2).astype(np.float32), H)
-    return p.reshape(-1,2)
+    p = cv2.perspectiveTransform(px.reshape(-1, 1, 2).astype(np.float32), H)
+    return p.reshape(-1, 2)
 
 def robust_speed_mph(t, xy):
-    # arc-length along path, then robust slope of s(t)
-    d = np.r_[0, np.cumsum(np.linalg.norm(np.diff(xy, axis=0), axis=1))]
-    # smooth xy first (e.g., spline) to avoid jitter inflating d
-    slope = np.polyfit(t, d, 1)[0]            # swap for Huber/RANSAC fit
-    return slope * 2.23694
+    # t: click/frame times in seconds (need not be evenly spaced); xy: ground positions in metres.
+    t = np.asarray(t, float); xy = np.asarray(xy, float)
+    n = len(t)
+    if n < 3:
+        return np.nan, np.nan
+    deg = 1 if n <= 4 else 2
+    tc = t - t.mean()
+    # 1) time-aware smoothing: low-order polynomial in t for each coordinate
+    xs = np.column_stack([np.polyval(np.polyfit(tc, xy[:, k], deg), tc) for k in range(2)])
+    # 2) arc length of the smoothed path
+    s = np.r_[0, np.cumsum(np.linalg.norm(np.diff(xs, axis=0), axis=1))]
+    # 3) outlier-resistant slope of s(t); Theil-Sen uses the actual times
+    v = theilslopes(s, t)[0]
+    chord = np.linalg.norm(xs[-1] - xs[0]) / (t[-1] - t[0])
+    return v * 2.23694, chord * 2.23694
 
-def mc_interval(t, px, H_sampler, jitter_px, n=500):
+def mc_sensitivity(t, px, H_sampler, jitter_px, n=500):
     out = []
     for _ in range(n):
-        H = H_sampler()                       # draws H with scale error
+        H = H_sampler()                                  # draws H over an assumed scale range
         p = px + np.random.normal(0, jitter_px, px.shape)
-        out.append(robust_speed_mph(t, to_ground(H, p)))
-    return np.percentile(out, [5, 50, 95])
+        out.append(robust_speed_mph(t, to_ground(H, p))[0])
+    return np.nanpercentile(out, [5, 50, 95])
 ```
 
-Note the `robust_speed_mph` stub: smooth the positions (or fit a spline) **before** computing arc length, otherwise jitter still inflates it.
+Compare the arc-length speed with the chord speed: a ratio well above 1 means residual jitter or a genuinely curved path. The polynomial degree is a tuning choice (a polynomial fit over a short track can mis-fit sharp turns); set it on development data only. This is a starting sketch, not validated code.
 
 ## 8. Final recommendation
 
-**Implement #1 first**: per-camera homography anchored by orthoimagery-measured ground distances, with held-out landmark pairs, plus the slope-based speed estimator and Monte Carlo intervals. It addresses the dominant error (scale), needs no site visits, is cheap per camera, and is independently checkable. Then use #2 (your car-based scale, wheel size, markings) as a consistency check and as the fallback for cameras with too few mappable landmarks, and do #3 to reduce fragmentation and jitter.
+**Implement #1 first:** the car-based calibration with wheel and marking checks, the robust slope estimator, and Monte Carlo intervals that include the scale spread. It works with only your MP4s and clicks. Then try #2 on the cameras you can pin down, and do #3 to reduce fragmentation and jitter.
 
-Before claiming any method is more accurate, collect at least one independent per-cyclist reference set (gate timing on the same video as a minimum, GPS/radar passes as the strong version). Until then, report speeds as estimates with intervals and state that scale error is shared across all cyclists at a camera.
+With no measured distance for any camera, you can show that the new estimator is less noisy and more internally consistent, and report mph with an interval. You cannot show it is more accurate in absolute terms. Say so, and treat Wilson's location averages as a rough distributional check only. A real accuracy claim needs at least one independent per-cyclist reference: GPS or radar passes at a camera, or a located camera with an imagery-measured gate.
 
 ## Sources checked this session
 

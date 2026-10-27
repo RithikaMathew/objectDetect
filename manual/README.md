@@ -1,98 +1,106 @@
 # Bicycle counts and speed comparison
 
-**30 manually annotated cyclists; 29 estimated speeds.** The selected study intervals record 50 bicycles. Unannotated bicycles are review gaps, not automatically detector misses.
+**Updated October 27, 2026 — completed HiPerGator run on the same 18 manually annotated clips, across nine cameras.** The daytime bicycle minimum was 1.5 seconds. All selected clips were processed without stopping at a cyclist quota. Pedestrian and nighttime policies were retained.
 
-**Validation count** means the study bicycle count in the selected video intervals. **Validation speed sample** means the separate cyclists measured for speed at that location. They are different samples. HiPerGator is the automatic pipeline; Manual is your clicked positions.
+**Counts in these clips: study 35, HiPerGator 32, manual 30.** There are 29 usable manual speeds from 30 annotated cyclists. Similar count totals do not establish accuracy: missed cyclists and extra tracks can cancel out.
 
-| Location | Available video hours | Manual selection: bins / minutes | HiPerGator completed minutes | Validation count | HiPerGator count / validation in covered bins | Manual count | Validation mph (speed sample) | HiPerGator mph (sample) | Manual mph (sample) |
-|---|---|---|---:|---:|---|---:|---|---|---|
-| Aloma | Unverified | 3 / 45 | 60.0 | 4 | 0 / 2 (2/3 bins) | 4 | 13.58 (26) | All candidate tracks filtered | 19.81 (4) |
-| Carroll | Unverified | 1 / 15 | 60.0 | 2 | 0 / 2 (1/1 bins) | 2 | 11.89 (15) | All candidate tracks filtered | 12.37 (2) |
-| Colonial | 47.99 | 2 / 30 | 60.0 | 3 | 3 / 3 (2/2 bins) | 3 | 9.54 (23) | 7.63 (3) | 10.71 (3) |
-| Columbia | Unverified | 4 / 60 | 30.0 | 6 | 6 / 3 (2/4 bins) | 4 | 12.24 (9) | 3.04 (3) | 12.47 (4) |
-| Edgewater | Unverified | 4 / 60 | 60.0 | 10 | 2 / 5 (3/4 bins) | 6 | 12.02 (50) | 17.57 (2) | 14.00 (5) |
-| Lee | Unverified | 4 / 60 | 60.0 | 10 | 2 / 10 (4/4 bins) | 4 | 8.73 (2) | 9.88 (2) | 12.36 (4) |
-| Pleasant Hill | Unverified | 1 / 15 | 60.0 | 2 | 2 / 2 (1/1 bins) | 2 | 9.86 (41) | 8.99 (2) | 8.99 (2) |
-| Rinehart/CST | Unverified | 3 / 45 | 60.0 | 3 | 0 / 3 (3/3 bins) | 1 | 12.92 (25) | All candidate tracks filtered | 12.01 (1) |
-| University | Unverified | 2 / 30 | 60.0 | 5 | 1 / 1 (1/2 bins) | 4 | 9.49 (78) | 11.17 (3) | 16.98 (4) |
-| West Orange/Park | Unverified | 3 / 45 | 60.0 | 5 | 1 / 5 (3/3 bins) | 0 | 10.77 (25) | 11.59 (1) | Cyclists not located in review |
+**Study/validation count** is the bicycle count in these selected video intervals. **Study/validation mph** comes from a separate location-level speed sample; it is not the known speed of these same cyclists. HiPerGator is automatic detection/tracking; Manual is your rear-tire clicks. Numbers in parentheses after mph are speed sample sizes.
 
-**Next comparison:** [same-video HiPerGator rerun](../docs/MATCHED_MANUAL_SPEED_RUN.md) is prepared for the18submitted annotation clips (nine cameras), using the new1.5-second daytime setting and no sample-quota early stopping. It reads the exact manual MP4s. Results are pending; this table still shows the earlier baseline coverage.
+| Location | Available hours | Same clips: bins / nominal min | Study count | HiPerGator count | Manual count | Study mph (n) | HiPerGator mph (n) | Manual mph (n) | Robust manual mph |
+|---|---:|---|---:|---:|---:|---|---|---|---:|
+| Aloma | 47.99 | 3 / 45 | 4 | 5 | 4 | 13.58 (26) | 21.45 (5) | 19.81 (4) | 19.43 |
+| Carroll | 47.99 | 1 / 15 | 2 | 2 | 2 | 11.89 (15) | 12.22 (2) | 12.37 (2) | 12.59 |
+| Colonial | 47.99 | 2 / 30 | 3 | 3 | 3 | 9.54 (23) | 7.35 (3) | 10.71 (3) | 10.77 |
+| Columbia | 47.98 | 3 / 45 | 4 | 7 | 4 | 12.24 (9) | 7.35 (7) | 12.47 (4) | 12.62 |
+| Edgewater | 47.98 | 4 / 60 | 10 | 6 | 6 | 12.02 (50) | 14.10 (6) | 14.00 (5) | 11.51 |
+| Lee | 47.99 | 2 / 30 | 5 | 3 | 4 | 8.73 (2) | 10.17 (3) | 12.36 (4) | 12.40 |
+| Pleasant Hill | 30.01 | 1 / 15 | 2 | 2 | 2 | 9.86 (41) | 9.12 (2) | 8.99 (2) | 8.80 |
+| Rinehart/CST | 47.99 | 1 / 15 | 1 | 1 | 1 | 12.92 (25) | 12.06 (1) | 12.01 (1) | 12.48 |
+| University | 47.99 | 1 / 15 | 4 | 3 | 4 | 9.49 (78) | 14.00 (3) | 16.98 (4) | 17.11 |
 
-**Time coverage differs:** Manual selection is the positive-count intervals offered for review, not continuous annotation or measured riding time. HiPerGator completed minutes includes its finished consecutive windows, including zero-count bins, until its quota or one-hour limit. Aloma manual selection is 45 minutes; its recovery completed about 60 minutes after the original node failure. Most other sites completed about 60 minutes; Columbia stopped after 30 minutes. Speed estimates themselves use only the saved per-cyclist seconds, and may involve different people. This is not a matched-duration or matched-person speed comparison.
+**Coverage:** both methods use the same selected video files (270 nominal minutes; about 269.90 processed minutes). Some files end slightly before the complete study bin. The study counts shown here cover only these 18 bins, not all 27 intervals originally offered for review. West Orange has no submitted annotations and is excluded from this same-video comparison; Baxter, Daniels and Winter Park belong to the separate broader run.
 
-Numbers after mph are the number of cyclists contributing to that average. Count coverage such as **2/4 bins** means only two of the four selected intervals are included in that automatic count comparison. A missing speed is not zero.
+**Same clips does not mean matched people or identical measurement seconds.** Automatic tracks still need identity/type review; they can include duplicate IDs, static objects or motorcycles. Each cyclist estimate uses only its own recorded measurement seconds, not all 15 minutes. One Edgewater annotation spans 1.4 seconds and has no manual speed. No missing speed is treated as zero.
 
-**Why Aloma has 4 cyclists but 26 speed records:** Aloma Path has 48 source files; their total playback hours are not yet verified. This pilot selected the first available day’s hour nearest noon; within that hour, only intervals with positive study bicycle counts were sent for manual review. For Aloma these were 12:00–12:15, 12:30–12:45 and 12:45–13:00 on October 30, 2019: 45 minutes containing 4 study bicycles, all 4 annotated. The remaining interval recorded zero bicycles.
+## What the results mean
+
+- **Carroll is encouraging:** the two new automatic speed intervals overlap both annotated cyclists previously reported missed; automatic mean 12.22 mph versus manual 12.37 mph. Full-track identity still needs checking.
+- **Columbia has confirmed visual failures:** your review found pedestrians labelled as bicyclists and a missed bicyclist, while at least one actual bicyclist was detected. Its 7 automatic counts versus 4 study/manual are not reliable cyclist counts. Specific track IDs are needed before excluding samples from its raw mean.
+- **Aloma has an extra candidate:** 5 automatic versus 4 study/manual. Inspect the automatic candidate at 12:59:47 before calling it a genuine cyclist or false positive.
+- **Edgewater received favorable visual review:** you reported bicycle counting looked quite accurate. Earlier temporal-overlap clues do not prove duplicates or counting errors; full-track identity and physical speed remain unverified.
+- **Physical scale remains uncertain:** Aloma and University speed means differ substantially from the separate study averages. The robust estimator does not remove that gap. The comparison cannot tell how much comes from calibration versus different cyclists.
+
+[Exact per-clip counts, automatic speed timestamps and review priorities](../reports/cluster_returns/20261027/completed_speed_batches/RESULTS.md) · [Combined table CSV](analysis/same_video_comparison.csv). Recording clocks are filename-inferred, not independently verified.
+
+## Other locations: completed broader HiPerGator run
+
+These locations were processed in the separate broader run but have no submitted manual annotation clips for the same-video comparison. They are not missing jobs. Counts of candidate tracks are not verified cyclist counts. The speed mean can use fewer tracks than were speed-usable because this run stopped selection at its quota.
+
+| Location | Processed minutes | Candidate tracks found | Speed-usable / used for mean | Study mph (n) | HiPerGator mph (n) | Manual comparison |
+|---|---:|---:|---|---|---|---|
+| Baxter | 59.99 | 5 | 0 / 0 | 16.77 (14) | No usable speed | No submitted annotations |
+| Daniels | 59.98 | 5 | 0 / 0 | 11.95 (11) | No usable speed | No submitted annotations |
+| West Orange/Park | 59.99 | 11 | 6 / 5 | 10.77 (25) | 26.12 (5) | No submitted annotations |
+| Winter Park | 59.99 | 2 | 0 / 0 | 16.08 (13) | No usable speed | No submitted annotations |
+
+**West Orange/Park** is the workbook label mapped to **West Orange Path**, not a confirmed separate Orange Park location. Its 26.12 mph mean uses five selected candidates; one is 43.489 mph and needs identity/type/geometry review. Baxter, Daniels and Winter Park completed processing but produced no speed-usable candidates; the precise rejection causes need their saved candidate diagnostics. Silver Star has no mapped source and was not processed.
+
+[Your Columbia/Edgewater video review](../reports/cluster_returns/20261027/completed_speed_batches/owner_video_review.md). Qualitative counting approval does not validate mph. No raw candidate speeds were deleted from the results.
+
+## How speed was calculated
+
+You paused the video and repeatedly clicked where the same cyclist’s rear tire touched the pavement. Each point has an image position and video time. IDs are scoped to each clip; clearly separated encounters sharing an ID were split. The camera calibration, estimated from car observations, converts those clicks to estimated ground positions in metres.
+
+**Manual mph:** add the distances between successive ground positions, divide by the time from the first to last click, and multiply by 2.23694. At least three points spanning 1.5 seconds are required. Example: 10 metres in 2 seconds = 11.18 mph. Click jitter can inflate the summed distance.
+
+**HiPerGator mph:** use automatically tracked positions and take the median of speeds fitted over short continuous time windows. **Robust manual mph:** fit a smooth trajectory using the actual click times, reduce the influence of outliers, then fit distance against time. All site means give equal weight to available per-cyclist speed estimates; they are not averages of 15-minute-bin means. The different estimators and contact points can produce different speeds even with the same calibration.
+
+All three depend on learned metric scale; manual annotation does not independently verify mph. Perspective, lens distortion and road-to-sidewalk height differences can affect the results. The method builds on [Revaud and Humenberger, ICCV 2021](https://openaccess.thecvf.com/content/ICCV2021/html/Revaud_Robust_Automatic_Monocular_Vehicle_Speed_Estimation_for_Traffic_Surveillance_ICCV_2021_paper.html) and their [calibration code](https://github.com/naver/cctv). Manual clicks and robust fitting are project-specific adaptations, not a complete reproduction or established cyclist-speed validation.
+
+**Timing and sensitivity:** all 18 re-encoded review clips had regular presentation timestamps near 29.97 fps. The original hourly recordings were not audited for timing, so this does not prove there was no earlier timing error. Sensitivity ranges assume 3-pixel click noise and a uniform ±15% camera-scale scenario; those are illustrative assumptions, not measured accuracy bounds. [Per-cyclist plots, endpoint comparison and sensitivity results](speed_plan_20261027/trajectory/RESULTS.md).
+
+**Study speed method:** Mighk Wilson stopwatch-timed cyclists while watching half-speed video and accounted for playback speed in the workbook. We use the supplied mph without doubling it again. Some corridors had separate speed-analysis visits. No study speed records have been linked to individual people/timestamps in these selected clips.
+
+## Why Aloma has 4 selected cyclists but 26 speed records
+
+Aloma Path has **47.99 measured playback hours**. This pilot selected the first available day’s source hour nearest noon, then its study-positive bins: October 30, 2019, 12:00–12:15, 12:30–12:45 and 12:45–13:00. These total 45 minutes and 4 study bicycles. The omitted 12:15 bin recorded zero.
 
 | Dataset | Bicycle count |
 |---|---:|
-| **Aloma Path, full 48-hour count period** | **191** |
-| Aloma Sidewalk, separate camera/count table | **19** |
-| Aloma Path, selected 45 minutes | **4** |
-| Aloma speed-reference sample | **26** |
+| Aloma Path, full October 30–31 count period (192 fifteen-minute bins) | 191 |
+| Aloma Sidewalk, separate camera/count table | 19 |
+| Aloma Path, selected 45 minutes | 4 |
+| Separate Aloma speed-reference sample | 26 |
 
-The full count period is **October 30–31, 2019**. The full counts come from the Bicycles worksheets in Aloma_Path_716686_10-30-2019.xls and Aloma_Sidewalk_716692_10-30-2019.xls (192 fifteen-minute bins each, with no missing count cells). The 26 speed observations come from the separate consolidated speed workbook; no individual timestamps link them to the counted encounters.
+The 26 speed observations are not the number of bicycles in the full recording. Their session and individual timestamps are unknown; we cannot confirm they came from the same available recording. They are a location reference, not ground-truth speeds for the four annotated cyclists. Counts come from the Bicycles worksheets in Aloma_Path_716686_10-30-2019.xls and Aloma_Sidewalk_716692_10-30-2019.xls; speeds come from the consolidated speed workbook.
 
-The **26** belongs to the broader Aloma location speed-reference dataset, not this 45-minute sample. It is not a count of every cyclist in the available recording collection. Mighk revisited some corridors for speed analysis, and the speed records have no linked video timestamps. **We cannot confirm that all 26 came from that same 48-hour recording.** Their average is a location-level reference, not the known speeds of these same four cyclists.
+## Measured recording hours
 
-**Study speed method:** Mighk Wilson stopwatch-timed cyclists from half-speed video and accounted for playback speed in the workbook. We use the supplied mph values without doubling them again.
+All 1,919 inventoried files across 41 cameras were measured. Hours sum playback lengths; file counts are not hours, and summed lengths do not establish gap-free coverage. The table lists the chosen camera per speed-reference location; different camera sides are not pooled.
 
-### How your manual annotations produce speed
+| Location | Camera | Source files | Measured playback hours |
+|---|---|---:|---:|
+| Aloma | Aloma Path | 48 | 47.99 |
+| Baxter | Baxter | 48 | 47.99 |
+| Carroll | Carroll NBL | 48 | 47.99 |
+| Colonial | Colonial North | 48 | 47.99 |
+| Columbia | Columbia Ave | 49 | 47.98 |
+| Daniels | Daniels Path | 48 | 47.99 |
+| Edgewater | Edgewater N | 48 | 47.98 |
+| Lee | Lee Road N | 48 | 47.99 |
+| Pleasant Hill | Pleasant Hill Path | 31 | 30.01 |
+| Rinehart/CST | Rinehart Path | 48 | 47.99 |
+| Silver Star | No mapped source | — | Unknown |
+| University | University SW Speed | 48 | 47.99 |
+| West Orange/Park | West Orange Path | 37 | 36.12 |
+| Winter Park | Winter Park Rd Speed | 48 | 47.98 |
 
-1. You paused the original-speed video and clicked where the same cyclist’s rear tire touches the pavement, then advanced the video and clicked that same point again. Each click saves an image position and video time.
-2. Those successive points form the cyclist’s **trajectory** (their path through the image). Different cyclists and different 15-minute videos are kept separate; clearly separated encounters sharing an ID were split.
-3. The saved camera calibration, estimated using car observations from the same camera, converts each image point into an estimated ground position in metres. Pixel movement alone cannot give mph because perspective changes the distance represented by a pixel.
-4. We add the distances between successive ground positions and divide by the time between the first and last click. We require at least three points spanning 1.5 seconds.
+Columbia’s 49 multipart files total **47.98 hours**, not 49 hours. Silver Star has no mapped source. [Full camera duration audit](../docs/VIDEO_DURATION_README.md).
 
-**Formula:** `speed (mph) = total trajectory distance (metres) / elapsed video time (seconds) × 2.23694`. Here `total distance = distance(point1, point2) + distance(point2, point3) + ...`. For example, an estimated 10 metres in 2 seconds gives 11.18 mph. Each site’s manual mean gives equal weight to its available per-cyclist estimates.
+## Remaining checks and earlier experiments
 
-HiPerGator supplies automatically tracked positions; Manual replaces those positions with your clicks. Both still depend on learned camera calibration, so manual annotation fixes tracking gaps but does not prove the distance scale is correct. Click noise, lens distortion and raised sidewalks can affect estimated speed.
+Review the flagged automatic tracks, then confirm University’s approximately 55.17-foot map endpoints in the video to check the learned distance scale. No new broad model sweep or repeat manual annotation is needed now. Wheel/marking checks have code but lack the necessary evidence for physical-scale results. ByteTrack is already used; a new wheel-keypoint model has not been trained.
 
-### Research basis and alternatives
+[Broader 1.5-second run](../reports/cluster_returns/20261027/completed_speed_batches/shortday_sites.csv) uses different coverage and quota stopping; it is separate from the main table. [Earlier three-second baseline README](analysis/README_baseline_before_same_video_20261027.md) and [baseline data](analysis/site_summary.csv) are preserved. [Manual-seeded optical flow](optical_flow_20261026/RESULTS.md) passed held-out drift checks on only 2 of 30 encounters and does not replace manual tracking. [Full analysis/run guide](../docs/SPEED_PLAN_RUN.md).
 
-Trajectory-based speed estimation is the standard position-over-time approach, not a new formula invented for this study. Revaud and Humenberger, **Robust Automatic Monocular Vehicle Speed Estimation for Traffic Surveillance**, ICCV 2021, describe detecting/tracking vehicles and converting image displacement into metric movement using camera calibration ([paper](https://openaccess.thecvf.com/content/ICCV2021/html/Revaud_Robust_Automatic_Monocular_Vehicle_Speed_Estimation_for_Traffic_Surveillance_ICCV_2021_paper.html)). Their [author implementation](https://github.com/naver/cctv) supplies the pretrained learned calibration used through our adapter. Our manual rear-tire clicks and path-distance/time calculation are a project-specific adaptation, not the paper’s exact method. Its car-speed benchmarks do not validate bicycle speeds on these cameras.
-
-| Alternative | What it measures | What is still needed |
-|---|---|---|
-| Two fixed lines / timed gates | Time for the same cyclist to cross a measured section; speed = known distance / travel time. Full trajectory annotation is unnecessary. | Identifiable, independently measured endpoints. This is a practical independent check of learned scale ([FHWA tripline description](https://www.fhwa.dot.gov/publications/research/operations/its/06108/02a.cfm)). |
-| Surveyed ground landmarks | Replace learned camera scale with a mapping from known ground positions, then measure motion. | Reliable ground measurements and matching image points. This changes calibration, not the distance/time principle. |
-| Optical flow | Estimate movement of image features between frames instead of repeated detector boxes or manual clicks. | Association with the same cyclist, stable visible features and a metric scale; it does not remove the need for calibration ([OpenCV documentation](https://docs.opencv.org/4.x/d4/dee/tutorial_optical_flow.html)). |
-| Radar, lidar or bicycle-mounted speed/GPS reference | Independently measure speed during a recording. | New synchronized measurements for the same cyclists; these cannot be recovered from old CCTV footage alone ([FHWA sensor overview](https://www.fhwa.dot.gov/publications/research/operations/its/06108/02a.cfm)). |
-
-For existing video, a correctly measured two-line section is the simplest additional independent scale check. More tracking methods cannot, by themselves, establish correct mph when the real-world scale is wrong. The manual-seeded optical-flow and first/last endpoint comparisons are implemented separately below; surveyed ground calibration and independent sensor validation are not established by this list.
-
-**Additional comparison run (October 26):** [manual-seeded optical flow and first/last-point timing](optical_flow_20261026/RESULTS.md) ran locally on all 30 encounters. Only the first click steered optical flow; later clicks checked drift. Two flow tracks (Pleasant Hill) passed the pixel check and yielded speeds; 27 failed drift/coverage and one was too short for speed. This simple tracker does not replace the manual results. Endpoint timing shares the same learned scale and is not independent validation.
-
-**How to read the results:** Carroll and Columbia manual averages are close to their study references. Aloma and University differ substantially and need checking. Similar group averages do not establish per-person accuracy. Colonial’s study speed average combines bike-lane and sidewalk cyclists.
-
-**Shorter-duration experiment prepared:** [rerun instructions](../docs/SHORT_TRACK_SPEED_RUN.md) lower the daytime bicycle minimum to1.5seconds across all13sites, reusing saved calibration. Other counting rules and nighttime policy are preserved. Updated results are pending; the table above remains the measured three-second baseline.
-
-**Aloma duration-filter finding:** all five rejected bicycle-labelled tracks lasted less than the daytime three-second minimum: 2.9, 1.6, 2.0, 2.7 and 1.7 seconds. Four had 100% detector bicycle labels and weighted bicycle scores of 0.98–1.00. The duration gate necessarily rejects these tracks; other gates may also apply. This shows that short tracked duration can exclude strongly supported cyclists. It does not prove all five are distinct real cyclists: the study count and manual review contain four, so the extra candidate needs review before relaxing filters. The baseline results above remain unchanged. [Saved audit](analysis/aloma_duration_audit_20261026.csv).
-
-**Missing results:** Aloma’s recovery completed about 60 minutes and recorded 5 bicycle-labelled candidate tracks, all rejected by counting filters. Its automatic speed is unavailable, not zero mph. Five candidate tracks are not necessarily five different real cyclists. Carroll and Rinehart had candidates rejected by counting filters. West Orange has no located/annotated manual cyclists. One Edgewater encounter spans only 1.4 seconds, below the current 1.5-second speed safeguard. No reannotation of completed encounters is required.
-
-### Recording hours for every speed-reference location
-
-**Source files** counts separate MP4 video files. **Total available hours** is the sum of their playback lengths, not the number of files or time analysed. For example, 48 one-hour files total about 48 hours, but 48 shorter files would total less. **Only Colonial North is fully measured. Other totals remain unverified until every source duration has been read.** Other camera sides are not added together.
-
-**Why Columbia is unknown:** the inventory contains 49 MP4s, including multipart recordings with names such as `0000.02.001.mp4`. Their full durations have not been measured, so 49 files cannot safely be called 49 hours. The selected noon source can still be reviewed; the unknown value concerns the complete collection’s length.
-
-| Location | Camera | Source files | Total available hours | Basis |
-|---|---|---:|---|---|
-| Aloma | Aloma Path | 48 | Unverified | Full duration audit pending |
-| Baxter | Baxter | 48 | Unverified | Full duration audit pending |
-| Carroll | Carroll NBL | 48 | Unverified | Full duration audit pending |
-| Colonial | Colonial North | 48 | 47.99 | Measured from all source durations |
-| Columbia | Columbia Ave | 49 | Unverified | Full duration audit pending |
-| Daniels | Daniels Path | 48 | Unverified | Full duration audit pending |
-| Edgewater | Edgewater N | 48 | Unverified | Full duration audit pending |
-| Lee | Lee Road N | 48 | Unverified | Full duration audit pending |
-| Pleasant Hill | Pleasant Hill Path | 31 | Unverified | Full duration audit pending |
-| Rinehart/CST | Rinehart Path | 48 | Unverified | Full duration audit pending |
-| Silver Star | No mapped source |  | Unknown | No mapped recording |
-| University | University SW Speed | 48 | Unverified | Full duration audit pending |
-| West Orange/Park | West Orange Path | 37 | Unverified | Full duration audit pending |
-| Winter Park | Winter Park Rd Speed | 48 | Unverified | Full duration audit pending |
-
-Detailed encounter times and exclusions: [analysis/DETAILS.md](analysis/DETAILS.md). Tables: [site summaries](analysis/site_summary.csv), [15-minute counts](analysis/interval_counts.csv), [per-cyclist speeds](analysis/encounters.csv). Original annotation JSONs are unchanged.
+Original annotation JSONs remain unchanged. [Manual measurement timestamps](analysis/DETAILS.md) · [Automatic measurement timestamps](../reports/cluster_returns/20261027/completed_speed_batches/same_video_speed_times.csv) · [Study provenance](analysis/source_provenance.md).

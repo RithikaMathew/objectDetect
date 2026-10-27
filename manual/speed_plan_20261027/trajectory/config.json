@@ -1,0 +1,11 @@
+{
+  "seed": 20261026,
+  "simulations": 500,
+  "click_sigma_px": 3,
+  "scale_uniform_fraction": 0.15,
+  "min_span_seconds": 1.5,
+  "max_gap_seconds": 2,
+  "scale_policy": "One multiplicative draw per camera per simulation, shared by its cyclists; illustrative assumptions, not measured errors.",
+  "timing_policy": "Manual browser seconds retained. Packet PTS audited separately; no playback factor applied.",
+  "fit_policy": "Time-aware Huber IRLS, degree 1 below 6 points else 2; Theil-Sen slope of fitted arc length. Engineering defaults, not validated optimal settings."
+}

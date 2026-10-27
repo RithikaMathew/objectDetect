@@ -1,0 +1,11 @@
+{
+  "trajectory_analysis": "COMPLETED",
+  "timestamp_audit": "SEE_TRAJECTORY_REPORT",
+  "sensitivity": "ASSUMPTION_BASED",
+  "wheel_candidate_search": "COMPLETED_UNVERIFIED_EDGES",
+  "metric_scale_checks": "SEE_SCALE_CHECKS_CSV",
+  "study_group_comparison": "COMPLETED_UNMATCHED_GROUPS",
+  "tracker": "EXISTING_BYTETRACK_REUSED_NO_NEW_TRACKER_EXPERIMENT",
+  "wheel_keypoint_training": "NOT_IMPLEMENTED_NEEDS_LABELLED_TRAINING_SET",
+  "camera_geolocation": "NOT_AUTOMATED_UNIVERSITY_EVIDENCE_RETAINED"
+}

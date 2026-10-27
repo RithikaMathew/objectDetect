@@ -1,0 +1,28 @@
+camera,method,status,detail
+Aloma Path,car_calibration,BASELINE_LEARNED_SCALE_NOT_INDEPENDENTLY_VALIDATED,Existing calibration reused; no scale fitted to study means
+Aloma Path,markings,MISSING_EVIDENCE,Need identified marking and length source
+Aloma Path,wheels,MISSING_EVIDENCE,"Need full 3-D camera projection, reviewed outline and explicit wheel-size prior"
+Carroll NBL,car_calibration,BASELINE_LEARNED_SCALE_NOT_INDEPENDENTLY_VALIDATED,Existing calibration reused; no scale fitted to study means
+Carroll NBL,markings,MISSING_EVIDENCE,Need identified marking and length source
+Carroll NBL,wheels,MISSING_EVIDENCE,"Need full 3-D camera projection, reviewed outline and explicit wheel-size prior"
+Colonial North,car_calibration,BASELINE_LEARNED_SCALE_NOT_INDEPENDENTLY_VALIDATED,Existing calibration reused; no scale fitted to study means
+Colonial North,markings,MISSING_EVIDENCE,Need identified marking and length source
+Colonial North,wheels,MISSING_EVIDENCE,"Need full 3-D camera projection, reviewed outline and explicit wheel-size prior"
+Columbia Ave,car_calibration,BASELINE_LEARNED_SCALE_NOT_INDEPENDENTLY_VALIDATED,Existing calibration reused; no scale fitted to study means
+Columbia Ave,markings,MISSING_EVIDENCE,Need identified marking and length source
+Columbia Ave,wheels,MISSING_EVIDENCE,"Need full 3-D camera projection, reviewed outline and explicit wheel-size prior"
+Edgewater N,car_calibration,BASELINE_LEARNED_SCALE_NOT_INDEPENDENTLY_VALIDATED,Existing calibration reused; no scale fitted to study means
+Edgewater N,markings,MISSING_EVIDENCE,Need identified marking and length source
+Edgewater N,wheels,MISSING_EVIDENCE,"Need full 3-D camera projection, reviewed outline and explicit wheel-size prior"
+Lee Road N,car_calibration,BASELINE_LEARNED_SCALE_NOT_INDEPENDENTLY_VALIDATED,Existing calibration reused; no scale fitted to study means
+Lee Road N,markings,MISSING_EVIDENCE,Need identified marking and length source
+Lee Road N,wheels,MISSING_EVIDENCE,"Need full 3-D camera projection, reviewed outline and explicit wheel-size prior"
+Pleasant Hill Path,car_calibration,BASELINE_LEARNED_SCALE_NOT_INDEPENDENTLY_VALIDATED,Existing calibration reused; no scale fitted to study means
+Pleasant Hill Path,markings,MISSING_EVIDENCE,Need identified marking and length source
+Pleasant Hill Path,wheels,MISSING_EVIDENCE,"Need full 3-D camera projection, reviewed outline and explicit wheel-size prior"
+Rinehart Path,car_calibration,BASELINE_LEARNED_SCALE_NOT_INDEPENDENTLY_VALIDATED,Existing calibration reused; no scale fitted to study means
+Rinehart Path,markings,MISSING_EVIDENCE,Need identified marking and length source
+Rinehart Path,wheels,MISSING_EVIDENCE,"Need full 3-D camera projection, reviewed outline and explicit wheel-size prior"
+University SW Speed,car_calibration,BASELINE_LEARNED_SCALE_NOT_INDEPENDENTLY_VALIDATED,Existing calibration reused; no scale fitted to study means
+University SW Speed,markings,MISSING_EVIDENCE,Need identified marking and length source
+University SW Speed,wheels,MISSING_EVIDENCE,"Need full 3-D camera projection, reviewed outline and explicit wheel-size prior"

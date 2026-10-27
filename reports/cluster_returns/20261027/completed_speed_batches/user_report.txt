@@ -1,0 +1,165 @@
+Daytime bicycle counting minimum: 1.5 seconds. Pedestrian and nighttime policies remain as configured in each saved pipeline_task.json. This is a separate duration experiment; changing counting eligibility does not guarantee a usable metric trajectory or a true unique cyclist.
+
+Processes exactly the submitted manual-annotation clips, with no quota early stopping. Every eligible automatic bicycle candidate contributes to the mean. Same video coverage does not imply same verified cyclist identities. Missing/unannotated intervals are outside this run.
+
+| Location | Study n | Study mean mph | Target | Found tracks | Speed-usable | Used for mean | Model mean mph | Difference mph | Minutes | State |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| Aloma | 26 | 13.58 | all eligible | 5 | 5 | 5 | 21.45 | 7.87 | 44.98 | MANUAL_INTERVALS_COMPLETED_PROVISIONAL |
+| Carroll | 15 | 11.89 | all eligible | 3 | 2 | 2 | 12.22 | 0.33 | 15.00 | MANUAL_INTERVALS_COMPLETED_PROVISIONAL |
+| Colonial | 23 | 9.54 | all eligible | 4 | 3 | 3 | 7.35 | -2.19 | 29.98 | MANUAL_INTERVALS_COMPLETED_PROVISIONAL |
+| Columbia | 9 | 12.24 | all eligible | 56 | 7 | 7 | 7.35 | -4.89 | 45.00 | MANUAL_INTERVALS_COMPLETED_PROVISIONAL |
+| Edgewater | 50 | 12.02 | all eligible | 15 | 6 | 6 | 14.10 | 2.07 | 59.98 | MANUAL_INTERVALS_COMPLETED_PROVISIONAL |
+| Lee | 2 | 8.73 | all eligible | 7 | 3 | 3 | 10.17 | 1.44 | 30.00 | MANUAL_INTERVALS_COMPLETED_PROVISIONAL |
+| Pleasant Hill | 41 | 9.86 | all eligible | 2 | 2 | 2 | 9.12 | -0.74 | 14.99 | MANUAL_INTERVALS_COMPLETED_PROVISIONAL |
+| Rinehart/CST | 25 | 12.92 | all eligible | 2 | 1 | 1 | 12.06 | -0.86 | 15.00 | MANUAL_INTERVALS_COMPLETED_PROVISIONAL |
+| University | 78 | 9.49 | all eligible | 5 | 3 | 3 | 14.00 | 4.51 | 14.97 | MANUAL_INTERVALS_COMPLETED_PROVISIONAL |
+
+## Exact measurement times
+
+| Location | Window | Candidate | Used clock start | Used clock end | mph |
+|---|---:|---|---|---|---:|
+| Aloma | 0 | 2 | 2019-10-30 12:03:58.071000 | 2019-10-30 12:04:01.007000 | 15.267 |
+| Aloma | 2 | 1 | 2019-10-30 12:32:30.617000 | 2019-10-30 12:32:32.385000 | 23.313 |
+| Aloma | 3 | 1 | 2019-10-30 12:45:37.604000 | 2019-10-30 12:45:39.572000 | 21.521 |
+| Aloma | 3 | 2 | 2019-10-30 12:50:48.081000 | 2019-10-30 12:50:51.017000 | 22.939 |
+| Aloma | 3 | 6 | 2019-10-30 12:59:47.119000 | 2019-10-30 12:59:48.754000 | 24.201 |
+| Carroll | 2 | 25 | 2019-09-10 12:38:59.138000 | 2019-09-10 12:39:01.507000 | 12.672 |
+| Carroll | 2 | 39 | 2019-09-10 12:43:52.364000 | 2019-09-10 12:43:54.834000 | 11.768 |
+| Colonial | 2 | 6 | 2019-07-10 12:40:14.213000 | 2019-07-10 12:40:24.757000 | 6.442 |
+| Colonial | 3 | 6 | 2019-07-10 12:53:06.986000 | 2019-07-10 12:53:15.161000 | 8.515 |
+| Colonial | 3 | 7 | 2019-07-10 12:53:44.257000 | 2019-07-10 12:53:54.033000 | 7.083 |
+| Columbia | 0 | 27 | 2019-09-10 12:04:56.496000 | 2019-09-10 12:05:01.467000 | 4.546 |
+| Columbia | 0 | 31 | 2019-09-10 12:05:01.134000 | 2019-09-10 12:05:03.736000 | 16.682 |
+| Columbia | 0 | 42 | 2019-09-10 12:07:17.370000 | 2019-09-10 12:07:19.305000 | 25.3 |
+| Columbia | 1 | 26 | 2019-09-10 12:19:02.175000 | 2019-09-10 12:19:15.188000 | 4.558 |
+| Columbia | 1 | 40 | 2019-09-10 12:20:23.656000 | 2019-09-10 12:21:05.031000 | 0.228 |
+| Columbia | 1 | 55 | 2019-09-10 12:21:16.109000 | 2019-09-10 12:23:31.377000 | 0.088 |
+| Columbia | 2 | 17 | 2019-09-10 12:34:23.062000 | 2019-09-10 12:36:19.011000 | 0.056 |
+| Edgewater | 0 | 24 | 2019-09-18 12:06:06.466000 | 2019-09-18 12:06:10.203000 | 27.205 |
+| Edgewater | 0 | 26 | 2019-09-18 12:06:03.930000 | 2019-09-18 12:06:25.651000 | 6.967 |
+| Edgewater | 1 | 22 | 2019-09-18 12:21:51.043000 | 2019-09-18 12:21:52.712000 | 15.379 |
+| Edgewater | 1 | 49 | 2019-09-18 12:27:49.635000 | 2019-09-18 12:27:52.071000 | 9.703 |
+| Edgewater | 3 | 9 | 2019-09-18 12:50:06.105000 | 2019-09-18 12:50:08.241000 | 9.236 |
+| Edgewater | 3 | 16 | 2019-09-18 12:59:00.940000 | 2019-09-18 12:59:02.608000 | 16.085 |
+| Lee | 0 | 42 | 2019-07-10 12:12:54.006000 | 2019-07-10 12:12:57.943000 | 10.613 |
+| Lee | 1 | 28 | 2019-07-10 12:25:56.055000 | 2019-07-10 12:26:01.827000 | 9.067 |
+| Lee | 1 | 36 | 2019-07-10 12:27:55.274000 | 2019-07-10 12:27:59.645000 | 10.833 |
+| Pleasant Hill | 3 | 2 | 2019-11-12 12:58:32.578000 | 2019-11-12 12:58:36.048000 | 9.427 |
+| Pleasant Hill | 3 | 3 | 2019-11-12 12:58:33.112000 | 2019-11-12 12:58:36.549000 | 8.821 |
+| Rinehart/CST | 0 | 2 | 2019-10-02 12:11:43.335000 | 2019-10-02 12:11:45.971000 | 12.064 |
+| University | 3 | 13 | 2019-09-25 12:46:27.387000 | 2019-09-25 12:46:33.560000 | 8.097 |
+| University | 3 | 25 | 2019-09-25 12:50:55.588000 | 2019-09-25 12:50:58.257000 | 18.098 |
+| University | 3 | 31 | 2019-09-25 12:51:57.116000 | 2019-09-25 12:52:00.420000 | 15.802 |
+
+all_candidate_timestamps.csv includes every bicycle-labelled candidate track with first/last seen clock times, source and annotated paths, speed-measurement intervals and exclusion reasons. selected_candidates.csv contains only candidates used in the reported average. Found tracks includes rejected candidates and is not a verified unique-person count; counted tracks and speed-usable tracks are separate in comparison.csv. Unknown counts from failed/missing stages remain blank.
+
+Missing speed is not zero. These are provisional bicycle candidates: the current detector combines bicycles/motorcycles; person identities and user types require visual checking. Boundary-censored candidates are excluded to reduce duplicate counts across segments, but fragmentation inside segments can still duplicate people. Rejected count-filter tracks do not silently become counted bicycles.
+
+Exploratory road-plane transfer enabled: True. When enabled, out-of-car-support estimates assume the road and bicycle surface are approximately coplanar; strict_supported_speed_mph and support fractions are retained separately. No distance is fitted to workbook averages. These estimates are not independently validated physical speeds.
+
+Camera aliases and facility correspondence remain candidate matches. No individual study records are linked to video people. Study averages lack observation timestamps. Calibration insufficiency stops a site before expensive repeated windows. No fixed full-hour processing when target is reached earlier.
+
+Colonial location-wide study mean pools bike lane and sidewalk; it is not a facility-matched validation. Only the selected source hour is sampled, not all four labelled clips. See the reference README for separate facility means.
+
+Debugging: status.json records the current stage and completed windows; error.txt contains a worker traceback. windows/wNN/pipeline.log captures inference output, pipeline_task.json stores exact settings, result.json and run_log.json point to raw outputs and annotated videos. Calibration diagnostics are in calibration/. Slurm termination may leave the last in-progress stage; consult site_ARRAY_INDEX.log in the batch root.
+
+Skipped: [{"site": "Silver Star", "reason": "no_candidate_source_in_current_mapping"}]
+
+## Identical video intervals
+
+| Camera | Interval start | Study count | Manual count | Automatic count | Manual mph | Automatic mph | State |
+|---|---|---:|---:|---:|---:|---:|---|
+| Aloma Path | 2019-10-30 12:00:00 | 1 | 1 | 1 | 15.660546431427209 | 15.267 | COMPLETED_SAME_CLIP |
+| Aloma Path | 2019-10-30 12:30:00 | 1 | 1 | 1 | 21.118806461068118 | 23.313 | COMPLETED_SAME_CLIP |
+| Aloma Path | 2019-10-30 12:45:00 | 2 | 2 | 3 | 21.23642135885787 | 22.887 | COMPLETED_SAME_CLIP |
+| Carroll NBL | 2019-09-10 12:30:00 | 2 | 2 | 2 | 12.367093766895827 | 12.22 | COMPLETED_SAME_CLIP |
+| Colonial North | 2019-07-10 12:30:00 | 1 | 1 | 1 | 10.514276101862055 | 6.442 | COMPLETED_SAME_CLIP |
+| Colonial North | 2019-07-10 12:45:00 | 2 | 2 | 2 | 10.812577983561635 | 7.799 | COMPLETED_SAME_CLIP |
+| Columbia Ave | 2019-09-10 12:00:00 | 2 | 2 | 3 | 12.5277596572916 | 15.509333333333332 | COMPLETED_SAME_CLIP |
+| Columbia Ave | 2019-09-10 12:15:00 | 1 | 1 | 3 | 11.684650276003955 | 1.6246666666666665 | COMPLETED_SAME_CLIP |
+| Columbia Ave | 2019-09-10 12:30:00 | 1 | 1 | 1 | 13.159506315753656 | 0.056 | COMPLETED_SAME_CLIP |
+| Edgewater N | 2019-09-18 12:00:00 | 1 | 1 | 2 | 8.972990703721536 | 17.086 | COMPLETED_SAME_CLIP |
+| Edgewater N | 2019-09-18 12:15:00 | 3 | 2 | 2 | 9.843728587389583 | 12.541 | COMPLETED_SAME_CLIP |
+| Edgewater N | 2019-09-18 12:30:00 | 1 | 1 | 0 | 21.446519730769555 |  | COMPLETED_SAME_CLIP |
+| Edgewater N | 2019-09-18 12:45:00 | 5 | 2 | 2 | 14.85806395001357 | 12.6605 | COMPLETED_SAME_CLIP |
+| Lee Road N | 2019-07-10 12:00:00 | 3 | 2 | 1 | 13.432984922683257 | 10.613 | COMPLETED_SAME_CLIP |
+| Lee Road N | 2019-07-10 12:15:00 | 2 | 2 | 2 | 11.279660982031505 | 9.95 | COMPLETED_SAME_CLIP |
+| Pleasant Hill Path | 2019-11-12 12:45:00 | 2 | 2 | 2 | 8.993179723376995 | 9.123999999999999 | COMPLETED_SAME_CLIP |
+| Rinehart Path | 2019-10-02 12:00:00 | 1 | 1 | 1 | 12.008247592708285 | 12.064 | COMPLETED_SAME_CLIP |
+| University SW Speed | 2019-09-25 12:45:00 | 4 | 4 | 3 | 16.984757442646952 | 13.999 | COMPLETED_SAME_CLIP |
+# Adaptive bicyclist-candidate speed comparison
+
+Daytime bicycle counting minimum: 1.5 seconds. Pedestrian and nighttime policies remain as configured in each saved pipeline_task.json. This is a separate duration experiment; changing counting eligibility does not guarantee a usable metric trajectory or a true unique cyclist.
+
+Each site processes consecutive15-minute windows until its candidate quota or the stated time limit. Means combine selected per-candidate speeds with equal weight, not averages of segment averages. Selection is chronological, never based on similarity to study speeds.
+
+| Location | Study n | Study mean mph | Target | Found tracks | Speed-usable | Used for mean | Model mean mph | Difference mph | Minutes | State |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| Aloma | 26 | 13.58 | 5 | 5 | 5 | 5 | 21.40 | 7.82 | 59.98 | TARGET_REACHED_PROVISIONAL |
+| Baxter | 14 | 16.77 | 5 | 5 | 0 | 0 |  |  | 59.99 | TARGET_NOT_REACHED_WITHIN_LIMIT |
+| Carroll | 15 | 11.89 | 5 | 12 | 2 | 2 | 12.22 | 0.33 | 59.99 | TARGET_NOT_REACHED_WITHIN_LIMIT |
+| Colonial | 23 | 9.54 | 5 | 6 | 4 | 4 | 16.14 | 6.60 | 59.98 | TARGET_NOT_REACHED_WITHIN_LIMIT |
+| Columbia | 9 | 12.24 | 3 | 25 | 4 | 3 | 15.03 | 2.79 | 15.00 | TARGET_REACHED_PROVISIONAL |
+| Daniels | 11 | 11.95 | 4 | 5 | 0 | 0 |  |  | 59.98 | TARGET_NOT_REACHED_WITHIN_LIMIT |
+| Edgewater | 50 | 12.02 | 5 | 9 | 5 | 5 | 14.85 | 2.82 | 30.00 | TARGET_REACHED_PROVISIONAL |
+| Lee | 2 | 8.73 | 2 | 3 | 2 | 2 | 11.89 | 3.16 | 15.00 | TARGET_REACHED_PROVISIONAL |
+| Pleasant Hill | 41 | 9.86 | 5 | 2 | 2 | 2 | 8.99 | -0.88 | 59.99 | TARGET_NOT_REACHED_WITHIN_LIMIT |
+| Rinehart/CST | 25 | 12.92 | 5 | 3 | 2 | 2 | 15.45 | 2.52 | 59.99 | TARGET_NOT_REACHED_WITHIN_LIMIT |
+| University | 78 | 9.49 | 5 | 11 | 5 | 5 | 14.15 | 4.65 | 59.97 | TARGET_REACHED_PROVISIONAL |
+| West Orange/Park | 25 | 10.77 | 5 | 11 | 6 | 5 | 26.12 | 15.35 | 59.99 | TARGET_REACHED_PROVISIONAL |
+| Winter Park | 13 | 16.08 | 5 | 2 | 0 | 0 |  |  | 59.99 | TARGET_NOT_REACHED_WITHIN_LIMIT |
+
+## Exact measurement times
+
+| Location | Window | Candidate | Used clock start | Used clock end | mph |
+|---|---:|---|---|---|---:|
+| Aloma | 0 | 2 | 2019-10-30 12:03:58.071000 | 2019-10-30 12:04:01.007000 | 15.233 |
+| Aloma | 2 | 1 | 2019-10-30 12:32:30.617000 | 2019-10-30 12:32:32.385000 | 23.389 |
+| Aloma | 3 | 1 | 2019-10-30 12:45:37.604000 | 2019-10-30 12:45:39.572000 | 21.54 |
+| Aloma | 3 | 2 | 2019-10-30 12:50:47.647000 | 2019-10-30 12:50:51.017000 | 22.607 |
+| Aloma | 3 | 8 | 2019-10-30 12:59:47.120000 | 2019-10-30 12:59:48.755000 | 24.214 |
+| Carroll | 2 | 24 | 2019-09-10 12:38:59.139000 | 2019-09-10 12:39:01.508000 | 12.672 |
+| Carroll | 2 | 34 | 2019-09-10 12:43:52.399000 | 2019-09-10 12:43:54.834000 | 11.775 |
+| Colonial | 1 | 8 | 2019-07-10 12:28:31.511000 | 2019-07-10 12:28:33.446000 | 41.67 |
+| Colonial | 2 | 8 | 2019-07-10 12:40:14.347000 | 2019-07-10 12:40:24.758000 | 6.973 |
+| Colonial | 3 | 7 | 2019-07-10 12:53:07.153000 | 2019-07-10 12:53:15.161000 | 8.606 |
+| Colonial | 3 | 9 | 2019-07-10 12:53:44.357000 | 2019-07-10 12:53:54.067000 | 7.306 |
+| Columbia | 0 | 26 | 2019-09-10 12:04:56.496000 | 2019-09-10 12:05:01.468000 | 4.435 |
+| Columbia | 0 | 28 | 2019-09-10 12:05:01.134000 | 2019-09-10 12:05:03.770000 | 16.155 |
+| Columbia | 0 | 41 | 2019-09-10 12:07:17.370000 | 2019-09-10 12:07:19.305000 | 24.491 |
+| Edgewater | 0 | 22 | 2019-09-18 12:06:06.466000 | 2019-09-18 12:06:10.003000 | 27.026 |
+| Edgewater | 0 | 24 | 2019-09-18 12:06:03.897000 | 2019-09-18 12:06:07.267000 | 8.123 |
+| Edgewater | 1 | 23 | 2019-09-18 12:21:51.044000 | 2019-09-18 12:21:52.712000 | 15.378 |
+| Edgewater | 1 | 24 | 2019-09-18 12:22:00.020000 | 2019-09-18 12:22:01.821000 | 13.988 |
+| Edgewater | 1 | 56 | 2019-09-18 12:27:49.636000 | 2019-09-18 12:27:52.072000 | 9.714 |
+| Lee | 0 | 32 | 2019-07-10 12:09:20.393000 | 2019-07-10 12:09:22.495000 | 12.724 |
+| Lee | 0 | 38 | 2019-07-10 12:12:54.007000 | 2019-07-10 12:12:58.611000 | 11.054 |
+| Pleasant Hill | 3 | 2 | 2019-11-12 12:58:32.579000 | 2019-11-12 12:58:36.049000 | 9.455 |
+| Pleasant Hill | 3 | 4 | 2019-11-12 12:58:33.079000 | 2019-11-12 12:58:36.549000 | 8.516 |
+| Rinehart/CST | 0 | 2 | 2019-10-02 12:11:43.336000 | 2019-10-02 12:11:45.972000 | 12.123 |
+| Rinehart/CST | 3 | 1 | 2019-10-02 12:57:06.726000 | 2019-10-02 12:57:08.762000 | 18.772 |
+| University | 0 | 13 | 2019-09-25 12:08:15.695000 | 2019-09-25 12:08:19.599000 | 11.215 |
+| University | 3 | 6 | 2019-09-25 12:45:44.811000 | 2019-09-25 12:45:46.980000 | 14.346 |
+| University | 3 | 13 | 2019-09-25 12:46:27.387000 | 2019-09-25 12:46:33.560000 | 7.941 |
+| University | 3 | 23 | 2019-09-25 12:50:56.656000 | 2019-09-25 12:50:58.258000 | 18.534 |
+| University | 3 | 29 | 2019-09-25 12:51:57.117000 | 2019-09-25 12:51:58.885000 | 18.691 |
+| West Orange/Park | 1 | 3 | 2019-10-15 12:16:00.627000 | 2019-10-15 12:16:02.595000 | 21.85 |
+| West Orange/Park | 1 | 4 | 2019-10-15 12:16:00.760000 | 2019-10-15 12:16:02.529000 | 22.274 |
+| West Orange/Park | 2 | 3 | 2019-10-15 12:34:58.431000 | 2019-10-15 12:35:00.133000 | 22.421 |
+| West Orange/Park | 2 | 4 | 2019-10-15 12:37:49.869000 | 2019-10-15 12:37:51.871000 | 20.546 |
+| West Orange/Park | 3 | 2 | 2019-10-15 12:47:16.269000 | 2019-10-15 12:47:18.204000 | 43.489 |
+
+all_candidate_timestamps.csv includes every bicycle-labelled candidate track with first/last seen clock times, source and annotated paths, speed-measurement intervals and exclusion reasons. selected_candidates.csv contains only candidates used in the reported average. Found tracks includes rejected candidates and is not a verified unique-person count; counted tracks and speed-usable tracks are separate in comparison.csv. Unknown counts from failed/missing stages remain blank.
+
+Missing speed is not zero. These are provisional bicycle candidates: the current detector combines bicycles/motorcycles; person identities and user types require visual checking. Boundary-censored candidates are excluded to reduce duplicate counts across segments, but fragmentation inside segments can still duplicate people. Rejected count-filter tracks do not silently become counted bicycles.
+
+Exploratory road-plane transfer enabled: True. When enabled, out-of-car-support estimates assume the road and bicycle surface are approximately coplanar; strict_supported_speed_mph and support fractions are retained separately. No distance is fitted to workbook averages. These estimates are not independently validated physical speeds.
+
+Camera aliases and facility correspondence remain candidate matches. No individual study records are linked to video people. Study averages lack observation timestamps. Calibration insufficiency stops a site before expensive repeated windows. No fixed full-hour processing when target is reached earlier.
+
+Colonial location-wide study mean pools bike lane and sidewalk; it is not a facility-matched validation. Only the selected source hour is sampled, not all four labelled clips. See the reference README for separate facility means.
+
+Debugging: status.json records the current stage and completed windows; error.txt contains a worker traceback. windows/wNN/pipeline.log captures inference output, pipeline_task.json stores exact settings, result.json and run_log.json point to raw outputs and annotated videos. Calibration diagnostics are in calibration/. Slurm termination may leave the last in-progress stage; consult site_ARRAY_INDEX.log in the batch root.
+
+Skipped: [{"site": "Silver Star", "reason": "no_candidate_source_in_current_mapping"}]
+[rmathew1@login8 test_colonial]$ 

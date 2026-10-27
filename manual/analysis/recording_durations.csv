@@ -1,15 +1,15 @@
 location,camera,source_files,available_hours,basis
-Aloma,Aloma Path,48,Unverified,Full duration audit pending
-Baxter,Baxter,48,Unverified,Full duration audit pending
-Carroll,Carroll NBL,48,Unverified,Full duration audit pending
+Aloma,Aloma Path,48,47.99,Measured from all source durations
+Baxter,Baxter,48,47.99,Measured from all source durations
+Carroll,Carroll NBL,48,47.99,Measured from all source durations
 Colonial,Colonial North,48,47.99,Measured from all source durations
-Columbia,Columbia Ave,49,Unverified,Full duration audit pending
-Daniels,Daniels Path,48,Unverified,Full duration audit pending
-Edgewater,Edgewater N,48,Unverified,Full duration audit pending
-Lee,Lee Road N,48,Unverified,Full duration audit pending
-Pleasant Hill,Pleasant Hill Path,31,Unverified,Full duration audit pending
-Rinehart/CST,Rinehart Path,48,Unverified,Full duration audit pending
+Columbia,Columbia Ave,49,47.98,Measured from all source durations
+Daniels,Daniels Path,48,47.99,Measured from all source durations
+Edgewater,Edgewater N,48,47.98,Measured from all source durations
+Lee,Lee Road N,48,47.99,Measured from all source durations
+Pleasant Hill,Pleasant Hill Path,31,30.01,Measured from all source durations
+Rinehart/CST,Rinehart Path,48,47.99,Measured from all source durations
 Silver Star,No mapped source,,Unknown,No mapped recording
-University,University SW Speed,48,Unverified,Full duration audit pending
-West Orange/Park,West Orange Path,37,Unverified,Full duration audit pending
-Winter Park,Winter Park Rd Speed,48,Unverified,Full duration audit pending
+University,University SW Speed,48,47.99,Measured from all source durations
+West Orange/Park,West Orange Path,37,36.12,Measured from all source durations
+Winter Park,Winter Park Rd Speed,48,47.98,Measured from all source durations

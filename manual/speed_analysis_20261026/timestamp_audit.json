@@ -1,0 +1,182 @@
+{
+  "s00_aloma_path_2019-10-30_120000": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s00_aloma_path_2019-10-30_123000": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s00_aloma_path_2019-10-30_124500": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26929,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s02_carroll_nbl_2019-09-10_123000": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s03_colonial_north_2019-07-10_123000": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s03_colonial_north_2019-07-10_124500": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26943,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s04_columbia_ave_2019-09-10_120000": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s04_columbia_ave_2019-09-10_121500": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s04_columbia_ave_2019-09-10_123000": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s06_edgewater_n_2019-09-18_120000": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s06_edgewater_n_2019-09-18_121500": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s06_edgewater_n_2019-09-18_123000": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s06_edgewater_n_2019-09-18_124500": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26933,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s07_lee_road_n_2019-07-10_120000": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s07_lee_road_n_2019-07-10_121500": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s08_pleasant_hill_path_2019-11-12_124500": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26951,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s09_rinehart_path_2019-10-02_120000": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26973,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  },
+  "s10_university_sw_speed_2019-09-25_124500": {
+    "status": "AUDITED_PACKET_PTS",
+    "packets": 26927,
+    "median_step_seconds": 0.03336699999999837,
+    "irregular_step_fraction": 0.0,
+    "duplicate_pts": 0,
+    "nominal_fps": 29.97002997002997,
+    "max_index_over_avgfps_difference_seconds": 3.333334461785853e-07,
+    "note": "Sorted presentation packet timestamps; packet index is not guaranteed decoded frame index. Manual browser seconds retained; no automatic retiming."
+  }
+}
