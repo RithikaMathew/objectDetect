@@ -1,25 +1,192 @@
-Reading /orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/ADAPTIVE_SPEED_shortday_20261026_095645
 
-Baxter: 5 bicycle-labelled candidates
-Saved exclusion groups: {"rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment": 5}
-{"segment": "1", "track_id": "4", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-09-18 12:24:17", "end": "2019-09-18 12:24:21", "rule_observations": {"secs": "1.8", "passes_min_duration": "1", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "25.9", "weighted_bicyclist": "0.627", "speed_heights_per_s": "0.03", "net_px": "0.4"}, "continuity": {"observed_rows": 54, "coasted_rows": 83, "longest_observed_span_with_gaps_at_most_0_5s": 1.1011, "maximum_observed_gap_seconds": 1.001}}
-{"segment": "1", "track_id": "8", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-09-18 12:25:34", "end": "2019-09-18 12:25:34", "rule_observations": {"secs": "0.43", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "100.0", "weighted_bicyclist": "0.689", "speed_heights_per_s": "7.05", "net_px": "271.0"}, "continuity": {"observed_rows": 13, "coasted_rows": 0, "longest_observed_span_with_gaps_at_most_0_5s": 0.5339, "maximum_observed_gap_seconds": 0.1001}}
-{"segment": "2", "track_id": "1", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-09-18 12:41:59", "end": "2019-09-18 12:42:04", "rule_observations": {"secs": "0.53", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "37.5", "weighted_bicyclist": "0.533", "speed_heights_per_s": "0.02", "net_px": "1.7"}, "continuity": {"observed_rows": 16, "coasted_rows": 0, "longest_observed_span_with_gaps_at_most_0_5s": 0.8342, "maximum_observed_gap_seconds": 3.0697}}
-{"segment": "3", "track_id": "1", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-09-18 12:47:11", "end": "2019-09-18 12:47:13", "rule_observations": {"secs": "0.43", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "69.2", "weighted_bicyclist": "0.708", "speed_heights_per_s": "0.02", "net_px": "0.8"}, "continuity": {"observed_rows": 13, "coasted_rows": 0, "longest_observed_span_with_gaps_at_most_0_5s": 1.3013, "maximum_observed_gap_seconds": 0.5339}}
-{"segment": "3", "track_id": "4", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-09-18 12:52:16", "end": "2019-09-18 12:52:16", "rule_observations": {"secs": "0.37", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "100.0", "weighted_bicyclist": "0.563", "speed_heights_per_s": "5.12", "net_px": "147.0"}, "continuity": {"observed_rows": 11, "coasted_rows": 0, "longest_observed_span_with_gaps_at_most_0_5s": 0.3337, "maximum_observed_gap_seconds": 0.0334}}
+cat exp_results/MIOVISION_FULL_ARCHIVE_INVENTORY/CAMERA_YEARS.md
+<!-- FULL_ARCHIVE_INVENTORY_START -->
+## Complete MioVision ZIP: camera folders and recording years
 
-Daniels: 5 bicycle-labelled candidates
-Saved exclusion groups: {"rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment": 5}
-{"segment": "1", "track_id": "66", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-10-23 12:22:20", "end": "2019-10-23 12:22:21", "rule_observations": {"secs": "0.63", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "0.0", "weighted_bicyclist": "0.866", "speed_heights_per_s": "0.09", "net_px": "1.5"}, "continuity": {"observed_rows": 19, "coasted_rows": 0, "longest_observed_span_with_gaps_at_most_0_5s": 0.5339, "maximum_observed_gap_seconds": 0.9343}}
-{"segment": "2", "track_id": "43", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-10-23 12:37:49", "end": "2019-10-23 12:37:52", "rule_observations": {"secs": "0.33", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "0.0", "weighted_bicyclist": "0.529", "speed_heights_per_s": "0.03", "net_px": "0.3"}, "continuity": {"observed_rows": 10, "coasted_rows": 0, "longest_observed_span_with_gaps_at_most_0_5s": 0.4671, "maximum_observed_gap_seconds": 1.9019}}
-{"segment": "2", "track_id": "49", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-10-23 12:39:56", "end": "2019-10-23 12:39:59", "rule_observations": {"secs": "0.3", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "0.0", "weighted_bicyclist": "0.599", "speed_heights_per_s": "0.04", "net_px": "2.1"}, "continuity": {"observed_rows": 9, "coasted_rows": 0, "longest_observed_span_with_gaps_at_most_0_5s": 0.2336, "maximum_observed_gap_seconds": 2.9696}}
-{"segment": "2", "track_id": "51", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-10-23 12:40:55", "end": "2019-10-23 12:40:56", "rule_observations": {"secs": "0.33", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "0.0", "weighted_bicyclist": "0.648", "speed_heights_per_s": "0.15", "net_px": "0.8"}, "continuity": {"observed_rows": 10, "coasted_rows": 0, "longest_observed_span_with_gaps_at_most_0_5s": 0.4671, "maximum_observed_gap_seconds": 0.1335}}
-{"segment": "2", "track_id": "64", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-10-23 12:42:29", "end": "2019-10-23 12:42:30", "rule_observations": {"secs": "0.37", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "0.0", "weighted_bicyclist": "0.732", "speed_heights_per_s": "0.1", "net_px": "1.6"}, "continuity": {"observed_rows": 11, "coasted_rows": 0, "longest_observed_span_with_gaps_at_most_0_5s": 0.9343, "maximum_observed_gap_seconds": 0.4338}}
+Scanned all video entries in the ZIP central directory. Years below come from video filenames or dated session directories, not the year-category folder. A session date is not the full date range of all hourly chunks. Camera identifiers below mean site-folder/device combinations; identical or differently spelled street names are not assumed to be the same physical view. No GPS/intersection locations were inferred.
 
-Winter Park: 2 bicycle-labelled candidates
-Saved exclusion groups: {"rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment": 2}
-{"segment": "0", "track_id": "1", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-09-25 12:10:32", "end": "2019-09-25 12:10:33", "rule_observations": {"secs": "0.77", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "91.3", "weighted_bicyclist": "0.913", "speed_heights_per_s": "4.93", "net_px": "196.1"}, "continuity": {"observed_rows": 23, "coasted_rows": 59, "longest_observed_span_with_gaps_at_most_0_5s": 0.7341, "maximum_observed_gap_seconds": 0.0334}}
-{"segment": "3", "track_id": "7", "counted": "0", "eligible": "0", "exclusion_reason": "rejected_by_reference_count_filters;no_sufficient_continuous_in_calibration_segment", "start": "2019-09-25 12:47:14", "end": "2019-09-25 12:47:14", "rule_observations": {"secs": "0.33", "passes_min_duration": "0", "night_track": "0", "xclip_label": "BICYCLIST", "final_label": "BICYCLIST", "det_cyclist_pct": "0.0", "weighted_bicyclist": "0.757", "speed_heights_per_s": "0.01", "net_px": "0.2"}, "continuity": {"observed_rows": 10, "coasted_rows": 0, "longest_observed_span_with_gaps_at_most_0_5s": 0.3003, "maximum_observed_gap_seconds": 0.0334}}
+| Collection | Site / view folder | Device identifier | Recording years | Video files | Files with unknown date |
+|---|---|---|---|---:|---:|
+| Annual recordings | 10th St | SCU8OG | 2023 | 45 | 0 |
+| Annual recordings | 10th St | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Aloma East | SCU8OG | 2023 | 46 | 0 |
+| Annual recordings | Aloma East | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Aloma West | SCU8OG | 2023 | 47 | 0 |
+| Annual recordings | Aloma West | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Anderson | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Anderson St | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Buenaventura | SCU8OG | 2023 | 44 | 0 |
+| Annual recordings | Buenaventura | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Casselberry Connector | MIOP000706 | 2026 | 48 | 0 |
+| Annual recordings | Celery Ave | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Central Blvd | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Central North | SCU8PM | 2021 | 66 | 0 |
+| Annual recordings | Central South | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Church Ave | SCU8OG | 2023 | 46 | 0 |
+| Annual recordings | Church Ave | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Church St | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Clarcona-Ocoee | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Clarcona-Ocoee | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Conway Rd | SCU8OG | 2022 | 44 | 0 |
+| Annual recordings | Corrine Dr | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Corrine Dr | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Corrine Pop-Up | SCU8OG | 2022 | 48 | 0 |
+| Annual recordings | Corrine/North Side Facing West Bound Traffic | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Corrine/South Side Facing East Bound Traffic | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Cross Seminole | SCU8OG | 2023 | 47 | 0 |
+| Annual recordings | Curry Ford/North | SCU8OG | 2022 | 47 | 0 |
+| Annual recordings | Curry Ford/South | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Denning | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Denning Path | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Dillard | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Dillard | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Division | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Division Ave | SCU8OG | 2023 | 46 | 0 |
+| Annual recordings | Division Ave | SCU8PM | 2023 | 96 | 0 |
+| Annual recordings | E Colonial | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | E Silver Star | SCU8OG | 2023 | 48 | 0 |
+| Annual recordings | EE Williamson | SCU8PM | 2021;2024 | 96 | 0 |
+| Annual recordings | Edgewater Dr | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Emory Path | SCU8OG | 2022 | 46 | 0 |
+| Annual recordings | Fern Creek North | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | Fern Creek South | SCU8PM | 2024 | 48 | 0 |
+| Annual recordings | Fortune Road | MIOP000706 | 2026 | 48 | 0 |
+| Annual recordings | Fortune Road | MIOP000856 | 2026 | 48 | 0 |
+| Annual recordings | Fortune Road | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Fortune Road | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | George Ave & US 17-92 | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Goldsboro Path | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Gore | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Ivey Lane | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | Keller Road | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | Kirkman | SCU8OG | 2023 | 48 | 0 |
+| Annual recordings | Kirkman | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Kissimmee Trail at Hoagland | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Kissimmee Trail at Hoagland | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Lake Fran Trail | SCU8OG | 2022 | 48 | 0 |
+| Annual recordings | Little Econ Trail | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Livingston | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Maitland Ave Crossing | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Maitland Interchange Overpass | SCU8OG | 2023 | 47 | 0 |
+| Annual recordings | Maitland SunRail Station | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Mercy | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | N Orange | SCU8OG | 2023 | 46 | 0 |
+| Annual recordings | N Orange | SCU8PM | 2023 | 49 | 0 |
+| Annual recordings | NOBT CS | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | NOBT CS | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Neptune Road Path | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Neptune SunRail | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | North St | SCU8PM | 2024 | 48 | 0 |
+| Annual recordings | North St E | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Orange Blvd | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Orlando Urban Trail | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Orlando Urban Trail | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Packwood Crossing | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Pine Hills Center | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Pine Hills Center | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Pine Hills North | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Pine Hills North | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Pine Hills Trail/Balboa | SCU8OG | 2023 | 47 | 0 |
+| Annual recordings | Pine Hills Trail/Indialantic | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Pine St | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Powers | SCU8OG | 2023 | 45 | 0 |
+| Annual recordings | Princeton Packing District | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Princeton Packing District | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Rinehart | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Rinehart | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Rio Grande | SCU8PM | 2024 | 48 | 0 |
+| Annual recordings | Riverwalk | SCU8OG | 2022 | 47 | 0 |
+| Annual recordings | Robinson | SCU8OG | 2021 | 37 | 0 |
+| Annual recordings | Rock Springs Rd | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Rock Springs Rd | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | S Semoran/S Semoran East | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | S Semoran/S Semoran West | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | SOBT | SCU8OG | 2023;2024 | 94 | 0 |
+| Annual recordings | SOBT | SCU8PM | 2022;2024 | 96 | 0 |
+| Annual recordings | SR 436 | SCU8OG | 2022 | 44 | 0 |
+| Annual recordings | SR 436 | SCU8PM | 2022 | 38 | 0 |
+| Annual recordings | Sandspur & Maitland Ave | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Seminole Wekiva | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Semoran Separated | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Semoran Separated | MIOP000856 | 2025 | 49 | 0 |
+| Annual recordings | Shingle Creek MetroWest | SCU8PM | 2022 | 49 | 0 |
+| Annual recordings | Shingle Creek S Orange | SCU8OG | 2022 | 45 | 0 |
+| Annual recordings | Shingle Creek S Orange | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Shingle Creek/At Destination Pkwy | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Silver Star/North Side | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Silver Star/South Side | SCU8OG | 2022 | 47 | 0 |
+| Annual recordings | Slavia Road | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Sligh | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | South St | SCU8OG | 2021;2023 | 92 | 0 |
+| Annual recordings | Spring Lake Path | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | St Andrews | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | Sunset Dr | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | Sunset Dr | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | US 17-92 | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | US 17-92 | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | US 17-92 Fern Park | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | US 17-92 Fern Park | SCU8PM | 2024 | 48 | 0 |
+| Annual recordings | US 192 | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | US 192 | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | University East | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | University West | SCU8OG | 2025 | 48 | 0 |
+| Annual recordings | University West | SCU8PM | 2025 | 48 | 0 |
+| Annual recordings | Virginia (East of Mills)/North Side Facing West Bound Traffic | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Virginia (East of Mills)/South Side Facing East Bound Traffic | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Virginia (West of Mills) | SCU8PM | 2021 | 25 | 0 |
+| Annual recordings | W Colonial | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | W Colonial | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | W Colonial | SCU8OG | 2022 | 47 | 0 |
+| Annual recordings | W Colonial | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Washington St | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | West Orange Trail | SCU8OG | 2023 | 45 | 0 |
+| Annual recordings | Westmoreland Path | SCU8OG | 2022 | 47 | 0 |
+| Annual recordings | Winter Park Dr | MIOP000856 | 2026 | 48 | 0 |
+| Bike Lane Study | Aloma Path | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | Aloma SW | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | BL Alafaya | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | BL Alafaya | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | BL Colonial | SCU8OG | 2019 | 96 | 0 |
+| Bike Lane Study | BL Columbia | SCU8PM | 2019 | 49 | 0 |
+| Bike Lane Study | BL Edgewater | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | BL Glenridge | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | BL Lakemont | SCU8OG | 2019 | 96 | 0 |
+| Bike Lane Study | BL Livingston | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | BL Par | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | BL Pine Hills | SCU8OG | 2019 | 25 | 0 |
+| Bike Lane Study | BL Pine Hills | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | BL S Orange | SCU8OG | 2019 | 156 | 0 |
+| Bike Lane Study | BL Speed Edgewater | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | Daniels Path | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | Daniels SW | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Carroll | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Clay | SCU8PM | 2019 | 96 | 0 |
+| Bike Lane Study | NBL Curry Ford | SCU8PM | 2019 | 157 | 0 |
+| Bike Lane Study | NBL Kaley | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Lee Road | SCU8PM | 2019 | 96 | 0 |
+| Bike Lane Study | NBL N Orange | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Pine Hills | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Pine Hills | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Summerlin | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL University | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL University | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Winter Park Road | SCU8PM | 2019 | 96 | 0 |
+| Bike Lane Study | New folder | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | Pleasant Hill Path | SCU8OG | 2019 | 31 | 0 |
+| Bike Lane Study | Rinehart Road Path | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | Rinehart Road SW | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | Rinehart Road SW | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | SW Speed University | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | TL Speed Baxter | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | TL Speed Winter Park | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | WORT Path | SCU8OG | 2019 | 37 | 0 |
+| Bike Lane Study | WORT Sidewalk | SCU8PM | 2019 | 48 | 0 |
+| Other | SunRail | SCU8PM | 2020 | 48 | 0 |
+| Other | SunRail Longwood | SCU8OG | 2023 | 48 | 0 |
+| Other | SunRail Longwood | SCU8PM | 2023 | 48 | 0 |
+| Other | SunRail Longwood/Longwood SunRail Upload | SCU8OG | 2023 | 7 | 0 |
+| Other | SunRail Longwood/Longwood SunRail Upload | SCU8PM | 2023 | 7 | 0 |
 
-Full saved evidence: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/ADAPTIVE_SPEED_shortday_20261026_095645/missing_speed_diagnostics.json
+**Full-archive duration hours have not been measured by this file-list scan.** The verified 1,919-file/41-camera hours elsewhere in this README apply only to the Bike Lane Study subset. Unknown dates remain unknown rather than borrowing the category year.
+<!-- FULL_ARCHIVE_INVENTORY_END -->
 (yolo_env) [rmathew1@login8 test_colonial]$ 

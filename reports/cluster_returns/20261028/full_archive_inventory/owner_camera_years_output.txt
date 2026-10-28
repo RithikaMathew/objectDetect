@@ -1,0 +1,192 @@
+
+cat exp_results/MIOVISION_FULL_ARCHIVE_INVENTORY/CAMERA_YEARS.md
+<!-- FULL_ARCHIVE_INVENTORY_START -->
+## Complete MioVision ZIP: camera folders and recording years
+
+Scanned all video entries in the ZIP central directory. Years below come from video filenames or dated session directories, not the year-category folder. A session date is not the full date range of all hourly chunks. Camera identifiers below mean site-folder/device combinations; identical or differently spelled street names are not assumed to be the same physical view. No GPS/intersection locations were inferred.
+
+| Collection | Site / view folder | Device identifier | Recording years | Video files | Files with unknown date |
+|---|---|---|---|---:|---:|
+| Annual recordings | 10th St | SCU8OG | 2023 | 45 | 0 |
+| Annual recordings | 10th St | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Aloma East | SCU8OG | 2023 | 46 | 0 |
+| Annual recordings | Aloma East | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Aloma West | SCU8OG | 2023 | 47 | 0 |
+| Annual recordings | Aloma West | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Anderson | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Anderson St | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Buenaventura | SCU8OG | 2023 | 44 | 0 |
+| Annual recordings | Buenaventura | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Casselberry Connector | MIOP000706 | 2026 | 48 | 0 |
+| Annual recordings | Celery Ave | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Central Blvd | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Central North | SCU8PM | 2021 | 66 | 0 |
+| Annual recordings | Central South | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Church Ave | SCU8OG | 2023 | 46 | 0 |
+| Annual recordings | Church Ave | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Church St | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Clarcona-Ocoee | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Clarcona-Ocoee | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Conway Rd | SCU8OG | 2022 | 44 | 0 |
+| Annual recordings | Corrine Dr | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Corrine Dr | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Corrine Pop-Up | SCU8OG | 2022 | 48 | 0 |
+| Annual recordings | Corrine/North Side Facing West Bound Traffic | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Corrine/South Side Facing East Bound Traffic | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Cross Seminole | SCU8OG | 2023 | 47 | 0 |
+| Annual recordings | Curry Ford/North | SCU8OG | 2022 | 47 | 0 |
+| Annual recordings | Curry Ford/South | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Denning | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Denning Path | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Dillard | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Dillard | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Division | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Division Ave | SCU8OG | 2023 | 46 | 0 |
+| Annual recordings | Division Ave | SCU8PM | 2023 | 96 | 0 |
+| Annual recordings | E Colonial | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | E Silver Star | SCU8OG | 2023 | 48 | 0 |
+| Annual recordings | EE Williamson | SCU8PM | 2021;2024 | 96 | 0 |
+| Annual recordings | Edgewater Dr | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Emory Path | SCU8OG | 2022 | 46 | 0 |
+| Annual recordings | Fern Creek North | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | Fern Creek South | SCU8PM | 2024 | 48 | 0 |
+| Annual recordings | Fortune Road | MIOP000706 | 2026 | 48 | 0 |
+| Annual recordings | Fortune Road | MIOP000856 | 2026 | 48 | 0 |
+| Annual recordings | Fortune Road | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Fortune Road | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | George Ave & US 17-92 | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Goldsboro Path | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Gore | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Ivey Lane | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | Keller Road | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | Kirkman | SCU8OG | 2023 | 48 | 0 |
+| Annual recordings | Kirkman | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Kissimmee Trail at Hoagland | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Kissimmee Trail at Hoagland | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Lake Fran Trail | SCU8OG | 2022 | 48 | 0 |
+| Annual recordings | Little Econ Trail | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Livingston | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Maitland Ave Crossing | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Maitland Interchange Overpass | SCU8OG | 2023 | 47 | 0 |
+| Annual recordings | Maitland SunRail Station | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Mercy | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | N Orange | SCU8OG | 2023 | 46 | 0 |
+| Annual recordings | N Orange | SCU8PM | 2023 | 49 | 0 |
+| Annual recordings | NOBT CS | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | NOBT CS | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Neptune Road Path | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Neptune SunRail | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | North St | SCU8PM | 2024 | 48 | 0 |
+| Annual recordings | North St E | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Orange Blvd | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Orlando Urban Trail | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Orlando Urban Trail | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Packwood Crossing | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Pine Hills Center | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Pine Hills Center | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Pine Hills North | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Pine Hills North | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Pine Hills Trail/Balboa | SCU8OG | 2023 | 47 | 0 |
+| Annual recordings | Pine Hills Trail/Indialantic | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Pine St | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Powers | SCU8OG | 2023 | 45 | 0 |
+| Annual recordings | Princeton Packing District | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Princeton Packing District | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Rinehart | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Rinehart | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | Rio Grande | SCU8PM | 2024 | 48 | 0 |
+| Annual recordings | Riverwalk | SCU8OG | 2022 | 47 | 0 |
+| Annual recordings | Robinson | SCU8OG | 2021 | 37 | 0 |
+| Annual recordings | Rock Springs Rd | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Rock Springs Rd | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | S Semoran/S Semoran East | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | S Semoran/S Semoran West | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | SOBT | SCU8OG | 2023;2024 | 94 | 0 |
+| Annual recordings | SOBT | SCU8PM | 2022;2024 | 96 | 0 |
+| Annual recordings | SR 436 | SCU8OG | 2022 | 44 | 0 |
+| Annual recordings | SR 436 | SCU8PM | 2022 | 38 | 0 |
+| Annual recordings | Sandspur & Maitland Ave | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Seminole Wekiva | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Semoran Separated | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Semoran Separated | MIOP000856 | 2025 | 49 | 0 |
+| Annual recordings | Shingle Creek MetroWest | SCU8PM | 2022 | 49 | 0 |
+| Annual recordings | Shingle Creek S Orange | SCU8OG | 2022 | 45 | 0 |
+| Annual recordings | Shingle Creek S Orange | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Shingle Creek/At Destination Pkwy | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | Silver Star/North Side | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Silver Star/South Side | SCU8OG | 2022 | 47 | 0 |
+| Annual recordings | Slavia Road | SCU8PM | 2023 | 48 | 0 |
+| Annual recordings | Sligh | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | South St | SCU8OG | 2021;2023 | 92 | 0 |
+| Annual recordings | Spring Lake Path | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | St Andrews | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | Sunset Dr | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | Sunset Dr | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | US 17-92 | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | US 17-92 | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | US 17-92 Fern Park | SCU8OG | 2024 | 48 | 0 |
+| Annual recordings | US 17-92 Fern Park | SCU8PM | 2024 | 48 | 0 |
+| Annual recordings | US 192 | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | US 192 | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | University East | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | University West | SCU8OG | 2025 | 48 | 0 |
+| Annual recordings | University West | SCU8PM | 2025 | 48 | 0 |
+| Annual recordings | Virginia (East of Mills)/North Side Facing West Bound Traffic | SCU8PM | 2021 | 48 | 0 |
+| Annual recordings | Virginia (East of Mills)/South Side Facing East Bound Traffic | SCU8OG | 2021 | 48 | 0 |
+| Annual recordings | Virginia (West of Mills) | SCU8PM | 2021 | 25 | 0 |
+| Annual recordings | W Colonial | MIOP000706 | 2025 | 48 | 0 |
+| Annual recordings | W Colonial | MIOP000856 | 2025 | 48 | 0 |
+| Annual recordings | W Colonial | SCU8OG | 2022 | 47 | 0 |
+| Annual recordings | W Colonial | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | Washington St | SCU8PM | 2022 | 48 | 0 |
+| Annual recordings | West Orange Trail | SCU8OG | 2023 | 45 | 0 |
+| Annual recordings | Westmoreland Path | SCU8OG | 2022 | 47 | 0 |
+| Annual recordings | Winter Park Dr | MIOP000856 | 2026 | 48 | 0 |
+| Bike Lane Study | Aloma Path | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | Aloma SW | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | BL Alafaya | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | BL Alafaya | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | BL Colonial | SCU8OG | 2019 | 96 | 0 |
+| Bike Lane Study | BL Columbia | SCU8PM | 2019 | 49 | 0 |
+| Bike Lane Study | BL Edgewater | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | BL Glenridge | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | BL Lakemont | SCU8OG | 2019 | 96 | 0 |
+| Bike Lane Study | BL Livingston | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | BL Par | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | BL Pine Hills | SCU8OG | 2019 | 25 | 0 |
+| Bike Lane Study | BL Pine Hills | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | BL S Orange | SCU8OG | 2019 | 156 | 0 |
+| Bike Lane Study | BL Speed Edgewater | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | Daniels Path | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | Daniels SW | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Carroll | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Clay | SCU8PM | 2019 | 96 | 0 |
+| Bike Lane Study | NBL Curry Ford | SCU8PM | 2019 | 157 | 0 |
+| Bike Lane Study | NBL Kaley | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Lee Road | SCU8PM | 2019 | 96 | 0 |
+| Bike Lane Study | NBL N Orange | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Pine Hills | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Pine Hills | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Summerlin | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL University | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | NBL University | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | NBL Winter Park Road | SCU8PM | 2019 | 96 | 0 |
+| Bike Lane Study | New folder | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | Pleasant Hill Path | SCU8OG | 2019 | 31 | 0 |
+| Bike Lane Study | Rinehart Road Path | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | Rinehart Road SW | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | Rinehart Road SW | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | SW Speed University | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | TL Speed Baxter | SCU8PM | 2019 | 48 | 0 |
+| Bike Lane Study | TL Speed Winter Park | SCU8OG | 2019 | 48 | 0 |
+| Bike Lane Study | WORT Path | SCU8OG | 2019 | 37 | 0 |
+| Bike Lane Study | WORT Sidewalk | SCU8PM | 2019 | 48 | 0 |
+| Other | SunRail | SCU8PM | 2020 | 48 | 0 |
+| Other | SunRail Longwood | SCU8OG | 2023 | 48 | 0 |
+| Other | SunRail Longwood | SCU8PM | 2023 | 48 | 0 |
+| Other | SunRail Longwood/Longwood SunRail Upload | SCU8OG | 2023 | 7 | 0 |
+| Other | SunRail Longwood/Longwood SunRail Upload | SCU8PM | 2023 | 7 | 0 |
+
+**Full-archive duration hours have not been measured by this file-list scan.** The verified 1,919-file/41-camera hours elsewhere in this README apply only to the Bike Lane Study subset. Unknown dates remain unknown rather than borrowing the category year.
+<!-- FULL_ARCHIVE_INVENTORY_END -->
+(yolo_env) [rmathew1@login8 test_colonial]$ 

@@ -1,0 +1,25 @@
+{
+  "video_files": 9085,
+  "site_device_groups": 179,
+  "files_by_collection": {
+    "Annual recordings": 6648,
+    "Bike Lane Study": 2279,
+    "Other": 158
+  },
+  "groups_by_collection": {
+    "Annual recordings": 135,
+    "Bike Lane Study": 39,
+    "Other": 5
+  },
+  "years": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "unknown_date_files": 0
+}
