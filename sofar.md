@@ -1,192 +1,190 @@
 
-cat exp_results/MIOVISION_FULL_ARCHIVE_INVENTORY/CAMERA_YEARS.md
-<!-- FULL_ARCHIVE_INVENTORY_START -->
-## Complete MioVision ZIP: camera folders and recording years
+cat exp_results/MIOVISION_FULL_ARCHIVE_INVENTORY/durations/RESULTS.md
 
-Scanned all video entries in the ZIP central directory. Years below come from video filenames or dated session directories, not the year-category folder. A session date is not the full date range of all hourly chunks. Camera identifiers below mean site-folder/device combinations; identical or differently spelled street names are not assumed to be the same physical view. No GPS/intersection locations were inferred.
+cat exp_results/MIOVISION_FULL_ARCHIVE_INVENTORY/camera_years_hours.csv
+# Original-video duration audit
 
-| Collection | Site / view folder | Device identifier | Recording years | Video files | Files with unknown date |
-|---|---|---|---|---:|---:|
-| Annual recordings | 10th St | SCU8OG | 2023 | 45 | 0 |
-| Annual recordings | 10th St | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | Aloma East | SCU8OG | 2023 | 46 | 0 |
-| Annual recordings | Aloma East | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | Aloma West | SCU8OG | 2023 | 47 | 0 |
-| Annual recordings | Aloma West | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | Anderson | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | Anderson St | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Buenaventura | SCU8OG | 2023 | 44 | 0 |
-| Annual recordings | Buenaventura | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | Casselberry Connector | MIOP000706 | 2026 | 48 | 0 |
-| Annual recordings | Celery Ave | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Central Blvd | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Central North | SCU8PM | 2021 | 66 | 0 |
-| Annual recordings | Central South | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Church Ave | SCU8OG | 2023 | 46 | 0 |
-| Annual recordings | Church Ave | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Church St | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | Clarcona-Ocoee | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Clarcona-Ocoee | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Conway Rd | SCU8OG | 2022 | 44 | 0 |
-| Annual recordings | Corrine Dr | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Corrine Dr | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | Corrine Pop-Up | SCU8OG | 2022 | 48 | 0 |
-| Annual recordings | Corrine/North Side Facing West Bound Traffic | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Corrine/South Side Facing East Bound Traffic | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Cross Seminole | SCU8OG | 2023 | 47 | 0 |
-| Annual recordings | Curry Ford/North | SCU8OG | 2022 | 47 | 0 |
-| Annual recordings | Curry Ford/South | SCU8PM | 2022 | 48 | 0 |
-| Annual recordings | Denning | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Denning Path | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Dillard | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Dillard | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Division | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Division Ave | SCU8OG | 2023 | 46 | 0 |
-| Annual recordings | Division Ave | SCU8PM | 2023 | 96 | 0 |
-| Annual recordings | E Colonial | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | E Silver Star | SCU8OG | 2023 | 48 | 0 |
-| Annual recordings | EE Williamson | SCU8PM | 2021;2024 | 96 | 0 |
-| Annual recordings | Edgewater Dr | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Emory Path | SCU8OG | 2022 | 46 | 0 |
-| Annual recordings | Fern Creek North | SCU8OG | 2024 | 48 | 0 |
-| Annual recordings | Fern Creek South | SCU8PM | 2024 | 48 | 0 |
-| Annual recordings | Fortune Road | MIOP000706 | 2026 | 48 | 0 |
-| Annual recordings | Fortune Road | MIOP000856 | 2026 | 48 | 0 |
-| Annual recordings | Fortune Road | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Fortune Road | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | George Ave & US 17-92 | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Goldsboro Path | SCU8PM | 2022 | 48 | 0 |
-| Annual recordings | Gore | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Ivey Lane | SCU8OG | 2024 | 48 | 0 |
-| Annual recordings | Keller Road | SCU8OG | 2024 | 48 | 0 |
-| Annual recordings | Kirkman | SCU8OG | 2023 | 48 | 0 |
-| Annual recordings | Kirkman | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | Kissimmee Trail at Hoagland | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Kissimmee Trail at Hoagland | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | Lake Fran Trail | SCU8OG | 2022 | 48 | 0 |
-| Annual recordings | Little Econ Trail | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Livingston | SCU8PM | 2022 | 48 | 0 |
-| Annual recordings | Maitland Ave Crossing | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Maitland Interchange Overpass | SCU8OG | 2023 | 47 | 0 |
-| Annual recordings | Maitland SunRail Station | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Mercy | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | N Orange | SCU8OG | 2023 | 46 | 0 |
-| Annual recordings | N Orange | SCU8PM | 2023 | 49 | 0 |
-| Annual recordings | NOBT CS | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | NOBT CS | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Neptune Road Path | SCU8PM | 2022 | 48 | 0 |
-| Annual recordings | Neptune SunRail | SCU8PM | 2022 | 48 | 0 |
-| Annual recordings | North St | SCU8PM | 2024 | 48 | 0 |
-| Annual recordings | North St E | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | Orange Blvd | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Orlando Urban Trail | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Orlando Urban Trail | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | Packwood Crossing | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Pine Hills Center | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Pine Hills Center | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | Pine Hills North | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Pine Hills North | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | Pine Hills Trail/Balboa | SCU8OG | 2023 | 47 | 0 |
-| Annual recordings | Pine Hills Trail/Indialantic | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | Pine St | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Powers | SCU8OG | 2023 | 45 | 0 |
-| Annual recordings | Princeton Packing District | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Princeton Packing District | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Rinehart | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Rinehart | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | Rio Grande | SCU8PM | 2024 | 48 | 0 |
-| Annual recordings | Riverwalk | SCU8OG | 2022 | 47 | 0 |
-| Annual recordings | Robinson | SCU8OG | 2021 | 37 | 0 |
-| Annual recordings | Rock Springs Rd | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Rock Springs Rd | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | S Semoran/S Semoran East | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | S Semoran/S Semoran West | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | SOBT | SCU8OG | 2023;2024 | 94 | 0 |
-| Annual recordings | SOBT | SCU8PM | 2022;2024 | 96 | 0 |
-| Annual recordings | SR 436 | SCU8OG | 2022 | 44 | 0 |
-| Annual recordings | SR 436 | SCU8PM | 2022 | 38 | 0 |
-| Annual recordings | Sandspur & Maitland Ave | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Seminole Wekiva | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | Semoran Separated | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Semoran Separated | MIOP000856 | 2025 | 49 | 0 |
-| Annual recordings | Shingle Creek MetroWest | SCU8PM | 2022 | 49 | 0 |
-| Annual recordings | Shingle Creek S Orange | SCU8OG | 2022 | 45 | 0 |
-| Annual recordings | Shingle Creek S Orange | SCU8PM | 2022 | 48 | 0 |
-| Annual recordings | Shingle Creek/At Destination Pkwy | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | Silver Star/North Side | SCU8PM | 2022 | 48 | 0 |
-| Annual recordings | Silver Star/South Side | SCU8OG | 2022 | 47 | 0 |
-| Annual recordings | Slavia Road | SCU8PM | 2023 | 48 | 0 |
-| Annual recordings | Sligh | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | South St | SCU8OG | 2021;2023 | 92 | 0 |
-| Annual recordings | Spring Lake Path | SCU8OG | 2024 | 48 | 0 |
-| Annual recordings | St Andrews | SCU8OG | 2024 | 48 | 0 |
-| Annual recordings | Sunset Dr | SCU8OG | 2024 | 48 | 0 |
-| Annual recordings | Sunset Dr | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | US 17-92 | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | US 17-92 | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | US 17-92 Fern Park | SCU8OG | 2024 | 48 | 0 |
-| Annual recordings | US 17-92 Fern Park | SCU8PM | 2024 | 48 | 0 |
-| Annual recordings | US 192 | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | US 192 | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | University East | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | University West | SCU8OG | 2025 | 48 | 0 |
-| Annual recordings | University West | SCU8PM | 2025 | 48 | 0 |
-| Annual recordings | Virginia (East of Mills)/North Side Facing West Bound Traffic | SCU8PM | 2021 | 48 | 0 |
-| Annual recordings | Virginia (East of Mills)/South Side Facing East Bound Traffic | SCU8OG | 2021 | 48 | 0 |
-| Annual recordings | Virginia (West of Mills) | SCU8PM | 2021 | 25 | 0 |
-| Annual recordings | W Colonial | MIOP000706 | 2025 | 48 | 0 |
-| Annual recordings | W Colonial | MIOP000856 | 2025 | 48 | 0 |
-| Annual recordings | W Colonial | SCU8OG | 2022 | 47 | 0 |
-| Annual recordings | W Colonial | SCU8PM | 2022 | 48 | 0 |
-| Annual recordings | Washington St | SCU8PM | 2022 | 48 | 0 |
-| Annual recordings | West Orange Trail | SCU8OG | 2023 | 45 | 0 |
-| Annual recordings | Westmoreland Path | SCU8OG | 2022 | 47 | 0 |
-| Annual recordings | Winter Park Dr | MIOP000856 | 2026 | 48 | 0 |
-| Bike Lane Study | Aloma Path | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | Aloma SW | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | BL Alafaya | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | BL Alafaya | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | BL Colonial | SCU8OG | 2019 | 96 | 0 |
-| Bike Lane Study | BL Columbia | SCU8PM | 2019 | 49 | 0 |
-| Bike Lane Study | BL Edgewater | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | BL Glenridge | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | BL Lakemont | SCU8OG | 2019 | 96 | 0 |
-| Bike Lane Study | BL Livingston | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | BL Par | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | BL Pine Hills | SCU8OG | 2019 | 25 | 0 |
-| Bike Lane Study | BL Pine Hills | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | BL S Orange | SCU8OG | 2019 | 156 | 0 |
-| Bike Lane Study | BL Speed Edgewater | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | Daniels Path | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | Daniels SW | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | NBL Carroll | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | NBL Clay | SCU8PM | 2019 | 96 | 0 |
-| Bike Lane Study | NBL Curry Ford | SCU8PM | 2019 | 157 | 0 |
-| Bike Lane Study | NBL Kaley | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | NBL Lee Road | SCU8PM | 2019 | 96 | 0 |
-| Bike Lane Study | NBL N Orange | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | NBL Pine Hills | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | NBL Pine Hills | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | NBL Summerlin | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | NBL University | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | NBL University | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | NBL Winter Park Road | SCU8PM | 2019 | 96 | 0 |
-| Bike Lane Study | New folder | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | Pleasant Hill Path | SCU8OG | 2019 | 31 | 0 |
-| Bike Lane Study | Rinehart Road Path | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | Rinehart Road SW | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | Rinehart Road SW | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | SW Speed University | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | TL Speed Baxter | SCU8PM | 2019 | 48 | 0 |
-| Bike Lane Study | TL Speed Winter Park | SCU8OG | 2019 | 48 | 0 |
-| Bike Lane Study | WORT Path | SCU8OG | 2019 | 37 | 0 |
-| Bike Lane Study | WORT Sidewalk | SCU8PM | 2019 | 48 | 0 |
-| Other | SunRail | SCU8PM | 2020 | 48 | 0 |
-| Other | SunRail Longwood | SCU8OG | 2023 | 48 | 0 |
-| Other | SunRail Longwood | SCU8PM | 2023 | 48 | 0 |
-| Other | SunRail Longwood/Longwood SunRail Upload | SCU8OG | 2023 | 7 | 0 |
-| Other | SunRail Longwood/Longwood SunRail Upload | SCU8PM | 2023 | 7 | 0 |
+Measured 9085/9085 files; 179/179 camera collections complete.
 
-**Full-archive duration hours have not been measured by this file-list scan.** The verified 1,919-file/41-camera hours elsewhere in this README apply only to the Bike Lane Study subset. Unknown dates remain unknown rather than borrowing the category year.
-<!-- FULL_ARCHIVE_INVENTORY_END -->
-(yolo_env) [rmathew1@login8 test_colonial]$ 
+by_camera.csv gives total hours only when every inventoried file for that camera was measured. Incomplete totals remain blank; measured subtotals are not full totals. These are summed playback hours, not proof of gap-free coverage or distinct synchronized camera hours. No inference or speed calculation. One temporary archive member at a time is deleted after probing. Rerunning the same command resumes successful measurements and retries failures.
+collection,site_folder,device,recording_years,known_year_count,video_files,measured_video_files,total_playback_hours,duration_status
+Annual recordings,10th St,SCU8OG,2023,1,45,45,44.75367021777779,COMPLETE
+Annual recordings,10th St,SCU8PM,2023,1,48,48,47.982778952500006,COMPLETE
+Annual recordings,Aloma East,SCU8OG,2023,1,46,46,45.031030907777776,COMPLETE
+Annual recordings,Aloma East,SCU8PM,2023,1,48,48,47.98193551694444,COMPLETE
+Annual recordings,Aloma West,SCU8OG,2023,1,47,47,46.07792038972224,COMPLETE
+Annual recordings,Aloma West,SCU8PM,2023,1,48,48,47.98549462749998,COMPLETE
+Annual recordings,Anderson,SCU8PM,2023,1,48,48,47.99047182166665,COMPLETE
+Annual recordings,Anderson St,SCU8PM,2021,1,48,48,47.98620830361109,COMPLETE
+Annual recordings,Buenaventura,SCU8OG,2023,1,44,44,43.82554764972222,COMPLETE
+Annual recordings,Buenaventura,SCU8PM,2023,1,48,48,47.98783029388888,COMPLETE
+Annual recordings,Casselberry Connector,MIOP000706,2026,1,48,48,47.9994075,COMPLETE
+Annual recordings,Celery Ave,SCU8OG,2021,1,48,48,47.98628245222224,COMPLETE
+Annual recordings,Central Blvd,SCU8PM,2021,1,48,48,47.98524437777779,COMPLETE
+Annual recordings,Central North,SCU8PM,2021,1,66,66,64.84249046527779,COMPLETE
+Annual recordings,Central South,SCU8OG,2021,1,48,48,47.985448285555556,COMPLETE
+Annual recordings,Church Ave,SCU8OG,2023,1,46,46,45.033626091111124,COMPLETE
+Annual recordings,Church Ave,SCU8PM,2021,1,48,48,47.98332579444445,COMPLETE
+Annual recordings,Church St,SCU8PM,2023,1,48,48,47.98458631361111,COMPLETE
+Annual recordings,Clarcona-Ocoee,SCU8OG,2021,1,48,48,47.9865605075,COMPLETE
+Annual recordings,Clarcona-Ocoee,SCU8PM,2021,1,48,48,47.98800639305556,COMPLETE
+Annual recordings,Conway Rd,SCU8OG,2022,1,44,44,43.4756514575,COMPLETE
+Annual recordings,Corrine Dr,MIOP000706,2025,1,48,48,47.9994075,COMPLETE
+Annual recordings,Corrine Dr,MIOP000856,2025,1,48,48,47.9994075,COMPLETE
+Annual recordings,Corrine Pop-Up,SCU8OG,2022,1,48,48,47.18740023611111,COMPLETE
+Annual recordings,Corrine/North Side Facing West Bound Traffic,SCU8OG,2021,1,48,48,47.98378922111111,COMPLETE
+Annual recordings,Corrine/South Side Facing East Bound Traffic,SCU8PM,2021,1,48,48,47.98206527611112,COMPLETE
+Annual recordings,Cross Seminole,SCU8OG,2023,1,47,47,46.05464711138889,COMPLETE
+Annual recordings,Curry Ford/North,SCU8OG,2022,1,47,47,46.52187359583335,COMPLETE
+Annual recordings,Curry Ford/South,SCU8PM,2022,1,48,48,47.98524437527776,COMPLETE
+Annual recordings,Denning,MIOP000706,2025,1,48,48,47.99942611111111,COMPLETE
+Annual recordings,Denning Path,SCU8OG,2021,1,48,48,47.98863665472222,COMPLETE
+Annual recordings,Dillard,SCU8OG,2021,1,48,48,47.98265846111111,COMPLETE
+Annual recordings,Dillard,SCU8PM,2021,1,48,48,47.98637513666667,COMPLETE
+Annual recordings,Division,SCU8PM,2021,1,48,48,47.990740609444444,COMPLETE
+Annual recordings,Division Ave,SCU8OG,2023,1,46,46,45.35728308805555,COMPLETE
+Annual recordings,Division Ave,SCU8PM,2023,1,96,96,95.97828357999998,COMPLETE
+Annual recordings,E Colonial,SCU8PM,2023,1,48,48,47.984530702222216,COMPLETE
+Annual recordings,E Silver Star,SCU8OG,2023,1,48,48,47.98288090611111,COMPLETE
+Annual recordings,EE Williamson,SCU8PM,2021;2024,2,96,96,95.97581815333334,COMPLETE
+Annual recordings,Edgewater Dr,MIOP000706,2025,1,48,48,47.99935194444444,COMPLETE
+Annual recordings,Emory Path,SCU8OG,2022,1,46,46,45.01213237472222,COMPLETE
+Annual recordings,Fern Creek North,SCU8OG,2024,1,48,48,47.987339063888875,COMPLETE
+Annual recordings,Fern Creek South,SCU8PM,2024,1,48,48,47.982982859166675,COMPLETE
+Annual recordings,Fortune Road,MIOP000706,2026,1,48,48,47.999111111111105,COMPLETE
+Annual recordings,Fortune Road,MIOP000856,2026,1,48,48,47.99924083333333,COMPLETE
+Annual recordings,Fortune Road,SCU8OG,2021,1,48,48,47.98697759055556,COMPLETE
+Annual recordings,Fortune Road,SCU8PM,2021,1,48,48,47.98715368944443,COMPLETE
+Annual recordings,George Ave & US 17-92,SCU8OG,2021,1,48,48,47.98304773583334,COMPLETE
+Annual recordings,Goldsboro Path,SCU8PM,2022,1,48,48,47.984345328888885,COMPLETE
+Annual recordings,Gore,SCU8PM,2021,1,48,48,47.986069276666655,COMPLETE
+Annual recordings,Ivey Lane,SCU8OG,2024,1,48,48,47.98758004444442,COMPLETE
+Annual recordings,Keller Road,SCU8OG,2024,1,48,48,47.9862546463889,COMPLETE
+Annual recordings,Kirkman,SCU8OG,2023,1,48,48,47.98357604472223,COMPLETE
+Annual recordings,Kirkman,SCU8PM,2023,1,48,48,47.98541121083333,COMPLETE
+Annual recordings,Kissimmee Trail at Hoagland,MIOP000706,2025,1,48,48,47.9994075,COMPLETE
+Annual recordings,Kissimmee Trail at Hoagland,MIOP000856,2025,1,48,48,47.99942611111111,COMPLETE
+Annual recordings,Lake Fran Trail,SCU8OG,2022,1,48,48,47.31333172055555,COMPLETE
+Annual recordings,Little Econ Trail,SCU8OG,2021,1,48,48,47.993493359722216,COMPLETE
+Annual recordings,Livingston,SCU8PM,2022,1,48,48,47.98329798555555,COMPLETE
+Annual recordings,Maitland Ave Crossing,SCU8OG,2021,1,48,48,47.98616196194443,COMPLETE
+Annual recordings,Maitland Interchange Overpass,SCU8OG,2023,1,47,47,46.91586017138888,COMPLETE
+Annual recordings,Maitland SunRail Station,SCU8OG,2021,1,48,48,47.98643074555554,COMPLETE
+Annual recordings,Mercy,SCU8PM,2023,1,48,48,47.985531701944446,COMPLETE
+Annual recordings,N Orange,SCU8OG,2023,1,46,46,45.550754338055555,COMPLETE
+Annual recordings,N Orange,SCU8PM,2023,1,49,49,47.98176868,COMPLETE
+Annual recordings,NOBT CS,SCU8OG,2021,1,48,48,47.98875714333334,COMPLETE
+Annual recordings,NOBT CS,SCU8PM,2021,1,48,48,47.992418210833314,COMPLETE
+Annual recordings,Neptune Road Path,SCU8PM,2022,1,48,48,47.98176868055554,COMPLETE
+Annual recordings,Neptune SunRail,SCU8PM,2022,1,48,48,47.982259911944446,COMPLETE
+Annual recordings,North St,SCU8PM,2024,1,48,48,47.9818984425,COMPLETE
+Annual recordings,North St E,MIOP000856,2025,1,48,48,47.99925944444445,COMPLETE
+Annual recordings,Orange Blvd,SCU8OG,2021,1,48,48,47.9931874977778,COMPLETE
+Annual recordings,Orlando Urban Trail,MIOP000706,2025,1,48,48,47.99944444444444,COMPLETE
+Annual recordings,Orlando Urban Trail,MIOP000856,2025,1,48,48,47.99944444444444,COMPLETE
+Annual recordings,Packwood Crossing,SCU8PM,2021,1,48,48,47.98900739555555,COMPLETE
+Annual recordings,Pine Hills Center,MIOP000706,2025,1,48,48,47.999315,COMPLETE
+Annual recordings,Pine Hills Center,MIOP000856,2025,1,48,48,47.999315,COMPLETE
+Annual recordings,Pine Hills North,MIOP000706,2025,1,48,48,47.99929638888889,COMPLETE
+Annual recordings,Pine Hills North,MIOP000856,2025,1,48,48,47.9994075,COMPLETE
+Annual recordings,Pine Hills Trail/Balboa,SCU8OG,2023,1,47,47,46.84287979527778,COMPLETE
+Annual recordings,Pine Hills Trail/Indialantic,SCU8PM,2023,1,48,48,47.99307627583334,COMPLETE
+Annual recordings,Pine St,SCU8OG,2021,1,48,48,47.99239967416666,COMPLETE
+Annual recordings,Powers,SCU8OG,2023,1,45,45,44.02455221388889,COMPLETE
+Annual recordings,Princeton Packing District,SCU8OG,2021,1,48,48,47.986820026666656,COMPLETE
+Annual recordings,Princeton Packing District,SCU8PM,2021,1,48,48,47.98683856194447,COMPLETE
+Annual recordings,Rinehart,MIOP000706,2025,1,48,48,47.9989075,COMPLETE
+Annual recordings,Rinehart,MIOP000856,2025,1,48,48,47.99937055555556,COMPLETE
+Annual recordings,Rio Grande,SCU8PM,2024,1,48,48,47.990786950833346,COMPLETE
+Annual recordings,Riverwalk,SCU8OG,2022,1,47,47,46.657249708888884,COMPLETE
+Annual recordings,Robinson,SCU8OG,2021,1,37,37,36.100971245277776,COMPLETE
+Annual recordings,Rock Springs Rd,MIOP000706,2025,1,48,48,47.99924083333333,COMPLETE
+Annual recordings,Rock Springs Rd,MIOP000856,2025,1,48,48,47.99944444444444,COMPLETE
+Annual recordings,S Semoran/S Semoran East,MIOP000856,2025,1,48,48,47.99925944444445,COMPLETE
+Annual recordings,S Semoran/S Semoran West,MIOP000706,2025,1,48,48,47.99927777777778,COMPLETE
+Annual recordings,SOBT,SCU8OG,2023;2024,2,94,94,93.8583859161111,COMPLETE
+Annual recordings,SOBT,SCU8PM,2022;2024,2,96,96,95.96809747805553,COMPLETE
+Annual recordings,SR 436,SCU8OG,2022,1,44,44,43.11009145583332,COMPLETE
+Annual recordings,SR 436,SCU8PM,2022,1,38,38,37.31226586527778,COMPLETE
+Annual recordings,Sandspur & Maitland Ave,SCU8PM,2021,1,48,48,47.98720930083334,COMPLETE
+Annual recordings,Seminole Wekiva,SCU8PM,2023,1,48,48,47.98567072972221,COMPLETE
+Annual recordings,Semoran Separated,MIOP000706,2025,1,48,48,47.99925944444445,COMPLETE
+Annual recordings,Semoran Separated,MIOP000856,2025,1,49,49,47.99420388888888,COMPLETE
+Annual recordings,Shingle Creek MetroWest,SCU8PM,2022,1,49,49,47.76397618972223,COMPLETE
+Annual recordings,Shingle Creek S Orange,SCU8OG,2022,1,45,45,44.94637217722223,COMPLETE
+Annual recordings,Shingle Creek S Orange,SCU8PM,2022,1,48,48,47.98518876500001,COMPLETE
+Annual recordings,Shingle Creek/At Destination Pkwy,MIOP000706,2025,1,48,48,47.99944444444444,COMPLETE
+Annual recordings,Silver Star/North Side,SCU8PM,2022,1,48,48,47.98407654222222,COMPLETE
+Annual recordings,Silver Star/South Side,SCU8OG,2022,1,47,47,46.374735720555556,COMPLETE
+Annual recordings,Slavia Road,SCU8PM,2023,1,48,48,47.99136159999998,COMPLETE
+Annual recordings,Sligh,SCU8OG,2021,1,48,48,47.98635659972222,COMPLETE
+Annual recordings,South St,SCU8OG,2021;2023,2,92,92,91.27815754249995,COMPLETE
+Annual recordings,Spring Lake Path,SCU8OG,2024,1,48,48,47.980582313333336,COMPLETE
+Annual recordings,St Andrews,SCU8OG,2024,1,48,48,47.99315042138889,COMPLETE
+Annual recordings,Sunset Dr,SCU8OG,2024,1,48,48,47.99125964583334,COMPLETE
+Annual recordings,Sunset Dr,SCU8PM,2021,1,48,48,47.99369726722221,COMPLETE
+Annual recordings,US 17-92,MIOP000706,2025,1,48,48,47.99942611111111,COMPLETE
+Annual recordings,US 17-92,MIOP000856,2025,1,48,48,47.99925944444445,COMPLETE
+Annual recordings,US 17-92 Fern Park,SCU8OG,2024,1,48,48,47.98722784027778,COMPLETE
+Annual recordings,US 17-92 Fern Park,SCU8PM,2024,1,48,48,47.984243378888884,COMPLETE
+Annual recordings,US 192,SCU8OG,2021,1,48,48,47.99150989694445,COMPLETE
+Annual recordings,US 192,SCU8PM,2021,1,48,48,47.98960984999999,COMPLETE
+Annual recordings,University East,MIOP000706,2025,1,48,48,47.99924083333333,COMPLETE
+Annual recordings,University West,SCU8OG,2025,1,48,48,47.98269553555556,COMPLETE
+Annual recordings,University West,SCU8PM,2025,1,48,48,47.983446285555566,COMPLETE
+Annual recordings,Virginia (East of Mills)/North Side Facing West Bound Traffic,SCU8PM,2021,1,48,48,47.9909445163889,COMPLETE
+Annual recordings,Virginia (East of Mills)/South Side Facing East Bound Traffic,SCU8OG,2021,1,48,48,47.985457553333326,COMPLETE
+Annual recordings,Virginia (West of Mills),SCU8PM,2021,1,25,25,24.71017307138889,COMPLETE
+Annual recordings,W Colonial,MIOP000706,2025,1,48,48,47.99938888888889,COMPLETE
+Annual recordings,W Colonial,MIOP000856,2025,1,48,48,47.99922222222222,COMPLETE
+Annual recordings,W Colonial,SCU8OG,2022,1,47,47,46.20786514583333,COMPLETE
+Annual recordings,W Colonial,SCU8PM,2022,1,48,48,47.987153692222215,COMPLETE
+Annual recordings,Washington St,SCU8PM,2022,1,48,48,47.991648920277775,COMPLETE
+Annual recordings,West Orange Trail,SCU8OG,2023,1,45,45,44.02811131861111,COMPLETE
+Annual recordings,Westmoreland Path,SCU8OG,2022,1,47,47,46.08374101638888,COMPLETE
+Annual recordings,Winter Park Dr,MIOP000856,2026,1,48,48,47.99925944444445,COMPLETE
+Bike Lane Study,Aloma Path,SCU8PM,2019,1,48,48,47.986189766666655,COMPLETE
+Bike Lane Study,Aloma SW,SCU8OG,2019,1,48,48,47.98202820166667,COMPLETE
+Bike Lane Study,BL Alafaya,SCU8OG,2019,1,48,48,47.9910650075,COMPLETE
+Bike Lane Study,BL Alafaya,SCU8PM,2019,1,48,48,47.98622684055555,COMPLETE
+Bike Lane Study,BL Colonial,SCU8OG,2019,1,96,96,95.97542887527777,COMPLETE
+Bike Lane Study,BL Columbia,SCU8PM,2019,1,49,49,47.97929398583333,COMPLETE
+Bike Lane Study,BL Edgewater,SCU8OG,2019,1,48,48,47.985318525833314,COMPLETE
+Bike Lane Study,BL Glenridge,SCU8PM,2019,1,48,48,47.98570780388889,COMPLETE
+Bike Lane Study,BL Lakemont,SCU8OG,2019,1,96,96,95.97946068194445,COMPLETE
+Bike Lane Study,BL Livingston,SCU8PM,2019,1,48,48,47.9853741363889,COMPLETE
+Bike Lane Study,BL Par,SCU8OG,2019,1,48,48,47.99097232277778,COMPLETE
+Bike Lane Study,BL Pine Hills,SCU8OG,2019,1,25,25,24.662338198055554,COMPLETE
+Bike Lane Study,BL Pine Hills,SCU8PM,2019,1,48,48,47.9860692761111,COMPLETE
+Bike Lane Study,BL S Orange,SCU8OG,2019,1,156,156,155.95345303999994,COMPLETE
+Bike Lane Study,BL Speed Edgewater,SCU8OG,2019,1,48,48,47.98294578500001,COMPLETE
+Bike Lane Study,Daniels Path,SCU8PM,2019,1,48,48,47.98530925416666,COMPLETE
+Bike Lane Study,Daniels SW,SCU8OG,2019,1,48,48,47.98612488805555,COMPLETE
+Bike Lane Study,NBL Carroll,SCU8OG,2019,1,48,48,47.991658192500005,COMPLETE
+Bike Lane Study,NBL Clay,SCU8PM,2019,1,96,96,95.96953409805556,COMPLETE
+Bike Lane Study,NBL Curry Ford,SCU8PM,2019,1,157,157,155.9566136000001,COMPLETE
+Bike Lane Study,NBL Kaley,SCU8OG,2019,1,48,48,47.98710734944443,COMPLETE
+Bike Lane Study,NBL Lee Road,SCU8PM,2019,1,96,96,95.97338980250002,COMPLETE
+Bike Lane Study,NBL N Orange,SCU8PM,2019,1,48,48,47.984197035555546,COMPLETE
+Bike Lane Study,NBL Pine Hills,SCU8OG,2019,1,48,48,47.98549462694445,COMPLETE
+Bike Lane Study,NBL Pine Hills,SCU8PM,2019,1,48,48,47.98428045055557,COMPLETE
+Bike Lane Study,NBL Summerlin,SCU8OG,2019,1,48,48,47.98445655444443,COMPLETE
+Bike Lane Study,NBL University,SCU8OG,2019,1,48,48,47.9848551,COMPLETE
+Bike Lane Study,NBL University,SCU8PM,2019,1,48,48,47.98690344305555,COMPLETE
+Bike Lane Study,NBL Winter Park Road,SCU8PM,2019,1,96,96,95.9698121530556,COMPLETE
+Bike Lane Study,New folder,SCU8PM,2019,1,48,48,47.98758004499998,COMPLETE
+Bike Lane Study,Pleasant Hill Path,SCU8OG,2019,1,31,31,30.0077854788889,COMPLETE
+Bike Lane Study,Rinehart Road Path,SCU8PM,2019,1,48,48,47.99139867333335,COMPLETE
+Bike Lane Study,Rinehart Road SW,SCU8OG,2019,1,48,48,47.990193766111105,COMPLETE
+Bike Lane Study,Rinehart Road SW,SCU8PM,2019,1,48,48,47.99139867333335,COMPLETE
+Bike Lane Study,SW Speed University,SCU8PM,2019,1,48,48,47.98694051750001,COMPLETE
+Bike Lane Study,TL Speed Baxter,SCU8PM,2019,1,48,48,47.99248309055556,COMPLETE
+Bike Lane Study,TL Speed Winter Park,SCU8OG,2019,1,48,48,47.983928248888894,COMPLETE
+Bike Lane Study,WORT Path,SCU8OG,2019,1,37,37,36.12300252833333,COMPLETE
+Bike Lane Study,WORT Sidewalk,SCU8PM,2019,1,48,48,47.98758004499998,COMPLETE
+Other,SunRail,SCU8PM,2020,1,48,48,47.99220503555556,COMPLETE
+Other,SunRail Longwood,SCU8OG,2023,1,48,48,47.98261211444444,COMPLETE
+Other,SunRail Longwood,SCU8PM,2023,1,48,48,47.98327018083334,COMPLETE
+Other,SunRail Longwood/Longwood SunRail Upload,SCU8OG,2023,1,7,7,6.997451135833334,COMPLETE
+Other,SunRail Longwood/Longwood SunRail Upload,SCU8PM,2023,1,7,7,6.997395525,COMPLETE
+[rmathew1@login8 test_colonial]$ 

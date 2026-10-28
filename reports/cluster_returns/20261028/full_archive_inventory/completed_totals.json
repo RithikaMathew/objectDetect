@@ -1,0 +1,25 @@
+{
+  "total_files": 9085,
+  "total_groups": 179,
+  "total_playback_hours": 9057.33588141,
+  "by_collection": [
+    {
+      "collection": "Annual recordings",
+      "site_device_groups": 135,
+      "video_files": 6648,
+      "playback_hours": 6625.199047355555
+    },
+    {
+      "collection": "Bike Lane Study",
+      "site_device_groups": 39,
+      "video_files": 2279,
+      "playback_hours": 2274.183900062778
+    },
+    {
+      "collection": "Other",
+      "site_device_groups": 5,
+      "video_files": 158,
+      "playback_hours": 157.95293399166667
+    }
+  ]
+}

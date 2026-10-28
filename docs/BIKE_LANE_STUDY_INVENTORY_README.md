@@ -50,7 +50,7 @@ This README covers the study/count-workbook collection and the separate human sp
 | Columbia Ave | 2019 | 1 | 49 | 47.98 |
 | Curry Ford South | 2019 | 1 | 49 | 47.98 |
 
-These 1,919 files belong to the 2019 Bike Lane Study video subset. A summed playback duration does not guarantee uninterrupted wall-clock coverage, especially if footage is occurrence-only. Camera sides are not pooled.
+These 1,919 files are the mapped2019study/count-workbook subset; the entire Bike Lane Study archive section can contain additional sessions/files. A summed playback duration does not guarantee uninterrupted wall-clock coverage, especially if footage is occurrence-only. Camera sides are not pooled.
 
 ## Locations in Mighk Wilson’s consolidated bicycle-speed workbook
 
