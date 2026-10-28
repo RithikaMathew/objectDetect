@@ -54,24 +54,26 @@ def summaries(rows, cameras):
     return result
 
 
-def main():
+def main(argv=None):
     repo = Path(__file__).resolve().parents[4]
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--inventory-dir', type=Path, default=repo/'reports/cluster_returns/20261024/recording_lengths')
     p.add_argument('--archive', type=Path, default=Path('/orange/xiangyan/rithika/vision/MioVision_Data.zip'))
     p.add_argument('--data-root', type=Path, default=Path('/orange/xiangyan/rithika/vision/pilot_clips'))
     p.add_argument('--out', type=Path, required=True)
-    a = p.parse_args()
+    a = p.parse_args(argv)
     exe = shutil.which('ffprobe')
     use_probe = bool(exe)
     exe = exe or resolve()
-    rows = list(csv.DictReader((a.inventory_dir/'per_source.csv').open()))
-    cameras = list(csv.DictReader((a.inventory_dir/'by_camera.csv').open()))
+    with (a.inventory_dir/'per_source.csv').open() as f:rows = list(csv.DictReader(f))
+    with (a.inventory_dir/'by_camera.csv').open() as f:cameras = list(csv.DictReader(f))
     if len({r['archive_path'] for r in rows}) != len(rows):
         raise ValueError('Duplicate archive paths in inventory')
     a.out.mkdir(parents=True, exist_ok=True)
     saved = a.out/'per_source.csv'
-    previous = {r['archive_path']: r for r in csv.DictReader(saved.open())} if saved.exists() else {}
+    previous = {}
+    if saved.exists():
+        with saved.open() as f:previous = {r['archive_path']: r for r in csv.DictReader(f)}
     for r in rows:
         old = previous.get(r['archive_path'], {})
         r.update(duration_seconds=old.get('duration_seconds', ''),

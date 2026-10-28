@@ -1,0 +1,4 @@
+location,date,segment,track_id,start,owner_observation,bicycle_approved
+Baxter,2019-09-18,1,8,12:25:34,Only cars; no bicycles at reviewed moment,0
+Baxter,2019-09-18,3,4,12:52:16,Only cars; no bicycles at reviewed moment,0
+Winter Park,2019-09-25,0,1,12:10:32,Scooter; not a bicycle,0
