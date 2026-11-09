@@ -123,6 +123,14 @@ def submit(a):
     print('Submitted job '+job+'\nResults: '+str(directory/'RESULTS.md')+'\nReview: '+str(directory/'review.html'))
 
 
+def ffmpeg_sync_arguments(executable):
+    help_text=subprocess.run([executable,'-hide_banner','-h','full'],capture_output=True,text=True,check=True)
+    options=help_text.stdout+'\n'+help_text.stderr
+    if '-fps_mode' in options:return ['-fps_mode','passthrough']
+    if '-vsync' in options:return ['-vsync','0']
+    raise RuntimeError('FFmpeg has neither fps_mode nor vsync; cannot preserve frame timing')
+
+
 def extract(plan,task,directory):
     import cv2
     source=Path(plan['source']);cap=cv2.VideoCapture(str(source))
@@ -133,9 +141,28 @@ def extract(plan,task,directory):
     clips=directory/'inputs';clips.mkdir(exist_ok=True)
     video=clips/(task['clip_key']+'.mp4')
     if not video.exists():
-        subprocess.run(['ffmpeg','-nostdin','-v','error','-ss',str(task['start_s']),'-i',str(source),
+        from preview_ffmpeg import resolve
+        executable=plan.get('ffmpeg') or resolve()
+        sync=plan.get('ffmpeg_sync_args') or ffmpeg_sync_arguments(executable)
+        partial=video.with_name(video.stem+'.partial.mp4')
+        command=[executable,'-nostdin','-y','-v','error','-ss',str(task['start_s']),'-i',str(source),
             '-t','30','-map','0:v:0','-an','-c:v','libx264','-preset','fast','-crf','18',
-            '-fps_mode','passthrough','-movflags','+faststart',str(video)],check=True)
+            *sync,'-movflags','+faststart',str(partial)]
+        try:
+            result=subprocess.run(command,capture_output=True,text=True)
+            diagnostic=dict(command=command,returncode=result.returncode,
+                            stdout=result.stdout,stderr=result.stderr)
+            save(clips/(task['clip_key']+'_extraction.json'),diagnostic)
+            if result.returncode:
+                raise RuntimeError('FFmpeg extraction failed: '+(result.stderr.strip() or 'no stderr')[-3000:])
+            if not partial.is_file() or partial.stat().st_size==0:
+                raise RuntimeError('FFmpeg returned success but produced no clip')
+            # Audit before publication so another detector never reuses an
+            # incomplete/invalid extraction as a completed input.
+            timestamp_audit(partial)
+            partial.replace(video)
+        finally:
+            if partial.exists():partial.unlink()
     audit=timestamp_audit(video)
     audit['sha256']=checksum(video)
     save(clips/(task['clip_key']+'_timing.json'),audit)
@@ -320,8 +347,12 @@ def run(directory):
     save(directory/'status.json',dict(state='RUNNING',stage='preflight'))
     try:
         if any((directory/t['key']).exists() for t in plan['tasks']):raise ValueError('Run already started; refusing duplicate inference')
-        for executable in ('ffmpeg','ffprobe'):
-            if shutil.which(executable) is None:raise RuntimeError(executable+' is required; load the cluster ffmpeg module')
+        if shutil.which('ffprobe') is None:raise RuntimeError('ffprobe is required; load the cluster ffmpeg module')
+        from preview_ffmpeg import resolve
+        plan['ffmpeg']=resolve()
+        plan['ffmpeg_sync_args']=ffmpeg_sync_arguments(plan['ffmpeg'])
+        save(directory/'ffmpeg_runtime.json',dict(executable=plan['ffmpeg'],sync_args=plan['ffmpeg_sync_args'],
+            version=subprocess.run([plan['ffmpeg'],'-version'],capture_output=True,text=True,check=True).stdout))
         import torch
         if not torch.cuda.is_available():raise RuntimeError('GPU unavailable in the scheduled job')
         for name in ('ultralytics','supervision','transformers','cv2','numpy'):

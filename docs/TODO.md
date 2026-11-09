@@ -1,47 +1,33 @@
-# Current next steps — October 29, 2026
+RESULTS FOLDER: /orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_173702_359342
+# Colonial passing-clearance pilot
 
-Start with [latest same-video results](../reports/cluster_returns/20261027/completed_speed_batches/RESULTS.md). Root todo.md contains the owner's timing/calibration assessment notes. Superseded task/chat lists have been removed.
+Tasks succeeded: 0/6. Three fixed 30-second windows; 90 seconds unique footage, 180 seconds across two detector settings.
 
-## Completed
+Clearance is the primary output. Metric estimates use the existing learned camera mapping and assumed object dimensions centered on projected box bottom-centers. They are exploratory estimates, not independently calibrated measurements. Box-edge output is a projection proxy, not recovered physical clearance.
 
-- [x] Original duration audit:1919files/41cameras, totals saved and README updated.
-- [x] Robust manual speed, review-clip packet timing, plots and sensitivity analysis:30encounters/29speeds/18clips.
-- [x] Optional marking/3-Dwheel evidence checks and candidate-edge crops implemented. Real metric evidence absent; no wheel/marking scale result claimed.
-- [x] HiPerGator1.5-second full-hour/quota run and exact18manual-clip run completed; returned reports preserved and merged with manual results.
-- [x] Same-clip aggregate comparison:35study,30manual,32automatic; no accuracy percentage claimed.
+Open review.html, all_interactions.csv, threshold_sensitivity.csv and task_status.csv. Copy review_candidates.csv to review_labels.csv before adding your review; the generated candidate template updates as tasks finish. Each task contains raw exports, geometry, baseline_timeseries.csv, transfer_timeseries.csv, pipeline log and diagnostic snapshots. inputs/ contains original-view 30-second review clips and timing audits. IDs reset across clips and detector settings; do not sum variants as distinct people/events.
 
-## Finish before more experiments
+Baseline pair rows: 0 across detector settings. Failed tasks do not become zero interactions. Candidate selection was based on existing manual cyclist times, not low TTC or small clearance. Visible cyclists are documented; a completed pass in these short windows is not presumed.
 
-- [ ] Obtain selected_candidates.csv from same-video batch for exact annotated paths and track metadata. Review Columbia near-stationary/long tracks, Aloma12:59:47 extra candidate, Edgewater overlapping/missing encounters. Carroll time recovery is encouraging but still needs full identity review.
-- [ ] Confirm University map-distance endpoints in the video; compare learned distance with the55.17ft map estimate. Review timing/geometry evidence without fitting scale to the workbook mean.
-- [ ] Report per-person detection/speed errors only if identity/type and independent same-person speed references exist. Otherwise keep count discrepancies and unmatched group speed differences.
-- [ ] Incorporate reviewed results into a new presentation copy if requested; older decks remain historical.
+Methods: assumed-footprint lateral edge gap while longitudinally alongside; center distance; projected bottom-box-edge proxy; continuous swept-rectangle collision TTC (5-second horizon); predicted closest center approach; sampled shared-cell occupancy PET (0.5m grid). PET and TTC are based on assumed road-aligned rectangles and constant local velocity. This is a paper-informed implementation, not a reproduction of a published benchmark.
 
-## Optional / deferred
+Variations: reference versus sensitive detector; local velocity/smoothing windows 0.25/0.5/1.0s; cyclist envelope width 0.6/0.8/1.0m; learned scale multipliers 0.8/1.0/1.2; strict car-support versus exploratory plane transfer; constant-velocity Kalman filtering and offline RTS smoothing, each with strict and transfer support. Twelve scenarios per detector use the same inference. These are one-factor-at-a-time sensitivity tests, not a full factorial experiment or confidence intervals. Car dimensions 4.5x1.8m, truck 8x2.5m, bus 12x2.5m, bicycle length 1.8m are explicit assumptions.
 
-No further broad detector sweep is required to finish this study. Other trackers/keypoint training remain possible; existing tracker is already ByteTrack. Real wheel/marking calibration needs evidence, automatic camera location is not implemented. No24/48hour scaling,40trackannotation or nightfine-tuning reintroduced.
+smoothing_comparison.csv compares minimum footprint distance, lateral clearance, TTC and PET against local-fit baselines on matched IDs/support settings. screening_comparison.csv compares distance/PET alone and AND/OR screens; it does not claim an optimal predictor. false_alarm_review.csv reports adjudicated false flags / adjudicated flags only when review_labels.csv contains yes/no near_miss_review and reviewer. Unreviewed flags and adjudication coverage remain explicit; this is not a population false-positive rate. No LiDAR/radar observations exist in this workflow. The user-supplied 84% false-alarm figure has no verified source and is not treated as this pilot's rate.
 
-## Remaining checks retained from the earlier detector checklist
+Every outcome requires video review of cyclist identity (including motorcycles), track continuity, alongside geometry, direction, occlusion, barriers and truncation. The observed_overtake_candidate flag requires relative order reversal during a continuous same-direction span; alongside alone does not establish overtaking. A zero gap/TTC/PET is model overlap, not evidence of collision. No verified near-miss classification is generated.
 
-- [ ] Confirm complete track identity against the existing four truth clips, including barricade-to-person switches; temporal matches alone do not verify identity.
-- [ ] Treat lane assignments as provisional until individually reviewed.
-- [ ] Keep detector proposal-box scores separate from cyclist/count accuracy. No new model sweep is required.
+Strict support means projected contact points are inside the existing car-calibration hull; it does not verify sidewalks, edge extents or true dimensions. Plane transfer assumes coplanarity and is diagnostic. Review pages use a strict baseline pair where available, otherwise an explicitly labelled plane-transfer pair. The road axis comes from vehicle motion in each crop; curves/lane changes violate fixed-road-axis assumptions. Shared-cell PET is spatially and temporally quantized and can overstate conflicts. Velocities do not bridge observation gaps >0.20s. Timing audit covers extracted clips only. Clip-edge censoring and incomplete coverage require review; no 48-hour rates are calculated.
 
-## Archive inventory completed
+Research sources: [FHWA definitions of TTC/PET](https://www.fhwa.dot.gov/publications/research/safety/08051/02.cfm); [2025 experimental analysis of automated video safety errors](https://arxiv.org/abs/2503.09807); [existing ICCV2021 calibration author implementation](https://github.com/naver/cctv); [trajectory study using RTS smoothing](https://tsr.international/TSR/article/download/27904/24728?inline=1). Recent safety research supports checking tracking and calibration rather than interpreting automated flags as verified conflicts.
 
-- [x] Full ZIP video-duration audit: 9,085 videos across 179 site/view/device groups, 9,057.34 summed playback hours.
-- [x] Consolidated archive contents, years, hours and speed-export findings in [one summary](MIOVISION_CONTENTS_SUMMARY_README.md). Compressed/proprietary file contents remain uninspected; no native speed export confirmed.
+| Task | State | Detail |
+|---|---|---|
+| colonial_124020_reference | FAILED | Command '['ffmpeg', '-nostdin', '-v', 'error', '-ss', '2408.0', '-i', '/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4', '-t', '30', '-map', '0:v:0', '-an', '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-fps_mode', 'passthrough', '-movflags', '+faststart', '/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_173702_359342/inputs/colonial_124020.mp4']' returned non-zero exit status 1. |
+| colonial_124020_sensitive | FAILED | Command '['ffmpeg', '-nostdin', '-v', 'error', '-ss', '2408.0', '-i', '/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4', '-t', '30', '-map', '0:v:0', '-an', '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-fps_mode', 'passthrough', '-movflags', '+faststart', '/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_173702_359342/inputs/colonial_124020.mp4']' returned non-zero exit status 1. |
+| colonial_125311_reference | FAILED | Command '['ffmpeg', '-nostdin', '-v', 'error', '-ss', '3179.0', '-i', '/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4', '-t', '30', '-map', '0:v:0', '-an', '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-fps_mode', 'passthrough', '-movflags', '+faststart', '/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_173702_359342/inputs/colonial_125311.mp4']' returned non-zero exit status 1. |
+| colonial_125311_sensitive | FAILED | Command '['ffmpeg', '-nostdin', '-v', 'error', '-ss', '3179.0', '-i', '/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4', '-t', '30', '-map', '0:v:0', '-an', '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-fps_mode', 'passthrough', '-movflags', '+faststart', '/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_173702_359342/inputs/colonial_125311.mp4']' returned non-zero exit status 1. |
+| colonial_125350_reference | FAILED | Command '['ffmpeg', '-nostdin', '-v', 'error', '-ss', '3218.0', '-i', '/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4', '-t', '30', '-map', '0:v:0', '-an', '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-fps_mode', 'passthrough', '-movflags', '+faststart', '/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_173702_359342/inputs/colonial_125350.mp4']' returned non-zero exit status 1. |
+| colonial_125350_sensitive | FAILED | Command '['ffmpeg', '-nostdin', '-v', 'error', '-ss', '3218.0', '-i', '/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4', '-t', '30', '-map', '0:v:0', '-an', '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-fps_mode', 'passthrough', '-movflags', '+faststart', '/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_173702_359342/inputs/colonial_125350.mp4']' returned non-zero exit status 1. |
 
-## November 9: clearance and camera calibration
-
-- [x] Added [MetroPlan interpretation, clearance method and draft reply](PASSING_CLEARANCE.md); draft has not been sent.
-- [x] Added separate metric-footprint clearance calculator with synthetic verification; actual video extraction and measurement remain pending.
-- [ ] Obtain deployment coordinates, original marked-point calibration and distances, lateral road geometry, timing metadata and occurrence coverage rules/logs.
-- [ ] Verify Mighk's sampled lateral positions per site; retain Colonial's documented bike-lane/sidewalk distinction.
-- [ ] Prepare independently calibrated, reviewed cyclist/vehicle footprints for a pilot passing clip, validate clearance, then extend to more encounters. Report all eligible facilities separately.
-
-## Bounded clearance pilot prepared
-
-- [x] Prepared [one-command HiPerGator pilot](CLEARANCE_PILOT_RUN.md): three 30-second Colonial encounters, two detector settings, eight geometry/motion scenarios, automatic report and review packet. Uses current files only.
-- [x] Local analytic, synthetic integration, extraction/timing and mocked submission checks passed. Cluster GPU inference is not yet run.
-- [ ] Transfer the bundle/new files, submit the pilot once, then review clearance estimates and candidate IDs before interpreting threshold counts.
+(yolo_env) [rmathew1@login7 test_colonial]$ 

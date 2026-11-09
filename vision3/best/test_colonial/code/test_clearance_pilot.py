@@ -203,4 +203,30 @@ class SmoothingReviewTests(unittest.TestCase):
             self.assertEqual(float(result['false_fraction_among_adjudicated_flags']),.5)
 
 
+class ExtractionFailureTests(unittest.TestCase):
+    def test_selects_supported_sync_option(self):
+        from types import SimpleNamespace
+        for help_text,expected in [('-fps_mode mode',['-fps_mode','passthrough']),('-vsync parameter',['-vsync','0'])]:
+            with patch.object(pilot.subprocess,'run',return_value=SimpleNamespace(stdout=help_text,stderr='')):
+                self.assertEqual(pilot.ffmpeg_sync_arguments('fake'),expected)
+
+    def test_legacy_flag_stderr_and_partial_cleanup(self):
+        from types import SimpleNamespace
+        with tempfile.TemporaryDirectory() as tmp:
+            out=Path(tmp)
+            def fail(command,**kwargs):
+                self.assertIn('-vsync',command)
+                self.assertNotIn('-fps_mode',command)
+                Path(command[-1]).write_bytes(b'partial')
+                return SimpleNamespace(returncode=1,stdout='',stderr='test encoder failure details')
+            with patch('cv2.VideoCapture') as capture,patch.object(pilot.subprocess,'run',side_effect=fail):
+                capture.return_value.get.side_effect=[30,100000,720,480]
+                with self.assertRaisesRegex(RuntimeError,'test encoder failure details'):
+                    pilot.extract(dict(source='source',resolution=[720,480],ffmpeg='fake',ffmpeg_sync_args=['-vsync','0']),
+                                  dict(clip_key='test',start_s=0),out)
+            self.assertFalse((out/'inputs/test.mp4').exists())
+            self.assertFalse((out/'inputs/test.partial.mp4').exists())
+            self.assertIn('test encoder failure details',(out/'inputs/test_extraction.json').read_text())
+
+
 if __name__=='__main__':unittest.main()

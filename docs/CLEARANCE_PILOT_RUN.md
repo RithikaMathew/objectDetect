@@ -97,3 +97,12 @@ sbatch --gpus=0 --mem=8G --time=00:30:00 --output=clearance_reanalysis_%j.log co
 ```
 
 This adds the new method/scoring tables without GPU detection. Previous per-task analysis tables and statuses are preserved under `analysis_history/`; raw exports and your `review_labels.csv` remain intact. Only tasks with all required raw exports are reanalyzed. Do not run this against an active pilot directory.
+
+
+## Extraction failure repair
+
+The first submitted run (`CLEARANCE_PILOT_20261109_173702_359342`, GPU job 50504800 / report job 50504801) reported 0/6 successful tasks: FFmpeg failed before inference. Its report did not retain the underlying FFmpeg stderr, so the precise cluster cause is unconfirmed. This is not evidence of zero passing interactions.
+
+The updated bundle checks FFmpeg's supported synchronization flags, choosing `-fps_mode passthrough` on newer versions or `-vsync 0` on older ones. It uses the existing encoder resolver to find a working libx264 executable, including the previously installed isolated cached runtime. It records the selected executable/version/sync arguments in `ffmpeg_runtime.json`, and the actual extraction command, return code and stderr in `inputs/*_extraction.json`. Failed encodes leave no reusable partial clip. Frame timing is audited before publishing a clip.
+
+Upload the repaired bundle over the previous archive and run the same installation/submission line once. The new run creates a fresh results directory; keep the failed run for diagnostics. CPU-only reanalysis cannot recover this particular run because no raw detection trajectories were produced. The precise prior FFmpeg error remains in that run's `slurm_50504800.log` if needed.
