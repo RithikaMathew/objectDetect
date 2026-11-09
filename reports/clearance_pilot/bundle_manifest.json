@@ -1,0 +1,20 @@
+{
+  "vision3/best/test_colonial/code/clearance_pilot.py": "345b0aa5f2a8219d4e9f6a6b1cd77bc0e4c3e0db4143672f27ec919ff5bb08fd",
+  "vision3/best/test_colonial/code/clearance_pilot.slurm": "53ecdc5befe27aba1304689bf7d462b89256fb7ba046181f9b3d8141eff18e93",
+  "vision3/best/test_colonial/code/clearance_metrics.py": "59f240d8cca1311d5cdb3903f94cf850bdcf09f2fc5c9e2fb040e469cfc51fbb",
+  "vision3/best/test_colonial/code/test_clearance_pilot.py": "34fa2876d6acdf0d6fbbb367fb9f28e8b09864d2b6763ef308516e4ba221472f",
+  "vision3/best/test_colonial/code/run_batch4.sh": "76a17d2442f4eb860ef237ebc27cfa411a06df45f2748001db29d794de139868",
+  "vision3/best/test_colonial/code/run_batch5.py": "7d68de47f644bf16d1a276f3b3ae98c93f7185df52f7377b44ac2ed345639614",
+  "vision3/best/test_colonial/code/research_worker.py": "f38c30dee9646f7a650002c443929f376eda65f3d040cb46f3749d0d15421968",
+  "vision3/best/test_colonial/code/run_xclip_colonial_v19.slurm": "96930df3c46a6065a372a5cf8fbb5496c358c6c88e9d3efa582360ef8519be1b",
+  "vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py": "35bfa2480a38b3f9864bb55a978858c44c0127254c9120adae838214f3bd0fb6",
+  "vision3/best/test_colonial/code/annotation_truth.py": "df820b95c5bbe63a0e89a9bc02cf027b1afae4e73ece20349cce290189e79041",
+  "vision3/best/test_colonial/code/eval_truth.py": "7658892c348231814275cca46e6f5cfc02dd94a9856f9384e25d27c1e9876d6c",
+  "vision3/best/test_colonial/zones/colonial_north_v1.json": "a558de9d20e77b2266f251e61a2a14ad25966ead963dff67de32c3e17cad75c7",
+  "reports/cluster_returns/20261024/colonial_speed_47545558_report_rebuilt/iccv2021/calibration.json": "1e2575a9f3ebc1fc3011256ab2092386201ec9411b591dca42df6763204c6b29",
+  "docs/CLEARANCE_PILOT_RUN.md": "0b2af49e0c9f280e8ce38710eb3ce3107f3b5d4556e9a513db2b78f87aef7331",
+  "reports/clearance_pilot/LOCAL_VALIDATION.md": "f372104b882f4bac7452f5a20c1dab951577feb213453419840fb168b83d79c3",
+  "manual/s03_colonial_north_2019-07-10_123000_manual_bicycle_observations.json": "dfaeeb34849dd54d3efef252d2abb282d2ed1ee540be59baac0ca8142f2a5d2c",
+  "manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json": "067cff918062e0ca10330aba8634134d0ad94bdd788044023b9d7cbae8ef855f",
+  "vision3/best/test_colonial/code/clearance_review.py": "9fa2c19f97c0b78bbf376f7e4f0b30513f824659f94f935740cd7bee81a61af9"
+}

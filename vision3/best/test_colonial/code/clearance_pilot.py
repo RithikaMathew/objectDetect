@@ -1,0 +1,396 @@
+#!/usr/bin/env python3
+"""One-command, bounded Colonial clearance/interaction research pilot."""
+import argparse
+import csv
+import datetime as dt
+import hashlib
+import html
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+import traceback
+from collections import defaultdict
+
+ROOT = Path(__file__).resolve().parents[1]
+REPO = ROOT.parents[2]
+CAL = 'reports/cluster_returns/20261024/colonial_speed_47545558_report_rebuilt/iccv2021/calibration.json'
+SOURCE = 'MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4'
+# Existing manual cyclist encounters, fixed before looking at risk metrics.
+WINDOWS = [('colonial_124020',2408.,'manual/s03_colonial_north_2019-07-10_123000_manual_bicycle_observations.json'),
+           ('colonial_125311',3179.,'manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json'),
+           ('colonial_125350',3218.,'manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json')]
+
+
+def save(path,data):
+    path=Path(path);tmp=path.with_suffix(path.suffix+'.tmp')
+    tmp.write_text(json.dumps(data,indent=2,allow_nan=False)+'\n');tmp.replace(path)
+
+
+def table(path,rows,fields=None):
+    if fields is None:fields=list(rows[0]) if rows else ['status']
+    with Path(path).open('w',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
+
+
+def read(path):
+    with Path(path).open(newline='') as f:return list(csv.DictReader(f))
+
+
+def checksum(path):
+    h=hashlib.sha256()
+    with Path(path).open('rb') as f:
+        for block in iter(lambda:f.read(1024*1024),b''):h.update(block)
+    return h.hexdigest()
+
+
+def timestamp_audit(video):
+    result=subprocess.run(['ffprobe','-v','error','-select_streams','v:0','-show_entries',
+        'frame=best_effort_timestamp_time','-of','json',str(video)],capture_output=True,text=True,check=True)
+    times=[float(r['best_effort_timestamp_time']) for r in json.loads(result.stdout)['frames'] if 'best_effort_timestamp_time' in r]
+    import numpy as np
+    delta=np.diff(times)
+    if len(delta)<3 or not np.isfinite(delta).all() or (delta<=0).any():raise ValueError('Invalid/nonmonotonic frame timestamps')
+    step=float(np.median(delta));irregular=float(np.mean(np.abs(delta-step)>max(.001,step*.05)))
+    if irregular>.01:raise ValueError('Variable timing: refusing frame-index metric timing')
+    return dict(frames=len(times),first_pts=times[0],last_pts=times[-1],median_step_s=step,
+                fps_from_pts=1/step,irregular_fraction=irregular,max_step_s=float(delta.max()),
+                scope='extracted pilot clip only; original source timing not independently verified')
+
+
+def make_plan(a):
+    # No detector imports or GPU work on login node.
+    source=(a.source or a.data_root/SOURCE).resolve()
+    calibration=(a.calibration or REPO/CAL).resolve()
+    if not source.is_file():raise FileNotFoundError('Original camera source missing: '+str(source))
+    if not calibration.is_file():raise FileNotFoundError('Saved Colonial calibration missing: '+str(calibration))
+    weights=(a.weights or REPO/'vision3/runs/detect/finetune_runs/rtdetr_v3/weights/best.pt').resolve()
+    if not weights.is_file():raise FileNotFoundError('Existing fine-tuned detector missing: '+str(weights))
+    # This calibration has known camera/date/720x480 provenance. A different source
+    # must be explicitly configured in code; basename equality alone is insufficient.
+    if source.name!=Path(SOURCE).name:raise ValueError('Default pilot requires the original Colonial .013 source')
+    tasks=[]
+    for key,start,evidence in WINDOWS:
+        for detector in ('reference','sensitive'):
+            tasks.append(dict(key=key+'_'+detector,clip_key=key,start_s=start,duration_s=30.,
+                              detector=detector,selection_evidence=evidence))
+    stat=source.stat()
+    return dict(schema=1,root=str(ROOT),repo=str(REPO),source=str(source),source_bytes=stat.st_size,
+        source_mtime_ns=stat.st_mtime_ns,source_sha256='not_hashed_large_original',
+        calibration=str(calibration),calibration_sha256=checksum(calibration),
+        weights=str(weights),weights_sha256=checksum(weights),tasks=tasks,
+        unique_video_seconds=90,detector_video_seconds=180,
+        source_clock='2019-07-10 12:00:00',clock_status='filename_inferred_not_independently_verified',
+        camera='Colonial North',resolution=[720,480],jobs=[],
+        interpretation='exploratory_assumed_footprints_learned_scale_not_verified_near_misses')
+
+
+def submit(a):
+    plan=make_plan(a)
+    if not a.go:
+        print(json.dumps(plan,indent=2));print('Dry run only. Add --go to submit one GPU job.');return
+    if shutil.which('sbatch') is None:raise RuntimeError('sbatch is unavailable; submit from HiPerGator')
+    tag=dt.datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+    directory=ROOT/'exp_results'/('CLEARANCE_PILOT_'+tag)
+    directory.mkdir(parents=True,exist_ok=False)
+    save(directory/'manifest.json',plan);save(directory/'status.json',dict(state='PREPARED'))
+    cmd=['sbatch','--parsable','--output',str(directory/'slurm_%j.log'),
+         '--chdir',str(ROOT),str(ROOT/'code/clearance_pilot.slurm'),str(directory)]
+    # Record intent before submission; do not retry automatically if response is lost.
+    save(directory/'submission.json',dict(command=cmd,state='SUBMITTING'))
+    result=subprocess.run(cmd,capture_output=True,text=True)
+    if result.returncode:
+        save(directory/'submission.json',dict(command=cmd,state='FAILED',stderr=result.stderr))
+        raise RuntimeError(result.stderr)
+    job=result.stdout.strip().split(';')[0]
+    if not job.isdigit():raise RuntimeError('Unexpected sbatch response; inspect scheduler before retrying: '+result.stdout)
+    plan['jobs']=[job];save(directory/'manifest.json',plan)
+    final_cmd=['sbatch','--parsable','--dependency=afterany:'+job,'--gpus=0',
+        '--mem=4G','--time=00:10:00','--job-name=clearance_report',
+        '--output',str(directory/'report_%j.log'),'--chdir',str(ROOT),
+        str(ROOT/'code/clearance_pilot.slurm'),str(directory),'report']
+    final=subprocess.run(final_cmd,capture_output=True,text=True)
+    if final.returncode:
+        save(directory/'report_submission.json',dict(state='FAILED',command=final_cmd,stderr=final.stderr))
+        print('GPU job is already submitted. Finalizer submission failed: '+final.stderr, file=sys.stderr)
+    else:
+        final_id=final.stdout.strip().split(';')[0]
+        plan['jobs'].append(final_id);save(directory/'manifest.json',plan)
+        save(directory/'report_submission.json',dict(state='SUBMITTED',job_id=final_id,command=final_cmd))
+    save(directory/'submission.json',dict(command=cmd,state='SUBMITTED',job_id=job))
+    print('Submitted job '+job+'\nResults: '+str(directory/'RESULTS.md')+'\nReview: '+str(directory/'review.html'))
+
+
+def extract(plan,task,directory):
+    import cv2
+    source=Path(plan['source']);cap=cv2.VideoCapture(str(source))
+    try:
+        fps=cap.get(5);frames=cap.get(7);size=[int(cap.get(3)),int(cap.get(4))]
+        if size!=plan['resolution'] or fps<=0 or frames/fps<task['start_s']+30:raise ValueError('Wrong resolution, timing, or source too short')
+    finally:cap.release()
+    clips=directory/'inputs';clips.mkdir(exist_ok=True)
+    video=clips/(task['clip_key']+'.mp4')
+    if not video.exists():
+        subprocess.run(['ffmpeg','-nostdin','-v','error','-ss',str(task['start_s']),'-i',str(source),
+            '-t','30','-map','0:v:0','-an','-c:v','libx264','-preset','fast','-crf','18',
+            '-fps_mode','passthrough','-movflags','+faststart',str(video)],check=True)
+    audit=timestamp_audit(video)
+    audit['sha256']=checksum(video)
+    save(clips/(task['clip_key']+'_timing.json'),audit)
+    if not 28 <= audit['last_pts']-audit['first_pts']<=30.1:raise ValueError('Incomplete extracted clip')
+    if abs(audit['fps_from_pts']/fps-1)>.005:raise ValueError('Extracted timing differs from source metadata')
+    return video,audit
+
+
+def infer(plan,task,video,directory):
+    from run_batch5 import parse_envv
+    from research_worker import execute
+    base=dict(parse_envv(ROOT/'code/run_batch4.sh','5'))
+    clock=dt.datetime.fromisoformat(plan['source_clock'])+dt.timedelta(seconds=task['start_s'])
+    run=directory.name.lower()+'_'+task['key']
+    env={**base,'RUN':run,'VIDEO_OVERRIDE':str(video),'CHUNK':'1','SLURM_ARRAY_TASK_ID':'1',
+         'START_FRAME':'1','MAX_FRAMES':'0','SESSION_START':clock.strftime('%Y-%m-%d_%H:%M:%S'),
+         'WEIGHTS':plan['weights'],'ZONES_JSON':str(ROOT/'zones/colonial_north_v1.json'),
+         'EXPORT_VEHICLE_TRAJECTORIES':'1','STREAM_CLIPS':'0','GT_XLS':'none',
+         'CLOCK_NOTE':'30-second crop; source clock inferred; exploratory clearance pilot',
+         'BIC_MIN_SEC':'1.5','PED_MIN_SEC':'3','STITCH_SEC':'0.5','STITCH_PX':'60',
+         'LOST_SEC':'0.3','DET_CONF':'0.25','TRACK_THR':'0.25'}
+    if task['detector']=='sensitive':
+        env.update(DET_CONF='0.15',TRACK_THR='0.15',BIC_MIN_SEC='0.3',STATIC_FILTER='0')
+    item=dict(key=task['key'],kind='pipeline',env=env)
+    save(directory/task['key']/'pipeline_task.json',item)
+    with (directory/task['key']/'pipeline.log').open('w') as output:
+        # Existing execute uses subprocess inheriting fd 1/2. Route them without
+        # shell interpolation; restore even on failure.
+        one,two=os.dup(1),os.dup(2)
+        try:
+            sys.stdout.flush();sys.stderr.flush();os.dup2(output.fileno(),1);os.dup2(output.fileno(),2)
+            result=execute(dict(root=str(ROOT),tag=directory.name),item,directory)
+        finally:
+            sys.stdout.flush();sys.stderr.flush();os.dup2(one,1);os.dup2(two,2);os.close(one);os.close(two)
+    log=json.loads(Path(result['run_log']).read_text())
+    # Copy small outputs next to the report for a self-contained download.
+    for key in ('tracks_csv','trajectories_csv','vehicle_trajectories_csv'):
+        path=Path(log.get(key) or '')
+        if not path.is_file():raise ValueError('Required inference export missing: '+key)
+        shutil.copy2(path,directory/task['key']/(key+'.csv'))
+    save(directory/task['key']/'run_log.json',log)
+    return log
+
+
+def review_pairs(rows):
+    chosen={}
+    for r in rows:
+        if r['scenario'] not in ('baseline','strict_False'):continue
+        key=(r['task'],r['cyclist_id'],r['vehicle_id'])
+        if key not in chosen or r['scenario']=='baseline':chosen[key]=r
+    return list(chosen.values())
+
+
+def analyze(plan,task,directory,log):
+    import numpy as np
+    from clearance_metrics import prepare,road_axis,pair_metrics,scenarios
+    out=directory/task['key']
+    if checksum(plan['calibration'])!=plan['calibration_sha256']:raise ValueError('Calibration changed since submission')
+    cal=json.loads(Path(plan['calibration']).read_text());H=np.asarray(cal['H'],float);hull=np.asarray(cal['hull'],np.float32)
+    if cal.get('geometry_check_passed') is not True or H.shape!=(3,3) or not np.isfinite(H).all() or abs(np.linalg.det(H))<1e-12:
+        raise ValueError('Saved calibration failed checks')
+    labels={r['track_id']:r for r in read(out/'tracks_csv.csv')}
+    paths=prepare(read(out/'trajectories_csv.csv')+read(out/'vehicle_trajectories_csv.csv'),H,hull,log['fps'],labels)
+    axis=road_axis(paths)
+    save(out/'geometry.json',dict(H=H.tolist(),hull=hull.tolist(),road_axis=axis.tolist(),
+        calibration_source=plan['calibration'],calibration_sha256=plan['calibration_sha256'],
+        validation=cal.get('validation'),footprints='assumed_dimensions_centered_on_projected_bottom_center'))
+    cyclists=[k for k in paths if k[0]=='cyclist'];vehicles=[k for k in paths if k[0]!='cyclist']
+    rows=[];series=[];transfer_series=[];smoother_series=[]
+    for name,scenario in scenarios():
+        print(task['key'],name,flush=True)
+        for ck in cyclists:
+            for vk in vehicles:
+                r=pair_metrics(paths[ck],paths[vk],vk[0],axis,H,**scenario)
+                if r is None:continue
+                samples=r.pop('samples')
+                record=dict(task=task['key'],clip=task['clip_key'],detector=task['detector'],
+                    cyclist_id=ck[1],vehicle_id=vk[1],vehicle_type=vk[0],source_start_s=task['start_s'],
+                    facility=paths[ck][0]['facility'],cyclist_identity=paths[ck][0]['identity_status'],
+                    counted=paths[ck][0]['counted'],scenario=name,**scenario,**r,
+                    calibration_validation=cal.get('validation','unvalidated'),
+                    metric_status='exploratory_assumed_footprints',pet_cell_m=.5,
+                    review_status='unreviewed',verified_near_miss='')
+                record['source_clearance_time_s'] = task['start_s']+r['clearance_time_s'] if r['clearance_time_s'] is not None else None
+                record['clearance_clock_inferred'] = (dt.datetime.fromisoformat(plan['source_clock'])+dt.timedelta(seconds=record['source_clearance_time_s'])).isoformat(sep=' ') if record['source_clearance_time_s'] is not None else ''
+                rows.append(record)
+                if scenario['motion'] in ('kalman','rts'):
+                    smoother_series.extend(dict(scenario=name,cyclist_id=ck[1],vehicle_id=vk[1],**s) for s in samples)
+                if name=='strict_False':
+                    transfer_series.extend(dict(cyclist_id=ck[1],vehicle_id=vk[1],**s) for s in samples)
+                if name=='baseline':
+                    series.extend(dict(cyclist_id=ck[1],vehicle_id=vk[1],**s) for s in samples)
+    table(out/'interactions.csv',rows);table(out/'baseline_timeseries.csv',series);table(out/'transfer_timeseries.csv',transfer_series)
+    table(out/'kalman_rts_timeseries.csv',smoother_series)
+    # Export review images at baseline closest approach / minimum clearance.
+    cap=None
+    try:
+        import cv2
+        video=directory/'inputs'/(task['clip_key']+'.mp4')
+        cap=cv2.VideoCapture(str(video)) if video.is_file() else None
+        for r in review_pairs(rows)[:12]:
+            if cap is None:break
+            t=r['clearance_time_s']
+            if t is None:
+                ss=[s for s in (series if r['scenario']=='baseline' else transfer_series) if s['cyclist_id']==r['cyclist_id'] and s['vehicle_id']==r['vehicle_id']]
+                t=min(ss,key=lambda s:s['center_distance_m'])['t']
+            frame_id=round(t*log['fps'])+1;cap.set(cv2.CAP_PROP_POS_FRAMES,frame_id-1);ok,image=cap.read()
+            if not ok:continue
+            for k,color in [(('cyclist',r['cyclist_id']),(0,255,255)),((r['vehicle_type'],r['vehicle_id']),(255,160,0))]:
+                obs=min(paths[k],key=lambda x:abs(x['frame']-frame_id))
+                x,y=obs['pixel'];w,h=obs['box_w'],obs['box_h']
+                cv2.rectangle(image,(round(x-w/2),round(y-h)),(round(x+w/2),round(y)),color,2)
+                cv2.putText(image,k[0]+' '+k[1],(round(x),max(30,round(y-h))),cv2.FONT_HERSHEY_SIMPLEX,.4,color,1)
+            cv2.putText(image,'EXPLORATORY: verify IDs, geometry and pass',(8,18),cv2.FONT_HERSHEY_SIMPLEX,.45,(0,255,255),1)
+            cv2.imwrite(str(out/f"c{r['cyclist_id']}_v{r['vehicle_id']}.jpg"),image)
+    finally:
+        if cap:cap.release()
+    return dict(cyclist_candidates=len(cyclists),vehicle_tracks=len(vehicles),interaction_rows=len(rows),
+                baseline_pairs=sum(r['scenario']=='baseline' for r in rows))
+
+
+def report(directory):
+    plan=json.loads((directory/'manifest.json').read_text());rows=[];statuses=[]
+    for task in plan['tasks']:
+        out=directory/task['key'];status=out/'status.json'
+        state=json.loads(status.read_text()) if status.exists() else dict(state='NO_FINAL_STATUS')
+        statuses.append(dict(task=task['key'],**state))
+        if state['state']=='SUCCEEDED' and (out/'interactions.csv').exists():rows.extend(read(out/'interactions.csv'))
+    table(directory/'all_interactions.csv',rows)
+    # Thresholds are sensitivity screens, not validated near-miss classifiers.
+    thresholds=[]
+    groups=defaultdict(list)
+    for r in rows:groups[(r['detector'],r['scenario'])].append(r)
+    for (detector,scenario),rr in groups.items():
+        for metric,values in [('min_sampled_clearance_m',(.5,1.,1.5)),('min_collision_ttc_s',(1.,1.5,2.)),('sampled_occupancy_pet_s',(.5,1.,1.5))]:
+            valid=[float(r[metric]) for r in rr if r[metric]!='']
+            for threshold in values:
+                thresholds.append(dict(detector=detector,scenario=scenario,metric=metric,threshold=threshold,
+                    eligible_pairs=len(valid),pairs_below=sum(v<threshold for v in valid),
+                    interpretation='screening_only_not_verified_near_miss_count'))
+    table(directory/'threshold_sensitivity.csv',thresholds)
+    from clearance_review import screening_reports
+    screening_reports(directory,rows)
+    table(directory/'task_status.csv',[dict(task=r['task'],state=r['state'],error=r.get('error','')) for r in statuses])
+    baseline=[r for r in rows if r['scenario']=='baseline']
+    review_rows=review_pairs(rows)
+    lines=['# Colonial passing-clearance pilot','',
+        f"Tasks succeeded: {sum(r['state']=='SUCCEEDED' for r in statuses)}/{len(statuses)}. Three fixed 30-second windows; 90 seconds unique footage, 180 seconds across two detector settings.",
+        '', 'Clearance is the primary output. Metric estimates use the existing learned camera mapping and assumed object dimensions centered on projected box bottom-centers. They are exploratory estimates, not independently calibrated measurements. Box-edge output is a projection proxy, not recovered physical clearance.',
+        '', 'Open review.html, all_interactions.csv, threshold_sensitivity.csv and task_status.csv. Copy review_candidates.csv to review_labels.csv before adding your review; the generated candidate template updates as tasks finish. Each task contains raw exports, geometry, baseline_timeseries.csv, transfer_timeseries.csv, pipeline log and diagnostic snapshots. inputs/ contains original-view 30-second review clips and timing audits. IDs reset across clips and detector settings; do not sum variants as distinct people/events.',
+        '', f'Baseline pair rows: {len(baseline)} across detector settings. Failed tasks do not become zero interactions. Candidate selection was based on existing manual cyclist times, not low TTC or small clearance. Visible cyclists are documented; a completed pass in these short windows is not presumed.',
+        '', 'Methods: assumed-footprint lateral edge gap while longitudinally alongside; center distance; projected bottom-box-edge proxy; continuous swept-rectangle collision TTC (5-second horizon); predicted closest center approach; sampled shared-cell occupancy PET (0.5m grid). PET and TTC are based on assumed road-aligned rectangles and constant local velocity. This is a paper-informed implementation, not a reproduction of a published benchmark.',
+        '', 'Variations: reference versus sensitive detector; local velocity/smoothing windows 0.25/0.5/1.0s; cyclist envelope width 0.6/0.8/1.0m; learned scale multipliers 0.8/1.0/1.2; strict car-support versus exploratory plane transfer; constant-velocity Kalman filtering and offline RTS smoothing, each with strict and transfer support. Twelve scenarios per detector use the same inference. These are one-factor-at-a-time sensitivity tests, not a full factorial experiment or confidence intervals. Car dimensions 4.5x1.8m, truck 8x2.5m, bus 12x2.5m, bicycle length 1.8m are explicit assumptions.',
+        '', 'smoothing_comparison.csv compares minimum footprint distance, lateral clearance, TTC and PET against local-fit baselines on matched IDs/support settings. screening_comparison.csv compares distance/PET alone and AND/OR screens; it does not claim an optimal predictor. false_alarm_review.csv reports adjudicated false flags / adjudicated flags only when review_labels.csv contains yes/no near_miss_review and reviewer. Unreviewed flags and adjudication coverage remain explicit; this is not a population false-positive rate. No LiDAR/radar observations exist in this workflow. The user-supplied 84% false-alarm figure has no verified source and is not treated as this pilot\'s rate.',
+        '', 'Every outcome requires video review of cyclist identity (including motorcycles), track continuity, alongside geometry, direction, occlusion, barriers and truncation. The observed_overtake_candidate flag requires relative order reversal during a continuous same-direction span; alongside alone does not establish overtaking. A zero gap/TTC/PET is model overlap, not evidence of collision. No verified near-miss classification is generated.',
+        '', 'Strict support means projected contact points are inside the existing car-calibration hull; it does not verify sidewalks, edge extents or true dimensions. Plane transfer assumes coplanarity and is diagnostic. Review pages use a strict baseline pair where available, otherwise an explicitly labelled plane-transfer pair. The road axis comes from vehicle motion in each crop; curves/lane changes violate fixed-road-axis assumptions. Shared-cell PET is spatially and temporally quantized and can overstate conflicts. Velocities do not bridge observation gaps >0.20s. Timing audit covers extracted clips only. Clip-edge censoring and incomplete coverage require review; no 48-hour rates are calculated.',
+        '', 'Research sources: [FHWA definitions of TTC/PET](https://www.fhwa.dot.gov/publications/research/safety/08051/02.cfm); [2025 experimental analysis of automated video safety errors](https://arxiv.org/abs/2503.09807); [existing ICCV2021 calibration author implementation](https://github.com/naver/cctv); [trajectory study using RTS smoothing](https://tsr.international/TSR/article/download/27904/24728?inline=1). Recent safety research supports checking tracking and calibration rather than interpreting automated flags as verified conflicts.',
+        '', '| Task | State | Detail |','|---|---|---|']
+    for r in statuses:lines.append(f"| {r['task']} | {r['state']} | {str(r.get('error',r.get('result',''))).replace('|','/')} |")
+    (directory/'RESULTS.md').write_text('\n'.join(lines)+'\n')
+    sections=['<!doctype html><meta charset="utf-8"><title>Clearance pilot review</title><style>body{font:16px system-ui;max-width:1100px;margin:30px auto}video,img{max-width:720px;width:100%}section{border-top:1px solid #ccc;padding:20px 0}td,th{padding:6px;border:1px solid #ddd}table{border-collapse:collapse}</style>',
+        '<h1>Exploratory clearance pilot</h1><p>Verify identity, passing direction, barriers, geometry and truncation. These are candidates; no verified near misses. Read RESULTS.md and all_interactions.csv.</p>']
+    for task in plan['tasks']:
+        sections.append('<section><h2>'+html.escape(task['key'])+'</h2>')
+        sections.append(f'<video controls preload="metadata" src="inputs/{task["clip_key"]}.mp4"></video>')
+        for r in review_rows:
+            if r['task']!=task['key']:continue
+            sections.append('<p>'+html.escape(f"Scenario {r['scenario']}: cyclist {r['cyclist_id']} / vehicle {r['vehicle_id']}: estimated clearance {r['min_sampled_clearance_m'] or 'unavailable'} m; TTC {r['min_collision_ttc_s'] or 'no collision course'} s; PET {r['sampled_occupancy_pet_s'] or 'no shared cells'} s; overtake candidate {r['observed_overtake_candidate']}")+'</p>')
+            snap=f"{task['key']}/c{r['cyclist_id']}_v{r['vehicle_id']}.jpg"
+            if (directory/snap).exists():sections.append(f'<img loading="lazy" src="{html.escape(snap)}">')
+        sections.append('</section>')
+    (directory/'review.html').write_text('\n'.join(sections))
+    review=[dict(task=r['task'],scenario=r['scenario'],cyclist_id=r['cyclist_id'],vehicle_id=r['vehicle_id'],cyclist_confirmed='',
+        car_passing_confirmed='',same_direction='',barrier_present='',occlusion='',truncated='',
+        clearance_geometry_usable='',near_miss_review='',reviewer='',notes='') for r in review_rows]
+    # Preserve user review edits when regenerating reports.
+    table(directory/'review_candidates.csv',review)
+
+
+def run(directory):
+    directory=directory.resolve();plan=json.loads((directory/'manifest.json').read_text())
+    save(directory/'status.json',dict(state='RUNNING',stage='preflight'))
+    try:
+        if any((directory/t['key']).exists() for t in plan['tasks']):raise ValueError('Run already started; refusing duplicate inference')
+        for executable in ('ffmpeg','ffprobe'):
+            if shutil.which(executable) is None:raise RuntimeError(executable+' is required; load the cluster ffmpeg module')
+        import torch
+        if not torch.cuda.is_available():raise RuntimeError('GPU unavailable in the scheduled job')
+        for name in ('ultralytics','supervision','transformers','cv2','numpy'):
+            __import__(name)
+        if checksum(plan['calibration'])!=plan['calibration_sha256'] or checksum(plan['weights'])!=plan['weights_sha256']:
+            raise ValueError('Calibration or model changed after submission')
+        stat=Path(plan['source']).stat()
+        if (stat.st_size,stat.st_mtime_ns)!=(plan['source_bytes'],plan['source_mtime_ns']):raise ValueError('Source changed after submission')
+        for task in plan['tasks']:
+            out=directory/task['key'];out.mkdir()
+            save(out/'status.json',dict(state='RUNNING',stage='extract'))
+            save(directory/'status.json',dict(state='RUNNING',task=task['key']))
+            try:
+                video,audit=extract(plan,task,directory)
+                save(out/'status.json',dict(state='RUNNING',stage='inference'))
+                log=infer(plan,task,video,directory)
+                save(out/'status.json',dict(state='RUNNING',stage='metrics'))
+                result=analyze(plan,task,directory,log)
+                save(out/'status.json',dict(state='SUCCEEDED',result=result))
+            except Exception as exc:
+                (out/'error.txt').write_text(traceback.format_exc())
+                save(out/'status.json',dict(state='FAILED',error=str(exc)))
+            report(directory)
+        states=[json.loads((directory/t['key']/'status.json').read_text())['state'] for t in plan['tasks']]
+        save(directory/'status.json',dict(state='FINISHED' if all(s=='SUCCEEDED' for s in states) else 'FINISHED_WITH_FAILURES'))
+        if any(s!='SUCCEEDED' for s in states):raise RuntimeError('Some tasks failed; see RESULTS.md and per-task error.txt')
+    except Exception as exc:
+        save(directory/'status.json',dict(state='FAILED',error=str(exc)))
+        (directory/'error.txt').write_text(traceback.format_exc())
+        raise
+    finally:
+        report(directory)
+
+
+def reanalyze(directory):
+    """CPU-only method update from saved raw exports; preserve prior analyses."""
+    directory=directory.resolve();plan=json.loads((directory/'manifest.json').read_text())
+    stamp=dt.datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+    for task in plan['tasks']:
+        out=directory/task['key']
+        required=['run_log.json','tracks_csv.csv','trajectories_csv.csv','vehicle_trajectories_csv.csv']
+        if not all((out/name).is_file() for name in required):continue
+        backup=out/'analysis_history'/stamp;backup.mkdir(parents=True)
+        for path in out.glob('*.csv'):
+            if path.name not in required:shutil.copy2(path,backup/path.name)
+        for name in ('geometry.json','status.json'):
+            if (out/name).exists():shutil.copy2(out/name,backup/name)
+        try:
+            result=analyze(plan,task,directory,json.loads((out/'run_log.json').read_text()))
+            save(out/'status.json',dict(state='SUCCEEDED',result=result,reanalyzed=stamp))
+        except Exception as exc:
+            (out/'analysis_error.txt').write_text(traceback.format_exc())
+            save(out/'status.json',dict(state='FAILED',error=str(exc),reanalyzed=stamp))
+    report(directory)
+
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);s=p.add_subparsers(dest='command',required=True)
+    a=s.add_parser('submit');a.add_argument('--go',action='store_true');a.add_argument('--source',type=Path)
+    a.add_argument('--data-root',type=Path,default=Path('/orange/xiangyan/rithika/vision/pilot_clips'))
+    a.add_argument('--calibration',type=Path);a.add_argument('--weights',type=Path)
+    a=s.add_parser('run');a.add_argument('directory',type=Path)
+    a=s.add_parser('report');a.add_argument('directory',type=Path)
+    a=s.add_parser('reanalyze');a.add_argument('directory',type=Path)
+    a=p.parse_args()
+    if a.command=='submit':submit(a)
+    elif a.command=='run':run(a.directory)
+    elif a.command=='reanalyze':reanalyze(a.directory)
+    else:report(a.directory.resolve())
+
+
+if __name__=='__main__':main()

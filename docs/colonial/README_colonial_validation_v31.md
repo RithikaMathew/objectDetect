@@ -2,7 +2,7 @@
 
 # Colonial North: validating the fine-tuned RT-DETR + X-CLIP bicyclist counter
 
-**Current priorities (2026-10-19 user update):** higher-resolution footage from ANY year, comparison against existing truth, additional detection research, and the high-sensitivity review experiment. Full-day scaling is removed from the plan. The 40-track comparison and own-night fine-tuning are on the back burner and excluded from the updated PowerPoint. Existing truth clips do not need relabelling. See `docs/tasks/todo.md`, `docs/VIDEO_PATHS.md` and `docs/RESEARCH_METHODS.md` from the repo root. Older sections below retain historical plans, not current instructions.
+**Current priorities (2026-10-19 user update):** higher-resolution footage from ANY year, comparison against existing truth, additional detection research, and the high-sensitivity review experiment. Full-day scaling is removed from the plan. The 40-track comparison and own-night fine-tuning are on the back burner and excluded from the updated PowerPoint. Existing truth clips do not need relabelling. See `docs/TODO.md`, `docs/VIDEO_PATHS.md` and `docs/RESEARCH_METHODS.md` from the repo root. Older sections below retain historical plans, not current instructions.
 
 Status as of 2026-10-15 evening (README v31: adds section 40, requests of the evening, batch-5 / scan scripts; adds section 39, tools for the pending work, not yet run on the cluster; README v30: CORRECTS section 37c: the new zone polygons belong to the COLONIAL 2019 camera, not the 2025 video; README v29: hand-off version for a new chat session; adds the 2025 fisheye video outcome and the zone polygons in section 37; batch 4 results in section 35). The long list of per-version notes that used to sit in this line is kept at the very end (section 36). **Start with section 0.**
 
@@ -945,7 +945,7 @@ The request for 2025 cameras means a video with more actual detail than the 720x
 
 No relabelling of the existing four truth clips is required. Exact annotated paths were recovered from saved run JSON and recorded in docs/VIDEO_PATHS.md. These refer to cluster videos; the Mac has no copy of them. The optional night/day spot-checks verify identities and prior uncertainty. The existing Corrine clip has no truth; new truth is needed only if a new higher-resolution test is scored. The separate 40-track task and own-night fine-tuning are on the back burner; full-day scaling is removed from the plan. Historical tools are retained without active run instructions.
 
-The new presentation is reports/presentations/bike_weekly_meeting_10_19.pptx and follows active todo items. Research primary sources and limits are in docs/RESEARCH_METHODS.md: multi-scale/flip test-time inference and Grounding DINO are newly shortlisted frozen-model experiments; temporal feature aggregation was already discussed and remains a larger integration. BNE-DETR public source exists, correcting the older deck. No new method has measured project gains yet.
+The new presentation is reports/presentations/history/bike_weekly_meeting_10_19.pptx and follows active todo items. Research primary sources and limits are in docs/RESEARCH_METHODS.md: multi-scale/flip test-time inference and Grounding DINO are newly shortlisted frozen-model experiments; temporal feature aggregation was already discussed and remains a larger integration. BNE-DETR public source exists, correcting the older deck. No new method has measured project gains yet.
 
 
 ## 44. One-command research suite (2026-10-19; written locally, NOT yet run)

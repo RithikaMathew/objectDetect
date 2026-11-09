@@ -149,10 +149,10 @@ The command submits a CPU preview job for15candidate cameras (13reference locati
 - [Calculated per-location statistics](../reports/cluster_returns/20261024/speed_reference_summary.csv).
 - [University manual crossing inputs](../data/reviews/speed/university_manual_crossing_20261024.json).
 - [University video evidence and calculation](../reports/cluster_returns/20261024/university_map_speeds/RESULTS.md).
-- [Current command guide](STUDY_NEXT_STEPS.md).
+- [Current command guide](runs/STUDY_NEXT_STEPS.md).
 
 
-Preview generation dependency: FFmpeg withlibx264 is checked before extraction. The launcher can install an isolated bundled binary if needed; see [preview recovery instructions](STUDY_NEXT_STEPS.md#preview-recovery-after-job47544655-october24). The October24initial0/15preview result was missingFFmpeg, not evidence that all15cameras had unusable images.
+Preview generation dependency: FFmpeg withlibx264 is checked before extraction. The launcher can install an isolated bundled binary if needed; see [preview recovery instructions](runs/STUDY_NEXT_STEPS.md#preview-recovery-after-job47544655-october24). The October24initial0/15preview result was missingFFmpeg, not evidence that all15cameras had unusable images.
 
 
 ### Counts and timestamps in adaptive results

@@ -66,7 +66,7 @@ For existing video, a correctly measured two-line section is the simplest additi
 
 **How to read the results:** Carroll and Columbia manual averages are close to their study references. Aloma and University differ substantially and need checking. Similar group averages do not establish per-person accuracy. Colonial’s study speed average combines bike-lane and sidewalk cyclists.
 
-**Shorter-duration experiment prepared:** [rerun instructions](../../docs/SHORT_TRACK_SPEED_RUN.md) lower the daytime bicycle minimum to1.5seconds across all13sites, reusing saved calibration. Other counting rules and nighttime policy are preserved. The completed reports are saved in reports/cluster_returns/20261027/completed_speed_batches; the table above remains the older three-second baseline.
+**Shorter-duration experiment prepared:** [rerun instructions](../../docs/runs/SHORT_TRACK_SPEED_RUN.md) lower the daytime bicycle minimum to1.5seconds across all13sites, reusing saved calibration. Other counting rules and nighttime policy are preserved. The completed reports are saved in reports/cluster_returns/20261027/completed_speed_batches; the table above remains the older three-second baseline.
 
 **Aloma duration-filter finding:** all five rejected bicycle-labelled tracks lasted less than the daytime three-second minimum: 2.9, 1.6, 2.0, 2.7 and 1.7 seconds. Four had 100% detector bicycle labels and weighted bicycle scores of 0.98–1.00. The duration gate necessarily rejects these tracks; other gates may also apply. This shows that short tracked duration can exclude strongly supported cyclists. It does not prove all five are distinct real cyclists: the study count and manual review contain four, so the extra candidate needs review before relaxing filters. The baseline results above remain unchanged. [Saved audit](aloma_duration_audit_20261026.csv).
 
@@ -105,4 +105,4 @@ Detailed encounter times and exclusions: [analysis/DETAILS.md](DETAILS.md). Tabl
 
 ## Latest speed plan results
 
-[Combined analysis and scale checks](../speed_plan_20261027/RESULTS.md) include robust/manual/endpoint comparison, timestamps, plots, assumption-based sensitivity, study-group comparisons and optional physical-scale evidence checks. [One-pass run guide](../../docs/SPEED_PLAN_RUN.md).
+[Combined analysis and scale checks](../speed_plan_20261027/RESULTS.md) include robust/manual/endpoint comparison, timestamps, plots, assumption-based sensitivity, study-group comparisons and optional physical-scale evidence checks. [One-pass run guide](../../docs/runs/SPEED_PLAN_RUN.md).

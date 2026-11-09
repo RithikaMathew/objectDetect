@@ -1,0 +1,26 @@
+[
+  {
+    "device": "SCU8OG",
+    "videos": 45,
+    "recording_session_dates": [
+      "2023-05-02"
+    ],
+    "session_directories": [
+      "10th St/Standard_SCU8OG_2023-05-02_0000"
+    ],
+    "first_video_filename": "MioVision Data/2023 Data/10th St/Standard_SCU8OG_2023-05-02_0000/Standard_SCU8OG_2023-05-02_0000.001.mp4",
+    "last_video_filename": "MioVision Data/2023 Data/10th St/Standard_SCU8OG_2023-05-02_0000/Standard_SCU8OG_2023-05-02_0000.045.mp4"
+  },
+  {
+    "device": "SCU8PM",
+    "videos": 48,
+    "recording_session_dates": [
+      "2023-05-02"
+    ],
+    "session_directories": [
+      "10th St/Standard_SCU8PM_2023-05-02_0000"
+    ],
+    "first_video_filename": "MioVision Data/2023 Data/10th St/Standard_SCU8PM_2023-05-02_0000/Standard_SCU8PM_2023-05-02_0000.001.mp4",
+    "last_video_filename": "MioVision Data/2023 Data/10th St/Standard_SCU8PM_2023-05-02_0000/Standard_SCU8PM_2023-05-02_0000.048.mp4"
+  }
+]
