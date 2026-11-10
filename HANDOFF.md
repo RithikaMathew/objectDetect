@@ -142,6 +142,15 @@ calculated from this run without a vehicle trajectory. A manual car trajectory
 or a successful targeted vehicle detection is required for this particular
 event.
 
+The later screenshot review refines this diagnosis: at approximately 5:08:43
+PM, the annotated frame shows **car track 68** and **pedestrian track 1** at the
+same time. The car then disappears when it overlaps/occludes the pedestrian.
+Thus the failure is primarily **track loss during occlusion**, not failure to
+detect the car throughout the clip. The saved car trajectory before the loss
+can support a pre-occlusion speed and motion estimate. Any position, TTC or PET
+inside the hidden interval would be an extrapolation, not a directly observed
+metric, and must be labeled with its uncertainty.
+
 ## 5. Files to use
 
 - [Final short summary](reports/clearance_pilot/final_review_20261109/START_HERE.md).
