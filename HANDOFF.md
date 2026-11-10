@@ -129,6 +129,19 @@ only. They are not metres, not perpendicular road-plane clearance, and not a
 continuous minimum-gap estimate. Perspective and the camera viewing angle make
 direct comparison of pixels across frames unsafe.
 
+### 5:08 PM pedestrian-car follow-up
+
+The targeted 5:08--5:09 PM Colonial run completed both detector settings and
+the manual event selector identified the apparent crossing at approximately
+5:08:46.5--5:08:46.8. In that exact interval, both detector runs retained the
+same pedestrian track for **9 observations**, but retained **zero vehicle
+tracks**. The resulting zero TTC/PET/clearance interaction rows therefore mean
+that the detector missed or failed to track the visually observed car; they do
+not mean the car was absent or that the event was safe. TTC and PET cannot be
+calculated from this run without a vehicle trajectory. A manual car trajectory
+or a successful targeted vehicle detection is required for this particular
+event.
+
 ## 5. Files to use
 
 - [Final short summary](reports/clearance_pilot/final_review_20261109/START_HERE.md).

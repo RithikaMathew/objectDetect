@@ -267,6 +267,71 @@ update();
         (directory/'event_time_selector.html').write_text(page)
 
 
+def write_event_diagnostic_video(directory, task, offset=46.635, radius=3.):
+    """Render a short event clip showing saved subject/vehicle observations."""
+    import cv2
+    folder = directory / task['key']
+    source = directory / 'inputs' / f"{task['clip_key']}.mp4"
+    trajectories = folder / 'trajectories_csv.csv'
+    vehicles = folder / 'vehicle_trajectories_csv.csv'
+    log_path = folder / 'run_log.json'
+    if not all(path.is_file() for path in (source, trajectories, vehicles, log_path)):
+        return None
+    log = json.loads(log_path.read_text())
+    fps = float(log['fps'])
+    start = max(0., offset - radius)
+    end = offset + radius
+    observations = []
+    for path in (trajectories, vehicles):
+        observations.extend(read(path))
+    by_frame = defaultdict(list)
+    for row in observations:
+        frame = int(row['frame'])
+        time_s = (frame - 1) / fps
+        if start <= time_s <= end:
+            by_frame[frame].append(row)
+    cap = cv2.VideoCapture(str(source))
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)); height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    first = max(0, round(start * fps)); last = round(end * fps)
+    cap.set(cv2.CAP_PROP_POS_FRAMES, first)
+    output = folder / 'event_diagnostic.mp4'
+    writer = cv2.VideoWriter(str(output), cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
+    if not writer.isOpened():
+        cap.release()
+        return None
+    try:
+        for frame_number in range(first + 1, last + 2):
+            ok, image = cap.read()
+            if not ok:
+                break
+            rows = by_frame.get(frame_number, [])
+            vehicle_seen = False
+            for row in rows:
+                x, y = float(row['foot_x']), float(row['foot_y'])
+                w, h = float(row['box_w']), float(row['box_h'])
+                label = row.get('label', '').upper()
+                is_subject = label == 'PEDESTRIAN'
+                if not is_subject:
+                    vehicle_seen = True
+                color = (0, 220, 0) if is_subject else (255, 150, 0)
+                top_left = (round(x - w / 2), round(y - h))
+                bottom_right = (round(x + w / 2), round(y))
+                cv2.rectangle(image, top_left, bottom_right, color, 2)
+                cv2.putText(image, ('PEDESTRIAN' if is_subject else label) + ' track ' + str(row['track_id']),
+                            (top_left[0], max(18, top_left[1] - 4)), cv2.FONT_HERSHEY_SIMPLEX, .42, color, 1)
+            elapsed = (frame_number - 1) / fps
+            cv2.putText(image, f'clip +{elapsed:.3f}s | requested event +46.635s',
+                        (8, height - 34), cv2.FONT_HERSHEY_SIMPLEX, .48, (255, 255, 255), 1)
+            if not vehicle_seen:
+                cv2.rectangle(image, (0, 0), (width, 30), (0, 0, 160), -1)
+                cv2.putText(image, 'NO VEHICLE TRACK IN SAVED DETECTIONS', (8, 21),
+                            cv2.FONT_HERSHEY_SIMPLEX, .55, (255, 255, 255), 1)
+            writer.write(image)
+    finally:
+        cap.release(); writer.release()
+    return output if output.is_file() and output.stat().st_size else None
+
+
 def analyze(plan,task,directory,log):
     import numpy as np
     from clearance_metrics import prepare,road_axis,pair_metrics,scenarios
@@ -382,6 +447,9 @@ def report(directory):
     for task in plan['tasks']:
         sections.append('<section><h2>'+html.escape(task['key'])+'</h2>')
         sections.append(f'<video controls preload="metadata" src="inputs/{task["clip_key"]}.mp4"></video>')
+        diagnostic = write_event_diagnostic_video(directory, task) if plan.get('subject_kind') == 'pedestrian' else None
+        if diagnostic is not None:
+            sections.append(f'<h3>Annotated event window</h3><p>Green boxes are saved pedestrian observations. Blue boxes would be saved vehicle observations. The red banner indicates when no vehicle track exists.</p><video controls preload="metadata" src="{html.escape(task["key"] + "/event_diagnostic.mp4")}"></video>')
         for r in review_rows:
             if r['task']!=task['key']:continue
             sections.append('<p>'+html.escape(f"Scenario {r['scenario']}: {r.get('subject_kind',plan.get('subject_kind','cyclist'))} {r['cyclist_id']} / vehicle {r['vehicle_id']}: estimated clearance {r['min_sampled_clearance_m'] or 'unavailable'} m; TTC {r['min_collision_ttc_s'] or 'no collision course'} s; PET {r['sampled_occupancy_pet_s'] or 'no shared cells'} s; overtake candidate {r['observed_overtake_candidate']}")+'</p>')
