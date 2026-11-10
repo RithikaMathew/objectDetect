@@ -73,7 +73,7 @@ function draw(){{
   const observations=auto[String(frameNumber())]||[];
   for(const row of observations){{const pedestrian=row.label.toUpperCase()==='PEDESTRIAN'; ctx.strokeStyle=pedestrian?'#00dd66':'#279cff'; ctx.lineWidth=2; ctx.strokeRect(row.x-row.w/2,row.y-row.h,row.w,row.h); ctx.fillStyle=ctx.strokeStyle; ctx.font='13px sans-serif'; ctx.fillText((pedestrian?'PEDESTRIAN ':'VEHICLE ')+row.track_id,row.x-row.w/2,Math.max(14,row.y-row.h-3));}}
   for(const point of points.filter(item=>item.frame===frameNumber())){{ctx.fillStyle=point.object==='car'?'#ff3b30':'#ffd60a'; ctx.beginPath();ctx.arc(point.x,point.y,6,0,Math.PI*2);ctx.fill();}}
-  const label=clicked?`click x=${clicked.x} y=${clicked.y}`:'click the image to choose a point'; document.getElementById('readout').textContent=`clip +${video.currentTime.toFixed(3)}s | frame ${frameNumber()} | ${label}`;
+    const label=clicked?`click x=${{clicked.x}} y=${{clicked.y}}`:'click the image to choose a point'; document.getElementById('readout').textContent=`clip +${{video.currentTime.toFixed(3)}}s | frame ${{frameNumber()}} | ${{label}}`;
 }}
 function clickPoint(event){{const rect=canvas.getBoundingClientRect(); clicked={{x:Math.round((event.clientX-rect.left)*canvas.width/rect.width),y:Math.round((event.clientY-rect.top)*canvas.height/rect.height)}};draw();}}
 function mark(object){{if(!clicked){{alert('Click the image first.');return;}} points.push({{frame:frameNumber(),clip_seconds:video.currentTime,object,x_px:clicked.x,y_px:clicked.y,reviewer:document.getElementById('reviewer').value,notes:document.getElementById('notes').value}}); render(); draw();}}
