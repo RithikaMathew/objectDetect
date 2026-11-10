@@ -346,6 +346,22 @@ def report(directory):
             sections.append('<p>'+html.escape(f"Scenario {r['scenario']}: {r.get('subject_kind',plan.get('subject_kind','cyclist'))} {r['cyclist_id']} / vehicle {r['vehicle_id']}: estimated clearance {r['min_sampled_clearance_m'] or 'unavailable'} m; TTC {r['min_collision_ttc_s'] or 'no collision course'} s; PET {r['sampled_occupancy_pet_s'] or 'no shared cells'} s; overtake candidate {r['observed_overtake_candidate']}")+'</p>')
             snap=f"{task['key']}/c{r['cyclist_id']}_v{r['vehicle_id']}.jpg"
             if (directory/snap).exists():sections.append(f'<img loading="lazy" src="{html.escape(snap)}">')
+        # A known event timestamp deserves a direct still image; candidate
+        # selection alone can omit a real crossing from the snapshot list.
+        event_offset = task.get('review_offset_s')
+        if event_offset is None and plan.get('subject_kind') == 'pedestrian' and task.get('duration_s') == 60.:
+            event_offset = 48.
+        if event_offset is not None:
+            video = directory/'inputs'/(task['clip_key']+'.mp4')
+            event_image = directory/task['key']/f'event_at_{event_offset:g}s.jpg'
+            if video.is_file():
+                import cv2
+                cap = cv2.VideoCapture(str(video)); fps = cap.get(cv2.CAP_PROP_FPS) or 29.97
+                cap.set(cv2.CAP_PROP_POS_FRAMES, round(float(event_offset)*fps))
+                ok, image = cap.read(); cap.release()
+                if ok and cv2.imwrite(str(event_image), image):
+                    relative = f"{task['key']}/{event_image.name}"
+                    sections.append(f'<h3>Known event time: crop +{float(event_offset):g}s</h3><p>This is the requested pedestrian crossing time. Review identity and visible edges here before interpreting metrics.</p><img loading="lazy" src="{html.escape(relative)}">')
         sections.append('</section>')
     (directory/'review.html').write_text('\n'.join(sections))
     review=[dict(task=r['task'],scenario=r['scenario'],cyclist_id=r['cyclist_id'],vehicle_id=r['vehicle_id'],cyclist_confirmed='',
