@@ -8,6 +8,7 @@ import html
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -83,6 +84,9 @@ def make_plan(a):
                               subject_kind=a.subject_kind))
             tasks[-1]['duration_s'] = duration
     stat=source.stat()
+    chunk_match=re.search(r'\.(\d{3})\.mp4$',source.name)
+    chunk_hour=int(chunk_match.group(1))-1 if chunk_match else 12
+    source_clock=(dt.datetime(2019,7,10)+dt.timedelta(hours=chunk_hour)).isoformat(sep=' ')
     return dict(schema=1,root=str(ROOT),repo=str(REPO),source=str(source),source_bytes=stat.st_size,
         source_mtime_ns=stat.st_mtime_ns,source_sha256='not_hashed_large_original',
         calibration=str(calibration),calibration_sha256=checksum(calibration),
@@ -90,7 +94,7 @@ def make_plan(a):
         unique_video_seconds=sum(t['duration_s'] for t in tasks[::2]),
         detector_video_seconds=sum(t['duration_s'] for t in tasks),
         subject_kind=a.subject_kind,
-        source_clock='2019-07-10 12:00:00',clock_status='filename_inferred_not_independently_verified',
+        source_clock=source_clock,clock_status='filename_inferred_not_independently_verified',
         camera='Colonial North',resolution=[720,480],jobs=[],
         interpretation='exploratory_assumed_footprints_learned_scale_not_verified_near_misses')
 
