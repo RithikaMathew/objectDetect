@@ -191,7 +191,9 @@ def run(batch, task_name, annotations, out):
     subject = paths.get(("pedestrian", "1"))
     if not subject:
         raise ValueError("Pedestrian track 1 is not present in the saved trajectories")
-    subject = with_velocity([item for item in subject if 40 <= item["t"] <= 53])
+    annotation_start = min(item["t"] for item in manual)
+    annotation_end = max(item["t"] for item in manual)
+    subject = with_velocity([item for item in subject if annotation_start <= item["t"] <= annotation_end])
     axis = road_axis(paths, ("pedestrian",))
     frames = target_frames(subject)
     methods = {

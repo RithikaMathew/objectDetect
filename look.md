@@ -1,34 +1,60 @@
 
 
-detector   scenario         screen             distance_threshold_m  pet_threshold_s  candidate_pairs  eligible_pairs  flagged_pairs  interpretation
-reference  strict_False     distance           1.0                   1.0              36               36              0              exploratory_screen_not_verified_near_miss_classifier
-reference  strict_False     pet                1.0                   1.0              36               21              0              exploratory_screen_not_verified_near_miss_classifier
-reference  strict_False     distance_AND_pet   1.0                   1.0              36               21              0              exploratory_screen_not_verified_near_miss_classifier
-reference  strict_False     distance_OR_pet    1.0                   1.0              36               36              0              exploratory_screen_not_verified_near_miss_classifier
-reference  strict_False     lateral_clearance  1.0                   1.0              36               6               0              exploratory_screen_not_verified_near_miss_classifier
-reference  kalman_transfer  distance           1.0                   1.0              31               31              0              exploratory_screen_not_verified_near_miss_classifier
-reference  kalman_transfer  pet                1.0                   1.0              31               18              0              exploratory_screen_not_verified_near_miss_classifier
-reference  kalman_transfer  distance_AND_pet   1.0                   1.0              31               18              0              exploratory_screen_not_verified_near_miss_classifier
-reference  kalman_transfer  distance_OR_pet    1.0                   1.0              31               31              0              exploratory_screen_not_verified_near_miss_classifier
-reference  kalman_transfer  lateral_clearance  1.0                   1.0              31               6               0              exploratory_screen_not_verified_near_miss_classifier
-reference  rts_transfer     distance           1.0                   1.0              31               31              0              exploratory_screen_not_verified_near_miss_classifier
-reference  rts_transfer     pet                1.0                   1.0              31               19              0              exploratory_screen_not_verified_near_miss_classifier
-reference  rts_transfer     distance_AND_pet   1.0                   1.0              31               19              0              exploratory_screen_not_verified_near_miss_classifier
-reference  rts_transfer     distance_OR_pet    1.0                   1.0              31               31              0              exploratory_screen_not_verified_near_miss_classifier
-reference  rts_transfer     lateral_clearance  1.0                   1.0              31               6               0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  strict_False     distance           1.0                   1.0              48               48              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  strict_False     pet                1.0                   1.0              48               22              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  strict_False     distance_AND_pet   1.0                   1.0              48               22              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  strict_False     distance_OR_pet    1.0                   1.0              48               48              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  strict_False     lateral_clearance  1.0                   1.0              48               11              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  kalman_transfer  distance           1.0                   1.0              41               41              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  kalman_transfer  pet                1.0                   1.0              41               23              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  kalman_transfer  distance_AND_pet   1.0                   1.0              41               23              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  kalman_transfer  distance_OR_pet    1.0                   1.0              41               41              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  kalman_transfer  lateral_clearance  1.0                   1.0              41               9               0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  rts_transfer     distance           1.0                   1.0              40               40              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  rts_transfer     pet                1.0                   1.0              40               22              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  rts_transfer     distance_AND_pet   1.0                   1.0              40               22              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  rts_transfer     distance_OR_pet    1.0                   1.0              40               40              0              exploratory_screen_not_verified_near_miss_classifier
-sensitive  rts_transfer     lateral_clearance  1.0                   1.0              40               10              0              exploratory_screen_not_verified_near_miss_classifier
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+method                samples  min_center_distance_m  min_lateral_gap_m   min_ttc_s            pet_s                coverage_fraction     first_common_s     last_common_s       interpretat>
+manual_observed       5        2.4379839606330806     0.5269021285098869                                            0.013262599469496022  46.07941274607941  47.04704704704705   exploratory>
+linear_interpolation  17       2.256123913704512      0.5557673662012494                                            0.04509283819628647   46.07941274607941  47.04704704704705   exploratory>
+constant_velocity     377      2.4215274034653174     0.8386557936783101  0.37452971299897336  0.13346680013346202  1.0                   40.00667334000668  52.986319652986325  exploratory>
+kalman                377      2.615466401996375      0.4404686541640468  0.25323648153994854  0.0                  1.0                   40.00667334000668  52.986319652986325  exploratory>
+rts                   377      2.4242994928193693     0.4404686541640468  0.25323648153994854  0.0                  1.0                   40.00667334000668  52.986319652986325  exploratory>
 (END)
