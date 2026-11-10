@@ -18,4 +18,4 @@ Superseded overlays v1–v18, preceding detector comparison versions, obsolete l
 
 For retained secondary launchers, submit from the `vision3` working directory, e.g. `sbatch comparison/run_compare_array_v5.slurm`. Training launcher: `sbatch training/run_finetune.slurm`. These are optional tools, not outstanding jobs. No model/download/training jobs were submitted during cleanup. Weight and data directory paths remain unchanged.
 
-The completed final batch does not need resubmission. Start with the root README and docs/TODO.md for current validation status. Cleanup details: docs/VISION3_CLEANUP_20261020.csv (paths relative to repo root).
+The completed batches do not need resubmission. Start with [the project README](../README.md). Historical experiment reports are consolidated in [detector results](../reports/history/DETECTOR_RESULTS.md); cleanup actions are recorded in [the manifest](../reports/maintenance/cleanup_20261109.csv).

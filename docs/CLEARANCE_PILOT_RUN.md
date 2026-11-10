@@ -4,21 +4,13 @@ This run uses existing files only. No email, new field measurements, new trained
 
 ## Submit
 
-After transferring the new scripts and saved calibration to the existing project checkout, paste this single line on HiPerGator:
+**Completed:** the pilot, local review and distance-reference audit are saved in the final packet linked from the project README. No rerun is required. To reproduce intentionally after syncing with Git, use:
 
 ```bash
 cd /orange/xiangyan/rithika/vision/vision3/best/test_colonial && source /orange/xiangyan/rithika/vision/yolo_env/bin/activate && python code/clearance_pilot.py submit --go
 ```
 
 This submits one GPU job plus a small CPU report job using `afterany`, so a report is generated even if GPU processing times out or fails. No full-hour speed jobs or old experiment batches are submitted. Each new invocation creates a separate run; submit once and retain its printed job IDs/results path. Without `--go`, it prints the plan and does not submit. Queue delay and GPU runtime are unknown; the GPU job requests a maximum two hours, not a prediction that it takes two hours.
-
-The transfer bundle is `reports/clearance_pilot/clearance_pilot_bundle.tar.gz`. It includes the new scripts, tests, saved calibration, required shared pipeline code, camera zones, and this guide, but excludes videos, weights and environments. Upload the archive to `/orange/xiangyan/rithika/vision/` using your usual file transfer. From that directory, installation and submission can also be done in one line:
-
-```bash
-tar -xzf clearance_pilot_bundle.tar.gz && source /orange/xiangyan/rithika/vision/yolo_env/bin/activate && python vision3/best/test_colonial/code/clearance_pilot.py submit --go
-```
-
-The bundle paths are relative to the repository root and retain the current shared pipeline versions. Install before starting the run. If your cluster scripts contain uncommitted custom changes, preserve them before extracting these shared files. Existing result directories are not bundled.
 
 ## Fixed short windows
 
@@ -90,7 +82,7 @@ Local verification covers known parallel-pass gaps, collision-course versus sepa
 
 RTS reference: [Investigation on road traffic safety in rural areas using trajectory data](https://tsr.international/TSR/article/download/27904/24728?inline=1) applies RTS smoothing in its trajectory preprocessing. Our constant-velocity implementation and noise settings are custom; no reproduction of that study or its sensor suite is claimed.
 
-If you already completed the earlier version of this pilot, install the updated bundle after that job ends and reuse its saved raw exports. From `test_colonial`, submit a CPU-only analysis update (replace the results path with the actual printed directory):
+If you already completed the earlier version of this pilot, pull the updated source with Git after that job ends and reuse its saved raw exports. From `test_colonial`, submit a CPU-only analysis update (replace the results path with the actual printed directory):
 
 ```bash
 sbatch --gpus=0 --mem=8G --time=00:30:00 --output=clearance_reanalysis_%j.log code/clearance_pilot.slurm /absolute/path/to/CLEARANCE_PILOT_existing reanalyze
@@ -99,10 +91,26 @@ sbatch --gpus=0 --mem=8G --time=00:30:00 --output=clearance_reanalysis_%j.log co
 This adds the new method/scoring tables without GPU detection. Previous per-task analysis tables and statuses are preserved under `analysis_history/`; raw exports and your `review_labels.csv` remain intact. Only tasks with all required raw exports are reanalyzed. Do not run this against an active pilot directory.
 
 
-## Extraction failure repair
 
-The first submitted run (`CLEARANCE_PILOT_20261109_173702_359342`, GPU job 50504800 / report job 50504801) reported 0/6 successful tasks: FFmpeg failed before inference. Its report did not retain the underlying FFmpeg stderr, so the precise cluster cause is unconfirmed. This is not evidence of zero passing interactions.
 
-The updated bundle checks FFmpeg's supported synchronization flags, choosing `-fps_mode passthrough` on newer versions or `-vsync 0` on older ones. It uses the existing encoder resolver to find a working libx264 executable, including the previously installed isolated cached runtime. It records the selected executable/version/sync arguments in `ffmpeg_runtime.json`, and the actual extraction command, return code and stderr in `inputs/*_extraction.json`. Failed encodes leave no reusable partial clip. Frame timing is audited before publishing a clip.
+## Sync to HiPerGator
 
-Upload the repaired bundle over the previous archive and run the same installation/submission line once. The new run creates a fresh results directory; keep the failed run for diagnostics. CPU-only reanalysis cannot recover this particular run because no raw detection trajectories were produced. The precise prior FFmpeg error remains in that run's `slurm_50504800.log` if needed.
+The current pilot and local review are complete. No new job is pending. For an intentional reproduction, sync the relevant committed files with Git, activate the existing yolo_env, and use the submission command above. Do not rerun old detector batches simply because this guide lists reproduction commands. Model weights and original source videos must already be on the cluster; Git does not transfer them.
+
+```bash
+cd /orange/xiangyan/rithika/vision
+git pull --ff-only origin main
+source yolo_env/bin/activate
+```
+
+## Reviewed footprints interface
+
+`pipeline/passing_clearance.py` is a separate calculator for reviewed metric footprints, not a raw-video extractor. CSV columns: source_id,track_id,class,t,s_min,s_max,l_min,l_max,facility,calibration_id,geometry_reviewed. Road-aligned bounds must be meters; geometry_reviewed must be yes. Calibration JSON requires source_id, calibration_id, units=m, axes=road_aligned, reviewed=true and evidence. It reports sampled lateral edge gaps for simultaneous longitudinally overlapping footprints, with passing identity still requiring review.
+
+```bash
+python3 pipeline/passing_clearance.py footprints.csv --calibration calibration.json --out clearance.csv
+```
+
+## Local validation
+
+The local validation covers analytic pass/collision geometry, PET shared-space occupancy, support transfer, gap resets, Kalman/RTS behavior, synthetic CSV-to-report processing, mocked Slurm submission, extraction diagnostics and real FFmpeg timing. The final current-file packet additionally verifies workbook source cells, artifact checksums and all linked media. Cluster job 50509198 completed all six tasks. The prior failed extraction run produced no detection data. These checks do not establish physical clearance accuracy.

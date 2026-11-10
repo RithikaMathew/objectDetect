@@ -1,0 +1,20 @@
+{
+  "state": "SUBMITTED",
+  "job_id": "50509199",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--dependency=afterany:50509198",
+    "--gpus=0",
+    "--mem=4G",
+    "--time=00:10:00",
+    "--job-name=clearance_report",
+    "--output",
+    "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_175030_116203/report_%j.log",
+    "--chdir",
+    "/orange/xiangyan/rithika/vision/vision3/best/test_colonial",
+    "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/code/clearance_pilot.slurm",
+    "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_175030_116203",
+    "report"
+  ]
+}

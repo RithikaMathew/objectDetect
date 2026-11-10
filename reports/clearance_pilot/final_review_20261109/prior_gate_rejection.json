@@ -1,0 +1,9 @@
+{
+  "source_file": "colonial_speed_gates.json",
+  "reviewer": "Rithika",
+  "confirmation_date": "2026-10-20",
+  "owner_confirmation": "I selected visible lane ends; measured endpoints unknown",
+  "usable_for_physical_speed": false,
+  "reason": "Selected image endpoints are not established as the workbook measured 35-foot bike-lane and 30-foot sidewalk sections.",
+  "original_preserved": true
+}

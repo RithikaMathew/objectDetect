@@ -1,0 +1,11 @@
+{
+  "frames": 900,
+  "first_pts": 0.0,
+  "last_pts": 29.996633,
+  "median_step_s": 0.03336699999999837,
+  "fps_from_pts": 29.96973057212362,
+  "irregular_fraction": 0.0,
+  "max_step_s": 0.03336700000000192,
+  "scope": "extracted pilot clip only; original source timing not independently verified",
+  "sha256": "c7eeb8df29bfdc1bc081cb67e2a8a6482475fff1eaeeb98f812e3f7d4ee1e50e"
+}

@@ -1,0 +1,2 @@
+track_id,label,counted,first_time,last_time,bin_index,facility,secs,mean_conf,weighted_bicyclist,weighted_pedestrian,disp_px,det_label,det_cyclist_pct,xclip_label,labels_agree
+1,BICYCLIST,1,2019-07-10 12:53:44,2019-07-10 12:53:54,0,sidewalk,9.68,0.807,0.837,0.163,737.6,cyclist,55.2,BICYCLIST,1

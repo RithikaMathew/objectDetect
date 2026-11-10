@@ -1,0 +1,14 @@
+{
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--output",
+    "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_175030_116203/slurm_%j.log",
+    "--chdir",
+    "/orange/xiangyan/rithika/vision/vision3/best/test_colonial",
+    "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/code/clearance_pilot.slurm",
+    "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_175030_116203"
+  ],
+  "state": "SUBMITTED",
+  "job_id": "50509198"
+}

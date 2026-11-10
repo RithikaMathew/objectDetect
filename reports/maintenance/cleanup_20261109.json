@@ -1,0 +1,16 @@
+{
+  "backup": "/Users/rithika/Desktop/objectDetect_cleanup_backup_20261109_190955.tar.gz",
+  "removed_files": 153,
+  "removed_bytes": 20197654,
+  "markdown_files_remaining": 58,
+  "preserved": "datasets, annotations, scientific outputs, model/training assets, original cluster returns and runtime paths",
+  "markdown_before": 106,
+  "markdown_after": 58,
+  "protected_source_files_verified": 1865,
+  "bytes_before": 215431209,
+  "bytes_after": 198613760,
+  "broken_markdown_links": 0,
+  "review_media_links_valid": true,
+  "portable_zip_verified": true,
+  "validation": "23 tests passed; no broken Markdown targets; final review media and standalone ZIP checked; git diff --check passed"
+}

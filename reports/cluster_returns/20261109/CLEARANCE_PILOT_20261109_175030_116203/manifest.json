@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "root": "/orange/xiangyan/rithika/vision/vision3/best/test_colonial",
+  "repo": "/orange/xiangyan/rithika/vision",
+  "source": "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4",
+  "source_bytes": 177227899,
+  "source_mtime_ns": 1562792402000000000,
+  "source_sha256": "not_hashed_large_original",
+  "calibration": "/orange/xiangyan/rithika/vision/reports/cluster_returns/20261024/colonial_speed_47545558_report_rebuilt/iccv2021/calibration.json",
+  "calibration_sha256": "1e2575a9f3ebc1fc3011256ab2092386201ec9411b591dca42df6763204c6b29",
+  "weights": "/orange/xiangyan/rithika/vision/vision3/runs/detect/finetune_runs/rtdetr_v3/weights/best.pt",
+  "weights_sha256": "eeaf2553a7b66c7e0c2f1f189c0b036ef41d9fa3502b1a3b45703d47ce0faaff",
+  "tasks": [
+    {
+      "key": "colonial_124020_reference",
+      "clip_key": "colonial_124020",
+      "start_s": 2408.0,
+      "duration_s": 30.0,
+      "detector": "reference",
+      "selection_evidence": "manual/s03_colonial_north_2019-07-10_123000_manual_bicycle_observations.json"
+    },
+    {
+      "key": "colonial_124020_sensitive",
+      "clip_key": "colonial_124020",
+      "start_s": 2408.0,
+      "duration_s": 30.0,
+      "detector": "sensitive",
+      "selection_evidence": "manual/s03_colonial_north_2019-07-10_123000_manual_bicycle_observations.json"
+    },
+    {
+      "key": "colonial_125311_reference",
+      "clip_key": "colonial_125311",
+      "start_s": 3179.0,
+      "duration_s": 30.0,
+      "detector": "reference",
+      "selection_evidence": "manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json"
+    },
+    {
+      "key": "colonial_125311_sensitive",
+      "clip_key": "colonial_125311",
+      "start_s": 3179.0,
+      "duration_s": 30.0,
+      "detector": "sensitive",
+      "selection_evidence": "manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json"
+    },
+    {
+      "key": "colonial_125350_reference",
+      "clip_key": "colonial_125350",
+      "start_s": 3218.0,
+      "duration_s": 30.0,
+      "detector": "reference",
+      "selection_evidence": "manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json"
+    },
+    {
+      "key": "colonial_125350_sensitive",
+      "clip_key": "colonial_125350",
+      "start_s": 3218.0,
+      "duration_s": 30.0,
+      "detector": "sensitive",
+      "selection_evidence": "manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json"
+    }
+  ],
+  "unique_video_seconds": 90,
+  "detector_video_seconds": 180,
+  "source_clock": "2019-07-10 12:00:00",
+  "clock_status": "filename_inferred_not_independently_verified",
+  "camera": "Colonial North",
+  "resolution": [
+    720,
+    480
+  ],
+  "jobs": [
+    "50509198",
+    "50509199"
+  ],
+  "interpretation": "exploratory_assumed_footprints_learned_scale_not_verified_near_misses"
+}

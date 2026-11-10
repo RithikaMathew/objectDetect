@@ -101,6 +101,17 @@ Columbia’s 49 multipart files total **47.98 hours**, not 49 hours. Silver Star
 
 Review the flagged automatic tracks, then confirm University’s approximately 55.17-foot map endpoints in the video to check the learned distance scale. No new broad model sweep or repeat manual annotation is needed now. Wheel/marking checks have code but lack the necessary evidence for physical-scale results. ByteTrack is already used; a new wheel-keypoint model has not been trained.
 
-[Broader 1.5-second run](../reports/cluster_returns/20261027/completed_speed_batches/shortday_sites.csv) uses different coverage and quota stopping; it is separate from the main table. [Earlier three-second baseline README](analysis/README_baseline_before_same_video_20261027.md) and [baseline data](analysis/site_summary.csv) are preserved. [Manual-seeded optical flow](optical_flow_20261026/RESULTS.md) passed held-out drift checks on only 2 of 30 encounters and does not replace manual tracking. [Full analysis/run guide](../docs/runs/SPEED_PLAN_RUN.md).
+[Broader 1.5-second run](../reports/cluster_returns/20261027/completed_speed_batches/shortday_sites.csv) uses different coverage and quota stopping; it is separate from the main table. [Earlier three-second baseline README](analysis/README_baseline_before_same_video_20261027.md) and [baseline data](analysis/site_summary.csv) are preserved. [Manual-seeded optical flow](optical_flow_20261026/RESULTS.md) passed held-out drift checks on only 2 of 30 encounters and does not replace manual tracking. [Full analysis/run guide](../docs/SPEED_WORKFLOWS.md#workflow-5).
 
 Original annotation JSONs remain unchanged. [Manual measurement timestamps](analysis/DETAILS.md) · [Automatic measurement timestamps](../reports/cluster_returns/20261027/completed_speed_batches/same_video_speed_times.csv) · [Study provenance](analysis/source_provenance.md).
+
+
+## November 9 clearance-pilot follow-up
+
+The [returned clearance audit](../reports/clearance_pilot/final_review_20261109/TECHNICAL_NOTES.md#returned_audit_20261109) uses the same three Colonial manual encounters as comparison baselines. The prior manual path mean is 10.71 mph; new local-fit automatic estimates restricted to the manual measurement windows average 10.32 mph. Both use the identical learned calibration matrix, so agreement is not independent speed validation. Per-encounter values, smoothing variants and partial temporal coverage are recorded in the audit. No old speeds were replaced or used to fit scale.
+
+All observed cyclist contact points in the clearance pilot fall outside the saved car-calibration hull, explaining zero strict-support pairs. The only zero-clearance/TTC/PET flag was visually identified as a car detection on the cyclist's wheel. Those findings require geometry/object review rather than more GPU video processing.
+
+[Completed local passing-event review](../reports/clearance_pilot/final_review_20261109/TECHNICAL_NOTES.md#reviewed_passes_20261109) and [illustrated frame review](../reports/clearance_pilot/final_review_20261109/review.html): two actual passes identified in selected sequences; physical meter clearance remains unvalidated. Both manual contact alignment and automatic box-bottom contacts require caution. No further GPU processing was used.
+
+[Final current-file clearance packet](../reports/clearance_pilot/final_review_20261109/START_HERE.md) closes the local review and distance-reference check. The 46-workbook audit found no usable image-matched lateral scale; 35ft/30ft Colonial speed-zone lengths retain unknown image endpoints. The packet includes source cells, visual decisions, unchanged exploratory estimates, and a professor-ready paragraph. Physical clearance measurement remains unresolved by the available geometry.

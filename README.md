@@ -1,31 +1,36 @@
-# Object detection and bicycle speed study
+# Object detection and bicycle study
 
-## Start here
+The current pilot is complete. Two car passes were visually reviewed; the only zero-clearance/TTC/PET alarm was a bicycle wheel labelled as a car. Physical passing distances remain unvalidated because the existing files do not establish the needed lateral geometry. **No new HiPerGator run is pending.**
 
-- [Latest count and speed results](manual/README.md): study reference, automatic detection and manual annotations in one comparison.
-- [MioVision archive summary](docs/MIOVISION_CONTENTS_SUMMARY_README.md): file types, camera years, video hours, duplicate checks and speed-information findings.
-- [Bike Lane Study camera inventory](docs/BIKE_LANE_STUDY_INVENTORY_README.md): cameras associated with the count workbooks and speed-reference locations.
-- [Current tasks](docs/TODO.md) and [HiperGator runbook](docs/HIPERGATOR_RUNBOOK.md).
+## Results
 
-The completed batches do not need resubmitting for this cleanup. Automatic and manual speed estimates are exploratory; comparing location averages with Mighk’s workbook does not establish person-level speed accuracy.
+- [Current handoff: speed, clearance and near misses](HANDOFF.md).
 
-## Repository layout
+- [Clearance pilot: short summary](reports/clearance_pilot/final_review_20261109/START_HERE.md) · [Illustrated review](reports/clearance_pilot/final_review_20261109/review.html).
+- [Count and speed results](manual/README.md): original manual annotations, same-video comparisons and limitations.
+- [MioVision archive summary](docs/MIOVISION_CONTENTS_SUMMARY_README.md) · [Study camera inventory](docs/BIKE_LANE_STUDY_INVENTORY_README.md) · [Full archive inventory](docs/MIOVISION_ARCHIVE_INVENTORY_README.md).
+
+## Workflows and reference
+
+- [Clearance workflow and HiPerGator commands](docs/CLEARANCE_PILOT_RUN.md). Commands are for reproduction, not pending jobs.
+- [Near-miss and passing-clearance next steps](docs/NEAR_MISS_CLEARANCE_NEXT_STEPS.md).
+- [Speed workflows](docs/SPEED_WORKFLOWS.md) · [Saved video locations](docs/VIDEO_PATHS.md).
+- [Research notes](<docs/research/Cyclist speed (mph) from monocular fixed cameras feasibility, literature, and pl.md>).
+- [Historical detector results](reports/history/DETECTOR_RESULTS.md) · [Historical project notes](reports/history/PROJECT_NOTES.md).
+
+## Folders
 
 | Folder | Contents |
 |---|---|
-| `vision3/best/test_colonial/code/` | Current experiment, reporting and submission scripts; paths preserved for HiperGator. |
-| `vision3/best/test_colonial/zones/` | Canonical reviewed camera-zone JSON files. |
-| `vision3/best/test_colonial/counts/`, `validation/`, `exp_results/` | Saved experiments, validation inputs and results used by reports. |
-| `manual/` | Original manual annotations, latest comparison and trajectory analyses. |
-| `Bike Lane Study Counts/` | Original count and human-measured speed workbooks. |
-| `data/` | Camera mappings, metadata and review inputs. |
-| `docs/` | Guides and summaries; `research/` holds research notes, `runs/` holds reproduction guides, and `history/` holds the handoff and methodology context. |
-| `reports/cluster_returns/` | Evidence returned from HiperGator, grouped by date. |
-| `reports/presentations/` | Latest presentation; earlier decks are in `history/`. |
-| `reports/documents/` | Current Word camera inventory. |
-| `reports/review/`, `reports/methodology/`, `output/pdf/` | Review artifacts and methodology reports. |
-| `pipeline/`, `slurm/`, `scripts/` | Shared pipeline and cluster utilities. |
+| `vision3/best/test_colonial/code/` | Current analysis/pipeline scripts, launchers and tests; HiPerGator paths preserved. |
+| `vision3/best/test_colonial/counts/`, `truth/`, `zones/`, `logs/`, `exp_results/` | Detector outputs, truth, camera definitions and experiment evidence. |
+| `manual/` | Original tire-click annotations and manual/automatic speed analyses. |
+| `Bike Lane Study Counts/` | Original study workbooks and extracted count tables. |
+| `data/` | Site mappings, camera metadata and review/calibration inputs. |
+| `reports/cluster_returns/` | Original returned results, grouped by date. |
+| `reports/clearance_pilot/` | One final clearance packet and portable ZIP. |
+| `reports/presentations/`, `reports/documents/`, `reports/review/`, `reports/methodology/`, `output/` | Presentation/document artifacts and supporting research outputs. |
+| `docs/` | Current workflow, inventory and research references. |
+| `pipeline/`, `slurm/`, `scripts/`, `tests/` | Shared code, utilities and tests. |
 
-`sofar.md` and `todo.md` are your working notes. `resume.tex` remains at the root. Source datasets and older experiment evidence are retained because reports and comparisons still use them.
-
-[Cleanup record](README.md) lists removals and moves.
+Source data, scientific evidence, model assets and runtime paths were preserved. `resume.tex` is a separate personal file and remains unchanged. The [cleanup manifest](reports/maintenance/cleanup_20261109.csv) records removals and consolidation.

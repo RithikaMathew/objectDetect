@@ -4,11 +4,11 @@
 
 ## Implementation status — October 27, 2026
 
-The latest combined CPU entry point is `sbatch code/speed_plan.slurm` from `vision3/best/test_colonial`; see [run guide](docs/runs/SPEED_PLAN_RUN.md). It includes robust time-aware fitting, the old/endpoint comparison on the same annotations, review-clip packet timestamp audit, per-cyclist plots, assumption-based sensitivity scenarios, sampling-only study-group comparisons, and unverified wheel-edge candidate crops. The current detector already uses ByteTrack and ID stitching.
+The latest combined CPU entry point is `sbatch code/speed_plan.slurm` from `vision3/best/test_colonial`; see [run guide](../SPEED_WORKFLOWS.md#workflow-5). It includes robust time-aware fitting, the old/endpoint comparison on the same annotations, review-clip packet timestamp audit, per-cyclist plots, assumption-based sensitivity scenarios, sampling-only study-group comparisons, and unverified wheel-edge candidate crops. The current detector already uses ByteTrack and ID stitching.
 
 Marking and full 3-D wheel geometry checks are implemented as optional evidence-driven functions; actual scale evidence is still missing, so no metric wheel or marking result is claimed. A compact ground homography cannot recover vertical wheel scale. No new tracker/keypoint training or automatic camera location search is included. University map/video endpoint correspondence remains unconfirmed. The roadmap below is research context, not a claim that all papers have been reproduced.
 
-Original-file duration audit is complete for all 1,919 files/41 cameras. Columbia's 49 parts sum to 47.98 playback hours; Aloma Path's 48 sources sum to 47.99. See [verified hours](docs/VIDEO_DURATION_README.md). These lengths do not identify the timestamp-less speed-study cyclists.
+Original-file duration audit is complete for all 1,919 files/41 cameras. Columbia's 49 parts sum to 47.98 playback hours; Aloma Path's 48 sources sum to 47.99. See [verified hours](../VIDEO_DURATION_README.md). These lengths do not identify the timestamp-less speed-study cyclists.
 
 ## 1. Executive summary
 
@@ -228,3 +228,29 @@ With no measured distance for any camera, you can show that the new estimator is
 - Ponte et al., ACRS 2014: https://hdl.handle.net/2440/107947
 - Osowski & Waterson 2015: https://eprints.soton.ac.uk/377977
 - WSDOT self-calibrating monocular measurement: https://rosap.ntl.bts.gov/view/dot/17447/dot\_17447\_DS1.pdf
+
+
+<a id="earlier-trajectory-research"></a>
+## Earlier trajectory research — October 24
+
+# CCTV trajectory speed research — October 24, 2026
+
+Owner requests alternatives to map identification/manual gates. Research only: no automatic calibration method implemented or run this turn.
+
+## Main finding
+Google Maps and two fixed crossing gates are optional. Monocular image trajectories measure pixel displacement over time. Physical speed requires metric scale from somewhere: measured geometry, camera specifications/height, known/assumed object dimensions or learned priors. The35ft Colonial workbook length suffices only if its corresponding image segment is identified. It cannot be attached to arbitrary image endpoints. Calibration can instead convert partial trajectories to ground-plane positions; two complete gate crossings then unnecessary.
+
+## Primary sources checked
+
+1. Dubská, Herout, Sochor, BMVC2014, Automatic Camera Calibration for Traffic Understanding. https://www.bmva-archive.org.uk/bmvc/2014/papers/paper013/index.html and https://bmva-archive.org.uk/bmvc/2014/files/paper013.pdf . Uses vehicle motion/vanishing points, 3D boxes, vehicle dimension statistics to recover scale. Assumes approximately flat ground and pinhole model (radial distortion needs separate treatment). Not a scale-free trajectory-only method.
+2. Revaud and Humenberger, ICCV2021, Robust Automatic Monocular Vehicle Speed Estimation for Traffic Surveillance. https://europe.naverlabs.com/research/publications/robust-and-automatic-monocular-vehicle-speed-estimation-for-traffic-surveillance/ . Author code https://github.com/naver/cctv . Joint car-detection calibration using3D shape/dimension information, designed to address noisy/lowresolution CCTV. Author implementation supplies pretrained learned method; original3D car assets not redistributed, main workflow BrnoCompSpeed-specific and needs adaptation. Groundtruth-box homography evaluation in README is not full detector/tracker accuracy. Candidate for first map-free experiment, not demonstrated working on owner data.
+3. Sochor et al.2017, Traffic Surveillance Camera Calibration by3D Model Bounding Box Alignment for Accurate Vehicle Speed Measurement. https://arxiv.org/abs/1702.06451 . Automatic calibration from car models/dimensions, another vehicle-based scale route.
+4. Oviedo and Arroyo,2020 EasyChair preprint, Automatic Calibration In the Wild of Monocular Surveillance Camera Solely from Pedestrian Height. https://easychair.org/publications/preprint/sGQh/download . Fits head/foot alignment assuming average human physical height. Automatic map-free pedestrian camera calibration, but unknown heights and box quality affect scale. Not equivalent to simply multiplying our body-heights/sec heuristic by a guessed height.
+5. Su et al.,2026 preprint, Calibration-Free Vehicle Speed Estimation: A Monocular Keypoint-Template Approach. https://arxiv.org/html/2608.16785v1 .36-keypoint vehicle template and warped optical flow; tested vehicle speeds30–100mph. More recent research option; not established pedestrian/cyclist method. Calibration-free label does not mean absence of metric template assumptions.
+
+## Recommendation and practical limits
+First assess author ICCV2021 car-based calibration on existing Colonial daytime footage, then transform reliable partial person trajectories into metric ground positions. Use lots of car observations rather than a single assumed car length. Check perspective, residuals and different subsets before accepting a calibration; these are consistency checks, not independent mph validation. Road-plane calibration transfer to sidewalk is conditional on coplanarity or modeling curb/elevation offsets. Cyclist contact points differ from pedestrian bottom-center boxes. Fisheye correction required where pinhole model fails. Poor person detections/ID changes remain separate errors and cannot be repaired by calibration.
+
+No need for owner to locate Colonial on Maps for this experiment. No different named street is inherently easier without inspecting camera view and scale evidence. Colonial chosen because current saved labelled tracks/reference records available; University has speed references but observed image quality/tracking is weak. Existing downloaded vehicle trajectories help, but author workflow may need source images/detections and new inference/adaptation.
+
+Validation remains separate: manual video timing through the same map-calibrated gates can check timing/tracking but shares distance errors, so it is not an independent test of metric scale. The workbook records from in-person timing cannot be matched to video people without independent identity/time evidence. Street-level speed distributions can be compared descriptively, not reported as matched-person errors. Current University manual8.1mph is unvalidated and not independent truth for calibration trained/fitted on the same segment.

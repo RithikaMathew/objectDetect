@@ -1,0 +1,7 @@
+task,cyclist_id,observations,automatic_contact_support_fraction,manual_contact_support_fraction,maximum_H_difference_from_manual,facility,facility_status
+colonial_124020_reference,1,319,0.0,0.0,0.0,sidewalk,provisional_geometry_label
+colonial_124020_sensitive,1,319,0.0,0.0,0.0,sidewalk,provisional_geometry_label
+colonial_125311_reference,1,246,0.0,0.0,0.0,sidewalk,provisional_geometry_label
+colonial_125311_sensitive,1,247,0.0,0.0,0.0,sidewalk,provisional_geometry_label
+colonial_125350_reference,1,289,0.0,0.0,0.0,sidewalk,provisional_geometry_label
+colonial_125350_sensitive,1,290,0.0,0.0,0.0,sidewalk,provisional_geometry_label

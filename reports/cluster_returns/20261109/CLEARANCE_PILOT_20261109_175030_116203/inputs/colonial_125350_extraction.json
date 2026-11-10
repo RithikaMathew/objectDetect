@@ -1,0 +1,32 @@
+{
+  "command": [
+    "/apps/ffmpeg/4.3.1/bin/ffmpeg",
+    "-nostdin",
+    "-y",
+    "-v",
+    "error",
+    "-ss",
+    "3218.0",
+    "-i",
+    "/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4",
+    "-t",
+    "30",
+    "-map",
+    "0:v:0",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "fast",
+    "-crf",
+    "18",
+    "-vsync",
+    "0",
+    "-movflags",
+    "+faststart",
+    "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/CLEARANCE_PILOT_20261109_175030_116203/inputs/colonial_125350.partial.mp4"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}

@@ -1,0 +1,13 @@
+folder,decision,files
+Bike Lane Study Counts,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,52
+data,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,16
+docs,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,9
+manual,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,273
+output,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,1
+pipeline,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,20
+reports,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,324
+scripts,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,2
+slurm,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,13
+tests,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,1
+vision2.v1-six-class-corrected-v1.yolov8_extracted,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,543
+vision3,Preserved source/runtime/evidence; removed only manifest-listed duplicate or temporary content,969

@@ -1,0 +1,10 @@
+clip,frame_zero_based,clip_seconds,source_seconds_inferred,cyclist_id,vehicle_id,vehicle_status,manual_rear_tire_x,manual_rear_tire_y,automatic_box_bottom_x,automatic_box_bottom_y,cyclist_near_side_x_px,car_cyclist_side_x_px,pixel_clearance_x_px,road_plane_clearance_m,pass_interval,same_direction,occlusion,frame_usable,edge_confidence,reviewer,notes
+colonial_124020,390,13.013013013013014,2421.013013013013,1,9,box_visible_not_ground_footprint,174.05664558558416,105.28320808558416,181.6,124.3,,,,,same_direction_pass_visible,,,,,,
+colonial_124020,399,13.313313313313314,2421.3133133133133,1,9,box_visible_not_ground_footprint,188.80797223223001,119.41562816566366,197.3,135.1,,,,,same_direction_pass_visible,,,,,,
+colonial_124020,408,13.613613613613614,2421.613613613614,1,9,box_visible_not_ground_footprint,205.68571295295712,127.31023511261529,216.9,148.9,,,,,same_direction_pass_visible,,,,,,
+colonial_125311,390,13.013013013013014,3192.013013013013,1,,no_reviewed_car,141.23127584584364,117.45783834584364,151.1,130.1,,,,,no_adjacent_pass_in_reviewed_click_sequence,,,,,,
+colonial_125311,435,14.514514514514515,3193.5145145145143,1,,no_reviewed_car,249.6577468868826,181.8368010885861,274.9,222.3,,,,,no_adjacent_pass_in_reviewed_click_sequence,,,,,,
+colonial_125311,465,15.515515515515515,3194.5155155155153,1,,no_reviewed_car,408.0559409909837,299.95150224974503,460.1,362.9,,,,,no_adjacent_pass_in_reviewed_click_sequence,,,,,,
+colonial_125350,432,14.414414414414415,3232.4144144144143,1,18,box_visible_not_ground_footprint,344.3025426426428,188.1040356531532,382.8,220.6,,,,,same_direction_pass_visible,,,,,,
+colonial_125350,444,14.814814814814815,3232.814814814815,1,18,box_visible_not_ground_footprint,419.1545396615625,226.94893611185097,460.3,273.2,,,,,same_direction_pass_visible,,,,,,
+colonial_125350,450,15.015015015015015,3233.015015015015,1,18,box_visible_not_ground_footprint,458.81400300300527,252.73531437687828,502.0,307.3,,,,,same_direction_pass_visible,,,,,,

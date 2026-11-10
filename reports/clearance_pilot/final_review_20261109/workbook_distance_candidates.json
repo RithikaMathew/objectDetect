@@ -1,0 +1,4422 @@
+[
+  {
+    "file": "Bike lane study counts day v night.xlsx",
+    "sheet": "Totals",
+    "cell": "F1",
+    "value": "Street Length",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Type",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Day Count",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Night Count",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "% Night",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Street Length",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Day Exposure",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Night Exposure",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "Total Exposure",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Daytime Hours",
+        "formula": ""
+      },
+      {
+        "cell": "K1",
+        "value": "Night Hours",
+        "formula": ""
+      },
+      {
+        "cell": "L1",
+        "value": "% Day",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "% Night",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "Alafaya",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Bike Lane",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "85",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "16",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "0.15841584158415842",
+        "formula": "D2/(C2+D2)"
+      },
+      {
+        "cell": "F2",
+        "value": "5.0999999999999996",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "791137.49999999988",
+        "formula": "SUM(C2/J2)*F2*(87600*L2)"
+      },
+      {
+        "cell": "H2",
+        "value": "148919.99999999997",
+        "formula": "SUM(D2/K2)*F2*(87600*M2)"
+      },
+      {
+        "cell": "I2",
+        "value": "940057.49999999988",
+        "formula": "SUM(C2:D2)*F2*1825"
+      },
+      {
+        "cell": "J2",
+        "value": "26.25",
+        "formula": ""
+      },
+      {
+        "cell": "K2",
+        "value": "21.75",
+        "formula": ""
+      },
+      {
+        "cell": "L2",
+        "value": "0.546875",
+        "formula": "J2/48"
+      },
+      {
+        "cell": "M2",
+        "value": "0.453125",
+        "formula": "K2/48"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Travel Lane",
+    "cell": "F1",
+    "value": "Zone Length (Feet)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Baxter",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Travel Lane",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "48",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "1.24",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "38.70967741935484",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "26.361290322580647",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Travel Lane",
+    "cell": "H1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Baxter",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Travel Lane",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "48",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "1.24",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "38.70967741935484",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "26.361290322580647",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Bike Lane",
+    "cell": "F1",
+    "value": "Zone Length (Feet) (43, 24)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet) (43, 24)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "26",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Edgewater",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Bike Lane",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "43",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "1.38",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "31.159420289855074",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "21.219565217391306",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Bike Lane",
+    "cell": "H1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet) (43, 24)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "26",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Edgewater",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Bike Lane",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "43",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "1.38",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "31.159420289855074",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "21.219565217391306",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Sidewalk",
+    "cell": "F1",
+    "value": "Zone Length (Feet)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "42",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "University",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "East",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "55",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "2.19",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "25.114155251141554",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "17.102739726027398",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Sidewalk",
+    "cell": "H1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "42",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "University",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "East",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "55",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "2.19",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "25.114155251141554",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "17.102739726027398",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Path",
+    "cell": "F1",
+    "value": "Zone Length (Feet)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Path/ Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "31",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "West Orange/Park",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Path",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "29",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "0.93",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "31.182795698924728",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "21.235483870967741",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Path",
+    "cell": "H1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Path/ Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "31",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "West Orange/Park",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Path",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "29",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "0.93",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "31.182795698924728",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "21.235483870967741",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "TL Analysis",
+    "cell": "F1",
+    "value": "Zone Length (Feet)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "L1",
+        "value": "Speed Range",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "30",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Lee",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Travel Lane",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "47",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "4.93",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "9.5334685598377291",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "6.492292089249494",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "L2",
+        "value": "6 to 8",
+        "formula": ""
+      },
+      {
+        "cell": "M2",
+        "value": "1",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "TL Analysis",
+    "cell": "H1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "L1",
+        "value": "Speed Range",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "30",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Lee",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Travel Lane",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "47",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "4.93",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "9.5334685598377291",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "6.492292089249494",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "L2",
+        "value": "6 to 8",
+        "formula": ""
+      },
+      {
+        "cell": "M2",
+        "value": "1",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "BL Analysis",
+    "cell": "F1",
+    "value": "Zone Length (Feet) (43, 24)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet) (43, 24)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "L1",
+        "value": "Speed Range",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "61",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Colonial",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Bike Lane",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "35",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "4.1100000000000003",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "8.5158150851581507",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "5.7992700729927007",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "L2",
+        "value": "6 to 8",
+        "formula": ""
+      },
+      {
+        "cell": "M2",
+        "value": "5",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "BL Analysis",
+    "cell": "H1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet) (43, 24)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "L1",
+        "value": "Speed Range",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "61",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Colonial",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Bike Lane",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "35",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "4.1100000000000003",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "8.5158150851581507",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "5.7992700729927007",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "L2",
+        "value": "6 to 8",
+        "formula": ""
+      },
+      {
+        "cell": "M2",
+        "value": "5",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "SW Analysis",
+    "cell": "F1",
+    "value": "Zone Length (Feet)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "University",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "East",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "55",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "4.82",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "11.410788381742737",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "7.7707468879668049",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "SW Analysis",
+    "cell": "H1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "University",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "East",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "55",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "4.82",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "11.410788381742737",
+        "formula": "F2/G2"
+      },
+      {
+        "cell": "I2",
+        "value": "7.7707468879668049",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Silver Star",
+    "cell": "F1",
+    "value": "Zone Length (Feet)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "N1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "O1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "P1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Q1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "R1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "S1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "T1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "U1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "W1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "X1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Y1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "Z1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AA1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AB1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AC1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AD1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "AE1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "AG1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AH1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AI1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AJ1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AK1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "11.150442477876105",
+        "formula": "F2/(G2/2)"
+      },
+      {
+        "cell": "I2",
+        "value": "7.5934513274336277",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "M2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "N2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "O2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "P2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "Q2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "R2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "S2",
+        "value": "11.150442477876105",
+        "formula": "Q2/(R2/2)"
+      },
+      {
+        "cell": "T2",
+        "value": "7.5934513274336277",
+        "formula": "S2*0.681"
+      },
+      {
+        "cell": "U2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "W2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "X2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "Y2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "Z2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "AA2",
+        "value": "83.5",
+        "formula": ""
+      },
+      {
+        "cell": "AB2",
+        "value": "8.5",
+        "formula": ""
+      },
+      {
+        "cell": "AC2",
+        "value": "19.647058823529413",
+        "formula": "AA2/(AB2/2)"
+      },
+      {
+        "cell": "AD2",
+        "value": "13.379647058823531",
+        "formula": "AC2*0.681"
+      },
+      {
+        "cell": "AE2",
+        "value": "1",
+        "formula": "IF(AB2>0,1,0)"
+      },
+      {
+        "cell": "AG2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "AH2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "AI2",
+        "value": "13",
+        "formula": ""
+      },
+      {
+        "cell": "AJ2",
+        "value": "9.6923076923076916",
+        "formula": ""
+      },
+      {
+        "cell": "AK2",
+        "value": "6.6004615384615386",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Silver Star",
+    "cell": "H1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "N1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "O1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "P1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Q1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "R1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "S1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "T1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "U1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "W1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "X1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Y1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "Z1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AA1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AB1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AC1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AD1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "AE1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "AG1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AH1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AI1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AJ1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AK1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "11.150442477876105",
+        "formula": "F2/(G2/2)"
+      },
+      {
+        "cell": "I2",
+        "value": "7.5934513274336277",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "M2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "N2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "O2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "P2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "Q2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "R2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "S2",
+        "value": "11.150442477876105",
+        "formula": "Q2/(R2/2)"
+      },
+      {
+        "cell": "T2",
+        "value": "7.5934513274336277",
+        "formula": "S2*0.681"
+      },
+      {
+        "cell": "U2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "W2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "X2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "Y2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "Z2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "AA2",
+        "value": "83.5",
+        "formula": ""
+      },
+      {
+        "cell": "AB2",
+        "value": "8.5",
+        "formula": ""
+      },
+      {
+        "cell": "AC2",
+        "value": "19.647058823529413",
+        "formula": "AA2/(AB2/2)"
+      },
+      {
+        "cell": "AD2",
+        "value": "13.379647058823531",
+        "formula": "AC2*0.681"
+      },
+      {
+        "cell": "AE2",
+        "value": "1",
+        "formula": "IF(AB2>0,1,0)"
+      },
+      {
+        "cell": "AG2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "AH2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "AI2",
+        "value": "13",
+        "formula": ""
+      },
+      {
+        "cell": "AJ2",
+        "value": "9.6923076923076916",
+        "formula": ""
+      },
+      {
+        "cell": "AK2",
+        "value": "6.6004615384615386",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Silver Star",
+    "cell": "Q1",
+    "value": "Zone Length (Feet)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "N1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "O1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "P1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Q1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "R1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "S1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "T1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "U1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "W1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "X1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Y1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "Z1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AA1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AB1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AC1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AD1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "AE1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "AG1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AH1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AI1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AJ1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AK1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "11.150442477876105",
+        "formula": "F2/(G2/2)"
+      },
+      {
+        "cell": "I2",
+        "value": "7.5934513274336277",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "M2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "N2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "O2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "P2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "Q2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "R2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "S2",
+        "value": "11.150442477876105",
+        "formula": "Q2/(R2/2)"
+      },
+      {
+        "cell": "T2",
+        "value": "7.5934513274336277",
+        "formula": "S2*0.681"
+      },
+      {
+        "cell": "U2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "W2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "X2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "Y2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "Z2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "AA2",
+        "value": "83.5",
+        "formula": ""
+      },
+      {
+        "cell": "AB2",
+        "value": "8.5",
+        "formula": ""
+      },
+      {
+        "cell": "AC2",
+        "value": "19.647058823529413",
+        "formula": "AA2/(AB2/2)"
+      },
+      {
+        "cell": "AD2",
+        "value": "13.379647058823531",
+        "formula": "AC2*0.681"
+      },
+      {
+        "cell": "AE2",
+        "value": "1",
+        "formula": "IF(AB2>0,1,0)"
+      },
+      {
+        "cell": "AG2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "AH2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "AI2",
+        "value": "13",
+        "formula": ""
+      },
+      {
+        "cell": "AJ2",
+        "value": "9.6923076923076916",
+        "formula": ""
+      },
+      {
+        "cell": "AK2",
+        "value": "6.6004615384615386",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Silver Star",
+    "cell": "S1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "N1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "O1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "P1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Q1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "R1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "S1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "T1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "U1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "W1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "X1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Y1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "Z1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AA1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AB1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AC1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AD1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "AE1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "AG1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AH1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AI1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AJ1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AK1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "11.150442477876105",
+        "formula": "F2/(G2/2)"
+      },
+      {
+        "cell": "I2",
+        "value": "7.5934513274336277",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "M2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "N2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "O2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "P2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "Q2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "R2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "S2",
+        "value": "11.150442477876105",
+        "formula": "Q2/(R2/2)"
+      },
+      {
+        "cell": "T2",
+        "value": "7.5934513274336277",
+        "formula": "S2*0.681"
+      },
+      {
+        "cell": "U2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "W2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "X2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "Y2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "Z2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "AA2",
+        "value": "83.5",
+        "formula": ""
+      },
+      {
+        "cell": "AB2",
+        "value": "8.5",
+        "formula": ""
+      },
+      {
+        "cell": "AC2",
+        "value": "19.647058823529413",
+        "formula": "AA2/(AB2/2)"
+      },
+      {
+        "cell": "AD2",
+        "value": "13.379647058823531",
+        "formula": "AC2*0.681"
+      },
+      {
+        "cell": "AE2",
+        "value": "1",
+        "formula": "IF(AB2>0,1,0)"
+      },
+      {
+        "cell": "AG2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "AH2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "AI2",
+        "value": "13",
+        "formula": ""
+      },
+      {
+        "cell": "AJ2",
+        "value": "9.6923076923076916",
+        "formula": ""
+      },
+      {
+        "cell": "AK2",
+        "value": "6.6004615384615386",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Silver Star",
+    "cell": "AA1",
+    "value": "Zone Length (Feet)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "N1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "O1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "P1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Q1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "R1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "S1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "T1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "U1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "W1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "X1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Y1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "Z1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AA1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AB1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AC1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AD1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "AE1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "AG1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AH1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AI1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AJ1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AK1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "11.150442477876105",
+        "formula": "F2/(G2/2)"
+      },
+      {
+        "cell": "I2",
+        "value": "7.5934513274336277",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "M2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "N2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "O2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "P2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "Q2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "R2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "S2",
+        "value": "11.150442477876105",
+        "formula": "Q2/(R2/2)"
+      },
+      {
+        "cell": "T2",
+        "value": "7.5934513274336277",
+        "formula": "S2*0.681"
+      },
+      {
+        "cell": "U2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "W2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "X2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "Y2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "Z2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "AA2",
+        "value": "83.5",
+        "formula": ""
+      },
+      {
+        "cell": "AB2",
+        "value": "8.5",
+        "formula": ""
+      },
+      {
+        "cell": "AC2",
+        "value": "19.647058823529413",
+        "formula": "AA2/(AB2/2)"
+      },
+      {
+        "cell": "AD2",
+        "value": "13.379647058823531",
+        "formula": "AC2*0.681"
+      },
+      {
+        "cell": "AE2",
+        "value": "1",
+        "formula": "IF(AB2>0,1,0)"
+      },
+      {
+        "cell": "AG2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "AH2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "AI2",
+        "value": "13",
+        "formula": ""
+      },
+      {
+        "cell": "AJ2",
+        "value": "9.6923076923076916",
+        "formula": ""
+      },
+      {
+        "cell": "AK2",
+        "value": "6.6004615384615386",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Silver Star",
+    "cell": "AC1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "N1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "O1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "P1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Q1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "R1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "S1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "T1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "U1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "W1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "X1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Y1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "Z1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AA1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AB1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AC1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AD1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "AE1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "AG1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AH1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AI1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AJ1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AK1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "11.150442477876105",
+        "formula": "F2/(G2/2)"
+      },
+      {
+        "cell": "I2",
+        "value": "7.5934513274336277",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "M2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "N2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "O2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "P2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "Q2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "R2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "S2",
+        "value": "11.150442477876105",
+        "formula": "Q2/(R2/2)"
+      },
+      {
+        "cell": "T2",
+        "value": "7.5934513274336277",
+        "formula": "S2*0.681"
+      },
+      {
+        "cell": "U2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "W2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "X2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "Y2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "Z2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "AA2",
+        "value": "83.5",
+        "formula": ""
+      },
+      {
+        "cell": "AB2",
+        "value": "8.5",
+        "formula": ""
+      },
+      {
+        "cell": "AC2",
+        "value": "19.647058823529413",
+        "formula": "AA2/(AB2/2)"
+      },
+      {
+        "cell": "AD2",
+        "value": "13.379647058823531",
+        "formula": "AC2*0.681"
+      },
+      {
+        "cell": "AE2",
+        "value": "1",
+        "formula": "IF(AB2>0,1,0)"
+      },
+      {
+        "cell": "AG2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "AH2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "AI2",
+        "value": "13",
+        "formula": ""
+      },
+      {
+        "cell": "AJ2",
+        "value": "9.6923076923076916",
+        "formula": ""
+      },
+      {
+        "cell": "AK2",
+        "value": "6.6004615384615386",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Silver Star",
+    "cell": "AH1",
+    "value": "Zone Length (Feet)",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "N1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "O1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "P1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Q1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "R1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "S1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "T1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "U1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "W1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "X1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Y1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "Z1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AA1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AB1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AC1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AD1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "AE1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "AG1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AH1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AI1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AJ1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AK1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "11.150442477876105",
+        "formula": "F2/(G2/2)"
+      },
+      {
+        "cell": "I2",
+        "value": "7.5934513274336277",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "M2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "N2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "O2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "P2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "Q2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "R2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "S2",
+        "value": "11.150442477876105",
+        "formula": "Q2/(R2/2)"
+      },
+      {
+        "cell": "T2",
+        "value": "7.5934513274336277",
+        "formula": "S2*0.681"
+      },
+      {
+        "cell": "U2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "W2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "X2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "Y2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "Z2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "AA2",
+        "value": "83.5",
+        "formula": ""
+      },
+      {
+        "cell": "AB2",
+        "value": "8.5",
+        "formula": ""
+      },
+      {
+        "cell": "AC2",
+        "value": "19.647058823529413",
+        "formula": "AA2/(AB2/2)"
+      },
+      {
+        "cell": "AD2",
+        "value": "13.379647058823531",
+        "formula": "AC2*0.681"
+      },
+      {
+        "cell": "AE2",
+        "value": "1",
+        "formula": "IF(AB2>0,1,0)"
+      },
+      {
+        "cell": "AG2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "AH2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "AI2",
+        "value": "13",
+        "formula": ""
+      },
+      {
+        "cell": "AJ2",
+        "value": "9.6923076923076916",
+        "formula": ""
+      },
+      {
+        "cell": "AK2",
+        "value": "6.6004615384615386",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  },
+  {
+    "file": "bicyclist speeds.xlsx",
+    "sheet": "Silver Star",
+    "cell": "AJ1",
+    "value": "Feet Per Second",
+    "formula": "",
+    "nearby_cells": [
+      {
+        "cell": "A1",
+        "value": "Number",
+        "formula": ""
+      },
+      {
+        "cell": "B1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "C1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "D1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "E1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "F1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "G1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "H1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "I1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "J1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "M1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "N1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "O1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "P1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Q1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "R1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "S1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "T1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "U1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "W1",
+        "value": "Street",
+        "formula": ""
+      },
+      {
+        "cell": "X1",
+        "value": "Compass Direction",
+        "formula": ""
+      },
+      {
+        "cell": "Y1",
+        "value": "Cyclist Position",
+        "formula": ""
+      },
+      {
+        "cell": "Z1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AA1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AB1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AC1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AD1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "AE1",
+        "value": "Avg. Factor",
+        "formula": ""
+      },
+      {
+        "cell": "AG1",
+        "value": "Cyclist Direction",
+        "formula": ""
+      },
+      {
+        "cell": "AH1",
+        "value": "Zone Length (Feet)",
+        "formula": ""
+      },
+      {
+        "cell": "AI1",
+        "value": "Seconds",
+        "formula": ""
+      },
+      {
+        "cell": "AJ1",
+        "value": "Feet Per Second",
+        "formula": ""
+      },
+      {
+        "cell": "AK1",
+        "value": "MPH",
+        "formula": ""
+      },
+      {
+        "cell": "A2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "B2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "C2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "D2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "E2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "F2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "G2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "H2",
+        "value": "11.150442477876105",
+        "formula": "F2/(G2/2)"
+      },
+      {
+        "cell": "I2",
+        "value": "7.5934513274336277",
+        "formula": "H2*0.681"
+      },
+      {
+        "cell": "J2",
+        "value": "1",
+        "formula": "IF(G2>0,1,0)"
+      },
+      {
+        "cell": "M2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "N2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "O2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "P2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "Q2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "R2",
+        "value": "11.3",
+        "formula": ""
+      },
+      {
+        "cell": "S2",
+        "value": "11.150442477876105",
+        "formula": "Q2/(R2/2)"
+      },
+      {
+        "cell": "T2",
+        "value": "7.5934513274336277",
+        "formula": "S2*0.681"
+      },
+      {
+        "cell": "U2",
+        "value": "1",
+        "formula": ""
+      },
+      {
+        "cell": "W2",
+        "value": "Silver Star",
+        "formula": ""
+      },
+      {
+        "cell": "X2",
+        "value": "West",
+        "formula": ""
+      },
+      {
+        "cell": "Y2",
+        "value": "Sidewalk",
+        "formula": ""
+      },
+      {
+        "cell": "Z2",
+        "value": "Facing",
+        "formula": ""
+      },
+      {
+        "cell": "AA2",
+        "value": "83.5",
+        "formula": ""
+      },
+      {
+        "cell": "AB2",
+        "value": "8.5",
+        "formula": ""
+      },
+      {
+        "cell": "AC2",
+        "value": "19.647058823529413",
+        "formula": "AA2/(AB2/2)"
+      },
+      {
+        "cell": "AD2",
+        "value": "13.379647058823531",
+        "formula": "AC2*0.681"
+      },
+      {
+        "cell": "AE2",
+        "value": "1",
+        "formula": "IF(AB2>0,1,0)"
+      },
+      {
+        "cell": "AG2",
+        "value": "With",
+        "formula": ""
+      },
+      {
+        "cell": "AH2",
+        "value": "63",
+        "formula": ""
+      },
+      {
+        "cell": "AI2",
+        "value": "13",
+        "formula": ""
+      },
+      {
+        "cell": "AJ2",
+        "value": "9.6923076923076916",
+        "formula": ""
+      },
+      {
+        "cell": "AK2",
+        "value": "6.6004615384615386",
+        "formula": ""
+      }
+    ],
+    "evidence_status": "KEYWORD_CANDIDATE_NOT_VERIFIED_SCENE_DISTANCE"
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "batch": "/Users/rithika/Desktop/objectDetect/reports/cluster_returns/20261109/CLEARANCE_PILOT_20261109_175030_116203",
+  "manual_sources": [
+    "manual/s03_colonial_north_2019-07-10_123000_manual_bicycle_observations.json",
+    "manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json",
+    "manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json"
+  ],
+  "selected_cases": [
+    {
+      "key": "colonial_124020",
+      "car": "9",
+      "name": "White SUV pass",
+      "times": [
+        13.0,
+        13.3,
+        13.6
+      ],
+      "observed": "same_direction_pass_visible",
+      "reason": "Visible vehicle overtakes cyclist; ground-side tire and body edges too blurred for defensible edge measurement"
+    },
+    {
+      "key": "colonial_125311",
+      "car": null,
+      "name": "Middle cyclist: comparison",
+      "times": [
+        13.0,
+        14.5,
+        15.5
+      ],
+      "observed": "no_adjacent_pass_in_reviewed_click_sequence",
+      "reason": "No nearby passing car in the reviewed cyclist click interval; not a whole-site absence claim"
+    },
+    {
+      "key": "colonial_125350",
+      "car": "18",
+      "name": "Dark car pass",
+      "times": [
+        14.4,
+        14.8,
+        15.0
+      ],
+      "observed": "same_direction_pass_visible",
+      "reason": "Visible vehicle overtakes cyclist; dark near-side tire/body boundary and perspective prevent verified edge clearance"
+    }
+  ],
+  "geometry": "existing_learned_H_no_refit",
+  "new_gpu_inference": false,
+  "method": "visual_sampled_review_and_interpolation_of_prior_manual_points"
+}

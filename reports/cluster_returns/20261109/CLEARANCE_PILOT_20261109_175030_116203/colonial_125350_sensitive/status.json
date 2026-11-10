@@ -1,0 +1,9 @@
+{
+  "state": "SUCCEEDED",
+  "result": {
+    "cyclist_candidates": 1,
+    "vehicle_tracks": 33,
+    "interaction_rows": 10,
+    "baseline_pairs": 0
+  }
+}

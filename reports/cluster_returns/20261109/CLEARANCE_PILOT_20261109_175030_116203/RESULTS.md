@@ -1,0 +1,30 @@
+# Colonial passing-clearance pilot
+
+Tasks succeeded: 6/6. Three fixed 30-second windows; 90 seconds unique footage, 180 seconds across two detector settings.
+
+Clearance is the primary output. Metric estimates use the existing learned camera mapping and assumed object dimensions centered on projected box bottom-centers. They are exploratory estimates, not independently calibrated measurements. Box-edge output is a projection proxy, not recovered physical clearance.
+
+Open review.html, all_interactions.csv, threshold_sensitivity.csv and task_status.csv. Copy review_candidates.csv to review_labels.csv before adding your review; the generated candidate template updates as tasks finish. Each task contains raw exports, geometry, baseline_timeseries.csv, transfer_timeseries.csv, pipeline log and diagnostic snapshots. inputs/ contains original-view 30-second review clips and timing audits. IDs reset across clips and detector settings; do not sum variants as distinct people/events.
+
+Baseline pair rows: 0 across detector settings. Failed tasks do not become zero interactions. Candidate selection was based on existing manual cyclist times, not low TTC or small clearance. Visible cyclists are documented; a completed pass in these short windows is not presumed.
+
+Methods: assumed-footprint lateral edge gap while longitudinally alongside; center distance; projected bottom-box-edge proxy; continuous swept-rectangle collision TTC (5-second horizon); predicted closest center approach; sampled shared-cell occupancy PET (0.5m grid). PET and TTC are based on assumed road-aligned rectangles and constant local velocity. This is a paper-informed implementation, not a reproduction of a published benchmark.
+
+Variations: reference versus sensitive detector; local velocity/smoothing windows 0.25/0.5/1.0s; cyclist envelope width 0.6/0.8/1.0m; learned scale multipliers 0.8/1.0/1.2; strict car-support versus exploratory plane transfer; constant-velocity Kalman filtering and offline RTS smoothing, each with strict and transfer support. Twelve scenarios per detector use the same inference. These are one-factor-at-a-time sensitivity tests, not a full factorial experiment or confidence intervals. Car dimensions 4.5x1.8m, truck 8x2.5m, bus 12x2.5m, bicycle length 1.8m are explicit assumptions.
+
+smoothing_comparison.csv compares minimum footprint distance, lateral clearance, TTC and PET against local-fit baselines on matched IDs/support settings. screening_comparison.csv compares distance/PET alone and AND/OR screens; it does not claim an optimal predictor. false_alarm_review.csv reports adjudicated false flags / adjudicated flags only when review_labels.csv contains yes/no near_miss_review and reviewer. Unreviewed flags and adjudication coverage remain explicit; this is not a population false-positive rate. No LiDAR/radar observations exist in this workflow. The user-supplied 84% false-alarm figure has no verified source and is not treated as this pilot's rate.
+
+Every outcome requires video review of cyclist identity (including motorcycles), track continuity, alongside geometry, direction, occlusion, barriers and truncation. The observed_overtake_candidate flag requires relative order reversal during a continuous same-direction span; alongside alone does not establish overtaking. A zero gap/TTC/PET is model overlap, not evidence of collision. No verified near-miss classification is generated.
+
+Strict support means projected contact points are inside the existing car-calibration hull; it does not verify sidewalks, edge extents or true dimensions. Plane transfer assumes coplanarity and is diagnostic. Review pages use a strict baseline pair where available, otherwise an explicitly labelled plane-transfer pair. The road axis comes from vehicle motion in each crop; curves/lane changes violate fixed-road-axis assumptions. Shared-cell PET is spatially and temporally quantized and can overstate conflicts. Velocities do not bridge observation gaps >0.20s. Timing audit covers extracted clips only. Clip-edge censoring and incomplete coverage require review; no 48-hour rates are calculated.
+
+Research sources: [FHWA definitions of TTC/PET](https://www.fhwa.dot.gov/publications/research/safety/08051/02.cfm); [2025 experimental analysis of automated video safety errors](https://arxiv.org/abs/2503.09807); [existing ICCV2021 calibration author implementation](https://github.com/naver/cctv); [trajectory study using RTS smoothing](https://tsr.international/TSR/article/download/27904/24728?inline=1). Recent safety research supports checking tracking and calibration rather than interpreting automated flags as verified conflicts.
+
+| Task | State | Detail |
+|---|---|---|
+| colonial_124020_reference | SUCCEEDED | {'cyclist_candidates': 1, 'vehicle_tracks': 34, 'interaction_rows': 14, 'baseline_pairs': 0} |
+| colonial_124020_sensitive | SUCCEEDED | {'cyclist_candidates': 1, 'vehicle_tracks': 41, 'interaction_rows': 14, 'baseline_pairs': 0} |
+| colonial_125311_reference | SUCCEEDED | {'cyclist_candidates': 1, 'vehicle_tracks': 17, 'interaction_rows': 0, 'baseline_pairs': 0} |
+| colonial_125311_sensitive | SUCCEEDED | {'cyclist_candidates': 1, 'vehicle_tracks': 18, 'interaction_rows': 0, 'baseline_pairs': 0} |
+| colonial_125350_reference | SUCCEEDED | {'cyclist_candidates': 1, 'vehicle_tracks': 30, 'interaction_rows': 9, 'baseline_pairs': 0} |
+| colonial_125350_sensitive | SUCCEEDED | {'cyclist_candidates': 1, 'vehicle_tracks': 33, 'interaction_rows': 10, 'baseline_pairs': 0} |
