@@ -249,11 +249,11 @@ def write_event_selector(directory, plan):
 <h2>Selected times</h2><table id="table"><tr><th>Clip seconds</th><th>Inferred source clock</th><th>Notes</th></tr></table>
 <script>
 const video=document.getElementById('video'), readout=document.getElementById('readout');
-const selections=[]; const sourceClock={json.dumps(source_clock)}; const fps=29.97;
+const selections=[]; const sourceClock={json.dumps(source_clock)}; const clipStart={float(task.get('start_s', 0.))}; const fps=29.97;
 function clockAt(offset){{
     if(!sourceClock) return '';
     const parts=sourceClock.split(' '), time=parts[1].split(':').map(Number);
-    let seconds=time[0]*3600+time[1]*60+time[2]+offset; seconds=((seconds%86400)+86400)%86400;
+    let seconds=time[0]*3600+time[1]*60+time[2]+clipStart+offset; seconds=((seconds%86400)+86400)%86400;
     const h=String(Math.floor(seconds/3600)).padStart(2,'0'), m=String(Math.floor(seconds%3600/60)).padStart(2,'0'), s=(seconds%60).toFixed(3).padStart(6,'0');
     return parts[0]+' '+h+':'+m+':'+s;
 }}
