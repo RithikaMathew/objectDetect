@@ -230,6 +230,43 @@ def review_pairs(rows):
     return list(chosen.values())
 
 
+def write_event_selector(directory, plan):
+        """Write a full-window browser tool for selecting a known event time."""
+        task = plan['tasks'][0]
+        clip = task['clip_key']
+        source_clock = plan.get('source_clock', '')
+        page = f'''<!doctype html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Select interaction time</title>
+<style>body{{font:16px system-ui;max-width:1000px;margin:24px auto;padding:0 16px;color:#17231f}}video{{width:100%;background:#111}}button,input,textarea{{font:inherit;padding:8px;margin:4px 4px 4px 0}}.note{{background:#eef5f1;padding:12px;border-left:4px solid #0b765e}}#readout{{font-size:20px;font-weight:700}}textarea{{width:100%;min-height:60px}}</style>
+<h1>Select the pedestrian-car interaction time</h1>
+<p class="note">Play or scrub the complete 60-second clip. Pause when the pedestrian and car are closest or when the crossing/near-miss occurs. Then click <b>Mark selected time</b>. This records a timestamp for later TTC/PET and edge review; it does not decide whether the event is a near miss.</p>
+<video id="video" controls preload="metadata" src="inputs/{html.escape(clip)}.mp4"></video>
+<p id="readout">Current clip time: 0.000 s</p>
+<button id="back">Back one frame</button><button id="forward">Forward one frame</button><button id="mark">Mark selected time</button><button id="download">Download selections</button>
+<label>Reviewer: <input id="reviewer"></label>
+<textarea id="notes" placeholder="Describe what happens at the selected time, if useful."></textarea>
+<h2>Selected times</h2><table id="table"><tr><th>Clip seconds</th><th>Inferred source clock</th><th>Notes</th></tr></table>
+<script>
+const video=document.getElementById('video'), readout=document.getElementById('readout');
+const selections=[]; const sourceClock={json.dumps(source_clock)}; const fps=29.97;
+function clockAt(offset){{
+    if(!sourceClock) return '';
+    const parts=sourceClock.split(' '), time=parts[1].split(':').map(Number);
+    let seconds=time[0]*3600+time[1]*60+time[2]+offset; seconds=((seconds%86400)+86400)%86400;
+    const h=String(Math.floor(seconds/3600)).padStart(2,'0'), m=String(Math.floor(seconds%3600/60)).padStart(2,'0'), s=(seconds%60).toFixed(3).padStart(6,'0');
+    return parts[0]+' '+h+':'+m+':'+s;
+}}
+function update(){{readout.textContent='Current clip time: '+video.currentTime.toFixed(3)+' s | inferred source: '+clockAt(video.currentTime);}}
+function render(){{const table=document.getElementById('table'); table.innerHTML='<tr><th>Clip seconds</th><th>Inferred source clock</th><th>Notes</th></tr>'; selections.forEach(row=>{{const tr=document.createElement('tr'); tr.innerHTML='<td>'+row.seconds.toFixed(3)+'</td><td>'+row.clock+'</td><td>'+row.notes+'</td>'; table.appendChild(tr);}});}}
+video.ontimeupdate=update; document.getElementById('back').onclick=()=>{{video.currentTime=Math.max(0,video.currentTime-1/fps);update();}}; document.getElementById('forward').onclick=()=>{{video.currentTime=Math.min(video.duration||60,video.currentTime+1/fps);update();}};
+document.getElementById('mark').onclick=()=>{{selections.push({{seconds:video.currentTime,clock:clockAt(video.currentTime),notes:document.getElementById('notes').value,reviewer:document.getElementById('reviewer').value}});render();}};
+document.getElementById('download').onclick=()=>{{const lines=['clip_seconds,inferred_source_clock,reviewer,notes']; selections.forEach(row=>lines.push([row.seconds.toFixed(3),row.clock,row.reviewer,row.notes].map(value=>'"'+String(value).replaceAll('"','""')+'"').join(','))); const blob=new Blob([lines.join('\\n')+'\\n'],{{type:'text/csv'}}); const link=document.createElement('a'); link.href=URL.createObjectURL(blob); link.download='pedestrian_event_selections.csv'; link.click();}};
+update();
+</script>'''
+        (directory/'event_time_selector.html').write_text(page)
+
+
 def analyze(plan,task,directory,log):
     import numpy as np
     from clearance_metrics import prepare,road_axis,pair_metrics,scenarios
@@ -368,6 +405,7 @@ def report(directory):
                     sections.append(f'<h3>Known event time: crop +{float(event_offset):g}s</h3><p>This is the requested pedestrian crossing time. Review identity and visible edges here before interpreting metrics.</p><img loading="lazy" src="{html.escape(relative)}">')
         sections.append('</section>')
     (directory/'review.html').write_text('\n'.join(sections))
+    write_event_selector(directory, plan)
     review=[dict(task=r['task'],scenario=r['scenario'],cyclist_id=r['cyclist_id'],vehicle_id=r['vehicle_id'],cyclist_confirmed='',
         car_passing_confirmed='',same_direction='',barrier_present='',occlusion='',truncated='',
         clearance_geometry_usable='',near_miss_review='',reviewer='',notes='') for r in review_rows]
