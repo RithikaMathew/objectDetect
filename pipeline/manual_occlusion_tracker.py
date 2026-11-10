@@ -49,23 +49,25 @@ def build(batch, task_name, out):
 body{{font:15px system-ui;max-width:1100px;margin:24px auto;padding:0 16px;color:#17231f}}
 .note{{background:#eef5f1;border-left:4px solid #0b765e;padding:12px}}
 .stage{{position:relative;background:#111;max-width:900px}}
-video{{display:block;width:100%}}canvas{{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}}
+video{{display:block;width:100%}}canvas{{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;cursor:crosshair}}.stage.marking canvas{{pointer-events:auto}}
 button,input,textarea,select{{font:inherit;padding:8px;margin:4px 4px 4px 0}}textarea{{width:100%;min-height:55px}}
 #readout{{font-size:18px;font-weight:700}}table{{border-collapse:collapse;width:100%}}td,th{{border:1px solid #ccd6d1;padding:5px;text-align:left}}
 </style>
 <h1>Manual pedestrian/car occlusion tracker</h1>
 <p class="note"><b>Goal:</b> manually mark the pedestrian and car contact points through the overlap. Green boxes are saved pedestrian detections, blue boxes are saved vehicle detections, and red/yellow dots are your manual clicks. The manual click is evidence; the reconstructed metrics remain exploratory.</p>
 <div class="stage"><video id="video" controls preload="metadata" src="{video_rel}"></video><canvas id="canvas"></canvas></div>
-<p id="readout">Click the frame to place a point.</p>
+<p id="readout">Marking is off. Scrub the video normally, then enable marking before clicking the image.</p>
 <button id="back">Back one frame</button><button id="forward">Forward one frame</button>
+<button id="toggleMarking">Enable point marking</button>
 <button id="markCar">Mark clicked point as car</button><button id="markPed">Mark clicked point as pedestrian</button>
+<button id="undo">Undo last point</button><button id="deleteFrame">Delete current-frame points</button><button id="clearAll">Clear all points</button>
 <button id="download">Download annotation CSV</button>
 <label>Reviewer <input id="reviewer"></label>
 <textarea id="notes" placeholder="Optional note for this frame, e.g. car partly hidden behind pedestrian."></textarea>
 <h2>Manual points</h2><table id="table"><tr><th>Frame</th><th>Seconds</th><th>Object</th><th>x</th><th>y</th><th>Note</th></tr></table>
 <script>
 const video=document.getElementById('video'), canvas=document.getElementById('canvas'), ctx=canvas.getContext('2d');
-const auto={json.dumps(auto,separators=(',',':'))}; const fps={fps}; let clicked=null; const points=[];
+const stage=document.querySelector('.stage'); const auto={json.dumps(auto,separators=(',',':'))}; const fps={fps}; let clicked=null; let marking=false; const points=[];
 function frameNumber(){{return Math.max(1,Math.round(video.currentTime*fps)+1);}}
 function draw(){{
   if(!video.videoWidth) return;
@@ -79,9 +81,14 @@ function clickPoint(event){{const rect=canvas.getBoundingClientRect(); clicked={
 function mark(object){{if(!clicked){{alert('Click the image first.');return;}} points.push({{frame:frameNumber(),clip_seconds:video.currentTime,object,x_px:clicked.x,y_px:clicked.y,reviewer:document.getElementById('reviewer').value,notes:document.getElementById('notes').value}}); render(); draw();}}
 function render(){{const table=document.getElementById('table'); table.innerHTML='<tr><th>Frame</th><th>Seconds</th><th>Object</th><th>x</th><th>y</th><th>Note</th></tr>'; for(const p of points){{const tr=document.createElement('tr');tr.innerHTML=`<td>${{p.frame}}</td><td>${{p.clip_seconds.toFixed(3)}}</td><td>${{p.object}}</td><td>${{p.x_px}}</td><td>${{p.y_px}}</td><td>${{p.notes||''}}</td>`;table.appendChild(tr);}}}}
 function csvCell(value){{return '"'+String(value??'').replaceAll('"','""')+'"';}}
+function setMarking(value){{marking=value;stage.classList.toggle('marking',marking);document.getElementById('toggleMarking').textContent=marking?'Disable point marking':'Enable point marking';document.getElementById('readout').textContent=marking?'Marking is on. Click a point on the image.':'Marking is off. Scrub the video normally.';}}
 document.getElementById('canvas').onclick=clickPoint; video.ontimeupdate=draw; video.onloadedmetadata=draw;
 document.getElementById('back').onclick=()=>{{video.currentTime=Math.max(0,video.currentTime-1/fps);draw();}}; document.getElementById('forward').onclick=()=>{{video.currentTime=Math.min(video.duration||60,video.currentTime+1/fps);draw();}};
+document.getElementById('toggleMarking').onclick=()=>setMarking(!marking);
 document.getElementById('markCar').onclick=()=>mark('car'); document.getElementById('markPed').onclick=()=>mark('pedestrian');
+document.getElementById('undo').onclick=()=>{{points.pop();render();draw();}};
+document.getElementById('deleteFrame').onclick=()=>{{const frame=frameNumber();for(let i=points.length-1;i>=0;i--)if(points[i].frame===frame)points.splice(i,1);render();draw();}};
+document.getElementById('clearAll').onclick=()=>{{if(confirm('Delete all manual points?')){{points.length=0;render();draw();}}}};
 document.getElementById('download').onclick=()=>{{const lines=['frame,clip_seconds,object,x_px,y_px,reviewer,notes'];for(const p of points)lines.push([p.frame,p.clip_seconds.toFixed(6),p.object,p.x_px,p.y_px,p.reviewer,p.notes].map(csvCell).join(','));const blob=new Blob([lines.join('\\n')+'\\n'],{{type:'text/csv'}});const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download='manual_occlusion_points.csv';link.click();}};
 </script>'''
     Path(out).write_text(page)
