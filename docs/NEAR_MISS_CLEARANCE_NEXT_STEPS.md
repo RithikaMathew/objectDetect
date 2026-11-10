@@ -112,7 +112,18 @@ Sources:
 
 ## Concrete next run
 
-The immediate local command is:
+The interactive edge review is **optional**. You can skip it without changing
+the existing detector/speed results. Keep it if you want a human-reviewed,
+image-space record of the two visible passes, or if you may later obtain a
+lateral calibration and convert those labels to metres. It does not create
+calibration by itself and is not required for the exploratory model output.
+
+The tool is here:
+
+[Interactive edge annotation tool](../reports/clearance_pilot/final_review_20261109/clearance_edge_annotation_tool.html)
+
+If you prefer the CSV template rather than the click interface, the local
+command is:
 
 ```bash
 python3 pipeline/build_clearance_annotation_template.py \

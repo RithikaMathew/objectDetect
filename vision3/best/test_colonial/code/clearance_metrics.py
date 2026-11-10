@@ -26,11 +26,12 @@ def prepare(rows, H, hull, fps, labels=None):
         info = (labels or {}).get(tid, {})
         label = r.get('label', '').upper()
         kind = ('cyclist' if label == 'BICYCLIST' else
+            'pedestrian' if label == 'PEDESTRIAN' else
                 label.lower() if label.lower() in ('car', 'bus', 'truck', 'vehicle', 'other_vehicle') else None)
         # Retain detector-backed candidates rejected by count/classification rules,
         # but never silently call them confirmed cyclists.
-        if kind is None and info.get('det_label', '').lower() == 'cyclist':
-            kind = 'cyclist'
+        if kind in (None, 'pedestrian') and info.get('det_label', '').lower() in ('cyclist', 'pedestrian'):
+            kind = info['det_label'].lower()
         if kind is None:
             continue
         pixel = np.array([float(r['foot_x']), float(r['foot_y'])])
@@ -47,11 +48,11 @@ def prepare(rows, H, hull, fps, labels=None):
     return dict(by)
 
 
-def road_axis(paths):
+def road_axis(paths, subject_kinds=('cyclist', 'pedestrian')):
     """Dominant vehicle displacement axis; never fit it to reference speeds."""
     vectors = []
     for (kind, _), rr in paths.items():
-        if kind == 'cyclist' or len(rr) < 5:
+        if kind in subject_kinds or len(rr) < 5:
             continue
         v = rr[-1]['xy']-rr[0]['xy']
         n = np.linalg.norm(v)
@@ -201,12 +202,14 @@ def pet_cells(cyclist, vehicle, dimensions, basis, cell=.5, max_gap=.20):
 def dimensions(kind, cyclist_width):
     # Assumptions for sensitivity, not measured vehicle dimensions.
     if kind == 'cyclist': return (1.8, cyclist_width)
+    if kind == 'pedestrian': return (.7, .6)
     if kind == 'bus': return (12., 2.5)
     if kind == 'truck': return (8., 2.5)
     return (4.5, 1.8)
 
 
-def pair_metrics(c, v, vehicle_kind, axis, H, width=.8, window=.5, scale=1., strict=True, motion='local'):
+def pair_metrics(c, v, vehicle_kind, axis, H, width=.8, window=.5, scale=1., strict=True,
+                 motion='local', subject_kind='cyclist'):
     if motion=='local':
         cm, vm = local_motion(c, window, scale), local_motion(v, window, scale)
     elif motion in ('kalman','rts'):
@@ -219,7 +222,7 @@ def pair_metrics(c, v, vehicle_kind, axis, H, width=.8, window=.5, scale=1., str
     if len(common) < 3:
         return None
     basis = np.column_stack((axis, [-axis[1], axis[0]]))
-    cd, vd = dimensions('cyclist', width), dimensions(vehicle_kind, width)
+    cd, vd = dimensions(subject_kind, width), dimensions(vehicle_kind, width)
     half = (np.array(cd)+vd)/2
     samples = []
     for frame in common:

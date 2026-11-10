@@ -60,6 +60,17 @@ class MetricsTests(unittest.TestCase):
         self.assertEqual(len(result[('cyclist','1')]),1)
         self.assertEqual(result[('cyclist','1')][0]['counted'],'0')
 
+    def test_prepare_retains_pedestrian_subjects(self):
+        row=dict(track_id='1',frame='1',foot_x='1',foot_y='1',box_w='1',box_h='2',coasted='0',label='PEDESTRIAN')
+        hull=np.array([[0,0],[10,0],[10,10],[0,10]])
+        result=prepare([row],np.eye(3),hull,30,{})
+        self.assertIn(('pedestrian','1'),result)
+
+    def test_pedestrian_pair_uses_pedestrian_dimensions(self):
+        r=pair_metrics(path(vx=2),path(vx=6,x=-6,y=3),'car',np.array([1.,0.]),np.eye(3),subject_kind='pedestrian')
+        self.assertIsNotNone(r)
+        self.assertAlmostEqual(r['min_sampled_clearance_m'],1.8,places=6)
+
     def test_road_axis_and_variations(self):
         a=road_axis({('car','1'):path(),('car','2'):path(vx=-2)})
         np.testing.assert_allclose(a,[1,0])

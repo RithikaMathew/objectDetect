@@ -1,0 +1,172 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Clearance edge annotation tool</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { color-scheme: light; --ink: #17231f; --muted: #64736d; --line: #d7dfdb; --paper: #f5f7f4; --panel: #ffffff; --accent: #0b765e; --warn: #a64b18; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.45 ui-sans-serif, system-ui, -apple-system, sans-serif; }
+header { padding: 24px clamp(18px, 5vw, 64px) 18px; background: #173b32; color: white; }
+header h1 { margin: 0 0 5px; font-size: clamp(22px, 3vw, 34px); letter-spacing: 0; }
+header p { max-width: 860px; margin: 0; color: #d4e4dd; }
+main { max-width: 1280px; margin: 0 auto; padding: 20px clamp(12px, 4vw, 48px) 52px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
+button, select, input, textarea { font: inherit; }
+button { border: 1px solid #aebdb6; border-radius: 5px; background: white; color: var(--ink); padding: 9px 13px; cursor: pointer; }
+button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); border-color: var(--accent); color: white; }
+button.danger { color: var(--warn); }
+#progress { margin-left: auto; color: var(--muted); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+.case-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 16px 18px; border-bottom: 1px solid var(--line); }
+.case-head h2 { margin: 0; font-size: 19px; }
+.case-head p { margin: 3px 0 0; color: var(--muted); }
+.case-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr); gap: 20px; padding: 18px; }
+.frame { background: #101614; border-radius: 5px; padding: 10px; }
+.frame img { display: block; width: 100%; height: auto; cursor: crosshair; }
+.caption { color: #d9e5df; font-size: 13px; padding: 8px 2px 0; }
+.click-readout { margin-top: 8px; color: #d9e5df; font-size: 13px; }
+.pickers { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
+.pickers button { padding: 7px 9px; }
+.note { border-left: 3px solid #d38b42; background: #fff7eb; padding: 10px 12px; margin-bottom: 14px; }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+.field { display: grid; gap: 4px; }
+.field.full { grid-column: 1 / -1; }
+label { font-weight: 650; font-size: 13px; }
+input, select, textarea { width: 100%; border: 1px solid #b9c8c0; border-radius: 4px; padding: 8px; background: white; color: var(--ink); }
+textarea { min-height: 72px; resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: 2px solid #9ed5c4; border-color: var(--accent); }
+.help { color: var(--muted); font-size: 12px; }
+.status { margin-top: 15px; padding: 10px 12px; background: #eef5f1; border-radius: 4px; color: #315248; }
+@media (max-width: 780px) { .case-grid { grid-template-columns: 1fr; } #progress { width: 100%; margin-left: 0; } .fields { grid-template-columns: 1fr; } .field.full { grid-column: auto; } }
+</style>
+<header>
+  <h1>Passing-clearance edge review</h1>
+  <p>This page is an optional manual check. Click the image at the nearest visible edge, assign the click to the cyclist or car, and download the labels. It produces pixel gaps, not metres.</p>
+</header>
+<main>
+  <div class="toolbar">
+    <button id="previous">Previous</button>
+    <button id="next">Next</button>
+    <button class="primary" id="download">Download CSV</button>
+    <button id="save">Save browser copy</button>
+    <button class="danger" id="clear">Clear saved entries</button>
+    <span id="progress"></span>
+  </div>
+  <section class="card">
+    <div class="case-head">
+      <div><h2 id="title"></h2><p id="meta"></p></div>
+      <div id="existing"></div>
+    </div>
+    <div class="case-grid">
+      <div>
+        <div class="frame"><img id="image" alt="Reviewed video frame"><div class="caption">Green: prior manual rear-tire point. Yellow: automatic box-bottom reference. Blue: vehicle box, not a physical edge. Click near the closest visible edges.</div><div class="click-readout" id="clickReadout">Click the image to read an original-image x coordinate.</div><div class="pickers"><button id="pickCyclist">Use click as cyclist edge</button><button id="pickCar">Use click as car edge</button></div></div>
+      </div>
+      <div>
+        <div class="note"><strong>What this is for:</strong> this creates a manual pixel-level record of the gap between the cyclist and car. It is not required for the existing exploratory detector calculation. It is useful only if you want a human-reviewed comparison, or later obtain a lateral calibration that can convert pixels to metres.</div>
+        <div class="note"><strong>How to review:</strong> click the image at the cyclist's side facing the car, then click the button to assign it. Do the same for the car's side facing the cyclist. <b>Occlusion</b> means one object blocks part of the other or hides the edge. <b>Frame usable</b> means both relevant edges are visible enough to label; choose No when they are hidden, blurry, or there is no car.</div>
+        <div class="fields">
+          <div class="field"><label for="cyclistEdge">Cyclist edge x (px)</label><input id="cyclistEdge" inputmode="decimal"><span class="help">Filled by clicking the image and choosing “Use click as cyclist edge.”</span></div>
+          <div class="field"><label for="carEdge">Car edge x (px)</label><input id="carEdge" inputmode="decimal"><span class="help">Filled by clicking the image and choosing “Use click as car edge.”</span></div>
+          <div class="field"><label for="pixelGap">Pixel clearance (px)</label><input id="pixelGap" inputmode="decimal" readonly><span class="help">The horizontal image distance between the two selected edges.</span></div>
+          <div class="field"><label for="usable">Frame usable?</label><select id="usable"><option value="">Choose...</option><option value="yes">Yes: both edges can be judged</option><option value="no">No: hidden, blurry, or no car</option></select></div>
+          <div class="field"><label for="direction">Same-direction pass?</label><select id="direction"><option value="">Choose...</option><option value="yes">Yes: car and cyclist travel the same way</option><option value="no">No: opposing or unrelated movement</option><option value="uncertain">Uncertain</option></select></div>
+          <div class="field"><label for="occlusion">Are edges blocked?</label><select id="occlusion"><option value="none">No: edges visible</option><option value="partial">Partly blocked</option><option value="major">Mostly blocked</option><option value="uncertain">Uncertain</option></select></div>
+          <div class="field"><label for="confidence">Edge confidence</label><select id="confidence"><option value="">Choose...</option><option value="high">High: clear boundary</option><option value="medium">Medium: approximate boundary</option><option value="low">Low: blurry or ambiguous</option></select></div>
+          <div class="field"><label for="reviewer">Reviewer name</label><input id="reviewer"></div>
+          <div class="field full"><label for="notes">Notes (optional)</label><textarea id="notes" placeholder="Example: no separate car in this frame; SUV tire hidden; car edge estimated from shadow; cyclist partly blocked..."></textarea></div>
+        </div>
+        <div class="status" id="status">Changes are saved in memory for this page. Use Save browser copy to persist them in this browser.</div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+const rows = [
+  {clip:'colonial_124020', frame:'390', seconds:'13.013013013013014', source:'2421.013013013013', vehicle:'9', image:'colonial_124020_0390_review.jpg', status:'box_visible_not_ground_footprint'},
+  {clip:'colonial_124020', frame:'399', seconds:'13.313313313313314', source:'2421.3133133133133', vehicle:'9', image:'colonial_124020_0399_review.jpg', status:'box_visible_not_ground_footprint'},
+  {clip:'colonial_124020', frame:'408', seconds:'13.613613613613614', source:'2421.613613613614', vehicle:'9', image:'colonial_124020_0408_review.jpg', status:'box_visible_not_ground_footprint'},
+  {clip:'colonial_125311', frame:'390', seconds:'13.013013013013014', source:'3192.013013013013', vehicle:'', image:'colonial_125311_0390_review.jpg', status:'no_reviewed_car'},
+  {clip:'colonial_125311', frame:'435', seconds:'14.514514514514515', source:'3193.5145145145143', vehicle:'', image:'colonial_125311_0435_review.jpg', status:'no_reviewed_car'},
+  {clip:'colonial_125311', frame:'465', seconds:'15.515515515515515', source:'3194.515515515515', vehicle:'', image:'colonial_125311_0465_review.jpg', status:'no_reviewed_car'},
+  {clip:'colonial_125350', frame:'432', seconds:'14.414414414414415', source:'3232.414414414414', vehicle:'18', image:'colonial_125350_0432_review.jpg', status:'box_visible_not_ground_footprint'},
+  {clip:'colonial_125350', frame:'444', seconds:'14.814814814814815', source:'3232.814814814815', vehicle:'18', image:'colonial_125350_0444_review.jpg', status:'box_visible_not_ground_footprint'},
+  {clip:'colonial_125350', frame:'450', seconds:'15.015015015015015', source:'3233.015015015015', vehicle:'18', image:'colonial_125350_0450_review.jpg', status:'box_visible_not_ground_footprint'}
+];
+const fields = ['cyclistEdge','carEdge','pixelGap','usable','direction','occlusion','confidence','reviewer','notes'];
+let index = 0;
+let answers = JSON.parse(localStorage.getItem('clearance-edge-answers') || '{}');
+let lastClickX = null;
+const $ = id => document.getElementById(id);
+function key() { return rows[index].clip + ':' + rows[index].frame; }
+function updateGap() {
+  const a = parseFloat($('cyclistEdge').value), b = parseFloat($('carEdge').value);
+  $('pixelGap').value = Number.isFinite(a) && Number.isFinite(b) ? Math.abs(a - b).toFixed(2) : '';
+}
+function show() {
+  const row = rows[index], answer = answers[key()] || {};
+  $('title').textContent = row.clip + ' | frame ' + row.frame;
+  $('meta').textContent = 'Clip time ' + Number(row.seconds).toFixed(3) + ' s | inferred source time ' + Number(row.source).toFixed(3) + ' s | vehicle ' + (row.vehicle || 'none') + ' | ' + row.status;
+  $('image').src = row.image;
+  $('image').alt = row.clip + ' reviewed frame ' + row.frame;
+  fields.forEach(id => $(id).value = answer[id] || (id === 'occlusion' ? 'none' : ''));
+  lastClickX = null;
+  $('clickReadout').textContent = 'Click the image to read an original-image x coordinate.';
+  updateGap();
+  $('progress').textContent = 'Frame ' + (index + 1) + ' of ' + rows.length + ' | completed ' + Object.keys(answers).length;
+  $('existing').textContent = answer.usable ? 'Saved: ' + answer.usable : 'Not annotated';
+}
+function collect() {
+  const answer = {};
+  fields.forEach(id => answer[id] = $(id).value);
+  answers[key()] = answer;
+}
+function persist() {
+  collect();
+  localStorage.setItem('clearance-edge-answers', JSON.stringify(answers));
+  $('status').textContent = 'Saved locally at ' + new Date().toLocaleTimeString() + '. Download CSV when finished.';
+  show();
+}
+function readImageX(event) {
+  const image = $('image'), rect = image.getBoundingClientRect();
+  return Math.round((event.clientX - rect.left) * image.naturalWidth / rect.width);
+}
+function assignClick(field, label) {
+  if (lastClickX === null) {
+    $('status').textContent = 'Click the image first, then choose ' + label + '.';
+    return;
+  }
+  $(field).value = lastClickX;
+  updateGap();
+  collect();
+  $('status').textContent = label + ' set to x = ' + lastClickX + ' px.';
+}
+function csvCell(value) { return '"' + String(value ?? '').replaceAll('"', '""') + '"'; }
+function download() {
+  collect();
+  const header = ['clip','frame_zero_based','clip_seconds','source_seconds_inferred','vehicle_id','vehicle_status',...fields];
+  const lines = [header.map(csvCell).join(',')];
+  rows.forEach((row, i) => {
+    const answer = answers[row.clip + ':' + row.frame] || {};
+    lines.push([row.clip,row.frame,row.seconds,row.source,row.vehicle,row.status,...fields.map(f => answer[f] || '')].map(csvCell).join(','));
+  });
+  const blob = new Blob([lines.join('\n') + '\n'], {type:'text/csv'});
+  const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = 'clearance_edge_annotations_completed.csv'; link.click(); URL.revokeObjectURL(link.href);
+  localStorage.setItem('clearance-edge-answers', JSON.stringify(answers));
+  $('status').textContent = 'CSV downloaded. Keep the original file and the completed CSV together.';
+}
+$('previous').onclick = () => { collect(); index = Math.max(0, index - 1); show(); };
+$('next').onclick = () => { collect(); index = Math.min(rows.length - 1, index + 1); show(); };
+$('save').onclick = persist;
+$('download').onclick = download;
+$('clear').onclick = () => { if (confirm('Clear all saved browser entries?')) { answers = {}; localStorage.removeItem('clearance-edge-answers'); show(); } };
+$('image').onclick = event => {
+  lastClickX = readImageX(event);
+  $('clickReadout').textContent = 'Last image click: x = ' + lastClickX + ' px. Choose which edge this click represents.';
+};
+$('pickCyclist').onclick = () => assignClick('cyclistEdge', 'Cyclist edge');
+$('pickCar').onclick = () => assignClick('carEdge', 'Car edge');
+$('cyclistEdge').oninput = updateGap; $('carEdge').oninput = updateGap;
+fields.filter(id => !['cyclistEdge','carEdge'].includes(id)).forEach(id => $(id).onchange = () => { collect(); });
+show();
+</script>

@@ -19,9 +19,9 @@ REPO = ROOT.parents[2]
 CAL = 'reports/cluster_returns/20261024/colonial_speed_47545558_report_rebuilt/iccv2021/calibration.json'
 SOURCE = 'MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.013.mp4'
 # Existing manual cyclist encounters, fixed before looking at risk metrics.
-WINDOWS = [('colonial_124020',2408.,'manual/s03_colonial_north_2019-07-10_123000_manual_bicycle_observations.json'),
-           ('colonial_125311',3179.,'manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json'),
-           ('colonial_125350',3218.,'manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json')]
+WINDOWS = [('colonial_124020',2408.,30.,'manual/s03_colonial_north_2019-07-10_123000_manual_bicycle_observations.json'),
+           ('colonial_125311',3179.,30.,'manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json'),
+           ('colonial_125350',3218.,30.,'manual/s03_colonial_north_2019-07-10_124500_manual_bicycle_observations.json')]
 
 
 def save(path,data):
@@ -70,18 +70,26 @@ def make_plan(a):
     if not weights.is_file():raise FileNotFoundError('Existing fine-tuned detector missing: '+str(weights))
     # This calibration has known camera/date/720x480 provenance. A different source
     # must be explicitly configured in code; basename equality alone is insufficient.
-    if source.name!=Path(SOURCE).name:raise ValueError('Default pilot requires the original Colonial .013 source')
+    if not source.name.endswith('.mp4'):raise ValueError('Pilot source must be an mp4 file')
+    custom = a.start_s is not None
+    if custom and a.duration <= 0:raise ValueError('Custom event duration must be positive')
+    windows = ([(a.event_name, a.start_s, a.duration, 'custom_event')]
+               if custom else WINDOWS)
     tasks=[]
-    for key,start,evidence in WINDOWS:
+    for key,start,duration,evidence in windows:
         for detector in ('reference','sensitive'):
             tasks.append(dict(key=key+'_'+detector,clip_key=key,start_s=start,duration_s=30.,
-                              detector=detector,selection_evidence=evidence))
+                              detector=detector,selection_evidence=evidence,
+                              subject_kind=a.subject_kind))
+            tasks[-1]['duration_s'] = duration
     stat=source.stat()
     return dict(schema=1,root=str(ROOT),repo=str(REPO),source=str(source),source_bytes=stat.st_size,
         source_mtime_ns=stat.st_mtime_ns,source_sha256='not_hashed_large_original',
         calibration=str(calibration),calibration_sha256=checksum(calibration),
         weights=str(weights),weights_sha256=checksum(weights),tasks=tasks,
-        unique_video_seconds=90,detector_video_seconds=180,
+        unique_video_seconds=sum(t['duration_s'] for t in tasks[::2]),
+        detector_video_seconds=sum(t['duration_s'] for t in tasks),
+        subject_kind=a.subject_kind,
         source_clock='2019-07-10 12:00:00',clock_status='filename_inferred_not_independently_verified',
         camera='Colonial North',resolution=[720,480],jobs=[],
         interpretation='exploratory_assumed_footprints_learned_scale_not_verified_near_misses')
@@ -136,7 +144,8 @@ def extract(plan,task,directory):
     source=Path(plan['source']);cap=cv2.VideoCapture(str(source))
     try:
         fps=cap.get(5);frames=cap.get(7);size=[int(cap.get(3)),int(cap.get(4))]
-        if size!=plan['resolution'] or fps<=0 or frames/fps<task['start_s']+30:raise ValueError('Wrong resolution, timing, or source too short')
+        duration = float(task.get('duration_s', 30.))
+        if size!=plan['resolution'] or fps<=0 or frames/fps<task['start_s']+duration:raise ValueError('Wrong resolution, timing, or source too short')
     finally:cap.release()
     clips=directory/'inputs';clips.mkdir(exist_ok=True)
     video=clips/(task['clip_key']+'.mp4')
@@ -146,7 +155,7 @@ def extract(plan,task,directory):
         sync=plan.get('ffmpeg_sync_args') or ffmpeg_sync_arguments(executable)
         partial=video.with_name(video.stem+'.partial.mp4')
         command=[executable,'-nostdin','-y','-v','error','-ss',str(task['start_s']),'-i',str(source),
-            '-t','30','-map','0:v:0','-an','-c:v','libx264','-preset','fast','-crf','18',
+            '-t',str(task.get('duration_s',30.)),'-map','0:v:0','-an','-c:v','libx264','-preset','fast','-crf','18',
             *sync,'-movflags','+faststart',str(partial)]
         try:
             result=subprocess.run(command,capture_output=True,text=True)
@@ -166,7 +175,8 @@ def extract(plan,task,directory):
     audit=timestamp_audit(video)
     audit['sha256']=checksum(video)
     save(clips/(task['clip_key']+'_timing.json'),audit)
-    if not 28 <= audit['last_pts']-audit['first_pts']<=30.1:raise ValueError('Incomplete extracted clip')
+    duration = float(task.get('duration_s', 30.))
+    if not duration - 2 <= audit['last_pts']-audit['first_pts']<=duration + .1:raise ValueError('Incomplete extracted clip')
     if abs(audit['fps_from_pts']/fps-1)>.005:raise ValueError('Extracted timing differs from source metadata')
     return video,audit
 
@@ -226,21 +236,24 @@ def analyze(plan,task,directory,log):
         raise ValueError('Saved calibration failed checks')
     labels={r['track_id']:r for r in read(out/'tracks_csv.csv')}
     paths=prepare(read(out/'trajectories_csv.csv')+read(out/'vehicle_trajectories_csv.csv'),H,hull,log['fps'],labels)
-    axis=road_axis(paths)
+    subject_kind=plan.get('subject_kind','cyclist')
+    vehicle_kinds=('car','bus','truck','vehicle','other_vehicle')
+    axis_paths={k:v for k,v in paths.items() if k[0] == subject_kind or k[0] in vehicle_kinds}
+    axis=road_axis(axis_paths, (subject_kind,))
     save(out/'geometry.json',dict(H=H.tolist(),hull=hull.tolist(),road_axis=axis.tolist(),
         calibration_source=plan['calibration'],calibration_sha256=plan['calibration_sha256'],
         validation=cal.get('validation'),footprints='assumed_dimensions_centered_on_projected_bottom_center'))
-    cyclists=[k for k in paths if k[0]=='cyclist'];vehicles=[k for k in paths if k[0]!='cyclist']
+    subjects=[k for k in paths if k[0]==subject_kind];vehicles=[k for k in paths if k[0] in vehicle_kinds]
     rows=[];series=[];transfer_series=[];smoother_series=[]
     for name,scenario in scenarios():
         print(task['key'],name,flush=True)
-        for ck in cyclists:
+        for ck in subjects:
             for vk in vehicles:
-                r=pair_metrics(paths[ck],paths[vk],vk[0],axis,H,**scenario)
+                r=pair_metrics(paths[ck],paths[vk],vk[0],axis,H,subject_kind=subject_kind,**scenario)
                 if r is None:continue
                 samples=r.pop('samples')
                 record=dict(task=task['key'],clip=task['clip_key'],detector=task['detector'],
-                    cyclist_id=ck[1],vehicle_id=vk[1],vehicle_type=vk[0],source_start_s=task['start_s'],
+                    cyclist_id=ck[1],subject_kind=subject_kind,vehicle_id=vk[1],vehicle_type=vk[0],source_start_s=task['start_s'],
                     facility=paths[ck][0]['facility'],cyclist_identity=paths[ck][0]['identity_status'],
                     counted=paths[ck][0]['counted'],scenario=name,**scenario,**r,
                     calibration_validation=cal.get('validation','unvalidated'),
@@ -271,7 +284,7 @@ def analyze(plan,task,directory,log):
                 t=min(ss,key=lambda s:s['center_distance_m'])['t']
             frame_id=round(t*log['fps'])+1;cap.set(cv2.CAP_PROP_POS_FRAMES,frame_id-1);ok,image=cap.read()
             if not ok:continue
-            for k,color in [(('cyclist',r['cyclist_id']),(0,255,255)),((r['vehicle_type'],r['vehicle_id']),(255,160,0))]:
+            for k,color in [((subject_kind,r['cyclist_id']),(0,255,255)),((r['vehicle_type'],r['vehicle_id']),(255,160,0))]:
                 obs=min(paths[k],key=lambda x:abs(x['frame']-frame_id))
                 x,y=obs['pixel'];w,h=obs['box_w'],obs['box_h']
                 cv2.rectangle(image,(round(x-w/2),round(y-h)),(round(x+w/2),round(y)),color,2)
@@ -280,7 +293,7 @@ def analyze(plan,task,directory,log):
             cv2.imwrite(str(out/f"c{r['cyclist_id']}_v{r['vehicle_id']}.jpg"),image)
     finally:
         if cap:cap.release()
-    return dict(cyclist_candidates=len(cyclists),vehicle_tracks=len(vehicles),interaction_rows=len(rows),
+    return dict(subject_candidates=len(subjects),subject_kind=subject_kind,vehicle_tracks=len(vehicles),interaction_rows=len(rows),
                 baseline_pairs=sum(r['scenario']=='baseline' for r in rows))
 
 
@@ -310,14 +323,14 @@ def report(directory):
     baseline=[r for r in rows if r['scenario']=='baseline']
     review_rows=review_pairs(rows)
     lines=['# Colonial passing-clearance pilot','',
-        f"Tasks succeeded: {sum(r['state']=='SUCCEEDED' for r in statuses)}/{len(statuses)}. Three fixed 30-second windows; 90 seconds unique footage, 180 seconds across two detector settings.",
+        f"Tasks succeeded: {sum(r['state']=='SUCCEEDED' for r in statuses)}/{len(statuses)}. Subject kind: {plan.get('subject_kind','cyclist')}. Unique footage and detector seconds are recorded in manifest.json.",
         '', 'Clearance is the primary output. Metric estimates use the existing learned camera mapping and assumed object dimensions centered on projected box bottom-centers. They are exploratory estimates, not independently calibrated measurements. Box-edge output is a projection proxy, not recovered physical clearance.',
         '', 'Open review.html, all_interactions.csv, threshold_sensitivity.csv and task_status.csv. Copy review_candidates.csv to review_labels.csv before adding your review; the generated candidate template updates as tasks finish. Each task contains raw exports, geometry, baseline_timeseries.csv, transfer_timeseries.csv, pipeline log and diagnostic snapshots. inputs/ contains original-view 30-second review clips and timing audits. IDs reset across clips and detector settings; do not sum variants as distinct people/events.',
         '', f'Baseline pair rows: {len(baseline)} across detector settings. Failed tasks do not become zero interactions. Candidate selection was based on existing manual cyclist times, not low TTC or small clearance. Visible cyclists are documented; a completed pass in these short windows is not presumed.',
         '', 'Methods: assumed-footprint lateral edge gap while longitudinally alongside; center distance; projected bottom-box-edge proxy; continuous swept-rectangle collision TTC (5-second horizon); predicted closest center approach; sampled shared-cell occupancy PET (0.5m grid). PET and TTC are based on assumed road-aligned rectangles and constant local velocity. This is a paper-informed implementation, not a reproduction of a published benchmark.',
         '', 'Variations: reference versus sensitive detector; local velocity/smoothing windows 0.25/0.5/1.0s; cyclist envelope width 0.6/0.8/1.0m; learned scale multipliers 0.8/1.0/1.2; strict car-support versus exploratory plane transfer; constant-velocity Kalman filtering and offline RTS smoothing, each with strict and transfer support. Twelve scenarios per detector use the same inference. These are one-factor-at-a-time sensitivity tests, not a full factorial experiment or confidence intervals. Car dimensions 4.5x1.8m, truck 8x2.5m, bus 12x2.5m, bicycle length 1.8m are explicit assumptions.',
         '', 'smoothing_comparison.csv compares minimum footprint distance, lateral clearance, TTC and PET against local-fit baselines on matched IDs/support settings. screening_comparison.csv compares distance/PET alone and AND/OR screens; it does not claim an optimal predictor. false_alarm_review.csv reports adjudicated false flags / adjudicated flags only when review_labels.csv contains yes/no near_miss_review and reviewer. Unreviewed flags and adjudication coverage remain explicit; this is not a population false-positive rate. No LiDAR/radar observations exist in this workflow. The user-supplied 84% false-alarm figure has no verified source and is not treated as this pilot\'s rate.',
-        '', 'Every outcome requires video review of cyclist identity (including motorcycles), track continuity, alongside geometry, direction, occlusion, barriers and truncation. The observed_overtake_candidate flag requires relative order reversal during a continuous same-direction span; alongside alone does not establish overtaking. A zero gap/TTC/PET is model overlap, not evidence of collision. No verified near-miss classification is generated.',
+        '', 'Every outcome requires video review of subject identity, track continuity, alongside geometry, direction, occlusion, barriers and truncation. The observed_overtake_candidate flag requires relative order reversal during a continuous same-direction span; alongside alone does not establish overtaking. A zero gap/TTC/PET is model overlap, not evidence of collision. No verified near-miss classification is generated.',
         '', 'Strict support means projected contact points are inside the existing car-calibration hull; it does not verify sidewalks, edge extents or true dimensions. Plane transfer assumes coplanarity and is diagnostic. Review pages use a strict baseline pair where available, otherwise an explicitly labelled plane-transfer pair. The road axis comes from vehicle motion in each crop; curves/lane changes violate fixed-road-axis assumptions. Shared-cell PET is spatially and temporally quantized and can overstate conflicts. Velocities do not bridge observation gaps >0.20s. Timing audit covers extracted clips only. Clip-edge censoring and incomplete coverage require review; no 48-hour rates are calculated.',
         '', 'Research sources: [FHWA definitions of TTC/PET](https://www.fhwa.dot.gov/publications/research/safety/08051/02.cfm); [2025 experimental analysis of automated video safety errors](https://arxiv.org/abs/2503.09807); [existing ICCV2021 calibration author implementation](https://github.com/naver/cctv); [trajectory study using RTS smoothing](https://tsr.international/TSR/article/download/27904/24728?inline=1). Recent safety research supports checking tracking and calibration rather than interpreting automated flags as verified conflicts.',
         '', '| Task | State | Detail |','|---|---|---|']
@@ -330,7 +343,7 @@ def report(directory):
         sections.append(f'<video controls preload="metadata" src="inputs/{task["clip_key"]}.mp4"></video>')
         for r in review_rows:
             if r['task']!=task['key']:continue
-            sections.append('<p>'+html.escape(f"Scenario {r['scenario']}: cyclist {r['cyclist_id']} / vehicle {r['vehicle_id']}: estimated clearance {r['min_sampled_clearance_m'] or 'unavailable'} m; TTC {r['min_collision_ttc_s'] or 'no collision course'} s; PET {r['sampled_occupancy_pet_s'] or 'no shared cells'} s; overtake candidate {r['observed_overtake_candidate']}")+'</p>')
+            sections.append('<p>'+html.escape(f"Scenario {r['scenario']}: {r.get('subject_kind',plan.get('subject_kind','cyclist'))} {r['cyclist_id']} / vehicle {r['vehicle_id']}: estimated clearance {r['min_sampled_clearance_m'] or 'unavailable'} m; TTC {r['min_collision_ttc_s'] or 'no collision course'} s; PET {r['sampled_occupancy_pet_s'] or 'no shared cells'} s; overtake candidate {r['observed_overtake_candidate']}")+'</p>')
             snap=f"{task['key']}/c{r['cyclist_id']}_v{r['vehicle_id']}.jpg"
             if (directory/snap).exists():sections.append(f'<img loading="lazy" src="{html.escape(snap)}">')
         sections.append('</section>')
@@ -414,6 +427,10 @@ def main():
     a=s.add_parser('submit');a.add_argument('--go',action='store_true');a.add_argument('--source',type=Path)
     a.add_argument('--data-root',type=Path,default=Path('/orange/xiangyan/rithika/vision/pilot_clips'))
     a.add_argument('--calibration',type=Path);a.add_argument('--weights',type=Path)
+    a.add_argument('--subject-kind',choices=('cyclist','pedestrian'),default='cyclist')
+    a.add_argument('--event-name',default='custom_event')
+    a.add_argument('--start-s',type=float,default=None)
+    a.add_argument('--duration',type=float,default=30.)
     a=s.add_parser('run');a.add_argument('directory',type=Path)
     a=s.add_parser('report');a.add_argument('directory',type=Path)
     a=s.add_parser('reanalyze');a.add_argument('directory',type=Path)

@@ -12,6 +12,35 @@ cd /orange/xiangyan/rithika/vision/vision3/best/test_colonial && source /orange/
 
 This submits one GPU job plus a small CPU report job using `afterany`, so a report is generated even if GPU processing times out or fails. No full-hour speed jobs or old experiment batches are submitted. Each new invocation creates a separate run; submit once and retain its printed job IDs/results path. Without `--go`, it prints the plan and does not submit. Queue delay and GPU runtime are unknown; the GPU job requests a maximum two hours, not a prediction that it takes two hours.
 
+## Targeted pedestrian-car event at approximately 5:08 PM
+
+The 2019-07-10 Colonial 17:00-hour source is the `.018` file under the same
+Colonial folder. Under the project's established `.013` noon-hour convention,
+5:08 PM is approximately 480 seconds into `.018`. The archive index has a
+five-hour display offset, so the event clock should be confirmed visually in
+the extracted clip before interpretation.
+
+The bounded pedestrian mode runs one 60-second crop, under reference and
+sensitive detector settings, and reports assumed clearance, TTC, PET, closest
+approach and track diagnostics. It is exploratory: pedestrian dimensions and
+the learned lateral geometry are assumptions, and a flag still requires video
+review. After syncing this code to HiPerGator, submit:
+
+```bash
+cd /orange/xiangyan/rithika/vision/vision3/best/test_colonial
+source /orange/xiangyan/rithika/vision/yolo_env/bin/activate
+python code/clearance_pilot.py submit --go \
+	--source '/orange/xiangyan/rithika/vision/pilot_clips/MioVision Data/Bike Lane Study/MioVision Video/BL Colonial/Standard_SCU8OG_2019-07-10_0000/Standard_SCU8OG_2019-07-10_0000.018.mp4' \
+	--subject-kind pedestrian \
+	--event-name colonial_1708_pedestrian_car \
+	--start-s 480 \
+	--duration 60
+```
+
+This is the only new GPU run currently justified. If the visual event is not
+in that crop, do not infer that it is absent; adjust the start time after
+checking the source clock and submit one corrected bounded crop.
+
 ## Fixed short windows
 
 | Colonial source playback | Approximate inferred clock | Duration | Existing evidence |

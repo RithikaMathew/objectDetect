@@ -2,7 +2,7 @@
 
 ## Current status
 
-The speed-analysis batches and the small passing-clearance pilot have completed. We have exploratory speed estimates, two visually reviewed car passes, and a documented false near-miss alarm. **We do not yet have validated physical passing distances or a verified near-miss count. No new HiPerGator job is pending.**
+The speed-analysis batches and the small passing-clearance pilot have completed. We have exploratory speed estimates, two visually reviewed car passes, and a documented false near-miss alarm. The CPU-only reanalysis (HiPerGator job **50521967**) completed all six tasks successfully. **We do not yet have validated physical passing distances or a verified near-miss count. No new GPU job is pending.**
 
 ## 1. Cyclist speed: what was done
 
@@ -21,6 +21,14 @@ The professor requested lateral clearance between a cyclist and a passing car as
 
 We processed **three 30-second Colonial clips**: 90 seconds of unique footage, with two detector settings. All six tasks succeeded in HiPerGator job **50509198**; report job **50509199** completed. The earlier job 50504800 failed during extraction and produced no usable analysis.
 
+The later CPU-only reanalysis reused those saved trajectories and completed 6/6
+tasks. It produced 47 repeated diagnostic interaction rows across detector and
+smoothing variants: 14 + 14 + 0 + 0 + 9 + 10 by task. These are not 47
+different encounters or 47 near misses. The review table contains 19 candidate
+rows after the report's duplicate/scenario filtering. The strict calibration
+support requirement produced zero eligible baseline pairs; the other rows use
+explicitly labeled exploratory plane transfer.
+
 The pilot compared 12 scenarios per detector using:
 
 - Lateral gap between assumed object envelopes, minimum separation and a projected box-edge diagnostic.
@@ -38,6 +46,25 @@ The pilot compared 12 scenarios per detector using:
 | Sole zero-clearance/TTC/PET alarm | Sensitive-detector vehicle track 21 was a box on the cyclist’s front wheel, not a separate car. Exclude this specific false detection. |
 
 This was sampled frame review, not exhaustive safety adjudication. **Do not interpret these findings as proof that the footage contains no near misses.**
+
+### Plain-language definition used here
+
+In this project, a **near miss is not simply an automatic distance below 1
+metre**. A candidate must first be a real cyclist and a real motor vehicle,
+with continuous tracks, the correct same-direction passing relationship, no
+barrier or obvious occlusion problem, and a usable road-plane geometry. Only
+then can we calculate a minimum lateral edge-to-edge clearance. TTC and PET are
+secondary screening measures: TTC projects the two assumed moving footprints
+forward to see whether they would overlap, while PET measures the time between
+two assumed footprints occupying the same small road-space cell. A low TTC/PET
+or low clearance is a flag for review, not a confirmed near miss.
+
+The current automatic calculation uses assumed rectangles centered on projected
+detector bottom-centers. It does not see or measure the actual tire/body edges.
+The existing lateral calibration does not cover the cyclist positions, so the
+meter values cannot currently be treated as physical measurements. That is why
+the HTML review page was useful for deciding whether tracks represented real
+objects and passes, but it could not produce a trustworthy clearance number.
 
 ## 3. Earlier manual speeds used as a baseline
 
@@ -63,10 +90,50 @@ The new local-fit mean is about 10.32 mph versus manual 10.71 mph. Automatic obs
 
 The raw output has 47 interaction rows across methods/detectors, not 47 independent encounters. All use exploratory support transfer. The separately filtered export excludes the wheel false detection and retains 46 **unverified diagnostic rows**. No physical gap, legal passing-distance compliance, population false-alarm rate or 48-hour event rate is established. The unsourced “84% false alarms” note is not a result of this pilot.
 
+### Why Colonial was used
+
+Colonial was a deliberately small, bounded pilot, not the only available video.
+It was chosen because it had three existing manual cyclist annotations, short
+clips already extracted, a saved calibration, and two visibly reviewable car
+passes. That made it the cheapest place to test whether the tracking and
+clearance logic worked before spending GPU time on more footage.
+
+There are many other videos. The same-video speed comparison used 18 selected
+clips across nine cameras: Aloma, Carroll, Colonial, Columbia, Edgewater, Lee,
+Pleasant Hill, Rinehart/CST and University. The broader completed run also
+processed Baxter, Daniels, West Orange/Park and Winter Park; the inventory
+contains 1,919 files across 41 cameras. Those locations are not missing jobs.
+They were not used for this clearance pilot because they did not have the same
+combination of manually annotated cyclist windows and reviewed passing events.
+The available files can support a larger clearance sample later, but each site
+needs its own camera/facility geometry and visual event review.
+
+### What the actual problem is
+
+We are not currently unable to find cars or cyclist encounters. We found two
+real passing events in the Colonial sample. The problem is that the video and
+saved calibration do not establish the physical lateral scale and visible
+object edges needed to convert those passes into defensible metres. The
+automatic detector also created one false car on a bicycle wheel. Therefore the
+current result is “two reviewed passes, zero confirmed near misses, and no
+validated clearance measurements,” not “there were no near misses.” More clips
+or more smoothing cannot solve that geometry problem by themselves.
+
+The manual image-space annotation is now complete in
+[clearance_edge_annotations_completed.csv](clearance_edge_annotations_completed.csv).
+It contains six usable frames from the two real passes and three comparison
+frames correctly marked unusable because no car was present. The white-SUV pass
+has annotated horizontal image gaps of **6, 25 and 54 pixels**; the dark-car
+pass has **109, 20 and 63 pixels**. These values document the selected frames
+only. They are not metres, not perpendicular road-plane clearance, and not a
+continuous minimum-gap estimate. Perspective and the camera viewing angle make
+direct comparison of pixels across frames unsafe.
+
 ## 5. Files to use
 
 - [Final short summary](reports/clearance_pilot/final_review_20261109/START_HERE.md).
 - [Illustrated review: short videos and marked frames](reports/clearance_pilot/final_review_20261109/review.html).
+- [Interactive edge annotation tool](reports/clearance_pilot/final_review_20261109/clearance_edge_annotation_tool.html).
 - [Professor-ready paragraph](reports/clearance_pilot/final_review_20261109/PROFESSOR_SUMMARY.txt).
 - [Speed comparisons](reports/clearance_pilot/final_review_20261109/speed_baseline_comparison.csv), [reviewed encounters](reports/clearance_pilot/final_review_20261109/reviewed_encounters.csv), and [distance evidence register](reports/clearance_pilot/final_review_20261109/distance_evidence_register.csv).
 - [Original returned clearance results](reports/cluster_returns/20261109/CLEARANCE_PILOT_20261109_175030_116203/RESULTS.md).
@@ -75,7 +142,12 @@ The raw output has 47 interaction rows across methods/detectors, not 47 independ
 
 ## 6. Continuing the work
 
-The current-file review is finished. More detector sweeps, larger videos or smoothing variations will not independently establish the missing metric geometry. Physical clearance requires defensible lateral calibration and object-edge/contact positions. Do not substitute nominal lane widths, assumed car dimensions or workbook speed averages as measured truth.
+The current-file review is finished; the HTML file is an evidence viewer, not a
+task that needs to be reviewed again. More detector sweeps, larger videos or
+smoothing variations will not independently establish the missing metric
+geometry. Physical clearance requires defensible lateral calibration and
+object-edge/contact positions. Do not substitute nominal lane widths, assumed
+car dimensions or workbook speed averages as measured truth.
 
 Rithika prefers autonomous follow-through, short explanations and no repeated requests to proceed. Use existing files first; she currently does not want emails to MetroPlan. Keep video experiments at 15 minutes maximum, preferably much shorter. Preserve original workbooks, annotations and returned evidence.
 
