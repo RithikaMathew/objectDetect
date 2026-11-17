@@ -1,0 +1,10 @@
+{
+  "protocol": "reviewed_pilot_v1",
+  "image_horizontal_gap_px": null,
+  "ttc_s": null,
+  "pet_s": null,
+  "physical_clearance_m": null,
+  "sensitivity_ttc_s": [0.25, 0.375, 0.5],
+  "sensitivity_pet_s": [0.25, 0.5, 1.0],
+  "policy": "No adopted numerical safety cutoff. Sensitivity settings are engineering examples only, not validated research thresholds. Historical assumed-plane diagnostics cannot trigger supported metric screening. Visual evidence retains reviewed candidates."
+}

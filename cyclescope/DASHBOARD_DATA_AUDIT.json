@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "scope": "Matches saved source files; not an independent re-audit of remote video or study truth",
+  "archive_groups": 179,
+  "videos": 9085,
+  "playback_hours": 9057.33588141,
+  "mapped_study_sessions": 41,
+  "study_bicycles": 5053,
+  "speed_comparisons": 9,
+  "reference_locations": 14,
+  "source_manifest": [
+    {
+      "path": "vision3/best/test_colonial/exp_results/speed_reference_readiness_20261023/all_reference_records.csv",
+      "sha256": "9e9b04374bb009491c88e46aca847eb49a29a6e1ed1d91557f57e32b5e8b77f4"
+    },
+    {
+      "path": "Bike Lane Study Counts/ground_truth_bicycle_counts_v2.csv",
+      "sha256": "81966d321960b3ca5699c2012fbb138f2f919d217d862a254ecf31a1c728565f"
+    },
+    {
+      "path": "reports/cluster_returns/20261028/full_archive_inventory/camera_years_hours.csv",
+      "sha256": "7f8308ca0f8ada86e5294dac08b7f745032199b0ef9c2f276e4f88c664782d6c"
+    },
+    {
+      "path": "data/video_site_mapping.csv",
+      "sha256": "2bc490876eaa78f50511e837d77a042eff12bc748e596a592dba69ddbbca55f4"
+    },
+    {
+      "path": "manual/analysis/recording_durations.csv",
+      "sha256": "3f4879db8215fd44ae71d4a76152c861eb3f7c3cce3d632de16f0aeb61670a8c"
+    },
+    {
+      "path": "manual/analysis/same_video_comparison.csv",
+      "sha256": "59a15363b2f10d9267347eacdf99e3e99828465fd922295dcba9c317c7c87b88"
+    },
+    {
+      "path": "data/all_videos.txt",
+      "sha256": "d6c6a53dd758137bc0732402c5bc0ecf24253231e141d3e1bf9d58546b878397"
+    }
+  ]
+}

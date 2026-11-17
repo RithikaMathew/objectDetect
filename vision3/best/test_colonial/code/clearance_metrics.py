@@ -294,3 +294,64 @@ def scenarios():
     for motion in ('kalman','rts'):
         yield motion,{**baseline,'motion':motion}
         yield motion+'_transfer',{**baseline,'motion':motion,'strict':False}
+
+
+def diagnose_pair(c, v, vehicle_kind, axis, window=.5, subject_kind='cyclist'):
+    """Explain all gates without treating learned-plane geometry as physical truth.
+
+    This deliberately runs before support/alongside rejection. Image diagnostics
+    survive metric ineligibility. Frames are one-based; no coast interpolation.
+    """
+    cm, vm = local_motion(c, window), local_motion(v, window)
+    raw_c, raw_v = {r['frame']: r for r in c}, {r['frame']: r for r in v}
+    basis = np.column_stack((axis, [-axis[1], axis[0]]))
+    half = (np.array(dimensions(subject_kind, .8)) + dimensions(vehicle_kind, .8))/2
+    rows = []
+    for frame in sorted(raw_c.keys() | raw_v.keys()):
+        a, b = raw_c.get(frame), raw_v.get(frame)
+        reasons = []
+        row = dict(frame=frame, t=(a or b)['t'], subject_present=a is not None,
+                   vehicle_present=b is not None, coordinate_status='learned_plane_unvalidated')
+        if a is None or b is None:
+            reasons.append('not_enough_track_overlap')
+        else:
+            for prefix, item in (('subject', a), ('vehicle', b)):
+                row.update({prefix+'_x_px': item['pixel'][0], prefix+'_y_px': item['pixel'][1],
+                            prefix+'_box_w_px': item['box_w'], prefix+'_box_h_px': item['box_h'],
+                            prefix+'_inside_support': bool(item['inside']),
+                            prefix+'_projected_x_unvalidated': item['xy'][0],
+                            prefix+'_projected_y_unvalidated': item['xy'][1]})
+            row['bottom_center_distance_px'] = float(np.linalg.norm(b['pixel']-a['pixel']))
+            row['horizontal_box_gap_px'] = max(0., abs(b['pixel'][0]-a['pixel'][0])-(a['box_w']+b['box_w'])/2)
+            if not (a['inside'] and b['inside']): reasons.append('outside_calibration_support')
+            if frame not in cm or frame not in vm:
+                reasons.append('insufficient_local_motion_samples')
+            else:
+                aa, bb = cm[frame], vm[frame]
+                rel = (bb['xy']-aa['xy']) @ basis
+                cv, vv = aa['velocity'] @ basis, bb['velocity'] @ basis
+                alongside = abs(rel[0]) <= half[0]
+                same = bool(cv[0]*vv[0] > 0 and abs(cv[0]) > .5 and abs(vv[0]) > .5)
+                row.update(s_relative_unvalidated=rel[0], l_relative_unvalidated=rel[1],
+                    alongside=bool(alongside), same_direction=same,
+                    subject_velocity_x_unvalidated=aa['velocity'][0],subject_velocity_y_unvalidated=aa['velocity'][1],
+                    vehicle_velocity_x_unvalidated=bb['velocity'][0],vehicle_velocity_y_unvalidated=bb['velocity'][1],
+                    predicted_collision_course_assumed_footprints=collision_ttc(rel,(bb['velocity']-aa['velocity'])@basis,half) is not None)
+                if not alongside: reasons.append('failed_alongside_gate_assumed_bottom_center_footprints')
+                if not same: reasons.append('failed_direction_gate')
+            reasons.extend(['not_calibrated_lateral_scale','unreliable_physical_footprint'])
+        row['rejection_reasons'] = '|'.join(reasons)
+        rows.append(row)
+    common = [r for r in rows if r['subject_present'] and r['vehicle_present']]
+    summary = dict(subject_samples=len(c), vehicle_samples=len(v), simultaneous_samples=len(common),
+        supported_samples=sum(r.get('subject_inside_support',False) and r.get('vehicle_inside_support',False) for r in common),
+        alongside_samples=sum(r.get('alongside',False) for r in common),
+        same_direction_samples=sum(r.get('same_direction',False) for r in common),
+        rejection_reasons='|'.join(sorted({s for r in common for s in r['rejection_reasons'].split('|')})) if common else 'not_enough_track_overlap')
+    fitted = [r for r in common if 's_relative_unvalidated' in r]
+    summary.update(alongside_limit_unvalidated=half[0],
+        min_s_relative_unvalidated=min((r['s_relative_unvalidated'] for r in fitted), default=None),
+        max_s_relative_unvalidated=max((r['s_relative_unvalidated'] for r in fitted), default=None),
+        min_l_relative_unvalidated=min((r['l_relative_unvalidated'] for r in fitted), default=None),
+        max_l_relative_unvalidated=max((r['l_relative_unvalidated'] for r in fitted), default=None))
+    return summary, rows

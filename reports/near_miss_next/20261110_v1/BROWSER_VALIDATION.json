@@ -1,0 +1,17 @@
+{
+  "offline": true,
+  "tests": [
+    "self-contained offline MP4 decodes and initial source frame matches",
+    "±1 steps every decoded frame, including frames without detections",
+    "typed frame seek, overlay toggles, cursor zoom and reset",
+    "new frame edge annotation, existing six preserved, JSON download and import round trip",
+    "reviewed 3-event CSV download uses current annotations",
+    "annotation CSV and validation-summary JSON downloads",
+    "physical-zone polygon and independent occupancy capture; PET interval only after both supports; unsupported boundary restores N/A",
+    "embedded video play/pause advances frame-relative PTS",
+    "zero browser JavaScript errors and zero HTTP/network requests offline"
+  ],
+  "temp_directory": "/var/folders/7s/gt6p8xjd3hd_vxt2c2xv71d40000gs/T/near-miss-browser-LMmcor",
+  "status": "passed",
+  "browser": "157.0.8103.50"
+}

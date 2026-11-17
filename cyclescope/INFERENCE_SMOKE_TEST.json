@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "scope": "Actual local RT-DETR/X-CLIP smoke test; not full-video counts or speed accuracy validation",
+  "frames": 36,
+  "device": "cpu",
+  "runtime_s": 411.1,
+  "imported_tracks": 4,
+  "final_counts": {
+    "bicyclists": 0,
+    "pedestrians": 0,
+    "vehicles": 2
+  },
+  "pipeline": "vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py",
+  "chunk_index": 1,
+  "objc_duplicate_warning": false,
+  "weights_sha256": "eeaf2553a7b66c7e0c2f1f189c0b036ef41d9fa3502b1a3b45703d47ce0faaff"
+}

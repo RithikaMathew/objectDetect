@@ -1,0 +1,52 @@
+# Methods, eligibility and thresholds
+
+Implementation: `pipeline/near_miss_next.py` (`make_events`, `pts_for`, `conditional_sensitivity`, `reviewed_pet`, `comparisons`, `sweeps`); offline calculations: `pipeline/near_miss_validation_engine.js` (`pet`, `edgeMinimum`, `reviewedEvents`). Rendering/annotation: `pipeline/near_miss_validation_viewer.html`. Original path audit and exact existing code/config lines are preserved in `thresholds.csv`, `threshold_source_inventory.csv`, `effective_task_configuration.csv` and the prior `reports/near_miss/CODE_PATH_MAP.md`. No original evidence or earlier report was overwritten. New configurable cutoffs live in CONFIG near the top of `pipeline/near_miss_next.py`; `--config` accepts JSON overrides for adopted_ttc_s/adopted_pet_s (seconds), and rejects non-null physical_clearance_m. Exported screening_config.json records effective settings. Values change screen flags only; physical TTC remains ineligible.
+
+## Relative timing and observation coverage
+
+Frame IDs are one-based decoded video frames. `pts_for` reads best_effort_timestamp_time via ffprobe, requires strictly increasing finite values, and subtracts the first timestamp. The analysis window is each cyclist car track's first-to-last observed frame; pedestrian window is the first-to-last manual car frame (1382–1411). Synchronization is exact frame-ID intersection, never nearest-time substitution. Coverage = count / number of decoded frame slots in that window. Categories overlap and are not percentages of verified visibility. A missing run duration includes one median frame interval; before/after outside the window is not counted. PTS intervals >1.5×median are flagged as possible decoded timing gaps (engineering audit, not proof of source frame drops). Original raw recordings are not independently audited. `annotation_alignment_audit.csv` compares old click playback times to selected frame PTS. The old tool used round(time×fps)+1; one car click (saved 1382) lies in decoded frame1381 at its stored playback time. Saved IDs are retained for benchmark reproducibility; this ambiguity is not silently corrected and same-ID proxy comparisons are not certified frame-accurate reference errors.
+
+## Image diagnostics (pixels and seconds)
+
+Selected edge gap = abs(car_edge_x − cyclist_edge_x) at a manually annotated frame. Minimum is over visible annotated frames only. Existing edge records store x only, so viewer vertical rulers do not manufacture y coordinates. Automated proxy distance = Euclidean distance between synchronized detector bottom-centres; boxes are detector envelopes, not measured physical footprints. Relative image velocity is the least-squares slope of (car pixel position − subject pixel position) against PTS over synchronized samples in the analysis window. Its magnitude is px/s. Along-image-axis relative speed is its signed dot product with the subject endpoint-displacement unit vector, also px/s, not a perspective-correct road speed. The closest proxy frame minimizes observed synchronized proxy distance; no metric extrapolation is used for that result.
+
+## Occupancy-based PET, requiring no surveyed dimensions
+
+One reviewer-defined image polygon must identify a shared **physical** road-space region, with reviewer name, explicit physical-identity confirmation and justification. No detector overlap/grid substitutes for that confirmation. A pedestrian last-occupied frame creates an exit bracket from that frame to the next frame; a car first-occupied frame creates an entry bracket from the previous frame to that frame. Each bracket needs independent support: check neighboring frames or give explicit bounded-occlusion evidence and notes. Drawing the polygon alone produces N/A.
+
+For exit interval [pL,pH] and entry interval [cL,cH], signed difference interval = [cL−pH, cH−pL]. Nonnegative intervals are provisional reviewer-supported PET intervals, in seconds; no point estimate is invented. If wholly negative, label temporal overlap; if spanning zero, label uncertain order and leave conventional positive PET N/A. If a user selects a single boundary frame, expand by half the median frame interval on either side to retain quantization. Zero is not a missing-value placeholder. `coverage_fraction` is never an input to this formula. A real PET could coincidentally have the same numerical value as coverage; the test verifies provenance/formula independence, not a forbidden floating-point equality.
+
+No existing annotations identify the conflict zone or entry/exit occupancy boundaries. Thus original-data PET remains N/A. The older shared learned-grid PET method is not used for new PET exports or screens.
+
+## Conditional TTC and alongside assumptions
+
+The historical saved benchmark (0.371803710 s, rounded 0.371804) remains distinct from the new PTS-based conditional recomputation. Reuse saved H only for this historical model/sensitivity comparison; no new calibration or survey is required to run video diagnostics. Manual car clicks are projected using the saved unvalidated map, a constant-velocity trajectory is fitted, pedestrian velocities use synchronized observed positions, and fixed road-axis rectangles are swept continuously for common future occupancy up to 5 s (`clearance_metrics.collision_ttc`). Assumed pedestrian/car dimensions are 0.7×0.6 / 4.5×1.8 learned units. Geometry/scale/physical footprint validity is unverified; the result cannot screen as an eligible physical TTC. Image-space TTC is N/A because no validated alternative projective collision model is available. Generic pixel distance / mph is never used.
+
+Cyclist gate: absolute along-axis offset <= (1.8+4.5)/2 = 3.15 learned units. Saved bottom-centre footprints never reach this interval for either known pass. These overlays illustrate assumptions, not ground truth. Direction evidence and visual passes survive metric failure. Parallel passing has no supported TTC/PET collision-course model here. Physical clearance_m remains null regardless of annotations/screens.
+
+## Sensitivity and screening
+
+New PTS-based TTC sensitivity uses 14 one-factor settings × five reconstruction methods: car click x/y ±3 px, boundary timing ±1 median frame, dimensions 0.8/1.2, lateral mapping 0.8/1.2, acceleration ±2 learned units/s² for CV only, first-half car fit, and baseline. These perturbations are engineering choices, not empirically calibrated error bars. Unsupported methods remain N/A. Old 16-scenario results remain unchanged in `reports/near_miss/`. Selected horizontal edge gap worst-case range uses each of two x positions ±3 px (gap ±6 px, floor at zero). Reviewed PET uses occupancy brackets; optional expansion of both times ±1 frame changes gap bounds by ±2 frame intervals. Missing/uncertain ordering is retained.
+
+Default adopted numerical cutoffs are **unset**, and metre thresholds disabled. Effective settings, including any explicit --config or saved-JSON overrides, are recorded in screening_config.json. Optional literature-context settings TTC 1.5 s / PET 5.0 s are proposed only for transparent exploratory comparison when metrics become eligible; they are vehicle-simulation defaults, not validated pedestrian/cyclist criteria. Sweeps use strict `<` and report separately: 3 unique events, eligible metric denominator, conditional metric denominator, and guaranteed/possible interval flags. Cited SSAM applications use their own logic (including <=), which is not silently reproduced as a local adjudication rule. Screens never alter two `indeterminate` labels or the pedestrian `potential_conflict`. No validated confirmed-under-protocol rule exists.
+
+## Primary references verified 2026-11-10
+
+- [FHWA-HRT-08-051, Chapter 2 (June 2008)](https://www.fhwa.dot.gov/publications/research/safety/08051/02.cfm): describes SSAM vehicle-to-vehicle simulation conflict analysis and a configurable 1.5-second TTC default.
+- [FHWA-HRT-10-038, Chapter 3 (October 2010)](https://www.fhwa.dot.gov/publications/research/safety/10038/003.cfm): its SSAM simulation application uses TTC <=1.5 s and PET <=5.0 s. This context does not validate either value for these video events.
+
+Existing hard-coded legacy 1 m / 1 s screens and prior 0.5/1/1.5 learned-clearance sweeps are documented in preserved source inventories; they remain historical and are not adopted. A close visual event, short conditional TTC, or fraction of sensitivity settings below threshold is not a collision/near-miss probability.
+
+## New code settings and exact source locations
+
+| setting | source | status |
+|---|---|---|
+| Default screening thresholds null; optional SSAM-context TTC 1.5 s / PET 5 s, no metre threshold | pipeline/near_miss_next.py:29 | new diagnostic/configuration assumption; not validated safety ground truth |
+| Source dimensions must be 720x480 to match stored annotation coordinates | pipeline/near_miss_next.py:34 | new diagnostic/configuration assumption; not validated safety ground truth |
+| Decoded PTS gap audit >1.5 median interval; not a safety screen | pipeline/near_miss_next.py:171 | new diagnostic/configuration assumption; not validated safety ground truth |
+| 14 assumption settings: ±3 px clicks, ±1 frame timing, .8/1.2 footprint/lateral scale, ±2 learned-unit acceleration, first-half fit | pipeline/near_miss_next.py:181 | new diagnostic/configuration assumption; not validated safety ground truth |
+| PET requires reviewer, nondegenerate shared-zone polygon, physical identity justification, supported boundary brackets | pipeline/near_miss_next.py:57 | new diagnostic/configuration assumption; not validated safety ground truth |
+| Single-frame occupancy boundaries expanded by half median PTS interval | pipeline/near_miss_validation_engine.js:18 | new diagnostic/configuration assumption; not validated safety ground truth |
+| Polygon shoelace magnitude >1 (area >0.5 px²); numerical degeneracy check only | pipeline/near_miss_validation_engine.js:5 | new diagnostic/configuration assumption; not validated safety ground truth |
+| Seek +min(0.001 s, 0.1 frame interval) inside intended frame; overlay uses original frame PTS | pipeline/near_miss_validation_viewer.html:77 | new diagnostic/configuration assumption; not validated safety ground truth |
+| Playback frame lookup tolerance 1e-6 s; not a metric threshold | pipeline/near_miss_validation_viewer.html:78 | new diagnostic/configuration assumption; not validated safety ground truth |

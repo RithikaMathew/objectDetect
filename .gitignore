@@ -73,3 +73,8 @@ logs/.scale_*.lock
 *.tmp
 *.swp
 *.swo
+
+# CycleScope local dependencies, builds and uploaded review jobs
+node_modules/
+cyclescope/frontend/dist/
+cyclescope/data/jobs/

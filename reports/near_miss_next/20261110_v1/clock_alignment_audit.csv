@@ -1,0 +1,4 @@
+burned_in_source_clock_visual,event_id,frame,nominal_clip_s,nominal_source_time,raw_csv_clock_basis,status
+2019-07-10 12:40:23,white_suv,391,,2019-07-10 12:40:21.013,,absolute_alignment_unresolved
+2019-07-10 12:53:54,dark_car,445,,2019-07-10 12:53:52.815,,absolute_alignment_unresolved
+2019-07-10 17:08:49,pedestrian_car,1405,46.84684684684685,2019-07-10 17:08:46.847,12:08 from saved run log; inconsistent with source hour,absolute_alignment_unresolved; camera label second-resolution; no automatic correction applied

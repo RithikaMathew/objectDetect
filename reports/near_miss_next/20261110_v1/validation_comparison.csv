@@ -1,0 +1,19 @@
+automatic_frame,automatic_value_px,capture_playback_frame_delta,capture_playback_time_s,comparison,difference_px,event_id,frame_difference,independent_reference,interpretation,manual_frame,manual_value_px,reviewer_supplied,source,time_difference_s
+391,0,,,manual_horizontal_edges_vs_detector_box_gap,-6.0,white_suv,0,False,Different spatial proxies; difference is not measurement accuracy or physical-clearance error,391,6.0,,clearance_edge_annotations_completed.csv,0.0
+400,0,,,manual_horizontal_edges_vs_detector_box_gap,-25.0,white_suv,0,False,Different spatial proxies; difference is not measurement accuracy or physical-clearance error,400,25.0,,clearance_edge_annotations_completed.csv,0.0
+,,,,manual_horizontal_edges_vs_detector_box_gap,,white_suv,,False,No simultaneous automatic vehicle point; do not substitute nearby frame,409,54.0,,clearance_edge_annotations_completed.csv,
+433,33.18164672851563,,,manual_horizontal_edges_vs_detector_box_gap,-75.81835327148437,dark_car,0,False,Different spatial proxies; difference is not measurement accuracy or physical-clearance error,433,109.0,,clearance_edge_annotations_completed.csv,0.0
+445,0,,,manual_horizontal_edges_vs_detector_box_gap,-20.0,dark_car,0,False,Different spatial proxies; difference is not measurement accuracy or physical-clearance error,445,20.0,,clearance_edge_annotations_completed.csv,0.0
+451,0,,,manual_horizontal_edges_vs_detector_box_gap,-63.0,dark_car,0,False,Different spatial proxies; difference is not measurement accuracy or physical-clearance error,451,63.0,,clearance_edge_annotations_completed.csv,0.0
+1387,,0,46.250989,manual_car_contact_proxy_vs_sensitive_car68_bottom_center,37.60853698967244,pedestrian_car,0,False,"Different contact proxies, not independently validated accuracy",1387,,,manual_occlusion_points.csv,0.0
+,,0,46.384453,manual_car_contact_proxy_vs_sensitive_car68_bottom_center,,pedestrian_car,,False,Automatic car track unavailable at exact manual frame,1391,,,manual_occlusion_points.csv,
+1395,,0,46.517917,manual_car_contact_proxy_vs_sensitive_car68_bottom_center,72.69482156972568,pedestrian_car,0,False,"Different contact proxies, not independently validated accuracy",1395,,,manual_occlusion_points.csv,0.0
+,,0,46.584649,manual_car_contact_proxy_vs_sensitive_car68_bottom_center,,pedestrian_car,,False,Automatic car track unavailable at exact manual frame,1397,,,manual_occlusion_points.csv,
+,,0,46.684747,manual_car_contact_proxy_vs_sensitive_car68_bottom_center,,pedestrian_car,,False,Automatic car track unavailable at exact manual frame,1400,,,manual_occlusion_points.csv,
+,,0,46.784845,manual_car_contact_proxy_vs_sensitive_car68_bottom_center,,pedestrian_car,,False,Automatic car track unavailable at exact manual frame,1403,,,manual_occlusion_points.csv,
+,,0,46.851577,manual_car_contact_proxy_vs_sensitive_car68_bottom_center,,pedestrian_car,,False,Automatic car track unavailable at exact manual frame,1405,,,manual_occlusion_points.csv,
+,,0,46.951675,manual_car_contact_proxy_vs_sensitive_car68_bottom_center,,pedestrian_car,,False,Automatic car track unavailable at exact manual frame,1408,,,manual_occlusion_points.csv,
+,,0,47.051773,manual_car_contact_proxy_vs_sensitive_car68_bottom_center,,pedestrian_car,,False,Automatic car track unavailable at exact manual frame,1411,,,manual_occlusion_points.csv,
+1382,,-1,46.072939,manual_car_contact_proxy_vs_sensitive_car68_bottom_center,29.139113626812783,pedestrian_car,0,False,"Different contact proxies, not independently validated accuracy",1382,,,manual_occlusion_points.csv,0.0
+,,,,pedestrian_exit_manual_vs_automatic,,pedestrian_car,,False,Automatic physical-zone occupancy not established; no frame error can be computed,,,False,review_annotations.json,
+,,,,car_entry_manual_vs_automatic,,pedestrian_car,,False,Automatic physical-zone occupancy not established; no frame error can be computed,,,False,review_annotations.json,

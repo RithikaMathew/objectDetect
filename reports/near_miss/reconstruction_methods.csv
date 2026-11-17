@@ -1,0 +1,6 @@
+assumed_axis_gap_unvalidated_not_crossing_clearance,coverage_fraction,first_common_s,interpretation,last_common_s,method,min_center_distance_unvalidated_learned_units,min_ttc_s,pet_s,samples
+0.5269021285098874,0.29411764705882354,46.07941274607941,exploratory_manual_car_reconstruction_not_validated,47.04704704704705,manual_observed,2.4379839606330815,,,5
+0.5269021285098874,1.0,46.07941274607941,exploratory_manual_car_reconstruction_not_validated,47.04704704704705,linear_interpolation,2.2684137919262644,,,17
+0.8280885072325017,1.0,46.07941274607941,exploratory_manual_car_reconstruction_not_validated,47.04704704704705,constant_velocity,2.4352559410960697,0.3718037100975292,,17
+0.8424736113012965,0.47058823529411764,46.37971304637971,exploratory_manual_car_reconstruction_not_validated,47.04704704704705,kalman,2.6125640409271904,,,8
+0.8424736113012965,0.47058823529411764,46.37971304637971,exploratory_manual_car_reconstruction_not_validated,47.04704704704705,rts,2.438911983192624,,,8

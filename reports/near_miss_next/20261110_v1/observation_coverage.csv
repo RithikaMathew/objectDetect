@@ -1,0 +1,4 @@
+car_missing_spans,counts_are_overlapping_not_mutually_exclusive,denominator,event_id,subject_missing_spans,window_first_frame,window_last_frame
+"[{""first_frame"": 407, ""last_frame"": 409, ""missing_frames"": 3, ""duration_s"": 0.10009999999999764}]",True,61,white_suv,[],351,411
+[],True,98,dark_car,[],356,453
+"[{""first_frame"": 1391, ""last_frame"": 1392, ""missing_frames"": 2, ""duration_s"": 0.06673299999999927}, {""first_frame"": 1396, ""last_frame"": 1411, ""missing_frames"": 16, ""duration_s"": 0.5338669999999937}]",True,30,pedestrian_car,"[{""first_frame"": 1392, ""last_frame"": 1393, ""missing_frames"": 2, ""duration_s"": 0.06673399999999674}, {""first_frame"": 1395, ""last_frame"": 1405, ""missing_frames"": 11, ""duration_s"": 0.36703399999999675}]",1382,1411

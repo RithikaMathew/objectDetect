@@ -36,7 +36,8 @@ def finite(value):
     return value is not None and np.isfinite(float(value))
 
 
-def manual_samples(rows, H, fps):
+def manual_samples(rows, H, fps, timestamp_mode="frame_aligned"):
+    """Use one-based frame time; retain click playback time only for audit."""
     points = []
     for row in rows:
         if row.get("object") != "car":
@@ -44,7 +45,9 @@ def manual_samples(rows, H, fps):
         pixel = np.array([float(row["x_px"]), float(row["y_px"])])
         points.append(dict(
             frame=int(row["frame"]),
-            t=float(row["clip_seconds"]),
+            t=(int(row["frame"])-1)/fps if timestamp_mode == "frame_aligned" else float(row["clip_seconds"]),
+            click_time_s=float(row["clip_seconds"]),
+            observation_status="manual_observed_contact_proxy_visibility_unverified",
             pixel=pixel,
             xy=project(H, [pixel])[0],
             inside=False,
@@ -100,7 +103,10 @@ def interpolate_method(manual, frames, mode):
     for frame, t, xx, yy, keep in zip(frames, target, x, y, mask):
         if not keep:
             continue
-        result.append({**frame, "xy": np.array([xx, yy]), "pixel": np.array([np.nan, np.nan]), "inside": False})
+        result.append({**frame, "xy": np.array([xx, yy]), "pixel": np.array([np.nan, np.nan]), "inside": False,
+                       "observation_status": ("interpolated" if mode == "linear" else
+                           "interpolated_constant_velocity_model_through_occlusion" if mt.min() <= t <= mt.max() else
+                           "extrapolated_through_occlusion_model_fit")})
     return with_velocity(result)
 
 
@@ -117,7 +123,10 @@ def filtered_method(manual, frames, rts):
     y = np.interp(target, known_t, known_y)
     result = []
     for frame, xx, yy in zip(frames, x, y):
-        result.append({**frame, "xy": np.array([xx, yy]), "pixel": np.array([np.nan, np.nan]), "inside": False})
+        if not known_t.min() <= frame["t"] <= known_t.max():
+            continue  # np.interp otherwise clamps an unobserved endpoint to a stationary car
+        result.append({**frame, "xy": np.array([xx, yy]), "pixel": np.array([np.nan, np.nan]), "inside": False,
+                       "observation_status": "interpolated_filtered"})
     return with_velocity(result)
 
 
@@ -131,7 +140,7 @@ def observed_method(manual, frames):
     return with_velocity(result)
 
 
-def metrics_for(subject, car, axis, method):
+def metrics_for(subject, car, axis, method, dimension_scale=1., cell=.5, horizon=5.):
     by_subject = {item["frame"]: item for item in subject}
     by_car = {item["frame"]: item for item in car}
     common = sorted(by_subject.keys() & by_car.keys())
@@ -139,8 +148,8 @@ def metrics_for(subject, car, axis, method):
         return dict(method=method, samples=len(common), min_center_distance_m="", min_lateral_gap_m="",
                     min_ttc_s="", pet_s="", coverage_fraction=0., interpretation="insufficient_common_samples")
     basis = np.column_stack((axis, [-axis[1], axis[0]]))
-    subject_dims = dimensions("pedestrian", .6)
-    car_dims = dimensions("car", .8)
+    subject_dims = np.array(dimensions("pedestrian", .6))*dimension_scale
+    car_dims = np.array(dimensions("car", .8))*dimension_scale
     half = (np.array(subject_dims) + car_dims) / 2
     sample_rows = []
     for frame in common:
@@ -156,11 +165,11 @@ def metrics_for(subject, car, axis, method):
             relative_velocity=relative_velocity,
             center_distance=float(np.linalg.norm(relative)),
             lateral_gap=lateral_gap,
-            ttc=collision_ttc(relative, relative_velocity, half),
+            ttc=collision_ttc(relative, relative_velocity, half, horizon=horizon),
         ))
     subject_dict = {item["frame"]: item for item in subject if item["frame"] in common}
     car_dict = {item["frame"]: item for item in car if item["frame"] in common}
-    pet = pet_cells(subject_dict, car_dict, (subject_dims, car_dims), basis)
+    pet = pet_cells(subject_dict, car_dict, (subject_dims, car_dims), basis, cell=cell)
     ttcs = [row["ttc"] for row in sample_rows if row["ttc"] is not None]
     gaps = [row["lateral_gap"] for row in sample_rows if row["lateral_gap"] is not None]
     return dict(
@@ -177,14 +186,14 @@ def metrics_for(subject, car, axis, method):
     )
 
 
-def run(batch, task_name, annotations, out):
+def run(batch, task_name, annotations, out, timestamp_mode="frame_aligned"):
     batch = Path(batch).resolve(); out = Path(out).resolve(); out.mkdir(parents=True, exist_ok=True)
     task = batch / task_name
     log = json.loads((task / "run_log.json").read_text())
     geometry = json.loads((task / "geometry.json").read_text())
     H = np.asarray(geometry["H"], dtype=float)
     rows = read_rows(annotations)
-    manual = manual_samples(rows, H, float(log["fps"]))
+    manual = manual_samples(rows, H, float(log["fps"]), timestamp_mode)
     labels = {row["track_id"]: row for row in read_rows(task / "tracks_csv.csv")}
     paths = prepare(read_rows(task / "trajectories_csv.csv") + read_rows(task / "vehicle_trajectories_csv.csv"),
                     H, np.asarray(geometry["hull"], dtype=np.float32), float(log["fps"]), labels)
@@ -227,8 +236,9 @@ def main():
     parser.add_argument("--task", default="colonial_1708_pedestrian_car_reference")
     parser.add_argument("--annotations", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--timestamp-mode", choices=("frame_aligned", "historical_click_time"), default="frame_aligned")
     args = parser.parse_args()
-    run(args.batch, args.task, args.annotations, args.out)
+    run(args.batch, args.task, args.annotations, args.out, args.timestamp_mode)
 
 
 if __name__ == "__main__":

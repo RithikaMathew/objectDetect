@@ -1,0 +1,10 @@
+{
+  "download_confirmed": "2026-11-16",
+  "remote_user": "rmathew1",
+  "remote_path": "/orange/xiangyan/rithika/vision/vision3/best/test_colonial/exp_results/ADAPTIVE_SPEED_manualmatch_20261026_233356/s03_colonial_north/calibration/calibration.json",
+  "sha256": "780d812dd3b732a3fdd9515fbab320d8e0b540221918b6d3872f2b4a8aea8135",
+  "validation": "learned_scale_not_independently_speed_validated",
+  "sidewalk_transfer": "unverified_road_sidewalk_height_difference",
+  "automatic_app_import": false,
+  "notes": "Contains H and support hull, but no image dimensions or measured landmark correspondences. Match camera/resolution and inspect originating run before use."
+}

@@ -1,0 +1,11 @@
+automatic_same_frame,frame,manual_x_px,manual_y_px,nearest_auto_frame,nearest_auto_time_offset_s,same_frame_point_difference_px,status
+True,1382,310.0,72.0,1382,0.0,29.139113626812783,comparable_contact_proxies_only
+True,1387,362.0,84.0,1387,0.0,37.60853698967244,comparable_contact_proxies_only
+False,1391,452.0,115.0,1390,-0.03336670003336195,,no_synchronized_car68_point_do_not_compare_different_times
+True,1395,522.0,140.0,1395,0.0,72.69482156972568,comparable_contact_proxies_only
+False,1397,521.0,148.0,1395,-0.06673340006673101,,no_synchronized_car68_point_do_not_compare_different_times
+False,1400,526.0,148.0,1395,-0.16683350016683107,,no_synchronized_car68_point_do_not_compare_different_times
+False,1403,532.0,150.0,1395,-0.26693360026693114,,no_synchronized_car68_point_do_not_compare_different_times
+False,1405,550.0,155.0,1395,-0.33366700033366925,,no_synchronized_car68_point_do_not_compare_different_times
+False,1408,612.0,178.0,1395,-0.4337671004337693,,no_synchronized_car68_point_do_not_compare_different_times
+False,1411,677.0,213.0,1395,-0.5338672005338694,,no_synchronized_car68_point_do_not_compare_different_times

@@ -334,7 +334,7 @@ def write_event_diagnostic_video(directory, task, offset=46.635, radius=3.):
 
 def analyze(plan,task,directory,log):
     import numpy as np
-    from clearance_metrics import prepare,road_axis,pair_metrics,scenarios
+    from clearance_metrics import prepare,road_axis,pair_metrics,scenarios,diagnose_pair
     out=directory/task['key']
     if checksum(plan['calibration'])!=plan['calibration_sha256']:raise ValueError('Calibration changed since submission')
     cal=json.loads(Path(plan['calibration']).read_text());H=np.asarray(cal['H'],float);hull=np.asarray(cal['hull'],np.float32)
@@ -351,6 +351,16 @@ def analyze(plan,task,directory,log):
         validation=cal.get('validation'),footprints='assumed_dimensions_centered_on_projected_bottom_center'))
     subjects=[k for k in paths if k[0]==subject_kind];vehicles=[k for k in paths if k[0] in vehicle_kinds]
     rows=[];series=[];transfer_series=[];smoother_series=[]
+    rejection_pairs=[];rejection_frames=[]
+    for ck in subjects:
+        for vk in vehicles:
+            summary, frames = diagnose_pair(paths[ck],paths[vk],vk[0],axis,subject_kind=subject_kind)
+            identity=dict(task=task['key'],subject_id=ck[1],vehicle_id=vk[1])
+            rejection_pairs.append({**identity,**summary})
+            rejection_frames.extend({**identity,**r} for r in frames)
+    table(out/'pair_eligibility.csv',rejection_pairs)
+    table(out/'frame_eligibility.csv',rejection_frames,
+          sorted({k for r in rejection_frames for k in r}))
     for name,scenario in scenarios():
         print(task['key'],name,flush=True)
         for ck in subjects:

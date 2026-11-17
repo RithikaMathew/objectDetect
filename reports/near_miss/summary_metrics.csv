@@ -1,0 +1,34 @@
+denominator,metric,reason,value
+3 reviewed interactions,unique_candidate_encounters,2 real cyclist passes + 1 pedestrian crossing; variants collapsed using explicit visual event IDs,3
+3,visually_verified_passes,"Selected pilot, not a population rate",2
+3,visually_reviewed_crossings,Prior review evidence; partly occluded,1
+3,eligible_physical_ttc,Eligibility and units in event_metrics.csv,0
+3,eligible_physical_pet,Eligibility and units in event_metrics.csv,0
+3,image_diagnostic,Eligibility and units in event_metrics.csv,3
+3,calibrated_metre_clearance,Eligibility and units in event_metrics.csv,0
+3,conditional_surrogate_ttc,Eligibility and units in event_metrics.csv,1
+3,reproduced_surrogate_pet,No shared assumed-footprint occupancy cells; historical .294 was coverage,0
+3,potential_conflict,"Pedestrian: prior visible close interaction, no calibrated safety adjudication",1
+3,confirmed_under_defined_protocol,No validated adjudication rule; zero confirmed does not establish no near misses occurred,0
+3,indeterminate,Cyclist passes established; near-miss status indeterminate,2
+1 specifically reviewed wheel alarm,reviewed_false_car_detections,"Track 21 sensitive namespace; selected false-positive regression, not population false-alarm rate",1
+1 reviewed comparison sequence,middle_cyclist_no_pass,Not an event row,1
+6 detector tasks,historical_diagnostic_rows,"Repeated scenarios, not physical events",47
+3,missing_min_clearance_m,not_calibrated: lateral scale unverified; outside support; unreliable physical footprint,2
+3,missing_min_clearance_m,not_calibrated: scale/footprints unverified; crossing is not lateral passing,1
+3,missing_ttc_s,not_applicable: no collision course in assumed-plane model; physical model unvalidated,2
+3,missing_ttc_s,failed_eligibility: surrogate model uses unvalidated mapping and assumed dimensions,1
+3,missing_pet_s,not_observable: no established shared physical conflict region,2
+3,missing_pet_s,failed_eligibility: no shared occupancy cells; historical 0.294 is coverage fraction,1
+3,supported_ttc_s_below_0.25,No eligible physical times; conditional surrogate flags listed separately,0
+1,conditional_surrogate_ttc_s_below_0.25,"Engineering example only, not confirmed near miss",0
+3,supported_ttc_s_below_0.375,No eligible physical times; conditional surrogate flags listed separately,0
+1,conditional_surrogate_ttc_s_below_0.375,"Engineering example only, not confirmed near miss",1
+3,supported_ttc_s_below_0.5,No eligible physical times; conditional surrogate flags listed separately,0
+1,conditional_surrogate_ttc_s_below_0.5,"Engineering example only, not confirmed near miss",1
+3,supported_pet_s_below_0.25,No eligible physical times; conditional surrogate flags listed separately,0
+0,conditional_surrogate_pet_s_below_0.25,"Engineering example only, not confirmed near miss",0
+3,supported_pet_s_below_0.5,No eligible physical times; conditional surrogate flags listed separately,0
+0,conditional_surrogate_pet_s_below_0.5,"Engineering example only, not confirmed near miss",0
+3,supported_pet_s_below_1.0,No eligible physical times; conditional surrogate flags listed separately,0
+0,conditional_surrogate_pet_s_below_1.0,"Engineering example only, not confirmed near miss",0

@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "version": "20261110_v1",
+  "events": [
+    {
+      "event_id": "white_suv",
+      "source_sha256": "c7eeb8df29bfdc1bc081cb67e2a8a6482475fff1eaeeb98f812e3f7d4ee1e50e",
+      "reviewer": "",
+      "notes": "",
+      "evasive_action": "unknown",
+      "edges": [
+        {
+          "frame": 391,
+          "original_frame_zero_based": 390,
+          "original_clip_seconds": 13.013013013013014,
+          "t_s": 13.013,
+          "cyclist_x_px": 178.0,
+          "car_x_px": 172.0,
+          "visibility": "visible",
+          "uncertainty_px": null,
+          "method": "existing_manual_horizontal_x_only",
+          "reviewer": "",
+          "notes": "",
+          "source": "clearance_edge_annotations_completed.csv"
+        },
+        {
+          "frame": 400,
+          "original_frame_zero_based": 399,
+          "original_clip_seconds": 13.313313313313314,
+          "t_s": 13.3133,
+          "cyclist_x_px": 194.0,
+          "car_x_px": 219.0,
+          "visibility": "visible",
+          "uncertainty_px": null,
+          "method": "existing_manual_horizontal_x_only",
+          "reviewer": "",
+          "notes": "",
+          "source": "clearance_edge_annotations_completed.csv"
+        },
+        {
+          "frame": 409,
+          "original_frame_zero_based": 408,
+          "original_clip_seconds": 13.613613613613614,
+          "t_s": 13.6136,
+          "cyclist_x_px": 215.0,
+          "car_x_px": 269.0,
+          "visibility": "visible",
+          "uncertainty_px": null,
+          "method": "existing_manual_horizontal_x_only",
+          "reviewer": "",
+          "notes": "",
+          "source": "clearance_edge_annotations_completed.csv"
+        }
+      ],
+      "zone": {
+        "points": [],
+        "physical_identity_confirmed": false,
+        "justification": ""
+      },
+      "occupancy": {},
+      "footprints": []
+    },
+    {
+      "event_id": "dark_car",
+      "source_sha256": "7bdbe3a21ae26897979f8754f3d398e983dbf4c0ccb5e1e6484519b9d4da5403",
+      "reviewer": "",
+      "notes": "",
+      "evasive_action": "unknown",
+      "edges": [
+        {
+          "frame": 433,
+          "original_frame_zero_based": 432,
+          "original_clip_seconds": 14.414414414414415,
+          "t_s": 14.4144,
+          "cyclist_x_px": 366.0,
+          "car_x_px": 257.0,
+          "visibility": "visible",
+          "uncertainty_px": null,
+          "method": "existing_manual_horizontal_x_only",
+          "reviewer": "",
+          "notes": "",
+          "source": "clearance_edge_annotations_completed.csv"
+        },
+        {
+          "frame": 445,
+          "original_frame_zero_based": 444,
+          "original_clip_seconds": 14.814814814814815,
+          "t_s": 14.8148,
+          "cyclist_x_px": 437.0,
+          "car_x_px": 417.0,
+          "visibility": "visible",
+          "uncertainty_px": null,
+          "method": "existing_manual_horizontal_x_only",
+          "reviewer": "",
+          "notes": "",
+          "source": "clearance_edge_annotations_completed.csv"
+        },
+        {
+          "frame": 451,
+          "original_frame_zero_based": 450,
+          "original_clip_seconds": 15.015015015015015,
+          "t_s": 15.015,
+          "cyclist_x_px": 474.0,
+          "car_x_px": 537.0,
+          "visibility": "visible",
+          "uncertainty_px": null,
+          "method": "existing_manual_horizontal_x_only",
+          "reviewer": "",
+          "notes": "",
+          "source": "clearance_edge_annotations_completed.csv"
+        }
+      ],
+      "zone": {
+        "points": [],
+        "physical_identity_confirmed": false,
+        "justification": ""
+      },
+      "occupancy": {},
+      "footprints": []
+    },
+    {
+      "event_id": "pedestrian_car",
+      "source_sha256": "6b4825bf7cc31cfd29e48c1b937f6f7ad3a0ddc6b8ea5a5ec7c3e96a6497496b",
+      "reviewer": "",
+      "notes": "",
+      "evasive_action": "unknown",
+      "edges": [],
+      "zone": {
+        "points": [],
+        "physical_identity_confirmed": false,
+        "justification": ""
+      },
+      "occupancy": {},
+      "footprints": []
+    }
+  ]
+}

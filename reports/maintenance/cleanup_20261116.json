@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-16",
+  "backup": "/Users/rithika/Desktop/objectDetect-cleanup-backup-20261116",
+  "removed": [
+    {
+      "path": "look.md",
+      "action": "removed",
+      "reason": "Terminal transcript superseded by calibration source.json and current transfer instructions",
+      "sha256": "c6a97dea5056e9701b93d7b3d4f5379e866c3e689e0aafc2c81eb974e04d58da"
+    },
+    {
+      "path": "NEAR_MISS_PIPELINE_FIX_REQUEST.md",
+      "action": "removed",
+      "reason": "Superseded task request; completed implementation and versioned validation preserved",
+      "sha256": "d17fb6b7eeffd20c07549c0ce84a22596a3913b970eba08704440cbb03640ffe"
+    },
+    {
+      "path": "NEXT_STEPS_NEAR_MISS_AGENT.md",
+      "action": "removed",
+      "reason": "Superseded task request; current next steps in HANDOFF and versioned run/review guide",
+      "sha256": "3c39c688f4d59fe1905a86bd45c8826f425d0cf32d6bdc3c1a196635b0f41636"
+    },
+    {
+      "path": "cyclescope/HIPERGATOR_WEIGHTS.md",
+      "action": "removed",
+      "reason": "Consolidated into HIPERGATOR_NEXT_STEPS.md",
+      "sha256": "51280e8d05d6db0b1af44d7752431b4343bbd453c0efbc72a973b593164aa9c5"
+    },
+    {
+      "path": "package-lock.json",
+      "action": "removed",
+      "reason": "Empty accidental root npm lockfile; actual frontend lockfile retained",
+      "sha256": "3a80fb23ead31f0e7a8023f6a70bd65dcf8b4185c03779bbde1a6cd78de26b10"
+    },
+    {
+      "path": "cyclescope/data/legacy-rtdetr-l.pt",
+      "action": "removed",
+      "reason": "Unused generic checkpoint; active fine-tuned checkpoint preserved",
+      "sha256": "6de60b10d4bc566f00cda0f5b4d64afe4b66d48dc9695d2171effb7859d8e73f"
+    }
+  ],
+  "preserved": "Original evidence, workbooks, annotations, scientific source code, active weights, local jobs and environment. Existing unrelated changes/deletions untouched.",
+  "verification": {
+    "cyclescope_python_tests": 19,
+    "dashboard_source_audit": "passed",
+    "frontend_build": "passed",
+    "git_diff_check": "passed",
+    "git_candidate_files_over_50MB": 0,
+    "research_python_tests": 48,
+    "javascript_calculation_tests": 10
+  }
+}

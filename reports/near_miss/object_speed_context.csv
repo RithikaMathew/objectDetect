@@ -1,0 +1,3 @@
+end_clip_s,estimate,object,samples,start_clip_s,units,validity
+47.981314647981314,69.08081089021162,pedestrian1_reference,167,42.00867534200868,px/s; fitted image velocity magnitude,image context only; perspective dependent; not physical speed
+46.51317984651318,91.68359236316736,car68_sensitive_pre_loss,101,43.10977644310978,px/s; fitted image velocity magnitude,image context only; perspective dependent; not physical speed

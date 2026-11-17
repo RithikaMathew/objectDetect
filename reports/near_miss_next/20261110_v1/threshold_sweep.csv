@@ -1,0 +1,12 @@
+conditional_flags,conditional_metric_denominator,eligible_flags,eligible_metric_denominator,eligible_possible_flags,interpretation,metric,review_labels_changed,threshold_s,unique_event_denominator
+0,1,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,ttc,False,0.25,3
+1,1,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,ttc,False,0.375,3
+1,1,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,ttc,False,0.5,3
+1,1,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,ttc,False,1.0,3
+1,1,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,ttc,False,1.5,3
+1,1,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,ttc,False,2.0,3
+0,0,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,pet,False,0.25,3
+0,0,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,pet,False,0.5,3
+0,0,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,pet,False,1.0,3
+0,0,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,pet,False,1.5,3
+0,0,0,0,0,Strict <; interval flags guaranteed/possible; only conditional TTC available; no near-miss classification,pet,False,5.0,3

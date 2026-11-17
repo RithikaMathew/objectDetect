@@ -1,0 +1,11 @@
+available_scenarios,event_id,ineligible_scenarios,maximum,method,metric,minimum,note,physical_metric_eligible,scenario_count,units
+4,white_suv,0,12.0,"each of two edge x positions ±3 px, independent worst-case; engineering assumption",selected_horizontal_edge_gap,0,Selected frames only; not measured annotation error,False,4,px
+0,white_suv,1,,frame brackets; ±1-frame expansion sensitivity,reviewed_zone_pet,,Parallel passing has no established shared physical occupancy region,False,1,s
+4,dark_car,0,26.0,"each of two edge x positions ±3 px, independent worst-case; engineering assumption",selected_horizontal_edge_gap,14.0,Selected frames only; not measured annotation error,False,4,px
+0,dark_car,1,,frame brackets; ±1-frame expansion sensitivity,reviewed_zone_pet,,Parallel passing has no established shared physical occupancy region,False,1,s
+2,pedestrian_car,12,0.030631305273428423,manual_observed,conditional_ttc,0.024225363547057167,Conditional geometry/fit assumptions; not probability or calibrated uncertainty,False,14,s
+2,pedestrian_car,12,0.030631305273428684,linear_interpolation,conditional_ttc,0.024225363547056827,Conditional geometry/fit assumptions; not probability or calibrated uncertainty,False,14,s
+14,pedestrian_car,0,0.39811070235515483,constant_velocity,conditional_ttc,0.34769723618909776,Conditional geometry/fit assumptions; not probability or calibrated uncertainty,False,14,s
+0,pedestrian_car,14,,kalman,conditional_ttc,,Conditional geometry/fit assumptions; not probability or calibrated uncertainty,False,14,s
+0,pedestrian_car,14,,rts,conditional_ttc,,Conditional geometry/fit assumptions; not probability or calibrated uncertainty,False,14,s
+0,pedestrian_car,1,,frame brackets; ±1-frame expansion sensitivity,reviewed_zone_pet,,Shared physical conflict zone and supported occupancy boundaries not yet annotated,False,1,s

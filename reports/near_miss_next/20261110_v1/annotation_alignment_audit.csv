@@ -1,0 +1,25 @@
+event_id,frame_delta,object,original_playback_time_s,playback_time_decoded_frame,saved_frame,selected_frame_pts_s,status
+pedestrian_car,0,pedestrian,43.012658,1290,1290,43.009633,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,43.57988,1307,1307,43.576867,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,44.380664,1331,1331,44.377667,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,45.08135,1352,1352,45.078367,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,45.58184,1367,1367,45.578867,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,46.08233,1382,1382,46.079367,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,46.349258,1390,1390,46.3463,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,46.482722,1394,1394,46.479767,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,46.449345,1393,1393,46.4464,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,46.616175,1398,1398,46.613233,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,46.749639,1402,1402,46.7467,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,46.849726,1405,1405,46.8468,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,46.949824,1408,1408,46.9469,frame_ID_and_playback_time_agree
+pedestrian_car,0,pedestrian,47.116654,1413,1413,47.113733,frame_ID_and_playback_time_agree
+pedestrian_car,0,car,46.250989,1387,1387,46.2462,frame_ID_and_playback_time_agree
+pedestrian_car,0,car,46.384453,1391,1391,46.379667,frame_ID_and_playback_time_agree
+pedestrian_car,0,car,46.517917,1395,1395,46.513133,frame_ID_and_playback_time_agree
+pedestrian_car,0,car,46.584649,1397,1397,46.579867,frame_ID_and_playback_time_agree
+pedestrian_car,0,car,46.684747,1400,1400,46.679967,frame_ID_and_playback_time_agree
+pedestrian_car,0,car,46.784845,1403,1403,46.780067,frame_ID_and_playback_time_agree
+pedestrian_car,0,car,46.851577,1405,1405,46.8468,frame_ID_and_playback_time_agree
+pedestrian_car,0,car,46.951675,1408,1408,46.9469,frame_ID_and_playback_time_agree
+pedestrian_car,0,car,47.051773,1411,1411,47.047,frame_ID_and_playback_time_agree
+pedestrian_car,-1,car,46.072939,1381,1382,46.079367,capture_frame_ambiguity; do_not_silently_relabel; ±1-frame_sensitivity_applies

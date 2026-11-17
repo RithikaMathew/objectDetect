@@ -1,0 +1,27 @@
+{
+  "adopted_ttc_s": null,
+  "adopted_pet_s": null,
+  "physical_clearance_m": null,
+  "proposed_literature_context": {
+    "ttc_s": 1.5,
+    "pet_s": 5.0,
+    "context": "SSAM vehicle simulation defaults only; opt-in exploratory comparison after metric eligibility; not validated here"
+  },
+  "sweep_ttc_s": [
+    0.25,
+    0.375,
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "sweep_pet_s": [
+    0.25,
+    0.5,
+    1.0,
+    1.5,
+    5.0
+  ],
+  "comparison": "strict less-than; differs from <= in cited SSAM application",
+  "policy": "Screens never change review labels; missing metrics never become zero"
+}

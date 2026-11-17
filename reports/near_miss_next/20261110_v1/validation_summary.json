@@ -1,0 +1,12 @@
+{
+  "unique_events": 3,
+  "visually_reviewed_passes": 2,
+  "reviewed_crossings": 1,
+  "potential_conflicts": 1,
+  "confirmed_under_validated_protocol": 0,
+  "calibrated_clearances": 0,
+  "conditional_ttc_events": 1,
+  "supported_pet_intervals": 0,
+  "negative_controls": 2,
+  "policy": "Selected sample; no population rate or near-miss probability; zero confirmed does not prove zero occurred"
+}

@@ -1,0 +1,11 @@
+eligible_scenarios,interpretation,maximum_s,method,metric,minimum_s,scenario_count
+16,conditional engineering perturbations; missing scenarios remain missing; not statistical confidence interval,0.3981078045921077,constant_velocity,min_ttc_s,0.34769660340290454,16
+0,conditional engineering perturbations; missing scenarios remain missing; not statistical confidence interval,,constant_velocity,pet_s,,16
+0,conditional engineering perturbations; missing scenarios remain missing; not statistical confidence interval,,kalman,min_ttc_s,,16
+0,conditional engineering perturbations; missing scenarios remain missing; not statistical confidence interval,,kalman,pet_s,,16
+2,conditional engineering perturbations; missing scenarios remain missing; not statistical confidence interval,0.030631229442697527,linear_interpolation,min_ttc_s,0.024225303574851028,16
+1,conditional engineering perturbations; missing scenarios remain missing; not statistical confidence interval,0.0,linear_interpolation,pet_s,0.0,16
+2,conditional engineering perturbations; missing scenarios remain missing; not statistical confidence interval,0.03063122944269728,manual_observed,min_ttc_s,0.024225303574850636,16
+1,conditional engineering perturbations; missing scenarios remain missing; not statistical confidence interval,0.0,manual_observed,pet_s,0.0,16
+0,conditional engineering perturbations; missing scenarios remain missing; not statistical confidence interval,,rts,min_ttc_s,,16
+0,conditional engineering perturbations; missing scenarios remain missing; not statistical confidence interval,,rts,pet_s,,16

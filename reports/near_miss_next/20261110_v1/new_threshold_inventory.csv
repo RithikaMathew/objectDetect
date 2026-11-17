@@ -1,0 +1,10 @@
+setting,source,status
+"Default screening thresholds null; optional SSAM-context TTC 1.5 s / PET 5 s, no metre threshold",pipeline/near_miss_next.py:29,new diagnostic/configuration assumption; not validated safety ground truth
+Source dimensions must be 720x480 to match stored annotation coordinates,pipeline/near_miss_next.py:34,new diagnostic/configuration assumption; not validated safety ground truth
+Decoded PTS gap audit >1.5 median interval; not a safety screen,pipeline/near_miss_next.py:171,new diagnostic/configuration assumption; not validated safety ground truth
+"14 assumption settings: ±3 px clicks, ±1 frame timing, .8/1.2 footprint/lateral scale, ±2 learned-unit acceleration, first-half fit",pipeline/near_miss_next.py:181,new diagnostic/configuration assumption; not validated safety ground truth
+"PET requires reviewer, nondegenerate shared-zone polygon, physical identity justification, supported boundary brackets",pipeline/near_miss_next.py:57,new diagnostic/configuration assumption; not validated safety ground truth
+Single-frame occupancy boundaries expanded by half median PTS interval,pipeline/near_miss_validation_engine.js:18,new diagnostic/configuration assumption; not validated safety ground truth
+Polygon shoelace magnitude >1 (area >0.5 px²); numerical degeneracy check only,pipeline/near_miss_validation_engine.js:5,new diagnostic/configuration assumption; not validated safety ground truth
+"Seek +min(0.001 s, 0.1 frame interval) inside intended frame; overlay uses original frame PTS",pipeline/near_miss_validation_viewer.html:77,new diagnostic/configuration assumption; not validated safety ground truth
+Playback frame lookup tolerance 1e-6 s; not a metric threshold,pipeline/near_miss_validation_viewer.html:78,new diagnostic/configuration assumption; not validated safety ground truth

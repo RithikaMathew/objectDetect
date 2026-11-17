@@ -1,0 +1,19 @@
+conditional_surrogate_flag,event_id,metric,policy,reviewed_classification,supported_flag,threshold_s
+,white_suv,ttc_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,0.25
+,dark_car,ttc_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,0.25
+False,pedestrian_car,ttc_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,potential_conflict,False,0.25
+,white_suv,ttc_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,0.375
+,dark_car,ttc_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,0.375
+True,pedestrian_car,ttc_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,potential_conflict,False,0.375
+,white_suv,ttc_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,0.5
+,dark_car,ttc_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,0.5
+True,pedestrian_car,ttc_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,potential_conflict,False,0.5
+,white_suv,pet_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,0.25
+,dark_car,pet_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,0.25
+,pedestrian_car,pet_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,potential_conflict,False,0.25
+,white_suv,pet_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,0.5
+,dark_car,pet_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,0.5
+,pedestrian_car,pet_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,potential_conflict,False,0.5
+,white_suv,pet_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,1.0
+,dark_car,pet_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,indeterminate,False,1.0
+,pedestrian_car,pet_s,strict less-than; engineering sensitivity only; unvalidated surrogates cannot trigger supported screening,potential_conflict,False,1.0

@@ -1,0 +1,55 @@
+{
+  "version": "20261110_v1",
+  "annotation_input": "existing annotations only; no new user occupancy labels",
+  "annotation_input_sha256": null,
+  "config_input": null,
+  "source_files_checked": 216,
+  "source_files_unchanged": true,
+  "generated_files": [
+    "pair_eligibility.csv",
+    "browser_initial.png",
+    "BROWSER_VALIDATION.json",
+    "METHODS_AND_THRESHOLDS.md",
+    "provenance.csv",
+    "RUN_AND_REVIEW.md",
+    "validation_summary.json",
+    "CHANGELOG.md",
+    "event_metrics.csv",
+    "clock_alignment_audit.csv",
+    "thresholds.csv",
+    "literature_sources.json",
+    "build_manifest.json",
+    "sensitivity_summary.csv",
+    "threshold_source_inventory.csv",
+    "threshold_sweep.csv",
+    "annotation_alignment_audit.csv",
+    "PROFESSOR_RESULTS_UPDATED.md",
+    "effective_task_configuration.csv",
+    "timing_audit.csv",
+    "observation_coverage.csv",
+    "review_annotations.json",
+    "validation_comparison.csv",
+    "review_data.json",
+    "screening_config.json",
+    "negative_controls.csv",
+    "conditional_scenarios.csv",
+    "new_threshold_inventory.csv",
+    "frame_eligibility.csv",
+    "review_validation.html"
+  ],
+  "code_sha256": {
+    "near_miss_next.py": "fe537d60252690f42550f8fd6c214eaa26850cb1ca4cd0c625e73b7ba7e035b2",
+    "near_miss_validation_engine.js": "09c496870ae1910f64c292c2305894d173bcea388f893dcedb7bb82ca436c19e",
+    "near_miss_validation_viewer.html": "4e7cf3ae43c9320bdca2d6b05d4a6e7a5922c198432964a6b3ef847f06eab0e0"
+  },
+  "video_sha256": {
+    "reports/cluster_returns/20261109/CLEARANCE_PILOT_20261109_175030_116203/inputs/colonial_124020.mp4": "c7eeb8df29bfdc1bc081cb67e2a8a6482475fff1eaeeb98f812e3f7d4ee1e50e",
+    "reports/cluster_returns/20261109/CLEARANCE_PILOT_20261109_175030_116203/inputs/colonial_125350.mp4": "7bdbe3a21ae26897979f8754f3d398e983dbf4c0ccb5e1e6484519b9d4da5403",
+    "reports/near_miss/inputs/colonial_1708_pedestrian_car.mp4": "6b4825bf7cc31cfd29e48c1b937f6f7ad3a0ddc6b8ea5a5ec7c3e96a6497496b"
+  },
+  "limitations": [
+    "Original recording timing is not independently validated",
+    "Physical scale, collision model and conflict-zone boundaries unverified",
+    "Independent manual occupancy reference not yet supplied"
+  ]
+}

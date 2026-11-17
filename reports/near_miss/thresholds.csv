@@ -1,0 +1,25 @@
+setting,source,status
+"Detector/task overrides: reference DET_CONF/TRACK_THR .25, sensitive .15; BIC_MIN_SEC 1.5/.3 s, PED_MIN_SEC 3 s, STITCH_SEC .5 s, STITCH_PX 60 px, LOST_SEC .3 s",vision3/best/test_colonial/code/clearance_pilot.py:199,existing; historical safety thresholds not adopted
+"ByteTrack matching .8, buffer=int(fps*lost_sec)",vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py:913,existing; historical safety thresholds not adopted
+"Vehicle defaults: 15 observations, displacement 40 px; see adjacent argument lines and inventory for all class filters",vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py:656,existing; historical safety thresholds not adopted
+"Vehicle mean confidence .45, aspect ratio .35–4.5, straightness .35; detector candidates still require visual identity validation",vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py:692,existing; historical safety thresholds not adopted
+"Person optical-flow coast 2 s, eligible after .7 s, box EMA .5; prepare excludes coasted metric samples",vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py:700,existing; historical safety thresholds not adopted
+"Classification defaults: confirm 2, window 30 frames, min-frames 8, stride 3, pad .6, EMA .5; all additional CLI defaults in inventory",vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py:716,existing; historical safety thresholds not adopted
+Projection denominator epsilon 1e-8,vision3/best/test_colonial/code/clearance_metrics.py:14,existing; historical safety thresholds not adopted
+Inside/on support hull: polygon test >=0,vision3/best/test_colonial/code/clearance_metrics.py:39,existing; historical safety thresholds not adopted
+"Road axis: >=5 vehicle points, displacement >2 learned units, >=2 moving tracks",vision3/best/test_colonial/code/clearance_metrics.py:55,existing; historical safety thresholds not adopted
+"Local fit: split gaps >.20 s; >=3 points, >=.10 s; default window .5 s",vision3/best/test_colonial/code/clearance_metrics.py:74,existing; historical safety thresholds not adopted
+"Kalman: position sigma .25, acceleration sigma 2, initial velocity sigma 5; >.20 s restarts and .10 s/3-point warmup; engineering assumptions",vision3/best/test_colonial/code/clearance_metrics.py:86,existing; historical safety thresholds not adopted
+TTC horizon 5 s; per-axis stationary epsilon 1e-9; simultaneous future rectangle overlap required,vision3/best/test_colonial/code/clearance_metrics.py:137,existing; historical safety thresholds not adopted
+"PET cell .5 learned units, max occupancy gap .20 s, grid cap 2000 cells; sampled interval endpoints, no interpolation",vision3/best/test_colonial/code/clearance_metrics.py:162,existing; historical safety thresholds not adopted
+"Assumed rectangles: cyclist 1.8×.8 baseline (width .6/1 sensitivity), pedestrian .7×.6, car 4.5×1.8, bus 12×2.5, truck 8×2.5 learned units",vision3/best/test_colonial/code/clearance_metrics.py:202,existing; historical safety thresholds not adopted
+Alongside abs(along-track separation) <= summed half lengths; no validated physical edge recovery,vision3/best/test_colonial/code/clearance_metrics.py:233,existing; historical safety thresholds not adopted
+Same direction: same along-axis velocity sign and each abs velocity >.5 learned units/s,vision3/best/test_colonial/code/clearance_metrics.py:251,existing; historical safety thresholds not adopted
+Broad candidate cutoff centre separation >20 learned units; not a near-miss cutoff,vision3/best/test_colonial/code/clearance_metrics.py:253,existing; historical safety thresholds not adopted
+"Overtake requires order reversal from below -half-length to above +half-length in a same-direction run, split >.20 s",vision3/best/test_colonial/code/clearance_metrics.py:270,existing; historical safety thresholds not adopted
+"12 scenarios: window .25/.5/1 s, width .6/.8/1, scale .8/1/1.2, strict/transfer and local/Kalman/RTS",vision3/best/test_colonial/code/clearance_metrics.py:289,existing; historical safety thresholds not adopted
+"Historical threshold sweep: clearance .5/1/1.5 learned m; TTC 1/1.5/2 s; PET .5/1/1.5 s, strict <. Historical only, not adopted",vision3/best/test_colonial/code/clearance_pilot.py:429,existing; historical safety thresholds not adopted
+Historical distance/PET and lateral screens <1 learned m / <1 s; not adopted physical criteria,vision3/best/test_colonial/code/clearance_review.py:59,existing; historical safety thresholds not adopted
+New active numerical screens: all null/unset; no adopted TTC/PET or metre near-miss cutoff,pipeline/near_miss_screening.json,new configuration
+Sensitivity TTC .25/.375/.5 s; PET .25/.5/1 s; strict <; engineering examples only,pipeline/near_miss_screening.json,"new conditional sensitivity, not validated safety thresholds"
+"Click offsets ±3 px, time ±1 frame, dimensions .8/1.2, lateral map .8/1.2, acceleration ±2 learned units/s², PET cells .25/1, first-half fit",pipeline/generate_near_miss_report.py:reconstruction,new assumption scenarios; not measured uncertainty

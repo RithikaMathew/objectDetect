@@ -1,0 +1,14 @@
+[
+  {
+    "title": "FHWA-HRT-08-051, Chapter 2 (2008)",
+    "url": "https://www.fhwa.dot.gov/publications/research/safety/08051/02.cfm",
+    "verified": "2026-11-10",
+    "supports": "SSAM vehicle-to-vehicle simulation context; configurable default TTC 1.5 s"
+  },
+  {
+    "title": "FHWA-HRT-10-038, Chapter 3 (2010)",
+    "url": "https://www.fhwa.dot.gov/publications/research/safety/10038/003.cfm",
+    "verified": "2026-11-10",
+    "supports": "This SSAM vehicle-simulation application uses TTC <=1.5 s / PET <=5.0 s; not cyclist/pedestrian ground truth"
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "config": {
+    "protocol": "reviewed_pilot_v1",
+    "image_horizontal_gap_px": null,
+    "ttc_s": null,
+    "pet_s": null,
+    "physical_clearance_m": null,
+    "sensitivity_ttc_s": [
+      0.25,
+      0.375,
+      0.5
+    ],
+    "sensitivity_pet_s": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "policy": "No adopted numerical safety cutoff. Sensitivity settings are engineering examples only, not validated research thresholds. Historical assumed-plane diagnostics cannot trigger supported metric screening. Visual evidence retains reviewed candidates."
+  },
+  "fps": 29.97,
+  "road_axis": [
+    0.38322626591642456,
+    -0.923654496612101
+  ],
+  "python": "3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "numpy": "2.2.3",
+  "source_sha256": {
+    "vision3/best/test_colonial/code/clearance_metrics.py": "66091fb1963d55071498657c36f4b5d6b79534582d09cba537cc8c130cb40c55",
+    "vision3/best/test_colonial/code/clearance_pilot.py": "7bf75a69d295400bf0aaa9a1f135eeacf05153986ca004a8f5b8e3de92f4fdf9",
+    "vision3/best/test_colonial/code/clearance_review.py": "9fa2c19f97c0b78bbf376f7e4f0b30513f824659f94f935740cd7bee81a61af9",
+    "vision3/best/test_colonial/code/run_batch4.sh": "76a17d2442f4eb860ef237ebc27cfa411a06df45f2748001db29d794de139868",
+    "vision3/best/test_colonial/code/run_batch5.py": "7d68de47f644bf16d1a276f3b3ae98c93f7185df52f7377b44ac2ed345639614",
+    "vision3/best/test_colonial/code/research_worker.py": "f38c30dee9646f7a650002c443929f376eda65f3d040cb46f3749d0d15421968",
+    "vision3/best/test_colonial/code/run_xclip_colonial_v19.slurm": "96930df3c46a6065a372a5cf8fbb5496c358c6c88e9d3efa582360ef8519be1b",
+    "vision3/best/test_colonial/code/xclip_overlay_v19_colonial.py": "35bfa2480a38b3f9864bb55a978858c44c0127254c9120adae838214f3bd0fb6",
+    "vision3/best/test_colonial/code/speed_research.py": "ae018317f30aef8033d3fe3f71aabd54185f2fc4e1bc5a19b8f16115d9b05b8e",
+    "pipeline/manual_occlusion_metrics.py": "db9680761e3b74c6af94a703a861f08a36c3c5255b6558cb15c9d6ff6cdb0167",
+    "pipeline/passing_clearance.py": "7bc0cac33f0d8ea73d39621bc636e3308d11f6cb78c32523b8cd8f8ea3264ecf",
+    "pipeline/vru_tracker.py": "b2bcfd1df1f3725ec23f1f5fb8496a561ad1560bf8a74c9e9cfe305fcd442a6f",
+    "pipeline/goal4_conflict.py": "600208914b7204e68d560f629309a427bcd055563f334b373728040a9cbf83a7",
+    "vision3/best/test_colonial/code/grounding_audit.py": "99e98c5d6f43d44908ab86c76eb37f0e9b5a8b3306063349d0149198fa78983a",
+    "vision3/best/test_colonial/code/stamp_truth_headers.py": "7e339a76ff1196bb8c5c95ef97456ed275f00c79c237ab353d3cdfbccb953ba0",
+    "vision3/best/test_colonial/code/pick_busy_windows.py": "442cb896f57e957a4b21bc8c39f15646a3e37c9f20c60720a9d7abb94adb83a8",
+    "vision3/best/test_colonial/code/draw_zones_preview.py": "693d593ce00e039479bd34c37bbe7ebcd3faafdc1663eb779dd3702cb2a22194",
+    "vision3/best/test_colonial/code/undistort_fisheye.py": "cd4a7bf73a3c4ae6fcf58928036fe7bed7b8b58a9e5ab832106c600d41496151",
+    "vision3/best/test_colonial/code/track_truth_v1.py": "fd6fd5917c26e92a7f477097d0f1a37158e50f52e65c82573158e35ffb2b2ccb",
+    "vision3/best/test_colonial/code/review_pack.py": "2929f49a0386c67f7c58bf3873de3390d2cd0285bc4d5421ac020a22c21e6740",
+    "vision3/best/test_colonial/code/eval_truth.py": "7658892c348231814275cca46e6f5cfc02dd94a9856f9384e25d27c1e9876d6c",
+    "pipeline/generate_near_miss_report.py": "25db6f3f411d91d8d33288de1c80a207ba6d3f6e6346f8644055320e001020b4",
+    "pipeline/near_miss_screening.json": "66d827637923cec3261a7a3a981d4fd4b4a559abe8a4c168ee2094c8f4221942"
+  }
+}

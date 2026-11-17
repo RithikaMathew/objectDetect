@@ -1,0 +1,4 @@
+event,previous,repaired,status,why
+white_suv,0 strict eligible pairs; pass omitted by geometry gate,retained visual interaction candidate; metre/TTC/PET N/A,observed selected pass; exploratory speed,candidate identity separated from physical metric eligibility
+dark_car,0 strict eligible pairs; pass omitted by geometry gate,retained visual interaction candidate; metre/TTC/PET N/A,observed selected pass; exploratory speed,candidate identity separated from physical metric eligibility
+pedestrian_car,reported PET .294 s; CV TTC .375 s,PET N/A; historical CV TTC 0.374530 s; frame-aligned CV TTC 0.371804 s conditional,"reconstructed diagnostic, physical validity unverified",".294117647 is coverage 5/17, not PET; frame time replaces click playback time; filtered endpoint clamping removed"

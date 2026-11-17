@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300">
+<rect width="100%" height="100%" fill="#f7faf8"/><text x="20" y="28" font-family="sans-serif" font-size="18" font-weight="bold">Minimum image-space point separation</text>
+<text x="20" y="50" font-family="sans-serif" font-size="13">Pixels only; not perpendicular road-plane clearance or metres.</text>
+<line x1="90" y1="235" x2="700" y2="235" stroke="#344e41"/><rect x="90" y="204.9" width="90" height="30.1" fill="#247ba0"/><text x="135" y="196.9" text-anchor="middle">6.0 px</text><text x="135" y="258" text-anchor="middle">white</text><rect x="295" y="134.5" width="90" height="100.5" fill="#247ba0"/><text x="340" y="126.5" text-anchor="middle">20.0 px</text><text x="340" y="258" text-anchor="middle">dark</text><rect x="500" y="65.0" width="90" height="170.0" fill="#f18f01"/><text x="545" y="57.0" text-anchor="middle">33.8 px</text><text x="545" y="258" text-anchor="middle">pedestrian</text>
+<text x="20" y="290" font-family="sans-serif" font-size="12">White/dark cyclist passes and pedestrian event are not directly comparable in pixels.</text></svg>

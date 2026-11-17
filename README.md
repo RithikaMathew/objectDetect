@@ -1,12 +1,19 @@
 # Object detection and bicycle study
 
-The current pilot is complete. Two car passes were visually reviewed; the only zero-clearance/TTC/PET alarm was a bicycle wheel labelled as a car. Physical passing distances remain unvalidated because the existing files do not establish the needed lateral geometry. **No new HiPerGator run is pending.**
+CycleScope reviews videos with the repository RT-DETR + X-CLIP pipeline.
+Run `bash cyclescope/start.sh` from this directory, then open http://localhost:5173.
+See [CycleScope setup and workflow](cyclescope/README.md) for fresh-checkout setup.
+
+Current research evidence covers two reviewed cyclist passes and one close pedestrian
+crossing. Physical clearance and near-miss classification remain unvalidated;
+occupancy-based PET is unavailable. No new HiPerGator job is pending.
 
 ## Results
 
 - [Current handoff: speed, clearance and near misses](HANDOFF.md).
 
-- [Clearance pilot: short summary](reports/clearance_pilot/final_review_20261109/START_HERE.md) · [Illustrated review](reports/clearance_pilot/final_review_20261109/review.html).
+- [Latest video-only review and corrected results](reports/near_miss_next/README.md).
+- [Historical clearance pilot: short summary](reports/clearance_pilot/final_review_20261109/START_HERE.md) · [Illustrated review](reports/clearance_pilot/final_review_20261109/review.html).
 - [Count and speed results](manual/README.md): original manual annotations, same-video comparisons and limitations.
 - [MioVision archive summary](docs/MIOVISION_CONTENTS_SUMMARY_README.md) · [Study camera inventory](docs/BIKE_LANE_STUDY_INVENTORY_README.md) · [Full archive inventory](docs/MIOVISION_ARCHIVE_INVENTORY_README.md).
 
@@ -24,6 +31,7 @@ The current pilot is complete. Two car passes were visually reviewed; the only z
 |---|---|
 | `vision3/best/test_colonial/code/` | Current analysis/pipeline scripts, launchers and tests; HiPerGator paths preserved. |
 | `vision3/best/test_colonial/counts/`, `truth/`, `zones/`, `logs/`, `exp_results/` | Detector outputs, truth, camera definitions and experiment evidence. |
+| `cyclescope/` | Review application, service, tests and current setup instructions. |
 | `manual/` | Original tire-click annotations and manual/automatic speed analyses. |
 | `Bike Lane Study Counts/` | Original study workbooks and extracted count tables. |
 | `data/` | Site mappings, camera metadata and review/calibration inputs. |

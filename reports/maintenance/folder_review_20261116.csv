@@ -1,0 +1,14 @@
+folder,git_candidate_files,review
+Bike Lane Study Counts,52,Original study workbooks/counts retained.
+cyclescope,36,"Consolidated setup docs; excluded environment, dependencies, dist and local jobs; retained calibration with provenance."
+data,16,"Site mappings, archive listings and review inputs retained."
+docs,10,"Distinct inventory, workflow and scientific references retained."
+manual,95,"Original annotations, baseline and later analyses retained; baseline is explicitly historical."
+output,1,Research exports retained.
+pipeline,28,Active generators and validation code retained; removed disposable caches.
+reports,338,Versioned evidence and original returned results retained; newest report linked from handoff.
+scripts,2,Utility source retained.
+slurm,13,Existing cluster reproduction scripts retained; no jobs submitted.
+tests,5,Regression source retained; disposable caches removed.
+vision2.v1-six-class-corrected-v1.yolov8_extracted,543,Dataset metadata/labels retained.
+vision3,969,"Scientific code, experiment evidence and active fine-tuned weights retained."
